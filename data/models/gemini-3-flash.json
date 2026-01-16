@@ -570,8 +570,7 @@
   "strengths": [
     "Pro-level performance at 1/4 the price ($0.50/$3 per 1M tokens)",
     "78% SWE-bench actually beats Gemini 3 Pro (76.2%)",
-    "3x faster than Gemini 2.5 Pro",
-    "1M token context window",
+    "3x faster than Gemini 2.5 Pro with 1M token context",
     "Thinking level parameter (minimal, low, medium, high)",
     "Beats Pro on MMMU (81.2% vs 81%) and tool use",
     "Free tier available in Gemini API",
@@ -588,8 +587,7 @@
 
   "best_for": [
     "Cost-sensitive applications needing frontier performance",
-    "High-volume inference workloads",
-    "Real-time applications requiring low latency",
+    "High-volume inference and real-time applications",
     "Startups and developers on a budget",
     "Long-context applications at scale",
     "Agentic workflows requiring fast iteration"
