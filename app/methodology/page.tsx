@@ -1,259 +1,167 @@
-import { Shield, CheckCircle, AlertCircle, FileText, Users, TrendingUp } from 'lucide-react';
+import { Shield, CheckCircle, FileText, Users, TrendingUp, BookOpen } from 'lucide-react';
+import Link from 'next/link';
 
 export default function MethodologyPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="max-w-4xl mx-auto text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-background/50 backdrop-blur-sm shadow-lg mb-6">
-          <Shield className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium">Evidence-Based Evaluation</span>
-        </div>
-
-        <h1 className="text-5xl font-bold mb-6">
-          Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Methodology</span>
-        </h1>
-
-        <p className="text-xl text-muted-foreground leading-relaxed">
-          TrustVector evaluates AI systems through a rigorous, transparent, and evidence-based framework.
-          Every score is backed by verifiable sources and documented methodologies.
-        </p>
-      </div>
-
-      {/* Core Principles */}
-      <div className="max-w-4xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8">Core Principles</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-card border rounded-xl p-6">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-              <CheckCircle className="w-6 h-6 text-primary" />
+      <section className="border-b-4 border-double border-foreground">
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <div
+              className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 text-white border-2 border-foreground text-sm font-bold mb-6"
+              style={{ boxShadow: '3px 3px 0 0 black' }}
+            >
+              <BookOpen className="w-4 h-4" />
+              EVIDENCE-BASED EVALUATION
             </div>
-            <h3 className="text-xl font-bold mb-2">Evidence-Based</h3>
-            <p className="text-muted-foreground">
-              Every score requires documented evidence from official sources, research papers, or verified testing results.
-            </p>
-          </div>
 
-          <div className="bg-card border rounded-xl p-6">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-              <FileText className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Transparent</h3>
-            <p className="text-muted-foreground">
-              All evaluation criteria, methodologies, and confidence levels are publicly documented and verifiable.
-            </p>
-          </div>
+            <h1 className="text-5xl sm:text-6xl font-black mb-4 tracking-tighter">
+              OUR
+              <br />
+              <span className="text-primary">METHODOLOGY</span>
+            </h1>
 
-          <div className="bg-card border rounded-xl p-6">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-              <Users className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Community-Driven</h3>
-            <p className="text-muted-foreground">
-              Open-source evaluations reviewed by the community. Anyone can contribute improvements or new evaluations.
-            </p>
-          </div>
-
-          <div className="bg-card border rounded-xl p-6">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-              <TrendingUp className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Continuously Updated</h3>
-            <p className="text-muted-foreground">
-              Evaluations are regularly updated as new versions, features, and research become available.
+            <p className="text-xl text-muted-foreground">
+              TrustVector evaluates AI systems through a rigorous, transparent,
+              <br />
+              and evidence-based framework.
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Trust Dimensions */}
-      <div className="max-w-4xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8">Five Trust Dimensions</h2>
+      <div className="container mx-auto px-4 py-12">
+        {/* Core Principles */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Core Principles</h2>
 
-        <div className="space-y-6">
-          {/* Performance & Reliability */}
-          <div className="bg-card border rounded-xl p-8">
-            <h3 className="text-2xl font-bold mb-4">1. Performance & Reliability</h3>
-            <p className="text-muted-foreground mb-4">
-              Measures task accuracy, output consistency, latency, uptime, and overall system reliability.
-            </p>
-            <div className="space-y-2">
-              <div className="text-sm">
-                <span className="font-semibold">Key Criteria:</span>
-                <ul className="list-disc list-inside ml-4 text-muted-foreground mt-1">
-                  <li>Task completion accuracy (benchmarks like HumanEval, MMLU, SWE-bench)</li>
-                  <li>Output consistency and determinism</li>
-                  <li>Response latency (p50, p95)</li>
-                  <li>Uptime SLA and availability</li>
-                  <li>Context window and multimodal support</li>
-                </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { icon: CheckCircle, title: 'Evidence-Based', desc: 'Every score requires documented evidence from official sources, research papers, or verified testing results.', color: 'bg-emerald-50 border-emerald-400' },
+              { icon: FileText, title: 'Transparent', desc: 'All evaluation criteria, methodologies, and confidence levels are publicly documented and verifiable.', color: 'bg-sky-50 border-sky-400' },
+              { icon: Users, title: 'Community-Driven', desc: 'Open-source evaluations reviewed by the community. Anyone can contribute improvements or new evaluations.', color: 'bg-amber-50 border-amber-400' },
+              { icon: TrendingUp, title: 'Continuously Updated', desc: 'Evaluations are regularly updated as new versions, features, and research become available.', color: 'bg-pink-50 border-pink-400' },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className={`${item.color} border-l-4 p-6`}
+              >
+                <item.icon className="w-8 h-8 mb-4 text-foreground" />
+                <h3 className="text-xl font-black uppercase mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">{item.desc}</p>
               </div>
-            </div>
-          </div>
-
-          {/* Security */}
-          <div className="bg-card border rounded-xl p-8">
-            <h3 className="text-2xl font-bold mb-4">2. Security</h3>
-            <p className="text-muted-foreground mb-4">
-              Evaluates resistance to attacks, data protection, and security posture of the AI system.
-            </p>
-            <div className="space-y-2">
-              <div className="text-sm">
-                <span className="font-semibold">Key Criteria:</span>
-                <ul className="list-disc list-inside ml-4 text-muted-foreground mt-1">
-                  <li>Jailbreak resistance and prompt injection defense</li>
-                  <li>Data leakage prevention</li>
-                  <li>Adversarial robustness</li>
-                  <li>Content filtering and safety guardrails</li>
-                  <li>Access controls and authentication</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Privacy & Compliance */}
-          <div className="bg-card border rounded-xl p-8">
-            <h3 className="text-2xl font-bold mb-4">3. Privacy & Compliance</h3>
-            <p className="text-muted-foreground mb-4">
-              Assesses data handling practices, regulatory compliance, and privacy protections.
-            </p>
-            <div className="space-y-2">
-              <div className="text-sm">
-                <span className="font-semibold">Key Criteria:</span>
-                <ul className="list-disc list-inside ml-4 text-muted-foreground mt-1">
-                  <li>Data retention policies and user control</li>
-                  <li>GDPR, HIPAA, and SOC 2 compliance</li>
-                  <li>Data sovereignty and geographic controls</li>
-                  <li>Encryption at rest and in transit</li>
-                  <li>Training data usage policies</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Trust & Transparency */}
-          <div className="bg-card border rounded-xl p-8">
-            <h3 className="text-2xl font-bold mb-4">4. Trust & Transparency</h3>
-            <p className="text-muted-foreground mb-4">
-              Evaluates documentation quality, model transparency, and organizational trustworthiness.
-            </p>
-            <div className="space-y-2">
-              <div className="text-sm">
-                <span className="font-semibold">Key Criteria:</span>
-                <ul className="list-disc list-inside ml-4 text-muted-foreground mt-1">
-                  <li>Model documentation completeness</li>
-                  <li>Training data transparency</li>
-                  <li>Safety testing and bias evaluation disclosure</li>
-                  <li>Decision explainability</li>
-                  <li>Version management and changelogs</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Operational Excellence */}
-          <div className="bg-card border rounded-xl p-8">
-            <h3 className="text-2xl font-bold mb-4">5. Operational Excellence</h3>
-            <p className="text-muted-foreground mb-4">
-              Measures ease of use, deployment flexibility, cost efficiency, and operational maturity.
-            </p>
-            <div className="space-y-2">
-              <div className="text-sm">
-                <span className="font-semibold">Key Criteria:</span>
-                <ul className="list-disc list-inside ml-4 text-muted-foreground mt-1">
-                  <li>Deployment flexibility (API, self-hosted, cloud platforms)</li>
-                  <li>API reliability and rate limits</li>
-                  <li>Cost efficiency and pricing model</li>
-                  <li>Monitoring and observability tools</li>
-                  <li>Documentation and support quality</li>
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* Scoring System */}
-      <div className="max-w-4xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8">Scoring System</h2>
-
-        <div className="bg-card border rounded-xl p-8">
-          <h3 className="text-xl font-bold mb-4">Score Ranges (0-100)</h3>
+        {/* Trust Dimensions */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Five Trust Dimensions</h2>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <div className="w-32 text-right font-semibold">90-100</div>
-              <div className="flex-1 h-3 bg-green-500 rounded-full"></div>
-              <div className="w-32 text-muted-foreground">Exceptional</div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-32 text-right font-semibold">70-89</div>
-              <div className="flex-1 h-3 bg-blue-500 rounded-full"></div>
-              <div className="w-32 text-muted-foreground">Strong</div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-32 text-right font-semibold">50-69</div>
-              <div className="flex-1 h-3 bg-yellow-500 rounded-full"></div>
-              <div className="w-32 text-muted-foreground">Adequate</div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-32 text-right font-semibold">30-49</div>
-              <div className="flex-1 h-3 bg-orange-500 rounded-full"></div>
-              <div className="w-32 text-muted-foreground">Concerning</div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-32 text-right font-semibold">0-29</div>
-              <div className="flex-1 h-3 bg-red-500 rounded-full"></div>
-              <div className="w-32 text-muted-foreground">Poor</div>
-            </div>
+            {[
+              { num: 1, icon: '🚀', name: 'Performance & Reliability', desc: 'Measures task accuracy, output consistency, latency, uptime, and overall system reliability.', criteria: ['Task completion accuracy (benchmarks like HumanEval, MMLU, SWE-bench)', 'Output consistency and determinism', 'Response latency (p50, p95)', 'Uptime SLA and availability', 'Context window and multimodal support'] },
+              { num: 2, icon: '🛡️', name: 'Security', desc: 'Evaluates resistance to attacks, data protection, and security posture of the AI system.', criteria: ['Jailbreak resistance and prompt injection defense', 'Data leakage prevention', 'Adversarial robustness', 'Content filtering and safety guardrails', 'Access controls and authentication'] },
+              { num: 3, icon: '🔒', name: 'Privacy & Compliance', desc: 'Assesses data handling practices, regulatory compliance, and privacy protections.', criteria: ['Data retention policies and user control', 'GDPR, HIPAA, and SOC 2 compliance', 'Data sovereignty and geographic controls', 'Encryption at rest and in transit', 'Training data usage policies'] },
+              { num: 4, icon: '👁️', name: 'Trust & Transparency', desc: 'Evaluates documentation quality, model transparency, and organizational trustworthiness.', criteria: ['Model documentation completeness', 'Training data transparency', 'Safety testing and bias evaluation disclosure', 'Decision explainability', 'Version management and changelogs'] },
+              { num: 5, icon: '⚙️', name: 'Operational Excellence', desc: 'Measures ease of use, deployment flexibility, cost efficiency, and operational maturity.', criteria: ['Deployment flexibility (API, self-hosted, cloud platforms)', 'API reliability and rate limits', 'Cost efficiency and pricing model', 'Monitoring and observability tools', 'Documentation and support quality'] },
+            ].map((dim) => (
+              <details
+                key={dim.num}
+                className="group border-2 border-foreground bg-white"
+                style={{ boxShadow: '4px 4px 0 0 black' }}
+              >
+                <summary className="cursor-pointer list-none p-6 hover:bg-muted/30 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <span className="text-3xl">{dim.icon}</span>
+                      <div>
+                        <span className="text-xs text-muted-foreground uppercase tracking-wide">Dimension {dim.num}</span>
+                        <h3 className="text-xl font-black uppercase">{dim.name}</h3>
+                      </div>
+                    </div>
+                    <span className="text-2xl group-open:rotate-45 transition-transform">+</span>
+                  </div>
+                </summary>
+                <div className="px-6 pb-6 border-t-2 border-foreground/10 pt-4">
+                  <p className="text-muted-foreground mb-4">{dim.desc}</p>
+                  <div className="bg-muted/30 p-4">
+                    <div className="text-sm font-bold uppercase tracking-wide mb-2">Key Criteria:</div>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      {dim.criteria.map((c, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-primary">•</span>
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </details>
+            ))}
           </div>
+        </div>
 
-          <div className="mt-8 space-y-4">
-            <h4 className="font-bold">Confidence Levels</h4>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <div>
-                <span className="inline-flex items-center px-2 py-1 rounded bg-green-100 text-green-800 font-medium mr-2">High</span>
-                Multiple authoritative sources, recent data, official documentation
-              </div>
-              <div>
-                <span className="inline-flex items-center px-2 py-1 rounded bg-yellow-100 text-yellow-800 font-medium mr-2">Medium</span>
-                Some authoritative sources, community feedback, partial documentation
-              </div>
-              <div>
-                <span className="inline-flex items-center px-2 py-1 rounded bg-red-100 text-red-800 font-medium mr-2">Low</span>
-                Limited sources, older data, or inferred from general practices
+        {/* Scoring System */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Scoring System</h2>
+
+          <div
+            className="bg-white border-2 border-foreground p-8"
+            style={{ boxShadow: '4px 4px 0 0 black' }}
+          >
+            <h3 className="text-xl font-black uppercase mb-6">Score Ranges (0-100)</h3>
+
+            <div className="space-y-4">
+              {[
+                { range: '90-100', label: 'Exceptional', color: 'bg-emerald-500' },
+                { range: '75-89', label: 'Strong', color: 'bg-sky-500' },
+                { range: '60-74', label: 'Adequate', color: 'bg-amber-400' },
+                { range: '40-59', label: 'Concerning', color: 'bg-orange-500' },
+                { range: '0-39', label: 'Poor', color: 'bg-red-500' },
+              ].map((score) => (
+                <div key={score.range} className="flex items-center gap-4">
+                  <div className="w-24 text-right font-black">{score.range}</div>
+                  <div className={`flex-1 h-4 ${score.color}`}></div>
+                  <div className="w-28 text-muted-foreground uppercase text-sm">{score.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 pt-8 border-t-2 border-dashed border-foreground/20">
+              <h4 className="font-black uppercase mb-4">Confidence Levels</h4>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center px-3 py-1 bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">HIGH</span>
+                  <span className="text-muted-foreground">Multiple authoritative sources, recent data, official documentation</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center px-3 py-1 bg-amber-100 text-amber-800 font-bold border border-amber-300">MEDIUM</span>
+                  <span className="text-muted-foreground">Some authoritative sources, community feedback, partial documentation</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center px-3 py-1 bg-red-100 text-red-800 font-bold border border-red-300">LOW</span>
+                  <span className="text-muted-foreground">Limited sources, older data, or inferred from general practices</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Contribute */}
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-gradient-to-r from-primary/10 to-accent/10 border rounded-xl p-12 text-center">
-          <AlertCircle className="w-16 h-16 text-primary mx-auto mb-4" />
-          <h2 className="text-3xl font-bold mb-4">Contribute to TrustVector</h2>
-          <p className="text-lg text-muted-foreground mb-6">
-            Help improve AI transparency by contributing evaluations, suggesting improvements, or reporting issues.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://github.com/JBAhire/trust-vector"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-primary-foreground bg-gradient-to-r from-primary to-accent rounded-xl hover:opacity-90 transition-opacity shadow-lg"
+        {/* CTA */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-amber-50 border-l-4 border-amber-400 p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-2xl font-black uppercase mb-2">Want to Contribute?</h3>
+              <p className="text-muted-foreground">Help improve AI transparency by contributing evaluations.</p>
+            </div>
+            <Link
+              href="/contribute"
+              className="btn-tilted btn-tilted-yellow shrink-0"
             >
-              View on GitHub
-            </a>
-            <a
-              href="https://github.com/JBAhire/trust-vector/blob/main/CONTRIBUTING.md"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-xl border-2 border-border hover:bg-accent hover:border-accent transition-all"
-            >
-              Contributing Guide
-            </a>
+              CONTRIBUTE NOW →
+            </Link>
           </div>
         </div>
       </div>

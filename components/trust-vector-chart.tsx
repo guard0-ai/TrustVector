@@ -11,13 +11,13 @@ import {
 } from 'recharts';
 import type { TrustVectorEntity } from '@/framework/schema/types';
 
-// Terminal theme colors for chart
+// Clean light theme colors for chart
 const CHART_COLORS = {
-  grid: '#1a3a1a',         // Dark green grid
-  axis: '#00ff41',         // Matrix green for labels
-  axisSecondary: '#4a7c4a', // Muted green for radius
-  radar: '#00ff41',        // Matrix green for radar
-  radarFill: '#00ff41',    // Matrix green fill
+  grid: '#e5e7eb',           // Light gray grid
+  axis: '#1f2937',           // Dark gray for labels
+  axisSecondary: '#9ca3af',  // Muted gray for radius
+  radar: '#f97316',          // Orange primary color
+  radarFill: '#f97316',      // Orange fill
 };
 
 interface TrustVectorChartProps {
@@ -66,7 +66,7 @@ export function TrustVectorChart({ entity, height = 400 }: TrustVectorChartProps
         <PolarGrid stroke={CHART_COLORS.grid} />
         <PolarAngleAxis
           dataKey="dimension"
-          tick={{ fill: CHART_COLORS.axis, fontSize: 14 }}
+          tick={{ fill: CHART_COLORS.axis, fontSize: 14, fontWeight: 500 }}
         />
         <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fill: CHART_COLORS.axisSecondary, fontSize: 12 }} />
         <Radar
@@ -74,7 +74,7 @@ export function TrustVectorChart({ entity, height = 400 }: TrustVectorChartProps
           dataKey="score"
           stroke={CHART_COLORS.radar}
           fill={CHART_COLORS.radarFill}
-          fillOpacity={0.2}
+          fillOpacity={0.15}
           strokeWidth={2}
         />
         <Tooltip
@@ -82,10 +82,10 @@ export function TrustVectorChart({ entity, height = 400 }: TrustVectorChartProps
             if (active && payload && payload.length) {
               const data = payload[0].payload;
               return (
-                <div className="bg-card border rounded-lg shadow-lg p-3">
-                  <p className="font-semibold mb-1">{data.fullName}</p>
+                <div className="bg-white border-2 border-foreground rounded-lg shadow-lg p-3">
+                  <p className="font-bold mb-1">{data.fullName}</p>
                   <p className="text-sm text-muted-foreground">
-                    Score: <span className="font-bold text-primary">{data.score}</span>
+                    Score: <span className="font-bold text-primary">{data.score}</span>/100
                   </p>
                 </div>
               );

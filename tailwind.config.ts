@@ -42,24 +42,14 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Terminal colors
-        terminal: {
-          green: 'hsl(var(--terminal-green))',
-          cyan: 'hsl(var(--terminal-cyan))',
-          red: 'hsl(var(--terminal-red))',
-          yellow: 'hsl(var(--terminal-yellow))',
-          magenta: 'hsl(var(--terminal-magenta))',
-          blue: 'hsl(var(--terminal-blue))',
-        },
-        // Trust score colors - cyberpunk themed
+        // Trust score colors - Vibrant, accessible palette
         // NOTE: Source of truth is SCORE_COLORS in framework/schema/types.ts
-        // These are duplicated here for Tailwind class usage (e.g., bg-score-exceptional)
         score: {
-          exceptional: '#00ff41', // Matrix green
-          strong: '#00d9ff',      // Electric cyan
-          adequate: '#ffdd00',    // Terminal yellow
-          concerning: '#ff6b35',  // Warning orange
-          poor: '#ff006e',        // Neon magenta
+          exceptional: '#22c55e', // Green
+          strong: '#0ea5e9',      // Sky blue
+          adequate: '#eab308',    // Yellow
+          concerning: '#f97316',  // Orange
+          poor: '#ef4444',        // Red
         },
       },
       borderRadius: {
@@ -68,24 +58,31 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        mono: ['Courier New', 'Consolas', 'Monaco', 'Lucida Console', 'monospace'],
-        terminal: ['Courier New', 'Consolas', 'Monaco', 'monospace'],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       animation: {
-        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-        'glitch': 'glitch 1s infinite',
-        'scan': 'scan 8s linear infinite',
-        'typing': 'typing 3.5s steps(40) 1s forwards',
-        'blink': 'blink 1s infinite',
-        'flicker': 'flicker 0.15s infinite',
-        'gradient-shift': 'gradient-shift 3s ease infinite',
-        'data-stream': 'data-stream 20s linear infinite',
+        'fade-in': 'fadeIn 0.3s ease-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'scale-in': 'scaleIn 0.2s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
       },
       boxShadow: {
-        'neon-green': '0 0 20px hsl(var(--terminal-green)), 0 0 40px hsl(var(--terminal-green) / 0.5)',
-        'neon-cyan': '0 0 20px hsl(var(--terminal-cyan)), 0 0 40px hsl(var(--terminal-cyan) / 0.5)',
-        'neon-red': '0 0 20px hsl(var(--terminal-red)), 0 0 40px hsl(var(--terminal-red) / 0.5)',
-        'terminal': '0 0 20px hsl(var(--terminal-green) / 0.1), inset 0 0 60px hsl(var(--terminal-green) / 0.02)',
+        'card': '0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)',
+        'card-hover': '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)',
+        'elevated': '0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04)',
       },
     },
   },
