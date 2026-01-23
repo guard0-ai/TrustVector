@@ -4,14 +4,16 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Evaluations](https://img.shields.io/badge/Evaluations-93-blue.svg)](#-current-coverage)
-[![GitHub Stars](https://img.shields.io/github/stars/JBAhire/trust-vector?style=social)](https://github.com/JBAhire/trust-vector)
+[![Evaluations](https://img.shields.io/badge/Evaluations-106-blue.svg)](#-current-coverage)
+[![GitHub Stars](https://img.shields.io/github/stars/Guard0-Security/TrustVector?style=social)](https://github.com/Guard0-Security/TrustVector)
 
 TrustVector is an evidence-based evaluation framework for AI systems, providing transparent, multi-dimensional trust scores across **security**, **privacy**, **performance**, **trust**, and **operational excellence**.
 
-🌐 **Website**: [Coming Soon]
-📖 **Documentation**: [/docs](/docs)
-🤝 **Contributing**: [CONTRIBUTING.md](/CONTRIBUTING.md)
+**Powered and supported by [Guard0.ai](https://guard0.ai)**
+
+🌐 **Website**: [trustvector.dev](https://trustvector.dev)
+📖 **Documentation**: [/methodology](/methodology)
+🤝 **Contributing**: [/contribute](/contribute)
 🗺️ **Roadmap**: [ROADMAP.md](/ROADMAP.md)
 🔒 **Security**: [SECURITY.md](/SECURITY.md)
 📜 **Code of Conduct**: [CODE_OF_CONDUCT.md](/CODE_OF_CONDUCT.md)
@@ -42,12 +44,12 @@ Unlike simple benchmarks, TrustVector evaluates AI systems holistically across *
 
 ### View Evaluations
 
-Browse existing evaluations at [website URL] or locally:
+Browse existing evaluations at [trustvector.dev](https://trustvector.dev) or locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/JBAhire/trust-vector.git
-cd trust-vector
+git clone https://github.com/Guard0-Security/TrustVector.git
+cd TrustVector
 
 # Install dependencies
 npm install
@@ -85,9 +87,9 @@ const customScore = calculateCustomScore(claudeSonnet, {
 
 ## 📊 Current Coverage
 
-**90 Total Evaluations** across 3 categories:
+**106 Total Evaluations** across 3 categories:
 
-### AI Models (30)
+### AI Models (38)
 
 **Frontier Models:**
 - ✅ Claude Sonnet 4.5, Claude Opus 4.1, Claude 3.7 Sonnet, Claude 3.5 Haiku (Anthropic)
@@ -106,7 +108,7 @@ const customScore = calculateCustomScore(claudeSonnet, {
 
 **[See all models →](/data/models)**
 
-### AI Agents (30)
+### AI Agents (34)
 
 **Enterprise Platforms:**
 - ✅ Amazon Bedrock Agents, Azure Bot Service, Google Agent Builder
@@ -122,7 +124,7 @@ const customScore = calculateCustomScore(claudeSonnet, {
 
 **[See all agents →](/data/agents)**
 
-### MCP Servers (30)
+### MCP Servers (34)
 
 **Cloud & Infrastructure:**
 - ✅ AWS, Azure, Cloudflare, Docker, Kubernetes
@@ -333,8 +335,8 @@ Built with:
 
 If you find TrustVector useful:
 - ⭐ **Star the repository** to show support
-- 🐛 **Report bugs** via [Issues](https://github.com/JBAhire/trust-vector/issues)
-- 💡 **Request features** via [Discussions](https://github.com/JBAhire/trust-vector/discussions)
+- 🐛 **Report bugs** via [Issues](https://github.com/Guard0-Security/TrustVector/issues)
+- 💡 **Request features** via [Discussions](https://github.com/Guard0-Security/TrustVector/discussions)
 - 🤝 **Contribute** evaluations (see [CONTRIBUTING.md](/CONTRIBUTING.md))
 - 📢 **Share** with your network
 
@@ -342,8 +344,8 @@ If you find TrustVector useful:
 
 ## 📬 Contact
 
-- **Issues**: [GitHub Issues](https://github.com/JBAhire/trust-vector/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/JBAhire/trust-vector/discussions)
+- **Issues**: [GitHub Issues](https://github.com/Guard0-Security/TrustVector/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Guard0-Security/TrustVector/discussions)
 - **Feature Requests**: [Roadmap](ROADMAP.md)
 - **Security**: [SECURITY.md](SECURITY.md)
 
@@ -351,8 +353,8 @@ If you find TrustVector useful:
 
 <div align="center">
 
-**[⭐ Star on GitHub](https://github.com/JBAhire/trust-vector)** · **[🤝 Contribute](/CONTRIBUTING.md)** · **[📖 Read Docs](/docs)**
+**[⭐ Star on GitHub](https://github.com/Guard0-Security/TrustVector)** · **[🤝 Contribute](/contribute)** · **[📖 Read Docs](/methodology)**
 
-Made with ❤️ by the TrustVector community
+Made with ❤️ by [Guard0.ai](https://guard0.ai) and the TrustVector community
 
 </div>
