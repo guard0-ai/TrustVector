@@ -62,15 +62,19 @@ import qwen25Vl32b from '@/data/models/qwen2-5-vl-32b.json';
 import novaPro from '@/data/models/nova-pro.json';
 
 // ========================================
-// AGENTS (30 total)
+// AGENTS (34 total)
 // ========================================
 
-// Enterprise Agents (5)
+// Enterprise Agents (9)
 import amazonLex from '@/data/agents/amazon-lex.json';
 import azureBotService from '@/data/agents/azure-bot-service.json';
 import googleDialogflow from '@/data/agents/google-dialogflow.json';
 import ibmWatsonAssistant from '@/data/agents/ibm-watson-assistant.json';
 import salesforceEinsteinBots from '@/data/agents/salesforce-einstein-bots.json';
+import gleanAi from '@/data/agents/glean-ai.json';
+import koreAi from '@/data/agents/kore-ai.json';
+import relevanceAi from '@/data/agents/relevance-ai.json';
+import sierraAi from '@/data/agents/sierra-ai.json';
 
 // Cloud Provider Agents (3)
 import openaiAssistants from '@/data/agents/openai-assistants-api.json';
@@ -108,7 +112,7 @@ import autogpt from '@/data/agents/autogpt.json';
 import babyagi from '@/data/agents/babyagi.json';
 
 // ========================================
-// MCPs (30 total)
+// MCPs (34 total)
 // ========================================
 
 // Official/Reference MCPs (5)
@@ -117,6 +121,14 @@ import mcpGit from '@/data/mcps/mcp-server-git.json';
 import mcpSequentialThinking from '@/data/mcps/mcp-server-sequential-thinking.json';
 import mcpTime from '@/data/mcps/mcp-server-time.json';
 import mcpEverything from '@/data/mcps/mcp-server-everything.json';
+
+// Search/AI MCPs (2)
+import mcpPerplexity from '@/data/mcps/mcp-server-perplexity.json';
+import mcpTavily from '@/data/mcps/mcp-server-tavily.json';
+
+// Version Control MCPs (2)
+import mcpGitlab from '@/data/mcps/mcp-server-gitlab.json';
+import mcpSupabase from '@/data/mcps/mcp-server-supabase.json';
 
 // Cloud Integration MCPs (5)
 import mcpAws from '@/data/mcps/mcp-server-aws.json';
@@ -154,7 +166,7 @@ import mcpFilesystem from '@/data/mcps/mcp-server-filesystem.json';
 import mcpMemory from '@/data/mcps/mcp-server-memory.json';
 
 /**
- * All entities in the system (98 total: 38 models + 30 agents + 30 MCPs)
+ * All entities in the system (106 total: 38 models + 34 agents + 34 MCPs)
  */
 const ALL_ENTITIES: TrustVectorEntity[] = [
   // ========================================
@@ -213,14 +225,18 @@ const ALL_ENTITIES: TrustVectorEntity[] = [
   novaPro,
 
   // ========================================
-  // AGENTS (30)
+  // AGENTS (34)
   // ========================================
-  // Enterprise
+  // Enterprise (9)
   amazonLex,
   azureBotService,
   googleDialogflow,
   ibmWatsonAssistant,
   salesforceEinsteinBots,
+  gleanAi,
+  koreAi,
+  relevanceAi,
+  sierraAi,
 
   // Cloud Providers
   openaiAssistants,
@@ -258,14 +274,22 @@ const ALL_ENTITIES: TrustVectorEntity[] = [
   babyagi,
 
   // ========================================
-  // MCPs (30)
+  // MCPs (34)
   // ========================================
-  // Official/Reference
+  // Official/Reference (5)
   mcpFetch,
   mcpGit,
   mcpSequentialThinking,
   mcpTime,
   mcpEverything,
+
+  // Search/AI (2)
+  mcpPerplexity,
+  mcpTavily,
+
+  // Version Control/Database (2)
+  mcpGitlab,
+  mcpSupabase,
 
   // Cloud Integration
   mcpAws,
