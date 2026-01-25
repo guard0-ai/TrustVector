@@ -1,22 +1,37 @@
 {
   "name": "trustvector",
   "version": "1.0.0",
-  "description": "Open-source AI assurance framework for models, MCPs, and agents",
+  "description": "Guard0 TrustVector: Agentic AI security framework for evaluating AI agents, models, and MCPs. AI-SPM and agent security posture management.",
   "private": false,
   "license": "MIT",
+  "author": {
+    "name": "Guard0",
+    "url": "https://guard0.ai"
+  },
+  "homepage": "https://trustvector.guard0.ai",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JBAhire/trust-vector"
+    "url": "https://github.com/Guard0-Security/trust-vector"
   },
   "keywords": [
-    "ai",
-    "llm",
-    "security",
-    "evaluation",
-    "trust",
-    "mcp",
-    "agents",
-    "assurance"
+    "guard0",
+    "trustvector",
+    "agentic-ai-security",
+    "ai-agent-security",
+    "ai-spm",
+    "agent-security-posture",
+    "mcp-security",
+    "model-context-protocol",
+    "ai-governance",
+    "ai-compliance",
+    "autonomous-ai-security",
+    "llm-security",
+    "ai-evaluation",
+    "ai-trust",
+    "copilot-studio-security",
+    "agentforce-security",
+    "langchain-security",
+    "crewai-security"
   ],
   "scripts": {
     "dev": "next dev",

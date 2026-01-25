@@ -1,5 +1,39 @@
 import { Shield, CheckCircle, FileText, Users, TrendingUp, BookOpen } from 'lucide-react';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Agent Security Evaluation Methodology | Guard0 TrustVector',
+  description:
+    'Guard0 TrustVector methodology: Evidence-based framework for evaluating agentic AI security, AI agent identity, MCP security, and autonomous AI systems. Learn how we assess AI-SPM and agent security posture.',
+  keywords: [
+    'agentic AI security methodology',
+    'AI agent security evaluation',
+    'AI-SPM methodology',
+    'agent security posture assessment',
+    'AI trust evaluation framework',
+    'MCP security methodology',
+    'Guard0 methodology',
+    'TrustVector framework',
+  ],
+  openGraph: {
+    title: 'AI Agent Security Evaluation Methodology | Guard0 TrustVector',
+    description:
+      'Evidence-based framework for evaluating agentic AI security. Guard0 TrustVector methodology for AI-SPM and agent security posture management.',
+    type: 'article',
+    siteName: 'TrustVector by Guard0',
+    url: 'https://trustvector.guard0.ai/methodology',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Guard0 TrustVector Methodology',
+    description: 'How Guard0 evaluates agentic AI security: Evidence-based AI-SPM framework.',
+    creator: '@Guard0Security',
+  },
+  alternates: {
+    canonical: '/methodology',
+  },
+};
 
 export default function MethodologyPage() {
   return (

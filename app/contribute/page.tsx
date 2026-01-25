@@ -1,5 +1,38 @@
 import { GitBranch, FileJson, CheckCircle, AlertTriangle, BookOpen, Code, Users, Database, Bot, Brain } from 'lucide-react';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contribute AI Agent Security Evaluations | Guard0 TrustVector',
+  description:
+    'Contribute to Guard0 TrustVector: Add agentic AI security evaluations for AI models, agents, and MCPs. Help build the definitive AI-SPM and agent security posture management resource.',
+  keywords: [
+    'contribute AI security evaluation',
+    'agentic AI security community',
+    'AI agent security contributions',
+    'open source AI security',
+    'MCP security evaluation',
+    'Guard0 contributors',
+    'TrustVector community',
+  ],
+  openGraph: {
+    title: 'Contribute to Guard0 TrustVector',
+    description:
+      'Join the Guard0 community: Add AI agent security evaluations and help build the definitive AI-SPM resource.',
+    type: 'article',
+    siteName: 'TrustVector by Guard0',
+    url: 'https://trustvector.guard0.ai/contribute',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contribute to Guard0 TrustVector',
+    description: 'Help build the definitive agentic AI security resource. Open source AI-SPM contributions welcome.',
+    creator: '@Guard0Security',
+  },
+  alternates: {
+    canonical: '/contribute',
+  },
+};
 
 export default function ContributePage() {
   return (

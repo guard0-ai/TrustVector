@@ -5,40 +5,97 @@ import { Github, BarChart3, BookOpen } from 'lucide-react';
 import { Logo } from '@/components/logo';
 
 export const metadata: Metadata = {
-  title: 'TrustVector - AI Trust Directory',
+  title: 'TrustVector by Guard0 - AI Agent Security & Trust Directory',
   description:
-    'Open-source framework for evaluating 106 AI systems (models, MCPs, and agents) across 5 trust dimensions: security, privacy, performance, trust, and operational excellence.',
+    'Guard0 TrustVector: The definitive agentic AI security resource. Evidence-based evaluations of 100+ AI agents, models, and MCPs across security, privacy, and trust dimensions. AI-SPM and agent security posture management.',
   keywords: [
-    'AI',
-    'LLM',
-    'security',
-    'evaluation',
-    'trust',
-    'MCP',
-    'agents',
-    'assurance',
-    'open-source',
-    'AI models',
-    'AI agents',
-    'Model Context Protocol',
-    'AI transparency',
-    'AI safety',
+    // Tier 1: Category-Defining Terms
+    'agentic AI security',
+    'AI agent security',
+    'autonomous AI security',
+    'AI-SPM',
+    'agent security posture',
+    'agent security posture management',
+    // Tier 2: Enterprise Agent Platforms
+    'Copilot Studio security',
+    'AgentForce security',
+    'ServiceNow AI agent security',
+    'Bedrock agents security',
+    'Vertex AI agents security',
+    'LangChain security',
+    'LangGraph security',
+    'CrewAI security',
+    // Tier 3: Agent Threat Terms
+    'agent prompt injection',
+    'agent privilege escalation',
+    'multi-agent attack',
+    'agent memory poisoning',
+    'MCP exploitation',
+    // Tier 4: Agent Identity & Access
+    'AI agent identity',
+    'agent identity management',
+    'agent authentication',
+    'agent authorization',
+    // Tier 5: Agent Governance & Compliance
+    'AI agent governance',
+    'EU AI Act agents',
+    'AI agent compliance',
+    // Tier 6: Agent Operations
+    'AI agent monitoring',
+    'agent observability',
+    'agent red teaming',
+    // Tier 7: MCP Security
+    'MCP security',
+    'Model Context Protocol security',
+    'MCP server security',
+    'MCP vulnerabilities',
+    // Guard0 & TrustVector Branding
+    'Guard0',
+    'TrustVector',
+    'AI trust evaluation',
+    'AI security assessment',
   ],
-  authors: [{ name: 'TrustVector Team' }],
+  authors: [{ name: 'Guard0' }, { name: 'TrustVector Team' }],
+  creator: 'Guard0',
+  publisher: 'Guard0',
   icons: {
     icon: '/favicon.svg',
   },
+  metadataBase: new URL('https://trustvector.guard0.ai'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'TrustVector - AI Trust Directory',
-    description: 'Evidence-based evaluations of 106 AI systems across 5 trust dimensions',
+    title: 'TrustVector by Guard0 - AI Agent Security & Trust Directory',
+    description:
+      'Guard0 TrustVector: The definitive agentic AI security resource. Evaluate 100+ AI agents, models, and MCPs for security, privacy, and trust. AI-SPM leader.',
     type: 'website',
-    siteName: 'TrustVector',
+    siteName: 'TrustVector by Guard0',
+    url: 'https://trustvector.guard0.ai',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TrustVector - AI Trust Directory',
-    description: 'Evidence-based evaluations of 106 AI systems across 5 trust dimensions',
+    title: 'TrustVector by Guard0 - AI Agent Security',
+    description:
+      'Guard0 TrustVector: Agentic AI security evaluations for 100+ AI systems. The leading AI-SPM and agent security posture management resource.',
+    creator: '@Guard0Security',
+    site: '@Guard0Security',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'verification-token-here',
+  },
+  category: 'technology',
 };
 
 export default function RootLayout({
@@ -112,12 +169,12 @@ export default function RootLayout({
                 <div className="md:col-span-2 space-y-4">
                   <Logo size="sm" variant="full" />
                   <p className="text-sm text-muted-foreground max-w-md">
-                    Open-source, evidence-based evaluations of AI systems across security, privacy,
-                    performance, trust, and operational excellence.
+                    Guard0 TrustVector: The definitive agentic AI security resource. Evidence-based evaluations
+                    for AI agents, models, and MCPs. AI-SPM and agent security posture management.
                   </p>
                   {/* Playful annotation */}
                   <p className="text-xs italic text-muted-foreground" style={{ fontFamily: 'Courier New, monospace' }}>
-                    &quot;Trust, but verify.&quot; — especially with AI
+                    &quot;Trust, but verify.&quot; — especially with AI agents
                   </p>
                 </div>
 
@@ -169,10 +226,11 @@ export default function RootLayout({
               {/* Bottom bar */}
               <div className="mt-8 pt-8 border-t-2 border-dashed border-foreground/20 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <p className="text-sm text-muted-foreground">
-                  © 2025 TrustVector. Powered and supported by{' '}
+                  © 2025 TrustVector by{' '}
                   <a href="https://guard0.ai" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">
-                    Guard0.ai
+                    Guard0
                   </a>
+                  {' '}- The Agentic AI Security Company
                 </p>
                 <div className="flex items-center gap-4">
                   <a

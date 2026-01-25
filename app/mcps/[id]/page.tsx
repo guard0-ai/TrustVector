@@ -7,10 +7,58 @@ import { notFound } from 'next/navigation';
 import { ExportPDFButton } from '@/components/export-pdf-button';
 import { ChevronRight, ExternalLink, CheckCircle, AlertTriangle, Info, Star } from 'lucide-react';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 export function generateStaticParams() {
   const mcps = getEntitiesByType('mcp');
   return mcps.map((mcp) => ({ id: mcp.id }));
+}
+
+export function generateMetadata({ params }: { params: { id: string } }): Metadata {
+  const entity = getEntityById(params.id);
+  if (!entity) {
+    return {
+      title: 'MCP Not Found | Guard0 TrustVector',
+    };
+  }
+
+  const score = calculateOverallScore(entity);
+  const title = `${entity.name} MCP Security Evaluation | Guard0 TrustVector`;
+  const description = `Guard0 TrustVector: ${entity.name} by ${entity.provider} - Model Context Protocol security assessment with ${score}/100 trust score. MCP security evaluation for secure AI agent deployments.`;
+
+  return {
+    title,
+    description,
+    keywords: [
+      entity.name,
+      `${entity.name} security`,
+      `${entity.provider} MCP security`,
+      'MCP security',
+      'Model Context Protocol security',
+      'MCP server security',
+      'MCP vulnerabilities',
+      'secure MCP deployment',
+      'Guard0',
+      'TrustVector',
+      ...(entity.tags || []),
+    ],
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      siteName: 'TrustVector by Guard0',
+      url: `https://trustvector.guard0.ai/mcps/${entity.id}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${entity.name} MCP Security | Guard0`,
+      description: `MCP security evaluation: ${entity.name} scored ${score}/100. Model Context Protocol security by Guard0.`,
+      creator: '@Guard0Security',
+    },
+    alternates: {
+      canonical: `/mcps/${entity.id}`,
+    },
+  };
 }
 
 function getScoreClasses(score: number): { bg: string; text: string; label: string } {

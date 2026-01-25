@@ -1,0 +1,21 @@
+# Guard0 TrustVector - AI Agent Security Directory
+# https://trustvector.guard0.ai
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://trustvector.guard0.ai/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /

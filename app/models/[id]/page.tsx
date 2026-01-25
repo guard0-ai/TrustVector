@@ -7,10 +7,57 @@ import { notFound } from 'next/navigation';
 import { ExportPDFButton } from '@/components/export-pdf-button';
 import { ChevronRight, ExternalLink, CheckCircle, AlertTriangle, Info, Star } from 'lucide-react';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 export function generateStaticParams() {
   const models = getEntitiesByType('model');
   return models.map((model) => ({ id: model.id }));
+}
+
+export function generateMetadata({ params }: { params: { id: string } }): Metadata {
+  const entity = getEntityById(params.id);
+  if (!entity) {
+    return {
+      title: 'Model Not Found | Guard0 TrustVector',
+    };
+  }
+
+  const score = calculateOverallScore(entity);
+  const title = `${entity.name} Security & Trust Evaluation | Guard0 TrustVector`;
+  const description = `Guard0 TrustVector: ${entity.name} by ${entity.provider} - AI model security assessment with ${score}/100 trust score. Agentic AI security evaluation across security, privacy, performance, and compliance dimensions.`;
+
+  return {
+    title,
+    description,
+    keywords: [
+      entity.name,
+      `${entity.name} security`,
+      `${entity.provider} AI security`,
+      'AI model security',
+      'LLM security evaluation',
+      'agentic AI security',
+      'AI-SPM',
+      'Guard0',
+      'TrustVector',
+      ...(entity.tags || []),
+    ],
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      siteName: 'TrustVector by Guard0',
+      url: `https://trustvector.guard0.ai/models/${entity.id}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${entity.name} - Guard0 TrustVector`,
+      description: `AI model security evaluation: ${entity.name} scored ${score}/100. Powered by Guard0.`,
+      creator: '@Guard0Security',
+    },
+    alternates: {
+      canonical: `/models/${entity.id}`,
+    },
+  };
 }
 
 // Get score styling
