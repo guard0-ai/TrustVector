@@ -145,7 +145,7 @@ export default function RootLayout({
 
                   {/* GitHub button with shadow */}
                   <a
-                    href="https://github.com/JBAhire/trust-vector"
+                    href="https://github.com/guard0-ai/TrustVector"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ml-2 flex items-center gap-2 px-4 py-2 text-sm font-bold bg-foreground text-background border-2 border-foreground transition-all hover:translate-x-[-2px] hover:translate-y-[-2px]"
@@ -189,7 +189,7 @@ export default function RootLayout({
                     </li>
                     <li>
                       <a
-                        href="https://github.com/JBAhire/trust-vector"
+                        href="https://github.com/guard0-ai/TrustVector"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-foreground transition-colors"
@@ -211,7 +211,7 @@ export default function RootLayout({
                   <ul className="space-y-2 text-sm">
                     <li>
                       <a
-                        href="https://github.com/JBAhire/trust-vector/blob/main/LICENSE"
+                        href="https://github.com/guard0-ai/TrustVector/blob/main/LICENSE"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-foreground transition-colors"
@@ -234,7 +234,7 @@ export default function RootLayout({
                 </p>
                 <div className="flex items-center gap-4">
                   <a
-                    href="https://github.com/JBAhire/trust-vector"
+                    href="https://github.com/guard0-ai/TrustVector"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors"
