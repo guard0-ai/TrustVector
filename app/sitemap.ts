@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getAllEntities } from '@/lib/data';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://trustvector.guard0.ai';
   const entities = getAllEntities();
