@@ -3,12 +3,11 @@
   "type": "model",
   "name": "Gemma 4",
   "provider": "Google",
-  "version": "gemma-4",
+  "version": "4.0",
   "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
   "description": "Google's open-weight family released April 2026 under Apache 2.0 (a shift from the custom Gemma license). Spans E2B/E4B edge models with 128K context and native audio up to a 31B dense model with 256K context. The 31B scores ~1452 on LMArena, No. 3 among open models.",
   "website": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
-
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 82,
@@ -114,7 +113,6 @@
       },
       "notes": "Strongest open-weight showing from Google to date: 31B at ~1452 LMArena (No. 3 open). MoE 26B-A4B offers near-dense quality at 4B active params. Performance below proprietary frontier but excellent per-parameter efficiency."
     },
-
     "security": {
       "overall_score": 78,
       "criteria": {
@@ -191,7 +189,6 @@
       },
       "notes": "Security profile is deployment-dependent: excellent data isolation when self-hosted, but guardrails are removable and there is no managed abuse filtering unless the deployer adds it (e.g., ShieldGemma, Vertex AI)."
     },
-
     "privacy_compliance": {
       "overall_score": 84,
       "criteria": {
@@ -282,7 +279,6 @@
       },
       "notes": "Best-in-class data sovereignty: nothing leaves deployer infrastructure. The trade-off is that compliance certifications are not inherited from the model and must be built or bought by the deployer."
     },
-
     "trust_transparency": {
       "overall_score": 80,
       "criteria": {
@@ -387,7 +383,6 @@
       },
       "notes": "High transparency by open-model standards: published technical report, architecture disclosure (including MoE active-parameter counts), and fully auditable weights. Apache 2.0 relicensing further reduces legal opacity."
     },
-
     "operational_excellence": {
       "overall_score": 80,
       "criteria": {
@@ -483,7 +478,7 @@
               "source": "Google Gemma 4 Announcement",
               "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
               "date": "2026-04-02",
-              "value": "Apache 2.0 — a shift from the custom Gemma license, removing use-restriction ambiguity for commercial deployment"
+              "value": "Apache 2.0 \u2014 a shift from the custom Gemma license, removing use-restriction ambiguity for commercial deployment"
             }
           ],
           "methodology": "License analysis; Apache 2.0 is OSI-approved with no usage restrictions",
@@ -493,50 +488,65 @@
       "notes": "Apache 2.0 relicensing is the headline trust improvement: prior Gemma generations carried custom-license use restrictions. Operational burden (monitoring, scaling, support) falls on the deployer, as with any open-weight model."
     }
   },
-
   "use_case_ratings": {
     "code-generation": {
       "overall": 80,
       "notes": "Capable for an open model, especially 31B with 256K context, but well below frontier proprietary coding models.",
-      "alternatives": ["qwen3-5", "llama-4-maverick"]
+      "alternatives": [
+        "qwen3-5",
+        "llama-4-maverick"
+      ]
     },
     "customer-support": {
       "overall": 82,
       "notes": "26B-A4B MoE (4B active) gives strong quality at low serving cost for high-volume support; E4B enables on-device assistants.",
-      "alternatives": ["gemini-3-flash", "qwen3-5"]
+      "alternatives": [
+        "gemini-3-flash",
+        "qwen3-5"
+      ]
     },
     "content-creation": {
       "overall": 80,
       "notes": "Solid drafting quality at 31B (~1452 LMArena); fully private content pipelines possible.",
-      "alternatives": ["llama-4-maverick", "gemini-3-5-flash"]
+      "alternatives": [
+        "llama-4-maverick",
+        "gemini-3-5-flash"
+      ]
     },
     "education": {
       "overall": 81,
       "notes": "E2B/E4B with native audio enable offline, on-device tutoring in low-connectivity settings.",
-      "alternatives": ["gemma-3-27b", "gemini-3-flash"]
+      "alternatives": [
+        "gemma-3-27b",
+        "gemini-3-flash"
+      ]
     },
     "healthcare": {
       "overall": 76,
       "notes": "Self-hosting suits strict data sovereignty (PHI never leaves infrastructure), but deployer carries the full compliance and accuracy-validation burden.",
-      "alternatives": ["claude-opus-4-8", "gemini-3-1-pro"]
+      "alternatives": [
+        "claude-opus-4-8",
+        "gemini-3-1-pro"
+      ]
     },
     "research-assistant": {
       "overall": 78,
       "notes": "256K context on 31B handles long documents; auditable weights suit reproducible research. Reasoning depth below frontier.",
-      "alternatives": ["gemini-3-1-pro", "qwen3-5"]
+      "alternatives": [
+        "gemini-3-1-pro",
+        "qwen3-5"
+      ]
     }
   },
-
   "strengths": [
-    "Apache 2.0 license — removes custom-license restrictions of prior Gemma generations",
+    "Apache 2.0 license \u2014 removes custom-license restrictions of prior Gemma generations",
     "Top-3 open model: 31B at ~1452 LMArena Elo",
     "Efficient MoE: 26B-A4B reaches ~1441 Elo with only 4B active parameters",
     "Full data sovereignty: self-hosted inference, zero data leaves deployer",
     "Edge-capable E2B/E4B variants with 128K context and native audio",
-    "256K context on 12B/26B/31B variants — large for open weights",
+    "256K context on 12B/26B/31B variants \u2014 large for open weights",
     "Multimodal input: text, image, and video"
   ],
-
   "limitations": [
     "No inherited compliance certifications; deployer builds or buys SOC 2/HIPAA posture",
     "Safety guardrails removable via fine-tuning (inherent to open weights)",
@@ -545,7 +555,6 @@
     "Operational burden (serving, scaling, monitoring) falls on deployer",
     "Performance varies significantly with quantization choices"
   ],
-
   "best_for": [
     "Data-sovereign deployments (on-prem, air-gapped, regulated environments)",
     "On-device and edge AI (E2B/E4B with native audio)",
@@ -553,13 +562,11 @@
     "Fine-tuning and domain adaptation under a permissive license",
     "Research requiring auditable, reproducible model weights"
   ],
-
   "not_recommended_for": [
     "Frontier-grade reasoning or coding without fine-tuning",
     "Teams wanting a managed API with SLAs and built-in safety filtering",
     "Compliance-critical workloads without in-house security engineering"
   ],
-
   "metadata": {
     "pricing": {
       "input": "Free (open weights; compute costs only)",
@@ -569,8 +576,16 @@
     },
     "context_window": 262144,
     "max_output": 32768,
-    "languages": ["English", "140+ languages"],
-    "modalities": ["text", "image (input)", "video (input)", "audio (input, E2B/E4B)"],
+    "languages": [
+      "English",
+      "140+ languages"
+    ],
+    "modalities": [
+      "text",
+      "image (input)",
+      "video (input)",
+      "audio (input, E2B/E4B)"
+    ],
     "api_endpoint": "https://huggingface.co/google",
     "open_source": true,
     "architecture": "Family: E2B (2.3B effective) and E4B (4.5B) edge models; 12B dense; 26B-A4B MoE (4B active); 31B dense",
@@ -578,9 +593,12 @@
     "knowledge_cutoff": "Late 2025 (not officially confirmed)",
     "release_date": "2026-04-02"
   },
-
-  "related_entities": ["gemma-3-27b", "gemini-3-1-pro", "llama-4-maverick", "qwen3-5"],
-
+  "related_entities": [
+    "gemma-3-27b",
+    "gemini-3-1-pro",
+    "llama-4-maverick",
+    "qwen3-5"
+  ],
   "tags": [
     "open-source",
     "apache-2-0",
