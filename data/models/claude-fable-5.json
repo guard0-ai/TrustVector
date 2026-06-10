@@ -3,12 +3,11 @@
   "type": "model",
   "name": "Claude Fable 5",
   "provider": "Anthropic",
-  "version": "claude-fable-5",
+  "version": "20260609",
   "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
   "description": "Anthropic's new top-tier model above Opus and the first generally available Mythos-class model. State-of-the-art on nearly all tested benchmarks at launch, including the highest frontier score on Cognition's FrontierCode. Adaptive thinking only, 1M context, 128K output.",
   "website": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 98,
@@ -135,7 +134,6 @@
       },
       "notes": "Current highest-performing model in the registry. SOTA on nearly all tested benchmarks at launch, including the top frontier score on Cognition's FrontierCode. Latency data is preliminary (released 2026-06-09)."
     },
-
     "security": {
       "overall_score": 92,
       "criteria": {
@@ -212,7 +210,6 @@
       },
       "notes": "Frontier-tier safety posture; the unrestricted Mythos-class research model (Claude Mythos 5) is limited to research partners while Fable 5 is the generally available variant. Independent red-team coverage still accumulating at launch."
     },
-
     "privacy_compliance": {
       "overall_score": 93,
       "criteria": {
@@ -303,7 +300,6 @@
       },
       "notes": "Same strong Anthropic compliance posture as the Opus line: SOC 2 Type II, GDPR, HIPAA-eligible, training opt-out by default for API traffic."
     },
-
     "trust_transparency": {
       "overall_score": 88,
       "criteria": {
@@ -409,7 +405,6 @@
       },
       "notes": "Strong documentation and guardrails. Thinking content is omitted by default (summarized display is opt-in), which slightly reduces out-of-the-box reasoning visibility compared to older Opus defaults."
     },
-
     "operational_excellence": {
       "overall_score": 91,
       "criteria": {
@@ -426,7 +421,7 @@
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
           "last_verified": "2026-06-10",
-          "notes": "One new breaking change vs Opus 4.8: explicit thinking disabled returns 400 — omit the thinking parameter instead. No temperature/top_p sampling parameters."
+          "notes": "One new breaking change vs Opus 4.8: explicit thinking disabled returns 400 \u2014 omit the thinking parameter instead. No temperature/top_p sampling parameters."
         },
         "sdk_quality": {
           "score": 93,
@@ -492,7 +487,7 @@
               "source": "Anthropic Launch Announcement",
               "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
               "date": "2026-06-09",
-              "value": "Available on the Anthropic API at launch; first generally available Mythos-class model — cloud-provider rollout following"
+              "value": "Available on the Anthropic API at launch; first generally available Mythos-class model \u2014 cloud-provider rollout following"
             }
           ],
           "methodology": "Analysis of third-party integrations and availability surfaces",
@@ -517,60 +512,88 @@
       "notes": "Same API surface as Opus 4.7/4.8 makes adoption straightforward for existing Claude users. Day-old release means ecosystem and operational track record are still maturing."
     }
   },
-
   "use_case_ratings": {
     "code-generation": {
       "overall": 98,
       "notes": "Highest frontier score on Cognition's FrontierCode and SOTA on tested coding benchmarks at launch. Best-in-registry for the hardest software engineering work; xhigh effort recommended.",
-      "alternatives": ["claude-opus-4-8", "gpt-5-3-codex"]
+      "alternatives": [
+        "claude-opus-4-8",
+        "gpt-5-3-codex"
+      ]
     },
     "customer-support": {
       "overall": 88,
       "notes": "Exceptional quality but premium pricing ($10/$50) and latency make it overkill for routine support; reserve for complex escalations.",
-      "alternatives": ["claude-sonnet-4-6", "claude-haiku-4-5"]
+      "alternatives": [
+        "claude-sonnet-4-6",
+        "claude-haiku-4-5"
+      ]
     },
     "content-creation": {
       "overall": 95,
       "notes": "Top-tier long-form writing with strong structure and voice control. Effort parameter lets teams trade cost for polish on flagship pieces.",
-      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+      "alternatives": [
+        "claude-opus-4-8",
+        "gpt-5-5"
+      ]
     },
     "data-analysis": {
       "overall": 97,
       "notes": "SOTA quantitative reasoning with 1M context for whole-dataset and multi-document analysis.",
-      "alternatives": ["claude-opus-4-8", "gemini-3-1-pro"]
+      "alternatives": [
+        "claude-opus-4-8",
+        "gemini-3-1-pro"
+      ]
     },
     "research-assistant": {
       "overall": 97,
       "notes": "Best-in-registry deep research: 1M context, adaptive thinking, and strong synthesis across large corpora.",
-      "alternatives": ["claude-opus-4-8", "gemini-3-1-pro"]
+      "alternatives": [
+        "claude-opus-4-8",
+        "gemini-3-1-pro"
+      ]
     },
     "legal-compliance": {
       "overall": 93,
       "notes": "Strong privacy posture (SOC 2 Type II, GDPR, HIPAA-eligible) and excellent long-document analysis; launch-recency may matter for conservative legal teams.",
-      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
+      "alternatives": [
+        "claude-opus-4-8",
+        "claude-sonnet-4-6"
+      ]
     },
     "healthcare": {
       "overall": 91,
       "notes": "HIPAA eligible with training opt-out by default. Highest accuracy in the registry for clinical reasoning, though real-world validation is still early post-launch.",
-      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
+      "alternatives": [
+        "claude-opus-4-8",
+        "claude-sonnet-4-6"
+      ]
     },
     "financial-analysis": {
       "overall": 96,
       "notes": "SOTA quantitative and multi-step reasoning; 1M context handles full filings and model workbooks in one pass.",
-      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+      "alternatives": [
+        "claude-opus-4-8",
+        "gpt-5-5"
+      ]
     },
     "education": {
       "overall": 94,
       "notes": "Excellent explanations with effort-adjustable depth; premium pricing limits high-volume tutoring deployments.",
-      "alternatives": ["claude-sonnet-4-6", "gpt-5-5"]
+      "alternatives": [
+        "claude-sonnet-4-6",
+        "gpt-5-5"
+      ]
     },
     "creative-writing": {
       "overall": 93,
-      "notes": "Strong narrative craft and stylistic range. No temperature/top_p controls — variance must be elicited via prompting.",
-      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+      "notes": "Strong narrative craft and stylistic range. No temperature/top_p controls \u2014 variance must be elicited via prompting.",
+      "alternatives": [
+        "claude-opus-4-8",
+        "gpt-5-5"
+      ]
     }
   },
-
   "strengths": [
     "State-of-the-art on nearly all tested benchmarks at launch; highest-performing model in the registry",
     "Highest frontier score on Cognition's FrontierCode coding benchmark",
@@ -579,29 +602,25 @@
     "Adaptive thinking with effort parameter (low/medium/high/xhigh/max) for cost/quality control",
     "Strong compliance posture: SOC 2 Type II, GDPR, HIPAA-eligible, training opt-out by default for API"
   ],
-
   "limitations": [
     "Premium pricing at $10/$50 per 1M tokens (2x Opus 4.8)",
-    "Adaptive thinking only — no manual thinking budgets, and no temperature/top_p sampling parameters",
+    "Adaptive thinking only \u2014 no manual thinking budgets, and no temperature/top_p sampling parameters",
     "Explicit thinking-disabled requests return 400 (omit the thinking parameter instead)",
-    "Released 2026-06-09 — independent benchmark replication and operational track record still limited",
+    "Released 2026-06-09 \u2014 independent benchmark replication and operational track record still limited",
     "Higher latency than Sonnet/Haiku tiers, especially at xhigh/max effort"
   ],
-
   "best_for": [
     "Frontier-difficulty software engineering and long-horizon agentic coding",
     "Deep research and analysis over very large corpora (1M context)",
     "High-stakes reasoning where accuracy justifies premium cost",
     "Enterprise workloads requiring strong compliance with top-tier capability"
   ],
-
   "not_recommended_for": [
     "Cost-sensitive high-volume inference (use Sonnet or Haiku tiers)",
     "Real-time applications requiring sub-second latency",
     "Workflows that depend on temperature/top_p sampling controls",
     "Audio processing applications"
   ],
-
   "metadata": {
     "pricing": {
       "input": "$10.00 per 1M tokens",
@@ -624,7 +643,12 @@
       "Arabic",
       "Hindi"
     ],
-    "modalities": ["text", "image (input)", "document", "computer-use"],
+    "modalities": [
+      "text",
+      "image (input)",
+      "document",
+      "computer-use"
+    ],
     "api_endpoint": "https://api.anthropic.com/v1/messages",
     "api_model_id": "claude-fable-5",
     "open_source": false,
@@ -633,9 +657,13 @@
     "knowledge_cutoff": "Not disclosed",
     "release_date": "2026-06-09"
   },
-
-  "related_entities": ["claude-opus-4-8", "claude-opus-4-7", "claude-sonnet-4-6", "gpt-5-5", "gemini-3-1-pro"],
-
+  "related_entities": [
+    "claude-opus-4-8",
+    "claude-opus-4-7",
+    "claude-sonnet-4-6",
+    "gpt-5-5",
+    "gemini-3-1-pro"
+  ],
   "tags": [
     "coding",
     "reasoning",
