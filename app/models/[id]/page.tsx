@@ -14,8 +14,9 @@ export function generateStaticParams() {
   return models.map((model) => ({ id: model.id }));
 }
 
-export function generateMetadata({ params }: { params: { id: string } }): Metadata {
-  const entity = getEntityById(params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const entity = getEntityById(id);
   if (!entity) {
     return {
       title: 'Model Not Found | Guard0 TrustVector',
@@ -69,8 +70,9 @@ function getScoreClasses(score: number): { bg: string; text: string; label: stri
   return { bg: 'bg-red-500', text: 'text-white', label: 'Poor' };
 }
 
-export default function ModelDetailPage({ params }: { params: { id: string } }) {
-  const entity = getEntityById(params.id);
+export default async function ModelDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const entity = getEntityById(id);
 
   if (!entity || entity.type !== 'model') {
     notFound();
