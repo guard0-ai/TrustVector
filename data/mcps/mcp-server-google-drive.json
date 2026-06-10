@@ -2,15 +2,15 @@
   "id": "mcp-server-google-drive",
   "type": "mcp",
   "name": "MCP Google Drive Server",
-  "provider": "Community",
+  "provider": "Anthropic (Archived)",
   "version": "1.0.0",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "MCP server enabling AI models to access, search, and manage Google Drive files and folders. Supports document reading, file operations, and collaboration features through the Model Context Protocol. Essential for AI-powered document workflows but requires careful permission management.",
+  "description": "ARCHIVED: Former Anthropic reference MCP server (gdrive) for accessing and searching Google Drive files, archived 2025-05-29 to the servers-archived repository and no longer maintained; the archive README provides no security guarantees. The underlying Google Drive API remains reliable, but this server receives no fixes and is not recommended for new deployments.",
   "website": "https://developers.google.com/drive",
   "trust_vector": {
     "performance_reliability": {
-      "overall_score": 86,
+      "overall_score": 85,
       "criteria": {
         "file_operation_reliability": {
           "score": 90,
@@ -85,7 +85,7 @@
       }
     },
     "security": {
-      "overall_score": 76,
+      "overall_score": 78,
       "criteria": {
         "oauth_security": {
           "score": 88,
@@ -235,7 +235,7 @@
       }
     },
     "trust_transparency": {
-      "overall_score": 82,
+      "overall_score": 77,
       "criteria": {
         "documentation_quality": {
           "score": 85,
@@ -266,18 +266,18 @@
           "last_verified": "2025-11-08"
         },
         "mcp_implementation_clarity": {
-          "score": 78,
-          "confidence": "medium",
+          "score": 58,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Community Implementation",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Community-maintained implementation with variable documentation quality"
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "Reference gdrive server archived 2025-05-29; repository read-only, README states no security guarantees are provided for archived servers"
             }
           ],
           "methodology": "Implementation documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-06-10"
         },
         "permission_transparency": {
           "score": 80,
@@ -296,7 +296,7 @@
       }
     },
     "operational_excellence": {
-      "overall_score": 81,
+      "overall_score": 76,
       "criteria": {
         "ease_of_setup": {
           "score": 75,
@@ -341,7 +341,7 @@
           "last_verified": "2025-11-08"
         },
         "feature_coverage": {
-          "score": 78,
+          "score": 55,
           "confidence": "medium",
           "evidence": [
             {
@@ -349,10 +349,16 @@
               "url": "https://github.com/modelcontextprotocol/servers",
               "date": "2025-11-16",
               "value": "Covers file read/write, search, and basic sharing operations"
+            },
+            {
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "Archived 2025-05-29; feature set frozen, no updates for Google Drive API or MCP specification changes"
             }
           ],
           "methodology": "Feature completeness assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-06-10"
         },
         "cost": {
           "score": 80,
@@ -385,7 +391,7 @@
     "Complex OAuth setup process requiring Google Cloud project",
     "AI can access and modify all files within granted permissions",
     "Subject to Google API rate limits and quotas",
-    "Community-maintained MCP server with variable support quality"
+    "ARCHIVED 2025-05-29: reference gdrive server unmaintained with no security guarantees; prefer actively maintained Google Drive MCP alternatives"
   ],
   "metadata": {
     "license": "Varies (API proprietary, MCP implementation varies)",
@@ -403,7 +409,8 @@
     "api_version": "Google Drive API v3",
     "rate_limits": "1000 queries per 100 seconds (default)",
     "first_release": "2024-11",
-    "maintained_by": "Community"
+    "maintained_by": "None (Archived 2025-05-29)",
+    "repository": "https://github.com/modelcontextprotocol/servers-archived"
   },
   "use_case_ratings": {
     "code-generation": {
@@ -456,6 +463,8 @@
     "storage",
     "google",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "archived",
+    "unmaintained"
   ]
 }

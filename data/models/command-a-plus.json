@@ -1,0 +1,639 @@
+{
+  "id": "command-a-plus",
+  "type": "model",
+  "name": "Command A+",
+  "provider": "Cohere",
+  "version": "20260520",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Cohere's Apache 2.0 open-weight 218B sparse MoE (25B active) unifying Command A, A Reasoning, A Vision, and A Translate. Runs on 2xH100 or a single B200, supports 48 languages, and ships native citations with grounding spans for verifiable RAG.",
+  "website": "https://cohere.com/blog/command-a-plus",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 89,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Command A+ launch announcement",
+              "url": "https://cohere.com/blog/command-a-plus",
+              "date": "2026-05-20",
+              "value": "Solid coding performance; competitive with open peers but not the headline focus"
+            }
+          ],
+          "methodology": "Vendor-reported coding benchmarks; independent replication still emerging three weeks post-release",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Command A+ launch announcement",
+              "url": "https://cohere.com/blog/command-a-plus",
+              "date": "2026-05-20",
+              "value": "Unifies Command A Reasoning capabilities; multimodal reasoning over text and images"
+            }
+          ],
+          "methodology": "Vendor-reported reasoning benchmarks pending broad independent verification",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Command A+ launch announcement",
+              "url": "https://cohere.com/blog/command-a-plus",
+              "date": "2026-05-20",
+              "value": "Strong enterprise-task performance across 48 languages; unifies four specialist Command A variants"
+            }
+          ],
+          "methodology": "Review of vendor benchmarks emphasizing enterprise RAG, translation, and multilingual tasks",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere Documentation",
+              "url": "https://docs.cohere.com/",
+              "date": "2026-05-20",
+              "value": "Enterprise focus on reproducible, grounded outputs; structured citation format is deterministic"
+            }
+          ],
+          "methodology": "Review of grounded-generation behavior and enterprise consistency claims",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "2.0s",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-06-01",
+              "value": "Typical response ~2.0s; 25B active parameters keep serving fast on 2xH100"
+            }
+          ],
+          "methodology": "Median latency for API requests with standard prompt sizes",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p95": {
+          "value": "4.5s",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-06-01",
+              "value": "p95 ~4.5s across diverse workloads"
+            }
+          ],
+          "methodology": "95th percentile response time across diverse workloads",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "256,000 tokens",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere model documentation",
+              "url": "https://docs.cohere.com/docs/models",
+              "date": "2026-05-20",
+              "value": "256K context consistent with prior Command A; A+ spec inferred pending explicit confirmation"
+            }
+          ],
+          "methodology": "Provider documentation; A+ figure carried from Command A line pending explicit spec sheet",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 97,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cohere Status Page",
+              "url": "https://status.cohere.com/",
+              "date": "2026-06-01",
+              "value": "Strong historical availability; private/VPC deployment removes dependence on shared API"
+            }
+          ],
+          "methodology": "Historical uptime data from official status page",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Released 2026-05-20, unifying Command A + A Reasoning + A Vision + A Translate into one model. Efficient serving (25B active, 2xH100 or 1xB200). Benchmarks are vendor-reported and independent verification is still emerging."
+    },
+
+    "security": {
+      "overall_score": 87,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere security documentation",
+              "url": "https://cohere.com/security",
+              "date": "2026-05-20",
+              "value": "Enterprise hardening program; grounded-RAG design constrains injection surface in retrieval workflows"
+            }
+          ],
+          "methodology": "Review of vendor security documentation and enterprise deployment guidance against OWASP LLM01 patterns",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere responsible AI documentation",
+              "url": "https://cohere.com/responsibility",
+              "date": "2026-05-20",
+              "value": "Enterprise-grade safety tuning; open weights mean self-hosted derivatives can strip guardrails"
+            }
+          ],
+          "methodology": "Testing against adversarial prompt datasets; deployer-dependent for self-hosted use",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cohere enterprise deployment options",
+              "url": "https://cohere.com/deployment-options",
+              "date": "2026-05-20",
+              "value": "Private deployment and VPC options keep data fully inside customer infrastructure"
+            }
+          ],
+          "methodology": "Analysis of deployment isolation options and data handling practices",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere responsible AI documentation",
+              "url": "https://cohere.com/responsibility",
+              "date": "2026-05-20",
+              "value": "Safety filtering tuned for enterprise content categories"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cohere security page",
+              "url": "https://cohere.com/security",
+              "date": "2026-05-20",
+              "value": "SOC 2 audited platform, API key auth, HTTPS only, SSO/SCIM for enterprise, VPC endpoints"
+            }
+          ],
+          "methodology": "Review of API security features, certifications, and enterprise controls",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Strongest security posture among current open-weight releases thanks to Cohere's enterprise platform: SOC 2, VPC/private deployment, and a grounded-generation design that narrows injection surface in RAG."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 89,
+      "criteria": {
+        "data_residency": {
+          "value": "US, EU, and customer-controlled (private/VPC or self-hosted)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cohere deployment options",
+              "url": "https://cohere.com/deployment-options",
+              "date": "2026-05-20",
+              "value": "SaaS, cloud-marketplace, VPC, and on-premises deployment; Apache 2.0 weights allow any-jurisdiction self-hosting"
+            }
+          ],
+          "methodology": "Review of deployment documentation and residency options",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cohere privacy policy",
+              "url": "https://cohere.com/privacy",
+              "date": "2026-05-20",
+              "value": "Enterprise data not used for training by default under enterprise terms"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and enterprise data usage terms",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "Configurable; zero retention available in private/VPC and self-hosted deployments",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cohere enterprise documentation",
+              "url": "https://cohere.com/deployment-options",
+              "date": "2026-05-20",
+              "value": "Private deployments process data entirely within customer environment"
+            }
+          ],
+          "methodology": "Review of terms of service and deployment-dependent retention",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere security documentation",
+              "url": "https://cohere.com/security",
+              "date": "2026-05-20",
+              "value": "Enterprise data-handling guidance; customer retains redaction responsibility, but isolation options reduce exposure"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cohere security and trust page",
+              "url": "https://cohere.com/security",
+              "date": "2026-05-20",
+              "value": "SOC 2 Type II, GDPR alignment, enterprise agreements; long-standing enterprise compliance posture"
+            }
+          ],
+          "methodology": "Verification of compliance certifications and audit reports",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apache 2.0 open weights",
+              "url": "https://cohere.com/blog/command-a-plus",
+              "date": "2026-05-20",
+              "value": "Self-hosting on 2xH100 or 1xB200 gives complete data control; VPC option for managed zero-retention"
+            }
+          ],
+          "methodology": "Review of self-hosting and private deployment options enabling zero retention",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Best-in-class privacy posture for an open-weight model: Western jurisdiction, SOC 2, and a full spectrum from SaaS to on-premises. The rare combination of open weights plus enterprise compliance is its core differentiator."
+    },
+
+    "trust_transparency": {
+      "overall_score": 84,
+      "criteria": {
+        "explainability": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Command A+ launch announcement",
+              "url": "https://cohere.com/blog/command-a-plus",
+              "date": "2026-05-20",
+              "value": "Native citations with grounding spans tie each claim to source passages — verifiable RAG by construction"
+            }
+          ],
+          "methodology": "Evaluation of citation fidelity and grounding-span behavior in retrieval workflows",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere grounded generation documentation",
+              "url": "https://docs.cohere.com/docs/retrieval-augmented-generation-rag",
+              "date": "2026-05-20",
+              "value": "Grounded mode constrains generation to retrieved evidence, materially reducing unsupported claims"
+            }
+          ],
+          "methodology": "Testing on grounded QA workloads; ungrounded closed-book use performs closer to peers",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere responsible AI documentation",
+              "url": "https://cohere.com/responsibility",
+              "date": "2026-05-20",
+              "value": "Published responsibility framework and multilingual fairness work across 48 languages"
+            }
+          ],
+          "methodology": "Review of published bias evaluations and responsibility framework",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Grounding span behavior",
+              "url": "https://docs.cohere.com/docs/retrieval-augmented-generation-rag",
+              "date": "2026-05-20",
+              "value": "Absence of grounding spans signals unsupported content, giving a usable uncertainty proxy in RAG"
+            }
+          ],
+          "methodology": "Assessment of confidence expression and grounding-span signaling",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Command A+ release materials",
+              "url": "https://cohere.com/blog/command-a-plus",
+              "date": "2026-05-20",
+              "value": "Clear documentation of architecture (218B sparse MoE / 25B active), hardware targets, languages, and unified capabilities"
+            }
+          ],
+          "methodology": "Review of documentation completeness and clarity",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere public materials",
+              "url": "https://cohere.com/blog/command-a-plus",
+              "date": "2026-05-20",
+              "value": "General training approach described; detailed data sources not disclosed (industry standard)"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere responsible AI documentation",
+              "url": "https://cohere.com/responsibility",
+              "date": "2026-05-20",
+              "value": "Enterprise safety tuning with configurable safety modes"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms and configurability",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Native citations and grounding spans are a genuine trust differentiator: outputs in RAG mode are verifiable against source passages by construction, not post-hoc."
+    },
+
+    "operational_excellence": {
+      "overall_score": 88,
+      "criteria": {
+        "api_design_quality": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cohere API Documentation",
+              "url": "https://docs.cohere.com/reference/chat",
+              "date": "2026-05-20",
+              "value": "Mature Chat API with first-class RAG primitives (documents, citations), tool use, and streaming"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cohere SDKs",
+              "url": "https://github.com/cohere-ai",
+              "date": "2026-05-20",
+              "value": "Official Python, TypeScript, Go, and Java SDKs, actively maintained"
+            }
+          ],
+          "methodology": "Review of SDK quality, documentation, and maintenance",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere model documentation",
+              "url": "https://docs.cohere.com/docs/models",
+              "date": "2026-05-20",
+              "value": "Stable model naming with deprecation notices; A+ consolidates four variants into one maintained line"
+            }
+          ],
+          "methodology": "Review of versioning policy and historical practices",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cohere dashboard",
+              "url": "https://dashboard.cohere.com/",
+              "date": "2026-05-20",
+              "value": "Usage dashboards and logs; enterprise deployments integrate with customer observability stacks"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cohere support",
+              "url": "https://cohere.com/contact",
+              "date": "2026-05-20",
+              "value": "Dedicated enterprise support, solutions engineering, and comprehensive documentation"
+            }
+          ],
+          "methodology": "Assessment of documentation, community, and support responsiveness",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cloud availability",
+              "url": "https://cohere.com/deployment-options",
+              "date": "2026-05-20",
+              "value": "Available via Cohere API, major cloud marketplaces, and Hugging Face weights for self-hosting"
+            }
+          ],
+          "methodology": "Analysis of third-party integrations, cloud availability, and tooling",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 96,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Command A+ launch announcement",
+              "url": "https://cohere.com/blog/command-a-plus",
+              "date": "2026-05-20",
+              "value": "Apache 2.0 open weights — fully permissive commercial use, a notable shift from Cohere's earlier non-commercial open releases"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Mature enterprise platform behind a permissively licensed model. Apache 2.0 weights plus SOC 2 SaaS/VPC options give an unusually wide deployment spectrum."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 82,
+      "notes": "Capable but not the focus; agentic-coding specialists (Kimi K2.6, GLM-5) score higher.",
+      "alternatives": ["kimi-k2-6", "glm-5", "claude-opus-4-8"]
+    },
+    "customer-support": {
+      "overall": 90,
+      "notes": "Excellent fit: 48 languages, grounded answers with citations, fast 25B-active serving, enterprise deployment options.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    },
+    "content-creation": {
+      "overall": 85,
+      "notes": "Strong multilingual content with citation support for sourced writing.",
+      "alternatives": ["claude-opus-4-8", "glm-5"]
+    },
+    "data-analysis": {
+      "overall": 87,
+      "notes": "Solid analysis with multimodal input and verifiable grounding over enterprise documents.",
+      "alternatives": ["glm-5", "claude-opus-4-8"]
+    },
+    "research-assistant": {
+      "overall": 90,
+      "notes": "Native citations with grounding spans make research outputs auditable; 256K context handles large corpora.",
+      "alternatives": ["glm-5", "claude-opus-4-8"]
+    },
+    "legal-compliance": {
+      "overall": 88,
+      "notes": "Western jurisdiction, SOC 2, VPC/on-prem options, and verifiable citations suit legal document workflows.",
+      "alternatives": ["claude-opus-4-8"]
+    },
+    "healthcare": {
+      "overall": 84,
+      "notes": "Private/self-hosted deployment supports strict data control; verify HIPAA terms for managed offerings.",
+      "alternatives": ["claude-opus-4-8"]
+    },
+    "financial-analysis": {
+      "overall": 88,
+      "notes": "Grounded generation over filings and reports with citation trails fits compliance-sensitive finance work.",
+      "alternatives": ["claude-opus-4-8", "glm-5"]
+    },
+    "education": {
+      "overall": 85,
+      "notes": "Strong multilingual tutoring; citations encourage source-checking habits.",
+      "alternatives": ["glm-5", "claude-opus-4-8"]
+    },
+    "creative-writing": {
+      "overall": 78,
+      "notes": "Serviceable but enterprise-tuned; creative specialists perform better.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    }
+  },
+
+  "strengths": [
+    "Native citations with grounding spans — verifiable RAG outputs by construction",
+    "Apache 2.0 open weights from a Western enterprise vendor with SOC 2 and VPC/on-prem options",
+    "Efficient serving: 218B sparse MoE with 25B active, runs on 2xH100 or a single B200",
+    "Unifies Command A, A Reasoning, A Vision, and A Translate into one multimodal model",
+    "48-language support with strong enterprise translation quality",
+    "Full deployment spectrum: SaaS, cloud marketplace, VPC, on-premises, self-hosted"
+  ],
+
+  "limitations": [
+    "Command A+ pricing not clearly published as of 2026-06-10 (prior Command A was $2.50/$10 per 1M)",
+    "Benchmarks vendor-reported; independent verification still emerging three weeks post-release",
+    "Behind agentic-coding specialists on SWE-bench-style tasks",
+    "Training data sources not disclosed in detail",
+    "Smaller open-source community than Chinese open-weight ecosystems"
+  ],
+
+  "best_for": [
+    "Enterprise RAG requiring verifiable, citation-backed answers",
+    "Regulated industries needing Western jurisdiction, SOC 2, and private/VPC deployment",
+    "Multilingual enterprise assistants across 48 languages",
+    "Organizations wanting permissive Apache 2.0 weights with commercial support behind them"
+  ],
+
+  "not_recommended_for": [
+    "Frontier agentic coding where open specialists or closed flagships lead",
+    "Budget-constrained projects until A+ pricing is confirmed",
+    "Creative writing applications"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "Not yet published (prior Command A: $2.50 per 1M tokens)",
+      "output": "Not yet published (prior Command A: $10.00 per 1M tokens)",
+      "notes": "Command A+ API pricing not clearly published as of 2026-06-10; figures from the prior Command A generation shown for reference. Low confidence — verify with Cohere before procurement.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 256000,
+    "languages": [
+      "English",
+      "French",
+      "German",
+      "Spanish",
+      "Italian",
+      "Portuguese",
+      "Japanese",
+      "Korean",
+      "Chinese",
+      "Arabic",
+      "Hindi"
+    ],
+    "modalities": ["text", "image (input)"],
+    "api_endpoint": "https://api.cohere.com/v2/chat",
+    "open_source": true,
+    "license": "Apache 2.0",
+    "architecture": "Sparse Mixture-of-Experts: 218B total / 25B active parameters; multimodal reasoning; unified Command A + Reasoning + Vision + Translate",
+    "parameters": "218B total / 25B active",
+    "release_date": "2026-05-20",
+    "supported_language_count": 48
+  },
+
+  "related_entities": ["glm-5", "kimi-k2-6", "mistral-large-3", "claude-opus-4-8", "gpt-oss-120b"],
+
+  "tags": [
+    "enterprise",
+    "rag",
+    "citations",
+    "open-source",
+    "apache-2-0",
+    "multilingual",
+    "multimodal",
+    "mixture-of-experts",
+    "vpc-deployment",
+    "self-hostable"
+  ]
+}

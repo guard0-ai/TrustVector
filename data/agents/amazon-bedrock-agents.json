@@ -4,9 +4,9 @@
   "name": "Amazon Bedrock Agents",
   "provider": "Amazon Web Services",
   "version": "2024",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Fully managed AWS service for building and deploying generative AI agents. Handles orchestration, memory, knowledge bases, and action groups with enterprise security and scalability built-in.",
+  "description": "Fully managed AWS service for building and deploying generative AI agents with orchestration, memory, knowledge bases, and action groups. Note: AWS's strategic agent runtime is now Bedrock AgentCore (GA 2025-10-13; framework-agnostic, 8-hour sessions, session isolation) paired with the open-source Strands Agents SDK; evaluate AgentCore for new builds.",
   "website": "https://aws.amazon.com/bedrock/agents/",
   "trust_vector": {
     "performance_reliability": {
@@ -378,10 +378,16 @@
               "url": "https://aws.amazon.com/bedrock/customers/",
               "date": "2024-10-01",
               "value": "Production-ready managed service with enterprise customers"
+            },
+            {
+              "source": "Amazon Bedrock AgentCore GA Announcement",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2025/10/amazon-bedrock-agentcore-available/",
+              "date": "2026-06-10",
+              "value": "AWS's strategic agent runtime is now Bedrock AgentCore (GA 2025-10-13): framework-agnostic, 8-hour sessions, session isolation; complemented by the open-source Strands Agents SDK"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -448,7 +454,8 @@
     "Limited to AWS Bedrock foundation models",
     "Less flexibility than code-based frameworks",
     "Requires AWS expertise for optimal configuration",
-    "Not open source, limited customization of core orchestration"
+    "Not open source, limited customization of core orchestration",
+    "AWS's strategic focus has shifted to Bedrock AgentCore (GA 2025-10-13) and the Strands Agents SDK; new agent workloads should evaluate AgentCore first"
   ],
   "metadata": {
     "license": "Proprietary (AWS)",
@@ -471,6 +478,9 @@
     "regions_available": "Multiple AWS regions",
     "sla": "99.9%"
   },
+  "related_entities": [
+    "strands-agents"
+  ],
   "tags": [
     "aws"
   ]

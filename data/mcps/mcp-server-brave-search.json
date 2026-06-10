@@ -4,13 +4,13 @@
   "name": "MCP Brave Search Server",
   "provider": "Anthropic (Archived)",
   "version": "2025.4.24",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "MCP server providing AI models with web search capabilities through Brave Search API. Enables real-time information retrieval, fact-checking, and research augmentation through the Model Context Protocol. Privacy-focused alternative to traditional search APIs.",
+  "description": "ARCHIVED: Former Anthropic reference MCP server for the Brave Search API, archived 2025-05-29 to the servers-archived repository and no longer maintained (no security guarantees). Brave now ships its own official Brave Search MCP server, which is the recommended replacement. The underlying Brave Search API remains active and privacy-focused.",
   "website": "https://brave.com/search/api/",
   "trust_vector": {
     "performance_reliability": {
-      "overall_score": 85,
+      "overall_score": 80,
       "criteria": {
         "search_result_quality": {
           "score": 87,
@@ -69,7 +69,7 @@
           "last_verified": "2025-11-09"
         },
         "error_recovery": {
-          "score": 80,
+          "score": 58,
           "confidence": "medium",
           "evidence": [
             {
@@ -77,10 +77,16 @@
               "url": "https://github.com/modelcontextprotocol/servers",
               "date": "2025-11-16",
               "value": "Graceful error handling with retry logic for failed requests"
+            },
+            {
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "Server archived 2025-05-29; bugs and Brave API changes will never be fixed in this implementation"
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     },
@@ -146,7 +152,7 @@
       }
     },
     "privacy_compliance": {
-      "overall_score": 88,
+      "overall_score": 89,
       "criteria": {
         "privacy_focus": {
           "score": 92,
@@ -207,7 +213,7 @@
       }
     },
     "trust_transparency": {
-      "overall_score": 83,
+      "overall_score": 77,
       "criteria": {
         "documentation_quality": {
           "score": 85,
@@ -252,7 +258,7 @@
           "last_verified": "2025-11-09"
         },
         "implementation_clarity": {
-          "score": 85,
+          "score": 62,
           "confidence": "medium",
           "evidence": [
             {
@@ -260,15 +266,21 @@
               "url": "https://github.com/modelcontextprotocol/servers",
               "date": "2025-11-16",
               "value": "Open source MCP server implementation available"
+            },
+            {
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "Code now lives in the read-only servers-archived repository; README states no security guarantees are provided for archived servers"
             }
           ],
           "methodology": "Code transparency review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 84,
+      "overall_score": 83,
       "criteria": {
         "ease_of_setup": {
           "score": 90,
@@ -405,7 +417,7 @@
     "Smaller index compared to Google, may miss some niche content",
     "API costs can accumulate with heavy usage",
     "Limited advanced search features compared to Google",
-    "Community-maintained MCP server (not official Anthropic release)"
+    "ARCHIVED 2025-05-29: reference server unmaintained with no security guarantees; use Brave's official Brave Search MCP server instead"
   ],
   "metadata": {
     "license": "Proprietary API, MCP server varies",
@@ -422,12 +434,16 @@
     "authentication": "API key",
     "rate_limits": "Varies by plan (2000-15000 queries/month)",
     "first_release": "2024-11",
-    "maintained_by": "Community"
+    "maintained_by": "None (Archived 2025-05-29)",
+    "repository": "https://github.com/modelcontextprotocol/servers-archived",
+    "replacement": "Brave's official Brave Search MCP server"
   },
   "tags": [
     "search",
     "web",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "archived",
+    "unmaintained"
   ]
 }

@@ -1,13 +1,13 @@
 {
   "id": "google-agent-builder",
   "type": "agent",
-  "name": "Google Vertex AI Agent Builder",
+  "name": "Gemini Enterprise Agent Platform (formerly Vertex AI Agent Builder)",
   "provider": "Google Cloud",
-  "version": "2024",
-  "last_evaluated": "2025-11-09",
+  "version": "2026",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Google Cloud's managed platform for building conversational AI agents and search applications. Provides no-code and low-code options for agent creation with enterprise search, grounding, and Google services integration.",
-  "website": "https://cloud.google.com/generative-ai-app-builder/docs/agent-intro",
+  "description": "REBRANDED: at Cloud Next (April 2026) Vertex AI Agent Builder became the Gemini Enterprise Agent Platform (APIs unchanged), following Agentspace's absorption into Gemini Enterprise in Oct 2025. Google Cloud's managed platform for building conversational AI agents and search apps with no-code/low-code options, enterprise search, and grounding.",
+  "website": "https://cloud.google.com/products/gemini-enterprise-agent-platform",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 87,
@@ -378,10 +378,16 @@
               "url": "https://cloud.google.com/customers#/products=AI_/_Machine_Learning",
               "date": "2024-10-01",
               "value": "Production-ready with enterprise customer deployments"
+            },
+            {
+              "source": "Gemini Enterprise Agent Platform",
+              "url": "https://cloud.google.com/products/gemini-enterprise-agent-platform",
+              "date": "2026-06-10",
+              "value": "Rebranded at Cloud Next April 2026 from Vertex AI Agent Builder to Gemini Enterprise Agent Platform; APIs unchanged. Agentspace was absorbed into Gemini Enterprise in Oct 2025"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -400,7 +406,8 @@
     "Higher costs for grounding and search features",
     "Less code-level flexibility than open frameworks",
     "Requires Google Cloud expertise for optimization",
-    "Not open source, limited customization of orchestration"
+    "Not open source, limited customization of orchestration",
+    "Repeated rebranding (Agentspace into Gemini Enterprise Oct 2025; Agent Builder renamed April 2026) makes older docs/links stale, though APIs are unchanged"
   ],
   "metadata": {
     "license": "Proprietary (Google Cloud)",
@@ -472,6 +479,7 @@
     "Organizations requiring Google Workspace integration"
   ],
   "tags": [
-    "google"
+    "google",
+    "rebranded"
   ]
 }

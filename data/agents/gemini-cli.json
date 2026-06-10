@@ -1,0 +1,458 @@
+{
+  "id": "gemini-cli",
+  "type": "agent",
+  "name": "Gemini CLI",
+  "provider": "Google",
+  "version": "0.x (rolling release)",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Open-source terminal AI agent from Google that brings Gemini into the command line. Uses a ReAct loop with built-in tools, MCP server support, and Google Search grounding for coding, content generation, and task automation directly in the shell.",
+  "website": "https://github.com/google-gemini/gemini-cli",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 77,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Blog - Introducing Gemini CLI",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-cli-open-source-ai-agent/",
+              "date": "2025-06-25",
+              "value": "Gemini 2.5 Pro with 1M token context window handles large codebases and multi-file tasks"
+            }
+          ],
+          "methodology": "Coding and shell task completion testing with large-context workloads",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini CLI GitHub",
+              "url": "https://github.com/google-gemini/gemini-cli",
+              "date": "2026-06-01",
+              "value": "Built-in tools (file ops, shell, web fetch, Google Search grounding) plus extensibility via MCP servers"
+            }
+          ],
+          "methodology": "Tool integration testing across built-in and MCP tools",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 83,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Blog - Introducing Gemini CLI",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-cli-open-source-ai-agent/",
+              "date": "2025-06-25",
+              "value": "Reason-and-act (ReAct) loop plans, executes tools, and iterates on complex tasks like bug fixing and feature work"
+            }
+          ],
+          "methodology": "Multi-step task decomposition testing via ReAct loop",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI Documentation",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/index.md",
+              "date": "2026-06-01",
+              "value": "GEMINI.md context files, session checkpointing, and a memory tool persist project context across sessions"
+            }
+          ],
+          "methodology": "Session and context persistence evaluation",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI GitHub Issues",
+              "url": "https://github.com/google-gemini/gemini-cli/issues",
+              "date": "2026-06-01",
+              "value": "ReAct loop retries on tool failures and model fallback (Pro to Flash) on rate limits; loop detection still imperfect per community reports"
+            }
+          ],
+          "methodology": "Error handling and retry behavior testing",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI Documentation",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/index.md",
+              "date": "2026-06-01",
+              "value": "Primarily a single-agent CLI; non-interactive mode and MCP enable scripting into pipelines but no native multi-agent orchestration"
+            }
+          ],
+          "methodology": "Multi-agent and scripting capability assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 80,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini CLI Sandbox Documentation",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/sandbox.md",
+              "date": "2026-06-01",
+              "value": "Optional sandboxing via Docker/Podman containers or macOS Seatbelt profiles to isolate shell and file operations"
+            }
+          ],
+          "methodology": "Sandboxing options review and testing",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI Configuration Docs",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/configuration.md",
+              "date": "2026-06-01",
+              "value": "Tool allowlists/blocklists, trusted folders, and Google account or API key auth; enterprise policy via Gemini Code Assist licensing"
+            }
+          ],
+          "methodology": "Access control configuration assessment",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI GitHub",
+              "url": "https://github.com/google-gemini/gemini-cli",
+              "date": "2026-06-01",
+              "value": "Per-tool confirmation prompts before file writes and shell execution act as a human-in-the-loop gate; YOLO mode bypasses protections"
+            }
+          ],
+          "methodology": "Injection surface review focusing on confirmation gates and web content handling",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI Terms and Privacy",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tos-privacy.md",
+              "date": "2026-06-01",
+              "value": "Free personal-account tier may use prompts and code to improve Google products; paid API and Code Assist Standard/Enterprise tiers exclude training use"
+            }
+          ],
+          "methodology": "Data handling terms review across auth tiers",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini CLI GitHub",
+              "url": "https://github.com/google-gemini/gemini-cli",
+              "date": "2026-06-10",
+              "value": "Apache 2.0 licensed, fully open source with public roadmap and tens of thousands of stars"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 69,
+      "criteria": {
+        "data_retention": {
+          "score": 71,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI Terms and Privacy",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tos-privacy.md",
+              "date": "2026-06-01",
+              "value": "Retention governed by Google terms tied to the chosen auth method; free-tier data may be retained for product improvement"
+            }
+          ],
+          "methodology": "Privacy policy and terms review",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Cloud Compliance",
+              "url": "https://cloud.google.com/security/compliance",
+              "date": "2026-06-01",
+              "value": "Enterprise use via Gemini Code Assist / Vertex AI inherits Google Cloud GDPR commitments; consumer tier offers weaker guarantees"
+            }
+          ],
+          "methodology": "Compliance posture assessment per access tier",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI Terms and Privacy",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/tos-privacy.md",
+              "date": "2026-06-01",
+              "value": "All prompts, files in context, and tool outputs are sent to Google's Gemini API; Search grounding sends queries to Google Search"
+            }
+          ],
+          "methodology": "Data flow analysis",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI GitHub",
+              "url": "https://github.com/google-gemini/gemini-cli",
+              "date": "2026-06-01",
+              "value": "Client is open source and runs locally, but inference requires Google's cloud Gemini models; no official local-model backend"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 84,
+      "criteria": {
+        "documentation_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini CLI Documentation",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/index.md",
+              "date": "2026-06-01",
+              "value": "Detailed docs covering commands, configuration, sandboxing, MCP, extensions, and enterprise deployment"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI Telemetry Docs",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/telemetry.md",
+              "date": "2026-06-01",
+              "value": "OpenTelemetry-based observability for prompts, tool calls, and token usage; visible tool call log in the terminal UI"
+            }
+          ],
+          "methodology": "Logging and telemetry capabilities assessment",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI GitHub",
+              "url": "https://github.com/google-gemini/gemini-cli",
+              "date": "2026-06-01",
+              "value": "ReAct loop surfaces reasoning steps and proposed actions before execution, with diffs shown for file edits"
+            }
+          ],
+          "methodology": "Explainability features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini CLI GitHub",
+              "url": "https://github.com/google-gemini/gemini-cli",
+              "date": "2026-06-10",
+              "value": "Apache 2.0 license; released 2025-06-25 with active public development and community contributions"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini CLI GitHub",
+              "url": "https://github.com/google-gemini/gemini-cli",
+              "date": "2026-06-10",
+              "value": "One of the fastest-growing CLI agent repos with very high star count, frequent releases, and an extensions ecosystem"
+            }
+          ],
+          "methodology": "Community engagement analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 74,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Blog - Introducing Gemini CLI",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-cli-open-source-ai-agent/",
+              "date": "2025-06-25",
+              "value": "Single npm install and Google account login; free tier with 60 requests/min and 1,000 requests/day"
+            }
+          ],
+          "methodology": "Setup and onboarding complexity assessment",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI Documentation",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/index.md",
+              "date": "2026-06-01",
+              "value": "Non-interactive mode supports CI/CD scripting; throughput bounded by per-user rate limits unless using paid API keys"
+            }
+          ],
+          "methodology": "Automation and rate-limit assessment",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI GitHub",
+              "url": "https://github.com/google-gemini/gemini-cli",
+              "date": "2026-06-01",
+              "value": "Generous free tier (1,000 requests/day); paid usage via metered Gemini API keys or Gemini Code Assist subscriptions"
+            }
+          ],
+          "methodology": "Pricing model analysis",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini CLI Telemetry Docs",
+              "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/telemetry.md",
+              "date": "2026-06-01",
+              "value": "OpenTelemetry export for metrics and traces; enterprise-grade monitoring requires external tooling"
+            }
+          ],
+          "methodology": "Monitoring features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Digital Applied - Gemini CLI to Antigravity CLI Migration Guide",
+              "url": "https://www.digitalapplied.com/blog/gemini-cli-to-antigravity-cli-migration-june-18-2026-guide",
+              "date": "2026-06-05",
+              "value": "Third-party reporting indicates consumer access to Gemini CLI ends 2026-06-18 as Google migrates individual users to Antigravity CLI; enterprise Gemini Code Assist users retain access"
+            }
+          ],
+          "methodology": "Product continuity assessment based on third-party migration reporting; not yet confirmed in official Google release notes",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 84,
+      "notes": "Strong terminal coding agent with large context, ReAct loop, and MCP extensibility"
+    },
+    "research-assistant": {
+      "overall": 80,
+      "notes": "Google Search grounding and web fetch make it effective for in-terminal research"
+    },
+    "data-analysis": {
+      "overall": 76,
+      "notes": "Capable of scripting analyses via shell and file tools, though not analytics-specialized"
+    },
+    "content-creation": {
+      "overall": 74,
+      "notes": "Useful for drafting docs and content in the terminal with multimodal generation via extensions"
+    },
+    "education": {
+      "overall": 75,
+      "notes": "Free tier makes it accessible for learning, but consumer access continuity is uncertain"
+    }
+  },
+  "best_for": [
+    "Developers wanting a free, open-source AI agent in the terminal",
+    "Teams already on Google's Gemini ecosystem and Gemini Code Assist",
+    "Scripted automation via non-interactive mode and MCP servers",
+    "Quick coding, debugging, and research tasks with Search grounding"
+  ],
+  "strengths": [
+    "Open source (Apache 2.0) with very large and active community",
+    "Generous free tier: 60 requests/min and 1,000 requests/day",
+    "Strong safety options: Docker/Seatbelt sandboxing and per-tool confirmation prompts",
+    "ReAct loop with built-in tools, MCP support, and Google Search grounding",
+    "1M token context window via Gemini 2.5 Pro for large codebases"
+  ],
+  "limitations": [
+    "Third-party reports indicate consumer access ends 2026-06-18 with migration to Antigravity CLI; only enterprise Gemini Code Assist retains access (unconfirmed officially, medium confidence)",
+    "Free personal tier may use prompts and code for Google product improvement",
+    "No local model backend; inference requires Google's cloud Gemini API",
+    "Single-agent design with no native multi-agent orchestration",
+    "Rate limits and model fallback (Pro to Flash) can degrade quality under load"
+  ],
+  "metadata": {
+    "license": "Apache 2.0",
+    "supported_models": [
+      "Gemini 2.5 Pro",
+      "Gemini 2.5 Flash",
+      "Gemini 3 (paid/preview tiers)"
+    ],
+    "programming_languages": [
+      "TypeScript (Node.js)"
+    ],
+    "deployment_type": "Local CLI client with cloud model inference",
+    "tool_support": [
+      "Built-in file and shell tools",
+      "Google Search grounding",
+      "Web fetch",
+      "MCP servers",
+      "Extensions"
+    ],
+    "first_release": "2025-06-25",
+    "pricing": "Free tier (60 req/min, 1,000 req/day with personal Google account); paid via Gemini API keys or Gemini Code Assist Standard/Enterprise",
+    "product_status_note": "Consumer access reportedly ending 2026-06-18 in favor of Antigravity CLI per third-party reporting; enterprise access continues via Gemini Code Assist"
+  },
+  "tags": [
+    "cli",
+    "open-source",
+    "coding-agent",
+    "google"
+  ]
+}

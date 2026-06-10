@@ -1,0 +1,479 @@
+{
+  "id": "claude-code",
+  "type": "agent",
+  "name": "Claude Code",
+  "provider": "Anthropic",
+  "version": "2.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Anthropic's agentic coding tool available as a terminal CLI, IDE extensions, web, and desktop app. Plans and executes multi-step coding tasks with tiered permissions, OS-level sandboxing, MCP integration, hooks, subagents, and plugins/skills.",
+  "website": "https://www.anthropic.com/claude-code",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 88,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Claude Code GA announcement",
+              "url": "https://www.anthropic.com/news/claude-4",
+              "date": "2025-05-22",
+              "value": "GA v1.0 launched alongside Claude 4 models with state-of-the-art SWE-bench coding performance"
+            },
+            {
+              "source": "Reported revenue traction",
+              "url": "https://www.anthropic.com/claude-code",
+              "date": "2025-11-20",
+              "value": "~$1B annualized revenue within roughly six months of GA indicates strong real-world task success"
+            }
+          ],
+          "methodology": "Benchmark results review plus adoption and revenue signals as proxy for sustained task success in production use",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code documentation",
+              "url": "https://code.claude.com/docs/en/overview",
+              "date": "2026-05-15",
+              "value": "Mature built-in tool suite (file edit, bash, search) plus MCP servers, hooks, and plugins with permission gating"
+            }
+          ],
+          "methodology": "Hands-on testing of built-in tools and MCP integrations across coding workflows",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code documentation",
+              "url": "https://code.claude.com/docs/en/overview",
+              "date": "2026-05-15",
+              "value": "Plan mode, extended thinking, and task tracking support long-horizon multi-file refactors and feature builds"
+            }
+          ],
+          "methodology": "Evaluation of plan mode and long-horizon task execution on multi-file repository changes",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code memory documentation",
+              "url": "https://code.claude.com/docs/en/memory",
+              "date": "2026-04-20",
+              "value": "CLAUDE.md project/user memory files, auto-compaction of long sessions, and session resume support persistence"
+            }
+          ],
+          "methodology": "Review of memory file hierarchy, context compaction behavior, and cross-session resume",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Code documentation",
+              "url": "https://code.claude.com/docs/en/overview",
+              "date": "2026-05-15",
+              "value": "Agent loop self-corrects from failed commands and test failures; checkpoints allow rewinding changes"
+            }
+          ],
+          "methodology": "Observed recovery behavior from failing builds, tests, and tool errors during evaluation sessions",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code subagents documentation",
+              "url": "https://code.claude.com/docs/en/sub-agents",
+              "date": "2026-04-20",
+              "value": "Native subagents with isolated contexts, custom system prompts, and tool restrictions enable parallel delegation"
+            }
+          ],
+          "methodology": "Testing of subagent delegation, parallel task fan-out, and plugin-defined agents",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 78,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic engineering: Claude Code sandboxing",
+              "url": "https://www.anthropic.com/engineering/claude-code-sandboxing",
+              "date": "2025-11-10",
+              "value": "OS-level sandboxing with filesystem and network isolation shipped Oct-Nov 2025, reducing permission prompts ~84%"
+            },
+            {
+              "source": "Claude Code on the web",
+              "url": "https://www.anthropic.com/news/claude-code-on-the-web",
+              "date": "2025-10-20",
+              "value": "Web version executes tasks inside Anthropic-managed isolated sandboxes"
+            }
+          ],
+          "methodology": "Review of sandbox architecture (filesystem and network isolation) and managed cloud sandbox design",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code permissions documentation",
+              "url": "https://code.claude.com/docs/en/iam",
+              "date": "2026-04-20",
+              "value": "Tiered permission prompts with allow/deny rules, per-tool allowlists, and enterprise managed policy settings"
+            }
+          ],
+          "methodology": "Assessment of permission model, allowlist granularity, and enterprise policy controls",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Code security documentation",
+              "url": "https://code.claude.com/docs/en/security",
+              "date": "2026-04-20",
+              "value": "Permission prompts for write actions, sandbox network isolation, and injection-aware system design mitigate untrusted content risks"
+            }
+          ],
+          "methodology": "Review of documented mitigations and behavior when processing untrusted repository and web content",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Code on the web",
+              "url": "https://www.anthropic.com/news/claude-code-on-the-web",
+              "date": "2025-10-20",
+              "value": "Cloud sessions run in per-task isolated environments; local sandbox restricts filesystem scope to the project"
+            }
+          ],
+          "methodology": "Architecture review of session isolation in cloud sandboxes and local filesystem scoping",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code GitHub repository",
+              "url": "https://github.com/anthropics/claude-code",
+              "date": "2026-06-01",
+              "value": "Proprietary product; public repo hosts releases, issues, and documentation but core source is not open"
+            }
+          ],
+          "methodology": "License and source availability review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 71,
+      "criteria": {
+        "data_retention": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic privacy policy",
+              "url": "https://www.anthropic.com/legal/privacy",
+              "date": "2026-03-01",
+              "value": "Commercial/API usage not used for training by default; retention controls available for enterprise plans"
+            }
+          ],
+          "methodology": "Review of Anthropic data retention commitments across consumer and commercial tiers",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Trust Center",
+              "url": "https://trust.anthropic.com/",
+              "date": "2026-03-01",
+              "value": "SOC 2 Type II certified with GDPR-aligned DPA available for commercial customers"
+            }
+          ],
+          "methodology": "Compliance certification and DPA availability review",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic privacy policy",
+              "url": "https://www.anthropic.com/legal/privacy",
+              "date": "2026-03-01",
+              "value": "Code and prompts processed by Anthropic only; no third-party model providers in the loop"
+            }
+          ],
+          "methodology": "Data flow analysis of code, prompt, and telemetry handling",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 45,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code documentation",
+              "url": "https://code.claude.com/docs/en/overview",
+              "date": "2026-05-15",
+              "value": "Client runs locally and can route via Bedrock or Vertex AI, but requires Claude models in the cloud; no fully local model option"
+            }
+          ],
+          "methodology": "Deployment options assessment including Bedrock/Vertex routing and air-gap feasibility",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 80,
+      "criteria": {
+        "documentation_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code documentation",
+              "url": "https://code.claude.com/docs/en/overview",
+              "date": "2026-05-15",
+              "value": "Extensive docs covering permissions, sandboxing, MCP, hooks, subagents, plugins, and enterprise deployment"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code documentation",
+              "url": "https://code.claude.com/docs/en/monitoring-usage",
+              "date": "2026-04-20",
+              "value": "Full transcript of every tool call and edit visible in session; OpenTelemetry metrics and logging supported"
+            }
+          ],
+          "methodology": "Review of session transcripts, hooks-based auditing, and OTel telemetry support",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Code documentation",
+              "url": "https://code.claude.com/docs/en/overview",
+              "date": "2026-05-15",
+              "value": "Visible reasoning, plan mode previews, and per-action permission prompts explain intended changes before execution"
+            }
+          ],
+          "methodology": "Assessment of plan previews, inline reasoning, and diff-based change explanation",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 50,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code GitHub repository",
+              "url": "https://github.com/anthropics/claude-code",
+              "date": "2026-06-01",
+              "value": "Proprietary; public repository used for releases and issue tracking, not source code"
+            }
+          ],
+          "methodology": "Open source assessment of core product and ecosystem components",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code GitHub repository",
+              "url": "https://github.com/anthropics/claude-code",
+              "date": "2026-06-01",
+              "value": "Highly active issue tracker, frequent releases, and a large plugin/skills ecosystem since launch"
+            }
+          ],
+          "methodology": "Community engagement analysis via GitHub activity, release cadence, and ecosystem growth",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 84,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code documentation",
+              "url": "https://code.claude.com/docs/en/quickstart",
+              "date": "2026-05-15",
+              "value": "Single npm install for CLI; native VS Code/JetBrains extensions, web, and desktop apps with shared auth"
+            }
+          ],
+          "methodology": "Setup time and integration surface assessment across CLI, IDE, web, and desktop",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Code on the web",
+              "url": "https://www.anthropic.com/news/claude-code-on-the-web",
+              "date": "2025-10-20",
+              "value": "Cloud sandboxes allow many parallel tasks; headless mode and GitHub Actions support CI-scale automation"
+            }
+          ],
+          "methodology": "Assessment of parallel cloud sessions, headless/CI usage, and rate limit behavior",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude pricing",
+              "url": "https://www.anthropic.com/pricing",
+              "date": "2026-05-01",
+              "value": "Claude Pro/Max subscriptions cap monthly spend; API pay-as-you-go usage varies significantly with task size"
+            }
+          ],
+          "methodology": "Pricing model analysis comparing subscription caps versus variable API token costs",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code monitoring documentation",
+              "url": "https://code.claude.com/docs/en/monitoring-usage",
+              "date": "2026-04-20",
+              "value": "Built-in OpenTelemetry metrics, usage tracking, and enterprise analytics dashboard"
+            }
+          ],
+          "methodology": "Review of OTel export, cost/usage tracking, and admin analytics features",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Code GA and adoption",
+              "url": "https://www.anthropic.com/claude-code",
+              "date": "2025-11-20",
+              "value": "GA since 2025-05-22 with ~$1B ARR within ~6 months; widely deployed in enterprises"
+            }
+          ],
+          "methodology": "Maturity assessment from GA timeline, release stability, and enterprise adoption",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 93,
+      "notes": "Flagship use case; excels at multi-file feature work, refactors, debugging, and test-driven workflows"
+    },
+    "data-analysis": {
+      "overall": 82,
+      "notes": "Strong for scripted analysis, notebooks, and data pipeline work via bash and file tools"
+    },
+    "research-assistant": {
+      "overall": 78,
+      "notes": "Capable codebase and web research via agentic search, though optimized for engineering contexts"
+    },
+    "content-creation": {
+      "overall": 72,
+      "notes": "Good for technical writing and docs generation; not designed for general marketing content"
+    }
+  },
+  "best_for": [
+    "Professional developers wanting an agentic pair programmer in terminal and IDE",
+    "Teams automating large refactors, migrations, and test generation",
+    "Enterprises needing permissioned, sandboxed, auditable AI coding",
+    "CI/CD and headless automation of repetitive engineering tasks"
+  ],
+  "strengths": [
+    "State-of-the-art coding capability backed by Claude models",
+    "OS-level sandboxing with filesystem and network isolation cut permission prompts ~84%",
+    "Tiered permission system with allowlists, hooks, and enterprise policies",
+    "Rich extensibility: MCP servers, hooks, subagents, plugins, and skills",
+    "Available across terminal, IDE extensions, web, and desktop with shared workflows",
+    "Strong observability via full transcripts and OpenTelemetry"
+  ],
+  "limitations": [
+    "Proprietary, closed-source core despite public releases repository",
+    "Locked to Claude models; no local or third-party model support",
+    "API pay-as-you-go costs can spike on large autonomous tasks",
+    "Subscription rate limits can interrupt heavy daily usage",
+    "Autonomous edits still require human review for correctness and security"
+  ],
+  "metadata": {
+    "license": "Proprietary (public releases repo at github.com/anthropics/claude-code)",
+    "supported_models": [
+      "Claude Opus",
+      "Claude Sonnet",
+      "Claude Haiku"
+    ],
+    "programming_languages": [
+      "Language-agnostic (any language in the repository)"
+    ],
+    "deployment_type": "Local CLI / IDE extensions / managed web sandboxes / desktop app",
+    "tool_support": [
+      "Built-in file, bash, and search tools",
+      "MCP servers",
+      "Hooks",
+      "Subagents",
+      "Plugins and skills"
+    ],
+    "first_release": "2025-02-24 (research preview); GA v1.0 2025-05-22",
+    "pricing": "Claude Pro/Max subscription or API pay-as-you-go; ~$1B ARR within ~6 months of GA",
+    "interfaces": [
+      "Terminal CLI",
+      "VS Code and JetBrains extensions",
+      "Web",
+      "Desktop"
+    ]
+  },
+  "related": [
+    "claude-agent-sdk",
+    "openai-codex",
+    "gemini-cli",
+    "cursor-agent",
+    "github-copilot-coding-agent"
+  ],
+  "tags": [
+    "coding-agent",
+    "cli",
+    "anthropic",
+    "sandboxed"
+  ]
+}

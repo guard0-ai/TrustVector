@@ -4,9 +4,9 @@
   "name": "Semantic Kernel Agent",
   "provider": "Microsoft",
   "version": "1.x",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Microsoft's enterprise-grade SDK for integrating LLMs with conventional programming languages. Provides agent capabilities through plugins, planners, and memory systems with first-class support for .NET, Python, and Java.",
+  "description": "MAINTENANCE MODE: Semantic Kernel now receives bug/security fixes only and is superseded by the Microsoft Agent Framework (1.0 GA on 2026-04-03), the recommended migration path. It remains Microsoft's enterprise SDK for integrating LLMs with conventional languages via plugins, planners, and memory, with .NET, Python, and Java support.",
   "website": "https://learn.microsoft.com/en-us/semantic-kernel/",
   "trust_vector": {
     "performance_reliability": {
@@ -377,10 +377,16 @@
               "url": "https://learn.microsoft.com/en-us/semantic-kernel/",
               "date": "2024-10-01",
               "value": "Production-ready with major enterprise deployments"
+            },
+            {
+              "source": "Microsoft Agent Framework Migration Guidance",
+              "url": "https://devblogs.microsoft.com/semantic-kernel/migrate-your-semantic-kernel-and-autogen-projects-to-microsoft-agent-framework-release-candidate/",
+              "date": "2026-06-10",
+              "value": "Semantic Kernel is in maintenance mode (bug/security fixes only); Microsoft Agent Framework 1.0 reached GA on 2026-04-03 as the successor"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -399,7 +405,8 @@
     "Less opinionated design requires more architectural decisions",
     "Smaller community compared to some other frameworks",
     "Some features still evolving (agents capability)",
-    "Learning curve for developers new to semantic programming"
+    "Learning curve for developers new to semantic programming",
+    "Maintenance mode: bug/security fixes only; migrate to Microsoft Agent Framework for new work"
   ],
   "metadata": {
     "license": "MIT",
@@ -474,9 +481,13 @@
     "Organizations wanting Azure OpenAI integration",
     "Teams building multi-language AI applications"
   ],
+  "related_entities": [
+    "microsoft-agent-framework"
+  ],
   "tags": [
     "microsoft",
     "azure",
-    "open-source"
+    "open-source",
+    "maintenance-mode"
   ]
 }

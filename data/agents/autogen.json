@@ -4,9 +4,9 @@
   "name": "Microsoft AutoGen",
   "provider": "Microsoft Research",
   "version": "0.4",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Multi-agent conversation framework enabling next-gen LLM applications with conversable agents that can operate in various modes combining LLMs, human inputs, and tools. Supports complex workflows through agent conversations.",
+  "description": "MAINTENANCE MODE: AutoGen now receives bug/security fixes only and is superseded by the Microsoft Agent Framework (1.0 GA on 2026-04-03), the recommended migration path. AutoGen is a multi-agent conversation framework for LLM applications with conversable agents combining LLMs, human input, and tools across complex workflows.",
   "website": "https://microsoft.github.io/autogen/",
   "trust_vector": {
     "performance_reliability": {
@@ -377,10 +377,16 @@
               "url": "https://github.com/microsoft/autogen",
               "date": "2024-10-20",
               "value": "Very active community with Microsoft backing"
+            },
+            {
+              "source": "Microsoft Agent Framework Migration Guidance",
+              "url": "https://devblogs.microsoft.com/semantic-kernel/migrate-your-semantic-kernel-and-autogen-projects-to-microsoft-agent-framework-release-candidate/",
+              "date": "2026-06-10",
+              "value": "AutoGen is in maintenance mode (bug/security fixes only); Microsoft Agent Framework 1.0 reached GA on 2026-04-03 as the successor"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -447,7 +453,8 @@
     "Requires careful prompt engineering for agent roles",
     "Limited built-in persistence for long-running workflows",
     "Some learning curve for advanced features",
-    "Performance depends heavily on LLM quality"
+    "Performance depends heavily on LLM quality",
+    "Maintenance mode: bug/security fixes only; new development targets Microsoft Agent Framework"
   ],
   "metadata": {
     "license": "Apache 2.0",
@@ -474,9 +481,13 @@
     "contributors": "559+",
     "transition_notice": "Microsoft Agent Framework is the recommended path forward; AutoGen receives maintenance and critical patches only"
   },
+  "related_entities": [
+    "microsoft-agent-framework"
+  ],
   "tags": [
     "multi-agent",
     "microsoft",
-    "open-source"
+    "open-source",
+    "maintenance-mode"
   ]
 }

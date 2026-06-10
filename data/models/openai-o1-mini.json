@@ -4,9 +4,9 @@
   "name": "OpenAI o1-mini",
   "provider": "OpenAI",
   "version": "2024-12",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's efficient reasoning model with chain-of-thought capabilities at lower cost. Balanced performance for reasoning tasks with faster response times than o3.",
+  "description": "DEPRECATED: o1-mini (with o1-preview) was removed from the OpenAI API in 2025 and from ChatGPT; remaining o1 variants shut down 2026-10-23. Migration target is GPT-5.5. Historically an efficient reasoning model with chain-of-thought capabilities at lower cost than o1.",
   "website": "https://openai.com/o1",
   "trust_vector": {
     "performance_reliability": {
@@ -398,7 +398,7 @@
       "notes": "Excellent explainability via chain-of-thought. Good transparency."
     },
     "operational_excellence": {
-      "overall_score": 88,
+      "overall_score": 86,
       "criteria": {
         "api_design_quality": {
           "score": 91,
@@ -429,7 +429,7 @@
           "last_verified": "2025-11-08"
         },
         "versioning_policy": {
-          "score": 85,
+          "score": 73,
           "confidence": "high",
           "evidence": [
             {
@@ -437,6 +437,12 @@
               "url": "https://platform.openai.com/docs/versioning",
               "date": "2024-12-15",
               "value": "Clear versioning"
+            },
+            {
+              "source": "OpenAI Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-06-10",
+              "value": "o1-preview/o1-mini removed in 2025; remaining o1 variants API shutdown 2026-10-23; migration target GPT-5.5"
             }
           ],
           "methodology": "Policy review",
@@ -471,7 +477,7 @@
           "last_verified": "2025-11-08"
         },
         "ecosystem_maturity": {
-          "score": 94,
+          "score": 84,
           "confidence": "high",
           "evidence": [
             {
@@ -499,7 +505,7 @@
           "last_verified": "2025-11-08"
         }
       },
-      "notes": "Excellent operational maturity with OpenAI ecosystem."
+      "notes": "Deprecated: o1-mini removed from API in 2025; migration target GPT-5.5. Versioning and ecosystem scores reduced to reflect deprecation."
     }
   },
   "use_case_ratings": {
@@ -592,7 +598,8 @@
     "Not HIPAA eligible",
     "Reasoning overhead unnecessary for simple tasks",
     "Lower performance than o3 on complex tasks",
-    "Premium pricing for reasoning capabilities"
+    "Premium pricing for reasoning capabilities",
+    "DEPRECATED: removed from the API in 2025 and from ChatGPT — migrate to GPT-5.5"
   ],
   "best_for": [
     "Reasoning tasks requiring transparency",
@@ -637,11 +644,13 @@
     "parameters": "Not disclosed"
   },
   "related_entities": [
+    "gpt-5-5",
     "openai-o3",
     "gpt-4-1",
     "claude-sonnet-4-5"
   ],
   "tags": [
+    "deprecated",
     "reasoning",
     "chain-of-thought",
     "coding",

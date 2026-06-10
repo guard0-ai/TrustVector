@@ -4,9 +4,9 @@
   "name": "BabyAGI",
   "provider": "Yohei Nakajima",
   "version": "Classic",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Minimalist autonomous task-driven AI agent that creates, prioritizes, and executes tasks based on results of previous tasks and a predefined objective. Demonstrates AGI concepts in under 200 lines of code.",
+  "description": "ARCHIVED: the original BabyAGI repo was archived to babyagi_archive in September 2024 and replaced by an experimental self-building framework; it is not production-maintained. Originally a minimalist autonomous task-driven AI agent that created, prioritized, and executed tasks toward an objective, demonstrating AGI concepts in under 200 lines of code.",
   "website": "https://github.com/yoheinakajima/babyagi",
   "trust_vector": {
     "performance_reliability": {
@@ -310,7 +310,7 @@
       }
     },
     "operational_excellence": {
-      "overall_score": 61,
+      "overall_score": 57,
       "criteria": {
         "ease_of_integration": {
           "score": 75,
@@ -370,7 +370,7 @@
           "last_verified": "2025-11-09"
         },
         "production_readiness": {
-          "score": 50,
+          "score": 35,
           "confidence": "high",
           "evidence": [
             {
@@ -378,10 +378,17 @@
               "url": "https://github.com/yoheinakajima/babyagi",
               "date": "2024-09-01",
               "value": "Designed as concept demonstration, not production system"
+            },
+            {
+              "source": "GitHub Repository Status",
+              "url": "https://github.com/yoheinakajima/babyagi",
+              "date": "2026-06-10",
+              "value": "Original repo archived to babyagi_archive (Sept 2024); replaced by an experimental self-building framework; not production-maintained"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10",
+          "notes": "Score reduced: original project archived and unmaintained since September 2024"
         }
       }
     }
@@ -400,7 +407,8 @@
     "Can generate excessive tasks leading to high costs",
     "No built-in security or sandboxing features",
     "Limited tool integration in classic version",
-    "Unpredictable behavior and task completion quality"
+    "Unpredictable behavior and task completion quality",
+    "Archived (Sept 2024): original repo moved to babyagi_archive with no further maintenance"
   ],
   "metadata": {
     "license": "MIT",
@@ -471,6 +479,7 @@
   "tags": [
     "autonomous",
     "experimental",
-    "open-source"
+    "open-source",
+    "archived"
   ]
 }

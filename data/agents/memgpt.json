@@ -1,13 +1,13 @@
 {
   "id": "memgpt",
   "type": "agent",
-  "name": "MemGPT",
-  "provider": "Research",
+  "name": "Letta (formerly MemGPT)",
+  "provider": "Letta Inc.",
   "version": "0.x",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Memory-enhanced LLM agent system enabling long-term context and conversation memory. Implements virtual context management inspired by operating systems to overcome LLM context window limitations for stateful agents.",
-  "website": "https://memgpt.ai/",
+  "description": "REBRANDED: MemGPT became Letta (Letta Inc., a UC Berkeley spinout) in September 2024; \"MemGPT\" now refers only to the underlying research technique. Letta is a memory-enhanced LLM agent platform enabling long-term context via virtual context management inspired by operating systems, overcoming context window limits for stateful agents.",
+  "website": "https://www.letta.com",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 79,
@@ -391,10 +391,16 @@
               "url": "https://github.com/cpacker/MemGPT",
               "date": "2024-10-01",
               "value": "Active development, production use requires careful setup"
+            },
+            {
+              "source": "Letta Rebranding Announcement",
+              "url": "https://www.letta.com/blog/memgpt-and-letta",
+              "date": "2026-06-10",
+              "value": "MemGPT rebranded to Letta (Letta Inc., UC Berkeley spinout, Sept 2024); active commercial development continues under the Letta name"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "cli_interface": {
           "score": 82,
@@ -427,7 +433,8 @@
     "Complexity in managing and debugging agent memory",
     "Active development, some features still experimental",
     "Limited production tooling and monitoring features",
-    "Memory pagination can introduce unpredictability"
+    "Memory pagination can introduce unpredictability",
+    "Rebranded to Letta (Sept 2024): older MemGPT docs, package names, and repo links are outdated"
   ],
   "metadata": {
     "license": "Apache 2.0",
@@ -505,6 +512,7 @@
   "tags": [
     "memory",
     "long-context",
-    "open-source"
+    "open-source",
+    "rebranded"
   ]
 }

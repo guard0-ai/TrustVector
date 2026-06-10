@@ -1,0 +1,638 @@
+{
+  "id": "deepseek-v3-2",
+  "type": "model",
+  "name": "DeepSeek-V3.2",
+  "provider": "DeepSeek",
+  "version": "20251201",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "DeepSeek's ~685B-parameter MoE flagship with DeepSeek Sparse Attention (DSA) for dramatically cheaper long-context inference. The V3.2-Speciale variant reached IMO 2025 gold-medal level (35/42) and 96.0% AIME. MIT-licensed open weights; the dominant open model through early 2026 until superseded by DeepSeek-V4.",
+  "website": "https://www.deepseek.com/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 93,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek-V3.2 Release Notes",
+              "url": "https://api-docs.deepseek.com/news/news251201",
+              "date": "2025-12-01",
+              "value": "Strong coding performance across SWE-bench and competitive programming; V3.2-Speciale placed 2nd at ICPC World Finals level"
+            },
+            {
+              "source": "DeepSeek-V3.2 Technical Report",
+              "url": "https://arxiv.org/html/2512.02556v1",
+              "date": "2025-12-02",
+              "value": "DSA architecture maintains coding accuracy while cutting long-context cost"
+            }
+          ],
+          "methodology": "Industry-standard coding benchmarks and competitive programming results from the official release and technical report",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 96,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek-V3.2 Release Notes",
+              "url": "https://api-docs.deepseek.com/news/news251201",
+              "date": "2025-12-01",
+              "value": "V3.2-Speciale reached IMO 2025 gold-medal level (35/42) and 96.0% on AIME"
+            },
+            {
+              "source": "DeepSeek-V3.2 Technical Report",
+              "url": "https://arxiv.org/html/2512.02556v1",
+              "date": "2025-12-02",
+              "value": "Frontier-level mathematical and olympiad reasoning documented in the technical report"
+            }
+          ],
+          "methodology": "Olympiad-level mathematics and competition benchmarks (IMO, AIME, ICPC) reported at release and corroborated by the technical report",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 91,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek-V3.2 Technical Report",
+              "url": "https://arxiv.org/html/2512.02556v1",
+              "date": "2025-12-02",
+              "value": "Strong general knowledge and instruction-following results; best open model on most aggregate leaderboards through early 2026"
+            }
+          ],
+          "methodology": "Comprehensive knowledge and instruction-following benchmark review from the technical report and community leaderboards",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek API Documentation",
+              "url": "https://api-docs.deepseek.com/",
+              "date": "2025-12-01",
+              "value": "Stable outputs across thinking and non-thinking modes; sparse attention introduces minor variance on very long contexts"
+            }
+          ],
+          "methodology": "Repeated-prompt testing across temperature settings and context lengths, supplemented by community reports",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "1.8s",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Artificial Analysis",
+              "url": "https://artificialanalysis.ai/models/deepseek-v3-2",
+              "date": "2026-01-15",
+              "value": "Typical first-response latency ~1.8s on the first-party API; DSA keeps long-context latency near-flat"
+            }
+          ],
+          "methodology": "Median latency for API requests with standard prompt sizes from independent benchmarking",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p95": {
+          "value": "4.2s",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Artificial Analysis",
+              "url": "https://artificialanalysis.ai/models/deepseek-v3-2",
+              "date": "2026-01-15",
+              "value": "p95 latency ~4.2s; reasoning mode substantially longer due to thinking tokens"
+            }
+          ],
+          "methodology": "95th percentile response time across diverse workloads from independent benchmarking",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "128,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek API Documentation",
+              "url": "https://api-docs.deepseek.com/news/news251201",
+              "date": "2025-12-01",
+              "value": "128K context with DeepSeek Sparse Attention making long-context inference substantially cheaper"
+            }
+          ],
+          "methodology": "Official specification from provider",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 96,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek Status",
+              "url": "https://status.deepseek.com/",
+              "date": "2026-06-01",
+              "value": "~99% uptime on first-party API; self-hosted and third-party deployments (Together, Fireworks, etc.) offer independent availability"
+            }
+          ],
+          "methodology": "Historical uptime data from the official status page plus availability of multiple third-party hosts",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Frontier-level reasoning for an open model: V3.2-Speciale hit IMO 2025 gold-medal level and 2nd at ICPC World Finals. DSA makes 128K-context workloads unusually cheap. Speciale's dedicated API endpoint was temporary, but its weights remain open."
+    },
+    "security": {
+      "overall_score": 83,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community red-team evaluations",
+              "url": "https://github.com/deepseek-ai/DeepSeek-V3.2",
+              "date": "2026-01-20",
+              "value": "Reasonable resistance to common injection patterns; weaker than frontier proprietary models on indirect injection"
+            }
+          ],
+          "methodology": "Testing against OWASP LLM01 prompt injection attack patterns and community red-team reports",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Independent safety evaluations",
+              "url": "https://arxiv.org/html/2512.02556v1",
+              "date": "2025-12-02",
+              "value": "Standard RLHF-based guardrails; open weights mean alignment can be removed by downstream fine-tuners"
+            }
+          ],
+          "methodology": "Testing against adversarial prompt datasets; assessment accounts for open-weight modifiability",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek Privacy Policy",
+              "url": "https://www.deepseek.com/privacy",
+              "date": "2025-12-01",
+              "value": "Standard data handling on first-party API; self-hosting gives organizations complete data control"
+            }
+          ],
+          "methodology": "Analysis of privacy policy for the hosted API plus the self-hosting option for full data isolation",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek-V3.2 Technical Report",
+              "url": "https://arxiv.org/html/2512.02556v1",
+              "date": "2025-12-02",
+              "value": "Safety post-training applied; refusal behavior comparable to prior DeepSeek releases"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories on default weights",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek API Documentation",
+              "url": "https://api-docs.deepseek.com/",
+              "date": "2025-12-01",
+              "value": "API key authentication, HTTPS-only transport, rate limiting on the first-party platform"
+            }
+          ],
+          "methodology": "Review of API security features and transport guarantees",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Adequate default guardrails. As with all open-weight models, safety properties only hold for unmodified weights; self-hosting shifts security responsibility to the deployer."
+    },
+    "privacy_compliance": {
+      "overall_score": 78,
+      "criteria": {
+        "data_residency": {
+          "value": "China (first-party API); anywhere via self-hosting or third-party hosts",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek Privacy Policy",
+              "url": "https://www.deepseek.com/privacy",
+              "date": "2025-12-01",
+              "value": "First-party API data is processed and stored on servers in China; MIT-licensed weights allow self-hosting in any jurisdiction"
+            }
+          ],
+          "methodology": "Review of privacy policy and hosting options; China-jurisdiction caveat applies only to the first-party API",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek Privacy Policy",
+              "url": "https://www.deepseek.com/privacy",
+              "date": "2025-12-01",
+              "value": "API data usage terms documented; self-hosting eliminates the concern entirely"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and data usage terms for the hosted API",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "Per first-party API policy (China-hosted); zero when self-hosted",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek Terms of Service",
+              "url": "https://www.deepseek.com/terms",
+              "date": "2025-12-01",
+              "value": "First-party API retains data per Chinese regulatory requirements; self-hosted deployments retain nothing externally"
+            }
+          ],
+          "methodology": "Review of terms of service; retention is deployment-dependent for open-weight models",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek Platform Documentation",
+              "url": "https://api-docs.deepseek.com/",
+              "date": "2025-12-01",
+              "value": "No built-in PII redaction tooling; customer responsible for PII handling on any deployment"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek Platform",
+              "url": "https://platform.deepseek.com/",
+              "date": "2025-12-01",
+              "value": "No SOC 2, HIPAA, or FedRAMP for the first-party API; compliant deployments achievable via certified Western hosts (AWS, Azure, Together) or self-hosting"
+            }
+          ],
+          "methodology": "Verification of certifications for the first-party platform; third-party hosted options inherit their providers' certifications",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Open-weight deployment options",
+              "url": "https://huggingface.co/deepseek-ai",
+              "date": "2025-12-01",
+              "value": "No zero-retention option on the first-party API, but self-hosting provides true zero external retention"
+            }
+          ],
+          "methodology": "Review of data handling across first-party API, third-party hosts, and self-hosting",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Standard open-model split: the first-party API is China-hosted with China-jurisdiction data residency, while self-hosting or Western third-party hosts (which most regulated enterprises use) avoid that concern entirely."
+    },
+    "trust_transparency": {
+      "overall_score": 82,
+      "criteria": {
+        "explainability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek-V3.2 Release Notes",
+              "url": "https://api-docs.deepseek.com/news/news251201",
+              "date": "2025-12-01",
+              "value": "Visible chain-of-thought in thinking mode; reasoning traces fully inspectable on self-hosted deployments"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency and trace accessibility",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community factuality testing",
+              "url": "https://github.com/deepseek-ai/DeepSeek-V3.2",
+              "date": "2026-02-01",
+              "value": "Moderate hallucination rate, improved over V3.1; reasoning mode reduces factual errors on multi-step tasks"
+            }
+          ],
+          "methodology": "Testing on factual QA datasets and community evaluations",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Independent bias evaluations",
+              "url": "https://arxiv.org/html/2512.02556v1",
+              "date": "2025-12-02",
+              "value": "Basic bias mitigation; known topic-avoidance behavior on China-politically-sensitive subjects in default weights"
+            }
+          ],
+          "methodology": "Evaluation on bias benchmarks and politically sensitive topic probes",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model behavior assessment",
+              "url": "https://api-docs.deepseek.com/",
+              "date": "2025-12-01",
+              "value": "Expresses uncertainty in reasoning traces, though final answers can be overconfident"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek-V3.2 Technical Report",
+              "url": "https://arxiv.org/html/2512.02556v1",
+              "date": "2025-12-02",
+              "value": "Detailed technical report covering DSA architecture, training methodology, and benchmark results, plus full open weights"
+            }
+          ],
+          "methodology": "Review of technical report and model card completeness",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek-V3.2 Technical Report",
+              "url": "https://arxiv.org/html/2512.02556v1",
+              "date": "2025-12-02",
+              "value": "Training methodology well documented; dataset composition described only at a high level"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek Safety Documentation",
+              "url": "https://api-docs.deepseek.com/",
+              "date": "2025-12-01",
+              "value": "Standard alignment guardrails in released weights; removable by downstream fine-tuning"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms in default weights",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Strong architectural transparency (open weights, detailed DSA technical report, visible reasoning traces) offset by limited training-data disclosure and known topic-avoidance on politically sensitive subjects."
+    },
+    "operational_excellence": {
+      "overall_score": 85,
+      "criteria": {
+        "api_design_quality": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek API Documentation",
+              "url": "https://api-docs.deepseek.com/",
+              "date": "2025-12-01",
+              "value": "OpenAI-compatible API with thinking/non-thinking modes, function calling, and context caching"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek GitHub",
+              "url": "https://github.com/deepseek-ai",
+              "date": "2025-12-01",
+              "value": "OpenAI-SDK compatibility plus first-class support in vLLM and SGLang for self-hosting"
+            }
+          ],
+          "methodology": "Review of SDK compatibility and inference-framework support",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek API News",
+              "url": "https://api-docs.deepseek.com/news/news251201",
+              "date": "2025-12-01",
+              "value": "Rapid model turnover; the temporary V3.2-Speciale endpoint and short deprecation windows require deployment agility"
+            }
+          ],
+          "methodology": "Review of versioning practices and historical endpoint lifecycle",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek Platform",
+              "url": "https://platform.deepseek.com/",
+              "date": "2025-12-01",
+              "value": "Usage dashboard with token metrics; full observability available when self-hosting"
+            }
+          ],
+          "methodology": "Review of monitoring tools across deployment options",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DeepSeek Support Channels",
+              "url": "https://api-docs.deepseek.com/",
+              "date": "2025-12-01",
+              "value": "Community and email support only; no enterprise SLA on the first-party platform"
+            }
+          ],
+          "methodology": "Assessment of documentation, community, and support responsiveness",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face / hosting ecosystem",
+              "url": "https://huggingface.co/deepseek-ai",
+              "date": "2026-02-01",
+              "value": "Dominant open model through early 2026: hosted by Together, Fireworks, AWS Bedrock and others; broad fine-tune and tooling ecosystem"
+            }
+          ],
+          "methodology": "Analysis of third-party hosting, integrations, and community adoption",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 97,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "DeepSeek-V3.2 License",
+              "url": "https://huggingface.co/deepseek-ai",
+              "date": "2025-12-01",
+              "value": "MIT license: unrestricted commercial use, modification, and redistribution"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Mature ecosystem with broad third-party hosting. Main operational caveat is DeepSeek's rapid release cadence: V3.2 supersedes V3.1/V3-0324 and the standalone R1 line, and was itself superseded by V4 in April 2026."
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 93,
+      "notes": "Excellent coding at exceptional cost; ICPC World Finals 2nd-place pedigree via Speciale. Best open coding value of its generation.",
+      "alternatives": ["deepseek-v4", "claude-opus-4-5"]
+    },
+    "customer-support": {
+      "overall": 82,
+      "notes": "Capable and cheap for support workloads; reasoning mode unnecessary overhead for simple tickets.",
+      "alternatives": ["qwen3-5", "claude-opus-4-5"]
+    },
+    "content-creation": {
+      "overall": 83,
+      "notes": "Solid long-form generation; prose style less polished than frontier proprietary models.",
+      "alternatives": ["qwen3-5", "claude-opus-4-5"]
+    },
+    "data-analysis": {
+      "overall": 91,
+      "notes": "Strong analytical reasoning with cheap 128K context thanks to DSA; excellent for large-document analysis on a budget.",
+      "alternatives": ["deepseek-v4", "qwen3-5"]
+    },
+    "research-assistant": {
+      "overall": 92,
+      "notes": "Frontier-level mathematical and scientific reasoning (IMO gold-level via Speciale) with inspectable reasoning traces.",
+      "alternatives": ["deepseek-v4", "claude-opus-4-5"]
+    },
+    "legal-compliance": {
+      "overall": 74,
+      "notes": "First-party API is China-hosted with no Western certifications; viable only via self-hosting or certified third-party hosts.",
+      "alternatives": ["claude-opus-4-5"]
+    },
+    "healthcare": {
+      "overall": 72,
+      "notes": "No HIPAA path on the first-party API. Self-hosted deployments in compliant infrastructure are the only viable route.",
+      "alternatives": ["claude-opus-4-5"]
+    },
+    "financial-analysis": {
+      "overall": 88,
+      "notes": "Excellent quantitative reasoning at low cost; data-residency planning required for regulated workloads.",
+      "alternatives": ["deepseek-v4", "claude-opus-4-5"]
+    },
+    "education": {
+      "overall": 90,
+      "notes": "Outstanding math tutoring capability with visible step-by-step reasoning at prices viable for education budgets.",
+      "alternatives": ["qwen3-5", "deepseek-v4"]
+    },
+    "creative-writing": {
+      "overall": 80,
+      "notes": "Competent but not a creative standout; reasoning strength does not translate to distinctive prose.",
+      "alternatives": ["claude-opus-4-5", "qwen3-5"]
+    }
+  },
+  "strengths": [
+    "Frontier open-model reasoning: V3.2-Speciale at IMO 2025 gold-medal level (35/42), 96.0% AIME, 2nd at ICPC World Finals",
+    "DeepSeek Sparse Attention (DSA) makes 128K long-context inference dramatically cheaper",
+    "MIT license with full ~685B MoE weights: unrestricted commercial use and self-hosting",
+    "Dominant open model through early 2026 with broad third-party hosting (Together, Fireworks, AWS Bedrock)",
+    "Detailed technical report and visible chain-of-thought reasoning",
+    "Very low first-party API pricing"
+  ],
+  "limitations": [
+    "First-party API is China-hosted: China-jurisdiction data residency and no SOC 2/HIPAA/FedRAMP (self-hosting or Western hosts avoid this)",
+    "Superseded by DeepSeek-V4 (April 2026); no longer the frontier open model",
+    "V3.2-Speciale API endpoint was temporary; accessing Speciale now requires self-hosting its weights",
+    "Text-only: no vision or audio modalities",
+    "Topic-avoidance behavior on politically sensitive subjects in default weights",
+    "~685B parameters demand substantial multi-GPU infrastructure to self-host",
+    "No enterprise SLA or dedicated support on the first-party platform"
+  ],
+  "best_for": [
+    "Cost-sensitive long-context workloads exploiting DSA's cheap 128K context",
+    "Mathematical, scientific, and competitive-programming reasoning tasks",
+    "Organizations wanting MIT-licensed frontier-class weights for self-hosted deployment",
+    "Research on sparse attention and reasoning-model architectures",
+    "Teams standardized on V3.2 fine-tunes who do not yet need V4"
+  ],
+  "not_recommended_for": [
+    "Regulated Western workloads via the first-party API (use self-hosting or certified hosts instead)",
+    "Multimodal applications requiring vision or audio",
+    "Teams wanting the current frontier open model (DeepSeek-V4 supersedes it)",
+    "Organizations without GPU infrastructure that also cannot accept China-hosted APIs"
+  ],
+  "metadata": {
+    "pricing": {
+      "input": "$0.28 per 1M tokens (first-party API, cache miss)",
+      "output": "$0.42 per 1M tokens (first-party API)",
+      "notes": "DSA-driven price cut at launch made long-context usage exceptionally cheap; context caching discounts cache hits further. Legacy endpoints deprecate 2026-07-24 in favor of V4. Self-hosting cost is infrastructure-only under MIT license.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 128000,
+    "max_output": 64000,
+    "languages": [
+      "English",
+      "Chinese",
+      "Japanese",
+      "Korean",
+      "Spanish",
+      "French",
+      "German",
+      "Portuguese",
+      "Russian"
+    ],
+    "modalities": ["text"],
+    "api_endpoint": "https://api.deepseek.com/v1/chat/completions",
+    "open_source": true,
+    "architecture": "~685B-parameter Mixture-of-Experts with DeepSeek Sparse Attention (DSA); thinking and non-thinking modes; V3.2-Speciale reasoning-specialized variant",
+    "parameters": "~685B total (MoE)",
+    "knowledge_cutoff": "Mid 2025"
+  },
+  "related_entities": ["deepseek-v4", "deepseek-r1", "deepseek-v3-0324", "qwen3-5", "claude-opus-4-5"],
+  "tags": [
+    "open-source",
+    "mit-license",
+    "reasoning",
+    "sparse-attention",
+    "long-context",
+    "cost-effective",
+    "mathematical",
+    "chinese-provider",
+    "superseded-by-v4"
+  ]
+}

@@ -1,0 +1,436 @@
+{
+  "id": "mcp-server-figma",
+  "type": "mcp",
+  "name": "Figma MCP Server",
+  "provider": "Figma",
+  "version": "2025.6-beta",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Figma's official Dev Mode MCP server connecting AI coding tools to design files. Provides design-context extraction (code from frames, variables, components), screenshots, metadata, Code Connect mapping, FigJam reading, and design generation onto the canvas. Available as a hosted remote server (OAuth) or via the Figma desktop app.",
+  "website": "https://developers.figma.com/docs/figma-mcp-server/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 78,
+      "criteria": {
+        "design_context_accuracy": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "get_design_context returns structured code, design tokens (variables), and component data from selected frames, improving design-to-code fidelity over screenshot-only approaches"
+            }
+          ],
+          "methodology": "Assessment of design-to-code output fidelity against source frames, variables, and component structure",
+          "last_verified": "2026-06-10"
+        },
+        "api_reliability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Launch Announcement",
+              "url": "https://www.figma.com/blog/introducing-figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Built on Figma's platform infrastructure; remote endpoint at mcp.figma.com/mcp, but the product remains in beta with evolving behavior"
+            }
+          ],
+          "methodology": "Analysis of endpoint stability and Figma platform uptime during beta period",
+          "last_verified": "2026-06-10"
+        },
+        "large_file_handling": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Large or deeply nested frames can produce design-context payloads that exceed client context limits; documentation recommends selecting smaller frames or using metadata-first workflows"
+            }
+          ],
+          "methodology": "Testing context extraction on large, deeply nested design files and component libraries",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Returns structured errors for invalid node IDs, missing selections, and permission failures; local desktop server requires the file to be open in the app"
+            }
+          ],
+          "methodology": "Error handling testing across invalid selections, permissions, and disconnected desktop sessions",
+          "last_verified": "2026-06-10"
+        },
+        "rate_limit_handling": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma Developers Platform",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Hosted server applies Figma platform rate limits per authenticated user; limits are not fully published during beta and usage-based pricing is planned"
+            }
+          ],
+          "methodology": "Rate limiting behavior observation under sustained tool-call load",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 74,
+      "criteria": {
+        "authentication_security": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Remote server at https://mcp.figma.com/mcp uses OAuth with scoped access tied to the user's Figma account; recommended over the local desktop server"
+            }
+          ],
+          "methodology": "Review of OAuth flow, scope grants, and token lifecycle for the hosted endpoint",
+          "last_verified": "2026-06-10"
+        },
+        "token_exposure_risk": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "OAuth tokens are managed by the MCP client rather than pasted as static API keys; local server at http://127.0.0.1:3845/mcp binds to loopback and relies on the logged-in desktop session"
+            }
+          ],
+          "methodology": "Token storage and exposure-surface analysis for remote and local transports",
+          "last_verified": "2026-06-10"
+        },
+        "scope_limitation": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Access mirrors the authenticated user's file permissions; there is no per-file or read-only-only scoping below the account level for the MCP connection"
+            }
+          ],
+          "methodology": "Permission boundary testing across files the authenticated user can view or edit",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_risk": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Launch Announcement",
+              "url": "https://www.figma.com/blog/introducing-figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Design file content (layer names, text nodes, FigJam notes) is third-party-authored input on shared files; malicious text in a shared design can act as an injection vector into the consuming agent"
+            }
+          ],
+          "methodology": "Threat modeling of untrusted design-file content flowing into agent context via design-context and FigJam tools",
+          "last_verified": "2026-06-10"
+        },
+        "unauthorized_action_risk": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Write-to-canvas and design generation tools can create and modify content in Figma files the user can edit; no server-side confirmation step beyond client-level approvals"
+            }
+          ],
+          "methodology": "Authorization boundary testing of write-capable tools against editable files",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 72,
+      "criteria": {
+        "design_data_exposure": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Design content, text layers, screenshots, and variable values are sent to the connected LLM provider as tool results"
+            }
+          ],
+          "methodology": "Data flow analysis from Figma files through MCP tool results to LLM providers",
+          "last_verified": "2026-06-10"
+        },
+        "sensitive_data_protection": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "No built-in redaction of sensitive content embedded in designs (e.g., real customer data in mockups, internal roadmap text in FigJam boards)"
+            }
+          ],
+          "methodology": "Assessment of filtering and redaction controls on extracted design content",
+          "last_verified": "2026-06-10"
+        },
+        "organization_data_control": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma Security and Admin Controls",
+              "url": "https://www.figma.com/security/",
+              "date": "2026-06-10",
+              "value": "Access governed by Figma workspace permissions, SSO/SAML, and admin controls; org admins control which users can authorize integrations"
+            }
+          ],
+          "methodology": "Review of organizational access controls applicable to MCP-connected accounts",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma Privacy Policy",
+              "url": "https://www.figma.com/privacy/",
+              "date": "2026-06-10",
+              "value": "Design data retrieved via MCP is shared with whichever LLM provider the user's client uses, per that provider's data policy rather than Figma's"
+            }
+          ],
+          "methodology": "Analysis of downstream data sharing once content leaves the Figma boundary",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 71,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Dedicated developer documentation covering setup for remote and desktop servers, tool reference, and client integration guides"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "operation_visibility": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Tool calls are visible in MCP client logs and canvas writes appear in file history, but there is no dedicated MCP audit log on the Figma side"
+            }
+          ],
+          "methodology": "Logging and traceability assessment across client and Figma file history",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Launch Announcement",
+              "url": "https://www.figma.com/blog/introducing-figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Server implementation is closed source and maintained by Figma; behavior can only be verified through documentation and observed tool output"
+            }
+          ],
+          "methodology": "Source availability and independent verifiability review",
+          "last_verified": "2026-06-10"
+        },
+        "api_coverage_clarity": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Documented tool set: design context, screenshots, metadata, variables, Code Connect mapping, FigJam reading, and design generation; beta tools and limits are flagged"
+            }
+          ],
+          "methodology": "Comparison of documented tool surface against observed server capabilities",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 82,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Remote server requires only adding https://mcp.figma.com/mcp and completing OAuth; local mode requires enabling the server in the Figma desktop app"
+            }
+          ],
+          "methodology": "Setup complexity assessment across supported MCP clients",
+          "last_verified": "2026-06-10"
+        },
+        "api_performance": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Design-context extraction and screenshot generation are heavier operations than typical API reads; latency scales with frame complexity"
+            }
+          ],
+          "methodology": "Latency observation across tool types and frame sizes",
+          "last_verified": "2026-06-10"
+        },
+        "reliability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Launch Announcement",
+              "url": "https://www.figma.com/blog/introducing-figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Launched in beta June 2025; tool behavior and output formats have continued to evolve, and beta status is explicit"
+            }
+          ],
+          "methodology": "Stability assessment over the beta period including breaking-change frequency",
+          "last_verified": "2026-06-10"
+        },
+        "feature_coverage": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Documentation",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "Covers both design-to-code (context, screenshots, variables, Code Connect) and code-to-design (write-to-canvas, design generation) plus FigJam"
+            }
+          ],
+          "methodology": "Feature completeness assessment against design-to-code workflow needs",
+          "last_verified": "2026-06-10"
+        },
+        "community_adoption": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Figma MCP Server Launch Announcement",
+              "url": "https://www.figma.com/blog/introducing-figma-mcp-server/",
+              "date": "2026-06-10",
+              "value": "First-party integration promoted across major AI coding tools (Claude Code, Cursor, VS Code, Windsurf); widely adopted as the standard design-context source"
+            }
+          ],
+          "methodology": "Adoption analysis across MCP client ecosystems and developer tooling",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "First-party server with structured design context (code, variables, components) rather than screenshots alone",
+    "Code Connect mapping links Figma components to real codebase components for higher-fidelity output",
+    "Bidirectional: reads designs into code and writes generated designs back to the canvas",
+    "Hosted remote endpoint with OAuth removes the need for static API keys",
+    "Strong official documentation and broad MCP client support",
+    "Free during beta, lowering the barrier to evaluation"
+  ],
+  "limitations": [
+    "Closed source; server behavior cannot be independently audited",
+    "Shared design files are third-party-authored input and a prompt injection vector",
+    "Design content, including any sensitive text in mockups, is sent to the LLM provider",
+    "Large frames can exceed client context limits",
+    "Beta product with evolving tools and planned usage-based pricing not yet finalized",
+    "Write-capable tools can modify editable files without server-side confirmation"
+  ],
+  "metadata": {
+    "license": "Proprietary (closed source)",
+    "maintained_by": "Figma",
+    "status": "Beta (launched June 2025)",
+    "remote_endpoint": "https://mcp.figma.com/mcp",
+    "local_endpoint": "http://127.0.0.1:3845/mcp (Figma desktop app)",
+    "authentication": "OAuth (remote, recommended); desktop app session (local)",
+    "transport_types": [
+      "streamable-http (remote)",
+      "http (local desktop server)"
+    ],
+    "installation_methods": [
+      "Remote MCP endpoint",
+      "Figma desktop app toggle"
+    ],
+    "pricing": "Free during beta; usage-based pricing planned",
+    "first_release": "2025-06",
+    "mcp_version": "1.0"
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 92,
+      "notes": "Primary use case: high-fidelity design-to-code with design tokens, components, and Code Connect mappings"
+    },
+    "content-creation": {
+      "overall": 80,
+      "notes": "Strong for generating and editing designs, mockups, and FigJam content from natural language"
+    },
+    "research-assistant": {
+      "overall": 70,
+      "notes": "Useful for auditing design systems, extracting variables, and reviewing FigJam boards"
+    },
+    "education": {
+      "overall": 76,
+      "notes": "Good for teaching design-to-code workflows and design system concepts"
+    },
+    "creative-writing": {
+      "overall": 55,
+      "notes": "Marginal fit; limited to text content inside design and FigJam files"
+    }
+  },
+  "best_for": [
+    "Frontend teams converting Figma designs into production code with AI assistance",
+    "Design-system teams keeping code and Figma components in sync via Code Connect",
+    "Developers generating UI mockups back into Figma from code or intent",
+    "Agentic coding workflows that need pixel-accurate design context"
+  ],
+  "related_entities": [
+    "mcp-server-vercel",
+    "mcp-server-github",
+    "mcp-server-linear",
+    "mcp-server-notion"
+  ],
+  "tags": [
+    "design",
+    "design-to-code",
+    "figma",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

@@ -1,0 +1,475 @@
+{
+  "id": "smolagents",
+  "type": "agent",
+  "name": "smolagents",
+  "provider": "Hugging Face",
+  "version": "1.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Minimalist Python agent library from Hugging Face. Its signature CodeAgent writes actions as executable Python code instead of JSON tool calls, enabling expressive multi-step behavior with a deliberately small core codebase.",
+  "website": "https://github.com/huggingface/smolagents",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 78,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents Blog Announcement",
+              "url": "https://huggingface.co/blog/smolagents",
+              "date": "2024-12-31",
+              "value": "Hugging Face benchmarks show code-action agents outperform JSON tool-calling agents on multi-step tasks"
+            }
+          ],
+          "methodology": "Review of published benchmark comparisons between code actions and JSON tool calls, plus task completion testing",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "smolagents Documentation",
+              "url": "https://huggingface.co/docs/smolagents/index",
+              "date": "2026-05-15",
+              "value": "Code actions compose tools natively in Python, avoiding JSON parsing failures; tools shareable via Hugging Face Hub"
+            }
+          ],
+          "methodology": "Tool invocation testing across CodeAgent and ToolCallingAgent modes",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents Conceptual Guide",
+              "url": "https://huggingface.co/docs/smolagents/conceptual_guides/intro_agents",
+              "date": "2026-04-20",
+              "value": "ReAct-style loop with optional planning steps; code expressiveness allows loops and conditionals within a single action"
+            }
+          ],
+          "methodology": "Complex multi-step task testing using ReAct loop with planning interval enabled",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents Memory Documentation",
+              "url": "https://huggingface.co/docs/smolagents/tutorials/memory",
+              "date": "2026-03-10",
+              "value": "In-run step memory is replayable and editable, but long-term cross-session memory requires custom implementation"
+            }
+          ],
+          "methodology": "Memory system evaluation across single-run and cross-session scenarios",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents Documentation",
+              "url": "https://huggingface.co/docs/smolagents/index",
+              "date": "2026-05-15",
+              "value": "Execution errors and tracebacks are fed back into the loop so the agent can self-correct within max_steps"
+            }
+          ],
+          "methodology": "Error injection testing observing self-correction behavior across retries",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents Multi-Agent Docs",
+              "url": "https://huggingface.co/docs/smolagents/examples/multiagents",
+              "date": "2026-02-20",
+              "value": "Managed agents pattern supports hierarchical multi-agent orchestration, simpler than dedicated multi-agent frameworks"
+            }
+          ],
+          "methodology": "Multi-agent coordination testing using managed agents hierarchy",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 66,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "smolagents Secure Code Execution Guide",
+              "url": "https://huggingface.co/docs/smolagents/tutorials/secure_code_execution",
+              "date": "2026-04-15",
+              "value": "Arbitrary LLM-written code execution is the core paradigm; E2B, Docker, Modal, and Blaxel sandboxes are supported but opt-in, default local executor only restricts imports"
+            }
+          ],
+          "methodology": "Security architecture review of the local Python executor versus opt-in remote sandbox backends",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents GitHub",
+              "url": "https://github.com/huggingface/smolagents",
+              "date": "2026-05-30",
+              "value": "Library provides no built-in authentication or authorization; access control is entirely the integrating developer's responsibility"
+            }
+          ],
+          "methodology": "Access control capabilities assessment of library surface",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents Secure Code Execution Guide",
+              "url": "https://huggingface.co/docs/smolagents/tutorials/secure_code_execution",
+              "date": "2026-04-15",
+              "value": "No built-in injection defenses; docs explicitly warn that untrusted inputs combined with code execution require sandboxing"
+            }
+          ],
+          "methodology": "Injection attack surface review; code-action paradigm amplifies impact of successful injection",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents Sandboxed Execution Options",
+              "url": "https://huggingface.co/docs/smolagents/tutorials/secure_code_execution",
+              "date": "2026-04-15",
+              "value": "Process and filesystem isolation only achieved when E2B/Docker/Modal sandboxes are configured; local executor shares host environment"
+            }
+          ],
+          "methodology": "Data isolation architecture review across executor backends",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "smolagents GitHub Repository",
+              "url": "https://github.com/huggingface/smolagents",
+              "date": "2026-06-01",
+              "value": "Apache 2.0 license, deliberately minimal core (~thousands of lines), fully auditable, active Hugging Face maintenance"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 84,
+      "criteria": {
+        "data_retention": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Self-Hosted Library Architecture",
+              "url": "https://github.com/huggingface/smolagents",
+              "date": "2026-06-01",
+              "value": "Library runs entirely in user infrastructure; no data is retained by the framework itself"
+            }
+          ],
+          "methodology": "Privacy architecture review of self-hosted library model",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents GitHub",
+              "url": "https://github.com/huggingface/smolagents",
+              "date": "2026-05-30",
+              "value": "GDPR compliance achievable when self-hosted with local models; depends on chosen model provider and sandbox vendor"
+            }
+          ],
+          "methodology": "Compliance capabilities assessment across deployment configurations",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents Models Documentation",
+              "url": "https://huggingface.co/docs/smolagents/reference/models",
+              "date": "2026-04-20",
+              "value": "Data flows to whichever model provider is configured (HF Inference, OpenAI, Anthropic) and to remote sandbox vendors if used; fully local operation possible"
+            }
+          ],
+          "methodology": "Data flow analysis across model and executor backends",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "smolagents Models Documentation",
+              "url": "https://huggingface.co/docs/smolagents/reference/models",
+              "date": "2026-04-20",
+              "value": "Supports fully local models via Transformers, Ollama, llama.cpp, and any OpenAI-compatible local server"
+            }
+          ],
+          "methodology": "Deployment options assessment including air-gapped configurations",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 87,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "smolagents Documentation",
+              "url": "https://huggingface.co/docs/smolagents/index",
+              "date": "2026-05-15",
+              "value": "Comprehensive guided tour, tutorials, conceptual guides, and security guidance maintained by Hugging Face"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "smolagents Telemetry Tutorial",
+              "url": "https://huggingface.co/docs/smolagents/tutorials/inspect_runs",
+              "date": "2026-03-15",
+              "value": "OpenTelemetry instrumentation supported with Langfuse/Phoenix integrations; every step logged with full code actions"
+            }
+          ],
+          "methodology": "Tracing and logging capabilities assessment",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents Conceptual Guide",
+              "url": "https://huggingface.co/docs/smolagents/conceptual_guides/react",
+              "date": "2026-02-20",
+              "value": "Code actions plus ReAct thoughts are human-readable, making each step's intent inspectable"
+            }
+          ],
+          "methodology": "Explainability assessment of agent step outputs",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "smolagents GitHub Repository",
+              "url": "https://github.com/huggingface/smolagents",
+              "date": "2026-06-01",
+              "value": "Apache 2.0, released Dec 2024/Jan 2025, 20k+ stars, intentionally small auditable core"
+            }
+          ],
+          "methodology": "Open source assessment of license, codebase size, and auditability",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Activity",
+              "url": "https://github.com/huggingface/smolagents",
+              "date": "2026-06-01",
+              "value": "Frequent releases, large contributor base, and strong Hugging Face community ecosystem"
+            }
+          ],
+          "methodology": "Community engagement analysis of commits, issues, and releases",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 79,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "smolagents Guided Tour",
+              "url": "https://huggingface.co/docs/smolagents/guided_tour",
+              "date": "2026-05-15",
+              "value": "Working agent in a few lines of code; minimal abstractions and model-agnostic interfaces"
+            }
+          ],
+          "methodology": "Integration complexity assessment with minimal-setup testing",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents GitHub Discussions",
+              "url": "https://github.com/huggingface/smolagents/issues",
+              "date": "2026-04-10",
+              "value": "Library provides no orchestration layer; horizontal scaling, queuing, and sandbox pooling are user responsibilities"
+            }
+          ],
+          "methodology": "Scalability architecture assessment for production workloads",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Open Source Library",
+              "url": "https://github.com/huggingface/smolagents",
+              "date": "2026-06-01",
+              "value": "Free Apache 2.0 framework; costs limited to chosen LLM API and optional sandbox provider usage"
+            }
+          ],
+          "methodology": "Pricing model analysis",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents Telemetry Tutorial",
+              "url": "https://huggingface.co/docs/smolagents/tutorials/inspect_runs",
+              "date": "2026-03-15",
+              "value": "OpenTelemetry hooks available but dashboards and alerting require external platforms such as Langfuse or Phoenix"
+            }
+          ],
+          "methodology": "Monitoring features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "smolagents GitHub Releases",
+              "url": "https://github.com/huggingface/smolagents/releases",
+              "date": "2026-05-30",
+              "value": "Actively developed with occasional breaking changes; production deployments must add sandboxing, scaling, and guardrails themselves"
+            }
+          ],
+          "methodology": "Production readiness assessment of API stability and operational gaps",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "research-assistant": {
+      "overall": 87,
+      "notes": "Code actions excel at web research and tool-composition tasks; powers strong open deep-research demos"
+    },
+    "code-generation": {
+      "overall": 85,
+      "notes": "Natural fit since the agent already thinks in Python; sandbox strongly recommended"
+    },
+    "data-analysis": {
+      "overall": 88,
+      "notes": "Writing pandas/numpy code directly as actions is a standout strength"
+    },
+    "content-creation": {
+      "overall": 76,
+      "notes": "Capable but code-action paradigm offers less advantage for pure text generation"
+    },
+    "education": {
+      "overall": 78,
+      "notes": "Readable code actions make agent reasoning easy to teach and inspect"
+    },
+    "customer-support": {
+      "overall": 68,
+      "notes": "Lacks built-in guardrails, sessions, and access control needed for user-facing support"
+    },
+    "financial-analysis": {
+      "overall": 70,
+      "notes": "Strong for quantitative scripting but requires hardened sandboxing and compliance work"
+    }
+  },
+  "best_for": [
+    "Developers wanting a minimal, hackable agent library without heavy abstractions",
+    "Data analysis and research tasks where Python code actions outperform JSON tool calls",
+    "Teams in the Hugging Face ecosystem using Hub-shared tools and open models",
+    "Prototyping agents quickly with any model provider, including fully local LLMs"
+  ],
+  "strengths": [
+    "CodeAgent paradigm: actions as Python code are more expressive and benchmark better than JSON tool calls",
+    "Deliberately minimal, auditable core that is easy to learn and extend",
+    "Model-agnostic: HF Inference, OpenAI, Anthropic, and fully local models supported",
+    "First-class sandbox integrations (E2B, Docker, Modal, Blaxel) for secure execution",
+    "Apache 2.0 with strong Hugging Face backing and community",
+    "OpenTelemetry instrumentation for step-level run inspection"
+  ],
+  "limitations": [
+    "Arbitrary code execution is the core paradigm; running without an opt-in sandbox is risky",
+    "No built-in long-term memory, access control, or guardrails",
+    "Minimal orchestration layer; scaling and production hardening left to the developer",
+    "Prompt injection consequences are amplified because actions are executable code",
+    "API still evolves with occasional breaking changes between releases"
+  ],
+  "related": [
+    "crewai",
+    "langgraph-agent",
+    "pydantic-ai",
+    "e2b-agents",
+    "openai-agents-sdk"
+  ],
+  "metadata": {
+    "license": "Apache 2.0",
+    "supported_models": [
+      "Hugging Face Inference (open models)",
+      "OpenAI GPT models",
+      "Anthropic Claude",
+      "Local LLMs via Transformers/Ollama/llama.cpp"
+    ],
+    "programming_languages": [
+      "Python"
+    ],
+    "deployment_type": "Self-hosted",
+    "tool_support": [
+      "Hub-shared tools",
+      "Custom Python tools",
+      "MCP tools",
+      "LangChain tool import"
+    ],
+    "github_stars": "20000+",
+    "first_release": "2024 (Dec 2024/Jan 2025)",
+    "pricing": "Free (Apache 2.0) - Costs only from LLM API calls and optional sandbox providers",
+    "python_requirement": "Python >=3.10",
+    "adoption": "One of the most-starred minimalist agent libraries; widely used for open deep-research agents"
+  },
+  "tags": [
+    "code-agent",
+    "minimalist",
+    "open-source"
+  ]
+}

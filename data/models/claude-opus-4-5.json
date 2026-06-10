@@ -4,9 +4,9 @@
   "name": "Claude Opus 4.5",
   "provider": "Anthropic",
   "version": "20251101",
-  "last_evaluated": "2026-01-14",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Anthropic's most capable model with 80.9% SWE-bench (industry-leading), unique effort parameter for compute control, and exceptional abstract reasoning. First model to exceed 80% on SWE-bench Verified.",
+  "description": "SUPERSEDED: no longer Anthropic's most capable model — succeeded by Opus 4.6, 4.7, 4.8 (2026-05-28) and Claude Fable 5 (2026-06-09, new top tier). At launch it scored 80.9% SWE-bench and was the first model to exceed 80% on SWE-bench Verified, with a unique effort parameter for compute control.",
   "website": "https://www.anthropic.com/claude/opus",
 
   "trust_vector": {
@@ -467,6 +467,12 @@
               "url": "https://docs.anthropic.com/en/api/versioning",
               "date": "2025-11-24",
               "value": "Clear versioning with 6-month deprecation notice"
+            },
+            {
+              "source": "Anthropic: Claude Opus 4.8",
+              "url": "https://www.anthropic.com/news/claude-opus-4-8",
+              "date": "2026-06-10",
+              "value": "Opus 4.5 superseded by Opus 4.6 (2026-02-05), 4.7 (2026-04-16), 4.8 (2026-05-28); Claude Fable 5 (2026-06-09) is the new top tier"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
@@ -601,7 +607,8 @@
     "Smaller context than Gemini 3 (200K vs 1M)",
     "Premium pricing ($5/$25 per 1M tokens)",
     "No native audio capabilities",
-    "Training data transparency limited (industry standard)"
+    "Training data transparency limited (industry standard)",
+    "SUPERSEDED: Opus 4.6/4.7/4.8 and Claude Fable 5 (2026-06-09) are newer; no longer Anthropic's most capable model"
   ],
 
   "best_for": [
@@ -649,16 +656,16 @@
     "knowledge_cutoff": "May 2025"
   },
 
-  "related_entities": ["claude-sonnet-4-5", "claude-opus-4-1", "gpt-5-2", "gemini-3-pro"],
+  "related_entities": ["claude-opus-4-8", "claude-fable-5", "claude-sonnet-4-5", "claude-opus-4-1", "gpt-5-2", "gemini-3-pro"],
 
   "tags": [
+    "superseded",
     "coding",
     "reasoning",
     "enterprise",
     "hipaa-eligible",
     "safety-focused",
     "effort-parameter",
-    "computer-use",
-    "flagship"
+    "computer-use"
   ]
 }

@@ -1,0 +1,444 @@
+{
+  "id": "mcp-server-serena",
+  "type": "mcp",
+  "name": "Serena MCP",
+  "provider": "Oraios AI",
+  "version": "2026.6",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Open-source semantic coding toolkit from Oraios AI that turns any MCP-capable agent into an IDE-grade coding assistant. Uses language servers (LSP) for symbol-level code navigation and editing — find_symbol, find_referencing_symbols, precise symbol edits — plus project memory and shell execution. High-privilege local tooling: full filesystem and shell access.",
+  "website": "https://github.com/oraios/serena",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 82,
+      "criteria": {
+        "symbol_resolution_accuracy": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Serena README",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Symbol lookup and reference finding are backed by real language servers (LSP), giving compiler-grade accuracy for find_symbol and find_referencing_symbols across many supported languages"
+            }
+          ],
+          "methodology": "Accuracy testing of symbol resolution and reference finding against IDE ground truth in multi-file projects",
+          "last_verified": "2026-06-10"
+        },
+        "operation_success_rate": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Serena tool suite",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Symbol-level editing operations (insert/replace at symbol granularity) succeed reliably when the language server has indexed the project; failures cluster around partially-indexed or syntactically broken code"
+            }
+          ],
+          "methodology": "Hands-on testing of symbolic read/edit operations across project states",
+          "last_verified": "2026-06-10"
+        },
+        "language_server_stability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Serena issue tracker",
+              "url": "https://github.com/oraios/serena/issues",
+              "date": "2026-06-10",
+              "value": "Stability varies by language server implementation; large projects can hit slow startup indexing, and some language servers occasionally require restart — a known operational caveat"
+            }
+          ],
+          "methodology": "Review of reported language-server issues and stress testing on large repositories",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Serena implementation",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Tool failures return descriptive errors; language servers can be restarted via tooling, and the onboarding/memory system helps agents re-establish context after failures"
+            }
+          ],
+          "methodology": "Error-path testing including LSP crashes, unindexed files, and invalid edits",
+          "last_verified": "2026-06-10"
+        },
+        "large_project_handling": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Serena design documentation",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Symbol-level navigation reads only relevant code instead of whole files, keeping token usage low on large codebases — a key advantage over grep/read-based agents"
+            }
+          ],
+          "methodology": "Token-efficiency and navigation testing on repositories with 100k+ lines",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 49,
+      "criteria": {
+        "shell_execution_risk": {
+          "score": 40,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Serena tool suite",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "execute_shell_command runs arbitrary shell commands with the user's privileges — effectively a full local code-execution surface; can be disabled via tool configuration/modes but is enabled in typical agent setups"
+            }
+          ],
+          "methodology": "Capability analysis of shell execution tooling and its abuse potential under prompt injection",
+          "last_verified": "2026-06-10"
+        },
+        "filesystem_access_risk": {
+          "score": 50,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Serena project configuration",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Read/write access across the activated project directory, including config files and anything reachable by relative paths; project activation provides scoping but enforcement is application-level, not sandboxed"
+            }
+          ],
+          "methodology": "Analysis of file read/write tool boundaries and project-scoping enforcement",
+          "last_verified": "2026-06-10"
+        },
+        "sandboxing_isolation": {
+          "score": 45,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Serena runtime model",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Runs as a local Python process (uvx/uv) with no OS-level sandbox; combined with shell execution, a hijacked agent inherits the full local user privilege. Containerized deployment is possible but not the default"
+            }
+          ],
+          "methodology": "Review of process isolation, privilege boundaries, and available containment options",
+          "last_verified": "2026-06-10"
+        },
+        "credential_exposure_risk": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Serena architecture",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Server itself requires no credentials, but filesystem and shell access mean local secrets (.env files, SSH keys, tokens) are readable if the agent is steered to do so"
+            }
+          ],
+          "methodology": "Analysis of secret-reachability via file and shell tools",
+          "last_verified": "2026-06-10"
+        },
+        "unauthorized_action_risk": {
+          "score": 52,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MCP security guidance",
+              "url": "https://modelcontextprotocol.io/docs/concepts/security",
+              "date": "2026-06-10",
+              "value": "Code edits and shell commands can alter or destroy local state and reach the network; Serena's modes/contexts can restrict tool availability, and host-level approval remains the main guardrail for destructive actions"
+            }
+          ],
+          "methodology": "Authorization boundary analysis of write and execution tools, including available mode-based restrictions",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 76,
+      "criteria": {
+        "code_exposure": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP data flow architecture",
+              "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+              "date": "2026-06-10",
+              "value": "Symbol contents, file excerpts, and shell output are sent to the LLM provider as tool results; symbol-level reads expose less code per call than whole-file approaches but private code still leaves the machine"
+            }
+          ],
+          "methodology": "Data flow analysis of tool outputs to the LLM provider",
+          "last_verified": "2026-06-10"
+        },
+        "sensitive_data_protection": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Serena repository",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "No built-in secret detection or redaction; .env files, keys, and credentials in the project tree can be read and forwarded to the LLM if requested"
+            }
+          ],
+          "methodology": "Privacy controls assessment of file-content handling",
+          "last_verified": "2026-06-10"
+        },
+        "local_data_control": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Serena architecture",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Fully local operation: no hosted backend, no vendor telemetry; project memories are stored as plain local files (.serena directory) the user can inspect and delete"
+            }
+          ],
+          "methodology": "Review of local execution model, memory storage, and data residency",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Serena documentation",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "No data is sent to Oraios AI or any third party by the server itself; the only outbound data flow is tool results to the user's chosen LLM provider"
+            }
+          ],
+          "methodology": "Data sharing pathway analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 86,
+      "criteria": {
+        "documentation_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Serena README and docs",
+              "url": "https://github.com/oraios/serena/blob/main/README.md",
+              "date": "2026-06-10",
+              "value": "Detailed README covering installation (uvx/uv), client integration, modes/contexts, tool list, supported languages, and project onboarding; active changelog"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub repository",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Fully open source under MIT with no proprietary backend — the entire stack including language-server orchestration is auditable"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-06-10"
+        },
+        "operation_visibility": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Serena tooling",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "All operations are explicit named tool calls visible in MCP host logs; an optional local dashboard/log window shows server activity, though shell command side effects are only as visible as their output"
+            }
+          ],
+          "methodology": "Logging and observability assessment including the built-in dashboard",
+          "last_verified": "2026-06-10"
+        },
+        "project_memory_transparency": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Serena memory system",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Project memories are human-readable markdown files stored in the repository's .serena directory — fully inspectable and editable, though persistent memories can silently shape future agent behavior if unreviewed"
+            }
+          ],
+          "methodology": "Review of memory persistence format, location, and influence on agent sessions",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 85,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Serena installation docs",
+              "url": "https://github.com/oraios/serena#quick-start",
+              "date": "2026-06-10",
+              "value": "One-liner via uvx serena (PyPI serena-agent), but requires Python/uv tooling plus per-language language servers; initial project indexing and onboarding add friction versus zero-config servers"
+            }
+          ],
+          "methodology": "Setup complexity assessment including language-server prerequisites",
+          "last_verified": "2026-06-10"
+        },
+        "performance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Serena design documentation",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Symbol-level operations are fast after indexing and dramatically cheaper in tokens than whole-file reads; first-run language-server indexing on large projects can take minutes"
+            }
+          ],
+          "methodology": "Latency and token-efficiency benchmarking on indexed projects",
+          "last_verified": "2026-06-10"
+        },
+        "feature_coverage": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Serena tool suite",
+              "url": "https://github.com/oraios/serena",
+              "date": "2026-06-10",
+              "value": "Comprehensive coding toolkit: symbol search/references, symbol-level editing, pattern search, file operations, shell execution, project memory, and onboarding — spanning 20+ languages via LSP"
+            }
+          ],
+          "methodology": "Feature completeness assessment against IDE-grade coding-agent needs",
+          "last_verified": "2026-06-10"
+        },
+        "community_adoption": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/oraios/serena",
+              "date": "2026-06-10",
+              "value": "25,204 stars as of 2026-06-10; widely adopted as a free, open-source way to add semantic code tools to Claude, and other MCP-capable agents"
+            }
+          ],
+          "methodology": "Adoption metrics and community-activity analysis",
+          "last_verified": "2026-06-10"
+        },
+        "maintenance_activity": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub repository activity",
+              "url": "https://github.com/oraios/serena/commits/main",
+              "date": "2026-06-10",
+              "value": "Very active development by Oraios AI with frequent releases, expanding language support, and responsive issue triage"
+            }
+          ],
+          "methodology": "Commit frequency and release-cadence analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Language-server (LSP) backbone gives compiler-grade symbol navigation and references",
+    "Symbol-level reading/editing slashes token usage on large codebases versus whole-file approaches",
+    "Fully open source (MIT), fully local — no hosted backend, no telemetry, no API costs",
+    "Project memory system persists codebase knowledge across sessions as inspectable markdown",
+    "Broad language coverage (20+ languages) and active maintenance (25.2k stars)",
+    "Modes/contexts allow restricting the tool surface, including disabling shell execution"
+  ],
+  "limitations": [
+    "Shell execution plus filesystem write access make it effectively full local code execution — high-privilege tooling that must be treated like granting terminal access",
+    "No OS-level sandboxing by default; a prompt-injected agent inherits full user privileges",
+    "No secret detection — local .env files, keys, and tokens are reachable and forwardable to the LLM",
+    "Language-server stability and first-run indexing time vary by language and project size",
+    "Setup requires Python/uv tooling and per-language language servers — more friction than npx-based servers",
+    "Persistent project memories can silently steer future sessions if not reviewed"
+  ],
+  "metadata": {
+    "license": "MIT",
+    "supported_platforms": [
+      "macOS, Linux, Windows with Python 3.11+ (uv/uvx)"
+    ],
+    "programming_languages": [
+      "Python"
+    ],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/oraios/serena",
+    "github_stars": 25204,
+    "package": "serena-agent (PyPI)",
+    "api_dependency": "Local language servers (LSP) per language",
+    "authentication": "None required (local operation)",
+    "first_release": "2025-04",
+    "maintained_by": "Oraios AI",
+    "status": "Active",
+    "privilege_level": "High - local filesystem write and shell command execution",
+    "transport_types": [
+      "stdio",
+      "sse"
+    ],
+    "installation_methods": [
+      "uvx",
+      "uv",
+      "pip",
+      "docker"
+    ]
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 94,
+      "notes": "Purpose-built for semantic coding: IDE-grade symbol navigation and precise edits make it one of the strongest free coding-agent toolkits"
+    },
+    "research-assistant": {
+      "overall": 80,
+      "notes": "Excellent for exploring and understanding large codebases via symbol-level navigation"
+    },
+    "education": {
+      "overall": 78,
+      "notes": "Good for learning how real codebases are structured, though setup and privilege level need supervision"
+    },
+    "data-analysis": {
+      "overall": 65,
+      "notes": "Shell access enables running analysis scripts, but this is incidental rather than a designed capability"
+    }
+  },
+  "best_for": [
+    "Developers who want IDE-grade semantic code tools in any MCP-capable agent for free",
+    "Agentic refactoring and navigation of large codebases with minimal token spend",
+    "Teams preferring fully local, open-source tooling over hosted coding services",
+    "Multi-language projects that benefit from LSP-accurate symbol operations"
+  ],
+  "related": [
+    "mcp-server-filesystem",
+    "mcp-server-git",
+    "mcp-server-github",
+    "mcp-server-context7"
+  ],
+  "tags": [
+    "coding-agent",
+    "language-server",
+    "semantic-code",
+    "refactoring",
+    "local-tools",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

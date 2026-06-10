@@ -4,9 +4,9 @@
   "name": "MCP Git Server",
   "provider": "Anthropic",
   "version": "2025.9.25",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Official Anthropic MCP server for Git repository operations. Enables AI models to interact with local Git repositories, perform commits, branch management, and version control operations. Essential for AI-assisted development workflows and code management.",
+  "description": "Official MCP reference server for Git repository operations. Enables AI models to interact with local Git repositories, perform commits, branch management, and version control operations. One of the seven reference servers that remain actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09 (latest spec 2025-11-25).",
   "website": "https://modelcontextprotocol.io/docs/servers/git",
   "trust_vector": {
     "performance_reliability": {
@@ -363,10 +363,16 @@
               "url": "https://github.com/modelcontextprotocol/servers/discussions",
               "date": "2025-11-16",
               "value": "Popular MCP server for development workflows"
+            },
+            {
+              "source": "Anthropic - Donating MCP to the Agentic AI Foundation",
+              "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
+              "date": "2025-12-09",
+              "value": "git is one of the seven reference servers still actively maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -376,7 +382,7 @@
     "Built on mature and reliable Git infrastructure",
     "Excellent for development workflows and version control automation",
     "Full operation auditability through Git reflog and MCP logs",
-    "Open source implementation with active Anthropic support",
+    "Open source implementation actively maintained under the MCP project (Agentic AI Foundation)",
     "Simple setup requiring only local Git installation"
   ],
   "limitations": [
@@ -385,7 +391,8 @@
     "No built-in secret detection or sensitive data filtering",
     "Can access Git credentials stored on local system",
     "Performance may degrade with very large repositories",
-    "No safeguards against accidental commits or pushes"
+    "No safeguards against accidental commits or pushes",
+    "STATUS 2026-06-10: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); governance now under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -402,7 +409,7 @@
     "api_dependency": "Git CLI",
     "authentication": "Uses local Git credentials",
     "first_release": "2024-11",
-    "maintained_by": "Anthropic",
+    "maintained_by": "MCP project (Agentic AI Foundation / Linux Foundation since 2025-12-09)",
     "status": "Official - Active",
     "transport_types": [
       "stdio"
@@ -462,6 +469,8 @@
     "git",
     "version-control",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "official",
+    "reference-server"
   ]
 }

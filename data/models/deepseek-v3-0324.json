@@ -4,9 +4,9 @@
   "name": "DeepSeek V3 0324",
   "provider": "DeepSeek",
   "version": "0324",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "DeepSeek's latest open-weights model offering strong performance at competitive pricing. Designed for developers seeking capable models with transparent weights and commercial-friendly licensing.",
+  "description": "DeepSeek's March 2025 open-weights V3 checkpoint, now superseded by DeepSeek V3.1 (Aug 2025), V3.2 (Dec 2025), and V4 (Apr 2026). The legacy deepseek-chat endpoint name is scheduled for deprecation on 2026-07-24. Historically offered strong performance at competitive pricing for developers seeking capable models with transparent weights and commercial-friendly licensing.",
   "website": "https://www.deepseek.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -398,7 +398,7 @@
       "notes": "Good transparency for open-weights model. Comprehensive documentation."
     },
     "operational_excellence": {
-      "overall_score": 81,
+      "overall_score": 79,
       "criteria": {
         "api_design_quality": {
           "score": 83,
@@ -429,18 +429,25 @@
           "last_verified": "2025-11-08"
         },
         "versioning_policy": {
-          "score": 82,
-          "confidence": "medium",
+          "score": 72,
+          "confidence": "high",
           "evidence": [
             {
               "source": "DeepSeek Releases",
               "url": "https://github.com/deepseek-ai/DeepSeek-V3/releases",
               "date": "2025-03-24",
               "value": "Clear versioning"
+            },
+            {
+              "source": "DeepSeek API Pricing and Deprecation Notice",
+              "url": "https://api-docs.deepseek.com/quick_start/pricing",
+              "date": "2026-06-10",
+              "value": "Legacy deepseek-chat endpoint name deprecates 2026-07-24; superseded by V3.1, V3.2, and V4"
             }
           ],
           "methodology": "Versioning review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-06-10",
+          "notes": "Model superseded; endpoint deprecation requires migration to V3.2/V4"
         },
         "monitoring_observability": {
           "score": 76,
@@ -591,7 +598,8 @@
     "Moderate security compared to proprietary models",
     "Smaller ecosystem than established providers",
     "Less mature enterprise support",
-    "Smaller context window (64K tokens)"
+    "Smaller context window (64K tokens)",
+    "Superseded by DeepSeek V3.1/V3.2/V4; legacy deepseek-chat endpoint name deprecates 2026-07-24"
   ],
   "best_for": [
     "Cost-sensitive applications requiring good performance",
@@ -636,9 +644,12 @@
   "related_entities": [
     "gpt-4-1-mini",
     "llama-4-scout",
-    "qwen2-5-vl-32b"
+    "qwen2-5-vl-32b",
+    "deepseek-v3-2",
+    "deepseek-v4"
   ],
   "tags": [
+    "superseded",
     "open-weights",
     "cost-effective",
     "chinese",
