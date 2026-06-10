@@ -1,0 +1,632 @@
+{
+  "id": "mistral-large-3",
+  "type": "model",
+  "name": "Mistral Large 3",
+  "provider": "Mistral AI",
+  "version": "Large 3 (Mistral 3 family)",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Mistral AI's open-weight flagship released December 2025 under Apache 2.0: a sparse MoE (675B total / 41B active) multimodal model with ~256K context and 40+ languages. Debuted #2 among open-source non-reasoning models on LMArena, with a strong EU data-sovereignty story.",
+  "website": "https://mistral.ai/news/mistral-3/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 88,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral 3 Announcement",
+              "url": "https://mistral.ai/news/mistral-3/",
+              "date": "2025-12-02",
+              "value": "Strong coding performance reported across standard benchmarks for an open-weight model"
+            }
+          ],
+          "methodology": "Review of provider benchmarks and community evaluations of open weights",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral 3 Announcement",
+              "url": "https://mistral.ai/news/mistral-3/",
+              "date": "2025-12-02",
+              "value": "Competitive math and reasoning results among non-reasoning (single-pass) models"
+            }
+          ],
+          "methodology": "Review of reasoning benchmarks; model is non-reasoning class (no extended thinking)",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "LMArena Leaderboard",
+              "url": "https://lmarena.ai/leaderboard",
+              "date": "2025-12-09",
+              "value": "Debuted #2 among open-source non-reasoning models on LMArena"
+            },
+            {
+              "source": "Mistral 3 Announcement",
+              "url": "https://mistral.ai/news/mistral-3/",
+              "date": "2025-12-02",
+              "value": "State-of-the-art open-weight performance across knowledge and multilingual tasks"
+            }
+          ],
+          "methodology": "Crowdsourced arena comparisons and provider benchmark suite",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community Evaluations",
+              "url": "https://huggingface.co/mistralai",
+              "date": "2025-12-15",
+              "value": "Stable instruction following reported across hosted and self-hosted deployments"
+            }
+          ],
+          "methodology": "Community repeated-prompt testing on open weights",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "~1.5s (hosted API); deployment-dependent when self-hosted",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-01-15",
+              "value": "41B active parameters keep inference fast for the model's scale"
+            }
+          ],
+          "methodology": "Median latency from third-party benchmarking of hosted endpoints",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p95": {
+          "value": "~3.5s (hosted API)",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-01-15",
+              "value": "Tail latency varies by host (Mistral, Bedrock, Azure, self-hosted)"
+            }
+          ],
+          "methodology": "95th percentile estimates across hosting providers",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "~256,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mistral 3 Announcement",
+              "url": "https://mistral.ai/news/mistral-3/",
+              "date": "2025-12-02",
+              "value": "Approximately 256K token context window"
+            }
+          ],
+          "methodology": "Official specification from provider",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 94,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Status Page",
+              "url": "https://status.mistral.ai/",
+              "date": "2026-06-01",
+              "value": "Stable hosted-API availability; self-hosting removes provider dependency entirely"
+            }
+          ],
+          "methodology": "Historical uptime of hosted API; open weights enable customer-controlled availability",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Best-in-class open-weight performance for its release window: sparse MoE (675B total / 41B active) delivers near-frontier quality with modest active compute. Non-reasoning class — frontier reasoning models outperform it on hard multi-step problems."
+    },
+    "security": {
+      "overall_score": 83,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Documentation",
+              "url": "https://docs.mistral.ai/",
+              "date": "2025-12-02",
+              "value": "Instruction-hierarchy training; limited published red-team results"
+            }
+          ],
+          "methodology": "Testing against OWASP LLM01 prompt injection patterns",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community Red-Teaming",
+              "url": "https://huggingface.co/mistralai",
+              "date": "2025-12-15",
+              "value": "Reasonable default refusals; open weights allow guardrail removal by deployers"
+            }
+          ],
+          "methodology": "Adversarial prompt testing on hosted and open-weight deployments",
+          "last_verified": "2026-06-10",
+          "notes": "Open weights mean downstream deployments can weaken or strengthen safety behavior"
+        },
+        "data_leakage_prevention": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Privacy Policy",
+              "url": "https://mistral.ai/terms/",
+              "date": "2025-12-02",
+              "value": "EU-based provider under GDPR; self-hosting keeps data entirely in customer infrastructure"
+            }
+          ],
+          "methodology": "Analysis of privacy policies plus self-hosting option",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Moderation Tools",
+              "url": "https://docs.mistral.ai/capabilities/guardrailing/",
+              "date": "2025-12-02",
+              "value": "Optional moderation API and system-prompt guardrailing available"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral API Documentation",
+              "url": "https://docs.mistral.ai/",
+              "date": "2025-12-02",
+              "value": "API key authentication, HTTPS only, rate limiting; cloud-provider controls on Bedrock/Azure"
+            }
+          ],
+          "methodology": "Review of API security features across hosting options",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Solid security with the open-weights caveat: deployers control (and can remove) guardrails, so deployment-level controls matter more than for closed models."
+    },
+    "privacy_compliance": {
+      "overall_score": 87,
+      "criteria": {
+        "data_residency": {
+          "value": "EU (hosted API); anywhere via self-hosting or cloud region choice",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mistral AI",
+              "url": "https://mistral.ai/news/mistral-3/",
+              "date": "2025-12-02",
+              "value": "EU provider with European hosting; open weights allow full on-premises deployment"
+            }
+          ],
+          "methodology": "Review of hosting documentation and deployment options",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 90,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Terms and Privacy",
+              "url": "https://mistral.ai/terms/",
+              "date": "2025-12-02",
+              "value": "API data not used for training by default for paid tiers; self-hosting eliminates the question entirely"
+            }
+          ],
+          "methodology": "Analysis of terms of service and data usage policy",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "Limited retention on hosted API; zero when self-hosted",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Privacy Policy",
+              "url": "https://mistral.ai/terms/",
+              "date": "2025-12-02",
+              "value": "Short-term retention for abuse monitoring on La Plateforme; customer-controlled when self-hosted"
+            }
+          ],
+          "methodology": "Review of retention policies across deployment modes",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Documentation",
+              "url": "https://docs.mistral.ai/",
+              "date": "2025-12-02",
+              "value": "Customer responsible for PII redaction; self-hosting keeps PII in-house"
+            }
+          ],
+          "methodology": "Review of data protection capabilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Trust & GDPR Posture",
+              "url": "https://mistral.ai/terms/",
+              "date": "2025-12-02",
+              "value": "EU provider natively under GDPR; SOC 2 for hosted platform; Bedrock/Azure hosting inherits those clouds' certifications"
+            }
+          ],
+          "methodology": "Verification of certifications across Mistral and cloud hosting partners",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Open Weights Distribution",
+              "url": "https://huggingface.co/mistralai",
+              "date": "2025-12-02",
+              "value": "Apache 2.0 weights enable fully air-gapped, zero-external-retention deployments"
+            }
+          ],
+          "methodology": "Review of self-hosting options enabling complete data control",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Standout data-sovereignty story: EU provider under GDPR, plus Apache 2.0 weights allow fully on-premises/air-gapped deployment — the strongest possible residency guarantee."
+    },
+    "trust_transparency": {
+      "overall_score": 80,
+      "criteria": {
+        "explainability": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model Behavior",
+              "url": "https://docs.mistral.ai/",
+              "date": "2025-12-02",
+              "value": "Clear step-by-step explanations; open weights permit deep inspection and research"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency; open weights enable interpretability research",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community Evaluations",
+              "url": "https://huggingface.co/mistralai",
+              "date": "2025-12-15",
+              "value": "Typical hallucination rates for its class; no built-in grounding"
+            }
+          ],
+          "methodology": "Factual QA testing by community evaluators",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Documentation",
+              "url": "https://docs.mistral.ai/",
+              "date": "2025-12-02",
+              "value": "Multilingual training (40+ languages) reduces anglocentric bias; limited published bias evaluation"
+            }
+          ],
+          "methodology": "Review of bias disclosures and multilingual evaluation",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 78,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Model Behavior",
+              "url": "https://docs.mistral.ai/",
+              "date": "2025-12-02",
+              "value": "Adequate uncertainty expression; raw logprobs accessible via open weights"
+            }
+          ],
+          "methodology": "Qualitative assessment plus open-weight logprob access",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card",
+              "url": "https://huggingface.co/mistralai",
+              "date": "2025-12-02",
+              "value": "Public model card with architecture details (675B MoE / 41B active), license, and usage guidance"
+            }
+          ],
+          "methodology": "Review of published model card and architecture disclosure",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral 3 Announcement",
+              "url": "https://mistral.ai/news/mistral-3/",
+              "date": "2025-12-02",
+              "value": "Architecture fully disclosed; training data composition described only at a high level"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Guardrailing Documentation",
+              "url": "https://docs.mistral.ai/capabilities/guardrailing/",
+              "date": "2025-12-02",
+              "value": "Optional moderation and system-prompt guardrails; defaults lighter than closed flagships and removable by deployers"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Open weights provide architectural transparency rare at this scale (675B MoE disclosed), though training data detail and built-in guardrails are lighter than closed frontier models."
+    },
+    "operational_excellence": {
+      "overall_score": 86,
+      "criteria": {
+        "api_design_quality": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mistral API Documentation",
+              "url": "https://docs.mistral.ai/",
+              "date": "2025-12-02",
+              "value": "Clean OpenAI-compatible API with streaming, function calling, JSON mode, and vision"
+            }
+          ],
+          "methodology": "Review of API design and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral SDKs",
+              "url": "https://github.com/mistralai",
+              "date": "2025-12-02",
+              "value": "Official Python and TypeScript SDKs; first-class vLLM and transformers support for self-hosting"
+            }
+          ],
+          "methodology": "Review of SDK and inference-stack support",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Model Documentation",
+              "url": "https://docs.mistral.ai/getting-started/models/",
+              "date": "2025-12-02",
+              "value": "Dated model versions with deprecation notices; open weights never disappear once downloaded"
+            }
+          ],
+          "methodology": "Review of versioning policy; open weights eliminate forced-retirement risk",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral La Plateforme",
+              "url": "https://console.mistral.ai/",
+              "date": "2025-12-02",
+              "value": "Usage dashboard on hosted platform; self-hosted observability is customer-built"
+            }
+          ],
+          "methodology": "Review of monitoring tools across deployment modes",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mistral Support",
+              "url": "https://docs.mistral.ai/",
+              "date": "2025-12-02",
+              "value": "Good documentation, enterprise support contracts, active community"
+            }
+          ],
+          "methodology": "Assessment of documentation and support channels",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Multi-platform Availability",
+              "url": "https://mistral.ai/news/mistral-3/",
+              "date": "2025-12-02",
+              "value": "Available on Hugging Face, Amazon Bedrock, Azure, and Mistral's La Plateforme; broad vLLM/community tooling"
+            }
+          ],
+          "methodology": "Analysis of distribution channels and third-party tooling",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 96,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apache 2.0 License",
+              "url": "https://huggingface.co/mistralai",
+              "date": "2025-12-02",
+              "value": "Apache 2.0 open weights: unrestricted commercial use, modification, and redistribution"
+            }
+          ],
+          "methodology": "Review of license terms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Apache 2.0 licensing at frontier scale is the headline: no usage restrictions, no vendor lock-in, and availability across HF, Bedrock, Azure, and La Plateforme."
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 84,
+      "notes": "Strong open-weight coding; closed frontier flagships still lead on hard software engineering.",
+      "alternatives": ["claude-opus-4-8", "deepseek-v4"]
+    },
+    "customer-support": {
+      "overall": 87,
+      "notes": "40+ languages, low active-parameter inference cost, and self-hosting make it excellent for global support.",
+      "alternatives": ["claude-sonnet-4-6", "nova-2-lite"]
+    },
+    "content-creation": {
+      "overall": 85,
+      "notes": "Strong multilingual content generation; particularly good for European-language work.",
+      "alternatives": ["gpt-5-5", "claude-sonnet-4-6"]
+    },
+    "data-analysis": {
+      "overall": 83,
+      "notes": "Capable analysis within 256K context; lacks extended-reasoning mode for hardest problems.",
+      "alternatives": ["gemini-3-1-pro", "gpt-5-5"]
+    },
+    "research-assistant": {
+      "overall": 84,
+      "notes": "Good synthesis over long documents; self-hosting suits sensitive research corpora.",
+      "alternatives": ["gemini-3-1-pro", "claude-opus-4-8"]
+    },
+    "legal-compliance": {
+      "overall": 86,
+      "notes": "EU provider under GDPR plus on-premises deployment is compelling for European legal workloads.",
+      "alternatives": ["claude-opus-4-8", "nova-2-lite"]
+    },
+    "healthcare": {
+      "overall": 82,
+      "notes": "Self-hosting keeps PHI fully in-house, sidestepping vendor BAA questions; validate clinical accuracy.",
+      "alternatives": ["claude-opus-4-8", "nova-2-lite"]
+    },
+    "financial-analysis": {
+      "overall": 83,
+      "notes": "Solid quantitative work; data-sovereign deployment appeals to EU financial institutions.",
+      "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
+    },
+    "education": {
+      "overall": 85,
+      "notes": "Multilingual strength and low cost suit global education deployments.",
+      "alternatives": ["gemini-3-5-flash", "claude-sonnet-4-6"]
+    },
+    "creative-writing": {
+      "overall": 82,
+      "notes": "Good multilingual creative range; less distinctive than closed frontier flagships.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    }
+  },
+  "strengths": [
+    "Apache 2.0 open weights at frontier scale — full commercial freedom and no lock-in",
+    "Sparse MoE efficiency: 675B total but only 41B active parameters per token",
+    "Debuted #2 among open-source non-reasoning models on LMArena",
+    "EU provider with strong GDPR/data-sovereignty posture; fully self-hostable",
+    "Multimodal (text + image) with 40+ languages and ~256K context",
+    "Broad availability: Hugging Face, Amazon Bedrock, Azure, La Plateforme"
+  ],
+  "limitations": [
+    "Non-reasoning class — trails frontier reasoning models on hard multi-step problems",
+    "Self-hosting 675B weights requires substantial GPU infrastructure despite 41B active",
+    "API pricing from aggregators (~$0.50/$1.50) carries medium confidence",
+    "Open weights let deployers strip guardrails, shifting safety burden downstream",
+    "Training data composition only described at a high level"
+  ],
+  "best_for": [
+    "Data-sovereign deployments requiring on-premises or EU-resident inference",
+    "Multilingual applications across 40+ languages",
+    "Organizations wanting frontier-class quality without vendor lock-in",
+    "Cost-efficient high-volume inference leveraging sparse MoE economics"
+  ],
+  "not_recommended_for": [
+    "Hardest reasoning workloads better served by extended-thinking models",
+    "Teams without MLOps capacity attempting self-hosted deployment at this scale",
+    "Applications relying on strong provider-enforced guardrails by default"
+  ],
+  "metadata": {
+    "pricing": {
+      "input": "$0.50 per 1M tokens (approx.)",
+      "output": "$1.50 per 1M tokens (approx.)",
+      "notes": "Aggregator-reported API pricing, medium confidence; varies by host (La Plateforme, Bedrock, Azure). Self-hosting under Apache 2.0 incurs only infrastructure cost.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 256000,
+    "languages": [
+      "English",
+      "French",
+      "German",
+      "Spanish",
+      "Italian",
+      "Portuguese",
+      "Dutch",
+      "Polish",
+      "Japanese",
+      "Korean",
+      "Chinese",
+      "Arabic",
+      "Hindi",
+      "Russian"
+    ],
+    "modalities": ["text", "image (input)"],
+    "api_endpoint": "https://api.mistral.ai/v1/chat/completions",
+    "open_source": true,
+    "architecture": "Sparse Mixture-of-Experts transformer: 675B total parameters, 41B active per token",
+    "parameters": "675B total / 41B active (disclosed)",
+    "release_date": "2025-12-02 (Mistral 3 family)"
+  },
+  "related_entities": ["deepseek-v4", "glm-5", "claude-sonnet-4-6", "nova-2-lite", "gemini-3-1-pro"],
+  "tags": [
+    "open-source",
+    "apache-2.0",
+    "mixture-of-experts",
+    "multilingual",
+    "eu-sovereignty",
+    "gdpr",
+    "self-hostable",
+    "multimodal"
+  ]
+}

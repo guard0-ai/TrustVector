@@ -1,0 +1,595 @@
+{
+  "id": "gemma-4",
+  "type": "model",
+  "name": "Gemma 4",
+  "provider": "Google",
+  "version": "gemma-4",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Google's open-weight family released April 2026 under Apache 2.0 (a shift from the custom Gemma license). Spans E2B/E4B edge models with 128K context and native audio up to a 31B dense model with 256K context. The 31B scores ~1452 on LMArena, No. 3 among open models.",
+  "website": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 82,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Gemma 4 Announcement",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+              "date": "2026-04-02",
+              "value": "Substantial coding gains over Gemma 3 across family; strong for open-weight class, below frontier proprietary models"
+            }
+          ],
+          "methodology": "Vendor-reported coding benchmarks compared against open-weight peer class",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Gemma 4 Blog",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Reasoning improvements over Gemma 3; 26B-A4B MoE delivers near-dense quality with 4B active parameters"
+            }
+          ],
+          "methodology": "Reasoning benchmark review from launch materials and open-model leaderboards",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "LMArena Leaderboard",
+              "url": "https://lmarena.ai/leaderboard",
+              "date": "2026-06-01",
+              "value": "Gemma 4 31B ~1452 Elo (No. 3 among open models); 26B-A4B MoE ~1441 with only 4B active params"
+            }
+          ],
+          "methodology": "Crowdsourced human preference rankings on LMArena",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 80,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community testing",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Consistency depends on quantization and inference stack chosen by deployer"
+            }
+          ],
+          "methodology": "Community reports across deployment stacks; high variance by quantization level",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "Deployment-dependent",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Hugging Face Gemma 4 Blog",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "E2B (2.3B effective) and E4B (4.5B) run on-device; latency depends entirely on hardware and serving stack"
+            }
+          ],
+          "methodology": "Self-hosted model; latency is a function of deployer infrastructure",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "256K tokens (31B/26B); 128K (E2B/E4B)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Gemma 4 Announcement",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+              "date": "2026-04-02",
+              "value": "256K context on 12B/26B-A4B/31B; 128K on E2B/E4B edge variants"
+            }
+          ],
+          "methodology": "Official specification from launch announcement",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "value": "Self-hosted (deployer-controlled)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Hub",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Open weights; availability depends on chosen hosting (self-hosted, Vertex AI, or third-party providers)"
+            }
+          ],
+          "methodology": "No single provider SLA; assessed as deployment-dependent",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Strongest open-weight showing from Google to date: 31B at ~1452 LMArena (No. 3 open). MoE 26B-A4B offers near-dense quality at 4B active params. Performance below proprietary frontier but excellent per-parameter efficiency."
+    },
+
+    "security": {
+      "overall_score": 78,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 72,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Gemma Responsible AI Toolkit",
+              "url": "https://ai.google.dev/responsible",
+              "date": "2026-04-02",
+              "value": "Safety tuning applied, but smaller open models are generally more susceptible than frontier hosted models; no managed input filtering by default"
+            }
+          ],
+          "methodology": "OWASP LLM01 assessment relative to model class; deployer must add input filtering",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 74,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Gemma Safety Documentation",
+              "url": "https://ai.google.dev/gemma/docs",
+              "date": "2026-04-02",
+              "value": "Instruction-tuned variants include safety alignment, but open weights permit fine-tuning that removes guardrails"
+            }
+          ],
+          "methodology": "Adversarial testing of instruction-tuned checkpoints; open weights inherently allow guardrail removal",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Self-hosted deployment model",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Self-hosting means no prompts or outputs leave deployer infrastructure"
+            }
+          ],
+          "methodology": "Architectural assessment: no third-party data flow when self-hosted",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemma Responsible AI Toolkit",
+              "url": "https://ai.google.dev/responsible",
+              "date": "2026-04-02",
+              "value": "Safety-tuned checkpoints plus companion safety classifiers (ShieldGemma line) available"
+            }
+          ],
+          "methodology": "Safety testing of released checkpoints and available companion classifiers",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 75,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Deployment options",
+              "url": "https://ai.google.dev/gemma/docs",
+              "date": "2026-04-02",
+              "value": "No first-party managed API security; depends on serving stack (Vertex AI managed endpoints inherit GCP controls)"
+            }
+          ],
+          "methodology": "Assessment of typical self-hosted serving stacks vs managed alternatives",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Security profile is deployment-dependent: excellent data isolation when self-hosted, but guardrails are removable and there is no managed abuse filtering unless the deployer adds it (e.g., ShieldGemma, Vertex AI)."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 84,
+      "criteria": {
+        "data_residency": {
+          "value": "Full deployer control (self-hosted)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Open weights distribution",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Weights run anywhere: on-premises, air-gapped, or any cloud region"
+            }
+          ],
+          "methodology": "Architectural assessment of self-hosted deployment",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Self-hosted deployment model",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "No user data ever transmitted to Google during inference; opt-out concern does not apply"
+            }
+          ],
+          "methodology": "Architectural assessment: inference data never leaves deployer",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "Deployer-controlled (zero by default)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Self-hosted deployment model",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Retention policy is entirely the deployer's choice"
+            }
+          ],
+          "methodology": "Architectural assessment",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Self-hosted deployment model",
+              "url": "https://ai.google.dev/gemma/docs",
+              "date": "2026-04-02",
+              "value": "PII never leaves deployer infrastructure, but redaction tooling must be self-implemented"
+            }
+          ],
+          "methodology": "Data flow analysis for self-hosted inference",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Deployment-dependent compliance",
+              "url": "https://cloud.google.com/security/compliance",
+              "date": "2026-04-02",
+              "value": "Model itself carries no certifications; compliance (SOC 2, HIPAA, GDPR) must be achieved by the deployer's stack or inherited from a managed host like Vertex AI"
+            }
+          ],
+          "methodology": "Review of certification inheritance paths for open-weight deployments",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Self-hosted deployment model",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Inherently zero retention when self-hosted"
+            }
+          ],
+          "methodology": "Architectural assessment",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Best-in-class data sovereignty: nothing leaves deployer infrastructure. The trade-off is that compliance certifications are not inherited from the model and must be built or bought by the deployer."
+    },
+
+    "trust_transparency": {
+      "overall_score": 80,
+      "criteria": {
+        "explainability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Open weights access",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Full weight access enables interpretability research, logit inspection, and custom probing"
+            }
+          ],
+          "methodology": "Assessment of inspection capabilities afforded by open weights",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 75,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community evaluation",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Smaller open models hallucinate more than frontier hosted models, especially E2B/E4B variants"
+            }
+          ],
+          "methodology": "Factual QA testing relative to model size class",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemma Model Card",
+              "url": "https://ai.google.dev/gemma/docs",
+              "date": "2026-04-02",
+              "value": "Bias evaluations published in model card; open weights allow independent auditing"
+            }
+          ],
+          "methodology": "Model card review and independent audit availability",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 76,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Open weights access",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Raw logprobs fully accessible for custom calibration, but model self-expression of uncertainty is weaker than frontier tier"
+            }
+          ],
+          "methodology": "Calibration assessment; logprob access partially offsets weaker verbal uncertainty",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemma 4 Technical Report and Model Cards",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+              "date": "2026-04-02",
+              "value": "Detailed technical report, per-size model cards, architecture details (MoE config, effective params), and evaluation suite published"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemma 4 Technical Report",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Training data composition described at category level (better than most proprietary models); exact corpus not released"
+            }
+          ],
+          "methodology": "Public disclosure review against open-model norms",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Responsible AI Toolkit",
+              "url": "https://ai.google.dev/responsible",
+              "date": "2026-04-02",
+              "value": "Safety-tuned checkpoints plus optional classifier models; guardrails are removable by design in open weights"
+            }
+          ],
+          "methodology": "Analysis of built-in and companion safety mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "High transparency by open-model standards: published technical report, architecture disclosure (including MoE active-parameter counts), and fully auditable weights. Apache 2.0 relicensing further reduces legal opacity."
+    },
+
+    "operational_excellence": {
+      "overall_score": 80,
+      "criteria": {
+        "api_design_quality": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Deployment options",
+              "url": "https://ai.google.dev/gemma/docs",
+              "date": "2026-04-02",
+              "value": "No single first-party API; served via Vertex AI, Hugging Face TGI, vLLM, Ollama, llama.cpp with varying interfaces"
+            }
+          ],
+          "methodology": "Review of available serving interfaces and their consistency",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Transformers",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Day-one support in Transformers, vLLM, llama.cpp, Ollama, MLX, and Keras"
+            }
+          ],
+          "methodology": "Ecosystem tooling support assessment",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemma release history",
+              "url": "https://ai.google.dev/gemma/docs",
+              "date": "2026-04-02",
+              "value": "Clear generational releases (supersedes Gemma 3); pinned weights never change once published"
+            }
+          ],
+          "methodology": "Release cadence and immutability review",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Self-hosted deployment model",
+              "url": "https://ai.google.dev/gemma/docs",
+              "date": "2026-04-02",
+              "value": "No built-in monitoring; deployer must assemble observability from serving-stack tooling"
+            }
+          ],
+          "methodology": "Assessment of out-of-box observability versus managed APIs",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community channels",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Community support (Hugging Face, GitHub, Discord); no SLA unless deployed via managed platforms"
+            }
+          ],
+          "methodology": "Support channel assessment for open-weight distribution",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Gemma 4 Launch",
+              "url": "https://huggingface.co/blog/gemma4",
+              "date": "2026-04-02",
+              "value": "Day-one integration across the open-model ecosystem; Gemma family has hundreds of millions of cumulative downloads"
+            }
+          ],
+          "methodology": "Third-party integration and adoption analysis",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 97,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Gemma 4 Announcement",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+              "date": "2026-04-02",
+              "value": "Apache 2.0 — a shift from the custom Gemma license, removing use-restriction ambiguity for commercial deployment"
+            }
+          ],
+          "methodology": "License analysis; Apache 2.0 is OSI-approved with no usage restrictions",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Apache 2.0 relicensing is the headline trust improvement: prior Gemma generations carried custom-license use restrictions. Operational burden (monitoring, scaling, support) falls on the deployer, as with any open-weight model."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 80,
+      "notes": "Capable for an open model, especially 31B with 256K context, but well below frontier proprietary coding models.",
+      "alternatives": ["qwen3-5", "llama-4-maverick"]
+    },
+    "customer-support": {
+      "overall": 82,
+      "notes": "26B-A4B MoE (4B active) gives strong quality at low serving cost for high-volume support; E4B enables on-device assistants.",
+      "alternatives": ["gemini-3-flash", "qwen3-5"]
+    },
+    "content-creation": {
+      "overall": 80,
+      "notes": "Solid drafting quality at 31B (~1452 LMArena); fully private content pipelines possible.",
+      "alternatives": ["llama-4-maverick", "gemini-3-5-flash"]
+    },
+    "education": {
+      "overall": 81,
+      "notes": "E2B/E4B with native audio enable offline, on-device tutoring in low-connectivity settings.",
+      "alternatives": ["gemma-3-27b", "gemini-3-flash"]
+    },
+    "healthcare": {
+      "overall": 76,
+      "notes": "Self-hosting suits strict data sovereignty (PHI never leaves infrastructure), but deployer carries the full compliance and accuracy-validation burden.",
+      "alternatives": ["claude-opus-4-8", "gemini-3-1-pro"]
+    },
+    "research-assistant": {
+      "overall": 78,
+      "notes": "256K context on 31B handles long documents; auditable weights suit reproducible research. Reasoning depth below frontier.",
+      "alternatives": ["gemini-3-1-pro", "qwen3-5"]
+    }
+  },
+
+  "strengths": [
+    "Apache 2.0 license — removes custom-license restrictions of prior Gemma generations",
+    "Top-3 open model: 31B at ~1452 LMArena Elo",
+    "Efficient MoE: 26B-A4B reaches ~1441 Elo with only 4B active parameters",
+    "Full data sovereignty: self-hosted inference, zero data leaves deployer",
+    "Edge-capable E2B/E4B variants with 128K context and native audio",
+    "256K context on 12B/26B/31B variants — large for open weights",
+    "Multimodal input: text, image, and video"
+  ],
+
+  "limitations": [
+    "No inherited compliance certifications; deployer builds or buys SOC 2/HIPAA posture",
+    "Safety guardrails removable via fine-tuning (inherent to open weights)",
+    "No first-party SLA or managed support outside Vertex AI hosting",
+    "Hallucination and reasoning depth below frontier hosted models, especially E2B/E4B",
+    "Operational burden (serving, scaling, monitoring) falls on deployer",
+    "Performance varies significantly with quantization choices"
+  ],
+
+  "best_for": [
+    "Data-sovereign deployments (on-prem, air-gapped, regulated environments)",
+    "On-device and edge AI (E2B/E4B with native audio)",
+    "Cost-efficient high-volume serving via the 26B-A4B MoE",
+    "Fine-tuning and domain adaptation under a permissive license",
+    "Research requiring auditable, reproducible model weights"
+  ],
+
+  "not_recommended_for": [
+    "Frontier-grade reasoning or coding without fine-tuning",
+    "Teams wanting a managed API with SLAs and built-in safety filtering",
+    "Compliance-critical workloads without in-house security engineering"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "Free (open weights; compute costs only)",
+      "output": "Free (open weights; compute costs only)",
+      "notes": "Apache 2.0. Self-hosting compute is the only cost; managed hosting available via Vertex AI and third-party providers.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 262144,
+    "max_output": 32768,
+    "languages": ["English", "140+ languages"],
+    "modalities": ["text", "image (input)", "video (input)", "audio (input, E2B/E4B)"],
+    "api_endpoint": "https://huggingface.co/google",
+    "open_source": true,
+    "architecture": "Family: E2B (2.3B effective) and E4B (4.5B) edge models; 12B dense; 26B-A4B MoE (4B active); 31B dense",
+    "parameters": "2.3B effective (E2B) to 31B dense; 26B MoE with 4B active",
+    "knowledge_cutoff": "Late 2025 (not officially confirmed)",
+    "release_date": "2026-04-02"
+  },
+
+  "related_entities": ["gemma-3-27b", "gemini-3-1-pro", "llama-4-maverick", "qwen3-5"],
+
+  "tags": [
+    "open-source",
+    "apache-2-0",
+    "open-weights",
+    "edge",
+    "on-device",
+    "moe",
+    "multimodal",
+    "self-hosted",
+    "data-sovereignty"
+  ]
+}

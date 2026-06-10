@@ -1,0 +1,479 @@
+{
+  "id": "dify",
+  "type": "agent",
+  "name": "Dify",
+  "provider": "LangGenius",
+  "version": "1.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Open-source LLM application and agentic workflow platform with a visual canvas, built-in RAG pipeline, agent nodes, and 50+ built-in tools. One of the most-starred LLM app platforms, deployable self-hosted or via Dify Cloud.",
+  "website": "https://dify.ai/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 80,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Documentation",
+              "url": "https://docs.dify.ai/",
+              "date": "2026-05-15",
+              "value": "Visual workflow orchestration with RAG grounding improves task accuracy for production LLM apps"
+            }
+          ],
+          "methodology": "Task completion testing across chatflow, workflow, and agent app types",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify Tools Documentation",
+              "url": "https://docs.dify.ai/en/guides/tools/README",
+              "date": "2026-04-20",
+              "value": "50+ built-in tools plus custom API tools, plugin marketplace, and MCP support with schema validation"
+            }
+          ],
+          "methodology": "Tool invocation testing across built-in, custom, and plugin tools",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify Workflow Documentation",
+              "url": "https://docs.dify.ai/en/guides/workflow/README",
+              "date": "2026-04-20",
+              "value": "Visual canvas supports branching, iteration, parallel nodes, and agent nodes for autonomous sub-tasks"
+            }
+          ],
+          "methodology": "Complex workflow construction and execution testing",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Conversation Variables",
+              "url": "https://docs.dify.ai/en/guides/workflow/variables",
+              "date": "2026-03-20",
+              "value": "Conversation variables, session memory, and knowledge-base persistence across chat sessions"
+            }
+          ],
+          "methodology": "Memory evaluation across sessions and knowledge bases",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Error Handling Documentation",
+              "url": "https://docs.dify.ai/en/guides/workflow/error-handling/README",
+              "date": "2026-03-20",
+              "value": "Node-level error handling with retry, fail branches, and default-value fallbacks in workflows"
+            }
+          ],
+          "methodology": "Error injection testing on workflow error branches and retries",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Agent Node Documentation",
+              "url": "https://docs.dify.ai/en/guides/workflow/node/agent",
+              "date": "2026-03-25",
+              "value": "Agent nodes embed autonomous strategies inside workflows, but deep multi-agent orchestration is less developed than code-first frameworks"
+            }
+          ],
+          "methodology": "Multi-agent pattern testing using agent nodes within workflows",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 76,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Sandbox (dify-sandbox)",
+              "url": "https://github.com/langgenius/dify-sandbox",
+              "date": "2026-02-15",
+              "value": "Code nodes execute in the dedicated dify-sandbox service with syscall restrictions; external tools run via HTTP without sandboxing"
+            }
+          ],
+          "methodology": "Security architecture review of code execution sandbox and tool isolation",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Workspace and Enterprise Docs",
+              "url": "https://docs.dify.ai/",
+              "date": "2026-04-20",
+              "value": "Workspace member roles, app-level API keys, and SSO/access policies in premium/enterprise editions"
+            }
+          ],
+          "methodology": "Access control assessment of workspace roles and API key scoping",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Content Moderation Documentation",
+              "url": "https://docs.dify.ai/en/guides/application-orchestrate/app-toolkits/moderation-tool",
+              "date": "2026-03-20",
+              "value": "Built-in content moderation (keyword, OpenAI moderation, custom API) for inputs/outputs; no dedicated injection defense"
+            }
+          ],
+          "methodology": "Injection testing with moderation toolkits enabled",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Self-Hosted Deployment",
+              "url": "https://docs.dify.ai/en/getting-started/install-self-hosted/README",
+              "date": "2026-04-20",
+              "value": "Workspace- and app-scoped data with isolated knowledge bases; self-hosting gives full infrastructure isolation"
+            }
+          ],
+          "methodology": "Data isolation architecture review across cloud and self-hosted modes",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify GitHub Repository",
+              "url": "https://github.com/langgenius/dify",
+              "date": "2026-06-01",
+              "value": "Fully public codebase with 138k+ stars; license is Apache-2.0-based but adds multi-tenant SaaS resale restrictions"
+            }
+          ],
+          "methodology": "Source code and license terms review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 83,
+      "criteria": {
+        "data_retention": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify Self-Hosted Deployment",
+              "url": "https://docs.dify.ai/en/getting-started/install-self-hosted/README",
+              "date": "2026-04-20",
+              "value": "Self-hosted deployments keep all logs, conversations, and knowledge data in user-controlled databases"
+            }
+          ],
+          "methodology": "Privacy architecture review of self-hosted versus cloud retention",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 81,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Privacy Policy",
+              "url": "https://dify.ai/privacy",
+              "date": "2026-04-01",
+              "value": "Published privacy policy for cloud; self-hosting enables full GDPR data-controller compliance"
+            }
+          ],
+          "methodology": "Compliance capabilities assessment across deployment modes",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Model Provider Documentation",
+              "url": "https://docs.dify.ai/en/guides/model-configuration/README",
+              "date": "2026-04-20",
+              "value": "Data flows to configured model providers and any third-party tools invoked in workflows; local models supported via Ollama/Xinference"
+            }
+          ],
+          "methodology": "Data flow analysis across model providers and tool integrations",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify Docker Compose Deployment",
+              "url": "https://docs.dify.ai/en/getting-started/install-self-hosted/docker-compose",
+              "date": "2026-04-20",
+              "value": "Free self-hosting via Docker Compose or Helm, including fully local model serving with Ollama"
+            }
+          ],
+          "methodology": "Deployment options assessment including air-gapped configurations",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 85,
+      "criteria": {
+        "documentation_quality": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify Documentation",
+              "url": "https://docs.dify.ai/",
+              "date": "2026-05-15",
+              "value": "Extensive multilingual docs covering workflows, RAG, tools, plugins, and self-hosting"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify Logs and Annotations / Tracing Integrations",
+              "url": "https://docs.dify.ai/en/guides/monitoring/README",
+              "date": "2026-04-20",
+              "value": "Built-in conversation logs, node-level run traces, and integrations with LangSmith, Langfuse, and Opik"
+            }
+          ],
+          "methodology": "Tracing and logging capabilities assessment",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Workflow Canvas",
+              "url": "https://docs.dify.ai/en/guides/workflow/README",
+              "date": "2026-04-20",
+              "value": "Visual canvas plus per-node inputs/outputs and citation/attribution in RAG answers make behavior inspectable"
+            }
+          ],
+          "methodology": "Explainability assessment of visual runs and RAG citations",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify Open Source License",
+              "url": "https://github.com/langgenius/dify/blob/main/LICENSE",
+              "date": "2026-06-01",
+              "value": "Apache-2.0-based custom license; restricts operating multi-tenant SaaS and removing branding without commercial license"
+            }
+          ],
+          "methodology": "License terms review against OSI-standard licenses",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify GitHub Metrics",
+              "url": "https://github.com/langgenius/dify",
+              "date": "2026-04-15",
+              "value": "138k+ GitHub stars and 1M+ deployed apps as of April 2026; very active releases and plugin marketplace"
+            }
+          ],
+          "methodology": "Community engagement analysis of stars, deployments, and release cadence",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 85,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify Getting Started",
+              "url": "https://docs.dify.ai/en/getting-started/install-self-hosted/docker-compose",
+              "date": "2026-04-20",
+              "value": "No-code visual builder plus Backend-as-a-Service APIs; running app possible in minutes via Docker or Cloud"
+            }
+          ],
+          "methodology": "Integration complexity assessment for no-code and API usage",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dify Helm/Kubernetes Deployment",
+              "url": "https://docs.dify.ai/en/getting-started/install-self-hosted/README",
+              "date": "2026-04-20",
+              "value": "Kubernetes/Helm deployments with horizontally scalable API and worker services; 1M+ apps deployed on the platform"
+            }
+          ],
+          "methodology": "Scalability assessment of deployment architectures",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify Pricing",
+              "url": "https://dify.ai/pricing",
+              "date": "2026-06-01",
+              "value": "Free self-hosted; Cloud Sandbox free, Professional $59/mo, Team $159/mo with clear plan limits"
+            }
+          ],
+          "methodology": "Pricing model analysis across self-hosted and cloud tiers",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify Monitoring Documentation",
+              "url": "https://docs.dify.ai/en/guides/monitoring/README",
+              "date": "2026-04-20",
+              "value": "Built-in usage analytics, conversation logs, annotation workflows, and external tracing integrations"
+            }
+          ],
+          "methodology": "Monitoring features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Dify GitHub Releases",
+              "url": "https://github.com/langgenius/dify/releases",
+              "date": "2026-06-01",
+              "value": "Mature 1.x platform with frequent stable releases, plugin system, and large production install base"
+            }
+          ],
+          "methodology": "Production readiness assessment of release maturity and adoption",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "customer-support": {
+      "overall": 88,
+      "notes": "RAG-grounded chatbots with citations, moderation, and annotation workflows are a core strength"
+    },
+    "content-creation": {
+      "overall": 85,
+      "notes": "Visual workflows with templates suit marketing and content generation pipelines"
+    },
+    "research-assistant": {
+      "overall": 82,
+      "notes": "Knowledge bases plus web/search tools support internal research assistants"
+    },
+    "data-analysis": {
+      "overall": 76,
+      "notes": "Sandboxed code nodes handle light analysis; heavy data work better in code-first frameworks"
+    },
+    "education": {
+      "overall": 82,
+      "notes": "Easy no-code building of tutoring and Q&A apps over course materials"
+    },
+    "code-generation": {
+      "overall": 72,
+      "notes": "Possible via LLM nodes but not a developer-workflow-focused platform"
+    },
+    "legal-compliance": {
+      "overall": 76,
+      "notes": "Self-hosted RAG over legal documents works, but compliance guardrails need configuration"
+    }
+  },
+  "best_for": [
+    "Teams wanting no-code/low-code agentic workflows with built-in RAG",
+    "Enterprises self-hosting LLM apps for data control with a visual ops layer",
+    "Product teams shipping chatbots and assistants via Backend-as-a-Service APIs",
+    "Organizations standardizing many internal LLM apps on one platform"
+  ],
+  "strengths": [
+    "Visual workflow canvas combining agent nodes, RAG, and 50+ built-in tools",
+    "Massive adoption and community: 138k+ GitHub stars, 1M+ deployed apps",
+    "Free self-hosting with Docker/Helm and full data control",
+    "Built-in observability: logs, annotations, analytics, and tracing integrations",
+    "Dedicated dify-sandbox for code-node execution",
+    "Clear, affordable cloud pricing (free Sandbox, $59/mo Professional, $159/mo Team)"
+  ],
+  "limitations": [
+    "License is Apache-2.0-based but custom: multi-tenant SaaS resale and logo removal require a commercial license",
+    "Multi-agent orchestration is shallower than code-first frameworks like LangGraph or CrewAI",
+    "Visual abstraction limits fine-grained programmatic control for complex agent logic",
+    "Prompt injection defense relies on opt-in moderation rather than dedicated mechanisms",
+    "Self-hosted stack (API, worker, sandbox, vector DB) has nontrivial operational footprint"
+  ],
+  "related": [
+    "flowise",
+    "langflow",
+    "n8n-ai-agent",
+    "crewai",
+    "langgraph-agent"
+  ],
+  "metadata": {
+    "license": "Dify Open Source License (Apache 2.0 based, with multi-tenant SaaS resale restrictions)",
+    "supported_models": [
+      "OpenAI",
+      "Anthropic Claude",
+      "Google Gemini",
+      "Azure OpenAI",
+      "Local LLMs via Ollama/Xinference",
+      "Hundreds of models via provider plugins"
+    ],
+    "programming_languages": [
+      "Python (backend)",
+      "TypeScript (frontend)",
+      "No-code visual builder"
+    ],
+    "deployment_type": "Self-hosted or Dify Cloud",
+    "tool_support": [
+      "50+ built-in tools",
+      "Custom API tools",
+      "Plugin marketplace",
+      "MCP tools"
+    ],
+    "github_stars": "138000+",
+    "first_release": "2023",
+    "pricing": "Free self-hosted; Cloud: Sandbox free, Professional $59/mo, Team $159/mo",
+    "python_requirement": "Python >=3.11 (backend, when developing from source)",
+    "adoption": "1M+ apps deployed on the platform as of April 2026"
+  },
+  "tags": [
+    "no-code",
+    "workflow-platform",
+    "open-source"
+  ]
+}

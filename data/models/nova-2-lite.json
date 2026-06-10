@@ -1,0 +1,626 @@
+{
+  "id": "nova-2-lite",
+  "type": "model",
+  "name": "Amazon Nova 2 Lite",
+  "provider": "Amazon (AWS)",
+  "version": "Nova 2 Lite (GA)",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Amazon's cost-efficient Nova 2 workhorse model, GA on Amazon Bedrock since re:Invent 2025. Offers three thinking-intensity levels, a built-in code interpreter, and web grounding with a 1M token context, backed by AWS's strong enterprise compliance posture.",
+  "website": "https://aws.amazon.com/bedrock/nova/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 86,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AWS What's New (Nova 2 announcement)",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock/",
+              "date": "2025-12-02",
+              "value": "Built-in code interpreter enables executable code workflows; AWS cites competitive coding quality for its price tier"
+            }
+          ],
+          "methodology": "Review of provider claims; limited independent benchmark coverage to date",
+          "last_verified": "2026-06-10",
+          "notes": "Public third-party benchmark data sparse; score weighted toward provider evaluations"
+        },
+        "task_accuracy_reasoning": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AWS What's New (Nova 2 announcement)",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock/",
+              "date": "2025-12-02",
+              "value": "Three thinking-intensity levels allow scaling reasoning depth per request"
+            }
+          ],
+          "methodology": "Review of provider evaluations of adjustable-thinking reasoning performance",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 83,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Amazon Nova Documentation",
+              "url": "https://docs.aws.amazon.com/nova/",
+              "date": "2025-12-02",
+              "value": "Positioned as fast, capable general-purpose model; few public leaderboard placements"
+            }
+          ],
+          "methodology": "Review of provider documentation; independent leaderboard coverage remains sparse",
+          "last_verified": "2026-06-10",
+          "notes": "Low confidence pending broader third-party benchmarking"
+        },
+        "output_consistency": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Amazon Nova Documentation",
+              "url": "https://docs.aws.amazon.com/nova/",
+              "date": "2025-12-02",
+              "value": "Thinking-intensity controls produce predictable quality/cost tradeoffs"
+            }
+          ],
+          "methodology": "Review of feature design and repeated-prompt behavior reports",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "~1.5s (low thinking intensity)",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-01-15",
+              "value": "Lite tier optimized for low latency; higher thinking intensity increases response time"
+            }
+          ],
+          "methodology": "Median latency from third-party benchmarking at default settings",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p95": {
+          "value": "~4.0s (varies with thinking intensity)",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-01-15",
+              "value": "Tail latency dominated by thinking-intensity setting and tool use (code interpreter, web grounding)"
+            }
+          ],
+          "methodology": "95th percentile estimates across configurations",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "1,000,000 tokens (~65K output)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Nova Documentation",
+              "url": "https://docs.aws.amazon.com/nova/",
+              "date": "2025-12-02",
+              "value": "1M token context window with approximately 65K max output tokens"
+            }
+          ],
+          "methodology": "Official specification from provider documentation",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 97,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "AWS Health Dashboard",
+              "url": "https://health.aws.amazon.com/health/status",
+              "date": "2026-06-01",
+              "value": "Bedrock service availability backed by AWS regional infrastructure and SLAs"
+            }
+          ],
+          "methodology": "Historical service availability from AWS status reporting",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "GA member of the Nova 2 family (Nova 2 Pro and Omni remain in preview). Public benchmark data is still sparse, so performance scores carry medium/low confidence."
+    },
+    "security": {
+      "overall_score": 88,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Guardrails",
+              "url": "https://aws.amazon.com/bedrock/guardrails/",
+              "date": "2025-12-02",
+              "value": "Bedrock Guardrails add configurable prompt-attack filtering on top of model defenses"
+            }
+          ],
+          "methodology": "Testing against OWASP LLM01 patterns with and without Bedrock Guardrails",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AWS Responsible AI",
+              "url": "https://aws.amazon.com/ai/responsible-ai/",
+              "date": "2025-12-02",
+              "value": "Safety training plus platform-level guardrails reduce jailbreak success"
+            }
+          ],
+          "methodology": "Review of adversarial testing and platform guardrail capabilities",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Data Protection",
+              "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+              "date": "2025-12-02",
+              "value": "Customer data not used to train models; content not shared with model providers"
+            }
+          ],
+          "methodology": "Analysis of Bedrock data protection documentation and commitments",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AWS Responsible AI",
+              "url": "https://aws.amazon.com/ai/responsible-ai/",
+              "date": "2025-12-02",
+              "value": "Built-in content moderation plus configurable Bedrock Guardrails policies"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Security",
+              "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security.html",
+              "date": "2025-12-02",
+              "value": "IAM authentication, SigV4 signing, VPC endpoints (PrivateLink), KMS encryption, CloudTrail auditing"
+            }
+          ],
+          "methodology": "Review of AWS-native security controls available to Bedrock workloads",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Inherits AWS's mature platform security: IAM, PrivateLink, KMS, CloudTrail, and Bedrock Guardrails give it one of the strongest deployment security stories available."
+    },
+    "privacy_compliance": {
+      "overall_score": 90,
+      "criteria": {
+        "data_residency": {
+          "value": "Customer-selected AWS regions",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Documentation",
+              "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+              "date": "2025-12-02",
+              "value": "Processing stays in selected region (cross-region inference configurable)"
+            }
+          ],
+          "methodology": "Review of Bedrock regional processing documentation",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Data Protection",
+              "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+              "date": "2025-12-02",
+              "value": "Customer prompts and outputs are never used to train Nova models — no opt-out required"
+            }
+          ],
+          "methodology": "Analysis of Bedrock data usage commitments",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "Not retained by Bedrock (customer-controlled logging)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Data Protection",
+              "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+              "date": "2025-12-02",
+              "value": "Bedrock does not store prompts/outputs after processing unless customer enables invocation logging"
+            }
+          ],
+          "methodology": "Review of Bedrock retention and logging documentation",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Guardrails",
+              "url": "https://aws.amazon.com/bedrock/guardrails/",
+              "date": "2025-12-02",
+              "value": "Guardrails support sensitive-information filters including PII redaction"
+            }
+          ],
+          "methodology": "Review of platform PII detection and redaction capabilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "AWS Compliance Programs",
+              "url": "https://aws.amazon.com/compliance/services-in-scope/",
+              "date": "2025-12-02",
+              "value": "Bedrock in scope for SOC 1/2/3, ISO 27001/27017/27018, HIPAA-eligible, GDPR-supporting, FedRAMP"
+            }
+          ],
+          "methodology": "Verification against AWS services-in-scope compliance listings",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Data Protection",
+              "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+              "date": "2025-12-02",
+              "value": "No persistent storage of inference content by default; abuse-detection processing is ephemeral"
+            }
+          ],
+          "methodology": "Review of data handling practices",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Among the strongest compliance postures in the market via Bedrock: SOC, ISO, HIPAA-eligible, GDPR-supporting, with data never used for training."
+    },
+    "trust_transparency": {
+      "overall_score": 81,
+      "criteria": {
+        "explainability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AWS What's New (Nova 2 announcement)",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock/",
+              "date": "2025-12-02",
+              "value": "Thinking-intensity levels expose reasoning effort; web grounding cites sources"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency and grounded citation behavior",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 80,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Amazon Nova Documentation",
+              "url": "https://docs.aws.amazon.com/nova/",
+              "date": "2025-12-02",
+              "value": "Built-in web grounding designed to reduce hallucinations; limited independent factuality data"
+            }
+          ],
+          "methodology": "Review of grounding features; independent factual QA coverage sparse",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AWS Responsible AI",
+              "url": "https://aws.amazon.com/ai/responsible-ai/",
+              "date": "2025-12-02",
+              "value": "AWS responsible AI program with published service cards and bias testing"
+            }
+          ],
+          "methodology": "Review of AWS responsible AI documentation and service cards",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 78,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Model Behavior",
+              "url": "https://docs.aws.amazon.com/nova/",
+              "date": "2025-12-02",
+              "value": "Adequate uncertainty expression; little published evaluation"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Amazon Nova Documentation",
+              "url": "https://docs.aws.amazon.com/nova/",
+              "date": "2025-12-02",
+              "value": "AWS publishes service cards and user guides covering capabilities and responsible-use guidance"
+            }
+          ],
+          "methodology": "Review of documentation completeness",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AWS Public Statements",
+              "url": "https://aws.amazon.com/bedrock/nova/",
+              "date": "2025-12-02",
+              "value": "Training data sources not disclosed in detail"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Guardrails",
+              "url": "https://aws.amazon.com/bedrock/guardrails/",
+              "date": "2025-12-02",
+              "value": "Configurable platform guardrails: content filters, denied topics, PII redaction, contextual grounding checks"
+            }
+          ],
+          "methodology": "Analysis of built-in and platform-level safety mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Strong platform-level guardrails and grounding features; independent transparency and factuality data still limited for the Nova 2 generation."
+    },
+    "operational_excellence": {
+      "overall_score": 89,
+      "criteria": {
+        "api_design_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock API",
+              "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/welcome.html",
+              "date": "2025-12-02",
+              "value": "Converse API with streaming, tool use, thinking-intensity controls, code interpreter, web grounding"
+            }
+          ],
+          "methodology": "Review of API design and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "AWS SDKs",
+              "url": "https://aws.amazon.com/developer/tools/",
+              "date": "2025-12-02",
+              "value": "Mature official SDKs across Python, JavaScript, Java, Go, .NET and more"
+            }
+          ],
+          "methodology": "Review of SDK quality, documentation, and maintenance",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Model Lifecycle",
+              "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
+              "date": "2025-12-02",
+              "value": "Documented model lifecycle with legacy/EOL stages and advance notice"
+            }
+          ],
+          "methodology": "Review of Bedrock model lifecycle policy",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon CloudWatch / CloudTrail",
+              "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring.html",
+              "date": "2025-12-02",
+              "value": "Native CloudWatch metrics, invocation logging, and CloudTrail audit trails"
+            }
+          ],
+          "methodology": "Review of monitoring and observability integrations",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "AWS Support",
+              "url": "https://aws.amazon.com/premiumsupport/",
+              "date": "2025-12-02",
+              "value": "Tiered enterprise support with TAMs, SLAs, and extensive documentation"
+            }
+          ],
+          "methodology": "Assessment of support tiers and documentation",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock Ecosystem",
+              "url": "https://aws.amazon.com/bedrock/",
+              "date": "2025-12-02",
+              "value": "Integrates with Bedrock Agents, Knowledge Bases, Guardrails, and the broader AWS ecosystem"
+            }
+          ],
+          "methodology": "Analysis of platform integrations and tooling",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "AWS Service Terms",
+              "url": "https://aws.amazon.com/service-terms/",
+              "date": "2025-12-02",
+              "value": "Standard AWS service terms; Amazon offers IP indemnification for Nova outputs"
+            }
+          ],
+          "methodology": "Review of licensing terms and indemnification",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Exceptional operational maturity by virtue of the AWS/Bedrock platform: IAM, monitoring, lifecycle policy, and enterprise support are best-in-class."
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 82,
+      "notes": "Built-in code interpreter is convenient for executable workflows, but raw coding quality trails frontier flagships.",
+      "alternatives": ["claude-opus-4-8", "grok-4-3"]
+    },
+    "customer-support": {
+      "overall": 88,
+      "notes": "Low cost, low latency, 1M context, and strong compliance make it excellent for enterprise support at scale.",
+      "alternatives": ["claude-sonnet-4-6", "gemini-3-5-flash"]
+    },
+    "content-creation": {
+      "overall": 82,
+      "notes": "Capable everyday content generation with web grounding for current facts; less distinctive prose than flagships.",
+      "alternatives": ["gpt-5-5", "claude-sonnet-4-6"]
+    },
+    "data-analysis": {
+      "overall": 86,
+      "notes": "Code interpreter plus 1M context suit data workflows well at a very low price point.",
+      "alternatives": ["gemini-3-1-pro", "claude-opus-4-8"]
+    },
+    "research-assistant": {
+      "overall": 85,
+      "notes": "Web grounding with citations and 1M context are strong for research at this price tier.",
+      "alternatives": ["gemini-3-1-pro", "grok-4-3"]
+    },
+    "legal-compliance": {
+      "overall": 87,
+      "notes": "Bedrock's compliance certifications and data controls are the draw; pair with human review for analysis depth.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    },
+    "healthcare": {
+      "overall": 86,
+      "notes": "HIPAA-eligible on Bedrock with strong data protections; validate clinical accuracy given sparse benchmarks.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
+    },
+    "financial-analysis": {
+      "overall": 84,
+      "notes": "Good quantitative workflows via code interpreter; compliance posture fits financial services.",
+      "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
+    },
+    "education": {
+      "overall": 85,
+      "notes": "Adjustable thinking intensity and low cost suit high-volume tutoring deployments.",
+      "alternatives": ["claude-sonnet-4-6", "gemini-3-5-flash"]
+    },
+    "creative-writing": {
+      "overall": 78,
+      "notes": "Serviceable but not a creative standout versus frontier flagships.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    }
+  },
+  "strengths": [
+    "Very low pricing: $0.30/$2.50 per 1M tokens with 1M context",
+    "Three thinking-intensity levels for per-request quality/cost control",
+    "Built-in code interpreter and web grounding (no external tooling needed)",
+    "Best-in-class enterprise compliance via Bedrock (SOC, ISO, HIPAA-eligible, GDPR)",
+    "Customer data never used for model training",
+    "Deep AWS integration: IAM, PrivateLink, KMS, CloudWatch, Guardrails"
+  ],
+  "limitations": [
+    "Public benchmark data sparse; performance claims rest largely on AWS evaluations",
+    "Raw capability trails frontier flagships on hard reasoning and coding",
+    "Nova 2 Pro and Omni siblings still in preview, limiting family upgrade paths",
+    "AWS-only availability creates platform lock-in",
+    "Training data transparency is limited"
+  ],
+  "best_for": [
+    "AWS-centric enterprises needing compliant, cost-efficient inference at scale",
+    "High-volume agentic workloads using code interpreter and web grounding",
+    "Regulated industries requiring HIPAA-eligible, SOC/ISO-certified infrastructure",
+    "Long-context document processing on a budget"
+  ],
+  "not_recommended_for": [
+    "Teams needing best-in-class coding or reasoning quality",
+    "Multi-cloud deployments avoiding AWS lock-in",
+    "Use cases requiring extensively validated public benchmark performance",
+    "Cutting-edge creative writing applications"
+  ],
+  "metadata": {
+    "pricing": {
+      "input": "$0.30 per 1M tokens",
+      "output": "$2.50 per 1M tokens",
+      "notes": "Amazon Bedrock pricing; batch and provisioned throughput options available. Announced at re:Invent 2025-12-02.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 1000000,
+    "max_output": 65000,
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Italian",
+      "Portuguese",
+      "Japanese",
+      "Korean",
+      "Chinese",
+      "Arabic",
+      "Hindi"
+    ],
+    "modalities": ["text", "image (input)", "document"],
+    "api_endpoint": "https://bedrock-runtime.us-east-1.amazonaws.com",
+    "open_source": false,
+    "architecture": "Transformer-based with adjustable thinking intensity, built-in code interpreter, and web grounding",
+    "parameters": "Not disclosed",
+    "release_date": "2025-12-02 (GA at re:Invent; Nova 2 Pro and Omni in preview)"
+  },
+  "related_entities": ["nova-pro", "claude-sonnet-4-6", "gemini-3-5-flash", "grok-4-3"],
+  "tags": [
+    "aws",
+    "bedrock",
+    "enterprise",
+    "hipaa-eligible",
+    "cost-effective",
+    "code-interpreter",
+    "web-grounding",
+    "thinking-levels"
+  ]
+}

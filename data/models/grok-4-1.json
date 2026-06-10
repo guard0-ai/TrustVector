@@ -1,0 +1,633 @@
+{
+  "id": "grok-4-1",
+  "type": "model",
+  "name": "Grok 4.1",
+  "provider": "xAI",
+  "version": "4.1 (2025-11-17)",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "xAI's late-2025 flagship that debuted #1 on LMArena Text (1483 Elo) and led EQ-Bench3 for emotional intelligence, with a 2M token context window. Now superseded by Grok 4.3; the grok-4-1-fast variants were retired on 2026-05-15.",
+  "website": "https://x.ai/news",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 92,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 90,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "llm-stats",
+              "url": "https://llm-stats.com/models/grok-4.1-2025-11-17",
+              "date": "2025-11-17",
+              "value": "Strong coding performance, competitive with late-2025 frontier peers"
+            }
+          ],
+          "methodology": "Review of third-party benchmark aggregator data",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "xAI News",
+              "url": "https://x.ai/news",
+              "date": "2025-11-17",
+              "value": "Substantial reasoning gains over Grok 4 with reduced hallucination rate"
+            },
+            {
+              "source": "EQ-Bench3",
+              "url": "https://eqbench.com/",
+              "date": "2025-11-17",
+              "value": "Leader on EQ-Bench3 emotional intelligence benchmark at launch"
+            }
+          ],
+          "methodology": "Provider launch evaluations and independent benchmark leaderboards",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "LMArena Text Leaderboard",
+              "url": "https://lmarena.ai/leaderboard",
+              "date": "2025-11-17",
+              "value": "#1 on LMArena Text at launch with 1483 Elo"
+            },
+            {
+              "source": "llm-stats",
+              "url": "https://llm-stats.com/models/grok-4.1-2025-11-17",
+              "date": "2025-11-17",
+              "value": "Top-tier general knowledge and conversational quality"
+            }
+          ],
+          "methodology": "Crowdsourced arena comparisons and aggregator metrics",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 89,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI News",
+              "url": "https://x.ai/news",
+              "date": "2025-11-17",
+              "value": "Reduced hallucination and improved instruction adherence vs Grok 4"
+            }
+          ],
+          "methodology": "Review of provider claims and community repeated-prompt reports",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "~2.5s (standard); sub-second with 4.1 Fast",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2025-12-01",
+              "value": "Standard 4.1 ~2.5s typical; Fast variant optimized for low-latency agentic use"
+            }
+          ],
+          "methodology": "Median latency from third-party API benchmarking",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p95": {
+          "value": "~6.0s (standard)",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2025-12-01",
+              "value": "Tail latency higher with extended reasoning engaged"
+            }
+          ],
+          "methodology": "95th percentile response time from third-party benchmarking",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "2,000,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "llm-stats",
+              "url": "https://llm-stats.com/models/grok-4.1-2025-11-17",
+              "date": "2025-11-17",
+              "value": "2M token context window"
+            }
+          ],
+          "methodology": "Official specification reflected in aggregator listings",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 95,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Status Page",
+              "url": "https://status.x.ai/",
+              "date": "2026-05-01",
+              "value": "Stable availability through its lifecycle; Fast variants retired 2026-05-15"
+            }
+          ],
+          "methodology": "Historical uptime data from official status page",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Released 2025-11-17 and #1 on LMArena Text at launch (1483 Elo) with EQ-Bench3 leadership. Superseded by Grok 4.3 as xAI's flagship; grok-4-1-fast variants retired 2026-05-15."
+    },
+    "security": {
+      "overall_score": 83,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2025-11-17",
+              "value": "Improved system prompt adherence; limited published red-team data"
+            }
+          ],
+          "methodology": "Testing against OWASP LLM01 prompt injection patterns",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI News",
+              "url": "https://x.ai/news",
+              "date": "2025-11-17",
+              "value": "Safety tuning improvements cited in 4.1 release notes"
+            }
+          ],
+          "methodology": "Review of adversarial prompt testing and community reports",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Privacy Policy",
+              "url": "https://x.ai/legal/privacy-policy",
+              "date": "2025-11-01",
+              "value": "API data handling documented; fewer contractual controls than major enterprise providers"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and data handling commitments",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI News",
+              "url": "https://x.ai/news",
+              "date": "2025-11-17",
+              "value": "Lower hallucination rate and improved refusal calibration vs Grok 4"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI API Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2025-11-17",
+              "value": "API key authentication, HTTPS only, rate limiting"
+            }
+          ],
+          "methodology": "Review of API security features",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Solid baseline; xAI publishes less safety evaluation detail than Anthropic, OpenAI, or Google."
+    },
+    "privacy_compliance": {
+      "overall_score": 76,
+      "criteria": {
+        "data_residency": {
+          "value": "US (primary)",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2025-11-17",
+              "value": "US-based infrastructure; no published regional residency options"
+            }
+          ],
+          "methodology": "Review of provider documentation",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Privacy Policy",
+              "url": "https://x.ai/legal/privacy-policy",
+              "date": "2025-11-01",
+              "value": "API customer data not used for training by default per policy"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and data usage terms",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "30 days (standard API)",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Privacy Policy",
+              "url": "https://x.ai/legal/privacy-policy",
+              "date": "2025-11-01",
+              "value": "Limited retention for abuse monitoring; zero-retention via enterprise agreement"
+            }
+          ],
+          "methodology": "Review of terms and retention policies",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2025-11-17",
+              "value": "Customer responsible for PII redaction"
+            }
+          ],
+          "methodology": "Review of data protection capabilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Trust Center",
+              "url": "https://trust.x.ai/",
+              "date": "2025-12-01",
+              "value": "SOC 2 Type II; no HIPAA BAA program, fewer attestations than major providers"
+            }
+          ],
+          "methodology": "Verification of compliance certifications",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Trust Center",
+              "url": "https://trust.x.ai/",
+              "date": "2025-12-01",
+              "value": "Zero-data-retention only via negotiated enterprise terms"
+            }
+          ],
+          "methodology": "Review of data handling practices",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Same thinner-than-peers xAI compliance posture as the rest of the Grok line: SOC 2 but no HIPAA program."
+    },
+    "trust_transparency": {
+      "overall_score": 82,
+      "criteria": {
+        "explainability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI News",
+              "url": "https://x.ai/news",
+              "date": "2025-11-17",
+              "value": "Reasoning traces available; improved explanation quality vs Grok 4"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI News",
+              "url": "https://x.ai/news",
+              "date": "2025-11-17",
+              "value": "Headline launch claim: significantly reduced hallucination rate vs Grok 4"
+            }
+          ],
+          "methodology": "Review of provider factuality evaluations and community testing",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 76,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "xAI Public Statements",
+              "url": "https://x.ai/news",
+              "date": "2025-11-17",
+              "value": "Limited published bias evaluation detail"
+            }
+          ],
+          "methodology": "Review of bias disclosures and independent reporting",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model Behavior",
+              "url": "https://docs.x.ai/",
+              "date": "2025-11-17",
+              "value": "Reasonable uncertainty expression, improved with 4.1 tuning"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2025-11-17",
+              "value": "Model documentation with capabilities and pricing; less depth than peers' system cards"
+            }
+          ],
+          "methodology": "Review of documentation completeness",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Public Statements",
+              "url": "https://x.ai/news",
+              "date": "2025-11-17",
+              "value": "General description including X platform data; detailed sources not disclosed"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2025-11-17",
+              "value": "Built-in moderation with lighter-touch defaults than peers"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Notable for launch emphasis on hallucination reduction and emotional intelligence (EQ-Bench3 leader)."
+    },
+    "operational_excellence": {
+      "overall_score": 81,
+      "criteria": {
+        "api_design_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "xAI API Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2025-11-17",
+              "value": "OpenAI-compatible API; Fast variant tailored for agentic tool-calling"
+            }
+          ],
+          "methodology": "Review of API design and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI SDKs",
+              "url": "https://github.com/xai-org",
+              "date": "2025-11-17",
+              "value": "Official SDKs plus OpenAI client compatibility"
+            }
+          ],
+          "methodology": "Review of SDK quality and maintenance",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "xAI Migration Guide (May 15 Retirement)",
+              "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+              "date": "2026-05-15",
+              "value": "grok-4-1-fast variants retired 2026-05-15, about six months after launch, with retired slugs redirecting to grok-4.3"
+            }
+          ],
+          "methodology": "Review of deprecation timeline; rapid retirement and silent redirection penalize lifecycle predictability",
+          "last_verified": "2026-06-10",
+          "notes": "Six-month lifespan for Fast variants is short for production planning"
+        },
+        "monitoring_observability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Console",
+              "url": "https://console.x.ai/",
+              "date": "2025-11-17",
+              "value": "Usage dashboard with spend and rate limit visibility"
+            }
+          ],
+          "methodology": "Review of monitoring tools",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2025-11-17",
+              "value": "Improving documentation; support channels lighter than major cloud providers"
+            }
+          ],
+          "methodology": "Assessment of documentation and support responsiveness",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "llm-stats",
+              "url": "https://llm-stats.com/models/grok-4.1-2025-11-17",
+              "date": "2025-11-17",
+              "value": "Broad availability via aggregators and frameworks during its flagship period"
+            }
+          ],
+          "methodology": "Analysis of third-party integrations",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "xAI Terms of Service",
+              "url": "https://x.ai/legal/terms-of-service",
+              "date": "2025-11-01",
+              "value": "Clear commercial API terms"
+            }
+          ],
+          "methodology": "Review of licensing terms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Solid operations during its run, but the 2026-05-15 retirement of Fast variants and supersession by Grok 4.3 make this a legacy choice for new builds."
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 89,
+      "notes": "Strong coding for its generation, but Grok 4.3 supersedes it at far lower cost.",
+      "alternatives": ["grok-4-3", "claude-opus-4-8"]
+    },
+    "customer-support": {
+      "overall": 91,
+      "notes": "EQ-Bench3 leadership translates to excellent empathetic support conversations.",
+      "alternatives": ["claude-sonnet-4-6", "grok-4-3"]
+    },
+    "content-creation": {
+      "overall": 90,
+      "notes": "Top-rated conversational and writing quality at launch (#1 LMArena Text).",
+      "alternatives": ["gpt-5-5", "grok-4-3"]
+    },
+    "data-analysis": {
+      "overall": 88,
+      "notes": "2M context handles very large datasets; standard pricing ($3/$15) is high vs Grok 4.3.",
+      "alternatives": ["gemini-3-1-pro", "grok-4-3"]
+    },
+    "research-assistant": {
+      "overall": 90,
+      "notes": "2M context window is among the largest available; strong synthesis quality.",
+      "alternatives": ["gemini-3-1-pro", "grok-4-3"]
+    },
+    "legal-compliance": {
+      "overall": 74,
+      "notes": "Thin compliance certifications and legacy lifecycle status argue against new regulated deployments.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    },
+    "healthcare": {
+      "overall": 68,
+      "notes": "No HIPAA eligibility; superseded model. Not recommended for PHI workloads.",
+      "alternatives": ["claude-opus-4-8", "nova-2-lite"]
+    },
+    "financial-analysis": {
+      "overall": 87,
+      "notes": "Strong reasoning over long documents; consider lifecycle risk for production systems.",
+      "alternatives": ["gpt-5-5", "grok-4-3"]
+    },
+    "education": {
+      "overall": 89,
+      "notes": "Empathetic, patient explanations backed by EQ-Bench3 leadership.",
+      "alternatives": ["claude-sonnet-4-6", "gemini-3-5-flash"]
+    },
+    "creative-writing": {
+      "overall": 91,
+      "notes": "One of the strongest creative/conversational models of late 2025.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    }
+  },
+  "strengths": [
+    "#1 LMArena Text at launch (1483 Elo)",
+    "EQ-Bench3 leader: best-in-class emotional intelligence at release",
+    "2M token context window, among the largest available",
+    "Significantly reduced hallucination rate vs Grok 4",
+    "Fast variant offered very low-cost agentic inference ($0.20/$0.50 per 1M)"
+  ],
+  "limitations": [
+    "Superseded by Grok 4.3 as xAI's flagship",
+    "grok-4-1-fast variants retired 2026-05-15 (about six months after launch)",
+    "Standard pricing (~$3/$15 per 1M) far above Grok 4.3's $1.25/$2.50",
+    "Thin enterprise compliance posture; no HIPAA eligibility",
+    "Retired slugs silently redirect, complicating pinned deployments"
+  ],
+  "best_for": [
+    "Existing integrations not yet migrated to Grok 4.3",
+    "Empathetic conversational experiences leveraging its EQ strengths",
+    "Ultra-long-context workloads needing the 2M token window",
+    "Historical benchmarking and model comparisons"
+  ],
+  "not_recommended_for": [
+    "New production builds (superseded; Fast variants already retired)",
+    "Healthcare or regulated workloads requiring compliance attestations",
+    "Cost-sensitive workloads (Grok 4.3 is cheaper and newer)",
+    "Teams requiring long, predictable model lifecycles"
+  ],
+  "metadata": {
+    "pricing": {
+      "input": "$3.00 per 1M tokens",
+      "output": "$15.00 per 1M tokens",
+      "notes": "Grok 4.1 Fast variant was $0.20/$0.50 per 1M tokens before its 2026-05-15 retirement. Standard 4.1 superseded by Grok 4.3 ($1.25/$2.50).",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 2000000,
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Italian",
+      "Portuguese",
+      "Japanese",
+      "Korean",
+      "Chinese",
+      "Arabic"
+    ],
+    "modalities": ["text", "image (input)"],
+    "api_endpoint": "https://api.x.ai/v1/chat/completions",
+    "open_source": false,
+    "architecture": "Transformer-based with reasoning and agentic tool-calling (Fast variant)",
+    "parameters": "Not disclosed",
+    "release_date": "2025-11-17",
+    "lifecycle_status": "Superseded by Grok 4.3; grok-4-1-fast retired 2026-05-15"
+  },
+  "related_entities": ["grok-4-3", "grok-3-beta", "gpt-5-4", "claude-sonnet-4-6", "gemini-3-1-pro"],
+  "tags": [
+    "superseded",
+    "long-context",
+    "emotional-intelligence",
+    "lmarena-leader",
+    "reasoning",
+    "legacy"
+  ]
+}

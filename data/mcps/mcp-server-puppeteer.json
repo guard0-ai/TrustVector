@@ -4,13 +4,13 @@
   "name": "MCP Puppeteer Server",
   "provider": "Anthropic (Archived)",
   "version": "2025.4.6",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "ARCHIVED: Former official MCP server for Puppeteer browser automation. This server is NO LONGER MAINTAINED. Moved to servers-archived repository. No security updates provided. Community alternatives may be available.",
+  "description": "ARCHIVED: Former Anthropic reference MCP server for Puppeteer browser automation, archived 2025-05-29 to the servers-archived repository and no longer maintained. The archived repo explicitly provides no security guarantees. For browser automation, Microsoft's Playwright MCP server is the recommended successor.",
   "website": "https://pptr.dev/",
   "trust_vector": {
     "performance_reliability": {
-      "overall_score": 81,
+      "overall_score": 80,
       "criteria": {
         "browser_automation_accuracy": {
           "score": 85,
@@ -99,7 +99,7 @@
       }
     },
     "security": {
-      "overall_score": 62,
+      "overall_score": 63,
       "criteria": {
         "browser_sandboxing": {
           "score": 75,
@@ -174,7 +174,7 @@
       }
     },
     "privacy_compliance": {
-      "overall_score": 67,
+      "overall_score": 66,
       "criteria": {
         "web_content_exposure": {
           "score": 62,
@@ -249,7 +249,7 @@
       }
     },
     "trust_transparency": {
-      "overall_score": 79,
+      "overall_score": 80,
       "criteria": {
         "documentation_quality": {
           "score": 85,
@@ -310,7 +310,7 @@
       }
     },
     "operational_excellence": {
-      "overall_score": 76,
+      "overall_score": 69,
       "criteria": {
         "ease_of_setup": {
           "score": 78,
@@ -341,7 +341,7 @@
           "last_verified": "2025-11-09"
         },
         "stability": {
-          "score": 78,
+          "score": 60,
           "confidence": "medium",
           "evidence": [
             {
@@ -349,10 +349,16 @@
               "url": "https://github.com/puppeteer/puppeteer/issues",
               "date": "2025-11-16",
               "value": "Generally stable but can have issues with complex pages"
+            },
+            {
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "Server archived 2025-05-29; no bug fixes or compatibility updates will be released"
             }
           ],
           "methodology": "Stability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "browser_compatibility": {
           "score": 82,
@@ -369,18 +375,24 @@
           "last_verified": "2025-11-09"
         },
         "community_support": {
-          "score": 82,
+          "score": 58,
           "confidence": "high",
           "evidence": [
             {
               "source": "Puppeteer Community",
               "url": "https://github.com/puppeteer/puppeteer",
               "date": "2025-11-16",
-              "value": "Large community with 85k+ GitHub stars"
+              "value": "Large community with 85k+ GitHub stars for the underlying Puppeteer library"
+            },
+            {
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "MCP server archived 2025-05-29; repository is read-only, issues and PRs are no longer accepted"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -399,7 +411,8 @@
     "Can access credentials and authenticated sessions",
     "Scraped content sent to external LLM provider",
     "Legal and ethical concerns with automated web scraping",
-    "No built-in controls for malicious site protection or PII filtering"
+    "No built-in controls for malicious site protection or PII filtering",
+    "ARCHIVED 2025-05-29: unmaintained, no security guarantees; use Microsoft Playwright MCP instead"
   ],
   "metadata": {
     "license": "Apache 2.0 (Puppeteer), varies for MCP implementation",
@@ -422,7 +435,8 @@
     "puppeteer_version": "21.0+",
     "resource_requirements": "High (500MB+ RAM per browser instance)",
     "first_release": "2024-11",
-    "maintained_by": "Community"
+    "maintained_by": "Unmaintained (archived 2025-05-29)",
+    "repository": "https://github.com/modelcontextprotocol/servers-archived"
   },
   "use_case_ratings": {
     "code-generation": {
@@ -471,10 +485,15 @@
     "Data collectors extracting information from dynamic websites",
     "Developers building web automation workflows"
   ],
+  "related_entities": [
+    "mcp-server-playwright"
+  ],
   "tags": [
     "browser",
     "automation",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "archived",
+    "unmaintained"
   ]
 }

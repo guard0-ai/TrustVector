@@ -1,0 +1,452 @@
+{
+  "id": "mcp-server-playwright",
+  "type": "mcp",
+  "name": "Playwright MCP",
+  "provider": "Microsoft",
+  "version": "2026.6",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Microsoft's official MCP server for browser automation via Playwright. Exposes 25+ tools (navigation, clicking, typing, form filling, screenshots, network inspection, JS evaluation) that operate on structured accessibility-tree snapshots rather than pixels, making agent-driven browsing fast and deterministic. Supersedes the archived Puppeteer reference server.",
+  "website": "https://github.com/microsoft/playwright-mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 88,
+      "criteria": {
+        "snapshot_accuracy": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Playwright MCP README",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "Uses Playwright accessibility-tree snapshots instead of pixel-based screenshots, giving the LLM deterministic, structured page state with stable element references"
+            }
+          ],
+          "methodology": "Review of snapshot mechanism (browser_snapshot) and element-reference stability across page interactions",
+          "last_verified": "2026-06-10"
+        },
+        "operation_success_rate": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Playwright MCP tool documentation",
+              "url": "https://github.com/microsoft/playwright-mcp/blob/main/README.md",
+              "date": "2026-06-10",
+              "value": "Core interaction tools (browser_navigate, browser_click, browser_type, browser_fill_form) inherit Playwright's auto-waiting and actionability checks, yielding high success rates on standard web UIs"
+            }
+          ],
+          "methodology": "Hands-on testing of navigation, clicking, typing, and form-fill tools against common web applications",
+          "last_verified": "2026-06-10"
+        },
+        "browser_compatibility": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Playwright browser support",
+              "url": "https://playwright.dev/docs/browsers",
+              "date": "2026-06-10",
+              "value": "Built on Playwright, supporting Chromium, Firefox, and WebKit engines with consistent automation APIs"
+            }
+          ],
+          "methodology": "Cross-browser capability review based on underlying Playwright engine support",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Playwright MCP repository",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "Failed actions return structured error messages and fresh page snapshots, allowing the agent to retry; dialog and file-upload handlers prevent common automation deadlocks"
+            }
+          ],
+          "methodology": "Error-path testing including timeouts, missing elements, modal dialogs, and navigation failures",
+          "last_verified": "2026-06-10"
+        },
+        "automation_stability": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Playwright auto-waiting documentation",
+              "url": "https://playwright.dev/docs/actionability",
+              "date": "2026-06-10",
+              "value": "Playwright's actionability checks (visible, stable, enabled) reduce flakiness common in agent-driven browsing; tab management and network-request inspection aid multi-step flows"
+            }
+          ],
+          "methodology": "Multi-step workflow stability testing across tabs, dialogs, and dynamic pages",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 60,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Agentic browsing security analysis",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "Page content (accessibility snapshots, network responses) flows directly into the LLM context; untrusted web pages can embed instructions that hijack the agent (indirect prompt injection). No built-in content sanitization"
+            }
+          ],
+          "methodology": "Threat modeling of untrusted web content entering the agent context via snapshots and screenshots",
+          "last_verified": "2026-06-10"
+        },
+        "arbitrary_code_execution_risk": {
+          "score": 50,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Playwright MCP tool list",
+              "url": "https://github.com/microsoft/playwright-mcp/blob/main/README.md",
+              "date": "2026-06-10",
+              "value": "browser_evaluate executes arbitrary JavaScript in the page context, enabling data exfiltration or session manipulation if the agent is compromised; capability can be restricted via configuration"
+            }
+          ],
+          "methodology": "Capability analysis of the browser_evaluate tool and its abuse potential under prompt injection",
+          "last_verified": "2026-06-10"
+        },
+        "sandboxing_isolation": {
+          "score": 75,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Playwright MCP configuration options",
+              "url": "https://github.com/microsoft/playwright-mcp/blob/main/README.md",
+              "date": "2026-06-10",
+              "value": "Supports isolated browser profiles (no persisted state), headless mode, and origin allow/block lists, which substantially limit blast radius when configured; default persistent profile retains cookies and logins"
+            }
+          ],
+          "methodology": "Review of --isolated, headless, and origin-filtering configuration flags as mitigations",
+          "last_verified": "2026-06-10"
+        },
+        "credential_exposure_risk": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Playwright MCP profile behavior",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "When run against a persistent profile, the agent operates with the user's logged-in sessions and cookies; typed credentials and page secrets appear in snapshots sent to the LLM"
+            }
+          ],
+          "methodology": "Analysis of session/cookie access in persistent vs isolated profile modes",
+          "last_verified": "2026-06-10"
+        },
+        "unauthorized_action_risk": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MCP security guidance",
+              "url": "https://modelcontextprotocol.io/docs/concepts/security",
+              "date": "2026-06-10",
+              "value": "Agent can perform any web action the browser session allows (purchases, posts, account changes); host-level tool approval is the primary guardrail since the server itself does not gate destructive actions"
+            }
+          ],
+          "methodology": "Authorization boundary analysis of write-capable browsing actions",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 69,
+      "criteria": {
+        "browsing_data_exposure": {
+          "score": 65,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP data flow architecture",
+              "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+              "date": "2026-06-10",
+              "value": "Full page content, screenshots, and network request data are sent to the LLM provider as tool results, exposing any visited page (including authenticated content) to a third party"
+            }
+          ],
+          "methodology": "Data flow analysis of snapshot, screenshot, and network tool outputs",
+          "last_verified": "2026-06-10"
+        },
+        "sensitive_data_protection": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Playwright MCP repository",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "No built-in redaction of PII, credentials, or payment data visible on pages; protection relies on operator discipline (isolated profiles, restricted origins)"
+            }
+          ],
+          "methodology": "Privacy controls assessment of snapshot and screenshot content handling",
+          "last_verified": "2026-06-10"
+        },
+        "local_data_control": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Playwright MCP architecture",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "Server runs locally (stdio default); browser state, profiles, and traces remain on the user's machine, with no vendor-side telemetry collection by the MCP server itself"
+            }
+          ],
+          "methodology": "Review of local execution model and data residency",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MCP client documentation",
+              "url": "https://modelcontextprotocol.io/docs",
+              "date": "2026-06-10",
+              "value": "Browsing data is shared only with the connected LLM provider per that provider's privacy policy; the server itself transmits nothing to Microsoft"
+            }
+          ],
+          "methodology": "Data sharing pathway analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 92,
+      "criteria": {
+        "documentation_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Playwright MCP README",
+              "url": "https://github.com/microsoft/playwright-mcp/blob/main/README.md",
+              "date": "2026-06-10",
+              "value": "Thorough documentation of all 25+ tools, configuration flags, client setup for major MCP hosts, and isolated/extension/server modes"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub repository",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "Fully open source under Apache-2.0 with public issue tracker and active development by the Playwright team"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-06-10"
+        },
+        "operation_visibility": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Playwright MCP tooling",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "Every browser action is an explicit, named tool call visible in MCP host logs; optional Playwright traces and browser_network_requests provide deep inspection of agent behavior"
+            }
+          ],
+          "methodology": "Logging and traceability assessment",
+          "last_verified": "2026-06-10"
+        },
+        "vendor_credibility": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "Maintained by Microsoft's Playwright team; 33,734 GitHub stars as of 2026-06-10, one of the most adopted MCP servers"
+            }
+          ],
+          "methodology": "Maintainer reputation and project health analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 90,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "npm package @playwright/mcp",
+              "url": "https://www.npmjs.com/package/@playwright/mcp",
+              "date": "2026-06-10",
+              "value": "Single-command setup via npx @playwright/mcp@latest; no API keys required; one-click install paths documented for VS Code, Cursor, Claude Code, and other hosts"
+            }
+          ],
+          "methodology": "Setup complexity assessment across MCP hosts",
+          "last_verified": "2026-06-10"
+        },
+        "performance": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Playwright MCP design notes",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "Accessibility-snapshot approach avoids vision-model overhead, making interactions faster and cheaper in tokens than screenshot-based automation"
+            }
+          ],
+          "methodology": "Latency and token-efficiency comparison against pixel-based browser automation",
+          "last_verified": "2026-06-10"
+        },
+        "feature_coverage": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Playwright MCP tool reference",
+              "url": "https://github.com/microsoft/playwright-mcp/blob/main/README.md",
+              "date": "2026-06-10",
+              "value": "25+ tools covering navigation, clicks, typing, form fill, snapshots, screenshots, network requests, JS evaluation, tabs, file upload, and dialog handling"
+            }
+          ],
+          "methodology": "Feature completeness assessment against common browser-automation needs",
+          "last_verified": "2026-06-10"
+        },
+        "community_adoption": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/microsoft/playwright-mcp",
+              "date": "2026-06-10",
+              "value": "33,734 stars; bundled or recommended by major MCP hosts and widely used as the default browser-automation server, replacing the archived Puppeteer reference server"
+            }
+          ],
+          "methodology": "Adoption metrics and ecosystem-integration analysis",
+          "last_verified": "2026-06-10"
+        },
+        "maintenance_activity": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub repository activity",
+              "url": "https://github.com/microsoft/playwright-mcp/commits/main",
+              "date": "2026-06-10",
+              "value": "Frequent releases tracking Playwright versions, active issue triage by the Microsoft Playwright team"
+            }
+          ],
+          "methodology": "Commit frequency and release-cadence analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Accessibility-tree snapshots give fast, deterministic, token-efficient page interaction without vision models",
+    "Comprehensive tool set: navigation, forms, screenshots, network inspection, tabs, dialogs, file upload",
+    "Backed and actively maintained by Microsoft's Playwright team (33.7k stars)",
+    "Cross-browser support (Chromium, Firefox, WebKit) with Playwright's auto-waiting reliability",
+    "Strong mitigation options: isolated profiles, headless mode, origin allow/block lists",
+    "Flexible transports: stdio by default plus standalone HTTP/SSE server mode"
+  ],
+  "limitations": [
+    "Untrusted page content flows into the LLM context, creating indirect prompt-injection risk",
+    "browser_evaluate allows arbitrary JavaScript execution in pages — high-risk if the agent is hijacked",
+    "Default persistent profile exposes logged-in sessions and cookies to agent actions",
+    "All visited page content (including authenticated/private pages) is sent to the LLM provider",
+    "No built-in redaction of PII or credentials visible in snapshots and screenshots",
+    "Destructive web actions (purchases, posts) are only gated by host-level tool approval"
+  ],
+  "metadata": {
+    "license": "Apache-2.0",
+    "supported_platforms": [
+      "All platforms with Node.js 18+"
+    ],
+    "programming_languages": [
+      "TypeScript"
+    ],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/microsoft/playwright-mcp",
+    "github_stars": 33734,
+    "package": "@playwright/mcp",
+    "api_dependency": "Playwright (Chromium/Firefox/WebKit)",
+    "authentication": "None required (local browser control)",
+    "first_release": "2025-03",
+    "maintained_by": "Microsoft (Playwright team)",
+    "status": "Active",
+    "supersedes": "mcp-server-puppeteer (archived reference server)",
+    "transport_types": [
+      "stdio",
+      "http",
+      "sse"
+    ],
+    "installation_methods": [
+      "npm",
+      "npx",
+      "docker",
+      "vscode-extension"
+    ]
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 90,
+      "notes": "Excellent for web app testing, UI verification, and agent-driven E2E automation during development"
+    },
+    "research-assistant": {
+      "overall": 85,
+      "notes": "Strong for interactive web research and data gathering, but exposed to prompt injection from untrusted pages"
+    },
+    "data-analysis": {
+      "overall": 78,
+      "notes": "Useful for scraping and extracting structured data via snapshots and network inspection"
+    },
+    "customer-support": {
+      "overall": 70,
+      "notes": "Can reproduce user-reported web issues and walk through flows; requires careful session isolation"
+    },
+    "content-creation": {
+      "overall": 72,
+      "notes": "Handy for previewing, screenshotting, and verifying published web content"
+    },
+    "education": {
+      "overall": 82,
+      "notes": "Great for teaching web automation and testing concepts with visible, explainable tool calls"
+    }
+  },
+  "best_for": [
+    "Developers automating browser testing and UI verification with AI agents",
+    "Teams building agentic web workflows that need deterministic page interaction",
+    "QA engineers generating and executing end-to-end tests via natural language",
+    "Researchers performing interactive web data gathering in isolated browser profiles"
+  ],
+  "related": [
+    "mcp-server-puppeteer",
+    "mcp-server-chrome-devtools",
+    "mcp-server-fetch",
+    "mcp-server-firecrawl"
+  ],
+  "tags": [
+    "browser-automation",
+    "playwright",
+    "testing",
+    "web-scraping",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

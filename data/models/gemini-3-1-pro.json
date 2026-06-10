@@ -1,0 +1,627 @@
+{
+  "id": "gemini-3-1-pro",
+  "type": "model",
+  "name": "Gemini 3.1 Pro",
+  "provider": "Google",
+  "version": "gemini-3.1-pro",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Google's GA flagship reasoning model with 77.1% ARC-AGI-2 (2.5x Gemini 3 Pro), 94.3% GPQA Diamond, 2887 Elo on LiveCodeBench Pro, and 1M token context. Supersedes Gemini 3 Pro Preview as the production-ready frontier tier.",
+  "website": "https://ai.google.dev/gemini-api/docs/changelog",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 96,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "LiveCodeBench Pro",
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "date": "2026-02-19",
+              "value": "2887 Elo on competitive coding (frontier-leading at launch)"
+            },
+            {
+              "source": "MCP Atlas",
+              "url": "https://deepmind.google/models/gemini/",
+              "date": "2026-02-19",
+              "value": "78.2% on multi-tool agentic orchestration"
+            }
+          ],
+          "methodology": "Competitive programming and agentic tool-use benchmarks from official launch materials",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 98,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ARC-AGI-2",
+              "url": "https://deepmind.google/models/gemini/",
+              "date": "2026-02-19",
+              "value": "77.1% (vs 31.1% standard Gemini 3 Pro, ~2.5x generational gain)"
+            },
+            {
+              "source": "GPQA Diamond",
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "date": "2026-02-19",
+              "value": "94.3% on PhD-level science questions"
+            }
+          ],
+          "methodology": "Abstract reasoning and PhD-level science benchmarks reported at GA launch",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 96,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google DeepMind Models Page",
+              "url": "https://deepmind.google/models/gemini/",
+              "date": "2026-02-19",
+              "value": "Positioned as GA flagship, superseding Gemini 3 Pro Preview across general benchmarks"
+            }
+          ],
+          "methodology": "Cross-benchmark comparison against predecessor Gemini 3 Pro Preview",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 94,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google AI Documentation",
+              "url": "https://ai.google.dev/gemini-api/docs",
+              "date": "2026-02-19",
+              "value": "GA stability commitments versus preview-tier predecessor"
+            }
+          ],
+          "methodology": "Consistency assessment based on GA status and documented model behavior",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "~1.8s",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/",
+              "date": "2026-06-01",
+              "value": "Typical response time under 2s for standard prompts; deep reasoning modes slower"
+            }
+          ],
+          "methodology": "Median latency from third-party aggregator measurements",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "1,000,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini API Changelog",
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "date": "2026-02-19",
+              "value": "1M token context window at GA"
+            }
+          ],
+          "methodology": "Official specification from provider documentation",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 98,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Cloud Status",
+              "url": "https://status.cloud.google.com/",
+              "date": "2026-06-01",
+              "value": "99.9% uptime (last 90 days, Vertex AI)"
+            }
+          ],
+          "methodology": "Historical uptime data from official status page",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Massive reasoning jump: 77.1% ARC-AGI-2 vs 31.1% for Gemini 3 Pro. GA status removes preview-tier risk. Note: Gemini 3.5 Pro was announced at I/O May 2026 but is not yet GA."
+    },
+
+    "security": {
+      "overall_score": 88,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google AI Safety",
+              "url": "https://ai.google/responsibility/",
+              "date": "2026-02-19",
+              "value": "Hardened prompt injection defenses carried forward from Gemini 3 line"
+            }
+          ],
+          "methodology": "OWASP LLM01 prompt injection testing and vendor safety documentation review",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Safety Settings",
+              "url": "https://ai.google.dev/gemini-api/docs/safety-settings",
+              "date": "2026-02-19",
+              "value": "Improved adversarial robustness reported at GA"
+            }
+          ],
+          "methodology": "Adversarial prompt dataset testing",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Gemini API Terms",
+              "url": "https://ai.google.dev/gemini-api/terms",
+              "date": "2026-02-19",
+              "value": "Paid-tier API data not used for training"
+            }
+          ],
+          "methodology": "Privacy policy and API terms review",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Safety Filters",
+              "url": "https://ai.google.dev/gemini-api/docs/safety-settings",
+              "date": "2026-02-19",
+              "value": "Configurable multi-category safety filters"
+            }
+          ],
+          "methodology": "Safety filter testing across harmful content categories",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 89,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Cloud Security",
+              "url": "https://cloud.google.com/security",
+              "date": "2026-02-19",
+              "value": "Google Cloud security standards, IAM integration on Vertex AI"
+            }
+          ],
+          "methodology": "Review of API security features and infrastructure",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Inherits Google Cloud security posture. Configurable safety filters and Vertex AI IAM controls for enterprise deployment."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 88,
+      "criteria": {
+        "data_residency": {
+          "value": "Multi-region including EU residency options (Vertex AI)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Cloud Locations",
+              "url": "https://cloud.google.com/about/locations",
+              "date": "2026-02-19",
+              "value": "EU data residency options available via Vertex AI regions"
+            }
+          ],
+          "methodology": "Cloud infrastructure and data residency documentation review",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini API Terms",
+              "url": "https://ai.google.dev/gemini-api/terms",
+              "date": "2026-02-19",
+              "value": "Paid API data not used for training; Vertex AI data governance applies"
+            }
+          ],
+          "methodology": "Terms of service review",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "Varies by tier; zero retention available on Vertex AI enterprise",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Cloud Service Terms",
+              "url": "https://cloud.google.com/terms/service-terms",
+              "date": "2026-02-19",
+              "value": "Enterprise zero-retention configurations available"
+            }
+          ],
+          "methodology": "Data retention policy review",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google AI Documentation",
+              "url": "https://ai.google.dev/gemini-api/docs/safety-settings",
+              "date": "2026-02-19",
+              "value": "Customer responsible for PII redaction; Cloud DLP integration available"
+            }
+          ],
+          "methodology": "Data protection capability review",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Cloud Compliance",
+              "url": "https://cloud.google.com/security/compliance",
+              "date": "2026-02-19",
+              "value": "SOC 1/2/3, ISO 27001/27017/27018, GDPR, HIPAA (via Google Cloud)"
+            }
+          ],
+          "methodology": "Certification verification through Google Cloud compliance center",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Vertex AI Data Governance",
+              "url": "https://cloud.google.com/vertex-ai/docs",
+              "date": "2026-02-19",
+              "value": "Zero-retention configuration available for enterprise Vertex AI customers"
+            }
+          ],
+          "methodology": "Enterprise feature review",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Strong enterprise posture via Vertex AI data governance, SOC/ISO certifications, and EU data residency options."
+    },
+
+    "trust_transparency": {
+      "overall_score": 88,
+      "criteria": {
+        "explainability": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini API Documentation",
+              "url": "https://ai.google.dev/gemini-api/docs",
+              "date": "2026-02-19",
+              "value": "Thinking traces and configurable reasoning depth exposed via API"
+            }
+          ],
+          "methodology": "Reasoning transparency evaluation",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Launch Materials",
+              "url": "https://deepmind.google/models/gemini/",
+              "date": "2026-02-19",
+              "value": "Improved factual grounding over Gemini 3 Pro Preview"
+            }
+          ],
+          "methodology": "Factual QA testing and vendor claims review",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google AI Principles",
+              "url": "https://ai.google/responsibility/principles/",
+              "date": "2026-02-19",
+              "value": "Regular bias testing and mitigation per AI Principles"
+            }
+          ],
+          "methodology": "Bias benchmark evaluation and policy review",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model Behavior",
+              "url": "https://ai.google.dev/gemini-api/docs",
+              "date": "2026-02-19",
+              "value": "Expresses uncertainty appropriately in extended reasoning mode"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini Documentation",
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "date": "2026-02-19",
+              "value": "Comprehensive GA documentation with benchmarks and limitations"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google AI Blog",
+              "url": "https://blog.google/technology/ai/",
+              "date": "2026-02-19",
+              "value": "General training description provided; detailed sources not disclosed"
+            }
+          ],
+          "methodology": "Public disclosure review",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 91,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Safety Settings",
+              "url": "https://ai.google.dev/gemini-api/docs/safety-settings",
+              "date": "2026-02-19",
+              "value": "Configurable multi-category safety guardrails"
+            }
+          ],
+          "methodology": "Safety mechanism analysis",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Strong transparency via exposed thinking traces and comprehensive GA documentation. Training data details remain limited (industry standard)."
+    },
+
+    "operational_excellence": {
+      "overall_score": 93,
+      "criteria": {
+        "api_design_quality": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini API",
+              "url": "https://ai.google.dev/gemini-api/docs",
+              "date": "2026-02-19",
+              "value": "RESTful API with streaming, function calling, multimodal, thinking control"
+            }
+          ],
+          "methodology": "API design and feature completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Gen AI SDKs",
+              "url": "https://github.com/googleapis/python-genai",
+              "date": "2026-02-19",
+              "value": "Unified Gen AI SDKs for Python, Node.js, Go, Java; actively maintained"
+            }
+          ],
+          "methodology": "SDK quality and maintenance assessment",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Gemini API Changelog",
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "date": "2026-02-19",
+              "value": "GA release 2026-02-19 with documented deprecation timeline for 3 Pro Preview"
+            }
+          ],
+          "methodology": "Versioning policy and changelog review",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Cloud Console",
+              "url": "https://console.cloud.google.com/",
+              "date": "2026-02-19",
+              "value": "Comprehensive Cloud Console and Vertex AI monitoring"
+            }
+          ],
+          "methodology": "Observability tooling review",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Cloud Support",
+              "url": "https://cloud.google.com/support",
+              "date": "2026-02-19",
+              "value": "Enterprise support tiers with SLAs"
+            }
+          ],
+          "methodology": "Support channel assessment",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google AI Ecosystem",
+              "url": "https://ai.google.dev/",
+              "date": "2026-02-19",
+              "value": "Day-one availability across Gemini app, AI Studio, Vertex AI"
+            }
+          ],
+          "methodology": "Ecosystem and integration analysis",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 91,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Cloud Terms",
+              "url": "https://cloud.google.com/terms",
+              "date": "2026-02-19",
+              "value": "Standard commercial terms; enterprise agreements available"
+            }
+          ],
+          "methodology": "License terms review",
+          "last_verified": "2026-06-10"
+        },
+        "pricing_transparency": {
+          "value": "~$2/$12 per 1M tokens (<=200K context), $4/$18 above 200K",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Pricing aggregators",
+              "url": "https://artificialanalysis.ai/",
+              "date": "2026-06-01",
+              "value": "Aggregator-sourced: ~$2 input / $12 output per 1M tokens at <=200K context; $4/$18 above"
+            }
+          ],
+          "methodology": "Cross-referenced third-party pricing aggregators; official pricing page recommended for confirmation",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Mature GA operational posture across all Google AI surfaces. Pricing figures are aggregator-sourced (medium confidence)."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 95,
+      "notes": "2887 Elo LiveCodeBench Pro and 78.2% MCP Atlas. Strong agentic coding; 1M context covers full codebases.",
+      "alternatives": ["claude-opus-4-8", "gemini-3-5-flash"]
+    },
+    "data-analysis": {
+      "overall": 96,
+      "notes": "1M context plus top-tier reasoning makes it excellent for massive dataset analysis.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    },
+    "research-assistant": {
+      "overall": 97,
+      "notes": "94.3% GPQA Diamond and 1M context. Best-in-class for deep multi-document research.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    },
+    "legal-compliance": {
+      "overall": 90,
+      "notes": "1M context for full contract corpora. EU data residency and Vertex AI governance support regulated workloads.",
+      "alternatives": ["claude-opus-4-8"]
+    },
+    "financial-analysis": {
+      "overall": 94,
+      "notes": "Frontier quantitative reasoning with long context for large filing sets.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    },
+    "education": {
+      "overall": 94,
+      "notes": "Exceptional reasoning depth for tutoring; thinking traces aid pedagogical explanations.",
+      "alternatives": ["gpt-5-5", "gemini-3-5-flash"]
+    },
+    "content-creation": {
+      "overall": 91,
+      "notes": "Strong long-form generation; reasoning depth helps structured technical content.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    },
+    "healthcare": {
+      "overall": 88,
+      "notes": "HIPAA via Google Cloud. Strong reasoning for clinical literature, but use Vertex AI governance controls.",
+      "alternatives": ["claude-opus-4-8"]
+    }
+  },
+
+  "strengths": [
+    "Exceptional abstract reasoning: 77.1% ARC-AGI-2 (~2.5x Gemini 3 Pro's 31.1%)",
+    "94.3% GPQA Diamond, near-saturation PhD-level science",
+    "Frontier coding: 2887 Elo LiveCodeBench Pro, 78.2% MCP Atlas",
+    "1M token context window with GA stability",
+    "Enterprise posture: Vertex AI data governance, SOC/ISO certs, EU residency",
+    "Day-one availability across AI Studio, Vertex AI, and Gemini app"
+  ],
+
+  "limitations": [
+    "Pricing confidence medium: figures aggregator-sourced (~$2/$12, $4/$18 above 200K)",
+    "Extended reasoning modes add significant latency",
+    "Training data transparency limited (industry standard)",
+    "Gemini 3.5 Pro announced at I/O May 2026 may supersede it soon (not yet GA)",
+    "Long-context (>200K) pricing roughly doubles per-token cost"
+  ],
+
+  "best_for": [
+    "Hardest reasoning workloads (research, math, science)",
+    "Long-context applications over entire codebases or document corpora",
+    "Enterprises on Google Cloud needing data governance and EU residency",
+    "Agentic systems requiring strong multi-tool orchestration"
+  ],
+
+  "not_recommended_for": [
+    "Latency-sensitive applications (consider Gemini 3.5 Flash)",
+    "High-volume cost-sensitive inference",
+    "Teams needing fully confirmed first-party pricing before procurement"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "~$2.00 per 1M tokens (<=200K), ~$4.00 per 1M tokens (>200K)",
+      "output": "~$12.00 per 1M tokens (<=200K), ~$18.00 per 1M tokens (>200K)",
+      "notes": "Aggregator-sourced (medium confidence). Tiered by context length; verify against official pricing page.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 1000000,
+    "max_output": 64000,
+    "languages": ["English", "100+ languages"],
+    "modalities": ["text", "vision", "audio", "video"],
+    "api_endpoint": "https://generativelanguage.googleapis.com/v1beta/models",
+    "open_source": false,
+    "architecture": "Multimodal transformer with configurable extended reasoning",
+    "parameters": "Not disclosed",
+    "knowledge_cutoff": "Late 2025 (not officially confirmed)",
+    "release_date": "2026-02-19"
+  },
+
+  "related_entities": ["gemini-3-pro", "gemini-3-5-flash", "claude-opus-4-8", "gpt-5-5"],
+
+  "tags": [
+    "flagship",
+    "ga",
+    "reasoning",
+    "long-context",
+    "1m-tokens",
+    "multimodal",
+    "google-cloud",
+    "enterprise"
+  ]
+}

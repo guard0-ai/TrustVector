@@ -1,0 +1,443 @@
+{
+  "id": "mcp-server-chrome-devtools",
+  "type": "mcp",
+  "name": "Chrome DevTools MCP",
+  "provider": "Google (Chrome DevTools team)",
+  "version": "2026.6",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Google's official MCP server that gives AI agents full Chrome control via the Chrome DevTools Protocol. Around 26 tools span input automation, navigation, performance tracing and insights, network inspection, console debugging, and screenshots — making it the reference server for AI-assisted web debugging and performance work.",
+  "website": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 87,
+      "criteria": {
+        "cdp_reliability": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP README",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "Built directly on the Chrome DevTools Protocol via Puppeteer, the same battle-tested interface used by Chrome DevTools itself; can launch a fresh Chrome instance or attach to a running one"
+            }
+          ],
+          "methodology": "Review of CDP connection handling for launched and attached Chrome instances",
+          "last_verified": "2026-06-10"
+        },
+        "operation_success_rate": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP tool reference",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/tool-reference.md",
+              "date": "2026-06-10",
+              "value": "Input and navigation tools use Puppeteer's waiting semantics, giving high success rates on standard pages; tools return structured results the agent can act on"
+            }
+          ],
+          "methodology": "Hands-on testing of click, fill, navigate, and wait tools against common web applications",
+          "last_verified": "2026-06-10"
+        },
+        "performance_tracing_accuracy": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome for Developers blog",
+              "url": "https://developer.chrome.com/blog/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "Performance tracing tools record real Chrome traces and surface DevTools performance insights (LCP, CLS, render-blocking analysis) directly to the agent — first-party data identical to DevTools panels"
+            }
+          ],
+          "methodology": "Validation of trace recording and insight extraction against DevTools Performance panel output",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP repository",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "Failed operations return descriptive errors with current page context; console and network tools let agents self-diagnose failures, though crashed Chrome sessions require restart"
+            }
+          ],
+          "methodology": "Error-path testing including navigation failures, missing elements, and dropped CDP connections",
+          "last_verified": "2026-06-10"
+        },
+        "automation_stability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP tool reference",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/tool-reference.md",
+              "date": "2026-06-10",
+              "value": "Stable multi-step automation across ~26 tools including page management, dialog handling, and emulation; Chrome-only scope avoids cross-engine inconsistencies"
+            }
+          ],
+          "methodology": "Multi-step workflow stability testing across navigation, input, and inspection tools",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 52,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 50,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP security notes",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp#disclaimer",
+              "date": "2026-06-10",
+              "value": "Project explicitly warns that page content is exposed to the MCP client and that malicious pages can attempt to steer the agent — indirect prompt injection via console messages, network bodies, and page text is unmitigated"
+            }
+          ],
+          "methodology": "Threat modeling of untrusted page, console, and network content entering the agent context",
+          "last_verified": "2026-06-10"
+        },
+        "arbitrary_code_execution_risk": {
+          "score": 48,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP tool reference",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/tool-reference.md",
+              "date": "2026-06-10",
+              "value": "Script evaluation tool executes arbitrary JavaScript in any open page, enabling cookie theft, DOM manipulation, or exfiltration if the agent is hijacked"
+            }
+          ],
+          "methodology": "Capability analysis of in-page JS evaluation under adversarial agent steering",
+          "last_verified": "2026-06-10"
+        },
+        "session_exposure_risk": {
+          "score": 45,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP README",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "When attached to a user's running Chrome, the agent gains full control over logged-in sessions, saved credentials autofill, and all open tabs — the project advises against exposing sensitive sessions"
+            }
+          ],
+          "methodology": "Analysis of attach-to-running-Chrome mode and access to authenticated browser state",
+          "last_verified": "2026-06-10"
+        },
+        "sandboxing_isolation": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP configuration",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "Supports launching isolated Chrome instances with temporary user-data directories and headless mode, which contains risk when used; no origin allow/block list filtering"
+            }
+          ],
+          "methodology": "Review of isolation options (fresh profile, headless, channel selection) versus attach mode",
+          "last_verified": "2026-06-10"
+        },
+        "unauthorized_action_risk": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MCP security guidance",
+              "url": "https://modelcontextprotocol.io/docs/concepts/security",
+              "date": "2026-06-10",
+              "value": "Agent can perform any action the controlled Chrome session permits (form submissions, account changes); no server-side gating of destructive actions — host tool-approval is the only guardrail"
+            }
+          ],
+          "methodology": "Authorization boundary analysis of write-capable browser actions",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 65,
+      "criteria": {
+        "browsing_data_exposure": {
+          "score": 58,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP disclaimer",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp#disclaimer",
+              "date": "2026-06-10",
+              "value": "Page content, console logs, network request/response bodies, and screenshots are all returned to the MCP client and thus the LLM provider — including authenticated content when attached to a real session"
+            }
+          ],
+          "methodology": "Data flow analysis of inspection tool outputs (network, console, screenshot, snapshot)",
+          "last_verified": "2026-06-10"
+        },
+        "sensitive_data_protection": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP repository",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "No redaction of credentials, tokens, or PII present in network bodies, headers, or console output; network inspection can surface auth tokens verbatim"
+            }
+          ],
+          "methodology": "Privacy controls assessment of network and console inspection outputs",
+          "last_verified": "2026-06-10"
+        },
+        "local_data_control": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP architecture",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "Runs entirely locally over stdio; traces, profiles, and browser state stay on the user's machine and the server adds no vendor telemetry"
+            }
+          ],
+          "methodology": "Review of local execution model and data residency",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MCP client documentation",
+              "url": "https://modelcontextprotocol.io/docs",
+              "date": "2026-06-10",
+              "value": "Browser data is shared only with the connected LLM provider per that provider's policy; Google does not receive the data through this server"
+            }
+          ],
+          "methodology": "Data sharing pathway analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 92,
+      "criteria": {
+        "documentation_quality": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP docs",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/tool-reference.md",
+              "date": "2026-06-10",
+              "value": "Complete tool reference for all ~26 tools, configuration options, client setup guides, and an official Chrome for Developers launch post with usage patterns"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub repository",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "Fully open source under Apache-2.0 in the official ChromeDevTools GitHub org with public issues and roadmap"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-06-10"
+        },
+        "operation_visibility": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP design",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "Every browser action is an explicit named tool call visible in MCP host logs; the controlled Chrome window can run headed so users watch the agent act in real time"
+            }
+          ],
+          "methodology": "Logging and observability assessment",
+          "last_verified": "2026-06-10"
+        },
+        "vendor_credibility": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "Maintained by Google's Chrome DevTools team; 43,277 GitHub stars as of 2026-06-10, among the most-starred MCP servers"
+            }
+          ],
+          "methodology": "Maintainer reputation and project health analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 90,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "npm package chrome-devtools-mcp",
+              "url": "https://www.npmjs.com/package/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "Single-command setup via npx chrome-devtools-mcp@latest; no API keys; requires Chrome installed locally; setup snippets provided for all major MCP hosts"
+            }
+          ],
+          "methodology": "Setup complexity assessment across MCP hosts",
+          "last_verified": "2026-06-10"
+        },
+        "performance": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP repository",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "Direct CDP access keeps interaction latency low; text-based snapshots and targeted network/console queries keep token usage manageable relative to screenshot-heavy approaches"
+            }
+          ],
+          "methodology": "Latency and token-efficiency evaluation of common debugging workflows",
+          "last_verified": "2026-06-10"
+        },
+        "feature_coverage": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Chrome DevTools MCP tool reference",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/tool-reference.md",
+              "date": "2026-06-10",
+              "value": "~26 tools covering input automation, navigation, performance tracing and insights, network inspection, console/debugging, emulation, and screenshots — unique depth in performance debugging among MCP servers"
+            }
+          ],
+          "methodology": "Feature completeness assessment against web debugging and automation needs",
+          "last_verified": "2026-06-10"
+        },
+        "community_adoption": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/ChromeDevTools/chrome-devtools-mcp",
+              "date": "2026-06-10",
+              "value": "43,277 stars as of 2026-06-10; widely adopted by coding agents for in-browser verification and performance debugging since its 2025 launch"
+            }
+          ],
+          "methodology": "Adoption metrics and ecosystem-integration analysis",
+          "last_verified": "2026-06-10"
+        },
+        "maintenance_activity": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub repository activity",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/releases",
+              "date": "2026-06-10",
+              "value": "Regular releases tracking Chrome versions with active issue triage by the Chrome DevTools team"
+            }
+          ],
+          "methodology": "Commit frequency and release-cadence analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "First-party Chrome DevTools data: real performance traces, insights, network and console inspection",
+    "Maintained by Google's Chrome DevTools team with very high adoption (43.3k stars)",
+    "~26 well-documented tools spanning automation, debugging, tracing, and screenshots",
+    "Direct CDP control is fast and exposes capabilities no other browser MCP offers",
+    "Runs fully locally over stdio with no vendor telemetry",
+    "Can attach to an existing Chrome session for debugging real user state"
+  ],
+  "limitations": [
+    "Attaching to a running Chrome hands the agent full control of logged-in sessions and open tabs",
+    "Indirect prompt injection from malicious pages is explicitly acknowledged and unmitigated",
+    "Arbitrary JavaScript evaluation in pages enables exfiltration if the agent is steered",
+    "Network and console outputs can leak tokens, credentials, and PII to the LLM provider verbatim",
+    "Chrome-only — no Firefox or WebKit coverage",
+    "No origin allow/block filtering to restrict which sites the agent may visit"
+  ],
+  "metadata": {
+    "license": "Apache-2.0",
+    "supported_platforms": [
+      "macOS, Linux, Windows with Node.js 20+ and Chrome installed"
+    ],
+    "programming_languages": [
+      "TypeScript"
+    ],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "github_stars": 43277,
+    "package": "chrome-devtools-mcp",
+    "api_dependency": "Chrome DevTools Protocol (via Puppeteer)",
+    "authentication": "None required (local browser control)",
+    "first_release": "2025-09",
+    "maintained_by": "Google (Chrome DevTools team)",
+    "status": "Active",
+    "transport_types": [
+      "stdio"
+    ],
+    "installation_methods": [
+      "npm",
+      "npx"
+    ]
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 92,
+      "notes": "Best-in-class for letting coding agents verify changes in a real browser and debug performance, network, and console issues"
+    },
+    "data-analysis": {
+      "overall": 80,
+      "notes": "Strong for performance-trace analysis and network-payload inspection; less aimed at general data extraction"
+    },
+    "research-assistant": {
+      "overall": 75,
+      "notes": "Capable interactive browsing, but security posture favors dev/debugging use over open-web research"
+    },
+    "education": {
+      "overall": 80,
+      "notes": "Excellent for teaching web performance and debugging — agents can demonstrate DevTools concepts live"
+    },
+    "customer-support": {
+      "overall": 62,
+      "notes": "Can reproduce reported web issues, but session-exposure risk demands isolated profiles"
+    }
+  },
+  "best_for": [
+    "Coding agents verifying frontend changes in a live Chrome instance",
+    "Web performance debugging with real traces and DevTools insights",
+    "Network and console inspection during AI-assisted development",
+    "Developers who need CDP-level browser control from an MCP host"
+  ],
+  "related": [
+    "mcp-server-playwright",
+    "mcp-server-puppeteer",
+    "mcp-server-fetch"
+  ],
+  "tags": [
+    "browser-automation",
+    "chrome",
+    "devtools",
+    "performance",
+    "debugging",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

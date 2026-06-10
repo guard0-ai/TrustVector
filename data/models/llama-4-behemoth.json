@@ -4,13 +4,13 @@
   "name": "Llama 4 Behemoth",
   "provider": "Meta",
   "version": "2025-02",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Meta's largest and most capable open-source Llama 4 model with exceptional mathematical reasoning and knowledge. Designed for enterprises requiring state-of-the-art performance with open-source flexibility.",
+  "description": "Meta's announced 2T-total/288B-active parameter Llama 4 teacher model that was NEVER RELEASED. It remains 'announced, not released' as of June 2026: Meta gave no update when asked in January 2026 and has effectively exited open-weight frontier releases, shipping the proprietary closed-weight 'Muse Spark' (April 2026) instead. Scores reflect unverifiable preview-era claims; the model is not available for any deployment.",
   "website": "https://llama.meta.com/llama-4",
   "trust_vector": {
     "performance_reliability": {
-      "overall_score": 91,
+      "overall_score": 84,
       "criteria": {
         "task_accuracy_code": {
           "score": 88,
@@ -129,22 +129,28 @@
           "last_verified": "2025-11-08"
         },
         "uptime": {
-          "score": 95,
-          "confidence": "medium",
+          "score": 60,
+          "confidence": "high",
           "evidence": [
             {
               "source": "Self-hosted model",
               "url": "https://llama.meta.com/",
               "date": "2025-02-01",
               "value": "Uptime depends on hosting infrastructure"
+            },
+            {
+              "source": "Wikipedia - Llama (language model)",
+              "url": "https://en.wikipedia.org/wiki/Llama_(language_model)",
+              "date": "2026-06-10",
+              "value": "Model was never released; weights are not available for any deployment as of June 2026"
             }
           ],
           "methodology": "User-controlled deployment",
-          "last_verified": "2025-11-08",
-          "notes": "Uptime dependent on deployment infrastructure"
+          "last_verified": "2026-06-10",
+          "notes": "Model never released; no deployment is possible"
         }
       },
-      "notes": "Exceptional performance on mathematical reasoning (95% MATH). Strong general knowledge (73.7% MMLU). Open-source model offering enterprise-grade capabilities."
+      "notes": "Preview-era claims: exceptional mathematical reasoning (95% MATH) and strong general knowledge (73.7% MMLU). The model was never released, so these results cannot be independently verified."
     },
     "security": {
       "overall_score": 82,
@@ -419,7 +425,7 @@
       "notes": "Strong transparency as open-source model. Good training data disclosure. Customizable guardrails for specific use cases."
     },
     "operational_excellence": {
-      "overall_score": 84,
+      "overall_score": 77,
       "criteria": {
         "api_design_quality": {
           "score": 85,
@@ -479,21 +485,28 @@
           "notes": "Requires custom monitoring implementation"
         },
         "support_quality": {
-          "score": 82,
-          "confidence": "medium",
+          "score": 60,
+          "confidence": "high",
           "evidence": [
             {
               "source": "Community Support",
               "url": "https://github.com/meta-llama/llama4/discussions",
               "date": "2025-02-01",
               "value": "Active community, official documentation"
+            },
+            {
+              "source": "SiliconANGLE",
+              "url": "https://siliconangle.com/2025/05/15/meta-postpone-release-llama-4-behemoth-model-report-claims/",
+              "date": "2026-06-10",
+              "value": "Release postponed in 2025; Meta provided no update when asked in January 2026"
             }
           ],
           "methodology": "Assessment of support channels",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-06-10",
+          "notes": "No model-specific support exists since the model never shipped"
         },
         "ecosystem_maturity": {
-          "score": 87,
+          "score": 55,
           "confidence": "high",
           "evidence": [
             {
@@ -501,10 +514,16 @@
               "url": "https://huggingface.co/meta-llama",
               "date": "2025-02-01",
               "value": "Mature ecosystem with extensive tooling"
+            },
+            {
+              "source": "Wikipedia - Llama (language model)",
+              "url": "https://en.wikipedia.org/wiki/Llama_(language_model)",
+              "date": "2026-06-10",
+              "value": "No ecosystem exists for Behemoth itself; the model was never released and Meta has pivoted to closed-weight models (Muse Spark, April 2026)"
             }
           ],
           "methodology": "Analysis of ecosystem",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-06-10"
         },
         "license_terms": {
           "score": 90,
@@ -521,7 +540,7 @@
           "last_verified": "2025-11-08"
         }
       },
-      "notes": "Good operational maturity with strong open-source ecosystem. Requires infrastructure expertise for deployment and monitoring."
+      "notes": "Operational scores are largely theoretical: the model was never released, so no deployment, support, or ecosystem exists for it. Meta shipped the closed-weight Muse Spark (April 2026) instead."
     }
   },
   "use_case_ratings": {
@@ -617,7 +636,8 @@
     "Uptime and performance depend on hosting infrastructure",
     "Requires expertise to deploy and maintain",
     "No managed API service from Meta",
-    "Large model size requires substantial compute resources"
+    "Large model size requires substantial compute resources",
+    "Never released: still announced-only as of June 2026; Meta gave no update in January 2026 and pivoted to the closed-weight Muse Spark (April 2026), so weights are unavailable"
   ],
   "best_for": [
     "Enterprises requiring data sovereignty and on-premise deployment",
@@ -671,6 +691,7 @@
     "claude-sonnet-4-5"
   ],
   "tags": [
+    "unreleased",
     "open-source",
     "self-hosted",
     "mathematics",

@@ -2,11 +2,11 @@
   "id": "mcp-server-sqlite",
   "type": "mcp",
   "name": "MCP SQLite Server",
-  "provider": "Anthropic",
+  "provider": "Anthropic (Archived)",
   "version": "2025.4.24",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Official MCP server enabling AI models to interact with SQLite databases through natural language. Supports schema inspection, query execution, and data analysis for local file-based databases through the Model Context Protocol. Ideal for lightweight data applications but requires security considerations.",
+  "description": "ARCHIVED WITH UNPATCHED VULNERABILITY: Former Anthropic reference MCP server for SQLite, archived 2025-05-29 to the servers-archived repository. The archived code contains the same class of unpatched SQL injection flaw disclosed by Trend Micro (June 2025) and will not receive fixes; the archive README provides no security guarantees. Not recommended for new deployments.",
   "website": "https://modelcontextprotocol.io/docs/servers/sqlite",
   "trust_vector": {
     "performance_reliability": {
@@ -85,21 +85,21 @@
       }
     },
     "security": {
-      "overall_score": 73,
+      "overall_score": 56,
       "criteria": {
         "sql_injection_protection": {
-          "score": 85,
+          "score": 20,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Parameterized Queries",
-              "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite",
-              "date": "2025-11-16",
-              "value": "Uses parameterized queries to prevent SQL injection"
+              "source": "Trend Micro Research",
+              "url": "https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html",
+              "date": "2025-06-01",
+              "value": "Same class of classic SQL injection vulnerability present in the archived SQLite MCP server code; cannot be patched upstream because the repository was archived 2025-05-29"
             }
           ],
-          "methodology": "SQL injection testing",
-          "last_verified": "2025-11-09"
+          "methodology": "Vulnerability disclosure review and code analysis",
+          "last_verified": "2026-06-10"
         },
         "file_access_control": {
           "score": 70,
@@ -116,7 +116,7 @@
           "last_verified": "2025-11-09"
         },
         "data_modification_risk": {
-          "score": 68,
+          "score": 50,
           "confidence": "high",
           "evidence": [
             {
@@ -124,10 +124,16 @@
               "url": "https://modelcontextprotocol.io/docs/security",
               "date": "2025-11-16",
               "value": "AI can execute any SQL including DROP, DELETE if database file is writable"
+            },
+            {
+              "source": "Trend Micro Research",
+              "url": "https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html",
+              "date": "2025-06-01",
+              "value": "Unpatched SQL injection in archived code can be abused via crafted input to perform unintended write operations"
             }
           ],
           "methodology": "Write operation risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "encryption_support": {
           "score": 65,
@@ -160,7 +166,7 @@
       }
     },
     "privacy_compliance": {
-      "overall_score": 71,
+      "overall_score": 73,
       "criteria": {
         "data_exposure_risk": {
           "score": 65,
@@ -221,7 +227,7 @@
       }
     },
     "trust_transparency": {
-      "overall_score": 87,
+      "overall_score": 91,
       "criteria": {
         "documentation_quality": {
           "score": 90,
@@ -282,7 +288,7 @@
       }
     },
     "operational_excellence": {
-      "overall_score": 90,
+      "overall_score": 86,
       "criteria": {
         "ease_of_setup": {
           "score": 95,
@@ -341,7 +347,7 @@
           "last_verified": "2025-11-09"
         },
         "maintenance": {
-          "score": 85,
+          "score": 58,
           "confidence": "high",
           "evidence": [
             {
@@ -349,10 +355,16 @@
               "url": "https://www.sqlite.org/",
               "date": "2025-11-16",
               "value": "Minimal maintenance required, no server to manage"
+            },
+            {
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "MCP server archived 2025-05-29; repository read-only, no maintainer, no bug fixes or security patches will be released"
             }
           ],
           "methodology": "Maintenance overhead assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -371,7 +383,8 @@
     "Limited concurrent write performance due to file-level locking",
     "No built-in PII detection or data anonymization",
     "AI can execute destructive SQL if database file is writable",
-    "No native audit logging beyond MCP protocol logs"
+    "No native audit logging beyond MCP protocol logs",
+    "ARCHIVED 2025-05-29 with an unpatched SQL injection flaw in the archived code (Trend Micro, June 2025); no security guarantees, not recommended for new deployments"
   ],
   "metadata": {
     "license": "MIT (MCP server), Public Domain (SQLite)",
@@ -387,7 +400,7 @@
       "Python"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/modelcontextprotocol/servers",
+    "github_repo": "https://github.com/modelcontextprotocol/servers-archived",
     "database_version": "SQLite 3.x",
     "max_database_size": "281 TB (theoretical)",
     "first_release": "2024-11",
@@ -444,6 +457,9 @@
     "database",
     "sql",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "archived",
+    "unmaintained",
+    "security-incidents"
   ]
 }

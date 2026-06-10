@@ -4,9 +4,9 @@
   "name": "Gemma 3 27B",
   "provider": "Google",
   "version": "2025-01",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Google's open-source Gemma 3 model with 27 billion parameters. Designed for developers seeking Google's research quality with open-source flexibility and commercial-friendly licensing.",
+  "description": "Google's open-source Gemma 3 model with 27 billion parameters, now superseded by Gemma 4 (released 2026-04-02 under Apache 2.0, a license improvement over the custom Gemma license). Was designed for developers seeking Google's research quality with open-source flexibility; new deployments should evaluate Gemma 4 instead.",
   "website": "https://ai.google.dev/gemma",
   "trust_vector": {
     "performance_reliability": {
@@ -429,7 +429,7 @@
           "last_verified": "2025-11-08"
         },
         "versioning_policy": {
-          "score": 86,
+          "score": 78,
           "confidence": "high",
           "evidence": [
             {
@@ -437,10 +437,17 @@
               "url": "https://ai.google.dev/gemma",
               "date": "2025-01-10",
               "value": "Clear versioning"
+            },
+            {
+              "source": "Google Gemma 4 Announcement",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+              "date": "2026-06-10",
+              "value": "Superseded by Gemma 4 (released 2026-04-02 under Apache 2.0); Gemma 3 is no longer Google's current open model generation"
             }
           ],
           "methodology": "Review of versioning",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-06-10",
+          "notes": "Self-hosted weights remain usable, but the line has moved to Gemma 4"
         },
         "monitoring_observability": {
           "score": 76,
@@ -598,7 +605,8 @@
     "Moderate coding capabilities",
     "Requires infrastructure for deployment",
     "Not suitable for complex or specialized tasks",
-    "Limited ecosystem compared to Llama"
+    "Limited ecosystem compared to Llama",
+    "Superseded by Gemma 4 (released 2026-04-02 under Apache 2.0, an improvement over the custom Gemma license)"
   ],
   "best_for": [
     "Developers prioritizing Google's open-source models",
@@ -645,9 +653,11 @@
     "llama-4-scout",
     "llama-3-3-70b",
     "gpt-4-1-mini",
-    "claude-haiku-4-5"
+    "claude-haiku-4-5",
+    "gemma-4"
   ],
   "tags": [
+    "superseded",
     "open-source",
     "google",
     "privacy",

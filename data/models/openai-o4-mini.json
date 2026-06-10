@@ -4,9 +4,9 @@
   "name": "OpenAI o4-mini",
   "provider": "OpenAI",
   "version": "o4-mini-2025-04-16",
-  "last_evaluated": "2025-11-17",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's best small reasoning model (April 2025). 93% AIME, 68% SWE-bench, 10x cheaper than o3. First mini with full tool support + multimodality.",
+  "description": "DEPRECATED: removed from ChatGPT 2026-02-13; o4-mini API shuts down 2026-10-23 (o4-mini-deep-research shut down 2026-07-23); migrate to GPT-5.5. Historically OpenAI's best small reasoning model (April 2025): 93% AIME, 68% SWE-bench, first mini with full tool support + multimodality.",
   "website": "https://openai.com/index/introducing-o3-and-o4-mini/",
   "trust_vector": {
     "performance_reliability": {
@@ -404,7 +404,7 @@
       "notes": "Good transparency with visible reasoning. Strong safety guardrails."
     },
     "operational_excellence": {
-      "overall_score": 89,
+      "overall_score": 87,
       "criteria": {
         "api_design_quality": {
           "score": 91,
@@ -435,7 +435,7 @@
           "last_verified": "2025-11-08"
         },
         "versioning_policy": {
-          "score": 88,
+          "score": 76,
           "confidence": "high",
           "evidence": [
             {
@@ -443,6 +443,12 @@
               "url": "https://platform.openai.com/docs",
               "date": "2025-12-01",
               "value": "Clear policy"
+            },
+            {
+              "source": "OpenAI Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-06-10",
+              "value": "o4-mini removed from ChatGPT 2026-02-13; o4-mini-deep-research shutdown 2026-07-23; o4-mini API shutdown 2026-10-23; migration target GPT-5.5"
             }
           ],
           "methodology": "Policy review",
@@ -477,7 +483,7 @@
           "last_verified": "2025-11-08"
         },
         "ecosystem_maturity": {
-          "score": 91,
+          "score": 83,
           "confidence": "high",
           "evidence": [
             {
@@ -505,7 +511,7 @@
           "last_verified": "2025-11-08"
         }
       },
-      "notes": "Excellent operational maturity with mature ecosystem."
+      "notes": "Deprecated: removed from ChatGPT 2026-02-13; o4-mini API shutdown scheduled 2026-10-23, migration target GPT-5.5. Versioning and ecosystem scores reduced to reflect deprecation."
     }
   },
   "use_case_ratings": {
@@ -602,7 +608,8 @@
     "Lower than o4-mini on some benchmarks",
     "Mini model limitations for complex reasoning",
     "Reasoning overhead for simple tasks",
-    "Moderate general knowledge (75.8% MMLU)"
+    "Moderate general knowledge (75.8% MMLU)",
+    "DEPRECATED: removed from ChatGPT 2026-02-13; o4-mini API shutdown 2026-10-23 — migrate to GPT-5.5"
   ],
   "best_for": [
     "Code generation on a budget",
@@ -647,11 +654,12 @@
     "parameters": "Not disclosed"
   },
   "related_entities": [
-    "openai-o4-mini",
-    "openai-o1",
+    "gpt-5-5",
+    "openai-o3-mini",
     "claude-sonnet-4-5"
   ],
   "tags": [
+    "deprecated",
     "reasoning",
     "code-generation",
     "mini-model",

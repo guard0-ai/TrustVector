@@ -4,9 +4,9 @@
   "name": "MCP PostgreSQL Server",
   "provider": "Anthropic (Archived)",
   "version": "0.6.2",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "ARCHIVED: Former official MCP server for PostgreSQL database interaction. This server is NO LONGER MAINTAINED and has been moved to servers-archived repository. No security updates provided. Community alternatives available. Use with caution.",
+  "description": "ARCHIVED WITH UNPATCHED VULNERABILITY: Former Anthropic reference MCP server for PostgreSQL, archived 2025-05-29. A SQL injection flaw disclosed by Trend Micro (June 2025) remains unpatched because the repo is archived, yet the npm package still saw ~21k weekly downloads. NOT RECOMMENDED for any use; a patched community fork (@zeddotdev/postgres-context-server) exists.",
   "website": "https://modelcontextprotocol.io/docs/servers/postgres",
   "trust_vector": {
     "performance_reliability": {
@@ -85,38 +85,50 @@
       }
     },
     "security": {
-      "overall_score": 71,
+      "overall_score": 51,
       "criteria": {
         "sql_injection_protection": {
-          "score": 82,
+          "score": 15,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Parameterized Queries",
-              "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres",
-              "date": "2025-11-16",
-              "value": "Uses parameterized queries to prevent SQL injection"
+              "source": "Trend Micro Research",
+              "url": "https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html",
+              "date": "2025-06-01",
+              "value": "Classic SQL injection vulnerability disclosed in the archived PostgreSQL MCP server; will never be patched in @modelcontextprotocol/server-postgres because the repository is archived"
+            },
+            {
+              "source": "Datadog Security Labs",
+              "url": "https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/",
+              "date": "2025-06-30",
+              "value": "Case study confirming SQL injection in the PostgreSQL MCP server allows bypassing the read-only transaction restriction; ~21k weekly npm downloads while vulnerable"
             }
           ],
-          "methodology": "SQL injection testing",
-          "last_verified": "2025-11-09"
+          "methodology": "Vulnerability disclosure review and exploitability analysis",
+          "last_verified": "2026-06-10"
         },
         "access_control": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 55,
+          "confidence": "high",
           "evidence": [
             {
               "source": "PostgreSQL Permissions",
               "url": "https://www.postgresql.org/docs/current/sql-grant.html",
               "date": "2025-11-16",
               "value": "Inherits database user permissions but AI can execute any query within those permissions"
+            },
+            {
+              "source": "Datadog Security Labs",
+              "url": "https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/",
+              "date": "2025-06-30",
+              "value": "SQL injection allows escaping the server's intended read-only transaction sandbox, defeating its primary access-control mechanism"
             }
           ],
           "methodology": "Permission boundary testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "data_modification_risk": {
-          "score": 65,
+          "score": 45,
           "confidence": "high",
           "evidence": [
             {
@@ -124,10 +136,16 @@
               "url": "https://modelcontextprotocol.io/docs/security",
               "date": "2025-11-16",
               "value": "AI can execute INSERT, UPDATE, DELETE operations if database user has permissions"
+            },
+            {
+              "source": "Trend Micro Research",
+              "url": "https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html",
+              "date": "2025-06-01",
+              "value": "Unpatched SQL injection enables write operations even when the server is configured for read-only access"
             }
           ],
           "methodology": "Write operation risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "credential_security": {
           "score": 72,
@@ -160,7 +178,7 @@
       }
     },
     "privacy_compliance": {
-      "overall_score": 68,
+      "overall_score": 66,
       "criteria": {
         "data_exposure_risk": {
           "score": 62,
@@ -235,7 +253,7 @@
       }
     },
     "trust_transparency": {
-      "overall_score": 84,
+      "overall_score": 81,
       "criteria": {
         "documentation_quality": {
           "score": 88,
@@ -280,23 +298,29 @@
           "last_verified": "2025-11-09"
         },
         "security_documentation": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 50,
+          "confidence": "high",
           "evidence": [
             {
               "source": "Security Guidelines",
               "url": "https://modelcontextprotocol.io/docs/security",
               "date": "2025-11-16",
               "value": "Provides security best practices but could be more comprehensive for database access"
+            },
+            {
+              "source": "MCP servers-archived repository README",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "README states 'NO SECURITY GUARANTEES ARE PROVIDED FOR THESE ARCHIVED SERVERS'; known SQL injection remains undocumented and unpatched in the package"
             }
           ],
           "methodology": "Security documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 83,
+      "overall_score": 77,
       "criteria": {
         "ease_of_setup": {
           "score": 85,
@@ -355,18 +379,18 @@
           "last_verified": "2025-11-09"
         },
         "community_support": {
-          "score": 80,
-          "confidence": "medium",
+          "score": 55,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "MCP Community",
-              "url": "https://github.com/modelcontextprotocol/servers/discussions",
-              "date": "2025-11-16",
-              "value": "Growing community support for database MCP servers"
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "Server archived 2025-05-29; repository read-only, no issues or PRs accepted. Patched community fork available as @zeddotdev/postgres-context-server"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -376,7 +400,7 @@
     "Natural language to SQL query generation capabilities",
     "Excellent for data analysis and business intelligence workflows",
     "Full query visibility and logging for audit purposes",
-    "Open source implementation with active development",
+    "Open source code remains publicly auditable in the archived repository",
     "Supports connection pooling and performance optimization"
   ],
   "limitations": [
@@ -385,7 +409,8 @@
     "AI can execute destructive operations (DELETE, DROP) if permissions allow",
     "Limited granular access control beyond database user permissions",
     "Query results with sensitive data sent to external APIs",
-    "Compliance challenges for regulated industries (HIPAA, PCI-DSS, GDPR)"
+    "Compliance challenges for regulated industries (HIPAA, PCI-DSS, GDPR)",
+    "ARCHIVED 2025-05-29 with an UNPATCHED SQL injection vulnerability (Trend Micro, June 2025); use the patched fork @zeddotdev/postgres-context-server instead"
   ],
   "metadata": {
     "license": "MIT",
@@ -402,8 +427,9 @@
     "database_version": "PostgreSQL 10+",
     "connection_method": "Connection string with credentials",
     "first_release": "2024-11",
-    "maintained_by": "None (Archived)",
-    "status": "Archived - No longer maintained",
+    "maintained_by": "None (Archived 2025-05-29)",
+    "status": "Archived - unpatched SQL injection vulnerability; patched community fork: @zeddotdev/postgres-context-server",
+    "package_name": "@modelcontextprotocol/server-postgres",
     "transport_types": [
       "stdio"
     ],
@@ -462,6 +488,9 @@
     "database",
     "sql",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "archived",
+    "unmaintained",
+    "security-incidents"
   ]
 }

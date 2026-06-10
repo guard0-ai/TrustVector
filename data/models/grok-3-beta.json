@@ -4,9 +4,9 @@
   "name": "Grok 3 [Beta]",
   "provider": "xAI",
   "version": "Beta",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "xAI's flagship Grok 3 model in beta, featuring exceptional coding performance and real-time knowledge integration via X platform. Designed for cutting-edge applications requiring both high accuracy and current information.",
+  "description": "RETIRED: xAI retired Grok 3 on 2026-05-15; retired API slugs now silently redirect to Grok 4.3 at Grok 4.3 pricing. Historically xAI's flagship beta model with exceptional coding performance and real-time knowledge via X platform. Migrate to Grok 4.3 (current xAI flagship) or Grok 4.1.",
   "website": "https://x.ai/grok",
   "trust_vector": {
     "performance_reliability": {
@@ -421,7 +421,7 @@
       "notes": "Good transparency for beta product. Real-time X integration provides current information. Some aspects still evolving."
     },
     "operational_excellence": {
-      "overall_score": 81,
+      "overall_score": 78,
       "criteria": {
         "api_design_quality": {
           "score": 84,
@@ -453,14 +453,20 @@
           "notes": "SDKs still maturing"
         },
         "versioning_policy": {
-          "score": 78,
-          "confidence": "medium",
+          "score": 68,
+          "confidence": "high",
           "evidence": [
             {
               "source": "xAI API Versioning",
               "url": "https://docs.x.ai/versioning",
               "date": "2025-01-20",
               "value": "Beta versioning approach"
+            },
+            {
+              "source": "xAI May 15 Retirement Migration Guide",
+              "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+              "date": "2026-06-10",
+              "value": "grok-3 retired 2026-05-15; retired slugs silently redirect to grok-4.3 at grok-4.3 pricing"
             }
           ],
           "methodology": "Review of versioning",
@@ -495,7 +501,7 @@
           "last_verified": "2025-11-08"
         },
         "ecosystem_maturity": {
-          "score": 76,
+          "score": 66,
           "confidence": "medium",
           "evidence": [
             {
@@ -523,7 +529,7 @@
           "last_verified": "2025-11-08"
         }
       },
-      "notes": "Good operational foundation for beta product. Ecosystem and tooling still maturing."
+      "notes": "Model retired 2026-05-15; retired slugs silently redirect to grok-4.3 at grok-4.3 pricing. Versioning and ecosystem scores reduced to reflect retirement."
     }
   },
   "use_case_ratings": {
@@ -622,7 +628,8 @@
     "Limited ecosystem maturity compared to established models",
     "30-day data retention period",
     "Not HIPAA eligible",
-    "Support and documentation still developing"
+    "Support and documentation still developing",
+    "RETIRED 2026-05-15: xAI no longer serves grok-3; retired slugs silently redirect to grok-4.3 at grok-4.3 pricing"
   ],
   "best_for": [
     "Cutting-edge software development requiring best-in-class coding",
@@ -669,12 +676,11 @@
     "parameters": "Not disclosed (large-scale)"
   },
   "related_entities": [
-    "openai-o3",
-    "claude-sonnet-4-5",
-    "gpt-4-1",
-    "llama-4-behemoth"
+    "grok-4-3",
+    "grok-4-1"
   ],
   "tags": [
+    "retired",
     "beta",
     "coding",
     "real-time",

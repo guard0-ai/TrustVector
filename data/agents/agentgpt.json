@@ -4,9 +4,9 @@
   "name": "AgentGPT",
   "provider": "Reworkd",
   "version": "Platform",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Browser-based autonomous AI agent platform for deploying and managing GPT-powered agents. Enables users to create goal-oriented autonomous agents that break down objectives and execute tasks without continuous human intervention.",
+  "description": "DISCONTINUED: the AgentGPT repository was archived on 2026-01-28 (last release v1.0.0, Nov 2023) and the hosted site is frozen. Formerly a browser-based autonomous AI agent platform that let users create goal-oriented agents which break down objectives and execute tasks without continuous human intervention. Not recommended for new use.",
   "website": "https://agentgpt.reworkd.ai/",
   "trust_vector": {
     "performance_reliability": {
@@ -249,7 +249,7 @@
       }
     },
     "trust_transparency": {
-      "overall_score": 79,
+      "overall_score": 76,
       "criteria": {
         "documentation_quality": {
           "score": 75,
@@ -308,23 +308,30 @@
           "last_verified": "2025-11-09"
         },
         "community_support": {
-          "score": 73,
-          "confidence": "medium",
+          "score": 55,
+          "confidence": "high",
           "evidence": [
             {
               "source": "Community",
               "url": "https://github.com/reworkd/AgentGPT/discussions",
               "date": "2024-10-15",
               "value": "Active GitHub community and Discord"
+            },
+            {
+              "source": "GitHub Repository Status",
+              "url": "https://github.com/reworkd/AgentGPT",
+              "date": "2026-06-10",
+              "value": "Repository archived 2026-01-28; community activity has ceased"
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10",
+          "notes": "Score reduced: repository archived, no further community development"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 70,
+      "overall_score": 65,
       "criteria": {
         "ease_of_use": {
           "score": 88,
@@ -383,18 +390,25 @@
           "last_verified": "2025-11-09"
         },
         "production_readiness": {
-          "score": 60,
-          "confidence": "medium",
+          "score": 40,
+          "confidence": "high",
           "evidence": [
             {
               "source": "Platform Maturity",
               "url": "https://github.com/reworkd/AgentGPT",
               "date": "2024-10-01",
               "value": "Experimental platform, not designed for production use"
+            },
+            {
+              "source": "GitHub Repository Status",
+              "url": "https://github.com/reworkd/AgentGPT",
+              "date": "2026-06-10",
+              "value": "Repository archived 2026-01-28; last release v1.0.0 (Nov 2023); hosted site frozen"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10",
+          "notes": "Score reduced: project discontinued and repository archived on 2026-01-28"
         },
         "reliability": {
           "score": 62,
@@ -474,7 +488,8 @@
     "Limited tool access and action capabilities",
     "Can be expensive with unpredictable OpenAI API costs",
     "No enterprise features (auth, monitoring, management)",
-    "Reliability and success rate varies significantly"
+    "Reliability and success rate varies significantly",
+    "Discontinued: repository archived 2026-01-28, hosted site frozen, no further updates"
   ],
   "metadata": {
     "license": "GPL-3.0",
@@ -500,6 +515,7 @@
   },
   "tags": [
     "autonomous",
-    "web-based"
+    "web-based",
+    "archived"
   ]
 }

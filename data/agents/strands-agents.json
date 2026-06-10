@@ -1,0 +1,477 @@
+{
+  "id": "strands-agents",
+  "type": "agent",
+  "name": "Strands Agents",
+  "provider": "Amazon Web Services",
+  "version": "1.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Open-source, model-driven AI agent SDK from AWS, used internally by Amazon Q Developer. Takes a lightweight model-first approach with MCP and A2A support, multi-agent primitives, and optional pairing with Amazon Bedrock AgentCore for hosted runtime.",
+  "website": "https://strandsagents.com/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 84,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AWS Open Source Blog",
+              "url": "https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/",
+              "date": "2025-05-16",
+              "value": "Model-driven loop proven internally by Amazon Q Developer and other AWS agent teams before open-sourcing"
+            }
+          ],
+          "methodology": "Task completion testing plus review of documented internal AWS production usage",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands Agents Documentation",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/concepts/tools/tools_overview/",
+              "date": "2026-05-20",
+              "value": "Native MCP client support, decorator-based Python tools, and a maintained strands-agents-tools library"
+            }
+          ],
+          "methodology": "Tool invocation testing across native tools and MCP servers",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Strands Agent Loop Documentation",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/concepts/agents/agent-loop/",
+              "date": "2026-04-15",
+              "value": "Model-driven agentic loop delegates planning to the model; workflow and graph patterns available for structured multi-step tasks"
+            }
+          ],
+          "methodology": "Complex multi-step task testing with agent loop and graph patterns",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Strands Session Management Docs",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/concepts/agents/session-management/",
+              "date": "2026-03-20",
+              "value": "Built-in session persistence plus integration with Amazon Bedrock AgentCore Memory for long-term memory"
+            }
+          ],
+          "methodology": "Memory system evaluation across sessions and AgentCore Memory integration",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 79,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Strands Agents GitHub",
+              "url": "https://github.com/strands-agents/sdk-python",
+              "date": "2026-05-21",
+              "value": "Tool errors surfaced back to the model for self-correction; retry and hook system available for custom recovery"
+            }
+          ],
+          "methodology": "Error injection testing observing model-driven recovery",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands Multi-Agent Documentation",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/concepts/multi-agent/agent-to-agent/",
+              "date": "2026-04-15",
+              "value": "First-class multi-agent primitives: agents-as-tools, swarm, graph, and A2A protocol support"
+            }
+          ],
+          "methodology": "Multi-agent coordination testing across swarm, graph, and A2A patterns",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 78,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock AgentCore",
+              "url": "https://aws.amazon.com/bedrock/agentcore/",
+              "date": "2025-10-13",
+              "value": "SDK itself does not sandbox tools, but AgentCore Runtime (GA Oct 2025) provides isolated sessions and a managed Code Interpreter sandbox"
+            }
+          ],
+          "methodology": "Security architecture review of SDK plus AgentCore runtime isolation",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands + AgentCore Identity",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/deploy/deploy_to_bedrock_agentcore/",
+              "date": "2026-04-10",
+              "value": "Integrates with AWS IAM and AgentCore Identity for credential management and per-agent permission scoping"
+            }
+          ],
+          "methodology": "Access control assessment of IAM and identity integrations",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Strands Guardrails Documentation",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/safety-security/guardrails/",
+              "date": "2026-03-25",
+              "value": "Supports Amazon Bedrock Guardrails and hook-based input/output filtering; no framework-level injection defense by default"
+            }
+          ],
+          "methodology": "Injection testing with and without Bedrock Guardrails enabled",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AgentCore Runtime Session Isolation",
+              "url": "https://aws.amazon.com/bedrock/agentcore/",
+              "date": "2025-10-13",
+              "value": "AgentCore runs each session in dedicated microVM isolation; self-hosted deployments inherit user infrastructure isolation"
+            }
+          ],
+          "methodology": "Data isolation architecture review across deployment targets",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands Agents GitHub",
+              "url": "https://github.com/strands-agents/sdk-python",
+              "date": "2026-06-01",
+              "value": "Apache 2.0, open-sourced May 2025, public roadmap, contributions from Anthropic, Meta, and other companies"
+            }
+          ],
+          "methodology": "Source code and governance review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 84,
+      "criteria": {
+        "data_retention": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Self-Hosted SDK Architecture",
+              "url": "https://github.com/strands-agents/sdk-python",
+              "date": "2026-06-01",
+              "value": "SDK retains no data itself; retention governed by user infrastructure or AWS data policies when using AgentCore"
+            }
+          ],
+          "methodology": "Privacy architecture review of SDK and managed runtime options",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AWS Compliance Programs",
+              "url": "https://aws.amazon.com/compliance/gdpr-center/",
+              "date": "2026-05-01",
+              "value": "Deployments on AWS inherit GDPR-aligned infrastructure controls; self-hosted deployments fully controllable"
+            }
+          ],
+          "methodology": "Compliance capabilities assessment leveraging AWS compliance posture",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Strands Model Providers Documentation",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/concepts/model-providers/amazon-bedrock/",
+              "date": "2026-04-15",
+              "value": "Data flows only to the configured model provider (Bedrock, Anthropic, OpenAI, Ollama, LiteLLM); Bedrock keeps data within AWS"
+            }
+          ],
+          "methodology": "Data flow analysis across supported model providers",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands Ollama Provider Docs",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/concepts/model-providers/ollama/",
+              "date": "2026-04-15",
+              "value": "Runs anywhere Python/TypeScript runs, including fully local execution with Ollama models"
+            }
+          ],
+          "methodology": "Deployment options assessment including local model configurations",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 86,
+      "criteria": {
+        "documentation_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands Agents Documentation",
+              "url": "https://strandsagents.com/latest/documentation/docs/",
+              "date": "2026-05-20",
+              "value": "Thorough user guide covering concepts, safety/security, deployment, and multi-agent patterns with samples repo"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands Observability Documentation",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/observability-evaluation/observability/",
+              "date": "2026-04-20",
+              "value": "Native OpenTelemetry traces, metrics, and logs built into the SDK; integrates with AgentCore Observability"
+            }
+          ],
+          "methodology": "Tracing and telemetry capabilities assessment",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Strands Agent Loop Documentation",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/concepts/agents/agent-loop/",
+              "date": "2026-04-15",
+              "value": "Model-driven loop exposes reasoning, tool selections, and intermediate steps through traces and hooks"
+            }
+          ],
+          "methodology": "Explainability assessment of loop transparency and hook system",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands Agents GitHub Organization",
+              "url": "https://github.com/strands-agents",
+              "date": "2026-06-01",
+              "value": "Apache 2.0 SDK, tools, and samples; Python SDK 1.0 released 2026-05-21, TypeScript 1.0 released 2026-04-30"
+            }
+          ],
+          "methodology": "Open source assessment of license and release maturity",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "AWS Open Source Blog / GitHub Metrics",
+              "url": "https://github.com/strands-agents/sdk-python",
+              "date": "2026-02-15",
+              "value": "14M+ downloads by Feb 2026, rapid release cadence, and growing external contributor base"
+            }
+          ],
+          "methodology": "Community engagement analysis of downloads, releases, and contributors",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 86,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands Quickstart",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/quickstart/",
+              "date": "2026-05-20",
+              "value": "Agent in a few lines of code; model-driven approach avoids complex workflow definitions"
+            }
+          ],
+          "methodology": "Integration complexity assessment with minimal-setup testing",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Amazon Bedrock AgentCore GA",
+              "url": "https://aws.amazon.com/bedrock/agentcore/",
+              "date": "2025-10-13",
+              "value": "AgentCore Runtime (GA 2025-10-13) provides serverless, session-isolated scaling; SDK also deploys to Lambda, Fargate, EKS"
+            }
+          ],
+          "methodology": "Scalability assessment across managed and self-managed deployment targets",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Open Source SDK",
+              "url": "https://github.com/strands-agents/sdk-python",
+              "date": "2026-06-01",
+              "value": "Free Apache 2.0 SDK; costs from LLM usage and optional AWS services (AgentCore consumption-based pricing)"
+            }
+          ],
+          "methodology": "Pricing model analysis of SDK and optional managed services",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands Observability + AgentCore",
+              "url": "https://strandsagents.com/latest/documentation/docs/user-guide/observability-evaluation/observability/",
+              "date": "2026-04-20",
+              "value": "Built-in OTel metrics/traces plus CloudWatch and AgentCore Observability dashboards for production monitoring"
+            }
+          ],
+          "methodology": "Monitoring features assessment across SDK and AWS integrations",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Strands 1.0 Releases / AWS Internal Usage",
+              "url": "https://github.com/strands-agents/sdk-python/releases",
+              "date": "2026-05-21",
+              "value": "Python 1.0 (2026-05-21) and TypeScript 1.0 (2026-04-30) with semver stability; battle-tested in Amazon Q Developer"
+            }
+          ],
+          "methodology": "Production readiness assessment of API stability and documented production usage",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 87,
+      "notes": "Powers Amazon Q Developer internally; strong tool use and MCP support for dev workflows"
+    },
+    "customer-support": {
+      "overall": 84,
+      "notes": "Session management, guardrails, and AgentCore identity make user-facing agents practical"
+    },
+    "data-analysis": {
+      "overall": 83,
+      "notes": "Good tool composition plus AgentCore Code Interpreter for sandboxed analysis"
+    },
+    "research-assistant": {
+      "overall": 84,
+      "notes": "Multi-agent swarm/graph patterns suit research decomposition well"
+    },
+    "financial-analysis": {
+      "overall": 80,
+      "notes": "AWS compliance posture and IAM integration help in regulated finance environments"
+    },
+    "healthcare": {
+      "overall": 76,
+      "notes": "Viable on HIPAA-eligible AWS services but requires careful architecture review"
+    },
+    "legal-compliance": {
+      "overall": 78,
+      "notes": "Strong audit trails via OTel tracing; domain guardrails must be added"
+    }
+  },
+  "best_for": [
+    "Teams on AWS wanting an open SDK with a managed production runtime (AgentCore)",
+    "Enterprises needing IAM-integrated, observable agents with audit trails",
+    "Developers building multi-agent systems with MCP and A2A interoperability",
+    "Organizations seeking a battle-tested SDK proven inside Amazon Q Developer"
+  ],
+  "strengths": [
+    "Model-driven design proven in production by Amazon Q Developer and AWS teams",
+    "First-class MCP and A2A protocol support plus rich multi-agent primitives (swarm, graph, agents-as-tools)",
+    "Native OpenTelemetry observability built into the SDK",
+    "Truly model-agnostic: Bedrock, Anthropic, OpenAI, Ollama, LiteLLM and more",
+    "Stable 1.0 APIs in both Python and TypeScript with strong adoption (14M+ downloads)",
+    "Seamless path to managed, session-isolated runtime via Amazon Bedrock AgentCore"
+  ],
+  "limitations": [
+    "No built-in tool sandboxing in the SDK itself; isolation requires AgentCore or user infrastructure",
+    "Deepest integrations (Guardrails, Identity, Memory, Observability) favor the AWS ecosystem",
+    "Model-driven loop offers less deterministic control than explicit graph-first frameworks",
+    "Younger community ecosystem than longer-established agent frameworks",
+    "Advanced multi-agent patterns still maturing relative to the core single-agent loop"
+  ],
+  "related": [
+    "amazon-bedrock-agents",
+    "langgraph-agent",
+    "openai-agents-sdk",
+    "google-adk",
+    "crewai"
+  ],
+  "metadata": {
+    "license": "Apache 2.0",
+    "supported_models": [
+      "Amazon Bedrock (Claude, Nova, Llama, etc.)",
+      "Anthropic API",
+      "OpenAI",
+      "Local LLMs via Ollama",
+      "100+ providers via LiteLLM"
+    ],
+    "programming_languages": [
+      "Python",
+      "TypeScript"
+    ],
+    "deployment_type": "Self-hosted or managed via Amazon Bedrock AgentCore",
+    "tool_support": [
+      "MCP tools",
+      "Custom Python/TypeScript tools",
+      "strands-agents-tools library",
+      "A2A agent interoperability"
+    ],
+    "github_stars": "10000+",
+    "first_release": "2025 (open-sourced May 2025)",
+    "pricing": "Free (Apache 2.0) - Costs only from LLM usage and optional AWS services",
+    "python_requirement": "Python >=3.10",
+    "adoption": "14M+ downloads by Feb 2026; used internally by Amazon Q Developer and multiple AWS teams"
+  },
+  "tags": [
+    "model-driven",
+    "aws",
+    "open-source"
+  ]
+}

@@ -4,9 +4,9 @@
   "name": "Nova Pro",
   "provider": "Amazon",
   "version": "2025-01",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Amazon's Nova Pro model integrated with AWS services. Designed for enterprise customers requiring seamless AWS integration with good general capabilities.",
+  "description": "SUPERSEDED by the Nova 2 family announced at re:Invent 2025-12-02 (Nova 2 Lite GA; Nova 2 Pro/Omni in preview), though the original Nova Pro is still served. Amazon model integrated with AWS services for enterprise customers requiring seamless AWS integration. New projects should evaluate Nova 2.",
   "website": "https://aws.amazon.com/bedrock/nova/",
   "trust_vector": {
     "performance_reliability": {
@@ -437,6 +437,12 @@
               "url": "https://docs.aws.amazon.com/bedrock/versioning",
               "date": "2025-01-15",
               "value": "AWS standard versioning"
+            },
+            {
+              "source": "AWS What's New: Nova 2 foundation models in Amazon Bedrock",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock/",
+              "date": "2026-06-10",
+              "value": "Nova 2 family announced 2025-12-02 (Nova 2 Lite GA; Pro/Omni preview); original Nova Pro still served"
             }
           ],
           "methodology": "Policy review",
@@ -589,7 +595,8 @@
     "AWS vendor lock-in",
     "Higher costs within AWS ecosystem",
     "Performance lags behind specialized models",
-    "Best value only for existing AWS customers"
+    "Best value only for existing AWS customers",
+    "SUPERSEDED: Nova 2 family (announced 2025-12-02) is the current Amazon Nova generation; original Nova Pro still served"
   ],
   "best_for": [
     "AWS-native applications requiring tight integration",
@@ -635,11 +642,13 @@
     "parameters": "Not disclosed"
   },
   "related_entities": [
+    "nova-2-lite",
     "claude-sonnet-4-5",
     "gpt-4-1",
     "amazon-bedrock-agents"
   ],
   "tags": [
+    "superseded",
     "aws",
     "enterprise",
     "hipaa-eligible",

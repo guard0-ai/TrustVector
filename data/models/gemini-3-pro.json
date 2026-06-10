@@ -4,9 +4,9 @@
   "name": "Gemini 3 Pro",
   "provider": "Google",
   "version": "gemini-3-pro-preview",
-  "last_evaluated": "2026-01-14",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Google's flagship with 1M token context, 1501 LMArena Elo (first model >1500), Deep Think mode for complex reasoning, and native multimodal. 6x improvement on ARC-AGI-2 over 2.5 Pro.",
+  "description": "Former Google flagship, superseded by Gemini 3.1 Pro (GA 2026-02-19; ARC-AGI-2 77.1% vs 31.1%). Still served, with 1M token context, 1501 LMArena Elo (first model >1500), Deep Think mode for complex reasoning, and native multimodal. New projects should prefer Gemini 3.1 Pro.",
   "website": "https://blog.google/products/gemini/gemini-3/",
 
   "trust_vector": {
@@ -478,6 +478,12 @@
               "url": "https://cloud.google.com/apis/design/versioning",
               "date": "2025-11-18",
               "value": "Clear versioning with migration guides"
+            },
+            {
+              "source": "Gemini API Changelog",
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "date": "2026-06-10",
+              "value": "Superseded by Gemini 3.1 Pro (GA 2026-02-19; ARC-AGI-2 77.1% vs 31.1%)"
             }
           ],
           "methodology": "Versioning policy review",
@@ -612,7 +618,8 @@
     "Slightly behind on SWE-bench (76.2% vs Claude's 80.9%)",
     "Deep Think increases latency significantly",
     "Data retention policies less clear than Anthropic",
-    "Newer model with less community testing"
+    "Newer model with less community testing",
+    "SUPERSEDED: Gemini 3.1 Pro (GA 2026-02-19) is now Google's most capable Pro model; this model is no longer the flagship"
   ],
 
   "best_for": [
@@ -651,15 +658,14 @@
     "knowledge_cutoff": "January 2025"
   },
 
-  "related_entities": ["gemini-3-flash", "gemini-2-5-pro", "claude-opus-4-5", "gpt-5-2"],
+  "related_entities": ["gemini-3-1-pro", "gemini-3-flash", "gemini-2-5-pro", "claude-opus-4-5", "gpt-5-2"],
 
   "tags": [
+    "superseded",
     "long-context",
     "1m-tokens",
     "deep-think",
     "multimodal",
-    "lmarena-leader",
-    "google-cloud",
-    "flagship"
+    "google-cloud"
   ]
 }

@@ -1,0 +1,644 @@
+{
+  "id": "kimi-k2-6",
+  "type": "model",
+  "name": "Kimi K2.6",
+  "provider": "Moonshot AI",
+  "version": "20260420",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Moonshot AI's open-weight 1T-parameter MoE (32B active) with vendor-reported 80.2% SWE-Bench Verified and 58.6 SWE-Bench Pro. Agent Swarm orchestration scales to 300 sub-agents and 4,000 coordinated steps for long-horizon coding.",
+  "website": "https://huggingface.co/moonshotai/Kimi-K2.6",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 91,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 95,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kimi K2.6 Model Card (vendor-reported)",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "SWE-Bench Verified 80.2%, SWE-Bench Pro 58.6 (vs GPT-5.4's 57.7)"
+            },
+            {
+              "source": "LiveCodeBench v6 (vendor-reported)",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "89.6% on competitive programming tasks"
+            },
+            {
+              "source": "MarkTechPost release coverage",
+              "url": "https://www.marktechpost.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-with-long-horizon-coding-agent-swarm-scaling-to-300-sub-agents-and-4000-coordinated-steps/",
+              "date": "2026-04-20",
+              "value": "Long-horizon coding focus; claims open-weight state of the art on agentic coding"
+            }
+          ],
+          "methodology": "Vendor-reported industry-standard coding benchmarks; scores pending broad independent replication",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 90,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Humanity's Last Exam with tools (vendor-reported)",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "54.0 on HLE-with-tools, frontier-competitive"
+            }
+          ],
+          "methodology": "Vendor-reported tool-augmented reasoning benchmarks requiring multi-step problem solving",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kimi K2.6 Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "Strong general performance across knowledge benchmarks; text and vision modalities"
+            }
+          ],
+          "methodology": "Review of vendor benchmark suite and community evaluations across knowledge domains",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community evaluation",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-05-15",
+              "value": "Consistent agentic behavior over long trajectories; native INT4 quantization preserves quality"
+            }
+          ],
+          "methodology": "Community testing of repeated runs and long-horizon agent trajectories",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "3.0s",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-05-15",
+              "value": "Typical first-response time ~3s on first-party API; varies widely by host"
+            }
+          ],
+          "methodology": "Median latency for API requests with standard prompt sizes; self-hosted latency depends on hardware",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p95": {
+          "value": "7.5s",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-05-15",
+              "value": "p95 ~7.5s; long agentic chains take substantially longer by design"
+            }
+          ],
+          "methodology": "95th percentile response time across diverse workloads",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "262,144 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kimi K2.6 Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "262,144 token context window"
+            }
+          ],
+          "methodology": "Official specification from model card",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 95,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Platform",
+              "url": "https://platform.moonshot.ai/",
+              "date": "2026-06-01",
+              "value": "First-party API generally stable; open weights allow self-hosted redundancy"
+            }
+          ],
+          "methodology": "Review of platform availability and self-hosting fallback options",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Vendor-reported open-weight leadership on agentic coding (80.2% SWE-Bench Verified, 58.6 SWE-Bench Pro). Agent Swarm scales to 300 sub-agents / 4,000 coordinated steps. Most headline scores are vendor-reported and await independent replication."
+    },
+
+    "security": {
+      "overall_score": 79,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 78,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Kimi K2.6 Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "Safety tuning described; no published third-party prompt-injection audit"
+            }
+          ],
+          "methodology": "Review of vendor safety documentation and community red-team reports against OWASP LLM01 patterns",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community red-teaming",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-05-10",
+              "value": "Standard alignment tuning; open weights mean guardrails can be removed in fine-tuned derivatives"
+            }
+          ],
+          "methodology": "Testing against adversarial prompt datasets; open-weight deployments inherit deployer responsibility",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Privacy Policy",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-04-20",
+              "value": "Standard data handling on first-party API; full control when self-hosted"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and self-hosting data-control options",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kimi K2.6 Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "Safety post-training applied; refusal behavior comparable to other open frontier models"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories per vendor card and community reports",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI API Documentation",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-04-20",
+              "value": "API key authentication, HTTPS only, rate limiting; OpenAI-compatible endpoints"
+            }
+          ],
+          "methodology": "Review of API security features and best practices",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Standard open-model security posture. No published third-party security audit; self-hosting shifts security responsibility to the deployer."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 75,
+      "criteria": {
+        "data_residency": {
+          "value": "China (first-party API); any jurisdiction when self-hosted or via Western hosts",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Platform Documentation",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-04-20",
+              "value": "Moonshot AI is a China-based provider; first-party API data processed under Chinese jurisdiction"
+            },
+            {
+              "source": "OpenRouter availability",
+              "url": "https://openrouter.ai/models",
+              "date": "2026-05-01",
+              "value": "Available via OpenRouter and Western inference hosts, enabling non-China residency"
+            }
+          ],
+          "methodology": "Review of provider jurisdiction and third-party hosting options",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Privacy Policy",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-04-20",
+              "value": "API data usage terms standard for the segment; self-hosting removes the question entirely"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and data usage terms",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "Per Moonshot policy on first-party API (China jurisdiction); zero when self-hosted",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Terms",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-04-20",
+              "value": "First-party retention governed by Chinese data regulations; self-hosted deployments retain nothing externally"
+            }
+          ],
+          "methodology": "Review of terms of service and deployment-dependent retention",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Documentation",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-04-20",
+              "value": "Customer responsible for PII redaction; no managed PII tooling"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI public materials",
+              "url": "https://www.moonshot.ai/",
+              "date": "2026-04-20",
+              "value": "No published SOC 2 / HIPAA / GDPR attestations for the first-party API; Western hosts may carry their own certifications"
+            }
+          ],
+          "methodology": "Verification of compliance certifications and audit reports",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Open weights on Hugging Face",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "Self-hosting (vLLM/SGLang, native INT4) gives complete data control and zero external retention"
+            }
+          ],
+          "methodology": "Review of self-hosting deployment options enabling zero retention",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "First-party API operates under Chinese jurisdiction — a material caveat for Western regulated industries. Open weights fully mitigate this for organizations able to self-host or use Western inference providers."
+    },
+
+    "trust_transparency": {
+      "overall_score": 80,
+      "criteria": {
+        "explainability": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Agent Swarm architecture",
+              "url": "https://www.marktechpost.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-with-long-horizon-coding-agent-swarm-scaling-to-300-sub-agents-and-4000-coordinated-steps/",
+              "date": "2026-04-20",
+              "value": "Sub-agent trajectories and tool-call traces are inspectable, aiding auditability of long-horizon runs"
+            }
+          ],
+          "methodology": "Evaluation of reasoning and agent-trajectory transparency",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community testing",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-05-10",
+              "value": "Moderate hallucination rate; tool-use grounding improves factuality in agentic mode"
+            }
+          ],
+          "methodology": "Testing on factual QA datasets and tool-augmented workflows",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 75,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Kimi K2.6 Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "Limited published bias evaluation"
+            }
+          ],
+          "methodology": "Review of published bias benchmarks and community evaluations",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model behavior testing",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-05-10",
+              "value": "Expresses uncertainty adequately; no calibrated confidence outputs"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face model card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "Detailed card: 1T total / 32B active MoE, 384 experts, MLA attention, native INT4, benchmarks, deployment guides"
+            }
+          ],
+          "methodology": "Review of documentation completeness and clarity",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI publications",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "Architecture well documented; training data composition not disclosed in detail"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kimi K2.6 Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "Built-in safety tuning; deployers of open weights must layer their own guardrails"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Open weights and a detailed model card provide good architectural transparency; training data disclosure and independent benchmark verification remain limited."
+    },
+
+    "operational_excellence": {
+      "overall_score": 82,
+      "criteria": {
+        "api_design_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Moonshot AI API Documentation",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-04-20",
+              "value": "OpenAI-compatible API with streaming, tool calling, vision; Agent Swarm orchestration endpoints"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI GitHub",
+              "url": "https://github.com/MoonshotAI",
+              "date": "2026-04-20",
+              "value": "OpenAI-compatible so mainstream SDKs work; first-party tooling thinner than Western providers"
+            }
+          ],
+          "methodology": "Review of SDK quality, documentation, and maintenance",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kimi release history",
+              "url": "https://huggingface.co/moonshotai",
+              "date": "2026-04-20",
+              "value": "K2.6 supersedes K2.5/K2; prior weights remain available, but cadence is fast"
+            }
+          ],
+          "methodology": "Review of versioning practices and weight availability",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Platform",
+              "url": "https://platform.moonshot.ai/",
+              "date": "2026-04-20",
+              "value": "Basic usage dashboard; self-hosted observability is deployer-built"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI community channels",
+              "url": "https://github.com/MoonshotAI",
+              "date": "2026-04-20",
+              "value": "GitHub and community support; limited English-language enterprise support"
+            }
+          ],
+          "methodology": "Assessment of documentation, community, and support responsiveness",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenRouter and inference ecosystem",
+              "url": "https://openrouter.ai/models",
+              "date": "2026-05-01",
+              "value": "Available on OpenRouter and major open-model hosts; vLLM/SGLang support with native INT4"
+            }
+          ],
+          "methodology": "Analysis of third-party hosting, integrations, and tooling",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Modified MIT License",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "date": "2026-04-20",
+              "value": "MIT with an attribution-UI requirement for deployments exceeding 100M MAU or $20M/month revenue"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions; attribution clause is trust-relevant for large-scale commercial use",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Strong open-model ecosystem presence. Modified MIT license is permissive for most users but the attribution clause above 100M MAU / $20M monthly revenue requires legal review at hyperscale."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 95,
+      "notes": "Vendor-reported 80.2% SWE-Bench Verified and 58.6 SWE-Bench Pro; Agent Swarm excels at long-horizon multi-file engineering.",
+      "alternatives": ["claude-opus-4-8", "glm-5", "gpt-5-5"]
+    },
+    "customer-support": {
+      "overall": 82,
+      "notes": "Capable but not specialized; agentic latency unnecessary for simple support flows.",
+      "alternatives": ["command-a-plus", "minimax-m2"]
+    },
+    "content-creation": {
+      "overall": 84,
+      "notes": "Solid long-form generation with large context; not its differentiator.",
+      "alternatives": ["claude-opus-4-8", "glm-5"]
+    },
+    "data-analysis": {
+      "overall": 89,
+      "notes": "Strong tool-augmented analysis; Agent Swarm parallelizes multi-source investigation well.",
+      "alternatives": ["glm-5", "deepseek-v4"]
+    },
+    "research-assistant": {
+      "overall": 90,
+      "notes": "54.0 HLE-with-tools and 262K context make it strong for deep, tool-driven research.",
+      "alternatives": ["glm-5", "claude-opus-4-8"]
+    },
+    "legal-compliance": {
+      "overall": 70,
+      "notes": "China-jurisdiction first-party API and absent Western certifications are blockers unless self-hosted.",
+      "alternatives": ["command-a-plus", "claude-opus-4-8"]
+    },
+    "healthcare": {
+      "overall": 67,
+      "notes": "Not recommended via first-party API; self-hosted deployment in a compliant environment is the only viable path.",
+      "alternatives": ["command-a-plus", "claude-opus-4-8"]
+    },
+    "financial-analysis": {
+      "overall": 84,
+      "notes": "Strong quantitative and agentic capability; data residency requires self-hosting for regulated firms.",
+      "alternatives": ["glm-5", "command-a-plus"]
+    },
+    "education": {
+      "overall": 86,
+      "notes": "Strong STEM and coding tutoring at competitive pricing.",
+      "alternatives": ["glm-5", "deepseek-v3-2"]
+    },
+    "creative-writing": {
+      "overall": 82,
+      "notes": "Competent creative output; optimized for agentic engineering rather than prose.",
+      "alternatives": ["claude-opus-4-8", "minimax-m2"]
+    }
+  },
+
+  "strengths": [
+    "Vendor-reported open-weight leadership in agentic coding (80.2% SWE-Bench Verified, 58.6 SWE-Bench Pro vs GPT-5.4's 57.7)",
+    "Agent Swarm scales to 300 sub-agents and 4,000 coordinated steps for long-horizon tasks",
+    "Open weights with near-MIT license enable full self-hosting and data control",
+    "Efficient inference: 32B active of 1T total, MLA attention, native INT4 quantization",
+    "262,144-token context with text and vision modalities",
+    "Competitive API pricing (~$0.95/$4.00 per 1M tokens) and broad availability via OpenRouter"
+  ],
+
+  "limitations": [
+    "First-party Moonshot API processes data under Chinese jurisdiction with limited Western compliance certifications",
+    "Headline benchmarks are vendor-reported and await independent replication",
+    "Modified MIT license imposes attribution-UI requirement above 100M MAU or $20M/month revenue",
+    "Self-hosting a 1T-parameter MoE requires substantial GPU infrastructure even at INT4",
+    "Limited published bias, safety, and red-team evaluations",
+    "English-language enterprise support is thin compared to Western providers"
+  ],
+
+  "best_for": [
+    "Long-horizon autonomous coding and multi-agent engineering workflows",
+    "Organizations wanting frontier-level open weights they can self-host for data control",
+    "Tool-augmented research and deep analysis at competitive cost",
+    "Cost-sensitive teams needing top-tier agentic coding via OpenRouter or first-party API"
+  ],
+
+  "not_recommended_for": [
+    "Regulated Western workloads (healthcare, legal, finance) on the first-party API",
+    "Hyperscale consumer products unwilling to satisfy the attribution-UI license clause",
+    "Latency-critical real-time applications",
+    "Teams without GPU infrastructure who also cannot accept China-jurisdiction processing"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "$0.95 per 1M tokens (approx.)",
+      "output": "$4.00 per 1M tokens (approx.)",
+      "notes": "First-party Moonshot API pricing; third-party hosts on OpenRouter vary. Self-hosting cost is infrastructure-dependent.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 262144,
+    "languages": ["English", "Chinese", "Japanese", "Korean", "Spanish", "French", "German"],
+    "modalities": ["text", "image (input)"],
+    "api_endpoint": "https://api.moonshot.ai/v1/chat/completions",
+    "open_source": true,
+    "license": "Modified MIT (attribution-UI requirement above 100M MAU or $20M/month revenue)",
+    "architecture": "Mixture-of-Experts: 1T total / 32B active parameters, 384 experts, Multi-head Latent Attention (MLA), native INT4",
+    "parameters": "1T total / 32B active",
+    "release_date": "2026-04-20"
+  },
+
+  "related_entities": ["glm-5", "deepseek-v4", "minimax-m2", "claude-opus-4-8", "gpt-5-5"],
+
+  "tags": [
+    "coding",
+    "agentic",
+    "open-source",
+    "mixture-of-experts",
+    "long-context",
+    "agent-swarm",
+    "chinese-provider",
+    "self-hostable"
+  ]
+}

@@ -2,15 +2,15 @@
   "id": "mcp-server-gitlab",
   "type": "mcp",
   "name": "MCP GitLab Server",
-  "provider": "GitLab Community",
+  "provider": "Anthropic (Archived)",
   "version": "2025.3.2",
-  "last_evaluated": "2025-01-14",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "MCP server providing AI models with comprehensive GitLab integration capabilities. Enables merge request management, CI/CD pipeline inspection, issue tracking, and code review workflows for enterprise teams using GitLab.",
+  "description": "ARCHIVED: Former Anthropic reference MCP server for GitLab integration (merge requests, CI/CD pipelines, issues), archived 2025-05-29 to the servers-archived repository and no longer maintained; no security guarantees are provided for archived servers. The GitLab MCP ecosystem has since moved to other actively maintained implementations, which should be preferred.",
   "website": "https://gitlab.com/gitlab-org/gitlab-mcp-server",
   "trust_vector": {
     "performance_reliability": {
-      "overall_score": 84,
+      "overall_score": 80,
       "criteria": {
         "api_reliability": {
           "score": 88,
@@ -69,7 +69,7 @@
           "last_verified": "2025-01-14"
         },
         "error_recovery": {
-          "score": 82,
+          "score": 60,
           "confidence": "medium",
           "evidence": [
             {
@@ -77,15 +77,21 @@
               "url": "https://gitlab.com/gitlab-org/gitlab-mcp-server",
               "date": "2025-01-10",
               "value": "Handles API errors with retry logic and graceful degradation"
+            },
+            {
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "Reference GitLab server archived 2025-05-29; bugs and GitLab API breaking changes will never be fixed"
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-06-10"
         }
       }
     },
     "security": {
-      "overall_score": 80,
+      "overall_score": 83,
       "criteria": {
         "authentication_security": {
           "score": 88,
@@ -160,7 +166,7 @@
       }
     },
     "privacy_compliance": {
-      "overall_score": 78,
+      "overall_score": 76,
       "criteria": {
         "code_exposure": {
           "score": 72,
@@ -221,7 +227,7 @@
       }
     },
     "trust_transparency": {
-      "overall_score": 85,
+      "overall_score": 87,
       "criteria": {
         "documentation_quality": {
           "score": 88,
@@ -282,7 +288,7 @@
       }
     },
     "operational_excellence": {
-      "overall_score": 83,
+      "overall_score": 80,
       "criteria": {
         "ease_of_setup": {
           "score": 85,
@@ -327,7 +333,7 @@
           "last_verified": "2025-01-14"
         },
         "feature_coverage": {
-          "score": 84,
+          "score": 60,
           "confidence": "high",
           "evidence": [
             {
@@ -335,10 +341,16 @@
               "url": "https://gitlab.com/gitlab-org/gitlab-mcp-server",
               "date": "2025-01-10",
               "value": "Covers MRs, issues, pipelines, projects, and file operations"
+            },
+            {
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "Archived 2025-05-29; feature set frozen, no updates for GitLab API or MCP specification changes"
             }
           ],
           "methodology": "Feature completeness assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-06-10"
         },
         "enterprise_features": {
           "score": 88,
@@ -371,7 +383,7 @@
     "Some features require GitLab Premium/Ultimate",
     "Subject to GitLab API rate limits",
     "No built-in secret detection in code",
-    "Newer than GitHub MCP, smaller community"
+    "ARCHIVED 2025-05-29: reference server unmaintained with no security guarantees; GitLab ecosystem has moved to other implementations"
   ],
   "metadata": {
     "license": "MIT",
@@ -382,7 +394,8 @@
     "api_dependency": "GitLab REST API v4 / GraphQL",
     "authentication": "GitLab Personal Access Token or OAuth",
     "first_release": "2025-02",
-    "maintained_by": "GitLab Community",
+    "maintained_by": "None (Archived 2025-05-29)",
+    "repository": "https://github.com/modelcontextprotocol/servers-archived",
     "transport_types": ["stdio"],
     "installation_methods": ["npm", "pip"]
   },
@@ -434,5 +447,5 @@
     "Teams wanting AI-assisted CI/CD management",
     "Developers integrating AI with GitLab workflows"
   ],
-  "tags": ["git", "gitlab", "devops", "ci-cd", "mcp", "model-context-protocol"]
+  "tags": ["git", "gitlab", "devops", "ci-cd", "mcp", "model-context-protocol", "archived", "unmaintained"]
 }

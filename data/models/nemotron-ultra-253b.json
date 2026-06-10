@@ -4,9 +4,9 @@
   "name": "Nemotron Ultra 253B",
   "provider": "NVIDIA",
   "version": "20251101",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Massive 253B parameter AI model from NVIDIA achieving 57.1% on SWE-bench and 80.08% on HumanEval. Optimized for high-performance computing and complex coding tasks with excellent GPU acceleration.",
+  "description": "Massive 253B parameter model from NVIDIA's Llama-3.1-based Nemotron line, now superseded: NVIDIA discontinued this line in favor of the native Nemotron 3 family (announced 2025-12-15). Historically achieved 57.1% on SWE-bench and 80.08% on HumanEval, optimized for high-performance computing and complex coding tasks with GPU acceleration. New deployments should evaluate Nemotron 3 instead.",
   "website": "https://www.nvidia.com/en-us/ai/nemotron/",
   "trust_vector": {
     "performance_reliability": {
@@ -417,7 +417,7 @@
       "notes": "Good transparency with comprehensive documentation. Standard hallucination and bias performance for models of this size."
     },
     "operational_excellence": {
-      "overall_score": 89,
+      "overall_score": 88,
       "criteria": {
         "api_design_quality": {
           "score": 90,
@@ -448,7 +448,7 @@
           "last_verified": "2025-11-08"
         },
         "versioning_policy": {
-          "score": 87,
+          "score": 78,
           "confidence": "high",
           "evidence": [
             {
@@ -456,10 +456,17 @@
               "url": "https://docs.nvidia.com/nemotron/api/versioning",
               "date": "2025-11-01",
               "value": "Clear versioning policy"
+            },
+            {
+              "source": "NVIDIA Nemotron 3 Announcement",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models",
+              "date": "2026-06-10",
+              "value": "Llama-3.1-based Nemotron line discontinued in favor of the native Nemotron 3 family (announced 2025-12-15)"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-06-10",
+          "notes": "Model line discontinued; future development is in the Nemotron 3 family"
         },
         "monitoring_observability": {
           "score": 88,
@@ -615,7 +622,8 @@
     "Limited training data transparency",
     "30-day default data retention (not ephemeral)",
     "Moderate latency (2.2s p50) despite GPU acceleration",
-    "Smaller context window (128K) compared to competitors"
+    "Smaller context window (128K) compared to competitors",
+    "Superseded: NVIDIA discontinued the Llama-3.1-based Nemotron line in favor of the native Nemotron 3 family (announced 2025-12-15)"
   ],
   "best_for": [
     "GPU-accelerated workloads and HPC environments",
@@ -664,6 +672,7 @@
     "deepseek-r1"
   ],
   "tags": [
+    "superseded",
     "coding",
     "gpu-accelerated",
     "enterprise",

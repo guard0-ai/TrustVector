@@ -4,9 +4,9 @@
   "name": "Pydantic AI",
   "provider": "Pydantic",
   "version": "1.12.0",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Type-safe Python agent framework from the creators of Pydantic. Provides production-ready agents with strong typing, validation, and structured outputs. Designed for reliability and maintainability in production systems.",
+  "description": "Type-safe Python agent framework from the creators of Pydantic. Reached v1.0 stable on 2025-09-04 with a formal API stability commitment and has surpassed 15M+ downloads. Provides production-ready agents with strong typing, validation, and structured outputs, designed for reliability and maintainability in production systems.",
   "website": "https://ai.pydantic.dev/",
   "trust_vector": {
     "performance_reliability": {
@@ -324,7 +324,7 @@
       }
     },
     "operational_excellence": {
-      "overall_score": 83,
+      "overall_score": 85,
       "criteria": {
         "ease_of_integration": {
           "score": 87,
@@ -383,7 +383,7 @@
           "last_verified": "2025-11-09"
         },
         "production_readiness": {
-          "score": 84,
+          "score": 90,
           "confidence": "high",
           "evidence": [
             {
@@ -391,10 +391,17 @@
               "url": "https://ai.pydantic.dev/",
               "date": "2024-10-01",
               "value": "Designed for production use with type safety focus"
+            },
+            {
+              "source": "Pydantic AI v1 Announcement",
+              "url": "https://pydantic.dev/articles/pydantic-ai-v1",
+              "date": "2026-06-10",
+              "value": "v1.0 stable released 2025-09-04 with API stability commitment; 15M+ downloads"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10",
+          "notes": "Score raised: v1.0 stable release with API stability commitment confirms production maturity"
         },
         "testing_support": {
           "score": 86,
@@ -427,7 +434,8 @@
     "Limited built-in agent orchestration features",
     "Requires Python and Pydantic knowledge",
     "No built-in monitoring or observability tools",
-    "Less opinionated than full-featured frameworks"
+    "Less opinionated than full-featured frameworks",
+    "Status (2026-06): actively developed; v1.0 stable since 2025-09-04 with API stability commitment, so pre-1.0 API churn concerns no longer apply"
   ],
   "metadata": {
     "license": "MIT",

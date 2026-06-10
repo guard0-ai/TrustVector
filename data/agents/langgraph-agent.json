@@ -4,9 +4,9 @@
   "name": "LangGraph Agent",
   "provider": "LangChain",
   "version": "1.0",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "LangChain's graph-based agent framework for building stateful, multi-actor applications with cycles and controllable execution flow. Enables complex, cyclic agent workflows with human-in-the-loop capabilities.",
+  "description": "LangChain's graph-based agent framework for building stateful, multi-actor applications with cycles and controllable execution flow. Reached 1.0 GA on 2025-10-22, adding durable execution and middleware. Enables complex, cyclic agent workflows with human-in-the-loop capabilities and production-grade persistence.",
   "website": "https://langchain-ai.github.io/langgraph/",
   "trust_vector": {
     "performance_reliability": {
@@ -296,7 +296,7 @@
       }
     },
     "operational_excellence": {
-      "overall_score": 81,
+      "overall_score": 85,
       "criteria": {
         "ease_of_integration": {
           "score": 78,
@@ -355,18 +355,25 @@
           "last_verified": "2025-11-09"
         },
         "community_support": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 82,
+          "confidence": "high",
           "evidence": [
             {
               "source": "GitHub Discussions",
               "url": "https://github.com/langchain-ai/langgraph/discussions",
               "date": "2024-10-01",
               "value": "Growing community but newer framework"
+            },
+            {
+              "source": "LangChain & LangGraph 1.0 Announcement",
+              "url": "https://blog.langchain.com/langchain-langgraph-1dot0/",
+              "date": "2026-06-10",
+              "value": "LangGraph 1.0 GA released 2025-10-22 with durable execution and middleware; large, mature ecosystem"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10",
+          "notes": "Score raised: 1.0 GA milestone and ecosystem maturity"
         }
       }
     }
@@ -385,7 +392,8 @@
     "Security and sandboxing must be implemented by developer",
     "Relatively newer framework with evolving APIs",
     "Performance overhead from graph execution layer",
-    "Limited managed service options (LangGraph Cloud in beta)"
+    "Limited managed service options (LangGraph Cloud in beta)",
+    "Status (2026-06): 1.0 GA since 2025-10-22 (durable execution, middleware); earlier evolving-API concerns are largely resolved"
   ],
   "metadata": {
     "license": "MIT",

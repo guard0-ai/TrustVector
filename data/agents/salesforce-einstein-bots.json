@@ -4,9 +4,9 @@
   "name": "Salesforce Einstein Bots",
   "provider": "Salesforce",
   "version": "Einstein GPT",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Salesforce's AI-powered chatbot platform integrated deeply with the Salesforce ecosystem. Combines Einstein AI with CRM data for personalized customer interactions and seamless handoffs to human agents.",
+  "description": "TRANSITIONING: Einstein Copilot was retired and absorbed into Agentforce (Jan 2025, Spring '25 release), and Salesforce is steering Einstein Bots customers toward Agentforce agents. Einstein Bots remains Salesforce's CRM-integrated chatbot platform, combining Einstein AI with CRM data for personalized interactions and human-agent handoffs.",
   "website": "https://www.salesforce.com/products/service-cloud/features/einstein-bots/",
   "trust_vector": {
     "performance_reliability": {
@@ -321,10 +321,16 @@
               "url": "https://www.salesforce.com/products/service-cloud/features/einstein-bots/",
               "date": "2024-10-01",
               "value": "Native Salesforce integration, seamless with existing setup"
+            },
+            {
+              "source": "Salesforce Spring '25 Release Notes",
+              "url": "https://help.salesforce.com/s/articleView?id=release-notes.rn_copilot_new_name_agentforce_default.htm",
+              "date": "2026-06-10",
+              "value": "Einstein Copilot retired and absorbed into Agentforce (Jan 2025, Spring '25 release); Einstein Bots customers are being steered toward Agentforce agents"
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "scalability": {
           "score": 91,
@@ -413,7 +419,8 @@
     "Limited capabilities outside of Salesforce ecosystem",
     "Not suitable for organizations not using Salesforce CRM",
     "Conversation design less sophisticated than specialized platforms",
-    "Einstein AI capabilities lag behind latest LLM-based systems"
+    "Einstein AI capabilities lag behind latest LLM-based systems",
+    "Product direction has shifted to Agentforce: Einstein Copilot retired (Jan 2025) and Einstein Bots are being steered toward Agentforce agents"
   ],
   "metadata": {
     "license": "Proprietary",
@@ -499,6 +506,7 @@
   ],
   "tags": [
     "salesforce",
-    "enterprise"
+    "enterprise",
+    "rebranded"
   ]
 }

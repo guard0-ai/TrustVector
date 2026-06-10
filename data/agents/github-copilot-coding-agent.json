@@ -1,0 +1,455 @@
+{
+  "id": "github-copilot-coding-agent",
+  "type": "agent",
+  "name": "GitHub Copilot Coding Agent",
+  "provider": "GitHub (Microsoft)",
+  "version": "GA (2025-09)",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Autonomous background coding agent built into GitHub. Assign it a GitHub issue or prompt and it works in an ephemeral GitHub Actions sandbox, then opens a draft pull request for human review. Distinct from Copilot's interactive IDE agent mode.",
+  "website": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 76,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Docs - About Copilot coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Designed for well-scoped tasks: bug fixes, incremental features, test coverage, and documentation in familiar codebases"
+            }
+          ],
+          "methodology": "Task scope analysis and PR outcome review on representative issues",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 83,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Full GitHub Actions environment with build/test execution, plus MCP server support and vision capabilities for issue images"
+            }
+          ],
+          "methodology": "Tooling and environment reliability assessment",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Blog - Copilot coding agent",
+              "url": "https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/",
+              "date": "2025-05-19",
+              "value": "Agent explores the repo, plans changes, iterates on build and test feedback, and pushes commits incrementally"
+            }
+          ],
+          "methodology": "Multi-step task execution and iteration testing",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Customizing the agent environment",
+              "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment",
+              "date": "2026-06-01",
+              "value": "Sessions are ephemeral; persistent context provided via repository custom instructions and copilot-setup-steps configuration"
+            }
+          ],
+          "methodology": "Cross-session context persistence evaluation",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Runs builds and tests in the Actions sandbox and iterates on failures; responds to PR review comments with fixes"
+            }
+          ],
+          "methodology": "Failure iteration and review-feedback loop testing",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 64,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Single agent per task with multiple parallel tasks supported; collaborates with humans via PR comments rather than other agents"
+            }
+          ],
+          "methodology": "Concurrency and orchestration capability assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 74,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent security",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Runs in an ephemeral GitHub Actions environment with firewall-restricted internet access; firewall allowlist is customizable"
+            }
+          ],
+          "methodology": "Sandbox and network isolation architecture review",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Agent can only push to copilot/ branches, cannot approve or merge its own PRs, respects branch protections, and PR-triggering workflows require human approval"
+            }
+          ],
+          "methodology": "Permission boundary and branch protection review",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent risks and mitigations",
+              "url": "https://docs.github.com/en/copilot/responsible-use/copilot-coding-agent",
+              "date": "2026-06-01",
+              "value": "Firewall limits exfiltration, hidden-content filtering on issues, and mandatory human PR review mitigate injection from untrusted repo content"
+            }
+          ],
+          "methodology": "Injection mitigation review against documented threat model",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Each session runs in its own ephemeral Actions environment scoped to a single repository"
+            }
+          ],
+          "methodology": "Session and tenant isolation review",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Copilot Product Page",
+              "url": "https://github.com/features/copilot",
+              "date": "2026-06-01",
+              "value": "Proprietary closed-source service; underlying models and agent implementation are not public"
+            }
+          ],
+          "methodology": "Source availability review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 65,
+      "criteria": {
+        "data_retention": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Copilot Trust Center",
+              "url": "https://copilot.github.trust.page/",
+              "date": "2026-06-01",
+              "value": "GitHub states Copilot Business/Enterprise prompts and code are not used to train models; retention governed by GitHub data protection terms"
+            }
+          ],
+          "methodology": "Data handling and retention terms review",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Data Protection",
+              "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+              "date": "2026-06-01",
+              "value": "Covered by GitHub/Microsoft compliance programs including GDPR data protection agreements for organizations"
+            }
+          ],
+          "methodology": "Compliance program and DPA assessment",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Copilot Trust Center",
+              "url": "https://copilot.github.trust.page/",
+              "date": "2026-06-01",
+              "value": "Repository content is processed by GitHub-hosted model providers (OpenAI, Anthropic, Google models) under GitHub's agreements"
+            }
+          ],
+          "methodology": "Data flow analysis across model backends",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 25,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Cloud-only; runs exclusively in GitHub-hosted Actions infrastructure with no self-hosted runner or on-prem option for the agent"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 72,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Copilot coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Extensive official docs covering concepts, security model, environment customization, MCP, and responsible use"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Tracking agent sessions",
+              "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/track-copilot-sessions",
+              "date": "2026-06-01",
+              "value": "Session logs show the agent's full reasoning and tool steps; all work lands as incremental commits on a draft PR"
+            }
+          ],
+          "methodology": "Session log and commit trail assessment",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Draft PR descriptions summarize intent and approach; session logs expose step-by-step decisions"
+            }
+          ],
+          "methodology": "Explainability features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 30,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Copilot Product Page",
+              "url": "https://github.com/features/copilot",
+              "date": "2026-06-01",
+              "value": "Proprietary; agent implementation and models are closed source"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Community Discussions",
+              "url": "https://github.com/orgs/community/discussions/categories/copilot",
+              "date": "2026-06-01",
+              "value": "Very large user base with active community discussions, changelog updates, and rapid feature iteration"
+            }
+          ],
+          "methodology": "Community engagement analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 82,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Native to GitHub: assign an issue to Copilot or prompt from chat/Agents panel; no infrastructure setup required"
+            }
+          ],
+          "methodology": "Onboarding and integration assessment",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Coding agent",
+              "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+              "date": "2026-06-01",
+              "value": "Multiple parallel agent sessions on GitHub-hosted Actions infrastructure, bounded by plan quotas and Actions minutes"
+            }
+          ],
+          "methodology": "Parallelism and quota analysis",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub Blog - Copilot moving to usage-based billing",
+              "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
+              "date": "2026-06-01",
+              "value": "Premium-request billing since 2025-06-18; from 2026-06-01 GitHub is transitioning to token-based 'GitHub AI Credits', making per-task costs harder to forecast during the changeover"
+            }
+          ],
+          "methodology": "Pricing model analysis including billing model transition",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Docs - Tracking agent sessions",
+              "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/track-copilot-sessions",
+              "date": "2026-06-01",
+              "value": "Agents panel for session tracking, session logs, audit log events, and org-level policy controls"
+            }
+          ],
+          "methodology": "Monitoring and audit features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Copilot Plans",
+              "url": "https://docs.github.com/en/copilot/get-started/plans",
+              "date": "2026-06-01",
+              "value": "GA since September 2025 on Pro, Pro+, Business, and Enterprise plans, backed by GitHub's production infrastructure"
+            }
+          ],
+          "methodology": "Product maturity and availability assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 88,
+      "notes": "Purpose-built for issue-to-PR coding tasks with strong GitHub-native guardrails"
+    },
+    "data-analysis": {
+      "overall": 68,
+      "notes": "Can write analysis code and tests in repos, but not designed for interactive analytics"
+    },
+    "education": {
+      "overall": 72,
+      "notes": "Session logs and reviewable PRs help learners; requires a paid Copilot plan for the coding agent"
+    },
+    "content-creation": {
+      "overall": 66,
+      "notes": "Useful for documentation and README work within repositories; not a general content tool"
+    }
+  },
+  "best_for": [
+    "Teams already on GitHub wanting issue-to-PR automation with zero setup",
+    "Burning down backlogs of well-scoped bugs, tests, and documentation tasks",
+    "Organizations needing enterprise controls, audit logs, and policy management",
+    "Workflows where every AI change must pass human PR review and branch protections"
+  ],
+  "strengths": [
+    "Strong security model: ephemeral Actions sandbox with firewall-restricted internet",
+    "Hard guardrails: pushes only to copilot/ branches, cannot merge its own PRs, branch protections enforced",
+    "Native GitHub integration; trigger from issues, chat, mobile, or the Agents panel",
+    "Full session logs and incremental commits give a complete audit trail",
+    "Iterates on build/test failures and responds to PR review comments",
+    "Backed by GitHub/Microsoft enterprise compliance programs"
+  ],
+  "limitations": [
+    "Proprietary and cloud-only; no self-hosted runner support for the agent",
+    "Billing complexity: premium requests since 2025-06-18 and a transition to token-based GitHub AI Credits beginning 2026-06-01 make costs harder to predict",
+    "Requires a paid Copilot plan (Pro, Pro+, Business, or Enterprise); not in Copilot Free",
+    "Best on well-scoped tasks; struggles with large cross-repo or ambiguous refactors",
+    "Consumes GitHub Actions minutes in addition to premium requests/credits",
+    "Each session is ephemeral with limited memory across tasks"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_models": [
+      "OpenAI GPT models",
+      "Anthropic Claude models",
+      "Google Gemini models (per Copilot model availability)"
+    ],
+    "programming_languages": [
+      "Most major languages supported by the repository's toolchain"
+    ],
+    "deployment_type": "Cloud-only SaaS (ephemeral GitHub Actions environments)",
+    "tool_support": [
+      "GitHub Actions build/test execution",
+      "MCP servers",
+      "Repository custom instructions",
+      "Vision input from issue images",
+      "Draft PR creation"
+    ],
+    "first_release": "Preview May 2025; GA September 2025",
+    "pricing": "Copilot Pro $10/mo, Pro+ $39/mo, Business/Enterprise per-seat; agent usage billed via premium requests (since 2025-06-18), transitioning to token-based GitHub AI Credits from 2026-06-01"
+  },
+  "tags": [
+    "coding-agent",
+    "autonomous",
+    "github",
+    "enterprise"
+  ]
+}

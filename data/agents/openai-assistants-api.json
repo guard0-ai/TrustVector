@@ -4,9 +4,9 @@
   "name": "OpenAI Assistants API",
   "provider": "OpenAI",
   "version": "v2",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's managed agent framework with native tool use, code interpreter, file search, and persistent threads. Ideal for building stateful conversational applications.",
+  "description": "DEPRECATED: the Assistants API will be sunset on 2026-08-26 (roughly 2.5 months away); OpenAI directs users to the Responses API plus Conversations API as the replacement. Previously a managed agent framework with native tool use, code interpreter, file search, and persistent threads. Do not start new projects on it.",
   "website": "https://platform.openai.com/docs/assistants/overview",
   "trust_vector": {
     "performance_reliability": {
@@ -254,10 +254,10 @@
       }
     },
     "operational_excellence": {
-      "overall_score": 88,
+      "overall_score": 78,
       "criteria": {
         "ease_of_integration": {
-          "score": 93,
+          "score": 75,
           "confidence": "high",
           "evidence": [
             {
@@ -265,13 +265,20 @@
               "url": "https://platform.openai.com/docs/libraries",
               "date": "2024-10-01",
               "value": "Official SDKs for Python, Node.js, and REST API"
+            },
+            {
+              "source": "OpenAI API Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-06-10",
+              "value": "Assistants API deprecated with sunset date 2026-08-26; replacement is the Responses API + Conversations API"
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10",
+          "notes": "Score reduced: new integrations are discouraged given the 2026-08-26 sunset"
         },
         "scalability": {
-          "score": 88,
+          "score": 70,
           "confidence": "high",
           "evidence": [
             {
@@ -330,7 +337,8 @@
     "Latency can be high for complex multi-tool operations",
     "Vendor lock-in to OpenAI platform",
     "Limited native explainability features",
-    "Code interpreter limited to Python only"
+    "Code interpreter limited to Python only",
+    "Deprecated: sunset scheduled for 2026-08-26; migrate to the Responses API + Conversations API"
   ],
   "metadata": {
     "license": "Proprietary",
@@ -354,7 +362,7 @@
     "max_files_per_assistant": 10000,
     "max_file_size": "512 MB",
     "pricing": "Token-based (model pricing) + $0.03/session for Code Interpreter + $0.10/GB/day for File Search (first GB free)",
-    "deprecation_notice": "Being replaced by Responses API and Agents SDK in H1 2026"
+    "deprecation_notice": "Deprecated: sunset on 2026-08-26. Replaced by the Responses API + Conversations API."
   },
   "use_case_ratings": {
     "customer-support": {
@@ -404,8 +412,12 @@
     "Startups needing rapid prototyping of AI assistants",
     "Organizations comfortable with OpenAI's platform"
   ],
+  "related_entities": [
+    "openai-agents-sdk"
+  ],
   "tags": [
     "openai",
-    "assistants"
+    "assistants",
+    "deprecated"
   ]
 }

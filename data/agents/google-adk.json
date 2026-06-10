@@ -1,0 +1,471 @@
+{
+  "id": "google-adk",
+  "type": "agent",
+  "name": "Google Agent Development Kit (ADK)",
+  "provider": "Google",
+  "version": "2.0",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Open-source, code-first framework for building, evaluating, and deploying AI agents. Supports workflow agents, multi-agent hierarchies, built-in evaluation, and deployment to Vertex AI Agent Engine. Underlies Google's broader agent stack and is Gemini-optimized but model-agnostic.",
+  "website": "https://google.github.io/adk-docs/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 85,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK Documentation - Evaluate",
+              "url": "https://google.github.io/adk-docs/evaluate/",
+              "date": "2026-05-19",
+              "value": "Built-in evaluation framework for assessing response quality and step-by-step trajectory against test cases"
+            }
+          ],
+          "methodology": "Review of built-in evaluation tooling and reported agent benchmark workflows",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK Documentation - Tools",
+              "url": "https://google.github.io/adk-docs/tools/",
+              "date": "2026-05-19",
+              "value": "Rich tool ecosystem: function tools, OpenAPI tools, MCP tools, Google Cloud tools, and third-party library integrations"
+            }
+          ],
+          "methodology": "Tool integration testing across function, OpenAPI, and MCP tool types",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK 2.0 Release Notes",
+              "url": "https://google.github.io/adk-docs/release-notes/",
+              "date": "2026-05-19",
+              "value": "ADK 2.0 GA adds graph-based, dynamic, and collaborative workflows alongside sequential, parallel, and loop workflow agents"
+            }
+          ],
+          "methodology": "Assessment of workflow agent primitives and graph-based orchestration in ADK 2.0",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK Documentation - Sessions and Memory",
+              "url": "https://google.github.io/adk-docs/sessions/",
+              "date": "2026-05-19",
+              "value": "Session, state, and memory services with in-memory, database, and Vertex AI managed backends"
+            }
+          ],
+          "methodology": "Memory and session service architecture evaluation",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK GitHub Issues",
+              "url": "https://github.com/google/adk-python/issues",
+              "date": "2026-06-01",
+              "value": "Callbacks and loop agents enable retry patterns; robust recovery logic remains developer responsibility"
+            }
+          ],
+          "methodology": "Error handling pattern review and community issue analysis",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK Documentation - Multi-Agent Systems",
+              "url": "https://google.github.io/adk-docs/agents/multi-agents/",
+              "date": "2026-05-19",
+              "value": "First-class multi-agent hierarchies with delegation, agent-as-tool composition, and A2A protocol support"
+            }
+          ],
+          "methodology": "Multi-agent hierarchy and delegation capability testing",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 79,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK Documentation - Code Execution",
+              "url": "https://google.github.io/adk-docs/tools/built-in-tools/",
+              "date": "2026-05-19",
+              "value": "Sandboxed code execution available via Vertex AI code executor; general tool sandboxing is developer responsibility"
+            }
+          ],
+          "methodology": "Security architecture review of tool execution paths",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK Documentation - Authentication",
+              "url": "https://google.github.io/adk-docs/tools/authentication/",
+              "date": "2026-05-19",
+              "value": "Tool authentication framework (OAuth2, API keys, service accounts) plus Google Cloud IAM when deployed on Vertex AI"
+            }
+          ],
+          "methodology": "Access control and authentication capability assessment",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK Documentation - Safety and Security",
+              "url": "https://google.github.io/adk-docs/safety/",
+              "date": "2026-05-19",
+              "value": "Documented guidance on guardrails, callbacks for input/output screening, and Gemini safety settings; no automatic injection blocking"
+            }
+          ],
+          "methodology": "Review of documented safety patterns and guardrail mechanisms",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK Documentation - Sessions",
+              "url": "https://google.github.io/adk-docs/sessions/",
+              "date": "2026-05-19",
+              "value": "Per-session state isolation with user- and app-scoped state prefixes; self-hosted deployments control data boundaries"
+            }
+          ],
+          "methodology": "Data architecture and session isolation review",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "google/adk-python GitHub",
+              "url": "https://github.com/google/adk-python",
+              "date": "2026-06-10",
+              "value": "Apache 2.0 license, fully open source with public development across Python, Java, TypeScript, Go, and Kotlin SDKs"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 82,
+      "criteria": {
+        "data_retention": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK Deployment Options",
+              "url": "https://google.github.io/adk-docs/deploy/",
+              "date": "2026-05-19",
+              "value": "Self-hosted deployments give full control over retention; Vertex AI Agent Engine follows Google Cloud data governance"
+            }
+          ],
+          "methodology": "Privacy architecture review across deployment options",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Cloud Compliance",
+              "url": "https://cloud.google.com/security/compliance",
+              "date": "2026-06-01",
+              "value": "Vertex AI deployments inherit Google Cloud GDPR commitments; self-hosted compliance depends on operator configuration"
+            }
+          ],
+          "methodology": "Compliance capabilities assessment for framework and managed deployments",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK Documentation - Models",
+              "url": "https://google.github.io/adk-docs/agents/models/",
+              "date": "2026-05-19",
+              "value": "Prompts and tool data are sent to the configured model provider (Gemini API by default, others via LiteLLM)"
+            }
+          ],
+          "methodology": "Data flow analysis of model and tool integrations",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK Documentation - Models",
+              "url": "https://google.github.io/adk-docs/agents/models/",
+              "date": "2026-05-19",
+              "value": "Model-agnostic via LiteLLM including Ollama and other local model backends; framework itself runs anywhere"
+            }
+          ],
+          "methodology": "Deployment options assessment including local model support",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 86,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK Documentation",
+              "url": "https://google.github.io/adk-docs/",
+              "date": "2026-05-19",
+              "value": "Comprehensive docs covering agents, tools, workflows, evaluation, deployment, and safety with quickstarts and samples"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK Dev UI and Evaluation",
+              "url": "https://google.github.io/adk-docs/evaluate/",
+              "date": "2026-05-19",
+              "value": "Built-in dev UI for step-by-step inspection of events, state, and tool calls; trajectory evaluation against expected steps"
+            }
+          ],
+          "methodology": "Tracing and observability capabilities assessment",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK Events Model",
+              "url": "https://google.github.io/adk-docs/events/",
+              "date": "2026-05-19",
+              "value": "Event stream exposes agent reasoning steps, function calls, and state deltas for inspection"
+            }
+          ],
+          "methodology": "Explainability features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "google/adk-python GitHub",
+              "url": "https://github.com/google/adk-python",
+              "date": "2026-06-10",
+              "value": "Apache 2.0 licensed; announced at Cloud Next April 2025, Python v1.0 May 2025, ADK 2.0 GA May 2026"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK GitHub Activity",
+              "url": "https://github.com/google/adk-python",
+              "date": "2026-06-10",
+              "value": "Active development with frequent releases, multi-language SDK expansion, and growing contributor base since April 2025 launch"
+            }
+          ],
+          "methodology": "Community engagement and release cadence analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 84,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK Quickstart",
+              "url": "https://google.github.io/adk-docs/get-started/quickstart/",
+              "date": "2026-05-19",
+              "value": "pip-installable with code-first Pythonic API; agents definable in under 100 lines with CLI and dev UI included"
+            }
+          ],
+          "methodology": "Integration complexity assessment",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK Deploy to Agent Engine",
+              "url": "https://google.github.io/adk-docs/deploy/agent-engine/",
+              "date": "2026-05-19",
+              "value": "Managed scaling via Vertex AI Agent Engine plus Cloud Run and GKE deployment paths"
+            }
+          ],
+          "methodology": "Deployment and scaling options assessment",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK GitHub",
+              "url": "https://github.com/google/adk-python",
+              "date": "2026-06-10",
+              "value": "Framework is free (Apache 2.0); costs come from model API usage and optional Vertex AI / Gemini Enterprise Agent Platform services"
+            }
+          ],
+          "methodology": "Pricing model analysis",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ADK Observability Docs",
+              "url": "https://google.github.io/adk-docs/observability/logging/",
+              "date": "2026-05-19",
+              "value": "Logging, tracing integrations, and evaluation tooling; Cloud Trace and third-party observability supported on managed deployments"
+            }
+          ],
+          "methodology": "Monitoring features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ADK Release Notes",
+              "url": "https://google.github.io/adk-docs/release-notes/",
+              "date": "2026-05-19",
+              "value": "Python v1.0 stable since May 2025; ADK 2.0 GA on 2026-05-19 with production-focused workflow and deployment improvements"
+            }
+          ],
+          "methodology": "Production readiness and release maturity assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "customer-support": {
+      "overall": 86,
+      "notes": "Strong fit for multi-agent support systems; underlies Google's Customer Engagement Suite agent stack"
+    },
+    "code-generation": {
+      "overall": 80,
+      "notes": "Capable via code execution tools and workflow agents, though not a purpose-built coding agent"
+    },
+    "research-assistant": {
+      "overall": 87,
+      "notes": "Multi-agent hierarchies with Google Search grounding work well for research pipelines"
+    },
+    "data-analysis": {
+      "overall": 84,
+      "notes": "Good with code executors, BigQuery and Google Cloud tool integrations"
+    },
+    "content-creation": {
+      "overall": 80,
+      "notes": "Workflow agents support multi-stage drafting and review pipelines"
+    },
+    "financial-analysis": {
+      "overall": 78,
+      "notes": "Viable on Vertex AI with enterprise controls; compliance hardening is the builder's responsibility"
+    },
+    "healthcare": {
+      "overall": 74,
+      "notes": "Requires significant compliance work; Google Cloud HIPAA-eligible services help when deployed on Vertex AI"
+    }
+  },
+  "best_for": [
+    "Teams building multi-agent systems on Google Cloud and Gemini",
+    "Developers wanting a code-first framework with built-in evaluation",
+    "Enterprises needing a path from prototype to managed Agent Engine deployment",
+    "Builders who want model-agnostic flexibility with Gemini optimization"
+  ],
+  "strengths": [
+    "First-class multi-agent hierarchies, delegation, and A2A protocol support",
+    "ADK 2.0 adds graph-based, dynamic, and collaborative workflows",
+    "Built-in evaluation framework for response quality and trajectory testing",
+    "Open source (Apache 2.0) with Python, Java, TypeScript, Go, and Kotlin SDKs",
+    "Clean deployment path to Vertex AI Agent Engine, Cloud Run, or GKE",
+    "Model-agnostic via LiteLLM while optimized for Gemini"
+  ],
+  "limitations": [
+    "Best experience is tied to the Google Cloud and Gemini ecosystem",
+    "Tool sandboxing and injection defenses are largely developer responsibility",
+    "Rapid release cadence has introduced breaking changes between major versions",
+    "Managed features (Agent Engine, Gemini Enterprise Agent Platform) add paid cloud dependency",
+    "Younger ecosystem than incumbent frameworks like LangChain/LangGraph"
+  ],
+  "metadata": {
+    "license": "Apache 2.0",
+    "supported_models": [
+      "Google Gemini (optimized)",
+      "Anthropic Claude",
+      "OpenAI models via LiteLLM",
+      "Local LLMs via LiteLLM/Ollama"
+    ],
+    "programming_languages": [
+      "Python",
+      "Java",
+      "TypeScript",
+      "Go",
+      "Kotlin"
+    ],
+    "deployment_type": "Self-hosted or managed (Vertex AI Agent Engine, Cloud Run, GKE)",
+    "tool_support": [
+      "Function tools",
+      "OpenAPI tools",
+      "MCP tools",
+      "Google Cloud tools",
+      "Third-party library tools"
+    ],
+    "first_release": "2025 (announced Cloud Next 2025-04-09; Python v1.0 May 2025; ADK 2.0 GA 2026-05-19)",
+    "pricing": "Free framework (Apache 2.0); paid when using Vertex AI Agent Engine or Gemini Enterprise Agent Platform plus model API costs"
+  },
+  "tags": [
+    "multi-agent",
+    "open-source",
+    "google",
+    "framework"
+  ]
+}

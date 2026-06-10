@@ -4,9 +4,9 @@
   "name": "Llama 3.3 70B",
   "provider": "Meta",
   "version": "2024-12",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Meta's powerful 70B parameter Llama 3.3 model offering strong performance with open-source flexibility. Excellent balance of capability and resource efficiency for self-hosted deployments.",
+  "description": "Meta's powerful 70B parameter Llama 3.3 model offering strong performance with open-source flexibility and an excellent balance of capability and resource efficiency for self-hosted deployments. Remains one of Meta's legacy open models: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models in 2026.",
   "website": "https://llama.meta.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -593,7 +593,8 @@
     "Requires infrastructure for deployment",
     "No managed API from Meta",
     "Deployment expertise needed",
-    "Uptime depends on hosting"
+    "Uptime depends on hosting",
+    "Legacy status: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models in 2026, so future open updates are unlikely"
   ],
   "best_for": [
     "Self-hosted deployments requiring data sovereignty",

@@ -4,9 +4,9 @@
   "name": "GPT-4o",
   "provider": "OpenAI",
   "version": "2024-05",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's flagship multimodal model with strong text and vision capabilities. Designed for applications requiring high-quality multimodal understanding and generation.",
+  "description": "DEPRECATED: removed from ChatGPT 2026-02-13; the gpt-4o-2024-05-13 snapshot's API shuts down 2026-10-23. Historically OpenAI's flagship multimodal model with strong text and vision capabilities for high-quality multimodal understanding and generation. Migrate to newer GPT-5.x models.",
   "website": "https://openai.com/gpt-4o",
 
   "trust_vector": {
@@ -410,7 +410,7 @@
     },
 
     "operational_excellence": {
-      "overall_score": 89,
+      "overall_score": 87,
       "criteria": {
         "api_design_quality": {
           "score": 92,
@@ -441,7 +441,7 @@
           "last_verified": "2025-11-08"
         },
         "versioning_policy": {
-          "score": 86,
+          "score": 74,
           "confidence": "high",
           "evidence": [
             {
@@ -449,6 +449,12 @@
               "url": "https://platform.openai.com/docs/versioning",
               "date": "2024-05-15",
               "value": "Clear versioning"
+            },
+            {
+              "source": "OpenAI: Retiring GPT-4o and older models",
+              "url": "https://openai.com/index/retiring-gpt-4o-and-older-models/",
+              "date": "2026-06-10",
+              "value": "GPT-4o removed from ChatGPT 2026-02-13; gpt-4o-2024-05-13 snapshot API shutdown 2026-10-23"
             }
           ],
           "methodology": "Policy review",
@@ -483,7 +489,7 @@
           "last_verified": "2025-11-08"
         },
         "ecosystem_maturity": {
-          "score": 94,
+          "score": 86,
           "confidence": "high",
           "evidence": [
             {
@@ -511,7 +517,7 @@
           "last_verified": "2025-11-08"
         }
       },
-      "notes": "Excellent operational maturity with strong multimodal support and ecosystem."
+      "notes": "Deprecated: removed from ChatGPT 2026-02-13; gpt-4o-2024-05-13 snapshot API shutdown 2026-10-23. Versioning and ecosystem scores reduced to reflect deprecation."
     }
   },
 
@@ -583,7 +589,8 @@
     "Not HIPAA eligible",
     "Higher cost than text-only alternatives",
     "PII concerns with image inputs",
-    "Moderate coding capabilities"
+    "Moderate coding capabilities",
+    "DEPRECATED: removed from ChatGPT 2026-02-13; gpt-4o-2024-05-13 snapshot API shutdown 2026-10-23"
   ],
 
   "best_for": [
@@ -634,9 +641,9 @@
   "related_entities": ["gpt-4o-mini", "gpt-4-1", "claude-sonnet-4-5", "gemini-2-5-pro"],
 
   "tags": [
+    "deprecated",
     "multimodal",
     "vision",
-    "flagship",
     "image-understanding",
     "ocr",
     "education"

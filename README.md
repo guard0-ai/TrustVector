@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Evaluations](https://img.shields.io/badge/Evaluations-106-blue.svg)](#-current-coverage)
+[![Evaluations](https://img.shields.io/badge/Evaluations-156-blue.svg)](#-current-coverage)
 [![GitHub Stars](https://img.shields.io/github/stars/Guard0-Security/TrustVector?style=social)](https://github.com/Guard0-Security/TrustVector)
 
 TrustVector is an evidence-based evaluation framework for AI systems, providing transparent, multi-dimensional trust scores across **security**, **privacy**, **performance**, **trust**, and **operational excellence**.
@@ -87,57 +87,54 @@ const customScore = calculateCustomScore(claudeSonnet, {
 
 ## 📊 Current Coverage
 
-**106 Total Evaluations** across 3 categories:
+**156 Total Evaluations** across 3 categories (last refreshed June 2026):
 
-### AI Models (38)
+### AI Models (60)
 
 **Frontier Models:**
-- ✅ Claude Sonnet 4.5, Claude Opus 4.1, Claude 3.7 Sonnet, Claude 3.5 Haiku (Anthropic)
-- ✅ GPT-5, GPT-4.5, GPT-4.1, GPT-4o, GPT-4o Mini (OpenAI)
-- ✅ o1, o1 Mini, o3, o3 Mini (OpenAI Reasoning)
-- ✅ Gemini 2.5 Pro, Gemini 2.0 Flash (Google)
-- ✅ Llama 4 Behemoth, Llama 4 Maverick, Llama 4 Scout, Llama 3.3 70B, Llama 3.1 405B (Meta)
-- ✅ Grok 3 Beta (xAI)
-- ✅ DeepSeek R1, DeepSeek V3 (DeepSeek)
+- ✅ Claude Fable 5, Claude Opus 4.8 / 4.7 / 4.6 / 4.5, Claude Sonnet 4.6 / 4.5, Claude Haiku 4.5 (Anthropic)
+- ✅ GPT-5.5, GPT-5.4, GPT-5.3-Codex, GPT-5.2, GPT-5.1, GPT-5, o-series (OpenAI)
+- ✅ Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 3 Pro/Flash (Google)
+- ✅ Grok 4.3, Grok 4.1 (xAI)
+- ✅ Nova 2 Lite, Nova Pro (Amazon)
 
-**Specialized & Open Source:**
-- ✅ Gemma 3 27B (Google)
-- ✅ Qwen2.5-VL 32B (Alibaba)
-- ✅ Nemotron Ultra 253B (NVIDIA)
-- ✅ Nova Pro (Amazon)
+**Open-Weight Models:**
+- ✅ DeepSeek V4, DeepSeek V3.2, DeepSeek R1 (DeepSeek)
+- ✅ Qwen3.5 (Alibaba), Kimi K2.6 (Moonshot), GLM-5 (Z.ai), MiniMax-M2
+- ✅ Mistral Large 3 (Mistral), Command A+ (Cohere)
+- ✅ Gemma 4, Gemma 3 (Google), gpt-oss-120b/20b (OpenAI)
+- ✅ Llama 4 Maverick/Scout, Llama 3.x (Meta), Nemotron (NVIDIA)
 
 **[See all models →](/data/models)**
 
-### AI Agents (34)
+### AI Agents (50)
 
-**Enterprise Platforms:**
-- ✅ Amazon Bedrock Agents, Azure Bot Service, Google Agent Builder
-- ✅ IBM Watson Assistant, Google Dialogflow, Amazon Lex
+**Coding & Autonomous Agents:**
+- ✅ Claude Code + Claude Agent SDK (Anthropic), OpenAI Codex, Devin (Cognition)
+- ✅ Cursor, GitHub Copilot coding agent, Google Jules, Gemini CLI, Manus
 
 **Developer Frameworks:**
-- ✅ LangGraph Agent, LlamaIndex Agent, CrewAI, AutoGen
-- ✅ Haystack, LangFlow, Flowise, E2B Agents
+- ✅ OpenAI Agents SDK, Google ADK, Microsoft Agent Framework, AWS Strands Agents
+- ✅ LangGraph, CrewAI, LlamaIndex, Pydantic AI, smolagents, Mastra, Dify
 
-**Autonomous Agents:**
-- ✅ AutoGPT, BabyAGI, AgentGPT, Adala
-- ✅ And 15+ more...
+**Enterprise Platforms:**
+- ✅ Amazon Bedrock Agents, Azure Bot Service, Gemini Enterprise Agent Platform
+- ✅ IBM watsonx Assistant, Google Dialogflow, Amazon Lex, and more
 
 **[See all agents →](/data/agents)**
 
-### MCP Servers (34)
+### MCP Servers (46)
 
-**Cloud & Infrastructure:**
-- ✅ AWS, Azure, Cloudflare, Docker, Kubernetes
+**Top Ecosystem Servers:**
+- ✅ Context7, Chrome DevTools MCP, Playwright MCP, Serena
 
-**Development Tools:**
-- ✅ GitHub, Git, Filesystem, Memory
+**Official Vendor Servers:**
+- ✅ GitHub, Figma, Stripe, Notion, Vercel, Hugging Face, Zapier, Apify
 
-**Productivity & Business:**
-- ✅ Gmail, Google Drive, Calendar, Linear, Atlassian
-- ✅ Datadog, Elasticsearch, MongoDB
-
-**Utilities:**
-- ✅ Brave Search, Fetch, Everything
+**Reference & Community:**
+- ✅ Fetch, Git, Filesystem, Memory, Sequential Thinking, Time, Everything
+- ✅ AWS, Azure, Cloudflare, Docker, Kubernetes, databases, and more
+- ⚠️ Archived reference servers (Puppeteer, Postgres, SQLite, Slack, …) are flagged with security advisories
 - ✅ And 15+ more...
 
 **[See all MCPs →](/data/mcps)**
