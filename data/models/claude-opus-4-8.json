@@ -3,12 +3,11 @@
   "type": "model",
   "name": "Claude Opus 4.8",
   "provider": "Anthropic",
-  "version": "claude-opus-4-8",
+  "version": "20260528",
   "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
   "description": "Anthropic's flagship Opus model with state-of-the-art long-horizon agentic execution, knowledge work, and memory. 84% on Online-Mind2Web, dynamic multi-subagent workflows, ~4x less likely to miss its own code flaws than its predecessor, and 1M context at standard pricing.",
   "website": "https://www.anthropic.com/news/claude-opus-4-8",
-
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 96,
@@ -135,7 +134,6 @@
       },
       "notes": "Current flagship Opus. State-of-the-art long-horizon agentic execution, knowledge work, and memory; 84% Online-Mind2Web; dynamic multi-subagent workflows. Superseded only by the higher-tier Claude Fable 5."
     },
-
     "security": {
       "overall_score": 92,
       "criteria": {
@@ -212,7 +210,6 @@
       },
       "notes": "Strong safety posture with agentic-specific safeguards. Mid-session system prompts (beta) give operators a non-spoofable instruction channel for long-running sessions."
     },
-
     "privacy_compliance": {
       "overall_score": 93,
       "criteria": {
@@ -303,7 +300,6 @@
       },
       "notes": "Standard Anthropic enterprise compliance posture: SOC 2 Type II, GDPR, HIPAA-eligible, training opt-out by default for API traffic."
     },
-
     "trust_transparency": {
       "overall_score": 88,
       "criteria": {
@@ -406,9 +402,8 @@
           "last_verified": "2026-06-10"
         }
       },
-      "notes": "More deliberate and transparent in long agentic runs than Opus 4.7 — narrates progress, flags uncertainty, and self-verifies code. Thinking text remains omitted by default."
+      "notes": "More deliberate and transparent in long agentic runs than Opus 4.7 \u2014 narrates progress, flags uncertainty, and self-verifies code. Thinking text remains omitted by default."
     },
-
     "operational_excellence": {
       "overall_score": 91,
       "criteria": {
@@ -420,7 +415,7 @@
               "source": "Anthropic Migration Guide",
               "url": "https://platform.claude.com/docs/en/about-claude/models/migration-guide",
               "date": "2026-05-28",
-              "value": "Same API surface as Opus 4.7 — no new breaking changes; adds mid-session system prompts (beta)"
+              "value": "Same API surface as Opus 4.7 \u2014 no new breaking changes; adds mid-session system prompts (beta)"
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
@@ -515,78 +510,104 @@
       "notes": "Drop-in upgrade from Opus 4.7 (identical API surface). 1M context at standard pricing with no long-context premium; optional fast mode at $10/$50."
     }
   },
-
   "use_case_ratings": {
     "code-generation": {
       "overall": 97,
       "notes": "State-of-the-art long-horizon agentic coding; ~4x less likely to miss its own code flaws than Opus 4.7. Best value flagship for software engineering at $5/$25.",
-      "alternatives": ["claude-fable-5", "gpt-5-3-codex"]
+      "alternatives": [
+        "claude-fable-5",
+        "gpt-5-3-codex"
+      ]
     },
     "customer-support": {
       "overall": 89,
       "notes": "Excellent quality with warmer, clearer writing than Opus 4.7, but Sonnet/Haiku tiers are more cost-effective for routine volume.",
-      "alternatives": ["claude-sonnet-4-6", "claude-haiku-4-5"]
+      "alternatives": [
+        "claude-sonnet-4-6",
+        "claude-haiku-4-5"
+      ]
     },
     "content-creation": {
       "overall": 94,
-      "notes": "Clearer, warmer, less hedged prose than prior Opus models — approaches expert-level structure at higher effort.",
-      "alternatives": ["claude-fable-5", "gpt-5-5"]
+      "notes": "Clearer, warmer, less hedged prose than prior Opus models \u2014 approaches expert-level structure at higher effort.",
+      "alternatives": [
+        "claude-fable-5",
+        "gpt-5-5"
+      ]
     },
     "data-analysis": {
       "overall": 95,
       "notes": "Strong analytical depth with 1M context for whole-dataset work; dynamic multi-subagent workflows fan out across large analyses.",
-      "alternatives": ["claude-fable-5", "gemini-3-1-pro"]
+      "alternatives": [
+        "claude-fable-5",
+        "gemini-3-1-pro"
+      ]
     },
     "research-assistant": {
       "overall": 96,
       "notes": "State-of-the-art knowledge work and memory; excels at multi-day research with file-based memory and 1M context.",
-      "alternatives": ["claude-fable-5", "gemini-3-1-pro"]
+      "alternatives": [
+        "claude-fable-5",
+        "gemini-3-1-pro"
+      ]
     },
     "legal-compliance": {
       "overall": 93,
       "notes": "Strong privacy posture (SOC 2 Type II, GDPR, HIPAA-eligible) and thorough long-document analysis at 1M context with no long-context premium.",
-      "alternatives": ["claude-fable-5", "claude-sonnet-4-6"]
+      "alternatives": [
+        "claude-fable-5",
+        "claude-sonnet-4-6"
+      ]
     },
     "healthcare": {
       "overall": 91,
       "notes": "HIPAA eligible with training opt-out by default. Deliberate, uncertainty-flagging behavior suits clinical documentation.",
-      "alternatives": ["claude-fable-5", "claude-sonnet-4-6"]
+      "alternatives": [
+        "claude-fable-5",
+        "claude-sonnet-4-6"
+      ]
     },
     "financial-analysis": {
       "overall": 94,
       "notes": "Excellent quantitative reasoning and knowledge work; handles full filings and model workbooks in one context window.",
-      "alternatives": ["claude-fable-5", "gpt-5-5"]
+      "alternatives": [
+        "claude-fable-5",
+        "gpt-5-5"
+      ]
     },
     "education": {
       "overall": 93,
       "notes": "Clear, warm explanations with effort-adjustable depth; strong thought-partner behavior that pushes back constructively.",
-      "alternatives": ["claude-sonnet-4-6", "gpt-5-5"]
+      "alternatives": [
+        "claude-sonnet-4-6",
+        "gpt-5-5"
+      ]
     },
     "creative-writing": {
       "overall": 92,
-      "notes": "Warmer, less hedged voice with fewer AI vocal tics than 4.7. No sampling parameters — variety must be prompted.",
-      "alternatives": ["claude-fable-5", "gpt-5-5"]
+      "notes": "Warmer, less hedged voice with fewer AI vocal tics than 4.7. No sampling parameters \u2014 variety must be prompted.",
+      "alternatives": [
+        "claude-fable-5",
+        "gpt-5-5"
+      ]
     }
   },
-
   "strengths": [
     "State-of-the-art long-horizon agentic execution, knowledge work, and memory",
     "84% on Online-Mind2Web live web-agent benchmark",
     "~4x less likely to miss flaws in its own code than Opus 4.7",
     "Dynamic multi-subagent workflows for parallel fan-out",
     "1M context at standard pricing (no long-context premium), 128K output",
-    "Mid-session system prompts (beta) — injection-safe operator channel that preserves prompt cache",
-    "Same API surface as Opus 4.7 — drop-in upgrade with no new breaking changes"
+    "Mid-session system prompts (beta) \u2014 injection-safe operator channel that preserves prompt cache",
+    "Same API surface as Opus 4.7 \u2014 drop-in upgrade with no new breaking changes"
   ],
-
   "limitations": [
-    "Adaptive thinking only — no manual thinking budgets, no temperature/top_p sampling parameters",
+    "Adaptive thinking only \u2014 no manual thinking budgets, no temperature/top_p sampling parameters",
     "More deliberate by default: asks clarifying questions more often unless granted explicit autonomy",
-    "Narrates more between tool calls than 4.7 — needs a silence-default prompt for terse agents",
+    "Narrates more between tool calls than 4.7 \u2014 needs a silence-default prompt for terse agents",
     "Conservative about reaching for search, subagents, and custom tools without explicit triggering guidance",
     "Higher latency than Sonnet/Haiku tiers; fast mode doubles cost to $10/$50"
   ],
-
   "best_for": [
     "Long-horizon autonomous coding runs and complex refactors",
     "Knowledge work over very large document sets (1M context, no premium)",
@@ -594,14 +615,12 @@
     "Memory-dependent agents that persist context across sessions",
     "Enterprise workloads requiring strong compliance"
   ],
-
   "not_recommended_for": [
     "Real-time applications requiring sub-second latency",
     "Cost-sensitive high-volume inference (use Sonnet or Haiku tiers)",
     "Workflows that depend on temperature/top_p sampling controls",
     "Audio processing applications"
   ],
-
   "metadata": {
     "pricing": {
       "input": "$5.00 per 1M tokens",
@@ -624,7 +643,12 @@
       "Arabic",
       "Hindi"
     ],
-    "modalities": ["text", "image (input)", "document", "computer-use"],
+    "modalities": [
+      "text",
+      "image (input)",
+      "document",
+      "computer-use"
+    ],
     "api_endpoint": "https://api.anthropic.com/v1/messages",
     "api_model_id": "claude-opus-4-8",
     "open_source": false,
@@ -633,9 +657,13 @@
     "knowledge_cutoff": "Not disclosed",
     "release_date": "2026-05-28"
   },
-
-  "related_entities": ["claude-fable-5", "claude-opus-4-7", "claude-sonnet-4-6", "gpt-5-5", "gemini-3-1-pro"],
-
+  "related_entities": [
+    "claude-fable-5",
+    "claude-opus-4-7",
+    "claude-sonnet-4-6",
+    "gpt-5-5",
+    "gemini-3-1-pro"
+  ],
   "tags": [
     "coding",
     "reasoning",
