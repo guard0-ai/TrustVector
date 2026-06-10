@@ -1,0 +1,466 @@
+{
+  "id": "manus",
+  "type": "agent",
+  "name": "Manus",
+  "provider": "Meta (formerly Butterfly Effect)",
+  "version": "1.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "General-purpose autonomous agent that executes end-to-end tasks in a cloud VM equipped with a browser, shell, and file tools. Launched virally in March 2025 by Butterfly Effect and acquired by Meta in a deal that closed in late December 2025 for over $2B.",
+  "website": "https://manus.im/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 76,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Wikipedia - Manus (AI agent)",
+              "url": "https://en.wikipedia.org/wiki/Manus_(AI_agent)",
+              "date": "2025-05-15",
+              "value": "Strong showing on GAIA-style autonomous task benchmarks at launch; real-world completion varies widely with task ambiguity and website complexity"
+            }
+          ],
+          "methodology": "Assessment of end-to-end task completion based on published benchmark claims and independent user testing reports",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Integrated cloud VM toolset: full browser automation, shell, file system, code execution, and document/slide generation"
+            }
+          ],
+          "methodology": "Review of integrated tool stack reliability across browsing, shell, and file operations",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Wikipedia - Manus (AI agent)",
+              "url": "https://en.wikipedia.org/wiki/Manus_(AI_agent)",
+              "date": "2025-05-15",
+              "value": "Decomposes high-level goals into explicit task plans and executes them asynchronously, continuing after the user disconnects"
+            }
+          ],
+          "methodology": "Evaluation of autonomous task decomposition and long-horizon asynchronous execution",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Session workspaces persist files and context; remembers user preferences and prior instructions across tasks"
+            }
+          ],
+          "methodology": "Review of session workspace persistence and cross-task preference memory",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 72,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Wikipedia - Manus (AI agent)",
+              "url": "https://en.wikipedia.org/wiki/Manus_(AI_agent)",
+              "date": "2025-05-15",
+              "value": "Retries failed steps and adapts plans, but early reviews noted loops, stalls on complex sites, and occasional silent task failures"
+            }
+          ],
+          "methodology": "Assessment of retry behavior and failure modes from independent reviews",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 70,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Internally orchestrates multiple sub-agent roles (planner, executor, verifier); no user-facing multi-agent composition"
+            }
+          ],
+          "methodology": "Review of internal multi-agent architecture versus user-controllable collaboration",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 60,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "All execution occurs in isolated per-session cloud VMs, never on the user's device"
+            }
+          ],
+          "methodology": "Security architecture review of cloud VM isolation model",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 65,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Consumer-oriented account model; credentials given to the agent for logged-in browsing are held in the session, with limited enterprise-grade access governance"
+            }
+          ],
+          "methodology": "Review of credential handling and account-level controls",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 58,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Wikipedia - Manus (AI agent)",
+              "url": "https://en.wikipedia.org/wiki/Manus_(AI_agent)",
+              "date": "2025-05-15",
+              "value": "Autonomous web browsing across arbitrary sites is a large injection surface; public documentation of mitigations is minimal"
+            }
+          ],
+          "methodology": "Threat surface analysis of autonomous browsing with limited disclosed defenses",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 66,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "CNBC - Meta acquires Manus",
+              "url": "https://www.cnbc.com/2025/12/30/meta-acquires-singapore-ai-agent-firm-manus-china-butterfly-effect-monicai.html",
+              "date": "2025-12-30",
+              "value": "Per-session VM isolation exists, but data residency and processing arrangements are in transition following Meta's acquisition of the Singapore-based, China-originated company"
+            }
+          ],
+          "methodology": "Data architecture review accounting for ownership and jurisdiction transition",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 28,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Proprietary agent harness; historically orchestrated third-party models (Claude, Qwen) rather than publishing its own stack"
+            }
+          ],
+          "methodology": "Source availability assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 50,
+      "criteria": {
+        "data_retention": {
+          "score": 58,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Manus Privacy Policy",
+              "url": "https://manus.im/privacy",
+              "date": "2026-05-01",
+              "value": "Session data, files, and browsing artifacts retained in Manus cloud; retention terms are consumer-grade and being restated under Meta ownership"
+            }
+          ],
+          "methodology": "Review of published retention practices during ownership transition",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 62,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "CNBC - Meta acquires Manus",
+              "url": "https://www.cnbc.com/2025/12/30/meta-acquires-singapore-ai-agent-firm-manus-china-butterfly-effect-monicai.html",
+              "date": "2025-12-30",
+              "value": "Meta ownership brings established compliance infrastructure, but policies and processing locations for Manus are still being integrated post-acquisition"
+            }
+          ],
+          "methodology": "Compliance posture assessment during corporate integration",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Wikipedia - Manus (AI agent)",
+              "url": "https://en.wikipedia.org/wiki/Manus_(AI_agent)",
+              "date": "2025-05-15",
+              "value": "Historically routed tasks to third-party models (Anthropic Claude, Alibaba Qwen); under Meta, model routing and data sharing arrangements are changing"
+            }
+          ],
+          "methodology": "Data flow analysis of third-party model routing before and after acquisition",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 25,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Cloud-only consumer service with no self-hosted, on-premises, or offline option"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 64,
+      "criteria": {
+        "documentation_quality": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Manus Help Center",
+              "url": "https://manus.im/help",
+              "date": "2026-05-01",
+              "value": "Consumer-grade guides and use-case galleries; limited technical documentation of architecture, security, or limits"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "'Manus's Computer' view shows the agent's browser, shell, and file actions live, and completed sessions are replayable and shareable"
+            }
+          ],
+          "methodology": "Review of live session visibility and replay features",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Displays its task plan and step-by-step progress narration, though internal model routing decisions are opaque"
+            }
+          ],
+          "methodology": "Assessment of plan visibility and progress narration",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 30,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Closed-source product; only minor components and demos have been shared publicly"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Wikipedia - Manus (AI agent)",
+              "url": "https://en.wikipedia.org/wiki/Manus_(AI_agent)",
+              "date": "2025-05-15",
+              "value": "Viral launch 2025-03-06 with invite waitlist in the millions; open signup May 2025 built a large consumer user base and active social community"
+            }
+          ],
+          "methodology": "Community engagement analysis of user base and public activity",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 69,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Zero-setup web and mobile apps; describe a task in natural language and the cloud VM handles the rest"
+            }
+          ],
+          "methodology": "Onboarding friction assessment for non-technical users",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Multiple concurrent cloud tasks supported on paid tiers; throughput governed by credit balance and plan limits"
+            }
+          ],
+          "methodology": "Scalability assessment of concurrent task limits across tiers",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 62,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Manus Pricing",
+              "url": "https://manus.im/pricing",
+              "date": "2026-05-01",
+              "value": "Credit-based: Free tier with 300 daily credits; paid plans roughly $20-40/mo up to $200/mo. Credit consumption per task varies and is hard to estimate upfront"
+            }
+          ],
+          "methodology": "Pricing model analysis; variable credit burn per task reduces predictability",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Manus Product Page",
+              "url": "https://manus.im/",
+              "date": "2026-05-01",
+              "value": "Per-task session views and credit usage tracking; no organizational observability or audit tooling"
+            }
+          ],
+          "methodology": "Monitoring features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "CNBC - Meta acquires Manus",
+              "url": "https://www.cnbc.com/2025/12/30/meta-acquires-singapore-ai-agent-firm-manus-china-butterfly-effect-monicai.html",
+              "date": "2025-12-30",
+              "value": "Meta acquisition (>$2B, closed ~2025-12-30) secures resources and continuity, but product, policy, and roadmap are mid-integration"
+            }
+          ],
+          "methodology": "Vendor stability and product maturity assessment during acquisition integration",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "research-assistant": {
+      "overall": 84,
+      "notes": "Flagship use case: autonomous multi-source web research, comparison shopping, screening, and report generation"
+    },
+    "data-analysis": {
+      "overall": 78,
+      "notes": "Runs code in its VM to clean data, analyze spreadsheets, and produce charts and dashboards from uploaded files"
+    },
+    "content-creation": {
+      "overall": 77,
+      "notes": "Generates documents, slide decks, and simple websites end-to-end, though output quality needs human review"
+    },
+    "code-generation": {
+      "overall": 66,
+      "notes": "Can build and deploy small apps and scripts, but lacks repository workflows and engineering rigor of dedicated coding agents"
+    },
+    "education": {
+      "overall": 70,
+      "notes": "Builds interactive course materials and explainers; replayable sessions show how tasks are accomplished"
+    }
+  },
+  "best_for": [
+    "Consumers and analysts delegating end-to-end web research and report tasks to a hands-off agent",
+    "Users who want asynchronous task execution that continues after they disconnect",
+    "Non-technical users needing documents, slides, or simple sites produced from a single prompt",
+    "Exploratory automation of browser-based workflows without writing code"
+  ],
+  "strengths": [
+    "True general-purpose autonomy: cloud VM with browser, shell, and file tools executes tasks end-to-end",
+    "Transparent 'Manus's Computer' live view and replayable sessions show exactly what the agent did",
+    "Asynchronous execution continues in the cloud after the user disconnects",
+    "Zero-setup web and mobile experience accessible to non-technical users",
+    "Meta acquisition (closed ~2025-12-30, >$2B) provides long-term resourcing and infrastructure",
+    "Free tier with 300 daily credits allows meaningful evaluation before paying"
+  ],
+  "limitations": [
+    "Governance and jurisdiction transition (Singapore/China origins to Meta ownership) leaves data handling policies in flux",
+    "Minimal published security documentation; prompt injection defenses for autonomous browsing are unclear",
+    "Credit-based pricing with variable per-task burn makes costs hard to predict",
+    "Cloud-only with no self-hosted option; sensitive data must enter Manus's VMs",
+    "Reliability degrades on complex or ambiguous tasks, with loops and silent failures reported",
+    "Closed-source stack with opaque routing to underlying models (historically Claude and Qwen)"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_models": [
+      "Anthropic Claude (historical backend)",
+      "Alibaba Qwen (historical backend)",
+      "Meta model integration in progress post-acquisition"
+    ],
+    "programming_languages": [
+      "Natural language interface; agent writes Python, JavaScript, and shell internally"
+    ],
+    "deployment_type": "Cloud (per-session VM with browser, shell, file tools)",
+    "tool_support": [
+      "Browser automation",
+      "Shell and code execution",
+      "File and document generation",
+      "Slides and website generation",
+      "Scheduled tasks"
+    ],
+    "first_release": "2025-03-06 (viral invite launch); open signup May 2025",
+    "pricing": "Free (300 daily credits); paid plans ~$20-40/mo up to $200/mo (credit-based)",
+    "company_milestones": "Built by Butterfly Effect (Singapore HQ, Chinese origins); acquired by Meta for >$2B, deal closed ~2025-12-30"
+  },
+  "related_entities": [
+    "devin",
+    "openai-codex",
+    "claude-code",
+    "google-jules"
+  ],
+  "tags": [
+    "autonomous",
+    "general-purpose",
+    "cloud-agent",
+    "consumer"
+  ]
+}

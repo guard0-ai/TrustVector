@@ -1,0 +1,450 @@
+{
+  "id": "mcp-server-apify",
+  "type": "mcp",
+  "name": "Apify MCP Server",
+  "provider": "Apify",
+  "version": "2026.6",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Official Apify MCP server (renamed from actors-mcp-server) exposing thousands of Apify Store Actors to AI agents — scrapers for social media, maps, e-commerce, and search. Agents can dynamically discover and run Actors via the @apify/actors-mcp-server package or the hosted OAuth endpoint at mcp.apify.com.",
+  "website": "https://github.com/apify/apify-mcp-server",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 81,
+      "criteria": {
+        "api_reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apify Platform Documentation",
+              "url": "https://docs.apify.com/platform",
+              "date": "2026-06-10",
+              "value": "Built on Apify's mature cloud platform with managed Actor execution, storage, and a public status page"
+            }
+          ],
+          "methodology": "Platform stability and maturity analysis",
+          "last_verified": "2026-06-10"
+        },
+        "actor_execution_success": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify Store",
+              "url": "https://apify.com/store",
+              "date": "2026-06-10",
+              "value": "Actor quality varies: maintained official Actors are highly reliable, while community Actors can break when target sites change"
+            }
+          ],
+          "methodology": "Run success sampling across official and community Actors",
+          "last_verified": "2026-06-10"
+        },
+        "dynamic_tool_discovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify MCP Server Repository",
+              "url": "https://github.com/apify/apify-mcp-server",
+              "date": "2026-06-10",
+              "value": "Agents can search the Apify Store and add Actors as tools at runtime; discovery quality depends on Store metadata"
+            }
+          ],
+          "methodology": "Tool discovery relevance testing",
+          "last_verified": "2026-06-10"
+        },
+        "rate_limit_handling": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify API Documentation",
+              "url": "https://docs.apify.com/api/v2",
+              "date": "2026-06-10",
+              "value": "Platform enforces documented API rate limits and plan-based usage quotas; runs queue rather than hard-fail under load"
+            }
+          ],
+          "methodology": "Rate limiting behavior review",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify MCP Server Repository",
+              "url": "https://github.com/apify/apify-mcp-server",
+              "date": "2026-06-10",
+              "value": "Actor run failures return structured errors with run logs available in the Apify console for diagnosis"
+            }
+          ],
+          "methodology": "Failure mode and recovery testing",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 71,
+      "criteria": {
+        "authentication_security": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apify MCP Documentation",
+              "url": "https://mcp.apify.com/",
+              "date": "2026-06-10",
+              "value": "Hosted server at mcp.apify.com uses OAuth; local stdio mode uses an Apify API token"
+            }
+          ],
+          "methodology": "Authentication mechanism review",
+          "last_verified": "2026-06-10"
+        },
+        "dynamic_capability_risk": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apify MCP Server Repository",
+              "url": "https://github.com/apify/apify-mcp-server",
+              "date": "2026-06-10",
+              "value": "Dynamically added Actors change the agent's capability surface at runtime, bypassing assumptions made at initial tool-approval time"
+            }
+          ],
+          "methodology": "Runtime capability mutation threat modeling",
+          "last_verified": "2026-06-10"
+        },
+        "actor_supply_chain_risk": {
+          "score": 58,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apify Store",
+              "url": "https://apify.com/store",
+              "date": "2026-06-10",
+              "value": "Actors are community-published code; while Apify reviews and badges some, agents can invoke thousands of third-party Actors of varying provenance"
+            }
+          ],
+          "methodology": "Supply chain analysis of community-published Actors",
+          "last_verified": "2026-06-10"
+        },
+        "credential_handling": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify Security Documentation",
+              "url": "https://docs.apify.com/platform/security",
+              "date": "2026-06-10",
+              "value": "API tokens scoped to the account; leaked tokens allow running paid Actors and reading stored datasets"
+            }
+          ],
+          "methodology": "Token scope and exposure analysis",
+          "last_verified": "2026-06-10"
+        },
+        "sandboxed_execution": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apify Platform Documentation",
+              "url": "https://docs.apify.com/platform/actors",
+              "date": "2026-06-10",
+              "value": "Actors execute in isolated containers in Apify's cloud, not on the user's machine, containing the impact of malicious Actor code"
+            }
+          ],
+          "methodology": "Execution isolation review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 66,
+      "criteria": {
+        "data_exposure": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify Platform Documentation",
+              "url": "https://docs.apify.com/platform/storage",
+              "date": "2026-06-10",
+              "value": "Scraped results are stored in Apify cloud datasets and then passed into the LLM context; inputs may include sensitive query terms"
+            }
+          ],
+          "methodology": "Data flow analysis of Actor inputs and outputs",
+          "last_verified": "2026-06-10"
+        },
+        "sensitive_data_protection": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify MCP Server Repository",
+              "url": "https://github.com/apify/apify-mcp-server",
+              "date": "2026-06-10",
+              "value": "No built-in PII filtering on Actor output; social media and maps scrapers frequently return personal data subject to GDPR obligations"
+            }
+          ],
+          "methodology": "PII handling assessment of common Actor outputs",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify Privacy Policy",
+              "url": "https://apify.com/privacy-policy",
+              "date": "2026-06-10",
+              "value": "Run inputs and outputs are processed by Apify and the invoked Actor's code; community Actor authors define their own data behavior"
+            }
+          ],
+          "methodology": "Data sharing and policy review",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_posture": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify Security and Compliance",
+              "url": "https://docs.apify.com/platform/security",
+              "date": "2026-06-10",
+              "value": "Apify documents GDPR compliance and platform security practices; lawful use of scraped personal data remains the user's responsibility"
+            }
+          ],
+          "methodology": "Compliance documentation review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 85,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apify MCP Documentation",
+              "url": "https://docs.apify.com/platform/integrations/mcp",
+              "date": "2026-06-10",
+              "value": "Thorough docs covering hosted and local setup, tool configuration, and Actor selection options"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "operation_visibility": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apify Console",
+              "url": "https://console.apify.com/",
+              "date": "2026-06-10",
+              "value": "Every Actor run is logged in the Apify console with inputs, logs, usage cost, and output datasets"
+            }
+          ],
+          "methodology": "Logging and traceability assessment",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apify MCP Server Repository",
+              "url": "https://github.com/apify/apify-mcp-server",
+              "date": "2026-06-10",
+              "value": "MIT-licensed open source server with 1,319 GitHub stars; many Store Actors also publish source, though not all"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-06-10"
+        },
+        "tool_coverage_clarity": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify MCP Server Repository",
+              "url": "https://github.com/apify/apify-mcp-server",
+              "date": "2026-06-10",
+              "value": "Helper tools are documented, but the effective tool set is dynamic — it depends on which Actors are loaded at runtime"
+            }
+          ],
+          "methodology": "Tool surface documentation review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 84,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apify MCP Documentation",
+              "url": "https://mcp.apify.com/",
+              "date": "2026-06-10",
+              "value": "Hosted endpoint with OAuth requires no installation; local mode is a single npx command with an API token"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-06-10"
+        },
+        "api_performance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify Platform Documentation",
+              "url": "https://docs.apify.com/platform/actors/running",
+              "date": "2026-06-10",
+              "value": "Actor runs include container startup overhead; simple scrapes finish in seconds while large scraping jobs run for minutes"
+            }
+          ],
+          "methodology": "Run latency characterization",
+          "last_verified": "2026-06-10"
+        },
+        "reliability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Apify Status Page",
+              "url": "https://status.apify.com/",
+              "date": "2026-06-10",
+              "value": "Public status page with historically high platform availability"
+            }
+          ],
+          "methodology": "Uptime and incident history analysis",
+          "last_verified": "2026-06-10"
+        },
+        "feature_coverage": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Apify Store",
+              "url": "https://apify.com/store",
+              "date": "2026-06-10",
+              "value": "Thousands of ready-made Actors covering social media, maps, e-commerce, search, and general scraping"
+            }
+          ],
+          "methodology": "Capability breadth assessment",
+          "last_verified": "2026-06-10"
+        },
+        "community_adoption": {
+          "score": 79,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Repository Metrics",
+              "url": "https://github.com/apify/apify-mcp-server",
+              "date": "2026-06-10",
+              "value": "1,319 GitHub stars with active maintenance by Apify and a large existing Actor developer ecosystem"
+            }
+          ],
+          "methodology": "Community activity and adoption analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Access to thousands of ready-made Apify Store Actors for social media, maps, e-commerce, and search scraping",
+    "Dynamic tool discovery lets agents find and add the right Actor at runtime",
+    "Actors run in isolated containers in Apify's cloud, not on the user's machine",
+    "Hosted OAuth endpoint (mcp.apify.com) and simple local npx setup",
+    "Full run auditability via the Apify console with logs, inputs, and cost tracking",
+    "MIT-licensed open source server actively maintained by Apify"
+  ],
+  "limitations": [
+    "Actors are community-published code of varying quality and provenance",
+    "Dynamically added tools mutate the agent's capability surface after initial approval",
+    "Scraped output frequently contains personal data with GDPR implications and no built-in PII filtering",
+    "Actor runs consume paid platform credits that an agent can spend autonomously",
+    "Community Actors can silently break when target websites change",
+    "Scraped content is untrusted input that may carry prompt injection payloads"
+  ],
+  "metadata": {
+    "license": "MIT",
+    "supported_platforms": [
+      "All platforms with Node.js",
+      "Hosted remote server (mcp.apify.com)"
+    ],
+    "programming_languages": [
+      "TypeScript"
+    ],
+    "github_repo": "https://github.com/apify/apify-mcp-server",
+    "github_stars": 1319,
+    "package_name": "@apify/actors-mcp-server",
+    "previous_name": "actors-mcp-server",
+    "api_dependency": "Apify platform API",
+    "authentication": "OAuth (hosted) or Apify API token (stdio)",
+    "maintained_by": "Apify",
+    "transport_types": [
+      "stdio",
+      "remote (hosted)"
+    ],
+    "installation_methods": [
+      "npm",
+      "hosted endpoint"
+    ]
+  },
+  "use_case_ratings": {
+    "research-assistant": {
+      "overall": 88,
+      "notes": "Excellent for gathering data from platforms that are hard to scrape directly (social media, maps, marketplaces)"
+    },
+    "data-analysis": {
+      "overall": 86,
+      "notes": "Actor outputs land in structured datasets that feed analysis pipelines well"
+    },
+    "content-creation": {
+      "overall": 78,
+      "notes": "Strong for trend, competitor, and audience research feeding content workflows"
+    },
+    "customer-support": {
+      "overall": 62,
+      "notes": "Limited fit; can monitor reviews and social mentions but is not a support tool"
+    },
+    "financial-analysis": {
+      "overall": 74,
+      "notes": "Useful for alternative data collection (e-commerce prices, reviews); verify data quality and licensing"
+    },
+    "legal-compliance": {
+      "overall": 55,
+      "notes": "Scraping personal data raises GDPR and terms-of-service questions requiring careful legal review"
+    },
+    "education": {
+      "overall": 70,
+      "notes": "Good for teaching data collection concepts, though paid credits and ToS limits apply"
+    }
+  },
+  "best_for": [
+    "Agents needing ready-made scrapers for social media, maps, e-commerce, and search",
+    "Teams already on the Apify platform who want their Actors exposed to AI assistants",
+    "Data collection workflows where cloud-isolated execution is preferred over local scraping"
+  ],
+  "related_entities": [
+    "mcp-server-firecrawl",
+    "mcp-server-playwright",
+    "mcp-server-brave-search",
+    "mcp-server-tavily"
+  ],
+  "tags": [
+    "web-scraping",
+    "automation",
+    "actors",
+    "data-extraction",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "id": "devin",
+  "type": "agent",
+  "name": "Devin",
+  "provider": "Cognition",
+  "version": "2.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Autonomous AI software engineer from Cognition that plans and executes multi-step engineering tasks in a sandboxed cloud workspace with its own editor, shell, and browser, and delivers work as pull requests.",
+  "website": "https://devin.ai/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 80,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cognition - Devin Product Page",
+              "url": "https://devin.ai/",
+              "date": "2026-05-01",
+              "value": "Completes well-scoped engineering tasks end-to-end as PRs; reliability is strongest on bounded tasks like migrations, bug fixes, and test backfills"
+            }
+          ],
+          "methodology": "Assessment of task completion on scoped engineering work based on vendor documentation, customer case studies, and independent user reports",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Devin Documentation",
+              "url": "https://docs.devin.ai/",
+              "date": "2026-05-01",
+              "value": "Operates a full cloud workspace (editor, shell, browser) with native GitHub, Slack, Jira, and Linear integrations"
+            }
+          ],
+          "methodology": "Review of integrated toolchain reliability across shell, browser, and VCS operations",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Devin Documentation - Planning",
+              "url": "https://docs.devin.ai/",
+              "date": "2026-05-01",
+              "value": "Devin 2.0 introduced interactive planning: drafts an editable plan before execution and revises it as the task evolves"
+            }
+          ],
+          "methodology": "Evaluation of plan generation, user-editable plans, and plan adherence on long-horizon tasks",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Devin Documentation - Knowledge",
+              "url": "https://docs.devin.ai/",
+              "date": "2026-05-01",
+              "value": "Persistent Knowledge base, Playbooks for repeatable procedures, and Devin Wiki auto-generated codebase documentation carry context across sessions"
+            }
+          ],
+          "methodology": "Review of cross-session memory features (Knowledge, Playbooks, Wiki) and session snapshot persistence",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Devin Documentation",
+              "url": "https://docs.devin.ai/",
+              "date": "2026-05-01",
+              "value": "Iterates on failing tests and build errors autonomously; can go down unproductive paths on ambiguous tasks, consuming ACUs until interrupted"
+            }
+          ],
+          "methodology": "Assessment of autonomous debugging behavior and failure-mode reports from production users",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cognition - Devin Product Page",
+              "url": "https://devin.ai/",
+              "date": "2026-05-01",
+              "value": "Supports running multiple parallel Devin sessions on independent tasks; orchestration across Devins is coarser than dedicated multi-agent frameworks"
+            }
+          ],
+          "methodology": "Review of parallel session capabilities and multi-Devin task delegation",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 69,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Devin Security Documentation",
+              "url": "https://devin.ai/security",
+              "date": "2026-05-01",
+              "value": "Each session runs in an isolated, sandboxed cloud VM separate from user infrastructure; code execution never touches the local machine"
+            }
+          ],
+          "methodology": "Security architecture review of isolated cloud workspace model",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Devin Security Documentation",
+              "url": "https://devin.ai/security",
+              "date": "2026-05-01",
+              "value": "Enterprise tier offers SSO/SAML, scoped repository access via GitHub app permissions, and secrets management for credentials"
+            }
+          ],
+          "methodology": "Review of identity, repository scoping, and secrets handling controls",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 70,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Devin Documentation",
+              "url": "https://docs.devin.ai/",
+              "date": "2026-05-01",
+              "value": "Autonomous web browsing and repository content processing create injection surface; mitigations exist but are not publicly detailed"
+            }
+          ],
+          "methodology": "Threat surface analysis of autonomous browsing and untrusted repo content; limited public disclosure of defenses",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Devin Security Documentation",
+              "url": "https://devin.ai/security",
+              "date": "2026-05-01",
+              "value": "Per-session VM isolation and tenant separation; SOC 2 Type II attested infrastructure"
+            }
+          ],
+          "methodology": "Data architecture review of tenant and session isolation claims",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 30,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cognition",
+              "url": "https://cognition.ai/",
+              "date": "2026-05-27",
+              "value": "Fully proprietary product and models (in-house SWE-1.5 line plus frontier models); no source code or model weights published"
+            }
+          ],
+          "methodology": "Source availability assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 61,
+      "criteria": {
+        "data_retention": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Devin Security Documentation",
+              "url": "https://devin.ai/security",
+              "date": "2026-05-01",
+              "value": "Session data and workspace snapshots retained in Cognition's cloud; enterprise contracts offer training opt-out and retention controls"
+            }
+          ],
+          "methodology": "Review of published retention practices and enterprise data controls",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Devin Security Documentation",
+              "url": "https://devin.ai/security",
+              "date": "2026-05-01",
+              "value": "SOC 2 Type II attestation and DPA availability for enterprise customers; GDPR posture depends on contractual terms"
+            }
+          ],
+          "methodology": "Compliance documentation assessment",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cognition - Devin Product Page",
+              "url": "https://devin.ai/",
+              "date": "2026-05-01",
+              "value": "Code is processed by Cognition's own SWE-1.5 model line and routed to third-party frontier models for some tasks"
+            }
+          ],
+          "methodology": "Data flow analysis of model routing between in-house and third-party providers",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 40,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Devin Documentation",
+              "url": "https://docs.devin.ai/",
+              "date": "2026-05-01",
+              "value": "Cloud-only service; no self-hosted or on-premises deployment, with VPC options limited to enterprise arrangements"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 66,
+      "criteria": {
+        "documentation_quality": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Devin Documentation",
+              "url": "https://docs.devin.ai/",
+              "date": "2026-05-01",
+              "value": "Well-organized docs covering onboarding, ACU model, integrations, Playbooks, and enterprise administration"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cognition - Devin Product Page",
+              "url": "https://devin.ai/",
+              "date": "2026-05-01",
+              "value": "Full visibility into Devin's plan, editor, shell, and browser in real time; complete session timeline is replayable"
+            }
+          ],
+          "methodology": "Review of session visibility, live workspace observation, and replay features",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Devin Documentation - Planning",
+              "url": "https://docs.devin.ai/",
+              "date": "2026-05-01",
+              "value": "Explicit upfront plans, step-by-step narration during execution, and PR descriptions explaining changes"
+            }
+          ],
+          "methodology": "Assessment of plan transparency and change justification quality",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 20,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cognition",
+              "url": "https://cognition.ai/",
+              "date": "2026-05-27",
+              "value": "Closed-source product; limited public benchmark reproducibility and no published model details beyond blog posts"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Cognition raises $1B at $26B valuation",
+              "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/",
+              "date": "2026-05-27",
+              "value": "Large and growing commercial user base (~$492M ARR reported); community is customer-driven rather than open-source contributor-driven"
+            }
+          ],
+          "methodology": "Community and ecosystem engagement analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 77,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Devin Documentation - Integrations",
+              "url": "https://docs.devin.ai/",
+              "date": "2026-05-01",
+              "value": "Assign tasks from Slack, GitHub issues, Jira, or Linear; Devin 2.0 added IDE-style interface and API access"
+            }
+          ],
+          "methodology": "Integration surface assessment across team workflows",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cognition - Devin Product Page",
+              "url": "https://devin.ai/",
+              "date": "2026-05-01",
+              "value": "Parallel cloud sessions allow teams to fan out many tasks simultaneously without local resource constraints"
+            }
+          ],
+          "methodology": "Scalability assessment of parallel cloud session model",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 62,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Devin Pricing",
+              "url": "https://devin.ai/pricing",
+              "date": "2026-05-01",
+              "value": "Core plan from $20 pay-as-you-go at $2.25/ACU (Devin 2.0, April 2025, down from $500/mo); Team $500/mo. ACU consumption varies widely by task complexity"
+            }
+          ],
+          "methodology": "Pricing model analysis; ACU-metered billing makes per-task costs hard to forecast",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Devin Documentation",
+              "url": "https://docs.devin.ai/",
+              "date": "2026-05-01",
+              "value": "Session dashboards, ACU usage tracking, and admin controls for team usage oversight"
+            }
+          ],
+          "methodology": "Monitoring and usage governance features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Cognition raises $1B at $26B valuation",
+              "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/",
+              "date": "2026-05-27",
+              "value": "Closed $1B+ round at $26B valuation (2026-05-27) with ~$492M ARR; acquired Windsurf 2025-07-14, signaling strong vendor viability"
+            }
+          ],
+          "methodology": "Vendor maturity and product stability assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 86,
+      "notes": "Purpose-built autonomous software engineer; excels at scoped tasks like migrations, bug fixes, test coverage, and PR-sized features"
+    },
+    "data-analysis": {
+      "overall": 70,
+      "notes": "Can write and run analysis scripts in its workspace, but is optimized for software engineering rather than analytics workflows"
+    },
+    "research-assistant": {
+      "overall": 68,
+      "notes": "Browser access enables technical research and documentation digging, though it is not designed for general research synthesis"
+    },
+    "education": {
+      "overall": 64,
+      "notes": "Replayable sessions showing plan and execution can teach engineering practice, but ACU costs make it expensive for learning"
+    }
+  },
+  "best_for": [
+    "Engineering teams delegating well-scoped tasks (migrations, bug fixes, test backfills) as autonomous PRs",
+    "Organizations wanting to fan out parallel coding tasks to cloud agents without local setup",
+    "Teams that assign work from Slack, Jira, or Linear and review results as pull requests",
+    "Companies preferring a fully managed, sandboxed cloud workspace over local agent execution"
+  ],
+  "strengths": [
+    "True end-to-end autonomy: plans, codes, tests, browses docs, and opens PRs in its own cloud workspace",
+    "Sandboxed cloud VMs isolate execution from user infrastructure",
+    "Interactive, editable plans and fully replayable session timelines provide strong traceability",
+    "Devin 2.0 pricing ($20 entry, $2.25/ACU) dramatically lowered the adoption barrier from the original $500/mo",
+    "Persistent Knowledge, Playbooks, and auto-generated Devin Wiki retain organizational context",
+    "Strong vendor trajectory: $26B valuation, ~$492M ARR, Windsurf acquisition (2025-07-14)"
+  ],
+  "limitations": [
+    "ACU-metered billing makes costs unpredictable, especially when the agent pursues unproductive paths",
+    "Fully proprietary stack with no self-hosted option; code must be processed in Cognition's cloud",
+    "Reliability drops on ambiguous or large unscoped tasks, requiring careful task decomposition",
+    "Prompt injection defenses for autonomous browsing are not publicly documented",
+    "Some workloads route to third-party frontier models, complicating data governance review",
+    "Output still requires human code review; unsupervised merging is not advisable"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_models": [
+      "Cognition SWE-1.5 model line (in-house)",
+      "Third-party frontier models for select tasks"
+    ],
+    "programming_languages": [
+      "Most major languages (Python, TypeScript, Java, Go, etc.)"
+    ],
+    "deployment_type": "Cloud (sandboxed VM workspaces)",
+    "tool_support": [
+      "Cloud editor and shell",
+      "Built-in browser",
+      "GitHub/GitLab integration",
+      "Slack, Jira, Linear",
+      "API access"
+    ],
+    "first_release": "2024 (limited), Devin 2.0 April 2025",
+    "pricing": "Core from $20 pay-as-you-go ($2.25/ACU); Team $500/mo; Enterprise custom",
+    "company_milestones": "Acquired Windsurf 2025-07-14; raised $1B+ at $26B valuation (closed 2026-05-27); ~$492M ARR"
+  },
+  "related_entities": [
+    "openai-codex",
+    "claude-code",
+    "github-copilot-coding-agent",
+    "google-jules",
+    "cursor-agent"
+  ],
+  "tags": [
+    "autonomous",
+    "software-engineering",
+    "cloud-agent",
+    "proprietary"
+  ]
+}

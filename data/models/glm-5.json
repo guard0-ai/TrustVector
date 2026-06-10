@@ -1,0 +1,644 @@
+{
+  "id": "glm-5",
+  "type": "model",
+  "name": "GLM-5",
+  "provider": "Z.ai (Zhipu AI)",
+  "version": "20260211",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Z.ai's MIT-licensed 744B-parameter MoE (40B active) with 77.8% SWE-bench Verified, 92.7% AIME 2026, and open-source leadership on BrowseComp and agentic benchmarks. Trained on 28.5T tokens with DeepSeek Sparse Attention.",
+  "website": "https://huggingface.co/zai-org/GLM-5",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 92,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "SWE-bench Verified",
+              "url": "https://huggingface.co/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "77.8% resolution rate"
+            },
+            {
+              "source": "Artificial Analysis independent evaluation",
+              "url": "https://artificialanalysis.ai/models/glm-5",
+              "date": "2026-03-01",
+              "value": "Top-tier open-weight coding performance, confirmed by independent harness"
+            }
+          ],
+          "methodology": "Industry-standard coding benchmarks with independent third-party verification",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "AIME 2026",
+              "url": "https://huggingface.co/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "92.7% on competition mathematics"
+            },
+            {
+              "source": "GPQA-Diamond",
+              "url": "https://huggingface.co/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "86.0% on PhD-level science questions"
+            }
+          ],
+          "methodology": "Graduate and competition-level reasoning benchmarks requiring multi-step problem solving",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Artificial Analysis",
+              "url": "https://artificialanalysis.ai/models/glm-5",
+              "date": "2026-03-01",
+              "value": "Open-source leader on BrowseComp, Vending Bench 2, and MCP-Atlas agentic benchmarks"
+            }
+          ],
+          "methodology": "Independent agentic and general-capability benchmarking across domains",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GLM-5 GitHub repository",
+              "url": "https://github.com/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "Stable behavior across agentic trajectories; reproducible deployment recipes published"
+            }
+          ],
+          "methodology": "Community testing with repeated prompts and long agent runs",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "2.6s",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Artificial Analysis",
+              "url": "https://artificialanalysis.ai/models/glm-5",
+              "date": "2026-03-01",
+              "value": "Typical first-party API response ~2.6s; DeepSeek Sparse Attention keeps long-context latency manageable"
+            }
+          ],
+          "methodology": "Median latency for API requests with standard prompt sizes",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p95": {
+          "value": "6.0s",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Artificial Analysis",
+              "url": "https://artificialanalysis.ai/models/glm-5",
+              "date": "2026-03-01",
+              "value": "p95 ~6.0s across diverse workloads"
+            }
+          ],
+          "methodology": "95th percentile response time across diverse workloads",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "200,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GLM-5 Model Card",
+              "url": "https://huggingface.co/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "200K token context window"
+            }
+          ],
+          "methodology": "Official specification from model card",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 95,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai Platform",
+              "url": "https://z.ai/",
+              "date": "2026-06-01",
+              "value": "First-party API generally stable; open weights enable self-hosted redundancy"
+            }
+          ],
+          "methodology": "Review of platform availability and self-hosting fallback options",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Among the strongest open-weight models released to date: 77.8% SWE-bench Verified, 92.7% AIME 2026, 86.0% GPQA-Diamond, with independent confirmation of open-source leadership on BrowseComp, Vending Bench 2, and MCP-Atlas."
+    },
+
+    "security": {
+      "overall_score": 80,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GLM-5 documentation",
+              "url": "https://github.com/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "Safety tuning applied; resilient in agentic browsing benchmarks but no dedicated third-party injection audit published"
+            }
+          ],
+          "methodology": "Review of safety documentation and community testing against OWASP LLM01 patterns",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community red-teaming",
+              "url": "https://huggingface.co/zai-org/GLM-5",
+              "date": "2026-03-15",
+              "value": "Standard alignment; open weights allow guardrail removal in derivatives"
+            }
+          ],
+          "methodology": "Testing against adversarial prompt datasets; deployer-dependent for self-hosted use",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai Privacy Policy",
+              "url": "https://z.ai/",
+              "date": "2026-02-11",
+              "value": "Standard data handling on first-party API; full control when self-hosted"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and self-hosting data-control options",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 81,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GLM-5 Model Card",
+              "url": "https://huggingface.co/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "Safety post-training; refusal behavior comparable to peer open frontier models"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai API Documentation",
+              "url": "https://docs.z.ai/",
+              "date": "2026-02-11",
+              "value": "API key authentication, HTTPS only, rate limiting; OpenAI-compatible endpoints"
+            }
+          ],
+          "methodology": "Review of API security features and best practices",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Solid for an open model; no published third-party security audit. Self-hosting shifts responsibility to the deployer."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 75,
+      "criteria": {
+        "data_residency": {
+          "value": "China (first-party Z.ai API); any jurisdiction when self-hosted or via Western hosts",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai Platform Documentation",
+              "url": "https://docs.z.ai/",
+              "date": "2026-02-11",
+              "value": "Zhipu/Z.ai is a China-based provider; first-party API data processed under Chinese jurisdiction"
+            },
+            {
+              "source": "OpenRouter availability",
+              "url": "https://openrouter.ai/models",
+              "date": "2026-03-01",
+              "value": "MIT weights hosted by Western inference providers, enabling non-China residency"
+            }
+          ],
+          "methodology": "Review of provider jurisdiction and third-party hosting options",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai Privacy Policy",
+              "url": "https://z.ai/",
+              "date": "2026-02-11",
+              "value": "Standard API data terms; self-hosting removes the concern entirely"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and data usage terms",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "Per Z.ai policy on first-party API (China jurisdiction); zero when self-hosted",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai Terms of Service",
+              "url": "https://z.ai/",
+              "date": "2026-02-11",
+              "value": "First-party retention governed by Chinese data regulations; self-hosted deployments retain nothing externally"
+            }
+          ],
+          "methodology": "Review of terms of service and deployment-dependent retention",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai Documentation",
+              "url": "https://docs.z.ai/",
+              "date": "2026-02-11",
+              "value": "Customer responsible for PII redaction; no managed PII tooling"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai public materials",
+              "url": "https://z.ai/",
+              "date": "2026-02-11",
+              "value": "No published SOC 2 / HIPAA / GDPR attestations for the first-party API; Western hosts may carry their own certifications"
+            }
+          ],
+          "methodology": "Verification of compliance certifications and audit reports",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Open weights on Hugging Face",
+              "url": "https://huggingface.co/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "MIT-licensed self-hosting gives complete data control and zero external retention"
+            }
+          ],
+          "methodology": "Review of self-hosting deployment options enabling zero retention",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "First-party Z.ai API operates under Chinese jurisdiction — a material caveat for Western regulated industries. The unencumbered MIT license makes self-hosting or Western-host deployment a clean mitigation."
+    },
+
+    "trust_transparency": {
+      "overall_score": 81,
+      "criteria": {
+        "explainability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GLM-5 documentation",
+              "url": "https://github.com/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "Reasoning traces and agentic tool-call logs inspectable; strong MCP-Atlas results reflect transparent tool use"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency and trajectory inspectability",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 81,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "BrowseComp results",
+              "url": "https://artificialanalysis.ai/models/glm-5",
+              "date": "2026-03-01",
+              "value": "Open-source leader on grounded web-research benchmark, indicating disciplined sourcing behavior"
+            }
+          ],
+          "methodology": "Testing on factual QA and grounded research benchmarks",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 75,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "GLM-5 Model Card",
+              "url": "https://huggingface.co/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "Limited published bias evaluation"
+            }
+          ],
+          "methodology": "Review of published bias benchmarks and community evaluations",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model behavior testing",
+              "url": "https://github.com/zai-org/GLM-5",
+              "date": "2026-03-15",
+              "value": "Expresses uncertainty adequately; no calibrated confidence outputs"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 89,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face model card and GitHub repo",
+              "url": "https://huggingface.co/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "Detailed disclosure: 744B/40B MoE, 256 experts, DeepSeek Sparse Attention, 28.5T pretraining tokens, full benchmark tables"
+            }
+          ],
+          "methodology": "Review of documentation completeness and clarity",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 79,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GLM-5 technical disclosure",
+              "url": "https://github.com/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "Pretraining scale (28.5T tokens) and recipe outlined; detailed data sources not disclosed"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GLM-5 Model Card",
+              "url": "https://huggingface.co/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "Built-in safety tuning; deployers of open weights must layer their own guardrails"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Above-average transparency for an open frontier model: architecture, training scale, and benchmarks well documented with independent verification. Bias and safety evaluations remain thin."
+    },
+
+    "operational_excellence": {
+      "overall_score": 83,
+      "criteria": {
+        "api_design_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Z.ai API Documentation",
+              "url": "https://docs.z.ai/",
+              "date": "2026-02-11",
+              "value": "OpenAI-compatible API with streaming, tool calling, structured output"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai GitHub organization",
+              "url": "https://github.com/zai-org",
+              "date": "2026-02-11",
+              "value": "Official repos with deployment recipes; OpenAI-compatible so mainstream SDKs work"
+            }
+          ],
+          "methodology": "Review of SDK quality, documentation, and maintenance",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GLM release history",
+              "url": "https://huggingface.co/zai-org",
+              "date": "2026-04-07",
+              "value": "Fast cadence: GLM-5.1 API launched 2026-03-27 with weights on 2026-04-07, same architecture; GLM-5 weights remain available"
+            }
+          ],
+          "methodology": "Review of versioning practices and weight availability across releases",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai Platform",
+              "url": "https://z.ai/",
+              "date": "2026-02-11",
+              "value": "Basic usage dashboard; self-hosted observability is deployer-built"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 79,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Z.ai community channels",
+              "url": "https://github.com/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "Active GitHub support and documentation; limited English-language enterprise support"
+            }
+          ],
+          "methodology": "Assessment of documentation, community, and support responsiveness",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Inference ecosystem",
+              "url": "https://openrouter.ai/models",
+              "date": "2026-03-01",
+              "value": "Day-one vLLM/SGLang support, OpenRouter and major Western host availability"
+            }
+          ],
+          "methodology": "Analysis of third-party hosting, integrations, and tooling",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MIT License",
+              "url": "https://github.com/zai-org/GLM-5",
+              "date": "2026-02-11",
+              "value": "Unencumbered MIT license, unrestricted commercial use and derivatives"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Clean MIT licensing and strong ecosystem support. Note the rapid successor cadence: GLM-5.1 (same architecture) shipped within two months; evaluate which version your hosts actually serve."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 93,
+      "notes": "77.8% SWE-bench Verified with independent verification; best-in-class open-weight coding at ~$0.60/$1.92 per 1M.",
+      "alternatives": ["kimi-k2-6", "claude-opus-4-8", "deepseek-v4"]
+    },
+    "customer-support": {
+      "overall": 82,
+      "notes": "Capable and inexpensive, but not specialized for support workflows.",
+      "alternatives": ["command-a-plus", "minimax-m2"]
+    },
+    "content-creation": {
+      "overall": 84,
+      "notes": "Strong long-form generation at very low cost.",
+      "alternatives": ["claude-opus-4-8", "kimi-k2-6"]
+    },
+    "data-analysis": {
+      "overall": 89,
+      "notes": "Excellent mathematical reasoning (92.7% AIME 2026) and agentic tool use for analysis pipelines.",
+      "alternatives": ["kimi-k2-6", "deepseek-v4"]
+    },
+    "research-assistant": {
+      "overall": 91,
+      "notes": "Open-source leader on BrowseComp and MCP-Atlas; strong grounded web research.",
+      "alternatives": ["kimi-k2-6", "claude-opus-4-8"]
+    },
+    "legal-compliance": {
+      "overall": 70,
+      "notes": "China-jurisdiction first-party API and absent Western certifications are blockers unless self-hosted.",
+      "alternatives": ["command-a-plus", "claude-opus-4-8"]
+    },
+    "healthcare": {
+      "overall": 68,
+      "notes": "Not recommended via first-party API; self-hosted deployment in a compliant environment is the only viable path.",
+      "alternatives": ["command-a-plus", "claude-opus-4-8"]
+    },
+    "financial-analysis": {
+      "overall": 86,
+      "notes": "Top-tier quantitative reasoning; regulated firms should self-host or use certified Western hosts.",
+      "alternatives": ["command-a-plus", "kimi-k2-6"]
+    },
+    "education": {
+      "overall": 88,
+      "notes": "Outstanding math and science tutoring (92.7% AIME, 86.0% GPQA-Diamond) at budget pricing.",
+      "alternatives": ["deepseek-v3-2", "kimi-k2-6"]
+    },
+    "creative-writing": {
+      "overall": 81,
+      "notes": "Competent prose; optimized for reasoning and agentic work rather than creative style.",
+      "alternatives": ["claude-opus-4-8", "minimax-m2"]
+    }
+  },
+
+  "strengths": [
+    "Frontier-competitive results: 77.8% SWE-bench Verified, 92.7% AIME 2026, 86.0% GPQA-Diamond",
+    "Independently verified open-source leadership on BrowseComp, Vending Bench 2, and MCP-Atlas",
+    "Unencumbered MIT license with full self-hosting rights",
+    "Efficient inference: 40B active of 744B total with DeepSeek Sparse Attention",
+    "Very competitive API pricing (~$0.60/$1.92 per 1M tokens)",
+    "Well-documented training scale (28.5T tokens) and architecture"
+  ],
+
+  "limitations": [
+    "First-party Z.ai API processes data under Chinese jurisdiction with limited Western compliance certifications",
+    "Text-only — no vision or audio modalities",
+    "Rapid successor cadence (GLM-5.1 within two months) creates version-tracking overhead",
+    "Limited published bias, safety, and red-team evaluations",
+    "Self-hosting a 744B MoE requires substantial GPU infrastructure",
+    "English-language enterprise support is thin compared to Western providers"
+  ],
+
+  "best_for": [
+    "Cost-sensitive coding and agentic engineering at near-frontier quality",
+    "Grounded web research and browsing agents (BrowseComp open-source leader)",
+    "Mathematical, scientific, and analytical workloads",
+    "Organizations wanting clean MIT-licensed weights for self-hosted data control"
+  ],
+
+  "not_recommended_for": [
+    "Regulated Western workloads (healthcare, legal, finance) on the first-party API",
+    "Multimodal applications requiring image or audio input",
+    "Teams without GPU infrastructure who also cannot accept China-jurisdiction processing"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "$0.60 per 1M tokens (approx.)",
+      "output": "$1.92 per 1M tokens (approx.)",
+      "notes": "First-party Z.ai API pricing; third-party hosts vary. Successor GLM-5.1 priced similarly.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 200000,
+    "languages": ["English", "Chinese", "Japanese", "Korean", "Spanish", "French", "German"],
+    "modalities": ["text"],
+    "api_endpoint": "https://api.z.ai/api/paas/v4/chat/completions",
+    "open_source": true,
+    "license": "MIT",
+    "architecture": "Mixture-of-Experts: 744B total / 40B active parameters, 256 experts, DeepSeek Sparse Attention; 28.5T pretraining tokens",
+    "parameters": "744B total / 40B active",
+    "release_date": "2026-02-11"
+  },
+
+  "related_entities": ["kimi-k2-6", "deepseek-v4", "deepseek-v3-2", "minimax-m2", "claude-opus-4-8"],
+
+  "tags": [
+    "coding",
+    "reasoning",
+    "open-source",
+    "mit-license",
+    "mixture-of-experts",
+    "agentic",
+    "cost-effective",
+    "chinese-provider",
+    "self-hostable"
+  ]
+}

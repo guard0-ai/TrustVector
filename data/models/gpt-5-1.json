@@ -4,9 +4,9 @@
   "name": "GPT-5.1",
   "provider": "OpenAI",
   "version": "gpt-5-1-1113",
-  "last_evaluated": "2025-11-17",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's latest flagship released Nov 2025 with adaptive reasoning (2-3x faster on simple tasks), 76.3% SWE-bench, new developer tools (apply_patch, shell), warmer tone.",
+  "description": "SUPERSEDED by GPT-5.2/5.4/5.5 (GPT-5.5 is the current flagship); gpt-5.1-chat-latest and gpt-5.1-codex variants shut down in the API 2026-07-23. Released Nov 2025 with adaptive reasoning (2-3x faster on simple tasks), 76.3% SWE-bench, developer tools (apply_patch, shell), warmer tone.",
   "website": "https://openai.com/index/gpt-5-1/",
 
   "trust_vector": {
@@ -450,6 +450,12 @@
               "url": "https://platform.openai.com/docs/api-reference/models",
               "date": "2025-01-01",
               "value": "Clear versioning with deprecation notices"
+            },
+            {
+              "source": "OpenAI Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-06-10",
+              "value": "gpt-5.1-chat-latest and gpt-5.1-codex variants API shutdown 2026-07-23; superseded by GPT-5.4/5.5"
             }
           ],
           "methodology": "Versioning policy review",
@@ -583,7 +589,8 @@
     "30-day data retention vs Anthropic's 0-day default",
     "Smaller context window (128K vs Claude's 200K)",
     "Premium pricing comparable to Claude",
-    "Slightly behind Claude on specialized coding benchmarks"
+    "Slightly behind Claude on specialized coding benchmarks",
+    "SUPERSEDED by GPT-5.4/5.5; gpt-5.1-chat-latest and gpt-5.1-codex variants API shutdown 2026-07-23"
   ],
 
   "best_for": [
@@ -631,9 +638,10 @@
     "parameters": "Not disclosed"
   },
 
-  "related_entities": ["gpt-5", "claude-sonnet-4-5", "claude-opus-4", "claude-haiku-4-5"],
+  "related_entities": ["gpt-5-5", "gpt-5-4", "gpt-5", "claude-sonnet-4-5", "claude-opus-4", "claude-haiku-4-5"],
 
   "tags": [
+    "superseded",
     "general-purpose",
     "multimodal",
     "low-latency",

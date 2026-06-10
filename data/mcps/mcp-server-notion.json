@@ -4,13 +4,13 @@
   "name": "MCP Notion Server",
   "provider": "Notion (Official)",
   "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Community-maintained MCP server for Notion workspace integration. Enables AI models to create, read, update pages and databases, manage blocks, and search content. Essential for AI-powered knowledge management, documentation, and collaborative workspace workflows.",
-  "website": "https://github.com/modelcontextprotocol/servers",
+  "description": "Notion's official MCP integration. Primary offering is the hosted MCP server at https://mcp.notion.com/mcp (Streamable HTTP and SSE transports, one-click OAuth), positioned as the successor to the open-source local @notionhq/notion-mcp-server (MIT, 4,407 stars), which remains available. Enables AI models to create, read, update pages and databases, manage blocks, and search workspace content.",
+  "website": "https://mcp.notion.com/mcp",
   "trust_vector": {
     "performance_reliability": {
-      "overall_score": 82,
+      "overall_score": 81,
       "criteria": {
         "page_operation_reliability": {
           "score": 88,
@@ -74,7 +74,7 @@
           "evidence": [
             {
               "source": "Implementation Review",
-              "url": "https://github.com/modelcontextprotocol/servers",
+              "url": "https://github.com/makenotion/notion-mcp-server",
               "date": "2025-11-16",
               "value": "Handles API errors with retry and timeout management"
             }
@@ -85,21 +85,27 @@
       }
     },
     "security": {
-      "overall_score": 71,
+      "overall_score": 74,
       "criteria": {
         "authentication_security": {
-          "score": 80,
+          "score": 88,
           "confidence": "high",
           "evidence": [
             {
               "source": "Notion Integration Authentication",
               "url": "https://developers.notion.com/docs/authorization",
               "date": "2025-11-16",
-              "value": "Uses integration tokens with workspace-level permissions"
+              "value": "Local server uses integration tokens with workspace-level permissions"
+            },
+            {
+              "source": "Notion Blog - Hosted MCP Server",
+              "url": "https://www.notion.com/blog/notions-hosted-mcp-server-an-inside-look",
+              "date": "2026-06-10",
+              "value": "Hosted server at mcp.notion.com/mcp uses one-click OAuth, eliminating manual integration-token handling"
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "token_exposure_risk": {
           "score": 65,
@@ -121,7 +127,7 @@
           "evidence": [
             {
               "source": "Security Analysis",
-              "url": "https://github.com/modelcontextprotocol/servers",
+              "url": "https://github.com/makenotion/notion-mcp-server",
               "date": "2025-11-16",
               "value": "AI can create, modify, and archive pages and databases"
             }
@@ -196,7 +202,7 @@
           "evidence": [
             {
               "source": "Privacy Analysis",
-              "url": "https://github.com/modelcontextprotocol/servers",
+              "url": "https://github.com/makenotion/notion-mcp-server",
               "date": "2025-11-16",
               "value": "Database schemas and property values exposed"
             }
@@ -210,7 +216,7 @@
           "evidence": [
             {
               "source": "Privacy Analysis",
-              "url": "https://github.com/modelcontextprotocol/servers",
+              "url": "https://github.com/makenotion/notion-mcp-server",
               "date": "2025-11-16",
               "value": "Workspace structure and page hierarchy may be revealed"
             }
@@ -249,21 +255,21 @@
       }
     },
     "trust_transparency": {
-      "overall_score": 79,
+      "overall_score": 81,
       "criteria": {
         "documentation_quality": {
-          "score": 76,
-          "confidence": "medium",
+          "score": 85,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Notion MCP Docs",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Good documentation but community-maintained"
+              "source": "Notion Blog - Hosted MCP Server",
+              "url": "https://www.notion.com/blog/notions-hosted-mcp-server-an-inside-look",
+              "date": "2026-06-10",
+              "value": "Officially documented by Notion, including architecture details of the hosted server and guidance for the local open-source server"
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "operation_visibility": {
           "score": 82,
@@ -284,14 +290,14 @@
           "confidence": "high",
           "evidence": [
             {
-              "source": "GitHub Repository",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Open source community implementation"
+              "source": "Notion MCP Server GitHub Repository",
+              "url": "https://github.com/makenotion/notion-mcp-server",
+              "date": "2026-06-10",
+              "value": "Local server (@notionhq/notion-mcp-server) is open source under MIT with 4,407 GitHub stars; hosted server internals documented in Notion's engineering blog"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "api_coverage_clarity": {
           "score": 70,
@@ -299,7 +305,7 @@
           "evidence": [
             {
               "source": "MCP Server Documentation",
-              "url": "https://github.com/modelcontextprotocol/servers",
+              "url": "https://github.com/makenotion/notion-mcp-server",
               "date": "2025-11-16",
               "value": "Clear but incomplete documentation of supported operations"
             }
@@ -318,13 +324,19 @@
           "evidence": [
             {
               "source": "Setup Documentation",
-              "url": "https://github.com/modelcontextprotocol/servers",
+              "url": "https://github.com/makenotion/notion-mcp-server",
               "date": "2025-11-16",
-              "value": "Requires Notion integration creation and token configuration"
+              "value": "Local server requires Notion integration creation and token configuration"
+            },
+            {
+              "source": "Notion Blog - Hosted MCP Server",
+              "url": "https://www.notion.com/blog/notions-hosted-mcp-server-an-inside-look",
+              "date": "2026-06-10",
+              "value": "Hosted server at mcp.notion.com/mcp needs no local install: Streamable HTTP/SSE transports with one-click OAuth"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "api_performance": {
           "score": 78,
@@ -360,7 +372,7 @@
           "evidence": [
             {
               "source": "Notion MCP Server",
-              "url": "https://github.com/modelcontextprotocol/servers",
+              "url": "https://github.com/makenotion/notion-mcp-server",
               "date": "2025-11-16",
               "value": "Covers pages, databases, blocks, and search operations"
             }
@@ -369,18 +381,18 @@
           "last_verified": "2025-11-09"
         },
         "community_support": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 80,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "GitHub Community",
-              "url": "https://github.com/modelcontextprotocol/servers/discussions",
-              "date": "2025-11-16",
-              "value": "Community-maintained with moderate activity"
+              "source": "Notion MCP Server GitHub Repository",
+              "url": "https://github.com/makenotion/notion-mcp-server",
+              "date": "2026-06-10",
+              "value": "Officially maintained by Notion; open-source local server has 4,407 GitHub stars, and the hosted server is operated by Notion as the primary offering"
             }
           ],
           "methodology": "Community support assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -390,7 +402,7 @@
     "Built on reliable Notion API with good uptime",
     "Excellent for knowledge management and documentation workflows",
     "Integration permissions provide page-level access control",
-    "Open source community implementation",
+    "Official hosted server (mcp.notion.com/mcp) with one-click OAuth; open-source local server (MIT, 4,407 stars) still available",
     "Archived pages are recoverable (not permanently deleted)"
   ],
   "limitations": [
@@ -399,7 +411,8 @@
     "Workspace structure and page hierarchy may be revealed",
     "Subject to strict rate limits (3 requests/second average)",
     "Database schemas and property values exposed",
-    "User and collaborator information accessible"
+    "User and collaborator information accessible",
+    "STATUS 2026-06-10: Notion's hosted server (mcp.notion.com/mcp) is now the primary, recommended offering; the local @notionhq/notion-mcp-server remains available but workspace traffic on the hosted path routes through Notion's infrastructure"
   ],
   "metadata": {
     "license": "MIT",
@@ -411,11 +424,19 @@
       "Python"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/modelcontextprotocol/servers",
+    "github_repo": "https://github.com/makenotion/notion-mcp-server",
+    "github_stars": 4407,
     "api_dependency": "Notion API, Notion Client SDK",
-    "authentication": "Notion Integration Token",
+    "authentication": "OAuth (hosted at mcp.notion.com/mcp) or Notion Integration Token (local server)",
+    "remote_endpoint": "https://mcp.notion.com/mcp",
+    "transport_types": [
+      "streamable-http (hosted)",
+      "sse (hosted)",
+      "stdio (local)"
+    ],
+    "package_name": "@notionhq/notion-mcp-server",
     "first_release": "2024-11",
-    "maintained_by": "Community"
+    "maintained_by": "Notion"
   },
   "use_case_ratings": {
     "code-generation": {
@@ -468,6 +489,8 @@
     "productivity",
     "notes",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "official",
+    "remote-server"
   ]
 }

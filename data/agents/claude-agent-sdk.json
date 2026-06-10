@@ -1,0 +1,465 @@
+{
+  "id": "claude-agent-sdk",
+  "type": "agent",
+  "name": "Claude Agent SDK",
+  "provider": "Anthropic",
+  "version": "0.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "SDK exposing Claude Code's production agent harness (tool loop, permission system, subagents, MCP) for building general-purpose agents in TypeScript and Python. Renamed from Claude Code SDK in September 2025.",
+  "website": "https://code.claude.com/docs/en/agent-sdk/overview",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 86,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK overview",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Reuses the same battle-tested agent harness that powers Claude Code, inheriting its task-completion behavior"
+            }
+          ],
+          "methodology": "Evaluation of agents built on the SDK harness across coding and non-coding tasks",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Built-in file, bash, and web tools plus custom tools and MCP servers with a managed agentic tool loop"
+            }
+          ],
+          "methodology": "Testing of built-in tool loop, custom tool definitions, and MCP server integration",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Automatic context management and compaction enable long-horizon multi-step agent runs"
+            }
+          ],
+          "methodology": "Long-horizon agent task evaluation using the SDK's managed loop and compaction",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK sessions documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/sessions",
+              "date": "2026-04-20",
+              "value": "Session persistence and resume, CLAUDE.md-style memory files, and automatic compaction of long contexts"
+            }
+          ],
+          "methodology": "Review of session resume, memory file support, and context compaction behavior",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Harness retries and self-corrects on tool failures; hooks allow custom failure handling"
+            }
+          ],
+          "methodology": "Observed recovery from tool errors and failed commands in SDK-built agents",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK subagents documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/subagents",
+              "date": "2026-04-20",
+              "value": "First-class subagents with isolated contexts, custom prompts, and per-agent tool restrictions"
+            }
+          ],
+          "methodology": "Testing of programmatic subagent definition and parallel delegation",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 78,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK permissions documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/sdk-permissions",
+              "date": "2026-04-20",
+              "value": "Inherits Claude Code's sandboxing support, including OS-level filesystem and network isolation for bash"
+            }
+          ],
+          "methodology": "Review of inherited sandbox configuration and bash isolation options",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK permissions documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/sdk-permissions",
+              "date": "2026-04-20",
+              "value": "Programmatic permission modes, allow/deny rules, canUseTool callbacks, and hooks for fine-grained control"
+            }
+          ],
+          "methodology": "Assessment of permission rules, programmatic approval callbacks, and hook-based gating",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Permission gating and sandboxing mitigate injection impact, but defenses against untrusted content depend on developer configuration"
+            }
+          ],
+          "methodology": "Review of documented mitigations and developer responsibility for untrusted input handling",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK sessions documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/sessions",
+              "date": "2026-04-20",
+              "value": "Sessions and subagents maintain isolated contexts; deployment isolation is the integrator's responsibility"
+            }
+          ],
+          "methodology": "Architecture review of session/subagent context isolation in self-hosted deployments",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 60,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "@anthropic-ai/claude-agent-sdk on npm",
+              "url": "https://www.npmjs.com/package/@anthropic-ai/claude-agent-sdk",
+              "date": "2026-06-01",
+              "value": "Distributed under Anthropic Commercial Terms (proprietary); SDK wrapper code inspectable but the underlying harness is closed"
+            }
+          ],
+          "methodology": "License and source availability review of npm/PyPI packages",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 74,
+      "criteria": {
+        "data_retention": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic privacy policy",
+              "url": "https://www.anthropic.com/legal/privacy",
+              "date": "2026-03-01",
+              "value": "API traffic not used for training by default; agent state and transcripts stay on the integrator's infrastructure"
+            }
+          ],
+          "methodology": "Review of Anthropic API retention terms and local-state architecture",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Trust Center",
+              "url": "https://trust.anthropic.com/",
+              "date": "2026-03-01",
+              "value": "SOC 2 Type II and GDPR-aligned DPA available; Bedrock/Vertex routing supports regional data residency"
+            }
+          ],
+          "methodology": "Compliance certification review including cloud-provider routing options",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Data flows only to the configured Claude endpoint (Anthropic API, Bedrock, or Vertex AI)"
+            }
+          ],
+          "methodology": "Data flow analysis across supported model endpoints",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Harness runs entirely on your infrastructure, but inference requires Claude via API, Bedrock, or Vertex; no local models"
+            }
+          ],
+          "methodology": "Deployment options assessment for self-hosted harness with cloud-only inference",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 78,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Thorough TypeScript and Python guides covering permissions, subagents, MCP, sessions, and deployment"
+            }
+          ],
+          "methodology": "Documentation completeness review across both language SDKs",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Streaming message API surfaces every tool call and result; hooks enable custom audit logging"
+            }
+          ],
+          "methodology": "Review of message stream observability and hook-based audit trails",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Agent reasoning, tool intents, and permission requests are exposed in the streamed transcript"
+            }
+          ],
+          "methodology": "Assessment of streamed reasoning visibility and permission-request context",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "@anthropic-ai/claude-agent-sdk on npm",
+              "url": "https://www.npmjs.com/package/@anthropic-ai/claude-agent-sdk",
+              "date": "2026-06-01",
+              "value": "Proprietary license (Anthropic Commercial Terms); package code visible but not open source"
+            }
+          ],
+          "methodology": "Open source assessment of SDK packages and underlying harness",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK ecosystem",
+              "url": "https://www.npmjs.com/package/@anthropic-ai/claude-agent-sdk",
+              "date": "2026-06-01",
+              "value": "High npm download volume, frequent releases, and growing ecosystem of SDK-built agents since the 2025-09-29 rename"
+            }
+          ],
+          "methodology": "Community engagement analysis via package downloads, release cadence, and ecosystem projects",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 80,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK quickstart",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Single package install for TypeScript or Python; minimal code to launch a fully tool-equipped agent"
+            }
+          ],
+          "methodology": "Integration complexity assessment from install to first working agent",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Stateless harness instances scale horizontally; throughput bounded by Claude API rate limits"
+            }
+          ],
+          "methodology": "Assessment of horizontal scaling patterns and API rate limit constraints",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic API pricing",
+              "url": "https://www.anthropic.com/pricing",
+              "date": "2026-05-01",
+              "value": "Free SDK; costs are pay-as-you-go Claude tokens, which vary widely with agent autonomy and task length"
+            }
+          ],
+          "methodology": "Pricing model analysis of token-based costs for long-running agents",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Per-message usage/cost reporting and hooks for custom telemetry; full APM requires external tooling"
+            }
+          ],
+          "methodology": "Review of built-in usage reporting and integration points for external observability",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Agent SDK overview",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-05-15",
+              "value": "Same harness running Claude Code in production at scale; renamed and generalized for agents on 2025-09-29"
+            }
+          ],
+          "methodology": "Maturity assessment based on shared production harness and release stability",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 91,
+      "notes": "Inherits Claude Code's coding harness; ideal for building custom coding agents and CI bots"
+    },
+    "research-assistant": {
+      "overall": 85,
+      "notes": "Strong general-agent harness for research workflows with web, file, and MCP tools"
+    },
+    "customer-support": {
+      "overall": 80,
+      "notes": "Permission system and subagents suit support automation; requires custom integration work"
+    },
+    "data-analysis": {
+      "overall": 82,
+      "notes": "Bash and file tools enable scripted analysis agents with auditable execution"
+    }
+  },
+  "best_for": [
+    "Developers building production agents on Claude without writing their own tool loop",
+    "Teams extending Claude Code workflows into custom applications and services",
+    "Enterprises needing permissioned, auditable agents on Anthropic API, Bedrock, or Vertex",
+    "Builders who want subagents, hooks, and MCP out of the box"
+  ],
+  "strengths": [
+    "Production-proven harness shared with Claude Code (tool loop, compaction, retries)",
+    "Fine-grained permission system with allow/deny rules, callbacks, hooks, and sandboxing",
+    "First-class subagents and MCP support for composable agent systems",
+    "Both TypeScript and Python SDKs with feature parity",
+    "Automatic context management enables long-running agents",
+    "Runs on Anthropic API, Amazon Bedrock, or Google Vertex AI"
+  ],
+  "limitations": [
+    "Proprietary license (Anthropic Commercial Terms); not open source",
+    "Claude models only; no third-party or local model support",
+    "Token costs for autonomous agents can be hard to forecast",
+    "Heavier runtime footprint than thin LLM client libraries",
+    "Security posture depends on integrator configuring permissions and sandboxing correctly"
+  ],
+  "metadata": {
+    "license": "Proprietary (Anthropic Commercial Terms)",
+    "supported_models": [
+      "Claude via Anthropic API",
+      "Claude via Amazon Bedrock",
+      "Claude via Google Vertex AI"
+    ],
+    "programming_languages": [
+      "TypeScript",
+      "Python"
+    ],
+    "deployment_type": "Self-hosted SDK (cloud inference)",
+    "tool_support": [
+      "Built-in file, bash, and web tools",
+      "Custom tools",
+      "MCP servers",
+      "Hooks",
+      "Subagents"
+    ],
+    "first_release": "2025 (as Claude Code SDK); renamed Claude Agent SDK 2025-09-29",
+    "pricing": "Free SDK; pay-as-you-go Claude token costs",
+    "packages": [
+      "@anthropic-ai/claude-agent-sdk (npm)",
+      "claude-agent-sdk (PyPI)"
+    ]
+  },
+  "related": [
+    "claude-code",
+    "openai-agents-sdk",
+    "langgraph-agent",
+    "google-adk",
+    "microsoft-agent-framework"
+  ],
+  "tags": [
+    "agent-sdk",
+    "anthropic",
+    "framework"
+  ]
+}

@@ -4,9 +4,9 @@
   "name": "MCP Fetch Server",
   "provider": "Anthropic",
   "version": "2025.4.6",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Official Anthropic MCP server for fetching web content and converting HTML to markdown. Enables AI models to retrieve and process web pages, documentation, and online resources. Essential for research, content analysis, and web-based workflows.",
+  "description": "Official MCP reference server for fetching web content and converting HTML to markdown. Enables AI models to retrieve and process web pages, documentation, and online resources. One of the seven reference servers that remain actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09 (latest spec 2025-11-25).",
   "website": "https://modelcontextprotocol.io/docs/servers/fetch",
   "trust_vector": {
     "performance_reliability": {
@@ -363,10 +363,16 @@
               "url": "https://github.com/modelcontextprotocol/servers/discussions",
               "date": "2025-11-16",
               "value": "Widely adopted as core MCP server for web content access"
+            },
+            {
+              "source": "Anthropic - Donating MCP to the Agentic AI Foundation",
+              "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
+              "date": "2025-12-09",
+              "value": "fetch is one of the seven reference servers still actively maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -374,7 +380,7 @@
   "strengths": [
     "Simple, zero-configuration setup for basic web content fetching",
     "High-quality HTML to Markdown conversion using Turndown library",
-    "Open source with active Anthropic support and maintenance",
+    "Open source and actively maintained under the MCP project (Agentic AI Foundation)",
     "Reliable HTTP fetching with timeout and error handling",
     "Respects robots.txt and implements ethical web scraping practices",
     "Excellent documentation and integration with MCP ecosystem"
@@ -385,7 +391,8 @@
     "No built-in authentication for paywalled or restricted content",
     "No malicious content scanning or sanitization",
     "Performance dependent on target website responsiveness",
-    "Basic rate limiting may cause issues with aggressive scraping"
+    "Basic rate limiting may cause issues with aggressive scraping",
+    "STATUS 2026-06-10: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); governance now under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -402,7 +409,7 @@
     "api_dependency": "HTTP/HTTPS, Turndown",
     "authentication": "None required",
     "first_release": "2024-11",
-    "maintained_by": "Anthropic",
+    "maintained_by": "MCP project (Agentic AI Foundation / Linux Foundation since 2025-12-09)",
     "status": "Official - Active",
     "transport_types": [
       "stdio"
@@ -462,6 +469,8 @@
     "http",
     "api",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "official",
+    "reference-server"
   ]
 }

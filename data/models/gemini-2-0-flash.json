@@ -4,9 +4,9 @@
   "name": "Gemini 2.0 Flash",
   "provider": "Google",
   "version": "20251101",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Fast and efficient multimodal AI model from Google achieving 53.6% on SWE-bench and 62.1% on MMLU. Optimized for speed with strong vision capabilities and real-time applications.",
+  "description": "SHUT DOWN: Google shut down the Gemini 2.0 Flash family on 2026-06-01; the model is no longer served via the Gemini API. Historically a fast, efficient multimodal model (53.6% SWE-bench, 62.1% MMLU) optimized for speed and vision. Migrate to Gemini 3.5 Flash for equivalent fast multimodal workloads.",
   "website": "https://deepmind.google/technologies/gemini/",
   "trust_vector": {
     "performance_reliability": {
@@ -410,7 +410,7 @@
       "notes": "Good transparency with strong safety guardrails. Standard explainability for a Flash model."
     },
     "operational_excellence": {
-      "overall_score": 92,
+      "overall_score": 89,
       "criteria": {
         "api_design_quality": {
           "score": 93,
@@ -441,7 +441,7 @@
           "last_verified": "2025-11-08"
         },
         "versioning_policy": {
-          "score": 91,
+          "score": 79,
           "confidence": "high",
           "evidence": [
             {
@@ -449,6 +449,12 @@
               "url": "https://cloud.google.com/apis/design/versioning",
               "date": "2025-11-01",
               "value": "Clear versioning policy"
+            },
+            {
+              "source": "Gemini API Changelog",
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "date": "2026-06-10",
+              "value": "Gemini 2.0 Flash family shut down 2026-06-01; no longer served"
             }
           ],
           "methodology": "Review of versioning practices",
@@ -483,7 +489,7 @@
           "last_verified": "2025-11-08"
         },
         "ecosystem_maturity": {
-          "score": 93,
+          "score": 83,
           "confidence": "high",
           "evidence": [
             {
@@ -511,7 +517,7 @@
           "last_verified": "2025-11-08"
         }
       },
-      "notes": "Excellent operational maturity leveraging Google Cloud. Mature ecosystem with comprehensive support."
+      "notes": "Model shut down 2026-06-01 and no longer served. Versioning and ecosystem scores reduced to reflect shutdown."
     }
   },
   "use_case_ratings": {
@@ -607,7 +613,8 @@
     "Limited explainability compared to reasoning models",
     "Training data transparency could be improved",
     "May not be suitable for highly complex reasoning tasks",
-    "Moderate hallucination rates"
+    "Moderate hallucination rates",
+    "SHUT DOWN 2026-06-01: Gemini 2.0 Flash family is no longer served; migrate to Gemini 3.5 Flash"
   ],
   "best_for": [
     "Real-time applications requiring fast responses",
@@ -656,11 +663,13 @@
     "parameters": "Not disclosed"
   },
   "related_entities": [
+    "gemini-3-5-flash",
     "gemini-2-5-pro",
     "claude-haiku-4-5",
     "gpt-5"
   ],
   "tags": [
+    "retired",
     "fast",
     "multimodal",
     "vision",

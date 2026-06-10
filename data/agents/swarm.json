@@ -4,9 +4,9 @@
   "name": "OpenAI Swarm",
   "provider": "OpenAI",
   "version": "Experimental (Deprecated)",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Experimental educational framework from OpenAI for building multi-agent systems with lightweight orchestration. Demonstrates ergonomic patterns for agent coordination and handoffs using simple Python primitives.",
+  "description": "DEPRECATED: archived since 2025-03-11; the README redirects users to the OpenAI Agents SDK as the production successor. Swarm was an experimental educational framework from OpenAI for multi-agent orchestration, demonstrating agent coordination and handoff patterns with simple Python primitives. Not maintained; do not use for new projects.",
   "website": "https://github.com/openai/swarm",
   "trust_vector": {
     "performance_reliability": {
@@ -324,7 +324,7 @@
       }
     },
     "operational_excellence": {
-      "overall_score": 68,
+      "overall_score": 69,
       "criteria": {
         "ease_of_use": {
           "score": 85,
@@ -341,7 +341,7 @@
           "last_verified": "2025-11-09"
         },
         "production_readiness": {
-          "score": 45,
+          "score": 25,
           "confidence": "high",
           "evidence": [
             {
@@ -349,10 +349,17 @@
               "url": "https://github.com/openai/swarm",
               "date": "2024-10-01",
               "value": "Explicitly not recommended for production use"
+            },
+            {
+              "source": "GitHub Repository Status",
+              "url": "https://github.com/openai/swarm",
+              "date": "2026-06-10",
+              "value": "Repository deprecated/archived since 2025-03-11; README redirects to the OpenAI Agents SDK as the production successor"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10",
+          "notes": "Score reduced: project archived since 2025-03-11 with no further maintenance"
         },
         "scalability": {
           "score": 65,
@@ -427,7 +434,8 @@
     "Limited features compared to production frameworks",
     "No built-in monitoring, error handling, or scaling features",
     "Minimal documentation beyond examples",
-    "Not actively maintained for production use cases"
+    "Not actively maintained for production use cases",
+    "Deprecated/archived since 2025-03-11; README directs users to the OpenAI Agents SDK"
   ],
   "metadata": {
     "license": "MIT",
@@ -498,10 +506,14 @@
     "Teams learning agent handoff patterns and routines",
     "Researchers experimenting with ergonomic agent orchestration"
   ],
+  "related_entities": [
+    "openai-agents-sdk"
+  ],
   "tags": [
     "openai",
     "assistants",
     "experimental",
-    "open-source"
+    "open-source",
+    "deprecated"
   ]
 }

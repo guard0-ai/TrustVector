@@ -1,0 +1,454 @@
+{
+  "id": "google-jules",
+  "type": "agent",
+  "name": "Google Jules",
+  "provider": "Google",
+  "version": "GA (2025-08-06)",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Asynchronous autonomous coding agent from Google. Jules clones a repository into an isolated Google Cloud VM, plans and writes code in the background, runs tests, and opens pull requests for human review. Powered by Gemini 2.5/3 models.",
+  "website": "https://jules.google/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 76,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Blog - Jules now available",
+              "url": "https://blog.google/technology/google-labs/jules-now-available/",
+              "date": "2025-08-06",
+              "value": "GA after public beta with hundreds of thousands of tasks completed; handles bug fixes, version bumps, tests, and feature work"
+            }
+          ],
+          "methodology": "Assessment of reported task outcomes and hands-on PR quality review",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 79,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Documentation",
+              "url": "https://jules.google/docs",
+              "date": "2026-06-01",
+              "value": "Full VM environment with shell access, dependency installation, environment setup scripts, and test execution"
+            }
+          ],
+          "methodology": "VM tooling and environment setup reliability assessment",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Jules Product Page",
+              "url": "https://jules.google/",
+              "date": "2026-06-01",
+              "value": "Presents an explicit plan with reasoning before executing; users can review and steer the plan before and during execution"
+            }
+          ],
+          "methodology": "Plan generation and decomposition quality review",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Documentation",
+              "url": "https://jules.google/docs",
+              "date": "2026-06-01",
+              "value": "Per-repo environment configuration and snapshots persist across tasks; memory feature retains repo-specific preferences and corrections"
+            }
+          ],
+          "methodology": "Cross-task context persistence evaluation",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Changelog",
+              "url": "https://jules.google/docs/changelog",
+              "date": "2026-06-01",
+              "value": "Runs tests in the VM and iterates on failures; users can intervene mid-task via chat to correct course"
+            }
+          ],
+          "methodology": "Failure handling and iteration behavior testing",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Product Page",
+              "url": "https://jules.google/",
+              "date": "2026-06-01",
+              "value": "Single autonomous agent per task; supports concurrent independent tasks (3-60 depending on plan) but no multi-agent orchestration"
+            }
+          ],
+          "methodology": "Concurrency and orchestration capability assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 71,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Blog - Jules now available",
+              "url": "https://blog.google/technology/google-labs/jules-now-available/",
+              "date": "2025-08-06",
+              "value": "Each task runs in an isolated, ephemeral Google Cloud VM, separating agent execution from user machines and other tasks"
+            }
+          ],
+          "methodology": "Execution isolation architecture review",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Documentation",
+              "url": "https://jules.google/docs",
+              "date": "2026-06-01",
+              "value": "GitHub App installation with per-repository access selection; changes land on branches as pull requests"
+            }
+          ],
+          "methodology": "Repository permission model assessment",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Product Page",
+              "url": "https://jules.google/",
+              "date": "2026-06-01",
+              "value": "Human PR review gate plus plan approval limit blast radius; repository content itself remains an injection vector"
+            }
+          ],
+          "methodology": "Injection surface review focusing on autonomy boundaries and human gates",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Documentation",
+              "url": "https://jules.google/docs",
+              "date": "2026-06-01",
+              "value": "Per-task VM isolation keeps repository data separated between tasks and tenants"
+            }
+          ],
+          "methodology": "Tenant and task isolation review",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Jules Product Page",
+              "url": "https://jules.google/",
+              "date": "2026-06-01",
+              "value": "Proprietary closed-source service; only client tooling (Jules Tools CLI) and docs are public"
+            }
+          ],
+          "methodology": "Source availability review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 58,
+      "criteria": {
+        "data_retention": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Documentation - Privacy",
+              "url": "https://jules.google/docs",
+              "date": "2026-06-01",
+              "value": "Google states private repository code is not used to train models; data handling governed by Google's privacy terms"
+            }
+          ],
+          "methodology": "Privacy terms and data handling review",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Privacy Policy",
+              "url": "https://policies.google.com/privacy",
+              "date": "2026-06-01",
+              "value": "Covered by Google's general privacy framework; lacks dedicated enterprise compliance attestations of Google Cloud products"
+            }
+          ],
+          "methodology": "Compliance posture assessment",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Documentation",
+              "url": "https://jules.google/docs",
+              "date": "2026-06-01",
+              "value": "Full repository contents are cloned to Google-managed cloud VMs and processed by Gemini models"
+            }
+          ],
+          "methodology": "Data flow analysis",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 25,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Jules Product Page",
+              "url": "https://jules.google/",
+              "date": "2026-06-01",
+              "value": "Cloud-only service; no self-hosted or on-premises deployment option"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 69,
+      "criteria": {
+        "documentation_quality": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Jules Documentation",
+              "url": "https://jules.google/docs",
+              "date": "2026-06-01",
+              "value": "Clear docs covering setup, environment configuration, API, Jules Tools CLI, and changelog"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Jules Product Page",
+              "url": "https://jules.google/",
+              "date": "2026-06-01",
+              "value": "Shows its plan, reasoning, file diffs, and activity feed during execution; all changes arrive as reviewable PRs"
+            }
+          ],
+          "methodology": "Execution visibility assessment",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Blog - Jules now available",
+              "url": "https://blog.google/technology/google-labs/jules-now-available/",
+              "date": "2025-08-06",
+              "value": "Upfront plan with per-step reasoning that users approve or modify before code changes are made"
+            }
+          ],
+          "methodology": "Explainability features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 30,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Jules Product Page",
+              "url": "https://jules.google/",
+              "date": "2026-06-01",
+              "value": "Proprietary service built on closed Gemini models; core agent is not open source"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Changelog",
+              "url": "https://jules.google/docs/changelog",
+              "date": "2026-06-01",
+              "value": "Frequent feature updates since GA (API, CLI, memory, GitHub issues integration) and active user community"
+            }
+          ],
+          "methodology": "Release cadence and community engagement analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 79,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Jules Product Page",
+              "url": "https://jules.google/",
+              "date": "2026-06-01",
+              "value": "Connect GitHub, pick a repo, write a prompt; also triggerable from GitHub issues by assigning a label, plus API and CLI"
+            }
+          ],
+          "methodology": "Onboarding and integration assessment",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Pricing",
+              "url": "https://jules.google/",
+              "date": "2026-06-01",
+              "value": "Concurrent task limits by plan: 3 concurrent on free, 15 on Pro, 60 on Ultra; cloud VMs scale per task"
+            }
+          ],
+          "methodology": "Concurrency and quota analysis",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Jules Pricing",
+              "url": "https://jules.google/",
+              "date": "2026-06-01",
+              "value": "Flat subscription tiers: Free (15 tasks/day, 3 concurrent), Google AI Pro $19.99/mo (~100 tasks/day), AI Ultra (~300 tasks/day)"
+            }
+          ],
+          "methodology": "Pricing model analysis",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Jules Documentation - API",
+              "url": "https://jules.google/docs",
+              "date": "2026-06-01",
+              "value": "Activity feed, task history, and API for programmatic task tracking; lacks enterprise audit log integrations"
+            }
+          ],
+          "methodology": "Monitoring features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Blog - Jules now available",
+              "url": "https://blog.google/technology/google-labs/jules-now-available/",
+              "date": "2025-08-06",
+              "value": "Exited Google Labs beta to general availability on 2025-08-06 with paid plans and continued feature investment"
+            }
+          ],
+          "methodology": "Product maturity assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 86,
+      "notes": "Purpose-built for asynchronous coding tasks: bug fixes, tests, dependency bumps, and features delivered as PRs"
+    },
+    "data-analysis": {
+      "overall": 68,
+      "notes": "Can write and run analysis scripts in its VM, but the workflow is optimized for repository changes, not analytics"
+    },
+    "education": {
+      "overall": 72,
+      "notes": "Visible plans and reasoning make it a useful learning aid; free tier suits students"
+    },
+    "research-assistant": {
+      "overall": 64,
+      "notes": "Limited to codebase-scoped investigation; not designed for general research"
+    }
+  },
+  "best_for": [
+    "Developers offloading routine coding chores (tests, bumps, bug fixes) to a background agent",
+    "Teams wanting parallel asynchronous tasks without occupying a local IDE",
+    "Solo developers and startups using the free or Google AI Pro tiers",
+    "GitHub-centric workflows where every change must arrive as a reviewable PR"
+  ],
+  "strengths": [
+    "Strong isolation: every task runs in an ephemeral Google Cloud VM",
+    "Transparent plans with reasoning that users approve before execution",
+    "Human PR review gate on all changes limits autonomous blast radius",
+    "Predictable flat-rate pricing with a usable free tier (15 tasks/day)",
+    "Asynchronous and parallel: fire-and-forget tasks with mid-task steering",
+    "API, CLI (Jules Tools), and GitHub issue-label triggers for automation"
+  ],
+  "limitations": [
+    "Proprietary, cloud-only service with no self-hosted option",
+    "Full repository contents are uploaded to Google-managed VMs",
+    "Daily task limits even on paid tiers (~100/day Pro, ~300/day Ultra)",
+    "Locked to Gemini models with no model choice",
+    "GitHub-focused; weaker support for other source forges",
+    "Lacks enterprise compliance attestations and audit tooling of Google Cloud products"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_models": [
+      "Gemini 2.5 Pro",
+      "Gemini 3 (per Google updates)"
+    ],
+    "programming_languages": [
+      "Most major languages (Python, JavaScript/TypeScript, Java, Go, Rust, and more)"
+    ],
+    "deployment_type": "Cloud-only SaaS (isolated Google Cloud VMs per task)",
+    "tool_support": [
+      "Cloud VM shell",
+      "Environment setup scripts",
+      "Test execution",
+      "GitHub PR creation",
+      "Jules API and Jules Tools CLI"
+    ],
+    "first_release": "Public beta May 2025 (Google I/O); GA 2025-08-06",
+    "pricing": "Free: 15 tasks/day, 3 concurrent; Google AI Pro $19.99/mo (~100 tasks/day, 15 concurrent); Google AI Ultra (~300 tasks/day, 60 concurrent)"
+  },
+  "tags": [
+    "coding-agent",
+    "autonomous",
+    "asynchronous",
+    "google"
+  ]
+}

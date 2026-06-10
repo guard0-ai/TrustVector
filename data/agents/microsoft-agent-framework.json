@@ -1,0 +1,469 @@
+{
+  "id": "microsoft-agent-framework",
+  "type": "agent",
+  "name": "Microsoft Agent Framework",
+  "provider": "Microsoft",
+  "version": "1.0",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Open-source SDK and runtime for building AI agents and graph-based multi-agent workflows in .NET and Python. Merges AutoGen and Semantic Kernel into a single framework with checkpointing, middleware, and OpenTelemetry-based observability.",
+  "website": "https://github.com/microsoft/agent-framework",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 85,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Foundry Blog - Agent Framework Introduction",
+              "url": "https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/",
+              "date": "2025-10-01",
+              "value": "Combines AutoGen's multi-agent orchestration research with Semantic Kernel's production-grade plumbing"
+            }
+          ],
+          "methodology": "Assessment of agent execution quality based on framework capabilities, AutoGen/Semantic Kernel lineage, and community-reported results since public preview",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-04-03",
+              "value": "Typed function tools, MCP support, and middleware pipeline for intercepting and validating tool calls in .NET and Python"
+            }
+          ],
+          "methodology": "Review of tool abstraction design, type safety, MCP integration, and middleware-based tool call validation",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework Documentation",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/",
+              "date": "2026-04-03",
+              "value": "Graph-based workflows support sequential, concurrent, handoff, and group-chat orchestration patterns with explicit control flow"
+            }
+          ],
+          "methodology": "Evaluation of graph-based workflow engine for complex task decomposition and deterministic orchestration",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-04-03",
+              "value": "Built-in thread state management, pluggable memory providers, and workflow checkpointing for pause/resume of long-running tasks"
+            }
+          ],
+          "methodology": "Review of thread persistence, checkpointing, and memory provider abstractions",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Foundry Blog - Agent Framework Introduction",
+              "url": "https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/",
+              "date": "2025-10-01",
+              "value": "Checkpointing enables resuming failed workflows from last saved state; middleware allows custom retry and error-handling policies"
+            }
+          ],
+          "methodology": "Assessment of checkpoint/resume semantics and middleware-based error handling under failure injection scenarios",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-04-03",
+              "value": "Inherits AutoGen's multi-agent patterns: group chat, handoffs, nested agents-as-tools, and agent-to-agent (A2A) protocol support"
+            }
+          ],
+          "methodology": "Multi-agent orchestration pattern review covering group chat, handoff, and concurrent workflows",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 80,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework Documentation",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/",
+              "date": "2026-04-03",
+              "value": "No built-in execution sandbox; tool isolation is the developer's responsibility, with optional hosted code interpreter via Azure AI Foundry"
+            }
+          ],
+          "methodology": "Security architecture review of tool execution boundaries in self-hosted and Azure-hosted configurations",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework Documentation",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/",
+              "date": "2026-04-03",
+              "value": "Integrates with Microsoft Entra ID and Azure RBAC when used with Azure AI Foundry; middleware enables custom authorization on tool calls"
+            }
+          ],
+          "methodology": "Review of identity integration, RBAC support, and middleware-based authorization hooks",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Foundry Blog - Agent Framework Introduction",
+              "url": "https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/",
+              "date": "2025-10-01",
+              "value": "Middleware pipeline supports content filtering and guardrail integration (e.g., Azure AI Content Safety), but no default injection defense is enabled"
+            }
+          ],
+          "methodology": "Assessment of available guardrail integration points versus out-of-the-box injection protections",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-04-03",
+              "value": "Self-hosted runtime keeps agent state in developer-controlled stores; threads and workflow state are isolated per execution"
+            }
+          ],
+          "methodology": "Data architecture review of thread isolation and state storage control",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-04-03",
+              "value": "MIT licensed, fully open source for both .NET and Python, with public roadmap and active issue tracker; 1.0 GA released 2026-04-03"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 84,
+      "criteria": {
+        "data_retention": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-04-03",
+              "value": "Self-hosted SDK stores no data itself; retention is fully controlled by the developer's chosen state and memory stores"
+            }
+          ],
+          "methodology": "Privacy architecture review of framework data handling",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Trust Center",
+              "url": "https://www.microsoft.com/en-us/trust-center/privacy/gdpr-overview",
+              "date": "2026-04-03",
+              "value": "GDPR-compliant deployments achievable; Azure-hosted components covered by Microsoft's GDPR commitments, self-hosted compliance depends on configuration"
+            }
+          ],
+          "methodology": "Compliance capability assessment for self-hosted and Azure-backed deployments",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework Documentation",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/",
+              "date": "2026-04-03",
+              "value": "Data flows only to the configured model provider (Azure OpenAI, OpenAI, Anthropic, local models); framework itself sends no telemetry by default"
+            }
+          ],
+          "methodology": "Data flow analysis of model provider connectors and telemetry defaults",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-04-03",
+              "value": "Runs anywhere .NET or Python runs; supports local models via Ollama, Foundry Local, and ONNX connectors"
+            }
+          ],
+          "methodology": "Deployment options assessment including local model support",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 87,
+      "criteria": {
+        "documentation_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Agent Framework",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/",
+              "date": "2026-04-03",
+              "value": "Comprehensive Microsoft Learn documentation, tutorials, and official migration guides from AutoGen and Semantic Kernel"
+            }
+          ],
+          "methodology": "Documentation completeness review including migration guides",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Foundry Blog - Agent Framework Introduction",
+              "url": "https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/",
+              "date": "2025-10-01",
+              "value": "Native OpenTelemetry instrumentation following GenAI semantic conventions; traces agent runs, tool calls, and workflow steps"
+            }
+          ],
+          "methodology": "Observability review of built-in OTel spans for agent and workflow execution",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-04-03",
+              "value": "Explicit graph-based workflows make control flow inspectable; agent reasoning visibility depends on underlying model and logging configuration"
+            }
+          ],
+          "methodology": "Assessment of workflow visualizability and reasoning trace availability",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-04-03",
+              "value": "MIT license, monorepo for .NET and Python SDKs, public development with community contributions accepted"
+            }
+          ],
+          "methodology": "Open source assessment of license and development model",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-06-01",
+              "value": "Rapid star growth since October 2025 preview; consolidated AutoGen and Semantic Kernel communities migrating to the framework as both enter maintenance mode"
+            }
+          ],
+          "methodology": "Community engagement analysis of GitHub activity, discussions, and migration momentum",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 86,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework Documentation",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/",
+              "date": "2026-04-03",
+              "value": "Simple ChatClientAgent abstraction; pip/NuGet install; connectors for Azure OpenAI, OpenAI, Anthropic, and local models"
+            }
+          ],
+          "methodology": "Integration complexity assessment for .NET and Python developers",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Foundry Blog - Agent Framework Introduction",
+              "url": "https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/",
+              "date": "2025-10-01",
+              "value": "Designed for production with stateless agent design, durable checkpointed workflows, and hosting options from containers to Azure AI Foundry"
+            }
+          ],
+          "methodology": "Scalability assessment of runtime design and hosting options",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework",
+              "date": "2026-04-03",
+              "value": "Free MIT-licensed framework; costs arise only from chosen model provider and hosting infrastructure"
+            }
+          ],
+          "methodology": "Pricing model analysis",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework Documentation",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/",
+              "date": "2026-04-03",
+              "value": "First-class OpenTelemetry support exports traces and metrics to any OTel backend including Azure Monitor, Jaeger, and Aspire dashboard"
+            }
+          ],
+          "methodology": "Monitoring features assessment of built-in telemetry",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Agent Framework GitHub Releases",
+              "url": "https://github.com/microsoft/agent-framework/releases",
+              "date": "2026-04-03",
+              "value": "1.0 GA released 2026-04-03 with stable API surface; designated successor to Semantic Kernel and AutoGen, which are now in maintenance mode"
+            }
+          ],
+          "methodology": "Production readiness assessment of GA status, API stability, and Microsoft support commitment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 82,
+      "notes": "Strong foundation for building coding agents with typed tools and checkpointed workflows, though not a turnkey coding agent itself"
+    },
+    "customer-support": {
+      "overall": 85,
+      "notes": "Handoff and group-chat orchestration patterns plus Azure ecosystem integration suit enterprise support agent systems"
+    },
+    "data-analysis": {
+      "overall": 83,
+      "notes": "Graph workflows with checkpointing handle long-running analysis pipelines; code interpreter available via Azure AI Foundry"
+    },
+    "research-assistant": {
+      "overall": 86,
+      "notes": "Multi-agent orchestration inherited from AutoGen works well for researcher/critic/synthesizer patterns"
+    },
+    "content-creation": {
+      "overall": 80,
+      "notes": "Capable multi-agent content pipelines, though less purpose-built for creative workflows than role-based frameworks"
+    },
+    "financial-analysis": {
+      "overall": 79,
+      "notes": "Enterprise identity, observability, and self-hosting make regulated deployments feasible with custom compliance work"
+    }
+  },
+  "best_for": [
+    "Enterprises standardizing on a single Microsoft-backed agent framework across .NET and Python",
+    "Teams migrating from AutoGen or Semantic Kernel, which are now in maintenance mode",
+    "Production systems needing durable, checkpointed, observable multi-agent workflows",
+    "Organizations already invested in the Azure AI Foundry ecosystem"
+  ],
+  "strengths": [
+    "Unifies AutoGen's multi-agent research patterns with Semantic Kernel's production engineering",
+    "Graph-based workflows with checkpointing for durable, resumable long-running tasks",
+    "Native OpenTelemetry instrumentation for tracing agents, tools, and workflows",
+    "First-class support for both .NET and Python with consistent abstractions",
+    "MIT-licensed and fully open source with strong Microsoft backing and 1.0 GA stability",
+    "Middleware pipeline enables custom guardrails, auth, and policy enforcement on every tool call"
+  ],
+  "limitations": [
+    "No built-in execution sandbox; tool isolation must be implemented by the developer",
+    "Young framework (GA April 2026); ecosystem of extensions still smaller than older frameworks",
+    "Deepest integrations favor the Azure ecosystem, which may not suit cloud-neutral teams",
+    "Migration from AutoGen and Semantic Kernel requires code changes despite official guides",
+    "Prompt injection defenses require explicit guardrail integration rather than safe defaults"
+  ],
+  "metadata": {
+    "license": "MIT",
+    "supported_models": [
+      "Azure OpenAI",
+      "OpenAI GPT models",
+      "Anthropic Claude",
+      "Local models via Ollama and Foundry Local"
+    ],
+    "programming_languages": [
+      ".NET (C#)",
+      "Python"
+    ],
+    "deployment_type": "Self-hosted or Azure AI Foundry",
+    "tool_support": [
+      "Typed function tools",
+      "MCP servers",
+      "OpenAPI tools",
+      "Hosted code interpreter (Azure)"
+    ],
+    "first_release": "2025-10-01 (public preview), 1.0 GA 2026-04-03",
+    "pricing": "Free (MIT license) - Costs only from model provider and hosting",
+    "predecessors": "Official successor to AutoGen and Semantic Kernel (both maintenance mode)"
+  },
+  "related_entities": [
+    "autogen",
+    "semantic-kernel-agent",
+    "langgraph-agent"
+  ],
+  "tags": [
+    "multi-agent",
+    "open-source",
+    "enterprise",
+    "workflow-orchestration"
+  ]
+}

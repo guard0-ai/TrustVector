@@ -1,0 +1,421 @@
+{
+  "id": "mcp-server-shadcn",
+  "type": "mcp",
+  "name": "shadcn MCP Server",
+  "provider": "shadcn",
+  "version": "CLI 3.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "MCP server built into the shadcn CLI (run via npx shadcn@latest mcp) that lets AI agents browse, search, and install UI components from any shadcn-compatible registry, including private registries, using @registry/name namespacing. Shipped with CLI 3.0 in August 2025.",
+  "website": "https://ui.shadcn.com/docs/registry/mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 85,
+      "criteria": {
+        "registry_resolution_accuracy": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn Registry MCP Documentation",
+              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "date": "2026-06-10",
+              "value": "Namespaced @registry/name resolution reliably targets components across configured registries"
+            }
+          ],
+          "methodology": "Registry resolution testing across namespaces",
+          "last_verified": "2026-06-10"
+        },
+        "installation_success_rate": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn CLI 3.0 Changelog",
+              "url": "https://ui.shadcn.com/docs/changelog/2025-08-cli-3-mcp",
+              "date": "2026-06-10",
+              "value": "Installs reuse the mature shadcn add pipeline, handling dependencies, file placement, and framework detection"
+            }
+          ],
+          "methodology": "Component installation success testing",
+          "last_verified": "2026-06-10"
+        },
+        "component_search_quality": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn Registry MCP Documentation",
+              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "date": "2026-06-10",
+              "value": "Browse and search tools surface components with metadata from any shadcn-compatible registry"
+            }
+          ],
+          "methodology": "Search relevance assessment over public registries",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn-ui/ui Repository",
+              "url": "https://github.com/shadcn-ui/ui",
+              "date": "2026-06-10",
+              "value": "CLI surfaces clear errors for missing registries, unreachable URLs, and dependency conflicts; partial installs may need manual cleanup"
+            }
+          ],
+          "methodology": "Failure mode and error message testing",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 65,
+      "criteria": {
+        "supply_chain_risk": {
+          "score": 52,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn Registry Documentation",
+              "url": "https://ui.shadcn.com/docs/registry",
+              "date": "2026-06-10",
+              "value": "Installs source code from any configured shadcn-compatible registry directly into the project; third-party registries are unvetted and the key risk surface"
+            }
+          ],
+          "methodology": "Supply chain threat modeling of registry-sourced code installation",
+          "last_verified": "2026-06-10"
+        },
+        "code_installation_control": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn Registry MCP Documentation",
+              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "date": "2026-06-10",
+              "value": "Agent-initiated installs write component files and add npm dependencies; review depends on the MCP client's approval flow and code review practices"
+            }
+          ],
+          "methodology": "Write-action control and approval flow analysis",
+          "last_verified": "2026-06-10"
+        },
+        "registry_authentication": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn Registry Documentation",
+              "url": "https://ui.shadcn.com/docs/registry",
+              "date": "2026-06-10",
+              "value": "Private registries supported with token-based authentication configured via environment variables in components.json"
+            }
+          ],
+          "methodology": "Registry authentication mechanism review",
+          "last_verified": "2026-06-10"
+        },
+        "credential_handling": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn Registry Documentation",
+              "url": "https://ui.shadcn.com/docs/registry",
+              "date": "2026-06-10",
+              "value": "Registry tokens read from local environment; no credentials sent to third parties beyond the configured registry endpoints"
+            }
+          ],
+          "methodology": "Credential storage and flow analysis",
+          "last_verified": "2026-06-10"
+        },
+        "unauthorized_action_risk": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn CLI 3.0 Changelog",
+              "url": "https://ui.shadcn.com/docs/changelog/2025-08-cli-3-mcp",
+              "date": "2026-06-10",
+              "value": "An agent can install components (and transitively their dependencies) into the codebase; a malicious or typosquatted registry entry executes at build/runtime"
+            }
+          ],
+          "methodology": "Blast radius assessment of install actions",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 83,
+      "criteria": {
+        "data_exposure": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn Registry MCP Documentation",
+              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "date": "2026-06-10",
+              "value": "Server only fetches public or configured registry metadata and component source; it does not read or transmit project code externally"
+            }
+          ],
+          "methodology": "Data flow analysis of registry requests",
+          "last_verified": "2026-06-10"
+        },
+        "sensitive_data_protection": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn Registry Documentation",
+              "url": "https://ui.shadcn.com/docs/registry",
+              "date": "2026-06-10",
+              "value": "Minimal sensitive data involved; main consideration is keeping private registry tokens out of committed configuration"
+            }
+          ],
+          "methodology": "Sensitive data surface assessment",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn Registry Documentation",
+              "url": "https://ui.shadcn.com/docs/registry",
+              "date": "2026-06-10",
+              "value": "Search and install requests are visible to whichever registries are configured, including third-party ones"
+            }
+          ],
+          "methodology": "Outbound request and data sharing review",
+          "last_verified": "2026-06-10"
+        },
+        "local_execution_privacy": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn Registry MCP Documentation",
+              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "date": "2026-06-10",
+              "value": "Runs locally over stdio via npx shadcn@latest mcp with no hosted service or telemetry pipeline collecting project data"
+            }
+          ],
+          "methodology": "Local execution and telemetry review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 88,
+      "criteria": {
+        "documentation_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn Registry MCP Documentation",
+              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "date": "2026-06-10",
+              "value": "Clear official docs covering MCP setup per client, registry configuration, and namespacing, plus a detailed CLI 3.0 changelog"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "operation_visibility": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn CLI 3.0 Changelog",
+              "url": "https://ui.shadcn.com/docs/changelog/2025-08-cli-3-mcp",
+              "date": "2026-06-10",
+              "value": "Installed files and dependency changes are fully visible in the project diff; tool calls appear in MCP client logs"
+            }
+          ],
+          "methodology": "Traceability of agent actions assessment",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn-ui/ui Repository",
+              "url": "https://github.com/shadcn-ui/ui",
+              "date": "2026-06-10",
+              "value": "MIT-licensed; MCP server ships as part of the open shadcn-ui/ui monorepo and CLI"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-06-10"
+        },
+        "tool_coverage_clarity": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn Registry MCP Documentation",
+              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "date": "2026-06-10",
+              "value": "Tool surface is small and well-defined: browse, search, and install components from configured registries"
+            }
+          ],
+          "methodology": "Tool surface documentation review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 88,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn Registry MCP Documentation",
+              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "date": "2026-06-10",
+              "value": "One-line stdio config (npx shadcn@latest mcp) with documented one-command setup for major MCP clients"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-06-10"
+        },
+        "performance": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn-ui/ui Repository",
+              "url": "https://github.com/shadcn-ui/ui",
+              "date": "2026-06-10",
+              "value": "Lightweight local process; latency dominated by registry HTTP fetches and npm dependency installs"
+            }
+          ],
+          "methodology": "Operation latency characterization",
+          "last_verified": "2026-06-10"
+        },
+        "reliability": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "shadcn CLI 3.0 Changelog",
+              "url": "https://ui.shadcn.com/docs/changelog/2025-08-cli-3-mcp",
+              "date": "2026-06-10",
+              "value": "Built on the actively maintained shadcn CLI with frequent releases since the August 2025 3.0 launch"
+            }
+          ],
+          "methodology": "Maintenance cadence and stability analysis",
+          "last_verified": "2026-06-10"
+        },
+        "feature_coverage": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn Registry MCP Documentation",
+              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "date": "2026-06-10",
+              "value": "Covers discovery and installation across public and private shadcn-compatible registries; scoped to UI components rather than general tooling"
+            }
+          ],
+          "methodology": "Feature completeness assessment within its domain",
+          "last_verified": "2026-06-10"
+        },
+        "community_adoption": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "shadcn-ui/ui Repository",
+              "url": "https://github.com/shadcn-ui/ui",
+              "date": "2026-06-10",
+              "value": "shadcn/ui is one of the most-starred UI projects on GitHub and the MCP server is the standard agent integration for its ecosystem"
+            }
+          ],
+          "methodology": "Ecosystem adoption analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "First-party integration with the dominant shadcn/ui component ecosystem",
+    "Browse, search, and install from any shadcn-compatible registry, including private ones",
+    "Runs locally over stdio with no hosted service and minimal data exposure",
+    "Trivial setup via npx shadcn@latest mcp with per-client docs",
+    "All installed code lands in the project diff for review",
+    "MIT-licensed and developed in the open shadcn-ui/ui monorepo"
+  ],
+  "limitations": [
+    "Installs third-party source code and npm dependencies into the project — registry supply-chain risk is the key concern",
+    "No built-in vetting or signing of third-party registry components",
+    "Agent-initiated installs depend on the MCP client's approval flow for human oversight",
+    "Scope limited to UI component workflows in shadcn-compatible projects",
+    "Private registry tokens must be carefully kept out of committed config"
+  ],
+  "metadata": {
+    "license": "MIT",
+    "supported_platforms": [
+      "All platforms with Node.js"
+    ],
+    "programming_languages": [
+      "TypeScript"
+    ],
+    "github_repo": "https://github.com/shadcn-ui/ui",
+    "package_name": "shadcn",
+    "installation": "npx shadcn@latest mcp",
+    "authentication": "Optional registry tokens for private registries",
+    "first_release": "2025-08",
+    "maintained_by": "shadcn",
+    "transport_types": [
+      "stdio"
+    ],
+    "installation_methods": [
+      "npm"
+    ]
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 93,
+      "notes": "Excellent for AI-assisted frontend development: agents can find and install real, vetted-by-usage components instead of hallucinating UI code"
+    },
+    "content-creation": {
+      "overall": 72,
+      "notes": "Useful when building landing pages and content sites on shadcn-based stacks"
+    },
+    "education": {
+      "overall": 80,
+      "notes": "Good for teaching modern React/Tailwind component patterns with installable examples"
+    },
+    "research-assistant": {
+      "overall": 60,
+      "notes": "Limited to exploring component registries; not a general research tool"
+    },
+    "data-analysis": {
+      "overall": 55,
+      "notes": "Only relevant for installing chart and dashboard UI components, not for analysis itself"
+    }
+  },
+  "best_for": [
+    "Frontend teams building with shadcn/ui and Tailwind who want agent-driven component installs",
+    "Organizations distributing internal design systems via private shadcn registries",
+    "AI coding agents that should use real registry components rather than generated approximations"
+  ],
+  "related_entities": [
+    "mcp-server-context7",
+    "mcp-server-playwright"
+  ],
+  "tags": [
+    "ui-components",
+    "design-system",
+    "frontend",
+    "registry",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

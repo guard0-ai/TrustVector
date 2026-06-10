@@ -4,9 +4,9 @@
   "name": "Qwen2.5-VL-32B",
   "provider": "Alibaba",
   "version": "20251020",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Advanced multimodal vision-language model from Alibaba achieving 42.9% on SWE-bench. Specialized for vision tasks with strong image understanding and competitive pricing.",
+  "description": "Multimodal vision-language model from Alibaba, now two generations behind: superseded first by Qwen3-VL (Sep 2025) and then by the natively-multimodal Qwen3.5 (released 2026-02-16). Historically achieved 42.9% on SWE-bench with strong image understanding at competitive pricing; new deployments should evaluate Qwen3.5 instead.",
   "website": "https://qwenlm.github.io/",
   "trust_vector": {
     "performance_reliability": {
@@ -404,7 +404,7 @@
       "notes": "Moderate transparency with standard safety features."
     },
     "operational_excellence": {
-      "overall_score": 83,
+      "overall_score": 82,
       "criteria": {
         "api_design_quality": {
           "score": 85,
@@ -435,18 +435,25 @@
           "last_verified": "2025-11-08"
         },
         "versioning_policy": {
-          "score": 82,
-          "confidence": "medium",
+          "score": 74,
+          "confidence": "high",
           "evidence": [
             {
               "source": "Alibaba Cloud",
               "url": "https://www.alibabacloud.com/",
               "date": "2025-10-20",
               "value": "Basic versioning"
+            },
+            {
+              "source": "Qwen3.5 Announcement",
+              "url": "https://qwen.ai/blog?id=qwen3.5",
+              "date": "2026-06-10",
+              "value": "Two generations behind: superseded by Qwen3-VL (Sep 2025) and natively-multimodal Qwen3.5 (released 2026-02-16)"
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-06-10",
+          "notes": "Open weights remain available, but the line has moved on to Qwen3.5"
         },
         "monitoring_observability": {
           "score": 81,
@@ -598,7 +605,8 @@
     "Fewer compliance certifications for Western markets",
     "Smaller context window (32K tokens)",
     "Lower coding benchmarks (42.9% SWE-bench)",
-    "Growing but less mature ecosystem"
+    "Growing but less mature ecosystem",
+    "Superseded: two generations behind, replaced by Qwen3-VL (Sep 2025) and the natively-multimodal Qwen3.5 (released 2026-02-16)"
   ],
   "best_for": [
     "Visual AI applications requiring image understanding",
@@ -646,9 +654,11 @@
   "related_entities": [
     "gemini-2-0-flash",
     "claude-sonnet-4-5",
-    "gpt-5"
+    "gpt-5",
+    "qwen3-5"
   ],
   "tags": [
+    "superseded",
     "vision",
     "multimodal",
     "open-source",

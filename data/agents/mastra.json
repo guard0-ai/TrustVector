@@ -1,0 +1,473 @@
+{
+  "id": "mastra",
+  "type": "agent",
+  "name": "Mastra",
+  "provider": "Mastra AI (YC W25)",
+  "version": "1.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "TypeScript-first AI agent framework from the Gatsby founders, combining agents, durable workflows, RAG, and evals in one toolkit. Provider-agnostic via Vercel AI SDK model routing, with a local dev playground and 1.0 stable release in January 2026.",
+  "website": "https://mastra.ai/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 83,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Documentation",
+              "url": "https://mastra.ai/docs",
+              "date": "2026-05-20",
+              "value": "Agents combine tool calling, memory, and structured workflows; built-in evals allow teams to measure task accuracy"
+            }
+          ],
+          "methodology": "Task completion testing across agent and workflow primitives",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra Tools Documentation",
+              "url": "https://mastra.ai/docs/agents/using-tools-and-mcp",
+              "date": "2026-05-15",
+              "value": "Zod-schema typed tools with input validation plus MCP client/server support reduce malformed tool calls"
+            }
+          ],
+          "methodology": "Tool invocation testing with typed schemas and MCP servers",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra Workflows Documentation",
+              "url": "https://mastra.ai/docs/workflows/overview",
+              "date": "2026-05-15",
+              "value": "Graph-based durable workflows with branching, parallel steps, suspend/resume, and human-in-the-loop"
+            }
+          ],
+          "methodology": "Complex multi-step task testing using workflow engine",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra Memory Documentation",
+              "url": "https://mastra.ai/docs/memory/overview",
+              "date": "2026-04-20",
+              "value": "Built-in working memory, conversation history, and semantic recall backed by pluggable storage adapters"
+            }
+          ],
+          "methodology": "Memory system evaluation across threads and semantic recall",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Workflows Documentation",
+              "url": "https://mastra.ai/docs/workflows/overview",
+              "date": "2026-05-15",
+              "value": "Workflow steps support retries, error branches, and durable suspend/resume after failures"
+            }
+          ],
+          "methodology": "Error injection testing on workflow retry and resume paths",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Agent Networks",
+              "url": "https://mastra.ai/docs/agents/overview",
+              "date": "2026-04-20",
+              "value": "Agents composable as workflow steps and sub-agents; agent network primitives for dynamic routing between agents"
+            }
+          ],
+          "methodology": "Multi-agent coordination testing via sub-agents and networks",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 72,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Architecture",
+              "url": "https://mastra.ai/docs",
+              "date": "2026-05-20",
+              "value": "No built-in tool sandboxing; tools run in the host Node.js process and isolation is the developer's responsibility"
+            }
+          ],
+          "methodology": "Security architecture review of tool execution model",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Server Middleware Docs",
+              "url": "https://mastra.ai/docs/server-db/middleware",
+              "date": "2026-04-15",
+              "value": "Auth middleware hooks on the Mastra server; RBAC and SSO are enterprise features rather than core defaults"
+            }
+          ],
+          "methodology": "Access control assessment of server auth options",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Processors Documentation",
+              "url": "https://mastra.ai/docs/agents/processors",
+              "date": "2026-04-20",
+              "value": "Input/output processors enable moderation and PII filtering guardrails, but injection defense is not on by default"
+            }
+          ],
+          "methodology": "Injection testing with and without guardrail processors configured",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Storage Documentation",
+              "url": "https://mastra.ai/docs/server-db/storage",
+              "date": "2026-04-15",
+              "value": "Memory and storage scoped per thread/resource with pluggable backends; multi-tenant isolation is application-level"
+            }
+          ],
+          "methodology": "Data isolation architecture review of storage and memory scoping",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra GitHub Repository",
+              "url": "https://github.com/mastra-ai/mastra",
+              "date": "2026-06-01",
+              "value": "Apache 2.0 core with 22k+ stars; enterprise features are source-available under the Mastra Enterprise License"
+            }
+          ],
+          "methodology": "Source code and license structure review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 82,
+      "criteria": {
+        "data_retention": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Self-Hosted Framework",
+              "url": "https://github.com/mastra-ai/mastra",
+              "date": "2026-06-01",
+              "value": "Framework runs in user infrastructure with user-chosen storage backends; full control of retention when self-hosted"
+            }
+          ],
+          "methodology": "Privacy architecture review of self-hosted deployment",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Documentation",
+              "url": "https://mastra.ai/docs",
+              "date": "2026-05-20",
+              "value": "GDPR compliance achievable through self-hosting and storage choice; no turnkey compliance tooling in core"
+            }
+          ],
+          "methodology": "Compliance capabilities assessment of deployment configurations",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Model Routing",
+              "url": "https://mastra.ai/docs/getting-started/model-providers",
+              "date": "2026-04-20",
+              "value": "Data flows to whichever provider is configured via Vercel AI SDK routing; local models supported through Ollama-compatible providers"
+            }
+          ],
+          "methodology": "Data flow analysis across model provider configurations",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra Deployment Documentation",
+              "url": "https://mastra.ai/docs/deployment/overview",
+              "date": "2026-04-20",
+              "value": "Deploys as a standard Node.js server anywhere, including fully self-hosted environments with local model providers"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 85,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra Documentation",
+              "url": "https://mastra.ai/docs",
+              "date": "2026-05-20",
+              "value": "Polished docs with guides, templates, course content, and examples; quality reflects Gatsby founders' DX background"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra Observability Documentation",
+              "url": "https://mastra.ai/docs/observability/overview",
+              "date": "2026-04-20",
+              "value": "OpenTelemetry tracing of agent runs and workflow steps plus a local playground for inspecting executions"
+            }
+          ],
+          "methodology": "Tracing and logging capabilities assessment",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Playground",
+              "url": "https://mastra.ai/docs/getting-started/studio",
+              "date": "2026-04-20",
+              "value": "Local studio visualizes agent steps, tool calls, and workflow graphs, aiding inspection of decisions"
+            }
+          ],
+          "methodology": "Explainability assessment of run visualization features",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra GitHub Repository",
+              "url": "https://github.com/mastra-ai/mastra",
+              "date": "2026-06-01",
+              "value": "Apache 2.0 core, 1.0 stable released 2026-01-21; some enterprise modules under source-available Mastra Enterprise License"
+            }
+          ],
+          "methodology": "Open source assessment of license split and code availability",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub and npm Metrics",
+              "url": "https://github.com/mastra-ai/mastra",
+              "date": "2026-06-01",
+              "value": "22k+ GitHub stars, 300k+ weekly npm downloads, active Discord and rapid release cadence"
+            }
+          ],
+          "methodology": "Community engagement analysis of stars, downloads, and releases",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 84,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra Quickstart",
+              "url": "https://mastra.ai/docs/getting-started/installation",
+              "date": "2026-05-15",
+              "value": "create-mastra CLI scaffolds a typed project with playground in minutes; idiomatic TypeScript APIs"
+            }
+          ],
+          "methodology": "Integration complexity assessment with scaffolded project testing",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Mastra Deployment Documentation",
+              "url": "https://mastra.ai/docs/deployment/overview",
+              "date": "2026-04-20",
+              "value": "Deploys to serverless platforms (Vercel, Cloudflare, Netlify) and Node servers; durable workflows support long-running jobs"
+            }
+          ],
+          "methodology": "Scalability assessment across deployment targets",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Open Source Framework",
+              "url": "https://github.com/mastra-ai/mastra",
+              "date": "2026-06-01",
+              "value": "Free Apache 2.0 core; costs from LLM APIs, hosting, and optional Mastra Cloud/enterprise offerings"
+            }
+          ],
+          "methodology": "Pricing model analysis",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra Evals and Observability",
+              "url": "https://mastra.ai/docs/evals/overview",
+              "date": "2026-04-20",
+              "value": "Built-in evals (faithfulness, hallucination, relevance scorers) plus OTel export to external observability platforms"
+            }
+          ],
+          "methodology": "Monitoring and evaluation features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mastra 1.0 Release",
+              "url": "https://mastra.ai/blog/mastra-1-0",
+              "date": "2026-01-21",
+              "value": "1.0 stable shipped 2026-01-21 with semver commitment after a year of rapid pre-1.0 iteration"
+            }
+          ],
+          "methodology": "Production readiness assessment of API stability and release maturity",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 82,
+      "notes": "Typed TypeScript tooling and MCP support fit developer-workflow agents well"
+    },
+    "customer-support": {
+      "overall": 85,
+      "notes": "Memory, RAG, workflow human-in-the-loop, and guardrail processors suit support bots"
+    },
+    "content-creation": {
+      "overall": 84,
+      "notes": "Workflows plus evals enable quality-controlled content pipelines"
+    },
+    "research-assistant": {
+      "overall": 82,
+      "notes": "RAG primitives and agent networks handle multi-source research tasks"
+    },
+    "data-analysis": {
+      "overall": 78,
+      "notes": "Capable via tools and workflows, though Python data ecosystem is unavailable"
+    },
+    "education": {
+      "overall": 80,
+      "notes": "Memory threads and structured workflows work well for tutoring applications"
+    }
+  },
+  "best_for": [
+    "TypeScript/JavaScript teams wanting a full-stack agent framework with strong DX",
+    "Products needing durable workflows with human-in-the-loop and suspend/resume",
+    "Teams that want agents, RAG, memory, and evals in one integrated toolkit",
+    "Startups deploying agents to serverless platforms like Vercel or Cloudflare"
+  ],
+  "strengths": [
+    "TypeScript-first with end-to-end type safety via Zod schemas",
+    "Integrated suite: agents, durable workflows, RAG, memory, and evals in one framework",
+    "Provider-agnostic model routing through the Vercel AI SDK",
+    "Excellent developer experience: CLI scaffolding, local playground, polished docs",
+    "1.0 stable (Jan 2026) with strong adoption: 22k+ stars, 300k+ weekly npm downloads",
+    "Built-in eval scorers and OpenTelemetry observability"
+  ],
+  "limitations": [
+    "No built-in tool sandboxing; tools execute in the host Node.js process",
+    "Enterprise features (RBAC, SSO, some modules) are source-available, not Apache 2.0",
+    "Young 1.0; some advanced patterns and integrations still maturing",
+    "No Python SDK, limiting access to the Python ML/data ecosystem",
+    "Security guardrails (processors) are opt-in rather than default"
+  ],
+  "related": [
+    "langgraph-agent",
+    "openai-agents-sdk",
+    "crewai",
+    "pydantic-ai",
+    "flowise"
+  ],
+  "metadata": {
+    "license": "Apache 2.0 (core); Mastra Enterprise License (source-available enterprise features)",
+    "supported_models": [
+      "OpenAI",
+      "Anthropic Claude",
+      "Google Gemini",
+      "Any provider via Vercel AI SDK routing",
+      "Local models via OpenAI-compatible endpoints"
+    ],
+    "programming_languages": [
+      "TypeScript",
+      "JavaScript"
+    ],
+    "deployment_type": "Self-hosted or Mastra Cloud",
+    "tool_support": [
+      "Zod-typed custom tools",
+      "MCP client and server",
+      "Vercel AI SDK tools",
+      "Built-in RAG tools"
+    ],
+    "github_stars": "22000+",
+    "first_release": "2024 (YC W25; 1.0 stable 2026-01-21)",
+    "pricing": "Free (Apache 2.0 core) - Costs from LLM APIs, hosting, and optional enterprise/cloud offerings",
+    "node_requirement": "Node.js >=20",
+    "adoption": "300k+ weekly npm downloads; built by the Gatsby founders"
+  },
+  "tags": [
+    "typescript",
+    "workflows",
+    "open-source"
+  ]
+}

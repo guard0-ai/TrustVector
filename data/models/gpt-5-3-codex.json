@@ -1,0 +1,605 @@
+{
+  "id": "gpt-5-3-codex",
+  "type": "model",
+  "name": "GPT-5.3-Codex",
+  "provider": "OpenAI",
+  "version": "gpt-5-3-codex-2026-02-05",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "OpenAI's agentic coding specialist: ~80% SWE-bench Verified, 77.3% Terminal-Bench, SOTA on SWE-Bench Pro at release, ~25% faster than GPT-5.2-Codex. The 5.3 generation was Codex-only — there is no general-purpose GPT-5.3.",
+  "website": "https://openai.com/index/introducing-gpt-5-3-codex/",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 92,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 96,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "SWE-bench Verified",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "~80% resolution rate on SWE-bench Verified"
+            },
+            {
+              "source": "Terminal-Bench",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "77.3% on terminal/command-line agentic tasks"
+            },
+            {
+              "source": "SWE-Bench Pro",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "State-of-the-art on SWE-Bench Pro at release"
+            }
+          ],
+          "methodology": "Industry-standard agentic coding benchmarks measuring real-world software engineering tasks",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "Strong code-centric reasoning; not positioned for general scientific or mathematical reasoning"
+            }
+          ],
+          "methodology": "Reasoning benchmark review relative to general-purpose flagships",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "Specialized for software engineering; OpenAI recommends GPT-5.x flagships for general-purpose tasks"
+            }
+          ],
+          "methodology": "Comparison against general-purpose models on non-coding workloads",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 92,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "~25% faster than GPT-5.2-Codex with more reliable long-horizon task completion"
+            }
+          ],
+          "methodology": "Provider-reported reliability on multi-step agentic coding sessions",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "~25% faster than GPT-5.2-Codex",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "~25% end-to-end speedup over GPT-5.2-Codex on equivalent tasks"
+            }
+          ],
+          "methodology": "Provider-reported relative latency on agentic coding workloads",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "400,000 tokens",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenRouter Model Page",
+              "url": "https://openrouter.ai/openai/gpt-5.3-codex",
+              "date": "2026-02-05",
+              "value": "400K token context window listed for gpt-5.3-codex"
+            }
+          ],
+          "methodology": "Third-party model registry specification",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 99,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Status",
+              "url": "https://status.openai.com/",
+              "date": "2026-06-01",
+              "value": "99.9% uptime (last 90 days)"
+            }
+          ],
+          "methodology": "Historical uptime data from official status page",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Best-in-class agentic coding at release (~80% SWE-bench Verified, 77.3% Terminal-Bench, SOTA SWE-Bench Pro). Specialized model — general-purpose accuracy intentionally trails flagships."
+    },
+
+    "security": {
+      "overall_score": 87,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Safety Research",
+              "url": "https://openai.com/safety",
+              "date": "2026-02-05",
+              "value": "Injection defenses tuned for agentic coding (repository content, tool output, shell results)"
+            }
+          ],
+          "methodology": "Testing against OWASP LLM01 attacks including coding-agent vectors",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 89,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "Inherits GPT-5.x safety training with coding-specific refusal calibration (e.g., malware requests)"
+            }
+          ],
+          "methodology": "Adversarial prompt testing against jailbreak datasets",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Privacy Policy",
+              "url": "https://openai.com/policies/privacy-policy",
+              "date": "2026-02-05",
+              "value": "No training on API data by default"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and data handling practices",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 90,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Safety",
+              "url": "https://openai.com/safety",
+              "date": "2026-02-05",
+              "value": "Sandboxed execution defaults in Codex environments; guardrails on destructive commands"
+            }
+          ],
+          "methodology": "Safety testing across harmful content and dangerous-action categories",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Platform Docs",
+              "url": "https://platform.openai.com/docs/api-reference",
+              "date": "2026-02-05",
+              "value": "API key + OAuth2 authentication, HTTPS only, rate limiting"
+            }
+          ],
+          "methodology": "Review of API security features and best practices",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Good security posture with sandboxing in Codex environments. Autonomous code execution warrants strict permissioning and review gates in production pipelines."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 87,
+      "criteria": {
+        "data_residency": {
+          "value": "US, EU",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Enterprise",
+              "url": "https://openai.com/enterprise",
+              "date": "2026-02-05",
+              "value": "Data residency options for enterprise customers"
+            }
+          ],
+          "methodology": "Review of enterprise documentation",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Data Controls",
+              "url": "https://openai.com/policies/usage-policies",
+              "date": "2026-02-05",
+              "value": "API data (including submitted code) not used for training by default"
+            }
+          ],
+          "methodology": "Policy review of data usage terms",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "30 days (zero retention available)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Terms",
+              "url": "https://openai.com/policies/terms-of-use",
+              "date": "2026-02-05",
+              "value": "30-day default API log retention; zero-data-retention options for qualifying customers"
+            }
+          ],
+          "methodology": "Terms of service and enterprise documentation review",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Safety Tools",
+              "url": "https://platform.openai.com/docs/guides/safety",
+              "date": "2026-02-05",
+              "value": "Customer responsible for scrubbing secrets/PII from code context; moderation API available"
+            }
+          ],
+          "methodology": "Review of data protection capabilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Trust Center",
+              "url": "https://trust.openai.com/",
+              "date": "2026-02-05",
+              "value": "SOC 2 Type II, ISO 27001, GDPR compliant"
+            }
+          ],
+          "methodology": "Verification of compliance certifications",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Enterprise",
+              "url": "https://openai.com/enterprise",
+              "date": "2026-02-05",
+              "value": "Zero-data-retention options available for enterprise and qualifying API customers"
+            }
+          ],
+          "methodology": "Enterprise feature review",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Standard OpenAI enterprise posture. Proprietary source code sent as context is covered by no-training-by-default; zero-data-retention recommended for sensitive codebases."
+    },
+
+    "trust_transparency": {
+      "overall_score": 86,
+      "criteria": {
+        "explainability": {
+          "score": 90,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Codex Agent Logs",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "Step-by-step agent transcripts (plans, diffs, test runs) provide strong action-level traceability"
+            }
+          ],
+          "methodology": "Evaluation of reasoning and action transparency",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "Test-driven agent loop catches many fabrications; API hallucination still possible in unfamiliar frameworks"
+            }
+          ],
+          "methodology": "Code correctness evaluation with execution-based verification",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 83,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "OpenAI Safety",
+              "url": "https://openai.com/safety",
+              "date": "2026-02-05",
+              "value": "Standard bias testing program; less salient for code-specialist deployments"
+            }
+          ],
+          "methodology": "Bias benchmarks and demographic testing",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Documentation",
+              "url": "https://platform.openai.com/docs/models",
+              "date": "2026-02-05",
+              "value": "Agent flags failing tests and unresolved tasks rather than claiming success"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in agentic outputs",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GPT-5.3-Codex Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+              "date": "2026-02-05",
+              "value": "Release documentation covers benchmarks, intended use, and Codex-only scope of the 5.3 generation"
+            }
+          ],
+          "methodology": "Documentation completeness and clarity review",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Blog",
+              "url": "https://openai.com/blog",
+              "date": "2026-02-05",
+              "value": "General description of code-focused training; specific sources not disclosed"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 90,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Safety Systems",
+              "url": "https://openai.com/safety",
+              "date": "2026-02-05",
+              "value": "Guardrails on destructive operations, secrets handling, and malware generation"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Agent transcripts give strong action-level auditability. Execution-based verification reduces unchecked hallucination relative to chat-style code generation."
+    },
+
+    "operational_excellence": {
+      "overall_score": 93,
+      "criteria": {
+        "api_design_quality": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI API Reference",
+              "url": "https://platform.openai.com/docs/api-reference",
+              "date": "2026-02-05",
+              "value": "Responses API plus first-class integration with Codex CLI, IDE extensions, and Codex cloud"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI SDKs",
+              "url": "https://github.com/openai",
+              "date": "2026-02-05",
+              "value": "Official SDKs plus open-source Codex CLI, actively maintained"
+            }
+          ],
+          "methodology": "SDK quality, documentation, and maintenance review",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-02-05",
+              "value": "Clear deprecation schedule; predecessor GPT-5.2-Codex shuts down 2026-07-23"
+            }
+          ],
+          "methodology": "Review of versioning policy and deprecation practices",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Dashboard",
+              "url": "https://platform.openai.com/usage",
+              "date": "2026-02-05",
+              "value": "Detailed usage dashboard with costs, tokens, rate limits; Codex task history"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Support",
+              "url": "https://help.openai.com/",
+              "date": "2026-02-05",
+              "value": "24/7 support, comprehensive docs, active developer community"
+            }
+          ],
+          "methodology": "Support and documentation assessment",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 96,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex Ecosystem",
+              "url": "https://platform.openai.com/docs",
+              "date": "2026-02-05",
+              "value": "Codex CLI, IDE extensions, cloud agents, GitHub integration; also available via OpenRouter"
+            }
+          ],
+          "methodology": "Ecosystem breadth and depth analysis",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 91,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Terms",
+              "url": "https://openai.com/policies/terms-of-use",
+              "date": "2026-02-05",
+              "value": "Standard commercial terms; customer retains rights to generated code per terms of use"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Deep coding-tool ecosystem (CLI, IDE, cloud agents). Codex line moves fast: GPT-5.2-Codex shuts down 2026-07-23, so plan for shorter model lifecycles than general flagships."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 97,
+      "notes": "Purpose-built agentic coder: ~80% SWE-bench Verified, 77.3% Terminal-Bench, SOTA SWE-Bench Pro at release, ~25% faster than GPT-5.2-Codex.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    },
+    "data-analysis": {
+      "overall": 87,
+      "notes": "Strong at writing and executing analysis code; general flagships better for open-ended analytical interpretation.",
+      "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
+    },
+    "research-assistant": {
+      "overall": 80,
+      "notes": "Useful for code-centric research (reproducing papers, building experiment harnesses); not designed for general literature work.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    },
+    "education": {
+      "overall": 84,
+      "notes": "Excellent for programming instruction with executable, test-verified examples; narrow outside software topics.",
+      "alternatives": ["gpt-5-5", "gpt-5-4"]
+    }
+  },
+
+  "strengths": [
+    "~80% SWE-bench Verified and SOTA on SWE-Bench Pro at release",
+    "77.3% Terminal-Bench on agentic command-line tasks",
+    "~25% faster than GPT-5.2-Codex on equivalent workloads",
+    "Aggressive pricing (~$1.75/$14 per 1M) for a frontier coding model",
+    "Deep tooling: Codex CLI, IDE extensions, cloud agents, GitHub integration",
+    "Execution-verified outputs reduce unchecked code hallucination"
+  ],
+
+  "limitations": [
+    "Specialized for coding — weaker than flagships on general reasoning and writing",
+    "No general-purpose GPT-5.3 exists; the 5.3 generation was Codex-only",
+    "Fast Codex lifecycle: predecessor GPT-5.2-Codex shuts down 2026-07-23, suggesting shorter support horizons",
+    "Pricing confirmed primarily via third-party listings (medium confidence)",
+    "Not HIPAA eligible; 30-day default retention",
+    "Autonomous code execution requires sandboxing and review gates"
+  ],
+
+  "best_for": [
+    "Agentic software engineering: multi-step bug fixes, refactors, and feature implementation",
+    "CI/automation pipelines needing fast, cost-efficient frontier coding",
+    "Teams migrating off GPT-5.2-Codex before its 2026-07-23 shutdown",
+    "Terminal-heavy DevOps and infrastructure-as-code workflows"
+  ],
+
+  "not_recommended_for": [
+    "General-purpose chat, writing, or research assistants",
+    "Regulated healthcare workloads (not HIPAA eligible)",
+    "Teams requiring multi-year model stability without migrations"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "$1.75 per 1M tokens (approximate)",
+      "output": "$14.00 per 1M tokens (approximate)",
+      "notes": "Pricing per OpenRouter listing (https://openrouter.ai/openai/gpt-5.3-codex); confidence medium pending first-party pricing page confirmation.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 400000,
+    "max_output": 128000,
+    "languages": [
+      "English",
+      "Python",
+      "JavaScript/TypeScript",
+      "Go",
+      "Rust",
+      "Java",
+      "C/C++",
+      "C#",
+      "Ruby",
+      "PHP",
+      "Shell",
+      "SQL"
+    ],
+    "modalities": ["text", "vision (screenshots/diagrams)", "code-execution (via Codex harness)"],
+    "api_endpoint": "https://api.openai.com/v1/responses",
+    "open_source": false,
+    "architecture": "Transformer-based, fine-tuned for agentic software engineering (Codex line)",
+    "parameters": "Not disclosed",
+    "knowledge_cutoff": "Late 2025"
+  },
+
+  "related_entities": ["gpt-5-2-codex", "gpt-5-5", "gpt-5-4", "claude-opus-4-8"],
+
+  "tags": [
+    "coding",
+    "agentic",
+    "codex",
+    "specialist",
+    "terminal",
+    "swe-bench-leader",
+    "cost-efficient"
+  ]
+}

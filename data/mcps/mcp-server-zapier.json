@@ -1,0 +1,444 @@
+{
+  "id": "mcp-server-zapier",
+  "type": "mcp",
+  "name": "Zapier MCP Server",
+  "provider": "Zapier",
+  "version": "2026.6",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Zapier's hosted, proprietary MCP server that gives AI agents access to user-selected actions from 9,000+ connected apps (Gmail, Slack, Salesforce, and more, spanning tens of thousands of actions). Each user generates a personal remote server endpoint at mcp.zapier.com with per-app and per-action permissioning.",
+  "website": "https://zapier.com/mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 85,
+      "criteria": {
+        "api_reliability": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "Runs on Zapier's mature integration platform that has powered production automation for over a decade"
+            }
+          ],
+          "methodology": "Platform stability and maturity analysis",
+          "last_verified": "2026-06-10"
+        },
+        "action_execution_success": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "Actions reuse Zapier's battle-tested app integrations; failures are usually due to downstream app auth or API issues"
+            }
+          ],
+          "methodology": "Action execution success testing across common apps",
+          "last_verified": "2026-06-10"
+        },
+        "app_integration_breadth": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP",
+              "url": "https://zapier.com/mcp",
+              "date": "2026-06-10",
+              "value": "9,000+ apps and roughly 30,000-40,000 actions available, the broadest integration catalog of any MCP server"
+            }
+          ],
+          "methodology": "Integration catalog assessment",
+          "last_verified": "2026-06-10"
+        },
+        "rate_limit_handling": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "Plan-based usage limits on MCP tool calls; downstream app rate limits surface as action errors"
+            }
+          ],
+          "methodology": "Rate and usage limit behavior review",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "Errors from downstream apps are returned to the agent; reauthorization of expired app connections requires manual user action"
+            }
+          ],
+          "methodology": "Failure mode and recovery testing",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 71,
+      "criteria": {
+        "authentication_security": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "A user-specific server is generated at mcp.zapier.com; access is tied to that personal endpoint rather than a separately rotated credential in legacy URL-auth mode"
+            }
+          ],
+          "methodology": "Authentication mechanism review",
+          "last_verified": "2026-06-10"
+        },
+        "url_credential_exposure": {
+          "score": 58,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "The per-user endpoint URL acts as a bearer credential: anyone who obtains it can invoke the user's enabled actions, so it must be treated as a secret and rotated if leaked"
+            }
+          ],
+          "methodology": "Credential exposure threat modeling of the endpoint URL",
+          "last_verified": "2026-06-10"
+        },
+        "blast_radius_control": {
+          "score": 60,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP",
+              "url": "https://zapier.com/mcp",
+              "date": "2026-06-10",
+              "value": "By design the server can reach email, CRM, chat, and finance apps simultaneously; a compromised or prompt-injected agent has an extremely broad blast radius across connected accounts"
+            }
+          ],
+          "methodology": "Blast radius assessment across connected app categories",
+          "last_verified": "2026-06-10"
+        },
+        "permission_granularity": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "Users explicitly select which apps and which individual actions are exposed to the agent, enabling least-privilege configuration"
+            }
+          ],
+          "methodology": "Per-app and per-action permission model review",
+          "last_verified": "2026-06-10"
+        },
+        "credential_handling": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier Security",
+              "url": "https://zapier.com/security",
+              "date": "2026-06-10",
+              "value": "Downstream app OAuth credentials are stored by Zapier under SOC 2 Type II audited controls and never exposed to the agent"
+            }
+          ],
+          "methodology": "Credential storage and isolation review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 75,
+      "criteria": {
+        "data_exposure": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "Emails, CRM records, and messages retrieved by actions flow through Zapier's cloud and into the LLM provider context"
+            }
+          ],
+          "methodology": "Data flow analysis of action inputs and outputs",
+          "last_verified": "2026-06-10"
+        },
+        "sensitive_data_protection": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Zapier Security",
+              "url": "https://zapier.com/security",
+              "date": "2026-06-10",
+              "value": "Encryption in transit and at rest on the platform, but no content-level PII redaction before data reaches the model"
+            }
+          ],
+          "methodology": "Data protection controls assessment",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Zapier Privacy Policy",
+              "url": "https://zapier.com/privacy",
+              "date": "2026-06-10",
+              "value": "Action data is processed by Zapier, the downstream app, and the LLM provider, each under separate privacy policies"
+            }
+          ],
+          "methodology": "Multi-party data sharing review",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier Security and Compliance",
+              "url": "https://zapier.com/security",
+              "date": "2026-06-10",
+              "value": "SOC 2 Type II audited, with published GDPR and CCPA compliance commitments"
+            }
+          ],
+          "methodology": "Compliance certification review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 73,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "Clear setup guides per MCP client, action configuration docs, and security guidance"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "operation_visibility": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP Dashboard",
+              "url": "https://mcp.zapier.com/",
+              "date": "2026-06-10",
+              "value": "Per-user dashboard shows configured actions and a history of agent tool invocations"
+            }
+          ],
+          "methodology": "Logging and traceability assessment",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP",
+              "url": "https://zapier.com/mcp",
+              "date": "2026-06-10",
+              "value": "Fully proprietary, hosted-only service; server implementation cannot be inspected or self-hosted"
+            }
+          ],
+          "methodology": "Source availability review",
+          "last_verified": "2026-06-10"
+        },
+        "tool_coverage_clarity": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "Exposed tool set is exactly the actions the user enabled, each with documented parameters drawn from Zapier's integration schemas"
+            }
+          ],
+          "methodology": "Tool surface documentation review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 87,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "No installation: generate a personal endpoint at mcp.zapier.com, pick apps and actions in the web UI, and paste the URL into the MCP client"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-06-10"
+        },
+        "api_performance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-06-10",
+              "value": "Action latency adds Zapier orchestration overhead on top of downstream app API calls, typically a few seconds per action"
+            }
+          ],
+          "methodology": "Action latency characterization",
+          "last_verified": "2026-06-10"
+        },
+        "reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier Status Page",
+              "url": "https://status.zapier.com/",
+              "date": "2026-06-10",
+              "value": "Public status page with historically high availability across the Zapier platform"
+            }
+          ],
+          "methodology": "Uptime and incident history analysis",
+          "last_verified": "2026-06-10"
+        },
+        "feature_coverage": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Zapier MCP",
+              "url": "https://zapier.com/mcp",
+              "date": "2026-06-10",
+              "value": "Tens of thousands of actions across 9,000+ apps including Gmail, Slack, Salesforce, HubSpot, and Google Workspace"
+            }
+          ],
+          "methodology": "Capability breadth assessment",
+          "last_verified": "2026-06-10"
+        },
+        "community_adoption": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Zapier MCP",
+              "url": "https://zapier.com/mcp",
+              "date": "2026-06-10",
+              "value": "Heavily promoted integration path supported by major MCP clients and Zapier's large existing automation user base"
+            }
+          ],
+          "methodology": "Adoption and ecosystem support analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Broadest action catalog of any MCP server: 9,000+ apps and tens of thousands of actions",
+    "Per-app and per-action permissioning enables least-privilege agent configuration",
+    "Zero-install hosted setup with a personal endpoint generated at mcp.zapier.com",
+    "Downstream app credentials held by Zapier under SOC 2 Type II audited controls, never exposed to the agent",
+    "Action invocation history visible in the per-user MCP dashboard",
+    "Built on a decade-mature integration platform with high availability"
+  ],
+  "limitations": [
+    "Extremely broad blast radius by design: a prompt-injected agent can act across email, CRM, chat, and finance apps",
+    "The per-user endpoint URL acts as a bearer credential and must be treated as a secret",
+    "Fully proprietary and hosted-only; no source inspection or self-hosting",
+    "Business data from connected apps flows through Zapier's cloud and the LLM provider",
+    "Subject to plan-based usage limits and pricing",
+    "Expired downstream app connections require manual reauthorization"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_platforms": [
+      "Hosted remote server (any MCP client with remote support)"
+    ],
+    "api_dependency": "Zapier platform and 9,000+ downstream app APIs",
+    "authentication": "User-specific endpoint at mcp.zapier.com (URL acts as bearer credential)",
+    "compliance": "SOC 2 Type II",
+    "maintained_by": "Zapier",
+    "documentation": "https://docs.zapier.com/mcp/home",
+    "transport_types": [
+      "remote (hosted)"
+    ],
+    "installation_methods": [
+      "hosted endpoint"
+    ]
+  },
+  "use_case_ratings": {
+    "customer-support": {
+      "overall": 88,
+      "notes": "Excellent for agents that triage tickets, draft replies, and update CRM records across support stacks"
+    },
+    "data-analysis": {
+      "overall": 75,
+      "notes": "Good for pulling records from business apps into analysis, though not an analytics tool itself"
+    },
+    "content-creation": {
+      "overall": 80,
+      "notes": "Strong for publishing and distribution workflows across CMS, email, and social apps"
+    },
+    "code-generation": {
+      "overall": 58,
+      "notes": "Not a development tool; mainly useful for wiring deployment or notification side effects"
+    },
+    "research-assistant": {
+      "overall": 70,
+      "notes": "Useful for gathering data from connected SaaS tools rather than the open web"
+    },
+    "financial-analysis": {
+      "overall": 68,
+      "notes": "Can reach accounting and CRM data, but broad access to financial apps demands strict action scoping"
+    },
+    "legal-compliance": {
+      "overall": 62,
+      "notes": "SOC 2 helps, but routing privileged documents through Zapier and an LLM needs careful review"
+    },
+    "healthcare": {
+      "overall": 50,
+      "notes": "Not suitable for PHI workflows; no HIPAA business associate posture for MCP agent traffic"
+    }
+  },
+  "best_for": [
+    "Business automation agents that need to act across many SaaS apps from one server",
+    "Teams already invested in Zapier who want their stack exposed to AI assistants",
+    "Non-technical users wanting agent integrations without running any infrastructure"
+  ],
+  "related_entities": [
+    "mcp-server-apify",
+    "mcp-server-fetch"
+  ],
+  "tags": [
+    "automation",
+    "saas-integrations",
+    "workflow",
+    "hosted",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

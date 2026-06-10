@@ -1,0 +1,636 @@
+{
+  "id": "grok-4-3",
+  "type": "model",
+  "name": "Grok 4.3",
+  "provider": "xAI",
+  "version": "4.3",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "xAI's current flagship model released in early May 2026, with a 1M token context window, reasoning, function calling, and structured outputs at aggressive pricing ($1.25/$2.50 per 1M tokens). Strong frontier performance, but a thinner enterprise compliance posture than Anthropic, OpenAI, or Google.",
+  "website": "https://docs.x.ai/developers/models/grok-4.3",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 94,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 95,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.3",
+              "date": "2026-05-06",
+              "value": "Frontier coding performance positioned as flagship successor to Grok 4.1"
+            },
+            {
+              "source": "llm-stats",
+              "url": "https://llm-stats.com/models/grok-4.3",
+              "date": "2026-05-06",
+              "value": "Competitive with frontier peers on agentic coding evaluations"
+            }
+          ],
+          "methodology": "Review of provider documentation and third-party benchmark aggregators",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 94,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.3",
+              "date": "2026-05-06",
+              "value": "Native reasoning mode with strong math and science performance"
+            }
+          ],
+          "methodology": "Review of reasoning benchmark results from provider and aggregators",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 93,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "LMArena Leaderboard",
+              "url": "https://lmarena.ai/leaderboard",
+              "date": "2026-06-01",
+              "value": "Top-tier placement among frontier models in crowdsourced comparisons"
+            },
+            {
+              "source": "OpenRouter Model Listing",
+              "url": "https://openrouter.ai/x-ai/grok-4.3",
+              "date": "2026-04-30",
+              "value": "High usage and quality ratings since launch"
+            }
+          ],
+          "methodology": "Crowdsourced arena comparisons and aggregator quality metrics",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 90,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.3",
+              "date": "2026-05-06",
+              "value": "Structured outputs and function calling support deterministic integration patterns"
+            }
+          ],
+          "methodology": "Review of structured output features and community reports of repeated-prompt behavior",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "~2.0s",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-06-01",
+              "value": "Typical time-to-full-response around 2s for standard prompts (non-reasoning mode)"
+            }
+          ],
+          "methodology": "Median latency from third-party API benchmarking",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p95": {
+          "value": "~5.0s",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-06-01",
+              "value": "Tail latency higher when extended reasoning is engaged"
+            }
+          ],
+          "methodology": "95th percentile response time from third-party benchmarking; reasoning mode adds variance",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "1,000,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "xAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.3",
+              "date": "2026-05-06",
+              "value": "1M token context window; higher per-token rate applies above 200K tokens"
+            }
+          ],
+          "methodology": "Official specification from provider documentation",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 96,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Status Page",
+              "url": "https://status.x.ai/",
+              "date": "2026-06-01",
+              "value": "Generally stable availability since launch with occasional incidents"
+            }
+          ],
+          "methodology": "Historical uptime data from official status page",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Frontier-class performance with a 1M context window and reasoning, function calling, and structured outputs. Release date sources conflict (2026-04-30 per OpenRouter vs 2026-05-06 per llm-stats); xAI documentation is treated as primary."
+    },
+    "security": {
+      "overall_score": 83,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.3",
+              "date": "2026-05-06",
+              "value": "Hardened system prompt handling; limited published red-team data"
+            }
+          ],
+          "methodology": "Testing against OWASP LLM01 prompt injection patterns and review of published safety material",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI News",
+              "url": "https://x.ai/news",
+              "date": "2026-05-06",
+              "value": "Safety improvements cited at launch; less third-party adversarial testing than peers"
+            }
+          ],
+          "methodology": "Review of adversarial prompt testing results and community jailbreak reports",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Privacy Policy",
+              "url": "https://x.ai/legal/privacy-policy",
+              "date": "2026-05-01",
+              "value": "API data handling documented; fewer contractual controls than major enterprise providers"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and data handling commitments",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.3",
+              "date": "2026-05-06",
+              "value": "Content moderation in place; xAI publishes less safety evaluation detail than Anthropic/OpenAI/Google"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories and review of published evaluations",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI API Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-05-06",
+              "value": "API key authentication, HTTPS only, rate limiting, team management in console"
+            }
+          ],
+          "methodology": "Review of API security features and authentication mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Reasonable baseline security, but xAI publishes substantially less safety and red-team documentation than Anthropic, OpenAI, or Google."
+    },
+    "privacy_compliance": {
+      "overall_score": 76,
+      "criteria": {
+        "data_residency": {
+          "value": "US (primary)",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-05-06",
+              "value": "US-based infrastructure; no published regional residency options"
+            }
+          ],
+          "methodology": "Review of provider documentation and enterprise materials",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Privacy Policy",
+              "url": "https://x.ai/legal/privacy-policy",
+              "date": "2026-05-01",
+              "value": "API customer data not used for training by default per policy"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and data usage terms",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "30 days (standard API)",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Privacy Policy",
+              "url": "https://x.ai/legal/privacy-policy",
+              "date": "2026-05-01",
+              "value": "Limited retention for abuse monitoring; zero-retention requires enterprise agreement"
+            }
+          ],
+          "methodology": "Review of terms of service and data retention policies",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-05-06",
+              "value": "Customer responsible for PII redaction; no built-in PII tooling"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Trust Center",
+              "url": "https://trust.x.ai/",
+              "date": "2026-06-01",
+              "value": "SOC 2 Type II; thinner certification portfolio (no HIPAA BAA program, limited GDPR tooling) vs Anthropic/OpenAI/Google"
+            }
+          ],
+          "methodology": "Verification of compliance certifications against major enterprise provider baselines",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Trust Center",
+              "url": "https://trust.x.ai/",
+              "date": "2026-06-01",
+              "value": "Zero-data-retention available only via negotiated enterprise terms"
+            }
+          ],
+          "methodology": "Review of data handling practices and enterprise contract options",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "xAI's enterprise compliance posture remains thinner than Anthropic, OpenAI, or Google: SOC 2 in place but no HIPAA eligibility program and fewer regulated-industry attestations."
+    },
+    "trust_transparency": {
+      "overall_score": 82,
+      "criteria": {
+        "explainability": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.3",
+              "date": "2026-05-06",
+              "value": "Reasoning traces available via API for inspection"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency and explanation capabilities",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI News",
+              "url": "https://x.ai/news",
+              "date": "2026-05-06",
+              "value": "Continued hallucination reductions claimed at launch, building on Grok 4.1 improvements"
+            }
+          ],
+          "methodology": "Review of provider claims and factual QA testing",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 76,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "xAI Public Statements",
+              "url": "https://x.ai/news",
+              "date": "2026-05-06",
+              "value": "Limited published bias evaluation; past Grok versions drew scrutiny over politically tuned behavior"
+            }
+          ],
+          "methodology": "Review of bias benchmark disclosures and independent reporting",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model Behavior",
+              "url": "https://docs.x.ai/developers/models/grok-4.3",
+              "date": "2026-05-06",
+              "value": "Reasoning mode expresses uncertainty reasonably well"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "xAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.3",
+              "date": "2026-05-06",
+              "value": "Detailed model page with capabilities, pricing, limits, and feature support"
+            }
+          ],
+          "methodology": "Review of documentation completeness and clarity",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Public Statements",
+              "url": "https://x.ai/news",
+              "date": "2026-05-06",
+              "value": "General description including X platform data; detailed sources not disclosed"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-05-06",
+              "value": "Built-in moderation with developer controls; lighter-touch defaults than peers"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Good developer-facing documentation and inspectable reasoning, but less published safety/bias evaluation than major competitors."
+    },
+    "operational_excellence": {
+      "overall_score": 82,
+      "criteria": {
+        "api_design_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "xAI API Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-05-06",
+              "value": "OpenAI-compatible API with reasoning, function calling, structured outputs, and prompt caching"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI SDKs",
+              "url": "https://github.com/xai-org",
+              "date": "2026-05-06",
+              "value": "Official SDKs plus broad compatibility with OpenAI client libraries"
+            }
+          ],
+          "methodology": "Review of SDK quality, documentation, and maintenance",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 75,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "xAI Migration Guide (May 15 Retirement)",
+              "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+              "date": "2026-05-15",
+              "value": "Retired Grok model slugs silently redirect to grok-4.3 rather than returning errors"
+            }
+          ],
+          "methodology": "Review of deprecation/migration practices; silent redirects of retired slugs reduce predictability for pinned workloads",
+          "last_verified": "2026-06-10",
+          "notes": "Silent redirection of retired model slugs to grok-4.3 can change behavior of production systems without explicit failure signals"
+        },
+        "monitoring_observability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Console",
+              "url": "https://console.x.ai/",
+              "date": "2026-05-06",
+              "value": "Usage dashboard with spend and rate limit visibility"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-05-06",
+              "value": "Improving documentation; support channels lighter than major cloud providers"
+            }
+          ],
+          "methodology": "Assessment of documentation, community, and support responsiveness",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenRouter Model Listing",
+              "url": "https://openrouter.ai/x-ai/grok-4.3",
+              "date": "2026-04-30",
+              "value": "Available via OpenRouter and major LLM frameworks; growing third-party adoption"
+            }
+          ],
+          "methodology": "Analysis of third-party integrations and tools",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "xAI Terms of Service",
+              "url": "https://x.ai/legal/terms-of-service",
+              "date": "2026-05-01",
+              "value": "Clear commercial API terms; enterprise agreements available"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Strong API and pricing, but the May 2026 retirement wave (with silent slug redirects to grok-4.3) highlights an aggressive deprecation culture enterprises should plan around."
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 94,
+      "notes": "Frontier-class coding with function calling and structured outputs at very competitive pricing.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    },
+    "customer-support": {
+      "overall": 87,
+      "notes": "Fast, capable, and cheap for support workloads; compliance posture may limit regulated deployments.",
+      "alternatives": ["claude-sonnet-4-6", "gemini-3-5-flash"]
+    },
+    "content-creation": {
+      "overall": 89,
+      "notes": "Strong long-form generation with current-events awareness from the X ecosystem.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    },
+    "data-analysis": {
+      "overall": 91,
+      "notes": "Strong reasoning over large inputs; 1M context handles big datasets, with higher per-token rates above 200K.",
+      "alternatives": ["gemini-3-1-pro", "gpt-5-5"]
+    },
+    "research-assistant": {
+      "overall": 92,
+      "notes": "1M context plus reasoning makes it well suited to literature-scale synthesis at low cost.",
+      "alternatives": ["gemini-3-1-pro", "claude-opus-4-8"]
+    },
+    "legal-compliance": {
+      "overall": 76,
+      "notes": "Capable analytically, but thinner compliance certifications than Anthropic/OpenAI/Google providers.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    },
+    "healthcare": {
+      "overall": 70,
+      "notes": "No HIPAA eligibility program; not recommended for PHI workloads.",
+      "alternatives": ["claude-opus-4-8", "nova-2-lite"]
+    },
+    "financial-analysis": {
+      "overall": 89,
+      "notes": "Strong quantitative reasoning and real-time information; verify compliance requirements first.",
+      "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
+    },
+    "education": {
+      "overall": 89,
+      "notes": "Strong explanations at low cost; content controls are lighter-touch than peers.",
+      "alternatives": ["claude-sonnet-4-6", "gemini-3-5-flash"]
+    },
+    "creative-writing": {
+      "overall": 88,
+      "notes": "Distinctive voice and strong creative range; fewer content restrictions than competitors.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    }
+  },
+  "strengths": [
+    "Aggressive pricing: $1.25/$2.50 per 1M tokens with $0.20 cached input",
+    "1M token context window",
+    "Full agentic feature set: reasoning, function calling, structured outputs",
+    "Text and image input support",
+    "Frontier-class performance across coding, reasoning, and general tasks",
+    "OpenAI-compatible API simplifies migration"
+  ],
+  "limitations": [
+    "Thinner enterprise compliance posture than Anthropic, OpenAI, or Google (no HIPAA program)",
+    "Retired Grok model slugs silently redirect to grok-4.3, risking unannounced behavior changes",
+    "Higher per-token rate applies above 200K context",
+    "Limited published safety, bias, and red-team evaluation detail",
+    "Zero-data-retention only via negotiated enterprise terms",
+    "Conflicting release-date records across aggregators reflect lighter release documentation"
+  ],
+  "best_for": [
+    "Cost-sensitive agentic and coding workloads needing frontier quality",
+    "Long-context analysis and research up to 1M tokens",
+    "Applications wanting real-time/current-events awareness",
+    "Teams already on OpenAI-compatible tooling seeking cheaper frontier capacity"
+  ],
+  "not_recommended_for": [
+    "Healthcare workloads involving PHI (no HIPAA eligibility)",
+    "Regulated industries requiring deep compliance attestations",
+    "Production systems that cannot tolerate silent model-slug redirection",
+    "Organizations requiring contractual zero data retention by default"
+  ],
+  "metadata": {
+    "pricing": {
+      "input": "$1.25 per 1M tokens",
+      "output": "$2.50 per 1M tokens",
+      "notes": "Cached input $0.20 per 1M tokens. Higher per-token rate applies for requests above 200K context.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 1000000,
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Italian",
+      "Portuguese",
+      "Japanese",
+      "Korean",
+      "Chinese",
+      "Arabic",
+      "Hindi"
+    ],
+    "modalities": ["text", "image (input)"],
+    "api_endpoint": "https://api.x.ai/v1/chat/completions",
+    "open_source": false,
+    "architecture": "Transformer-based with native reasoning, function calling, and structured outputs",
+    "parameters": "Not disclosed",
+    "release_date": "Early May 2026 (2026-04-30 per OpenRouter; 2026-05-06 per llm-stats)"
+  },
+  "related_entities": ["grok-4-1", "grok-3-beta", "gpt-5-5", "claude-opus-4-8", "gemini-3-1-pro"],
+  "tags": [
+    "flagship",
+    "reasoning",
+    "long-context",
+    "function-calling",
+    "structured-outputs",
+    "cost-effective",
+    "real-time"
+  ]
+}

@@ -4,9 +4,9 @@
   "name": "GPT-5.2 Codex",
   "provider": "OpenAI",
   "version": "gpt-5-2-codex-2025-12-11",
-  "last_evaluated": "2026-01-14",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's specialized coding model built on GPT-5.2 with 56.4% SWE-bench Pro (state-of-the-art), 64% Terminal-bench 2.0, native code compaction, and enhanced cybersecurity capabilities.",
+  "description": "DEPRECATED: superseded by GPT-5.3-Codex (2026-02-05); gpt-5.2-codex API shuts down 2026-07-23. Historically OpenAI's specialized coding model built on GPT-5.2 with 56.4% SWE-bench Pro, 64% Terminal-bench 2.0, native code compaction, and enhanced cybersecurity capabilities.",
   "website": "https://openai.com/index/introducing-gpt-5-2-codex/",
 
   "trust_vector": {
@@ -416,7 +416,7 @@
     },
 
     "operational_excellence": {
-      "overall_score": 94,
+      "overall_score": 91,
       "criteria": {
         "api_design_quality": {
           "score": 95,
@@ -447,7 +447,7 @@
           "last_verified": "2026-01-14"
         },
         "versioning_policy": {
-          "score": 91,
+          "score": 79,
           "confidence": "high",
           "evidence": [
             {
@@ -455,6 +455,12 @@
               "url": "https://platform.openai.com/docs/api-reference/models",
               "date": "2025-12-11",
               "value": "Clear versioning policy"
+            },
+            {
+              "source": "OpenAI Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-06-10",
+              "value": "gpt-5.2-codex API shutdown 2026-07-23; superseded by GPT-5.3-Codex (2026-02-05)"
             }
           ],
           "methodology": "Versioning review",
@@ -489,7 +495,7 @@
           "last_verified": "2026-01-14"
         },
         "ecosystem_maturity": {
-          "score": 96,
+          "score": 88,
           "confidence": "high",
           "evidence": [
             {
@@ -517,7 +523,7 @@
           "last_verified": "2026-01-14"
         }
       },
-      "notes": "Excellent developer experience with native code compaction and IDE integrations. Industry-leading code tooling."
+      "notes": "Deprecated: gpt-5.2-codex API shutdown scheduled 2026-07-23; superseded by GPT-5.3-Codex. Versioning and ecosystem scores reduced to reflect deprecation."
     }
   },
 
@@ -589,7 +595,8 @@
     "Not suitable for non-code tasks",
     "Same pricing as GPT-5.2",
     "Not HIPAA eligible",
-    "30-day data retention"
+    "30-day data retention",
+    "DEPRECATED: superseded by GPT-5.3-Codex (2026-02-05); gpt-5.2-codex API shutdown 2026-07-23"
   ],
 
   "best_for": [
@@ -639,9 +646,10 @@
     "parameters": "Not disclosed"
   },
 
-  "related_entities": ["gpt-5-2", "claude-opus-4-5", "claude-sonnet-4-5"],
+  "related_entities": ["gpt-5-3-codex", "gpt-5-2", "claude-opus-4-5", "claude-sonnet-4-5"],
 
   "tags": [
+    "deprecated",
     "coding",
     "specialized",
     "swe-bench-leader",

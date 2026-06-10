@@ -1,0 +1,463 @@
+{
+  "id": "cursor-agent",
+  "type": "agent",
+  "name": "Cursor Agent",
+  "provider": "Anysphere",
+  "version": "3.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Agent mode of Cursor, Anysphere's AI-native IDE. The product's primary surface is now agentic: parallel local agents, cloud/background agents running in isolated VMs, and the in-house Composer model line alongside Claude, GPT, and Gemini.",
+  "website": "https://cursor.com/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 83,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Blog - Composer 2",
+              "url": "https://cursor.com/blog/composer-2",
+              "date": "2026-03-19",
+              "value": "Composer 2 (2026-03-19) improved agentic coding accuracy and speed over Composer 1, which shipped with Cursor 2.0 in October 2025"
+            }
+          ],
+          "methodology": "Assessment of agentic edit and task completion quality across Composer and frontier model options, drawing on vendor benchmarks and user reports",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cursor Documentation - Agent",
+              "url": "https://docs.cursor.com/agent",
+              "date": "2026-04-15",
+              "value": "Agent reliably uses codebase search, terminal commands, file edits, lints, and MCP tools within the IDE loop"
+            }
+          ],
+          "methodology": "Review of agent tool loop reliability across edit, search, terminal, and MCP integrations",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "InfoQ - Cursor 3 Agent-First Interface",
+              "url": "https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/",
+              "date": "2026-04-20",
+              "value": "Cursor 3 (April 2026) redesigned the IDE around agent plans and task orchestration as the primary workflow"
+            }
+          ],
+          "methodology": "Evaluation of plan construction and multi-file refactoring on complex tasks in the agent-first interface",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Documentation - Rules and Memories",
+              "url": "https://docs.cursor.com/context/rules",
+              "date": "2026-04-15",
+              "value": "Project rules, user rules, and Memories persist conventions and learned context across sessions"
+            }
+          ],
+          "methodology": "Review of rules, memories, and codebase indexing persistence",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 81,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Documentation - Agent",
+              "url": "https://docs.cursor.com/agent",
+              "date": "2026-04-15",
+              "value": "Agent reads linter and test failures and iterates automatically; loop detection prevents most runaway retries"
+            }
+          ],
+          "methodology": "Assessment of automatic iteration on lints, build errors, and failing tests",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "InfoQ - Cursor 3 Agent-First Interface",
+              "url": "https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/",
+              "date": "2026-04-20",
+              "value": "Parallel agents run concurrently on separate tasks, locally via worktrees or in cloud VMs as background agents"
+            }
+          ],
+          "methodology": "Review of parallel and background agent orchestration capabilities",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 66,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Documentation - Background Agents",
+              "url": "https://docs.cursor.com/background-agent",
+              "date": "2026-04-15",
+              "value": "Cloud/background agents execute in isolated VMs; local agents run terminal commands on the user's machine with configurable approval and sandbox settings"
+            }
+          ],
+          "methodology": "Security review of cloud VM isolation versus local execution approval model",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Security",
+              "url": "https://cursor.com/security",
+              "date": "2026-04-15",
+              "value": "Teams/Enterprise offer SSO, admin controls, and centrally enforced privacy mode; repository access scoped via GitHub app for cloud agents"
+            }
+          ],
+          "methodology": "Review of org-level controls, SSO, and repository scoping",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 68,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Cursor Security",
+              "url": "https://cursor.com/security",
+              "date": "2026-04-15",
+              "value": "Agents process untrusted repo content, web results, and MCP outputs; command allowlists and approvals mitigate but injection hardening is not publicly detailed"
+            }
+          ],
+          "methodology": "Threat surface analysis of untrusted content ingestion against documented mitigations",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Security",
+              "url": "https://cursor.com/security",
+              "date": "2026-04-15",
+              "value": "Privacy mode guarantees code is not stored or trained on; SOC 2 attested infrastructure with per-tenant separation for cloud agents"
+            }
+          ],
+          "methodology": "Review of privacy mode guarantees and tenant isolation for cloud agents",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 32,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cursor",
+              "url": "https://cursor.com/",
+              "date": "2026-04-15",
+              "value": "Proprietary VS Code fork; Composer models and agent harness are closed source"
+            }
+          ],
+          "methodology": "Source availability assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 64,
+      "criteria": {
+        "data_retention": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Privacy",
+              "url": "https://cursor.com/privacy",
+              "date": "2026-04-15",
+              "value": "Privacy mode (default for Teams) prevents code storage and training use; without it, telemetry and code data may be retained"
+            }
+          ],
+          "methodology": "Review of privacy mode retention guarantees and default settings",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Security",
+              "url": "https://cursor.com/security",
+              "date": "2026-04-15",
+              "value": "SOC 2 Type II attestation, DPA availability, and GDPR-aligned processing terms for business customers"
+            }
+          ],
+          "methodology": "Compliance documentation assessment",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Documentation - Models",
+              "url": "https://docs.cursor.com/settings/models",
+              "date": "2026-04-15",
+              "value": "Prompts and code context are routed to the selected model provider (Anysphere Composer, Anthropic, OpenAI, Google), expanding the data-processing surface"
+            }
+          ],
+          "methodology": "Data flow analysis across multi-provider model routing",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cursor Documentation",
+              "url": "https://docs.cursor.com/",
+              "date": "2026-04-15",
+              "value": "IDE runs locally but all model inference is cloud-based; no on-premises or fully offline mode"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 69,
+      "criteria": {
+        "documentation_quality": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cursor Documentation",
+              "url": "https://docs.cursor.com/",
+              "date": "2026-04-15",
+              "value": "Thorough docs covering agent mode, background agents, rules, MCP, models, and enterprise administration"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cursor Documentation - Agent",
+              "url": "https://docs.cursor.com/agent",
+              "date": "2026-04-15",
+              "value": "Every agent action is visible: diffs reviewable before apply, terminal output streamed, and per-agent activity logs in the agent-first UI"
+            }
+          ],
+          "methodology": "Review of action visibility, diff review workflow, and agent logs",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "InfoQ - Cursor 3 Agent-First Interface",
+              "url": "https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/",
+              "date": "2026-04-20",
+              "value": "Agents narrate plans and rationale in the task view, though depth of explanation varies by selected model"
+            }
+          ],
+          "methodology": "Assessment of plan narration and change rationale quality",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 25,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cursor",
+              "url": "https://cursor.com/",
+              "date": "2026-04-15",
+              "value": "Closed-source editor fork and proprietary Composer models; no published weights or harness internals"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cursor Community Forum",
+              "url": "https://forum.cursor.com/",
+              "date": "2026-06-01",
+              "value": "Very large active user community, busy forum, and rapid release cadence (Cursor 2.0 Oct 2025, Composer 2 Mar 2026, Cursor 3 Apr 2026)"
+            }
+          ],
+          "methodology": "Community engagement and release cadence analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 79,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cursor Documentation",
+              "url": "https://docs.cursor.com/",
+              "date": "2026-04-15",
+              "value": "VS Code fork imports existing extensions, settings, and keybindings; developers are productive in minutes"
+            }
+          ],
+          "methodology": "Onboarding and integration friction assessment",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Documentation - Background Agents",
+              "url": "https://docs.cursor.com/background-agent",
+              "date": "2026-04-15",
+              "value": "Cloud agents offload long tasks to isolated VMs and run in parallel, decoupling agent throughput from local hardware"
+            }
+          ],
+          "methodology": "Scalability assessment of parallel and cloud agent execution",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cursor Pricing",
+              "url": "https://cursor.com/pricing",
+              "date": "2026-04-15",
+              "value": "Free / Pro $20 / Pro+ $60 / Ultra $200 per month; Teams $40 per seat. Tiers include usage allowances with overage billing for heavy frontier-model use"
+            }
+          ],
+          "methodology": "Pricing model analysis; flat tiers are clear but usage-based overages reduce predictability for heavy agent users",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cursor Documentation - Teams",
+              "url": "https://docs.cursor.com/account/teams",
+              "date": "2026-04-15",
+              "value": "Team usage dashboards and admin analytics; deep observability of agent behavior requires external tooling"
+            }
+          ],
+          "methodology": "Monitoring and admin analytics features assessment",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "InfoQ - Cursor 3 Agent-First Interface",
+              "url": "https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/",
+              "date": "2026-04-20",
+              "value": "Mature, widely adopted product with massive enterprise and individual user base and sustained rapid iteration through Cursor 3"
+            }
+          ],
+          "methodology": "Product maturity and adoption assessment",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 92,
+      "notes": "Best-in-class agentic IDE experience; parallel agents, fast in-house Composer models, and frontier model choice"
+    },
+    "data-analysis": {
+      "overall": 76,
+      "notes": "Strong for building and iterating on analysis code and notebooks, though not an analytics product itself"
+    },
+    "research-assistant": {
+      "overall": 68,
+      "notes": "Useful for technical research within codebases and docs; general research is outside its design focus"
+    },
+    "education": {
+      "overall": 74,
+      "notes": "Visible agent reasoning and diffs help learners understand changes; generous free tier lowers the barrier"
+    }
+  },
+  "best_for": [
+    "Developers who want agentic coding embedded directly in their daily IDE workflow",
+    "Teams running parallel agents on multiple tasks, locally and in cloud VMs",
+    "Users wanting model choice between fast in-house Composer models and frontier models",
+    "Organizations migrating from VS Code with zero extension or keybinding friction"
+  ],
+  "strengths": [
+    "Agent-first IDE redesign (Cursor 3, April 2026) makes agent orchestration the primary workflow",
+    "In-house Composer model line (Composer 2, 2026-03-19) delivers very fast agentic edits alongside Claude/GPT/Gemini choice",
+    "Parallel agents and cloud background agents in isolated VMs scale work beyond one task at a time",
+    "Human-in-the-loop by design: reviewable diffs, command approvals, and visible terminal output",
+    "Seamless VS Code compatibility for extensions, themes, and keybindings",
+    "Privacy mode with no-storage/no-training guarantee, enforceable org-wide"
+  ],
+  "limitations": [
+    "Closed-source editor and models limit independent security and behavior auditing",
+    "No offline or on-premises inference; all model calls go to cloud providers",
+    "Usage-based overages above tier allowances make heavy agent usage costs less predictable",
+    "Local agent terminal execution depends on user-configured approvals; misconfiguration widens risk",
+    "Multi-provider model routing complicates data governance reviews",
+    "Rapid release cadence occasionally introduces regressions and workflow changes"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_models": [
+      "Composer 1/2 (Anysphere in-house)",
+      "Anthropic Claude",
+      "OpenAI GPT",
+      "Google Gemini"
+    ],
+    "programming_languages": [
+      "All languages supported by VS Code ecosystem"
+    ],
+    "deployment_type": "Local IDE (VS Code fork) + cloud agents in isolated VMs",
+    "tool_support": [
+      "Codebase search and indexing",
+      "Terminal execution",
+      "MCP servers",
+      "Browser/web context",
+      "GitHub integration for cloud agents"
+    ],
+    "first_release": "2023 (IDE); Cursor 2.0 with Composer Oct 2025; Cursor 3 April 2026",
+    "pricing": "Free / Pro $20 / Pro+ $60 / Ultra $200 per month; Teams $40 per seat",
+    "company": "Anysphere"
+  },
+  "related_entities": [
+    "claude-code",
+    "github-copilot-coding-agent",
+    "openai-codex",
+    "devin"
+  ],
+  "tags": [
+    "ide",
+    "agentic-coding",
+    "parallel-agents",
+    "proprietary"
+  ]
+}

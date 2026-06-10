@@ -4,9 +4,9 @@
   "name": "GPT-5.2",
   "provider": "OpenAI",
   "version": "gpt-5-2-2025-12-11",
-  "last_evaluated": "2026-01-14",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's latest flagship with 400K context window, 100% AIME 2025 score, and 52.9% ARC-AGI-2. Three variants: Instant (speed), Thinking (reasoning), Pro (accuracy). Industry-leading abstract reasoning.",
+  "description": "SUPERSEDED by GPT-5.4 (2026-03-05) and GPT-5.5 (2026-04-23, current OpenAI flagship). Still served, with 400K context window, 100% AIME 2025 score, and 52.9% ARC-AGI-2. Three variants: Instant (speed), Thinking (reasoning), Pro (accuracy). New projects should prefer GPT-5.5.",
   "website": "https://openai.com/index/introducing-gpt-5-2/",
 
   "trust_vector": {
@@ -485,6 +485,12 @@
               "url": "https://platform.openai.com/docs/api-reference/models",
               "date": "2025-12-11",
               "value": "Clear versioning with deprecation notices"
+            },
+            {
+              "source": "OpenAI: Introducing GPT-5.5",
+              "url": "https://openai.com/index/introducing-gpt-5-5/",
+              "date": "2026-06-10",
+              "value": "GPT-5.2 superseded by GPT-5.4 (2026-03-05) and GPT-5.5 (2026-04-23, current flagship)"
             }
           ],
           "methodology": "Versioning policy review",
@@ -619,7 +625,8 @@
     "30-day data retention vs Anthropic's 0-day",
     "1.4x price increase over GPT-5.1 ($1.75/$14)",
     "Slightly behind Claude Opus 4.5 on SWE-bench (80% vs 80.9%)",
-    "Smaller context than Gemini 3 (400K vs 1M)"
+    "Smaller context than Gemini 3 (400K vs 1M)",
+    "SUPERSEDED: GPT-5.4 (2026-03-05) and GPT-5.5 (2026-04-23) are newer; GPT-5.5 is OpenAI's current flagship"
   ],
 
   "best_for": [
@@ -669,16 +676,16 @@
     "knowledge_cutoff": "August 31, 2025"
   },
 
-  "related_entities": ["gpt-5-1", "gpt-5-2-codex", "claude-opus-4-5", "gemini-3-pro"],
+  "related_entities": ["gpt-5-5", "gpt-5-4", "gpt-5-1", "gpt-5-2-codex", "claude-opus-4-5", "gemini-3-pro"],
 
   "tags": [
+    "superseded",
     "reasoning",
     "multimodal",
     "400k-context",
     "ecosystem-leader",
     "math-expert",
     "three-variants",
-    "low-latency",
-    "flagship"
+    "low-latency"
   ]
 }

@@ -1,0 +1,436 @@
+{
+  "id": "mcp-server-hugging-face",
+  "type": "mcp",
+  "name": "Hugging Face MCP Server",
+  "provider": "Hugging Face",
+  "version": "2026.6",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Hugging Face's official MCP server connecting AI assistants to the Hub. Ships 7 built-in tools (search for models, datasets, Spaces, and papers, plus documentation search) and can dynamically attach community Gradio Spaces as additional tools. Hosted at huggingface.co/mcp with per-user configuration, or runnable locally; open source under MIT.",
+  "website": "https://huggingface.co/mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 80,
+      "criteria": {
+        "api_reliability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Server Blog",
+              "url": "https://huggingface.co/blog/building-hf-mcp",
+              "date": "2026-06-10",
+              "value": "Hosted endpoint runs on Hugging Face Hub infrastructure with Streamable HTTP transport designed for stateless, scalable operation"
+            }
+          ],
+          "methodology": "Endpoint stability analysis of the hosted server and underlying Hub APIs",
+          "last_verified": "2026-06-10"
+        },
+        "search_accuracy": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "hf-mcp-server Repository",
+              "url": "https://github.com/huggingface/hf-mcp-server",
+              "date": "2026-06-10",
+              "value": "Built-in search tools query the Hub's native search across models, datasets, Spaces, and papers with relevant, current results"
+            }
+          ],
+          "methodology": "Relevance assessment of Hub search results for representative ML queries",
+          "last_verified": "2026-06-10"
+        },
+        "operation_success_rate": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "hf-mcp-server Repository",
+              "url": "https://github.com/huggingface/hf-mcp-server",
+              "date": "2026-06-10",
+              "value": "The 7 built-in tools are thin wrappers over stable Hub APIs and succeed consistently"
+            }
+          ],
+          "methodology": "Operation success testing across built-in tools",
+          "last_verified": "2026-06-10"
+        },
+        "dynamic_tool_reliability": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Server Blog",
+              "url": "https://huggingface.co/blog/building-hf-mcp",
+              "date": "2026-06-10",
+              "value": "Attached Gradio Spaces run as community-maintained apps; they can be slow to cold-start, hit ZeroGPU queues, or fail when the Space author changes or breaks the app"
+            }
+          ],
+          "methodology": "Reliability testing of dynamically attached Gradio Space tools across popular Spaces",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "hf-mcp-server Repository",
+              "url": "https://github.com/huggingface/hf-mcp-server",
+              "date": "2026-06-10",
+              "value": "Open-source implementation returns structured errors and supports MCP tool-list-changed notifications when the user's configured tool set changes"
+            }
+          ],
+          "methodology": "Error handling testing including dynamic tool set changes mid-session",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 71,
+      "criteria": {
+        "authentication_security": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Settings",
+              "url": "https://huggingface.co/settings/mcp",
+              "date": "2026-06-10",
+              "value": "Hosted server authenticates with Hugging Face account credentials/tokens; per-user tool configuration is managed at hf.co/settings/mcp"
+            }
+          ],
+          "methodology": "Authentication mechanism review for hosted and local deployment modes",
+          "last_verified": "2026-06-10"
+        },
+        "token_exposure_risk": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Security Tokens Documentation",
+              "url": "https://huggingface.co/docs/hub/security-tokens",
+              "date": "2026-06-10",
+              "value": "Hub supports fine-grained access tokens, but local stdio deployments place tokens in client configuration files"
+            }
+          ],
+          "methodology": "Token storage and exposure-surface analysis across deployment modes",
+          "last_verified": "2026-06-10"
+        },
+        "scope_limitation": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Security Tokens Documentation",
+              "url": "https://huggingface.co/docs/hub/security-tokens",
+              "date": "2026-06-10",
+              "value": "Fine-grained tokens can restrict Hub access, and built-in tools are read-oriented; however, attached Gradio Spaces execute with whatever inputs the agent supplies"
+            }
+          ],
+          "methodology": "Permission scope testing of built-in tools and attached Space tools",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_tool_supply_chain": {
+          "score": 50,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Server Blog",
+              "url": "https://huggingface.co/blog/building-hf-mcp",
+              "date": "2026-06-10",
+              "value": "Dynamically attached Gradio Spaces are arbitrary community-authored applications; tool descriptions and outputs are untrusted third-party content, creating supply-chain and prompt injection exposure inside the agent loop"
+            }
+          ],
+          "methodology": "Supply-chain threat modeling of community Space attachment: untrusted code, mutable tool definitions, and unvetted outputs",
+          "last_verified": "2026-06-10"
+        },
+        "unauthorized_action_risk": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "hf-mcp-server Repository",
+              "url": "https://github.com/huggingface/hf-mcp-server",
+              "date": "2026-06-10",
+              "value": "Built-in tools are search/read operations with limited blast radius; risk concentrates in what user-attached Spaces are allowed to do with submitted data"
+            }
+          ],
+          "methodology": "Authorization boundary analysis of built-in versus attached tool capabilities",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 69,
+      "criteria": {
+        "query_data_exposure": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Server Blog",
+              "url": "https://huggingface.co/blog/building-hf-mcp",
+              "date": "2026-06-10",
+              "value": "Search queries and tool results flow through the hosted server and into the LLM provider's context; built-in tools touch mostly public Hub content"
+            }
+          ],
+          "methodology": "Data flow analysis of queries and results across the hosted server",
+          "last_verified": "2026-06-10"
+        },
+        "sensitive_data_protection": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "hf-mcp-server Repository",
+              "url": "https://github.com/huggingface/hf-mcp-server",
+              "date": "2026-06-10",
+              "value": "No built-in redaction; any sensitive content an agent submits to an attached Space tool leaves the Hugging Face trust boundary"
+            }
+          ],
+          "methodology": "Assessment of filtering controls on data submitted to attached tools",
+          "last_verified": "2026-06-10"
+        },
+        "organization_data_control": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Hub Security Documentation",
+              "url": "https://huggingface.co/docs/hub/security",
+              "date": "2026-06-10",
+              "value": "Org access controls and gated/private repos apply to authenticated Hub access; MCP tool configuration is per-user rather than org-governed"
+            }
+          ],
+          "methodology": "Access control review of Hub permissions as applied through the MCP server",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 60,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Server Blog",
+              "url": "https://huggingface.co/blog/building-hf-mcp",
+              "date": "2026-06-10",
+              "value": "Inputs sent to attached Gradio Spaces are processed by community-operated applications whose data handling is not governed by Hugging Face's privacy commitments"
+            }
+          ],
+          "methodology": "Analysis of data sharing with community Space operators and the LLM provider",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 83,
+      "criteria": {
+        "documentation_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Server Blog",
+              "url": "https://huggingface.co/blog/building-hf-mcp",
+              "date": "2026-06-10",
+              "value": "Detailed engineering blog plus repository README cover architecture, transports (Streamable HTTP and stdio), and setup for hosted and local modes"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "operation_visibility": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Settings",
+              "url": "https://huggingface.co/settings/mcp",
+              "date": "2026-06-10",
+              "value": "Users can see and manage exactly which tools and Spaces are attached at hf.co/settings/mcp; tool calls are visible in MCP client logs"
+            }
+          ],
+          "methodology": "Logging and configuration-visibility assessment",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "hf-mcp-server Repository",
+              "url": "https://github.com/huggingface/hf-mcp-server",
+              "date": "2026-06-10",
+              "value": "Server is fully open source under MIT (approximately 247 stars); the same code powers the hosted deployment and can be self-hosted"
+            }
+          ],
+          "methodology": "Source code review of the published server implementation",
+          "last_verified": "2026-06-10"
+        },
+        "api_coverage_clarity": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "hf-mcp-server Repository",
+              "url": "https://github.com/huggingface/hf-mcp-server",
+              "date": "2026-06-10",
+              "value": "The 7 built-in tools are clearly enumerated, but the effective tool surface varies per user depending on which Gradio Spaces are attached"
+            }
+          ],
+          "methodology": "Comparison of documented tool surface against per-user dynamic configuration",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 81,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Endpoint",
+              "url": "https://huggingface.co/mcp",
+              "date": "2026-06-10",
+              "value": "Hosted mode requires only adding https://huggingface.co/mcp and authenticating; tool selection is point-and-click at hf.co/settings/mcp"
+            }
+          ],
+          "methodology": "Setup complexity assessment for hosted and local modes",
+          "last_verified": "2026-06-10"
+        },
+        "api_performance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Server Blog",
+              "url": "https://huggingface.co/blog/building-hf-mcp",
+              "date": "2026-06-10",
+              "value": "Built-in search tools respond quickly; attached Space tools vary widely with Space hardware, cold starts, and GPU queues"
+            }
+          ],
+          "methodology": "Latency observation across built-in and attached tools",
+          "last_verified": "2026-06-10"
+        },
+        "reliability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Status",
+              "url": "https://status.huggingface.co/",
+              "date": "2026-06-10",
+              "value": "Hosted endpoint tracks Hub availability, which is historically solid; community Space tools are the main reliability variable"
+            }
+          ],
+          "methodology": "Uptime analysis of Hub infrastructure versus attached tool availability",
+          "last_verified": "2026-06-10"
+        },
+        "feature_coverage": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face MCP Server Blog",
+              "url": "https://huggingface.co/blog/building-hf-mcp",
+              "date": "2026-06-10",
+              "value": "Covers Hub discovery (models, datasets, Spaces, papers, docs) and extends to image generation, transcription, and thousands of other capabilities via attachable Gradio Spaces"
+            }
+          ],
+          "methodology": "Feature completeness assessment including the dynamic tool extension model",
+          "last_verified": "2026-06-10"
+        },
+        "community_adoption": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "hf-mcp-server Repository",
+              "url": "https://github.com/huggingface/hf-mcp-server",
+              "date": "2026-06-10",
+              "value": "Approximately 247 GitHub stars with active first-party maintenance; adoption driven mainly by the hosted endpoint within the large HF user base"
+            }
+          ],
+          "methodology": "Community activity and adoption analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Fully open source (MIT) with the same code powering the hosted endpoint",
+    "Strong Hub discovery: models, datasets, Spaces, papers, and documentation search",
+    "Dynamic Gradio Space attachment extends the agent with thousands of community capabilities",
+    "Per-user tool configuration UI at hf.co/settings/mcp with tool-list-changed support",
+    "Flexible deployment: hosted Streamable HTTP or local stdio",
+    "Backed by Hugging Face's first-party maintenance and Hub infrastructure"
+  ],
+  "limitations": [
+    "Attached Gradio Spaces are arbitrary community apps: a third-party tool supply-chain and prompt injection exposure",
+    "Data submitted to attached Spaces leaves Hugging Face's privacy boundary",
+    "Attached tool reliability varies with Space cold starts, GPU queues, and author changes",
+    "Effective tool surface differs per user, complicating organizational review",
+    "Local stdio mode stores Hub tokens in client configuration",
+    "MCP tool configuration is per-user with no org-level governance controls"
+  ],
+  "metadata": {
+    "repository": "https://github.com/huggingface/hf-mcp-server",
+    "license": "MIT",
+    "maintained_by": "Hugging Face",
+    "github_stars": 247,
+    "remote_endpoint": "https://huggingface.co/mcp",
+    "configuration_url": "https://huggingface.co/settings/mcp",
+    "authentication": "Hugging Face account / access tokens (fine-grained supported)",
+    "transport_types": [
+      "streamable-http",
+      "stdio"
+    ],
+    "installation_methods": [
+      "Remote MCP endpoint",
+      "Local self-hosted (Node.js)"
+    ],
+    "built_in_tools": 7,
+    "mcp_version": "1.0"
+  },
+  "use_case_ratings": {
+    "research-assistant": {
+      "overall": 90,
+      "notes": "Excellent for discovering models, datasets, papers, and Spaces directly from the Hub"
+    },
+    "data-analysis": {
+      "overall": 82,
+      "notes": "Strong for finding datasets and running analysis-oriented Spaces, with variable attached-tool reliability"
+    },
+    "code-generation": {
+      "overall": 80,
+      "notes": "Doc search and model discovery materially improve ML integration code quality"
+    },
+    "education": {
+      "overall": 84,
+      "notes": "Great for teaching ML concepts with live access to models, papers, and demo Spaces"
+    },
+    "content-creation": {
+      "overall": 72,
+      "notes": "Image generation and media Spaces are attachable as tools, though quality and uptime vary by Space"
+    }
+  },
+  "best_for": [
+    "ML engineers and researchers discovering models, datasets, and papers from an agent",
+    "Developers building Hugging Face integrations with live documentation search",
+    "Power users extending agents with community Gradio Space capabilities",
+    "Teams that want an auditable, self-hostable open-source MCP server"
+  ],
+  "related_entities": [
+    "mcp-server-github",
+    "mcp-server-vercel",
+    "mcp-server-notion",
+    "mcp-server-zapier"
+  ],
+  "tags": [
+    "machine-learning",
+    "models",
+    "datasets",
+    "mcp",
+    "model-context-protocol"
+  ]
+}
