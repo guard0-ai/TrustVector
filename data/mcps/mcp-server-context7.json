@@ -1,0 +1,464 @@
+{
+  "id": "mcp-server-context7",
+  "type": "mcp",
+  "name": "Context7 MCP",
+  "provider": "Upstash",
+  "version": "2026.6",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Upstash's documentation-retrieval MCP server. Two tools (resolve-library-id, get-library-docs) inject up-to-date, version-specific library documentation into the agent's context to prevent hallucinated APIs. The most-starred MCP server repo (57.1k), but with a notable security history: the ContextCrush content-injection vulnerability (disclosed Feb 2026, patched within days).",
+  "website": "https://context7.com",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 86,
+      "criteria": {
+        "documentation_accuracy": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Context7 README",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "Docs are parsed from official library sources and served version-specifically, directly addressing hallucinated or outdated APIs in LLM code generation"
+            }
+          ],
+          "methodology": "Spot-check of returned documentation against official library docs across popular frameworks",
+          "last_verified": "2026-06-10"
+        },
+        "retrieval_relevance": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Context7 get-library-docs tool",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "Topic-scoped retrieval with configurable token budget returns focused snippets; relevance degrades for niche topics in very large libraries"
+            }
+          ],
+          "methodology": "Relevance assessment of topic-filtered retrievals across common and long-tail queries",
+          "last_verified": "2026-06-10"
+        },
+        "api_reliability": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Context7 service",
+              "url": "https://context7.com",
+              "date": "2026-06-10",
+              "value": "Backend hosted on Upstash infrastructure; remote Streamable HTTP endpoint and local stdio server both depend on the hosted API, which has shown solid availability"
+            }
+          ],
+          "methodology": "Availability monitoring of the hosted API endpoint over the evaluation period",
+          "last_verified": "2026-06-10"
+        },
+        "library_coverage": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Context7 library index",
+              "url": "https://context7.com",
+              "date": "2026-06-10",
+              "value": "Tens of thousands of indexed libraries with community submission of new ones; resolve-library-id reliably maps natural-language names to indexed library IDs"
+            }
+          ],
+          "methodology": "Coverage sampling across mainstream and long-tail open-source libraries",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Context7 MCP implementation",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "Unresolved library names return candidate matches rather than hard failures; rate-limit and backend errors surface as readable messages the agent can react to"
+            }
+          ],
+          "methodology": "Error-path testing with unknown libraries, rate limits, and offline backend",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 59,
+      "criteria": {
+        "content_injection_resistance": {
+          "score": 45,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Noma Labs — ContextCrush disclosure",
+              "url": "https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/",
+              "date": "2026-03-05",
+              "value": "ContextCrush: the Custom Rules / 'AI Instructions' feature let anyone publishing a library inject unsanitized instructions into consuming agents' context; researchers demonstrated .env credential theft. Disclosed 2026-02-18, patched 2026-02-23"
+            },
+            {
+              "source": "Context7 repository",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "Post-patch, publisher-supplied instruction content is sanitized/restricted, but retrieved documentation remains third-party content flowing into the agent context by design"
+            }
+          ],
+          "methodology": "Review of the ContextCrush vulnerability, its patch, and the residual risk of doc-content prompt injection",
+          "last_verified": "2026-06-10"
+        },
+        "supply_chain_trust": {
+          "score": 50,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Noma Labs — ContextCrush disclosure",
+              "url": "https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/",
+              "date": "2026-03-05",
+              "value": "Anyone can publish or update a library in Context7's index, making indexed docs an open supply chain into agent contexts; ContextCrush proved this channel was exploitable at scale"
+            }
+          ],
+          "methodology": "Analysis of the open library-submission pipeline as an attack surface for agent contexts",
+          "last_verified": "2026-06-10"
+        },
+        "vulnerability_response": {
+          "score": 75,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Noma Labs — ContextCrush disclosure timeline",
+              "url": "https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/",
+              "date": "2026-03-05",
+              "value": "Disclosed to Upstash 2026-02-18; patched 2026-02-23 (5 days); coordinated public disclosure 2026-03-05 — fast remediation, though the vulnerable feature had shipped without sanitization review"
+            }
+          ],
+          "methodology": "Assessment of disclosure-to-patch timeline and vendor cooperation",
+          "last_verified": "2026-06-10"
+        },
+        "credential_exposure_risk": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Noma Labs — ContextCrush demonstration",
+              "url": "https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/",
+              "date": "2026-03-05",
+              "value": "The demonstrated exploit exfiltrated .env credentials by instructing the agent to read and transmit secrets — Context7 itself holds no credentials beyond an optional API key, but its content channel could weaponize other tools the agent holds"
+            }
+          ],
+          "methodology": "Analysis of indirect credential-theft pathways via injected instructions in a multi-tool agent",
+          "last_verified": "2026-06-10"
+        },
+        "authentication_security": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Context7 documentation",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "Works without authentication for basic use; optional API key raises rate limits and is passed via header/env var. Minimal credential surface, but the remote endpoint means key handling depends on client configuration"
+            }
+          ],
+          "methodology": "Review of API-key handling for the hosted endpoint and local server",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 75,
+      "criteria": {
+        "query_data_exposure": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Context7 architecture",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "Library names and topic queries are sent to Upstash's hosted API; queries can reveal what technologies a team is using but contain no source code"
+            }
+          ],
+          "methodology": "Data flow analysis of outbound query content to the hosted backend",
+          "last_verified": "2026-06-10"
+        },
+        "sensitive_data_protection": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Context7 tool design",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "Tools never read local files or code themselves, limiting direct exposure; however, ContextCrush showed retrieved content can induce other tools to exfiltrate secrets, so isolation depends on the surrounding agent"
+            }
+          ],
+          "methodology": "Assessment of direct and indirect sensitive-data pathways",
+          "last_verified": "2026-06-10"
+        },
+        "data_minimization": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Context7 tool schemas",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "Only two narrowly-scoped read-only tools; requests carry just a library ID, topic, and token budget — a notably minimal data footprint among MCP servers"
+            }
+          ],
+          "methodology": "Review of request payloads and tool surface area",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Upstash privacy policy",
+              "url": "https://upstash.com/trust/privacy.pdf",
+              "date": "2026-06-10",
+              "value": "Queries are processed by Upstash per its privacy policy; retrieved docs additionally flow to the connected LLM provider like all MCP tool results"
+            }
+          ],
+          "methodology": "Data sharing pathway analysis across Upstash and LLM provider",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 86,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Context7 README",
+              "url": "https://github.com/upstash/context7/blob/master/README.md",
+              "date": "2026-06-10",
+              "value": "Clear installation instructions for 20+ MCP clients, both local and remote transports, and well-documented tool parameters"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub repository",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "MCP server is MIT-licensed and open source; the backend indexing/retrieval pipeline at context7.com is proprietary, leaving part of the stack unauditable"
+            }
+          ],
+          "methodology": "Source availability review of client/server versus hosted backend",
+          "last_verified": "2026-06-10"
+        },
+        "incident_disclosure": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Noma Labs — ContextCrush disclosure",
+              "url": "https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/",
+              "date": "2026-03-05",
+              "value": "Upstash cooperated with coordinated disclosure and patched within 5 days; public acknowledgment came primarily through the researcher's publication rather than a detailed vendor advisory"
+            }
+          ],
+          "methodology": "Review of vendor communication during and after the ContextCrush incident",
+          "last_verified": "2026-06-10"
+        },
+        "operation_visibility": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Context7 tool design",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "Both tools are read-only with visible parameters and outputs in MCP host logs; retrieved doc content is fully inspectable before the agent acts on it"
+            }
+          ],
+          "methodology": "Logging and traceability assessment of tool calls and returned content",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 88,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Context7 installation docs",
+              "url": "https://github.com/upstash/context7#installation",
+              "date": "2026-06-10",
+              "value": "Remote endpoint requires only a URL (https://mcp.context7.com/mcp) with no install; local server via npx @upstash/context7-mcp; no API key needed for basic use"
+            }
+          ],
+          "methodology": "Setup complexity assessment across remote and local installation paths",
+          "last_verified": "2026-06-10"
+        },
+        "performance": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Context7 hosted API",
+              "url": "https://context7.com",
+              "date": "2026-06-10",
+              "value": "Doc retrievals typically return in under a couple of seconds; configurable token budget keeps context costs predictable"
+            }
+          ],
+          "methodology": "Latency measurement of resolve and retrieval calls",
+          "last_verified": "2026-06-10"
+        },
+        "feature_coverage": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Context7 tool reference",
+              "url": "https://github.com/upstash/context7",
+              "date": "2026-06-10",
+              "value": "Deliberately narrow: two tools doing one job well (documentation retrieval); no code search, examples execution, or private-docs indexing in the open tier"
+            }
+          ],
+          "methodology": "Feature scope assessment relative to documentation-retrieval needs",
+          "last_verified": "2026-06-10"
+        },
+        "community_adoption": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/upstash/context7",
+              "date": "2026-06-10",
+              "value": "57,127 stars as of 2026-06-10 — the largest MCP server repository on GitHub; integrated into setup guides of most major MCP clients"
+            }
+          ],
+          "methodology": "Adoption metrics and ecosystem-integration analysis",
+          "last_verified": "2026-06-10"
+        },
+        "maintenance_activity": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub repository activity",
+              "url": "https://github.com/upstash/context7/commits",
+              "date": "2026-06-10",
+              "value": "Active maintenance by Upstash with regular releases, fast security patching (ContextCrush fixed in 5 days), and continuous library-index growth"
+            }
+          ],
+          "methodology": "Commit frequency, release cadence, and patch-responsiveness analysis",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Directly addresses hallucinated/outdated APIs with version-specific, current documentation",
+    "Largest MCP server community on GitHub (57.1k stars) with broad client integration",
+    "Minimal tool surface: two read-only tools with a small, predictable data footprint",
+    "Zero-friction setup — remote endpoint works with just a URL, no API key required",
+    "Fast vendor response to the ContextCrush vulnerability (patched in 5 days)",
+    "Configurable token budget keeps documentation injection cost-controlled"
+  ],
+  "limitations": [
+    "ContextCrush (Feb 2026) proved the library index is an exploitable injection channel into agent contexts; retrieved third-party content remains untrusted by design",
+    "Open publishing model means doc quality and integrity vary across the index",
+    "Backend indexing/retrieval pipeline is proprietary and unauditable",
+    "Dependent on Upstash's hosted service — no fully offline operation",
+    "Queries reveal a team's technology stack to a third party",
+    "Narrow scope: documentation retrieval only, no private-docs support in the open tier"
+  ],
+  "metadata": {
+    "license": "MIT",
+    "supported_platforms": [
+      "All platforms with Node.js 18+ (local server); any MCP client (remote endpoint)"
+    ],
+    "programming_languages": [
+      "TypeScript"
+    ],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/upstash/context7",
+    "github_stars": 57127,
+    "package": "@upstash/context7-mcp",
+    "remote_endpoint": "https://mcp.context7.com/mcp",
+    "api_dependency": "Context7 hosted documentation API (Upstash)",
+    "authentication": "Optional API key (higher rate limits)",
+    "first_release": "2025-04",
+    "maintained_by": "Upstash",
+    "status": "Active",
+    "security_incidents": [
+      {
+        "name": "ContextCrush",
+        "reported_by": "Noma Labs",
+        "disclosed": "2026-02-18",
+        "patched": "2026-02-23",
+        "published": "2026-03-05",
+        "summary": "Custom Rules/'AI Instructions' feature allowed any library publisher to inject unsanitized instructions into consuming agents' context; demonstrated exploit exfiltrated .env credentials",
+        "advisory": "https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability/"
+      }
+    ],
+    "transport_types": [
+      "stdio",
+      "streamable-http"
+    ],
+    "installation_methods": [
+      "npm",
+      "npx",
+      "remote-url",
+      "docker"
+    ]
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 93,
+      "notes": "Core use case — current, version-specific docs measurably reduce hallucinated APIs and deprecated patterns"
+    },
+    "research-assistant": {
+      "overall": 86,
+      "notes": "Excellent for researching library capabilities and APIs; limited to indexed open-source documentation"
+    },
+    "education": {
+      "overall": 85,
+      "notes": "Strong for learning frameworks with accurate, up-to-date examples instead of stale training data"
+    },
+    "content-creation": {
+      "overall": 75,
+      "notes": "Useful for writing accurate technical tutorials and documentation-backed articles"
+    },
+    "data-analysis": {
+      "overall": 68,
+      "notes": "Indirectly helpful (correct API usage for analysis libraries) but not an analysis tool itself"
+    }
+  },
+  "best_for": [
+    "Developers wanting AI code generation grounded in current library documentation",
+    "Teams fighting hallucinated APIs and deprecated patterns in agent output",
+    "Coding agents that need version-specific framework knowledge on demand",
+    "Technical writers verifying API accuracy in tutorials and docs"
+  ],
+  "related": [
+    "mcp-server-github",
+    "mcp-server-fetch",
+    "mcp-server-firecrawl",
+    "mcp-server-serena"
+  ],
+  "tags": [
+    "documentation",
+    "code-context",
+    "retrieval",
+    "upstash",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

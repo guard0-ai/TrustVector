@@ -4,13 +4,13 @@
   "name": "MCP Slack Server",
   "provider": "Anthropic (Archived)",
   "version": "2025.4.24",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "ARCHIVED: Former official MCP server for Slack workspace interaction. This server is NO LONGER MAINTAINED. Moved to servers-archived repository. No security updates provided. Community alternatives may be available.",
+  "description": "ARCHIVED: Former Anthropic reference MCP server for Slack workspace interaction, archived 2025-05-29 to the servers-archived repository. NO LONGER MAINTAINED and no security guarantees are provided for archived servers. Its replacement in the MCP ecosystem is a third-party maintained Slack MCP server; evaluate maintained alternatives before deploying.",
   "website": "https://api.slack.com/",
   "trust_vector": {
     "performance_reliability": {
-      "overall_score": 84,
+      "overall_score": 83,
       "criteria": {
         "message_delivery_reliability": {
           "score": 90,
@@ -85,7 +85,7 @@
       }
     },
     "security": {
-      "overall_score": 74,
+      "overall_score": 75,
       "criteria": {
         "oauth_security": {
           "score": 85,
@@ -235,7 +235,7 @@
       }
     },
     "trust_transparency": {
-      "overall_score": 81,
+      "overall_score": 76,
       "criteria": {
         "documentation_quality": {
           "score": 88,
@@ -280,23 +280,23 @@
           "last_verified": "2025-11-09"
         },
         "mcp_implementation": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 55,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Community Implementation",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Community-maintained with variable documentation quality"
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "Reference Slack server archived 2025-05-29; repository read-only, README states no security guarantees are provided for archived servers"
             }
           ],
           "methodology": "Implementation documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 80,
+      "overall_score": 76,
       "criteria": {
         "ease_of_setup": {
           "score": 78,
@@ -341,7 +341,7 @@
           "last_verified": "2025-11-09"
         },
         "feature_coverage": {
-          "score": 76,
+          "score": 55,
           "confidence": "medium",
           "evidence": [
             {
@@ -349,10 +349,16 @@
               "url": "https://github.com/modelcontextprotocol/servers",
               "date": "2025-11-16",
               "value": "Covers basic message reading/posting, limited channel management"
+            },
+            {
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-06-10",
+              "value": "Archived 2025-05-29; feature set frozen, no updates for Slack API or MCP specification changes"
             }
           ],
           "methodology": "Feature completeness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         },
         "cost": {
           "score": 75,
@@ -384,7 +390,7 @@
     "No built-in content filtering or PII protection",
     "Risk of exposing confidential team communications",
     "Rate limits can be restrictive for high-volume operations",
-    "Community-maintained MCP server with variable support",
+    "ARCHIVED 2025-05-29: reference server unmaintained with no security guarantees; replacement is third-party maintained",
     "Compliance challenges when sharing workspace data with third parties"
   ],
   "metadata": {
@@ -403,7 +409,8 @@
     "api_version": "Slack Web API",
     "rate_limits": "Tier-based (1+ requests per second)",
     "first_release": "2024-11",
-    "maintained_by": "Community"
+    "maintained_by": "None (Archived 2025-05-29)",
+    "repository": "https://github.com/modelcontextprotocol/servers-archived"
   },
   "use_case_ratings": {
     "code-generation": {
@@ -456,6 +463,8 @@
     "communication",
     "collaboration",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "archived",
+    "unmaintained"
   ]
 }

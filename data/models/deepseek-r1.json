@@ -4,9 +4,9 @@
   "name": "DeepSeek-R1",
   "provider": "DeepSeek",
   "version": "20251020",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Advanced reasoning AI model from DeepSeek achieving 53.6% on SWE-bench and 79.8% on HumanEval. Combines strong coding capabilities with efficient reasoning at competitive pricing.",
+  "description": "DeepSeek's standalone reasoning model, now superseded and discontinued as a product line. Its reasoning capabilities were folded into DeepSeek V3.1's hybrid thinking mode (Aug 2025), then V3.2 (Dec 2025) and V4 (Apr 2026); a successor 'R2' never shipped. The legacy deepseek-reasoner API endpoint is scheduled for deprecation on 2026-07-24. Historically achieved 53.6% on SWE-bench and 79.8% on HumanEval with strong coding and reasoning at competitive pricing.",
   "website": "https://www.deepseek.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -416,7 +416,7 @@
       "notes": "Moderate transparency with standard safety features. Limited disclosure compared to Western providers."
     },
     "operational_excellence": {
-      "overall_score": 86,
+      "overall_score": 85,
       "criteria": {
         "api_design_quality": {
           "score": 88,
@@ -447,18 +447,25 @@
           "last_verified": "2025-11-08"
         },
         "versioning_policy": {
-          "score": 84,
-          "confidence": "medium",
+          "score": 74,
+          "confidence": "high",
           "evidence": [
             {
               "source": "DeepSeek API Documentation",
               "url": "https://platform.deepseek.com/docs/api",
               "date": "2025-10-20",
               "value": "Basic versioning policy"
+            },
+            {
+              "source": "DeepSeek API Pricing and Deprecation Notice",
+              "url": "https://api-docs.deepseek.com/quick_start/pricing",
+              "date": "2026-06-10",
+              "value": "Legacy deepseek-reasoner endpoint deprecates 2026-07-24; R1 line discontinued in favor of V3.1/V3.2/V4 hybrid thinking models"
             }
           ],
           "methodology": "Review of versioning practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-06-10",
+          "notes": "Model superseded; endpoint deprecation requires migration to V3.2/V4"
         },
         "monitoring_observability": {
           "score": 84,
@@ -614,7 +621,8 @@
     "60-day data retention (not ephemeral)",
     "Limited transparency on training data",
     "Smaller context window (64K tokens)",
-    "Less mature ecosystem compared to Western providers"
+    "Less mature ecosystem compared to Western providers",
+    "Superseded: line discontinued in favor of DeepSeek V3.1/V3.2/V4 hybrid thinking; legacy deepseek-reasoner endpoint deprecates 2026-07-24"
   ],
   "best_for": [
     "Cost-sensitive projects needing strong coding capabilities",
@@ -659,9 +667,12 @@
   "related_entities": [
     "claude-sonnet-4-5",
     "openai-o1",
-    "nemotron-ultra-253b"
+    "nemotron-ultra-253b",
+    "deepseek-v3-2",
+    "deepseek-v4"
   ],
   "tags": [
+    "superseded",
     "coding",
     "reasoning",
     "open-source",

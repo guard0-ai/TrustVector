@@ -4,9 +4,9 @@
   "name": "OpenAI o1",
   "provider": "OpenAI",
   "version": "20250915",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Advanced reasoning model from OpenAI achieving 57.1% on SWE-bench and 79.2% on HumanEval. Features extended chain-of-thought reasoning for complex problem-solving and mathematical tasks.",
+  "description": "DEPRECATED: o1 variants and o1-pro shut down in the API on 2026-10-23; already removed from ChatGPT (o1-preview/o1-mini removed in 2025). Migration target is GPT-5.5. Historically an advanced reasoning model (57.1% SWE-bench, 79.2% HumanEval) with extended chain-of-thought reasoning.",
   "website": "https://openai.com/o1/",
   "trust_vector": {
     "performance_reliability": {
@@ -417,7 +417,7 @@
       "notes": "Excellent explainability via chain-of-thought reasoning. Transparent problem-solving process visible to users."
     },
     "operational_excellence": {
-      "overall_score": 91,
+      "overall_score": 88,
       "criteria": {
         "api_design_quality": {
           "score": 93,
@@ -448,7 +448,7 @@
           "last_verified": "2025-11-08"
         },
         "versioning_policy": {
-          "score": 90,
+          "score": 78,
           "confidence": "high",
           "evidence": [
             {
@@ -456,6 +456,12 @@
               "url": "https://platform.openai.com/docs/api-reference/versioning",
               "date": "2025-09-15",
               "value": "Clear versioning with deprecation notices"
+            },
+            {
+              "source": "OpenAI Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-06-10",
+              "value": "o1 variants and o1-pro API shutdown 2026-10-23; migration target GPT-5.5; removed from ChatGPT"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
@@ -490,7 +496,7 @@
           "last_verified": "2025-11-08"
         },
         "ecosystem_maturity": {
-          "score": 93,
+          "score": 83,
           "confidence": "high",
           "evidence": [
             {
@@ -518,7 +524,7 @@
           "last_verified": "2025-11-08"
         }
       },
-      "notes": "Excellent operational maturity with well-designed APIs and mature ecosystem. Enterprise-ready with strong support."
+      "notes": "Deprecated: API shutdown scheduled 2026-10-23, migration target GPT-5.5. Versioning and ecosystem scores reduced to reflect deprecation."
     }
   },
   "use_case_ratings": {
@@ -615,7 +621,8 @@
     "30-day minimum data retention (not ephemeral)",
     "Not HIPAA eligible",
     "Higher cost due to extended reasoning compute",
-    "Reasoning overhead may be unnecessary for simple tasks"
+    "Reasoning overhead may be unnecessary for simple tasks",
+    "DEPRECATED: removed from ChatGPT; o1 variants and o1-pro API shutdown 2026-10-23 — migrate to GPT-5.5"
   ],
   "best_for": [
     "Complex reasoning tasks requiring deep analysis",
@@ -660,12 +667,13 @@
     "parameters": "Not disclosed"
   },
   "related_entities": [
+    "gpt-5-5",
     "claude-sonnet-4-5",
     "claude-opus-4-1",
-    "claude-sonnet-4-5",
     "openai-o3-mini"
   ],
   "tags": [
+    "deprecated",
     "reasoning",
     "chain-of-thought",
     "coding",

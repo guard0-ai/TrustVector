@@ -1,0 +1,467 @@
+{
+  "id": "openai-agents-sdk",
+  "type": "agent",
+  "name": "OpenAI Agents SDK",
+  "provider": "OpenAI",
+  "version": "1.x",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Production-ready multi-agent orchestration framework built around agents, handoffs, guardrails, and tracing. Open-source (MIT) successor to Swarm, released March 2025 with a major overhaul in April 2026.",
+  "website": "https://openai.github.io/openai-agents-python/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 84,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI: New tools for building agents",
+              "url": "https://openai.com/index/new-tools-for-building-agents/",
+              "date": "2025-03-11",
+              "value": "Production-grade upgrade of Swarm with structured outputs, validated handoffs, and Responses API integration"
+            }
+          ],
+          "methodology": "Evaluation of agent task success across single- and multi-agent configurations",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK documentation",
+              "url": "https://openai.github.io/openai-agents-python/tools/",
+              "date": "2026-04-15",
+              "value": "Function tools with automatic Pydantic schema validation plus hosted tools (web search, file search, code interpreter, computer use)"
+            }
+          ],
+          "methodology": "Testing of function tools, hosted tools, and schema-validated argument handling",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK documentation",
+              "url": "https://openai.github.io/openai-agents-python/running_agents/",
+              "date": "2026-04-15",
+              "value": "Agent loop with configurable max turns handles multi-step tasks; planning quality depends on the configured model"
+            }
+          ],
+          "methodology": "Multi-step task evaluation across the agent loop and handoff chains",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK sessions documentation",
+              "url": "https://openai.github.io/openai-agents-python/sessions/",
+              "date": "2026-04-15",
+              "value": "Built-in session memory (SQLite, Redis, SQLAlchemy backends) automatically maintains conversation history across runs"
+            }
+          ],
+          "methodology": "Review of session backends and cross-run conversation persistence",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK documentation",
+              "url": "https://openai.github.io/openai-agents-python/running_agents/",
+              "date": "2026-04-15",
+              "value": "Typed exceptions, guardrail tripwires, and tool error handlers enable structured failure handling"
+            }
+          ],
+          "methodology": "Testing of exception handling, guardrail tripwires, and tool failure paths",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK handoffs documentation",
+              "url": "https://openai.github.io/openai-agents-python/handoffs/",
+              "date": "2026-04-15",
+              "value": "Handoffs are a core primitive for delegating between specialized agents; agents-as-tools pattern supports orchestrator designs"
+            }
+          ],
+          "methodology": "Multi-agent coordination testing using handoffs and agents-as-tools patterns",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 77,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK documentation",
+              "url": "https://openai.github.io/openai-agents-python/tools/",
+              "date": "2026-04-15",
+              "value": "No built-in sandbox for custom function tools; hosted tools (code interpreter) run in OpenAI's sandboxed environments"
+            }
+          ],
+          "methodology": "Security architecture review of custom tool execution versus hosted tools",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK documentation",
+              "url": "https://openai.github.io/openai-agents-python/",
+              "date": "2026-04-15",
+              "value": "Per-agent tool restrictions and human-in-the-loop approval support; broader access control left to the developer"
+            }
+          ],
+          "methodology": "Assessment of tool scoping, approval flows, and developer-implemented controls",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK guardrails documentation",
+              "url": "https://openai.github.io/openai-agents-python/guardrails/",
+              "date": "2026-04-15",
+              "value": "First-class input/output guardrails run in parallel with the agent and can trip to halt unsafe or off-policy runs"
+            }
+          ],
+          "methodology": "Guardrail configuration testing against adversarial and off-policy inputs",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK documentation",
+              "url": "https://openai.github.io/openai-agents-python/context/",
+              "date": "2026-04-15",
+              "value": "Typed local context objects are isolated per run and never sent to the LLM; deployment isolation is integrator-managed"
+            }
+          ],
+          "methodology": "Review of run context isolation and self-hosted deployment boundaries",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "openai-agents-python GitHub repository",
+              "url": "https://github.com/openai/openai-agents-python",
+              "date": "2026-06-01",
+              "value": "MIT licensed, fully open source with active public development in Python and TypeScript"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 80,
+      "criteria": {
+        "data_retention": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI API data usage policies",
+              "url": "https://openai.com/policies/api-data-usage-policies",
+              "date": "2026-03-01",
+              "value": "API data not used for training by default; session state stored on the integrator's own backend"
+            }
+          ],
+          "methodology": "Review of OpenAI API retention terms and self-managed session storage",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Trust Portal",
+              "url": "https://trust.openai.com/",
+              "date": "2026-03-01",
+              "value": "OpenAI offers DPA and SOC 2 for API usage; framework itself is self-hosted so compliance is achievable with configuration"
+            }
+          ],
+          "methodology": "Compliance capabilities assessment for framework plus default model provider",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK tracing documentation",
+              "url": "https://openai.github.io/openai-agents-python/tracing/",
+              "date": "2026-04-15",
+              "value": "Tracing uploads run data to OpenAI by default (disableable); prompts go to whichever LLM provider is configured"
+            }
+          ],
+          "methodology": "Data flow analysis of default tracing export and model provider routing",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK models documentation",
+              "url": "https://openai.github.io/openai-agents-python/models/litellm/",
+              "date": "2026-04-15",
+              "value": "LiteLLM integration supports 100+ LLMs including local models via Ollama-compatible endpoints"
+            }
+          ],
+          "methodology": "Deployment options assessment including non-OpenAI and local model routing",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 90,
+      "criteria": {
+        "documentation_quality": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK documentation",
+              "url": "https://openai.github.io/openai-agents-python/",
+              "date": "2026-04-15",
+              "value": "Comprehensive docs with quickstarts, API reference, and examples for agents, handoffs, guardrails, sessions, and tracing"
+            }
+          ],
+          "methodology": "Documentation completeness review across Python and TypeScript SDKs",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK tracing documentation",
+              "url": "https://openai.github.io/openai-agents-python/tracing/",
+              "date": "2026-04-15",
+              "value": "Built-in tracing of every LLM call, tool call, handoff, and guardrail with OpenAI dashboard and OTel/third-party exporters"
+            }
+          ],
+          "methodology": "Review of built-in trace spans, dashboard visualization, and OpenTelemetry export",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK tracing documentation",
+              "url": "https://openai.github.io/openai-agents-python/tracing/",
+              "date": "2026-04-15",
+              "value": "Trace spans expose handoff reasons, tool arguments, and guardrail outcomes for post-hoc decision analysis"
+            }
+          ],
+          "methodology": "Assessment of trace-based explanation of agent routing and tool decisions",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "openai-agents-python GitHub repository",
+              "url": "https://github.com/openai/openai-agents-python",
+              "date": "2026-06-01",
+              "value": "MIT license with full source available; major 2026-04-15 overhaul developed in the open"
+            }
+          ],
+          "methodology": "Open source assessment of license, source availability, and public development",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "openai-agents-python GitHub repository",
+              "url": "https://github.com/openai/openai-agents-python",
+              "date": "2026-06-01",
+              "value": "Tens of thousands of stars, frequent releases, and a large contributor and integration ecosystem"
+            }
+          ],
+          "methodology": "Community engagement analysis via GitHub stars, contributor activity, and release cadence",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 87,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK quickstart",
+              "url": "https://openai.github.io/openai-agents-python/quickstart/",
+              "date": "2026-04-15",
+              "value": "Minimal-primitives design (agents, handoffs, guardrails, sessions); a working agent in a few lines of code"
+            }
+          ],
+          "methodology": "Integration complexity assessment from install to working multi-agent app",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK documentation",
+              "url": "https://openai.github.io/openai-agents-python/",
+              "date": "2026-04-15",
+              "value": "Lightweight stateless runner scales horizontally; throughput bounded by model provider rate limits"
+            }
+          ],
+          "methodology": "Assessment of stateless runner scaling and provider rate limit constraints",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "openai-agents-python GitHub repository",
+              "url": "https://github.com/openai/openai-agents-python",
+              "date": "2026-06-01",
+              "value": "Free MIT-licensed SDK; only costs are model API rates from the chosen provider"
+            }
+          ],
+          "methodology": "Pricing model analysis of free framework plus pay-per-token model usage",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Agents SDK tracing documentation",
+              "url": "https://openai.github.io/openai-agents-python/tracing/",
+              "date": "2026-04-15",
+              "value": "Built-in tracing dashboard plus OTel and third-party exporters (Logfire, Langfuse, W&B, and more)"
+            }
+          ],
+          "methodology": "Monitoring features assessment including built-in and third-party observability",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI: New tools for building agents",
+              "url": "https://openai.com/index/new-tools-for-building-agents/",
+              "date": "2025-03-11",
+              "value": "Explicitly positioned as production-ready successor to experimental Swarm; matured further with the 2026-04-15 overhaul"
+            }
+          ],
+          "methodology": "Maturity assessment from release history, API stability, and enterprise adoption",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "customer-support": {
+      "overall": 90,
+      "notes": "Handoffs between triage and specialist agents plus guardrails make this a flagship use case"
+    },
+    "research-assistant": {
+      "overall": 87,
+      "notes": "Hosted web/file search tools and multi-agent orchestration suit research pipelines"
+    },
+    "code-generation": {
+      "overall": 82,
+      "notes": "Capable with code interpreter and function tools, though not specialized for coding workflows"
+    },
+    "data-analysis": {
+      "overall": 84,
+      "notes": "Code interpreter, file search, and structured outputs work well for analysis agents"
+    },
+    "content-creation": {
+      "overall": 83,
+      "notes": "Multi-agent writer/editor pipelines with output guardrails are straightforward to build"
+    }
+  },
+  "best_for": [
+    "Teams building production multi-agent systems with handoffs and guardrails",
+    "Developers wanting built-in tracing and observability without extra setup",
+    "Organizations standardizing on the OpenAI/Responses API ecosystem",
+    "Projects needing model flexibility across 100+ LLMs via LiteLLM"
+  ],
+  "strengths": [
+    "Minimal, well-designed primitives: agents, handoffs, guardrails, sessions",
+    "Best-in-class built-in tracing with dashboard and OTel/third-party exporters",
+    "First-class input/output guardrails with tripwire enforcement",
+    "MIT-licensed and fully open source in Python and TypeScript",
+    "Provider-agnostic via LiteLLM (100+ models) despite Responses-API-native design",
+    "Free framework; costs limited to model usage"
+  ],
+  "limitations": [
+    "No built-in sandboxing for custom function tools; execution safety is developer-owned",
+    "Tracing exports run data to OpenAI by default unless explicitly disabled",
+    "Some hosted tools and tracing features work best only with OpenAI models",
+    "April 2026 overhaul introduced breaking changes requiring migration",
+    "Less opinionated about deployment, requiring infrastructure decisions from the team"
+  ],
+  "metadata": {
+    "license": "MIT",
+    "supported_models": [
+      "OpenAI GPT series (Responses API native)",
+      "100+ LLMs via LiteLLM",
+      "Local models via OpenAI-compatible endpoints"
+    ],
+    "programming_languages": [
+      "Python",
+      "TypeScript"
+    ],
+    "deployment_type": "Self-hosted",
+    "tool_support": [
+      "Function tools with schema validation",
+      "Hosted tools (web search, file search, code interpreter, computer use)",
+      "MCP servers",
+      "Agents as tools"
+    ],
+    "first_release": "2025-03-11; major overhaul 2026-04-15",
+    "pricing": "Free (MIT); pay only model API rates",
+    "predecessor": "OpenAI Swarm (experimental)"
+  },
+  "related": [
+    "swarm",
+    "openai-codex",
+    "openai-assistants-api",
+    "claude-agent-sdk",
+    "langgraph-agent",
+    "crewai"
+  ],
+  "tags": [
+    "multi-agent",
+    "open-source",
+    "orchestration",
+    "openai"
+  ]
+}

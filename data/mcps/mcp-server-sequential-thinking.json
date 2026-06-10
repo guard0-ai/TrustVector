@@ -4,9 +4,9 @@
   "name": "MCP Sequential Thinking Server",
   "provider": "Anthropic",
   "version": "2025.7.1",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Official Anthropic MCP server enabling dynamic, extended reasoning and problem-solving sequences. Allows AI models to create structured thinking processes, break down complex problems, and maintain context across multi-step reasoning chains. Experimental feature for advanced cognitive workflows.",
+  "description": "Official MCP reference server enabling dynamic, extended reasoning and problem-solving sequences. Allows AI models to create structured thinking processes, break down complex problems, and maintain context across multi-step reasoning chains. One of the seven reference servers that remain actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09 (latest spec 2025-11-25).",
   "website": "https://modelcontextprotocol.io/docs/servers/sequential-thinking",
   "trust_vector": {
     "performance_reliability": {
@@ -349,10 +349,16 @@
               "url": "https://github.com/modelcontextprotocol/servers/discussions",
               "date": "2025-11-16",
               "value": "Limited adoption due to experimental status and specialized use case"
+            },
+            {
+              "source": "Anthropic - Donating MCP to the Agentic AI Foundation",
+              "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
+              "date": "2025-12-09",
+              "value": "sequential-thinking is one of the seven reference servers still actively maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10"
         }
       }
     }
@@ -362,7 +368,7 @@
     "Maintains context across extended reasoning chains",
     "Supports backtracking and reasoning correction",
     "High transparency with visible reasoning steps",
-    "Open source with active Anthropic development",
+    "Open source and actively maintained under the MCP project (Agentic AI Foundation)",
     "Minimal security risk due to isolated reasoning process"
   ],
   "limitations": [
@@ -371,7 +377,8 @@
     "Limited by LLM token context windows for extended reasoning",
     "Reasoning steps exposed to LLM provider",
     "Relatively low community adoption due to specialized use case",
-    "Documentation and best practices still evolving"
+    "Documentation and best practices still evolving",
+    "STATUS 2026-06-10: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); governance now under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -388,7 +395,7 @@
     "api_dependency": "None (MCP protocol only)",
     "authentication": "None required",
     "first_release": "2024-11",
-    "maintained_by": "Anthropic",
+    "maintained_by": "MCP project (Agentic AI Foundation / Linux Foundation since 2025-12-09)",
     "status": "Official - Active",
     "transport_types": [
       "stdio"
@@ -448,6 +455,8 @@
     "reasoning",
     "thinking",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "official",
+    "reference-server"
   ]
 }

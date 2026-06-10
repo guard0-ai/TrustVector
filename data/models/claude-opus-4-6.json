@@ -1,0 +1,661 @@
+{
+  "id": "claude-opus-4-6",
+  "type": "model",
+  "name": "Claude Opus 4.6",
+  "provider": "Anthropic",
+  "version": "20260205",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "Anthropic's frontier Opus released February 2026 with 80.8% SWE-bench Verified, breakthrough 68.8% ARC-AGI-2 abstract reasoning, adaptive thinking, and a 1M token context window. Now two generations behind Opus 4.8 but still served.",
+  "website": "https://www.anthropic.com/claude/opus",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 97,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 98,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "SWE-bench Verified",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6",
+              "date": "2026-02-05",
+              "value": "80.8% resolution rate (frontier-class software engineering)"
+            },
+            {
+              "source": "Terminal-Bench 2.0",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6",
+              "date": "2026-02-05",
+              "value": "65.4% on command-line tasks (up from Opus 4.5's 59.3%)"
+            },
+            {
+              "source": "OSWorld",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6",
+              "date": "2026-02-05",
+              "value": "72.7% on computer-use tasks (up from Opus 4.5's 66.3%)"
+            }
+          ],
+          "methodology": "Industry-standard coding and agentic benchmarks measuring real-world software engineering and computer-use tasks",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 97,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ARC-AGI-2",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6",
+              "date": "2026-02-05",
+              "value": "68.8% (up from Opus 4.5's 37.6% — a generational leap in abstract reasoning)"
+            },
+            {
+              "source": "Anthropic Announcement",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6",
+              "date": "2026-02-05",
+              "value": "Adaptive thinking dynamically allocates reasoning depth per request"
+            }
+          ],
+          "methodology": "Abstract reasoning and multi-step problem solving benchmarks",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Models Documentation",
+              "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+              "date": "2026-02-05",
+              "value": "Frontier-class general knowledge and multimodal understanding at launch"
+            }
+          ],
+          "methodology": "Comprehensive knowledge and multimodal testing across published benchmarks",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Announcement",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6",
+              "date": "2026-02-05",
+              "value": "Effort parameter GA (low/medium/high/max) enables consistent quality control; adaptive thinking replaces manual budgets"
+            }
+          ],
+          "methodology": "Internal testing of output stability across effort levels and adaptive thinking",
+          "last_verified": "2026-06-10",
+          "notes": "Adaptive thinking removes the need to tune thinking budgets manually; the GA effort parameter (including new 'max') gives precise compute control"
+        },
+        "latency_p50": {
+          "value": "2.5s",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models/claude-opus-4-6",
+              "date": "2026-03-01",
+              "value": "Typical response time ~2.5s for standard prompts at default effort"
+            }
+          ],
+          "methodology": "Median latency for API requests with standard prompt sizes",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p95": {
+          "value": "5.5s",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models/claude-opus-4-6",
+              "date": "2026-03-01",
+              "value": "p95 latency ~5.5s; higher at max effort"
+            }
+          ],
+          "methodology": "95th percentile response time across diverse workloads",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "1,000,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Models Documentation",
+              "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+              "date": "2026-02-05",
+              "value": "1M token context window (beta at launch, since standard); 128K max output tokens"
+            }
+          ],
+          "methodology": "Official specification from provider",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 99,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Status Page",
+              "url": "https://status.anthropic.com/",
+              "date": "2026-06-01",
+              "value": "99.9%+ uptime (last 90 days)"
+            }
+          ],
+          "methodology": "Historical uptime data from official status page",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Generational leap in abstract reasoning (68.8% ARC-AGI-2, ~2x Opus 4.5). 80.8% SWE-bench with 1M context and 128K output. Introduced adaptive thinking and GA effort parameter including 'max'. Now two generations behind Opus 4.8 but still fully served."
+    },
+
+    "security": {
+      "overall_score": 91,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Safety Research",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6",
+              "date": "2026-02-05",
+              "value": "Improved resistance to prompt injection in agentic and computer-use settings"
+            }
+          ],
+          "methodology": "Testing against OWASP LLM01 prompt injection attacks",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Constitutional AI",
+              "url": "https://www.anthropic.com/news/claudes-constitution",
+              "date": "2026-02-05",
+              "value": "Constitutional AI alignment carried forward with enhanced refusal calibration"
+            }
+          ],
+          "methodology": "Testing against adversarial prompt datasets",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Privacy Statement",
+              "url": "https://www.anthropic.com/legal/privacy",
+              "date": "2026-02-05",
+              "value": "No training on user data without explicit consent"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and data handling practices",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Safety Evaluations",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6",
+              "date": "2026-02-05",
+              "value": "Released with comprehensive safety evaluations under the Responsible Scaling Policy"
+            }
+          ],
+          "methodology": "Comprehensive safety testing across harmful content categories",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic API Documentation",
+              "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+              "date": "2026-02-05",
+              "value": "API key authentication, HTTPS only, rate limiting; removal of last-assistant-turn prefills closes a response-steering vector"
+            }
+          ],
+          "methodology": "Review of API security features and best practices",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Strong safety posture. Removal of last-assistant-turn prefills (400 error) eliminates a common response-manipulation pattern; structured outputs replace it."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 93,
+      "criteria": {
+        "data_residency": {
+          "value": "US, EU (customer choice)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Enterprise Documentation",
+              "url": "https://www.anthropic.com/claude/enterprise",
+              "date": "2026-02-05",
+              "value": "Data residency options for US and EU customers"
+            }
+          ],
+          "methodology": "Review of enterprise documentation and privacy policies",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Privacy Policy",
+              "url": "https://www.anthropic.com/legal/privacy",
+              "date": "2026-02-05",
+              "value": "Opt-out available, no training on API data by default"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and data usage terms",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "0 days (ephemeral)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Terms of Service",
+              "url": "https://www.anthropic.com/legal/terms",
+              "date": "2026-02-05",
+              "value": "API prompts and outputs not retained (except for trust & safety)"
+            }
+          ],
+          "methodology": "Review of terms of service and data retention policies",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Privacy Documentation",
+              "url": "https://docs.anthropic.com/en/docs/resources/data-protection",
+              "date": "2026-02-05",
+              "value": "Customer responsible for PII redaction"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Trust Center",
+              "url": "https://trust.anthropic.com/",
+              "date": "2026-02-05",
+              "value": "SOC 2 Type II, GDPR compliant, HIPAA eligible"
+            }
+          ],
+          "methodology": "Verification of compliance certifications and audit reports",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic API Documentation",
+              "url": "https://docs.anthropic.com/en/docs/resources/data-protection",
+              "date": "2026-02-05",
+              "value": "Ephemeral data processing, no storage of prompts/outputs"
+            }
+          ],
+          "methodology": "Review of data handling practices",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Exceptional privacy posture with ephemeral data handling and strong compliance certifications. HIPAA eligible for healthcare."
+    },
+
+    "trust_transparency": {
+      "overall_score": 89,
+      "criteria": {
+        "explainability": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Adaptive Thinking Feature",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6",
+              "date": "2026-02-05",
+              "value": "Adaptive thinking surfaces reasoning depth decisions; effort parameter provides explicit compute transparency"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency and explanation capabilities",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 89,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Testing",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6",
+              "date": "2026-02-05",
+              "value": "Improved factual calibration over Opus 4.5, especially at high and max effort"
+            }
+          ],
+          "methodology": "Testing on factual QA datasets and real-world usage",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Responsible Scaling Policy",
+              "url": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy",
+              "date": "2026-02-05",
+              "value": "Regular bias testing and mitigation"
+            }
+          ],
+          "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model Behavior",
+              "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+              "date": "2026-02-05",
+              "value": "Model expresses uncertainty appropriately; adaptive thinking scales effort with problem difficulty"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Model Documentation",
+              "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+              "date": "2026-02-05",
+              "value": "Comprehensive model cards with capabilities, limitations, benchmarks"
+            }
+          ],
+          "methodology": "Review of documentation completeness and clarity",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Public Statements",
+              "url": "https://www.anthropic.com/news",
+              "date": "2026-02-05",
+              "value": "General description provided, detailed sources not disclosed"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 96,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Constitutional AI",
+              "url": "https://www.anthropic.com/news/claudes-constitution",
+              "date": "2026-02-05",
+              "value": "Constitutional AI safety guardrails with improved refusal calibration"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Adaptive thinking improves transparency by making reasoning depth model-driven and observable. Strong instruction following reduces need for aggressive prompt engineering."
+    },
+
+    "operational_excellence": {
+      "overall_score": 91,
+      "criteria": {
+        "api_design_quality": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic API Documentation",
+              "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+              "date": "2026-02-05",
+              "value": "Adaptive thinking, GA effort parameter (incl. max), structured outputs; prefills removed in favor of output_config.format"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic SDKs",
+              "url": "https://github.com/anthropics",
+              "date": "2026-02-05",
+              "value": "Official SDKs for Python, TypeScript, Java, Go, Ruby, C#, PHP — actively maintained"
+            }
+          ],
+          "methodology": "Review of SDK quality, documentation, and maintenance",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic API Versioning",
+              "url": "https://docs.anthropic.com/en/api/versioning",
+              "date": "2026-02-05",
+              "value": "Clear versioning with advance deprecation notice; Opus 4.6 remains served two generations behind Opus 4.8"
+            }
+          ],
+          "methodology": "Review of versioning policy and historical practices",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Console",
+              "url": "https://console.anthropic.com/",
+              "date": "2026-02-05",
+              "value": "Usage dashboard with metrics"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 91,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Support",
+              "url": "https://support.anthropic.com/",
+              "date": "2026-02-05",
+              "value": "Email support, Discord community, comprehensive docs and migration guides"
+            }
+          ],
+          "methodology": "Assessment of documentation, community, and support responsiveness",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cloud Providers",
+              "url": "https://www.anthropic.com/claude/opus",
+              "date": "2026-02-05",
+              "value": "Available on AWS Bedrock, Google Vertex AI, Azure Foundry"
+            }
+          ],
+          "methodology": "Analysis of third-party integrations and tools",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Terms of Service",
+              "url": "https://www.anthropic.com/legal/commercial-terms",
+              "date": "2026-02-05",
+              "value": "Standard commercial terms, enterprise agreements available"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Mature operational profile with multi-cloud availability. Migration to 4.6 required removing assistant-turn prefills and moving to adaptive thinking — well-documented breaking changes."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 97,
+      "notes": "80.8% SWE-bench Verified and 65.4% Terminal-Bench 2.0. Excellent for complex software engineering, though Opus 4.7/4.8 now lead the family.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
+    },
+    "customer-support": {
+      "overall": 88,
+      "notes": "Strong empathy and natural conversation. Higher latency and cost than Sonnet for routine support volume.",
+      "alternatives": ["claude-sonnet-4-6", "claude-haiku-4-5"]
+    },
+    "content-creation": {
+      "overall": 92,
+      "notes": "Excellent long-form, nuanced content. Adaptive thinking allocates more reasoning to complex pieces automatically.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
+    },
+    "data-analysis": {
+      "overall": 95,
+      "notes": "Strong analytical capabilities with 1M context for large datasets. Effort 'max' useful for complex interpretation.",
+      "alternatives": ["gemini-3-1-pro", "gpt-5-5"]
+    },
+    "research-assistant": {
+      "overall": 96,
+      "notes": "1M context and 68.8% ARC-AGI-2 abstract reasoning make it exceptional for deep research and synthesis.",
+      "alternatives": ["claude-opus-4-8", "gemini-3-1-pro"]
+    },
+    "legal-compliance": {
+      "overall": 92,
+      "notes": "Strong privacy posture, HIPAA eligible. 1M context handles entire contract repositories in a single request.",
+      "alternatives": ["claude-sonnet-4-6", "claude-opus-4-8"]
+    },
+    "healthcare": {
+      "overall": 90,
+      "notes": "HIPAA eligible with strong privacy controls. Good for clinical documentation requiring high accuracy.",
+      "alternatives": ["claude-sonnet-4-6", "claude-opus-4-8"]
+    },
+    "financial-analysis": {
+      "overall": 93,
+      "notes": "Excellent quantitative reasoning. Adaptive thinking scales analysis depth with problem complexity.",
+      "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
+    },
+    "education": {
+      "overall": 93,
+      "notes": "Excellent tutoring with patient explanations. Effort parameter lets platforms balance quality against cost.",
+      "alternatives": ["claude-sonnet-4-6", "gpt-5-5"]
+    },
+    "creative-writing": {
+      "overall": 90,
+      "notes": "Strong creative capabilities with nuanced character development and narrative flow.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-5"]
+    }
+  },
+
+  "strengths": [
+    "Breakthrough abstract reasoning: 68.8% ARC-AGI-2 (up from Opus 4.5's 37.6%)",
+    "Elite coding: 80.8% SWE-bench Verified, 65.4% Terminal-Bench 2.0",
+    "Best-in-class computer use at launch: 72.7% OSWorld",
+    "1M token context window (beta at launch) with 128K max output",
+    "Adaptive thinking replaces manual thinking budgets — no tuning required",
+    "Effort parameter GA including new 'max' level for compute control",
+    "Same $5/$25 pricing as Opus 4.5 despite major capability gains"
+  ],
+
+  "limitations": [
+    "Two generations behind current Opus 4.8 (still served, but no longer frontier)",
+    "Removed last-assistant-turn prefills — code relying on prefills returns 400",
+    "Higher latency than Sonnet models (~2.5s p50)",
+    "Premium pricing relative to Sonnet 4.6 ($5/$25 vs $3/$15)",
+    "No native audio capabilities",
+    "Training data transparency limited (industry standard)"
+  ],
+
+  "best_for": [
+    "Complex software engineering and long-horizon agentic coding",
+    "Abstract reasoning and novel problem solving (ARC-AGI-class tasks)",
+    "Computer-use and desktop automation workflows",
+    "Ultra-long-context research over 1M-token corpora",
+    "Enterprise workloads pinned to a stable, well-characterized Opus generation"
+  ],
+
+  "not_recommended_for": [
+    "New deployments where Opus 4.8 is available at the same price",
+    "Real-time applications requiring <500ms latency",
+    "Cost-sensitive high-volume inference",
+    "Workflows still dependent on assistant-turn prefills"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "$5.00 per 1M tokens",
+      "output": "$25.00 per 1M tokens",
+      "notes": "Same pricing as Opus 4.5. Batch API 50% discount. Prompt caching up to 90% savings.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 1000000,
+    "max_output": 128000,
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Italian",
+      "Portuguese",
+      "Japanese",
+      "Korean",
+      "Chinese",
+      "Arabic",
+      "Hindi"
+    ],
+    "modalities": ["text", "image (input)", "document", "computer-use"],
+    "api_endpoint": "https://api.anthropic.com/v1/messages",
+    "open_source": false,
+    "architecture": "Transformer-based with Constitutional AI alignment, adaptive thinking, and effort parameter",
+    "parameters": "Not disclosed",
+    "knowledge_cutoff": "Not disclosed"
+  },
+
+  "related_entities": ["claude-opus-4-8", "claude-opus-4-7", "claude-opus-4-5", "claude-sonnet-4-6"],
+
+  "tags": [
+    "coding",
+    "reasoning",
+    "enterprise",
+    "hipaa-eligible",
+    "safety-focused",
+    "adaptive-thinking",
+    "effort-parameter",
+    "computer-use",
+    "long-context",
+    "previous-generation"
+  ]
+}

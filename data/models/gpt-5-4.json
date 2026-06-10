@@ -1,0 +1,644 @@
+{
+  "id": "gpt-5-4",
+  "type": "model",
+  "name": "GPT-5.4",
+  "provider": "OpenAI",
+  "version": "gpt-5-4-2026-03-05",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "OpenAI's previous-generation flagship (superseded by GPT-5.5 in April 2026). Headline native computer use with 75% OSWorld-Verified, ~33% fewer factual errors than GPT-5.2, ~1.05M context. Thinking, Pro, mini, and nano variants.",
+  "website": "https://openai.com/index/introducing-gpt-5-4/",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 95,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 93,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-4/",
+              "date": "2026-03-05",
+              "value": "Incremental coding gains over GPT-5.2; release emphasis on computer use rather than coding (GPT-5.3-Codex remained the coding lead at launch)"
+            }
+          ],
+          "methodology": "Industry-standard coding benchmarks and provider-reported comparisons",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_reasoning": {
+          "score": 95,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-4/",
+              "date": "2026-03-05",
+              "value": "Reasoning improvements over GPT-5.2 across science and math suites; Thinking and Pro variants for deeper reasoning"
+            }
+          ],
+          "methodology": "PhD-level and Olympiad-level reasoning benchmarks",
+          "last_verified": "2026-06-10"
+        },
+        "task_accuracy_general": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OSWorld-Verified",
+              "url": "https://openai.com/index/introducing-gpt-5-4/",
+              "date": "2026-03-05",
+              "value": "75% on OSWorld-Verified with native computer use (vs GPT-5.2's 47.3%)"
+            },
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-4/",
+              "date": "2026-03-05",
+              "value": "~33% fewer factual errors than GPT-5.2"
+            }
+          ],
+          "methodology": "Computer-use benchmarks and factual accuracy testing",
+          "last_verified": "2026-06-10"
+        },
+        "output_consistency": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-4/",
+              "date": "2026-03-05",
+              "value": "~33% reduction in factual errors vs GPT-5.2 improves run-to-run reliability"
+            }
+          ],
+          "methodology": "Internal testing across model variants",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p50": {
+          "value": "0.8s (standard) / faster on mini and nano",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/",
+              "date": "2026-03-20",
+              "value": "mini and nano variants optimized for low latency"
+            }
+          ],
+          "methodology": "Median latency for API requests with standard prompt sizes",
+          "last_verified": "2026-06-10"
+        },
+        "latency_p95": {
+          "value": "3.5s (standard) / higher for Thinking and Pro",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/",
+              "date": "2026-03-20",
+              "value": "p95 latency varies by variant and reasoning depth"
+            }
+          ],
+          "methodology": "95th percentile response time across diverse workloads",
+          "last_verified": "2026-06-10"
+        },
+        "context_window": {
+          "value": "~1,050,000 tokens input / 128,000 output",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Documentation",
+              "url": "https://platform.openai.com/docs/models",
+              "date": "2026-03-05",
+              "value": "~1.05M token input context, 128K max output tokens"
+            }
+          ],
+          "methodology": "Official specification from provider",
+          "last_verified": "2026-06-10"
+        },
+        "uptime": {
+          "score": 99,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Status",
+              "url": "https://status.openai.com/",
+              "date": "2026-06-01",
+              "value": "99.9% uptime (last 90 days)"
+            }
+          ],
+          "methodology": "Historical uptime data from official status page",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Strong generation defined by native computer use (75% OSWorld-Verified, +27.7 points over GPT-5.2) and a ~33% factual-error reduction. Superseded by GPT-5.5 six weeks after release."
+    },
+
+    "security": {
+      "overall_score": 88,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 89,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Safety Research",
+              "url": "https://openai.com/safety",
+              "date": "2026-03-05",
+              "value": "Injection defenses extended to native computer-use surfaces (screenshots, UI text)"
+            }
+          ],
+          "methodology": "Testing against OWASP LLM01 prompt injection attacks",
+          "last_verified": "2026-06-10"
+        },
+        "jailbreak_resistance": {
+          "score": 90,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-4/",
+              "date": "2026-03-05",
+              "value": "Improved refusal robustness over GPT-5.2 per release documentation"
+            }
+          ],
+          "methodology": "Adversarial prompt testing against jailbreak datasets",
+          "last_verified": "2026-06-10"
+        },
+        "data_leakage_prevention": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Privacy Policy",
+              "url": "https://openai.com/policies/privacy-policy",
+              "date": "2026-03-05",
+              "value": "No training on API data by default"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and data handling practices",
+          "last_verified": "2026-06-10"
+        },
+        "output_safety": {
+          "score": 91,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Safety",
+              "url": "https://openai.com/safety",
+              "date": "2026-03-05",
+              "value": "Multi-layer safety with additional guardrails for autonomous computer-use actions"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories",
+          "last_verified": "2026-06-10"
+        },
+        "api_security": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Platform Docs",
+              "url": "https://platform.openai.com/docs/api-reference",
+              "date": "2026-03-05",
+              "value": "API key + OAuth2 authentication, HTTPS only, rate limiting"
+            }
+          ],
+          "methodology": "Review of API security features and best practices",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Solid security posture with computer-use-specific guardrails. Native computer use expands the attack surface (UI-based injection) relative to text-only models."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 87,
+      "criteria": {
+        "data_residency": {
+          "value": "US, EU",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Enterprise",
+              "url": "https://openai.com/enterprise",
+              "date": "2026-03-05",
+              "value": "Data residency options for enterprise customers"
+            }
+          ],
+          "methodology": "Review of enterprise documentation",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_optout": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Data Controls",
+              "url": "https://openai.com/policies/usage-policies",
+              "date": "2026-03-05",
+              "value": "API data not used for training by default"
+            }
+          ],
+          "methodology": "Policy review of data usage terms",
+          "last_verified": "2026-06-10"
+        },
+        "data_retention": {
+          "value": "30 days (zero retention available)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Terms",
+              "url": "https://openai.com/policies/terms-of-use",
+              "date": "2026-03-05",
+              "value": "30-day default API log retention; zero-data-retention options for qualifying customers"
+            }
+          ],
+          "methodology": "Terms of service and enterprise documentation review",
+          "last_verified": "2026-06-10"
+        },
+        "pii_handling": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Safety Tools",
+              "url": "https://platform.openai.com/docs/guides/safety",
+              "date": "2026-03-05",
+              "value": "Customer responsible for PII redaction; moderation API available"
+            }
+          ],
+          "methodology": "Review of data protection capabilities",
+          "last_verified": "2026-06-10"
+        },
+        "compliance_certifications": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Trust Center",
+              "url": "https://trust.openai.com/",
+              "date": "2026-03-05",
+              "value": "SOC 2 Type II, ISO 27001, GDPR compliant"
+            }
+          ],
+          "methodology": "Verification of compliance certifications",
+          "last_verified": "2026-06-10"
+        },
+        "zero_data_retention": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Enterprise",
+              "url": "https://openai.com/enterprise",
+              "date": "2026-03-05",
+              "value": "Zero-data-retention options available for enterprise and qualifying API customers"
+            }
+          ],
+          "methodology": "Enterprise feature review",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Standard OpenAI enterprise posture: SOC 2, no API-data training by default, zero-data-retention options. Not HIPAA eligible."
+    },
+
+    "trust_transparency": {
+      "overall_score": 89,
+      "criteria": {
+        "explainability": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GPT-5.4 Thinking Variant",
+              "url": "https://openai.com/index/introducing-gpt-5-4/",
+              "date": "2026-03-05",
+              "value": "Thinking variant exposes reasoning summaries; computer-use actions are step-logged"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency and explanation capabilities",
+          "last_verified": "2026-06-10"
+        },
+        "hallucination_rate": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Announcement",
+              "url": "https://openai.com/index/introducing-gpt-5-4/",
+              "date": "2026-03-05",
+              "value": "~33% fewer factual errors than GPT-5.2"
+            }
+          ],
+          "methodology": "Factual accuracy testing on QA datasets",
+          "last_verified": "2026-06-10"
+        },
+        "bias_fairness": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Safety",
+              "url": "https://openai.com/safety",
+              "date": "2026-03-05",
+              "value": "Regular bias testing and red-teaming program"
+            }
+          ],
+          "methodology": "Bias benchmarks and demographic testing",
+          "last_verified": "2026-06-10"
+        },
+        "uncertainty_quantification": {
+          "score": 89,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Documentation",
+              "url": "https://platform.openai.com/docs/models",
+              "date": "2026-03-05",
+              "value": "Better uncertainty expression accompanying the factual-error reduction"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-06-10"
+        },
+        "model_card_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GPT-5.4 Announcement and System Card",
+              "url": "https://openai.com/index/introducing-gpt-5-4/",
+              "date": "2026-03-05",
+              "value": "Detailed release documentation covering variants, computer use, and safety evaluations"
+            }
+          ],
+          "methodology": "Documentation completeness and clarity review",
+          "last_verified": "2026-06-10"
+        },
+        "training_data_transparency": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Blog",
+              "url": "https://openai.com/blog",
+              "date": "2026-03-05",
+              "value": "General description of training approach; specific sources not disclosed"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-06-10"
+        },
+        "guardrails": {
+          "score": 91,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Safety Systems",
+              "url": "https://openai.com/safety",
+              "date": "2026-03-05",
+              "value": "Multi-layer safety guardrails including computer-use action confirmation"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Marked transparency improvement via the ~33% factual-error reduction. Computer-use action logging aids auditability of agentic runs."
+    },
+
+    "operational_excellence": {
+      "overall_score": 94,
+      "criteria": {
+        "api_design_quality": {
+          "score": 96,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI API Reference",
+              "url": "https://platform.openai.com/docs/api-reference",
+              "date": "2026-03-05",
+              "value": "Responses API with streaming, function calling, vision, and native computer use"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-06-10"
+        },
+        "sdk_quality": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI SDKs",
+              "url": "https://github.com/openai",
+              "date": "2026-03-05",
+              "value": "Official SDKs for Python, Node.js, Go, .NET, actively maintained"
+            }
+          ],
+          "methodology": "SDK quality, documentation, and maintenance review",
+          "last_verified": "2026-06-10"
+        },
+        "versioning_policy": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-04-24",
+              "value": "Clear deprecation schedule; GPT-5.4 remains supported but OpenAI designates GPT-5.5 as the migration target for the GPT-5.x line"
+            }
+          ],
+          "methodology": "Review of versioning policy and historical deprecation practices",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_observability": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Dashboard",
+              "url": "https://platform.openai.com/usage",
+              "date": "2026-03-05",
+              "value": "Detailed usage dashboard with costs, tokens, rate limits"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-06-10"
+        },
+        "support_quality": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Support",
+              "url": "https://help.openai.com/",
+              "date": "2026-03-05",
+              "value": "24/7 support, comprehensive docs, active developer community"
+            }
+          ],
+          "methodology": "Support and documentation assessment",
+          "last_verified": "2026-06-10"
+        },
+        "ecosystem_maturity": {
+          "score": 97,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Platform",
+              "url": "https://platform.openai.com/docs",
+              "date": "2026-03-05",
+              "value": "Largest AI ecosystem; full variant family (Thinking, Pro, mini, nano) for cost/latency tiers"
+            }
+          ],
+          "methodology": "Ecosystem breadth and depth analysis",
+          "last_verified": "2026-06-10"
+        },
+        "license_terms": {
+          "score": 91,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Terms",
+              "url": "https://openai.com/policies/terms-of-use",
+              "date": "2026-03-05",
+              "value": "Standard commercial terms with usage policies"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions",
+          "last_verified": "2026-06-10"
+        }
+      },
+      "notes": "Excellent operational maturity with the full variant family. Procurement caveat: superseded by GPT-5.5 only six weeks after release; plan migrations accordingly."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 92,
+      "notes": "Capable generalist coder with ~1.05M context, but GPT-5.3-Codex and GPT-5.5 lead on agentic coding benchmarks.",
+      "alternatives": ["gpt-5-3-codex", "gpt-5-5"]
+    },
+    "customer-support": {
+      "overall": 93,
+      "notes": "mini and nano variants give strong cost/latency tiers; ~33% fewer factual errors improves answer reliability.",
+      "alternatives": ["gemini-3-5-flash", "gpt-5-5"]
+    },
+    "content-creation": {
+      "overall": 93,
+      "notes": "Strong general writing with long-context coherence. Good value at $2.50/$15 vs GPT-5.5's $5/$30.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    },
+    "data-analysis": {
+      "overall": 93,
+      "notes": "Solid analytical reasoning with ~1.05M context for whole-dataset work; GPT-5.5 leads on frontier math.",
+      "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
+    },
+    "research-assistant": {
+      "overall": 93,
+      "notes": "Reduced factual errors and very long context suit research; native computer use can drive live source gathering.",
+      "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
+    },
+    "legal-compliance": {
+      "overall": 86,
+      "notes": "Good document analysis but not HIPAA eligible; 30-day default retention may be a concern.",
+      "alternatives": ["claude-opus-4-8", "claude-fable-5"]
+    },
+    "healthcare": {
+      "overall": 82,
+      "notes": "Not HIPAA eligible. Improved factuality helps clinical documentation but privacy controls remain a gap.",
+      "alternatives": ["claude-opus-4-8", "claude-fable-5"]
+    },
+    "financial-analysis": {
+      "overall": 92,
+      "notes": "Strong quantitative reasoning at lower cost than GPT-5.5; computer use enables workflow automation across financial tools.",
+      "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
+    },
+    "education": {
+      "overall": 93,
+      "notes": "Reliable explanations with fewer factual errors; nano/mini tiers economical for high-volume tutoring.",
+      "alternatives": ["gpt-5-5", "gemini-3-5-flash"]
+    },
+    "creative-writing": {
+      "overall": 91,
+      "notes": "Capable narrative writing and good instruction following; flagship successors edge it on nuance.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    }
+  },
+
+  "strengths": [
+    "Native computer use: 75% OSWorld-Verified (vs GPT-5.2's 47.3%)",
+    "~33% fewer factual errors than GPT-5.2",
+    "~1.05M token input context with 128K output",
+    "Full variant family: Thinking, Pro, mini, nano for cost/latency tiers",
+    "Better price-performance than GPT-5.5 ($2.50/$15 vs $5/$30)",
+    "Mature OpenAI ecosystem and tooling"
+  ],
+
+  "limitations": [
+    "Superseded by GPT-5.5 six weeks after release — previous-generation flagship",
+    "Input pricing doubles above 272K input tokens",
+    "Not HIPAA eligible",
+    "30-day default API data retention",
+    "Behind GPT-5.5 on reasoning and coding benchmarks (e.g., 75% vs 78.7% OSWorld-Verified)",
+    "Computer use expands prompt-injection attack surface"
+  ],
+
+  "best_for": [
+    "Computer-use and desktop automation workflows",
+    "Cost-conscious teams wanting near-flagship quality at half GPT-5.5's price",
+    "Long-context workloads under 272K input tokens (before price doubling)",
+    "High-volume tiered deployments using mini/nano variants"
+  ],
+
+  "not_recommended_for": [
+    "New projects standardizing long-term (GPT-5.5 is the designated migration target)",
+    "HIPAA-compliant healthcare applications",
+    "Frontier math and abstract reasoning where GPT-5.5 leads decisively"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "$2.50 per 1M tokens",
+      "output": "$15.00 per 1M tokens",
+      "notes": "Applies up to 272K input tokens; pricing doubles above that threshold. Thinking, Pro, mini, and nano variants priced separately.",
+      "last_verified": "2026-06-10"
+    },
+    "context_window": 1050000,
+    "max_output": 128000,
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Italian",
+      "Portuguese",
+      "Japanese",
+      "Korean",
+      "Chinese",
+      "Russian",
+      "Arabic",
+      "Hindi",
+      "50+ languages"
+    ],
+    "modalities": ["text", "vision", "computer-use"],
+    "api_endpoint": "https://api.openai.com/v1/responses",
+    "open_source": false,
+    "architecture": "Transformer-based with native computer-use capability and variant family",
+    "parameters": "Not disclosed",
+    "knowledge_cutoff": "Late 2025"
+  },
+
+  "related_entities": ["gpt-5-5", "gpt-5-3-codex", "gpt-5-2", "gemini-3-1-pro"],
+
+  "tags": [
+    "computer-use",
+    "previous-flagship",
+    "million-token-context",
+    "factuality",
+    "variant-family",
+    "agentic",
+    "multimodal"
+  ]
+}

@@ -6,10 +6,15 @@ import type { TrustVectorEntity } from '@/framework/schema/types';
 import { calculateOverallScore } from '@/framework/schema/types';
 
 // ========================================
-// MODELS (38 total)
+// MODELS (60 total)
 // ========================================
 
-// Anthropic Models (7)
+// Anthropic Models (11)
+import claudeFable5 from '@/data/models/claude-fable-5.json';
+import claudeOpus48 from '@/data/models/claude-opus-4-8.json';
+import claudeOpus47 from '@/data/models/claude-opus-4-7.json';
+import claudeOpus46 from '@/data/models/claude-opus-4-6.json';
+import claudeSonnet46 from '@/data/models/claude-sonnet-4-6.json';
 import claudeOpus45 from '@/data/models/claude-opus-4-5.json';
 import claudeSonnet45 from '@/data/models/claude-sonnet-4-5.json';
 import claudeSonnet4 from '@/data/models/claude-sonnet-4.json';
@@ -17,7 +22,10 @@ import claudeOpus41 from '@/data/models/claude-opus-4-1.json';
 import claudeOpus4 from '@/data/models/claude-opus-4.json';
 import claudeHaiku45 from '@/data/models/claude-haiku-4-5.json';
 
-// OpenAI Models (17)
+// OpenAI Models (20)
+import gpt55 from '@/data/models/gpt-5-5.json';
+import gpt54 from '@/data/models/gpt-5-4.json';
+import gpt53Codex from '@/data/models/gpt-5-3-codex.json';
 import gpt52 from '@/data/models/gpt-5-2.json';
 import gpt52Codex from '@/data/models/gpt-5-2-codex.json';
 import gpt51 from '@/data/models/gpt-5-1.json';
@@ -35,7 +43,10 @@ import openaiO4Mini from '@/data/models/openai-o4-mini.json';
 import gptOss120b from '@/data/models/gpt-oss-120b.json';
 import gptOss20b from '@/data/models/gpt-oss-20b.json';
 
-// Google Models (5)
+// Google Models (8)
+import gemini31Pro from '@/data/models/gemini-3-1-pro.json';
+import gemini35Flash from '@/data/models/gemini-3-5-flash.json';
+import gemma4 from '@/data/models/gemma-4.json';
 import gemini3Pro from '@/data/models/gemini-3-pro.json';
 import gemini3Flash from '@/data/models/gemini-3-flash.json';
 import gemini25Pro from '@/data/models/gemini-2-5-pro.json';
@@ -49,21 +60,52 @@ import llama4Scout from '@/data/models/llama-4-scout.json';
 import llama31405b from '@/data/models/llama-3-1-405b.json';
 import llama3370b from '@/data/models/llama-3-3-70b.json';
 
-// xAI Models (1)
+// xAI Models (3)
+import grok43 from '@/data/models/grok-4-3.json';
+import grok41 from '@/data/models/grok-4-1.json';
 import grok3Beta from '@/data/models/grok-3-beta.json';
 
-// DeepSeek Models (2)
+// DeepSeek Models (4)
+import deepseekV4 from '@/data/models/deepseek-v4.json';
+import deepseekV32 from '@/data/models/deepseek-v3-2.json';
 import deepseekR1 from '@/data/models/deepseek-r1.json';
 import deepseekV30324 from '@/data/models/deepseek-v3-0324.json';
 
-// Other Models (3)
+// Other Models (10)
+import qwen35 from '@/data/models/qwen3-5.json';
+import kimiK26 from '@/data/models/kimi-k2-6.json';
+import glm5 from '@/data/models/glm-5.json';
+import minimaxM2 from '@/data/models/minimax-m2.json';
+import mistralLarge3 from '@/data/models/mistral-large-3.json';
+import commandAPlus from '@/data/models/command-a-plus.json';
+import nova2Lite from '@/data/models/nova-2-lite.json';
 import nemotronUltra253b from '@/data/models/nemotron-ultra-253b.json';
 import qwen25Vl32b from '@/data/models/qwen2-5-vl-32b.json';
 import novaPro from '@/data/models/nova-pro.json';
 
 // ========================================
-// AGENTS (34 total)
+// AGENTS (50 total)
 // ========================================
+
+// Coding & General-Purpose Agents (12, added 2026-06)
+import claudeCode from '@/data/agents/claude-code.json';
+import claudeAgentSdk from '@/data/agents/claude-agent-sdk.json';
+import openaiAgentsSdk from '@/data/agents/openai-agents-sdk.json';
+import openaiCodex from '@/data/agents/openai-codex.json';
+import googleAdk from '@/data/agents/google-adk.json';
+import geminiCli from '@/data/agents/gemini-cli.json';
+import googleJules from '@/data/agents/google-jules.json';
+import githubCopilotCodingAgent from '@/data/agents/github-copilot-coding-agent.json';
+import microsoftAgentFramework from '@/data/agents/microsoft-agent-framework.json';
+import devin from '@/data/agents/devin.json';
+import cursorAgent from '@/data/agents/cursor-agent.json';
+import manus from '@/data/agents/manus.json';
+
+// Open-Source Agent Frameworks (4, added 2026-06)
+import smolagents from '@/data/agents/smolagents.json';
+import strandsAgents from '@/data/agents/strands-agents.json';
+import mastra from '@/data/agents/mastra.json';
+import dify from '@/data/agents/dify.json';
 
 // Enterprise Agents (9)
 import amazonLex from '@/data/agents/amazon-lex.json';
@@ -112,8 +154,22 @@ import autogpt from '@/data/agents/autogpt.json';
 import babyagi from '@/data/agents/babyagi.json';
 
 // ========================================
-// MCPs (34 total)
+// MCPs (46 total)
 // ========================================
+
+// Top Ecosystem MCPs (12, added 2026-06)
+import mcpPlaywright from '@/data/mcps/mcp-server-playwright.json';
+import mcpChromeDevtools from '@/data/mcps/mcp-server-chrome-devtools.json';
+import mcpContext7 from '@/data/mcps/mcp-server-context7.json';
+import mcpSerena from '@/data/mcps/mcp-server-serena.json';
+import mcpFigma from '@/data/mcps/mcp-server-figma.json';
+import mcpStripe from '@/data/mcps/mcp-server-stripe.json';
+import mcpVercel from '@/data/mcps/mcp-server-vercel.json';
+import mcpHuggingFace from '@/data/mcps/mcp-server-hugging-face.json';
+import mcpFirecrawl from '@/data/mcps/mcp-server-firecrawl.json';
+import mcpShadcn from '@/data/mcps/mcp-server-shadcn.json';
+import mcpApify from '@/data/mcps/mcp-server-apify.json';
+import mcpZapier from '@/data/mcps/mcp-server-zapier.json';
 
 // Official/Reference MCPs (5)
 import mcpFetch from '@/data/mcps/mcp-server-fetch.json';
@@ -166,13 +222,18 @@ import mcpFilesystem from '@/data/mcps/mcp-server-filesystem.json';
 import mcpMemory from '@/data/mcps/mcp-server-memory.json';
 
 /**
- * All entities in the system (106 total: 38 models + 34 agents + 34 MCPs)
+ * All entities in the system (156 total: 60 models + 50 agents + 46 MCPs)
  */
 const ALL_ENTITIES: TrustVectorEntity[] = [
   // ========================================
-  // MODELS (38)
+  // MODELS (60)
   // ========================================
-  // Anthropic (7)
+  // Anthropic (11)
+  claudeFable5,
+  claudeOpus48,
+  claudeOpus47,
+  claudeOpus46,
+  claudeSonnet46,
   claudeOpus45,
   claudeSonnet45,
   claudeSonnet4,
@@ -180,7 +241,10 @@ const ALL_ENTITIES: TrustVectorEntity[] = [
   claudeOpus4,
   claudeHaiku45,
 
-  // OpenAI (17)
+  // OpenAI (20)
+  gpt55,
+  gpt54,
+  gpt53Codex,
   gpt52,
   gpt52Codex,
   gpt51,
@@ -198,7 +262,10 @@ const ALL_ENTITIES: TrustVectorEntity[] = [
   gptOss120b,
   gptOss20b,
 
-  // Google (5)
+  // Google (8)
+  gemini31Pro,
+  gemini35Flash,
+  gemma4,
   gemini3Pro,
   gemini3Flash,
   gemini25Pro,
@@ -212,21 +279,52 @@ const ALL_ENTITIES: TrustVectorEntity[] = [
   llama31405b,
   llama3370b,
 
-  // xAI (1)
+  // xAI (3)
+  grok43,
+  grok41,
   grok3Beta,
 
-  // DeepSeek (2)
+  // DeepSeek (4)
+  deepseekV4,
+  deepseekV32,
   deepseekR1,
   deepseekV30324,
 
-  // Other (3)
+  // Other (10)
+  qwen35,
+  kimiK26,
+  glm5,
+  minimaxM2,
+  mistralLarge3,
+  commandAPlus,
+  nova2Lite,
   nemotronUltra253b,
   qwen25Vl32b,
   novaPro,
 
   // ========================================
-  // AGENTS (34)
+  // AGENTS (50)
   // ========================================
+  // Coding & General-Purpose Agents (12)
+  claudeCode,
+  claudeAgentSdk,
+  openaiAgentsSdk,
+  openaiCodex,
+  googleAdk,
+  geminiCli,
+  googleJules,
+  githubCopilotCodingAgent,
+  microsoftAgentFramework,
+  devin,
+  cursorAgent,
+  manus,
+
+  // Open-Source Agent Frameworks — 2026 additions (4)
+  smolagents,
+  strandsAgents,
+  mastra,
+  dify,
+
   // Enterprise (9)
   amazonLex,
   azureBotService,
@@ -274,8 +372,22 @@ const ALL_ENTITIES: TrustVectorEntity[] = [
   babyagi,
 
   // ========================================
-  // MCPs (34)
+  // MCPs (46)
   // ========================================
+  // Top Ecosystem Servers — 2026 additions (12)
+  mcpPlaywright,
+  mcpChromeDevtools,
+  mcpContext7,
+  mcpSerena,
+  mcpFigma,
+  mcpStripe,
+  mcpVercel,
+  mcpHuggingFace,
+  mcpFirecrawl,
+  mcpShadcn,
+  mcpApify,
+  mcpZapier,
+
   // Official/Reference (5)
   mcpFetch,
   mcpGit,

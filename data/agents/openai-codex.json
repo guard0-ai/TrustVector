@@ -1,0 +1,479 @@
+{
+  "id": "openai-codex",
+  "type": "agent",
+  "name": "OpenAI Codex",
+  "provider": "OpenAI",
+  "version": "GPT-5.3-Codex era",
+  "last_evaluated": "2026-06-10",
+  "evaluated_by": "TrustVector Team",
+  "description": "OpenAI's coding agent spanning a cloud agent that runs tasks in isolated containers and an open-source CLI. Delegates parallel software tasks (features, fixes, PRs) powered by GPT-5.3-Codex, with network access disabled by default in the cloud.",
+  "website": "https://openai.com/codex/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 84,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI: Introducing Codex",
+              "url": "https://openai.com/index/introducing-codex/",
+              "date": "2025-05-16",
+              "value": "Cloud agent completes real-world engineering tasks ending in tested, citable PRs"
+            },
+            {
+              "source": "GPT-5-Codex upgrade",
+              "url": "https://openai.com/index/introducing-upgrades-to-codex/",
+              "date": "2025-09-15",
+              "value": "GPT-5-Codex (now GPT-5.3-Codex) substantially improved long-task completion and code quality"
+            }
+          ],
+          "methodology": "Benchmark review and hands-on evaluation of PR-producing cloud tasks",
+          "last_verified": "2026-06-10"
+        },
+        "tool_use_reliability": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex cloud documentation",
+              "url": "https://developers.openai.com/codex/cloud",
+              "date": "2026-05-01",
+              "value": "Reliable shell, editor, and test-runner usage inside containers; setup scripts configure project dependencies"
+            }
+          ],
+          "methodology": "Testing of in-container command execution, editing, and test running across repositories",
+          "last_verified": "2026-06-10"
+        },
+        "multi_step_planning": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI: Introducing Codex",
+              "url": "https://openai.com/index/introducing-codex/",
+              "date": "2025-05-16",
+              "value": "Handles long-horizon tasks autonomously: reading codebases, implementing changes, running tests, and iterating until passing"
+            }
+          ],
+          "methodology": "Long-horizon task evaluation from issue description to passing tests and PR",
+          "last_verified": "2026-06-10"
+        },
+        "memory_persistence": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Codex documentation (AGENTS.md)",
+              "url": "https://developers.openai.com/codex",
+              "date": "2026-05-01",
+              "value": "AGENTS.md files persist project conventions and instructions across tasks; cloud tasks are otherwise stateless per container"
+            }
+          ],
+          "methodology": "Review of AGENTS.md guidance persistence and per-task container statelessness",
+          "last_verified": "2026-06-10"
+        },
+        "error_recovery": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Codex cloud documentation",
+              "url": "https://developers.openai.com/codex/cloud",
+              "date": "2026-05-01",
+              "value": "Iterates on failing tests and lint errors until passing; surfaces logs and citations when blocked"
+            }
+          ],
+          "methodology": "Observed recovery behavior from failing tests, build errors, and missing dependencies",
+          "last_verified": "2026-06-10"
+        },
+        "agent_collaboration": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI: Introducing Codex",
+              "url": "https://openai.com/index/introducing-codex/",
+              "date": "2025-05-16",
+              "value": "Many tasks run in parallel containers simultaneously, though without inter-agent handoff primitives"
+            }
+          ],
+          "methodology": "Assessment of parallel task fan-out and coordination model",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 84,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex cloud documentation",
+              "url": "https://developers.openai.com/codex/cloud",
+              "date": "2026-05-01",
+              "value": "Cloud tasks run in isolated containers with internet access disabled by default during execution; configurable domain allowlists"
+            },
+            {
+              "source": "Codex CLI repository",
+              "url": "https://github.com/openai/codex",
+              "date": "2026-05-01",
+              "value": "CLI offers OS-level sandboxing (Seatbelt on macOS, Landlock/seccomp on Linux) with approval modes"
+            }
+          ],
+          "methodology": "Review of container isolation, default-deny network policy, and CLI sandbox mechanisms",
+          "last_verified": "2026-06-10"
+        },
+        "access_control": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex cloud documentation",
+              "url": "https://developers.openai.com/codex/cloud",
+              "date": "2026-05-01",
+              "value": "Scoped GitHub repo access, per-environment configuration, and CLI approval modes (suggest/auto-edit/full-auto)"
+            }
+          ],
+          "methodology": "Assessment of repository scoping, environment controls, and approval mode granularity",
+          "last_verified": "2026-06-10"
+        },
+        "prompt_injection_defense": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Codex cloud documentation",
+              "url": "https://developers.openai.com/codex/cloud",
+              "date": "2026-05-01",
+              "value": "Default-disabled internet during execution sharply limits exfiltration from injected instructions; agent-specific safety training applied"
+            }
+          ],
+          "methodology": "Review of network-isolation mitigations and model-level injection defenses",
+          "last_verified": "2026-06-10"
+        },
+        "data_isolation": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex cloud documentation",
+              "url": "https://developers.openai.com/codex/cloud",
+              "date": "2026-05-01",
+              "value": "Each task gets its own ephemeral container preloaded only with the target repository and configured environment"
+            }
+          ],
+          "methodology": "Architecture review of per-task container isolation and environment scoping",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_transparency": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex CLI repository",
+              "url": "https://github.com/openai/codex",
+              "date": "2026-05-01",
+              "value": "Codex CLI is open source under Apache-2.0; the cloud agent service and models remain proprietary"
+            }
+          ],
+          "methodology": "License and source availability review of CLI versus cloud service",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 73,
+      "criteria": {
+        "data_retention": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI enterprise privacy",
+              "url": "https://openai.com/enterprise-privacy/",
+              "date": "2026-03-01",
+              "value": "Business/Enterprise data excluded from training by default; consumer ChatGPT plan settings govern Codex task data"
+            }
+          ],
+          "methodology": "Review of OpenAI retention and training policies across ChatGPT plan tiers",
+          "last_verified": "2026-06-10"
+        },
+        "gdpr_compliance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Trust Portal",
+              "url": "https://trust.openai.com/",
+              "date": "2026-03-01",
+              "value": "SOC 2 Type II and DPA available for business tiers covering Codex usage"
+            }
+          ],
+          "methodology": "Compliance certification and DPA availability review",
+          "last_verified": "2026-06-10"
+        },
+        "third_party_data_sharing": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Codex cloud documentation",
+              "url": "https://developers.openai.com/codex/cloud",
+              "date": "2026-05-01",
+              "value": "Repository code is processed by OpenAI; default-off internet prevents task-time data flows to other third parties"
+            }
+          ],
+          "methodology": "Data flow analysis of repository access, GitHub integration, and network policy",
+          "last_verified": "2026-06-10"
+        },
+        "local_deployment_option": {
+          "score": 60,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex CLI repository",
+              "url": "https://github.com/openai/codex",
+              "date": "2026-05-01",
+              "value": "Open-source CLI runs locally and supports OpenAI-compatible endpoints, but flagship Codex models require OpenAI's cloud"
+            }
+          ],
+          "methodology": "Deployment options assessment of local CLI versus cloud-only agent and models",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 84,
+      "criteria": {
+        "documentation_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex developer documentation",
+              "url": "https://developers.openai.com/codex",
+              "date": "2026-05-01",
+              "value": "Dedicated developer docs covering cloud environments, CLI, IDE integration, AGENTS.md, and pricing"
+            }
+          ],
+          "methodology": "Documentation completeness review across cloud, CLI, and IDE surfaces",
+          "last_verified": "2026-06-10"
+        },
+        "execution_traceability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI: Introducing Codex",
+              "url": "https://openai.com/index/introducing-codex/",
+              "date": "2025-05-16",
+              "value": "Tasks produce verifiable evidence: terminal logs, test outputs, and citations for every action taken"
+            }
+          ],
+          "methodology": "Review of task logs, test output citations, and diff provenance",
+          "last_verified": "2026-06-10"
+        },
+        "decision_explainability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Codex cloud documentation",
+              "url": "https://developers.openai.com/codex/cloud",
+              "date": "2026-05-01",
+              "value": "Agent explains its approach in task summaries with linked evidence before users accept changes"
+            }
+          ],
+          "methodology": "Assessment of task summaries, cited reasoning, and pre-merge review surfaces",
+          "last_verified": "2026-06-10"
+        },
+        "open_source_code": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex CLI repository",
+              "url": "https://github.com/openai/codex",
+              "date": "2026-05-01",
+              "value": "Apache-2.0 CLI with active public development; cloud agent and models closed"
+            }
+          ],
+          "methodology": "Open source assessment weighting open CLI against proprietary cloud service",
+          "last_verified": "2026-06-10"
+        },
+        "community_activity": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex CLI repository",
+              "url": "https://github.com/openai/codex",
+              "date": "2026-05-01",
+              "value": "Tens of thousands of stars, rapid release cadence, and a large contributor community since April 2025"
+            }
+          ],
+          "methodology": "Community engagement analysis via GitHub activity and release cadence",
+          "last_verified": "2026-06-10"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 84,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex developer documentation",
+              "url": "https://developers.openai.com/codex",
+              "date": "2026-05-01",
+              "value": "Available in ChatGPT (web/mobile), as a CLI, IDE extensions, and GitHub integration with @codex mentions"
+            }
+          ],
+          "methodology": "Setup and integration surface assessment across ChatGPT, CLI, IDE, and GitHub",
+          "last_verified": "2026-06-10"
+        },
+        "scalability": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI: Introducing Codex",
+              "url": "https://openai.com/index/introducing-codex/",
+              "date": "2025-05-16",
+              "value": "Cloud architecture runs many tasks in parallel isolated containers, enabling fleet-style delegation"
+            }
+          ],
+          "methodology": "Assessment of parallel container execution and plan-tier task throughput",
+          "last_verified": "2026-06-10"
+        },
+        "cost_predictability": {
+          "score": 75,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex pricing documentation",
+              "url": "https://developers.openai.com/codex/pricing",
+              "date": "2026-04-09",
+              "value": "Included in ChatGPT plans with a $100/mo Pro 5x tier added 2026-04-09; typical usage estimated ~$100-200/dev/month"
+            }
+          ],
+          "methodology": "Pricing model analysis of plan-based limits, Pro 5x tier, and typical-usage estimates",
+          "last_verified": "2026-06-10"
+        },
+        "monitoring_capabilities": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Codex cloud documentation",
+              "url": "https://developers.openai.com/codex/cloud",
+              "date": "2026-05-01",
+              "value": "Per-task logs, usage dashboards, and admin controls for business plans; deeper APM requires external tooling"
+            }
+          ],
+          "methodology": "Review of task logs, usage visibility, and admin monitoring features",
+          "last_verified": "2026-06-10"
+        },
+        "production_readiness": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Codex rollout history",
+              "url": "https://openai.com/index/introducing-codex/",
+              "date": "2025-06-03",
+              "value": "Research preview 2025-05-16, ChatGPT Plus rollout 2025-06-03, GPT-5-Codex upgrades Sept 2025; now mature on GPT-5.3-Codex"
+            }
+          ],
+          "methodology": "Maturity assessment from rollout timeline, model upgrades, and enterprise availability",
+          "last_verified": "2026-06-10"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 92,
+      "notes": "Core use case: parallel feature work, bug fixes, refactors, and PR generation with test evidence"
+    },
+    "data-analysis": {
+      "overall": 78,
+      "notes": "Capable of scripted analysis within containers, though network-off defaults limit live data access"
+    },
+    "research-assistant": {
+      "overall": 74,
+      "notes": "Strong at codebase Q&A and architecture exploration; not aimed at general web research"
+    },
+    "education": {
+      "overall": 75,
+      "notes": "Cited logs and diffs make its work reviewable for learning, but it targets professional workflows"
+    }
+  },
+  "best_for": [
+    "Teams delegating parallel coding tasks (fixes, features, PRs) to a cloud agent",
+    "Security-conscious organizations wanting network-isolated execution by default",
+    "ChatGPT Plus/Pro/Business subscribers seeking included coding-agent capacity",
+    "Developers wanting an open-source local CLI with OS-level sandboxing"
+  ],
+  "strengths": [
+    "Strong isolation: per-task containers with internet disabled by default during execution",
+    "Runs many tasks in parallel for fleet-style software delegation",
+    "Verifiable outputs with terminal logs, test results, and action citations",
+    "Open-source Apache-2.0 CLI with local OS-level sandboxing",
+    "Deep GitHub integration from task to reviewed pull request",
+    "Continuously upgraded models, currently GPT-5.3-Codex"
+  ],
+  "limitations": [
+    "Default network isolation can block tasks needing external dependencies unless allowlists are configured",
+    "Cloud agent and Codex models are proprietary with no self-hosted option",
+    "Plan-based limits are opaque; heavy users may need the $100/mo Pro 5x tier (~$100-200/dev/month typical)",
+    "Stateless per-task containers limit cross-task memory beyond AGENTS.md",
+    "Environment setup scripts add onboarding friction for complex monorepos"
+  ],
+  "metadata": {
+    "license": "Cloud agent proprietary; Codex CLI Apache-2.0 (github.com/openai/codex)",
+    "supported_models": [
+      "GPT-5.3-Codex (current)",
+      "GPT-5-Codex (Sept 2025)",
+      "codex-1 (launch)"
+    ],
+    "programming_languages": [
+      "Language-agnostic (any language in the repository)"
+    ],
+    "deployment_type": "Managed cloud containers + local open-source CLI",
+    "tool_support": [
+      "Container shell and editor",
+      "Test runners",
+      "GitHub PR integration",
+      "Configurable network allowlists",
+      "AGENTS.md project instructions"
+    ],
+    "first_release": "CLI April 2025; cloud agent research preview 2025-05-16; ChatGPT Plus rollout 2025-06-03",
+    "pricing": "Included in ChatGPT plans; $100/mo Pro 5x tier (added 2026-04-09); typical usage ~$100-200/dev/month",
+    "interfaces": [
+      "ChatGPT web and mobile",
+      "Codex CLI",
+      "IDE extensions",
+      "GitHub (@codex mentions)"
+    ]
+  },
+  "related": [
+    "claude-code",
+    "openai-agents-sdk",
+    "github-copilot-coding-agent",
+    "google-jules",
+    "devin"
+  ],
+  "tags": [
+    "coding-agent",
+    "cloud-sandbox",
+    "openai",
+    "parallel-tasks"
+  ]
+}

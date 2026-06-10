@@ -2,11 +2,11 @@
   "id": "langflow",
   "type": "agent",
   "name": "Langflow",
-  "provider": "Logspace",
+  "provider": "IBM (formerly DataStax/Logspace)",
   "version": "1.5.1+",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Visual, drag-and-drop interface for building LangChain-based AI applications and agents. Low-code platform that makes it easy to prototype and deploy LLM workflows, RAG systems, and conversational agents.",
+  "description": "Visual, drag-and-drop interface for building LangChain-based AI apps and agents; now owned by IBM via the Feb 2025 DataStax acquisition. SECURITY: serious CVE history including CVE-2025-3248 (CVSS 9.8 unauthenticated RCE, fixed in 1.3.0, on CISA KEV, exploited by the Flodrix botnet) and CVE-2025-34291 (account takeover/RCE). Patch promptly and harden deployments.",
   "website": "https://www.langflow.org/",
   "trust_vector": {
     "performance_reliability": {
@@ -99,24 +99,31 @@
       }
     },
     "security": {
-      "overall_score": 71,
+      "overall_score": 67,
       "criteria": {
         "api_key_management": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 58,
+          "confidence": "high",
           "evidence": [
             {
               "source": "Credentials",
               "url": "https://docs.langflow.org/configuration",
               "date": "2024-10-01",
               "value": "Environment variable-based credential management"
+            },
+            {
+              "source": "CVE-2025-34291",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34291",
+              "date": "2026-06-10",
+              "value": "CVE-2025-34291: account takeover / remote code execution vulnerability in Langflow"
             }
           ],
           "methodology": "Security configuration review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10",
+          "notes": "Score reduced due to CVE-2025-34291 account takeover/RCE"
         },
         "self_hosting": {
-          "score": 85,
+          "score": 70,
           "confidence": "high",
           "evidence": [
             {
@@ -124,10 +131,17 @@
               "url": "https://docs.langflow.org/deployment",
               "date": "2024-10-01",
               "value": "Self-hosting with Docker and cloud deployment options"
+            },
+            {
+              "source": "CISA KEV / Flodrix Botnet Exploitation",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248",
+              "date": "2026-06-10",
+              "value": "Internet-exposed self-hosted Langflow instances were actively exploited via CVE-2025-3248 (added to CISA KEV 2025-05-05; exploited by the Flodrix botnet)"
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10",
+          "notes": "Score reduced: active in-the-wild exploitation of exposed self-hosted deployments"
         },
         "data_privacy": {
           "score": 78,
@@ -158,18 +172,25 @@
           "last_verified": "2025-11-09"
         },
         "authentication": {
-          "score": 62,
-          "confidence": "medium",
+          "score": 40,
+          "confidence": "high",
           "evidence": [
             {
               "source": "Security Features",
               "url": "https://docs.langflow.org/",
               "date": "2024-10-01",
               "value": "Basic auth available, enterprise features in DataStax version"
+            },
+            {
+              "source": "CVE-2025-3248",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248",
+              "date": "2026-06-10",
+              "value": "CVE-2025-3248: CVSS 9.8 unauthenticated remote code execution via /api/v1/validate/code; fixed in 1.3.0; added to CISA KEV 2025-05-05 and exploited by the Flodrix botnet"
             }
           ],
           "methodology": "Authentication assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-06-10",
+          "notes": "Score reduced due to CVE-2025-3248 unauthenticated RCE with confirmed in-the-wild exploitation"
         }
       }
     },
@@ -413,7 +434,8 @@
     "Primarily designed for prototyping, not enterprise deployment",
     "Security features less mature than enterprise platforms",
     "Limited control compared to code-based implementations",
-    "Debugging complex flows can be challenging despite visual interface"
+    "Debugging complex flows can be challenging despite visual interface",
+    "Serious CVE history: CVE-2025-3248 (unauthenticated RCE, CISA KEV, Flodrix botnet) and CVE-2025-34291 (account takeover/RCE); upgrade to 1.3.0+ and never expose unauthenticated instances"
   ],
   "metadata": {
     "license": "MIT",
@@ -493,6 +515,7 @@
   "tags": [
     "visual",
     "low-code",
-    "open-source"
+    "open-source",
+    "security-incidents"
   ]
 }

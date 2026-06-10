@@ -4,9 +4,9 @@
   "name": "Llama 3.1 405B",
   "provider": "Meta",
   "version": "llama-3.1-405b",
-  "last_evaluated": "2025-11-07",
+  "last_evaluated": "2026-06-10",
   "evaluated_by": "TrustVector Team",
-  "description": "Meta's largest and most capable open-source model with 405 billion parameters. Offers complete transparency, self-hosting capabilities, and competitive performance with proprietary models.",
+  "description": "Meta's largest open-source model with 405 billion parameters, offering complete transparency, self-hosting capabilities, and competitive performance with proprietary models. Remains one of Meta's legacy open models: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models in 2026.",
   "website": "https://llama.meta.com",
   "trust_vector": {
     "performance_reliability": {
@@ -533,7 +533,8 @@
     "Text-only (no native vision)",
     "Safety guardrails can be modified (security consideration)",
     "Higher latency compared to smaller models",
-    "Complex deployment and maintenance"
+    "Complex deployment and maintenance",
+    "Legacy status: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models in 2026, so future open updates are unlikely"
   ],
   "metadata": {
     "license": "Llama 3.1 Community License (open for commercial use)",
