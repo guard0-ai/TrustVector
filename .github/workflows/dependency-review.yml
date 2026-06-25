@@ -16,7 +16,7 @@ jobs:
       pull-requests: write   # required for the PR comment
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Dependency Review
         # Findings are detected and summarised, but the check is allowed to pass
