@@ -20,7 +20,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          # vitest 4 (rolldown) requires Node's node:util styleText export,
+          # added in Node 20; the repo's older Node 18 CI pin can't run it.
+          node-version: '20'
           cache: npm
 
       - name: Install dependencies
