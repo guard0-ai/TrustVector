@@ -50,7 +50,7 @@ jobs:
     steps:
       - name: Notify Slack - Fail
         if: env.SLACK_WEBHOOK_URL != ''
-        uses: slackapi/slack-github-action@v1.26.0
+        uses: slackapi/slack-github-action@v3.0.3
         with:
           payload: |
             {
