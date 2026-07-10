@@ -4,9 +4,9 @@
   "name": "MCP Slack Server",
   "provider": "Anthropic (Archived)",
   "version": "2025.4.24",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "ARCHIVED: Former Anthropic reference MCP server for Slack workspace interaction, archived 2025-05-29 to the servers-archived repository. NO LONGER MAINTAINED and no security guarantees are provided for archived servers. Its replacement in the MCP ecosystem is a third-party maintained Slack MCP server; evaluate maintained alternatives before deploying.",
+  "description": "ARCHIVED: Former Anthropic reference MCP server for Slack workspace interaction, archived 2025-05-29 to the servers-archived repository. NO LONGER MAINTAINED and no security guarantees are provided for archived servers. Slack now ships an official Slack MCP server, generally available since 2026-02-17 (announced at Dreamforce October 2025) with expanded tools added 2026-05-13; it is the recommended replacement.",
   "website": "https://api.slack.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Message delivery success testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "search_accuracy": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Search quality testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 78,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "real_time_updates": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Event delivery latency testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 80,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Authentication security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "message_access_risk": {
           "score": 68,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Access boundary testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "posting_control": {
           "score": 70,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Message posting capability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_exfiltration_risk": {
           "score": 72,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Data exposure analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 82,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Audit capabilities review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data exposure analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_protection": {
           "score": 62,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "workspace_admin_control": {
           "score": 78,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Enterprise control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "score": 72,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data retention policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "compliance_readiness": {
           "score": 73,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Compliance framework review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 82,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Operation traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "permission_transparency": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Permission clarity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "mcp_implementation": {
           "score": 55,
@@ -288,10 +288,16 @@
               "url": "https://github.com/modelcontextprotocol/servers-archived",
               "date": "2026-06-10",
               "value": "Reference Slack server archived 2025-05-29; repository read-only, README states no security guarantees are provided for archived servers"
+            },
+            {
+              "source": "Slack Developer Docs changelog",
+              "url": "https://docs.slack.dev/changelog/2026/02/17/slack-mcp/",
+              "date": "2026-07-09",
+              "value": "Slack's official MCP server reached general availability 2026-02-17, and additional tools (reactions, channel creation, member listing, file reading) shipped 2026-05-13; recommended replacement for the archived reference server"
             }
           ],
           "methodology": "Implementation documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -310,7 +316,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_reliability": {
           "score": 88,
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Uptime analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "response_time": {
           "score": 82,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 55,
@@ -358,7 +364,7 @@
             }
           ],
           "methodology": "Feature completeness assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost": {
           "score": 75,
@@ -372,7 +378,7 @@
             }
           ],
           "methodology": "Cost analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -390,7 +396,7 @@
     "No built-in content filtering or PII protection",
     "Risk of exposing confidential team communications",
     "Rate limits can be restrictive for high-volume operations",
-    "ARCHIVED 2025-05-29: reference server unmaintained with no security guarantees; replacement is third-party maintained",
+    "ARCHIVED 2025-05-29: reference server unmaintained with no security guarantees; use Slack's official MCP server (GA February 2026) instead",
     "Compliance challenges when sharing workspace data with third parties"
   ],
   "metadata": {
@@ -410,7 +416,8 @@
     "rate_limits": "Tier-based (1+ requests per second)",
     "first_release": "2024-11",
     "maintained_by": "None (Archived 2025-05-29)",
-    "repository": "https://github.com/modelcontextprotocol/servers-archived"
+    "repository": "https://github.com/modelcontextprotocol/servers-archived",
+    "replacement": "Official Slack MCP server (GA 2026-02-17, https://docs.slack.dev/changelog/2026/02/17/slack-mcp/)"
   },
   "use_case_ratings": {
     "code-generation": {

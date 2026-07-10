@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Atlassian Server",
   "provider": "Atlassian",
-  "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "version": "hosted remote (GA 2026-02)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official Atlassian MCP server for Jira and Confluence integration. Enables AI models to interact with project management, issue tracking, and knowledge base operations. Essential for AI-powered project management, documentation, and team collaboration workflows.",
+  "description": "Official Atlassian (Rovo) MCP server, generally available since February 2026 as a hosted remote at https://mcp.atlassian.com/v1/mcp (OAuth 2.1 via /v1/mcp/authv2, or API-token auth for machine-to-machine use). Connects Jira, Confluence, Jira Service Management, Bitbucket, and Compass to AI models for project management, issue tracking, and knowledge base operations. The legacy /v1/sse endpoint is unsupported after 2026-06-30.",
   "website": "https://github.com/atlassian/atlassian-mcp-server",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "API stability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "issue_operation_success": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Operation success testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 78,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "search_accuracy": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Search result quality assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 82,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -96,10 +96,16 @@
               "url": "https://developer.atlassian.com/cloud/jira/platform/security-overview/",
               "date": "2025-11-16",
               "value": "Uses Atlassian API tokens or OAuth 2.0 for secure authentication"
+            },
+            {
+              "source": "Atlassian Support - Configuring OAuth 2.1 (Rovo MCP Server)",
+              "url": "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/configuring-oauth-2-1/",
+              "date": "2026-07-09",
+              "value": "Hosted Rovo MCP server uses browser-based OAuth 2.1 (endpoint https://mcp.atlassian.com/v1/mcp/authv2); API-token auth added for machine-to-machine use without an interactive consent screen"
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 68,
@@ -113,7 +119,7 @@
             }
           ],
           "methodology": "Token security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "permission_scope_control": {
           "score": 75,
@@ -127,7 +133,7 @@
             }
           ],
           "methodology": "Permission scope testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_modification_risk": {
           "score": 70,
@@ -141,7 +147,7 @@
             }
           ],
           "methodology": "Operation authorization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 85,
@@ -155,7 +161,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cross_project_access": {
           "score": 72,
@@ -169,7 +175,7 @@
             }
           ],
           "methodology": "Access boundary testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "sensitive_issue_protection": {
           "score": 65,
@@ -202,7 +208,7 @@
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "team_member_privacy": {
           "score": 72,
@@ -216,7 +222,7 @@
             }
           ],
           "methodology": "User privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 72,
@@ -230,7 +236,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "attachment_handling": {
           "score": 75,
@@ -244,7 +250,7 @@
             }
           ],
           "methodology": "File handling assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +269,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 87,
@@ -277,7 +283,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 90,
@@ -291,7 +297,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 75,
@@ -305,7 +311,7 @@
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -321,10 +327,16 @@
               "url": "https://github.com/atlassian/atlassian-mcp-server",
               "date": "2025-11-16",
               "value": "Requires Atlassian API token and site configuration"
+            },
+            {
+              "source": "Atlassian - Remote MCP Server",
+              "url": "https://www.atlassian.com/platform/remote-mcp-server",
+              "date": "2026-07-09",
+              "value": "Hosted remote requires no install: connect to https://mcp.atlassian.com/v1/mcp and complete browser OAuth 2.1 (or configure an API token)"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 80,
@@ -338,7 +350,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 85,
@@ -352,7 +364,7 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 82,
@@ -363,10 +375,16 @@
               "url": "https://github.com/atlassian/atlassian-mcp-server",
               "date": "2025-11-16",
               "value": "Covers Jira issues, JQL search, Confluence pages, and spaces"
+            },
+            {
+              "source": "Atlassian MCP Server (official repo)",
+              "url": "https://github.com/atlassian/atlassian-mcp-server",
+              "date": "2026-07-09",
+              "value": "Coverage expanded beyond Jira/Confluence to Jira Service Management, Bitbucket, and Compass"
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 78,
@@ -377,10 +395,16 @@
               "url": "https://github.com/atlassian/atlassian-mcp-server/discussions",
               "date": "2025-11-16",
               "value": "Growing adoption among Atlassian users"
+            },
+            {
+              "source": "Atlassian Community - Rovo MCP server GA announcement",
+              "url": "https://community.atlassian.com/forums/Atlassian-Remote-MCP-Server/Announcing-GA-of-the-Atlassian-Rovo-MCP-server/ba-p/3186690",
+              "date": "2026-07-09",
+              "value": "Rovo MCP server generally available (GA February 2026) with an active dedicated community forum"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -435,7 +459,8 @@
   ],
   "strengths": [
     "Official Atlassian implementation with deep Jira and Confluence expertise",
-    "Comprehensive project management and documentation capabilities",
+    "Hosted remote (Rovo MCP Server) generally available since 2026-02 with OAuth 2.1 or API-token auth",
+    "Coverage spans Jira, Confluence, Jira Service Management, Bitbucket, and Compass for project management and documentation",
     "Built on reliable Atlassian Cloud APIs with strong SLAs",
     "Full operation auditability through Atlassian audit logs",
     "Open source with Atlassian support",
@@ -447,7 +472,8 @@
     "No built-in filtering for sensitive or confidential content",
     "May expose team member names, emails, and activity patterns",
     "Subject to Atlassian API rate limits",
-    "Attachments and file content may be transmitted to LLM provider"
+    "Attachments and file content may be transmitted to LLM provider",
+    "Legacy SSE endpoint (https://mcp.atlassian.com/v1/sse) unsupported after 2026-06-30; clients must migrate to /v1/mcp"
   ],
   "metadata": {
     "license": "MIT",
@@ -460,15 +486,24 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/atlassian/atlassian-mcp-server",
-    "api_dependency": "Jira REST API, Confluence REST API",
-    "authentication": "Atlassian API Token or OAuth 2.0",
+    "api_dependency": "Jira REST API, Confluence REST API, Jira Service Management, Bitbucket, Compass",
+    "authentication": "OAuth 2.1 (browser flow) or Atlassian API token (machine-to-machine)",
+    "remote_endpoint": "https://mcp.atlassian.com/v1/mcp (OAuth: https://mcp.atlassian.com/v1/mcp/authv2)",
+    "remote_ga_date": "2026-02",
+    "deprecated_endpoint": "https://mcp.atlassian.com/v1/sse (unsupported after 2026-06-30)",
     "first_release": "2024-11",
-    "maintained_by": "Atlassian"
+    "maintained_by": "Atlassian",
+    "status": "Active - Atlassian Rovo MCP Server GA since 2026-02",
+    "transport_types": [
+      "streamable-http (hosted remote)"
+    ]
   },
   "tags": [
     "project-management",
     "jira",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "official",
+    "remote-server"
   ]
 }

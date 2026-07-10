@@ -4,9 +4,9 @@
   "name": "OpenAI Assistants API",
   "provider": "OpenAI",
   "version": "v2",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "DEPRECATED: the Assistants API will be sunset on 2026-08-26 (roughly 2.5 months away); OpenAI directs users to the Responses API plus Conversations API as the replacement. Previously a managed agent framework with native tool use, code interpreter, file search, and persistent threads. Do not start new projects on it.",
+  "description": "DEPRECATED: the Assistants API will be sunset on 2026-08-26 (under 7 weeks away); after that date all /v1/assistants, /v1/threads, and /v1/threads/runs calls return errors. OpenAI directs users to the Responses API plus Conversations API as the replacement; Azure OpenAI Assistants retires the same day. Previously a managed agent framework with native tool use, code interpreter, file search, and persistent threads. Do not start new projects on it.",
   "website": "https://platform.openai.com/docs/assistants/overview",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Based on underlying model performance",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 92,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 87,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex task testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 95,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory system evaluation",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 85,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Variable (3-10s typical)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 88,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 85,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 90,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 88,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "file_handling_security": {
           "score": 85,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "File security testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -221,7 +221,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 80,
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 75,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -271,10 +271,16 @@
               "url": "https://developers.openai.com/api/docs/deprecations",
               "date": "2026-06-10",
               "value": "Assistants API deprecated with sunset date 2026-08-26; replacement is the Responses API + Conversations API"
+            },
+            {
+              "source": "OpenAI Developer Community - Assistants API beta deprecation",
+              "url": "https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666",
+              "date": "2026-07-09",
+              "value": "Sunset remains on schedule for 2026-08-26 with no extension or degraded mode; Azure OpenAI Assistants API retires the same date"
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Score reduced: new integrations are discouraged given the 2026-08-26 sunset"
         },
         "scalability": {
@@ -289,7 +295,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 82,
@@ -303,7 +309,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09",
+          "last_verified": "2026-07-09",
           "notes": "Costs can vary significantly based on tool usage"
         },
         "monitoring_capabilities": {
@@ -318,7 +324,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -338,7 +344,7 @@
     "Vendor lock-in to OpenAI platform",
     "Limited native explainability features",
     "Code interpreter limited to Python only",
-    "Deprecated: sunset scheduled for 2026-08-26; migrate to the Responses API + Conversations API"
+    "Deprecated: sunset scheduled for 2026-08-26 (verified on track as of 2026-07-09); migrate to the Responses API + Conversations API immediately"
   ],
   "metadata": {
     "license": "Proprietary",

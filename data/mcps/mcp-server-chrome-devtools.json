@@ -3,8 +3,8 @@
   "type": "mcp",
   "name": "Chrome DevTools MCP",
   "provider": "Google (Chrome DevTools team)",
-  "version": "2026.6",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Google's official MCP server that gives AI agents full Chrome control via the Chrome DevTools Protocol. Around 26 tools span input automation, navigation, performance tracing and insights, network inspection, console debugging, and screenshots — making it the reference server for AI-assisted web debugging and performance work.",
   "website": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Review of CDP connection handling for launched and attached Chrome instances",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_success_rate": {
           "score": 87,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Hands-on testing of click, fill, navigate, and wait tools against common web applications",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "performance_tracing_accuracy": {
           "score": 92,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Validation of trace recording and insight extraction against DevTools Performance panel output",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 83,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Error-path testing including navigation failures, missing elements, and dropped CDP connections",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "automation_stability": {
           "score": 85,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Multi-step workflow stability testing across navigation, input, and inspection tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Threat modeling of untrusted page, console, and network content entering the agent context",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "arbitrary_code_execution_risk": {
           "score": 48,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Capability analysis of in-page JS evaluation under adversarial agent steering",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "session_exposure_risk": {
           "score": 45,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Analysis of attach-to-running-Chrome mode and access to authenticated browser state",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sandboxing_isolation": {
           "score": 60,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Review of isolation options (fresh profile, headless, channel selection) versus attach mode",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "unauthorized_action_risk": {
           "score": 55,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Authorization boundary analysis of write-capable browser actions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis of inspection tool outputs (network, console, screenshot, snapshot)",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 55,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy controls assessment of network and console inspection outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_data_control": {
           "score": 78,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Review of local execution model and data residency",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data sharing pathway analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 88,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging and observability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "vendor_credibility": {
           "score": 95,
@@ -272,12 +272,12 @@
             {
               "source": "GitHub API",
               "url": "https://api.github.com/repos/ChromeDevTools/chrome-devtools-mcp",
-              "date": "2026-06-10",
-              "value": "Maintained by Google's Chrome DevTools team; 43,277 GitHub stars as of 2026-06-10, among the most-starred MCP servers"
+              "date": "2026-07-09",
+              "value": "Maintained by Google's Chrome DevTools team; 46,455 GitHub stars as of 2026-07-09, among the most-starred MCP servers"
             }
           ],
           "methodology": "Maintainer reputation and project health analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment across MCP hosts",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "performance": {
           "score": 86,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Latency and token-efficiency evaluation of common debugging workflows",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 90,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Feature completeness assessment against web debugging and automation needs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 93,
@@ -333,12 +333,12 @@
             {
               "source": "GitHub API",
               "url": "https://api.github.com/repos/ChromeDevTools/chrome-devtools-mcp",
-              "date": "2026-06-10",
-              "value": "43,277 stars as of 2026-06-10; widely adopted by coding agents for in-browser verification and performance debugging since its 2025 launch"
+              "date": "2026-07-09",
+              "value": "46,455 stars as of 2026-07-09; widely adopted by coding agents for in-browser verification and performance debugging since its 2025 launch"
             }
           ],
           "methodology": "Adoption metrics and ecosystem-integration analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "maintenance_activity": {
           "score": 92,
@@ -347,19 +347,19 @@
             {
               "source": "GitHub repository activity",
               "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/releases",
-              "date": "2026-06-10",
-              "value": "Regular releases tracking Chrome versions with active issue triage by the Chrome DevTools team"
+              "date": "2026-07-09",
+              "value": "Regular releases tracking Chrome versions (chrome-devtools-mcp at v1.5.0 on npm, repo pushed 2026-07-09) with active issue triage by the Chrome DevTools team"
             }
           ],
           "methodology": "Commit frequency and release-cadence analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
   },
   "strengths": [
     "First-party Chrome DevTools data: real performance traces, insights, network and console inspection",
-    "Maintained by Google's Chrome DevTools team with very high adoption (43.3k stars)",
+    "Maintained by Google's Chrome DevTools team with very high adoption (46.5k stars)",
     "~26 well-documented tools spanning automation, debugging, tracing, and screenshots",
     "Direct CDP control is fast and exposes capabilities no other browser MCP offers",
     "Runs fully locally over stdio with no vendor telemetry",
@@ -383,8 +383,9 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-    "github_stars": 43277,
+    "github_stars": 46455,
     "package": "chrome-devtools-mcp",
+    "package_version": "1.5.0",
     "api_dependency": "Chrome DevTools Protocol (via Puppeteer)",
     "authentication": "None required (local browser control)",
     "first_release": "2025-09",

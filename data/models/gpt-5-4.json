@@ -4,9 +4,9 @@
   "name": "GPT-5.4",
   "provider": "OpenAI",
   "version": "gpt-5-4-2026-03-05",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's previous-generation flagship (superseded by GPT-5.5 in April 2026). Headline native computer use with 75% OSWorld-Verified, ~33% fewer factual errors than GPT-5.2, ~1.05M context. Thinking, Pro, mini, and nano variants.",
+  "description": "OpenAI's previous-generation flagship (superseded by GPT-5.5 in April 2026 and the GPT-5.6 family in July 2026). Fully supported with no announced shutdown; gpt-5.4-mini and gpt-5.4-nano are OpenAI's designated replacements for retiring GPT-5 mini/nano and gpt-4.1-nano. Headline native computer use with 75% OSWorld-Verified, ~33% fewer factual errors than GPT-5.2, ~1.05M context. Thinking, Pro, mini, and nano variants.",
   "website": "https://openai.com/index/introducing-gpt-5-4/",
 
   "trust_vector": {
@@ -25,7 +25,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks and provider-reported comparisons",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 95,
@@ -39,7 +39,7 @@
             }
           ],
           "methodology": "PhD-level and Olympiad-level reasoning benchmarks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 95,
@@ -59,7 +59,7 @@
             }
           ],
           "methodology": "Computer-use benchmarks and factual accuracy testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 94,
@@ -73,7 +73,7 @@
             }
           ],
           "methodology": "Internal testing across model variants",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "0.8s (standard) / faster on mini and nano",
@@ -87,7 +87,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "3.5s (standard) / higher for Thinking and Pro",
@@ -101,7 +101,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "~1,050,000 tokens input / 128,000 output",
@@ -115,7 +115,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -129,7 +129,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong generation defined by native computer use (75% OSWorld-Verified, +27.7 points over GPT-5.2) and a ~33% factual-error reduction. Superseded by GPT-5.5 six weeks after release."
@@ -150,7 +150,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 90,
@@ -164,7 +164,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing against jailbreak datasets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 84,
@@ -178,7 +178,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 91,
@@ -192,7 +192,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 86,
@@ -206,7 +206,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Solid security posture with computer-use-specific guardrails. Native computer use expands the attack surface (UI-based injection) relative to text-only models."
@@ -227,7 +227,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -241,7 +241,7 @@
             }
           ],
           "methodology": "Policy review of data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days (zero retention available)",
@@ -255,7 +255,7 @@
             }
           ],
           "methodology": "Terms of service and enterprise documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -269,7 +269,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -283,7 +283,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 88,
@@ -297,7 +297,7 @@
             }
           ],
           "methodology": "Enterprise feature review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard OpenAI enterprise posture: SOC 2, no API-data training by default, zero-data-retention options. Not HIPAA eligible."
@@ -318,7 +318,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 93,
@@ -332,7 +332,7 @@
             }
           ],
           "methodology": "Factual accuracy testing on QA datasets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 85,
@@ -346,7 +346,7 @@
             }
           ],
           "methodology": "Bias benchmarks and demographic testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 89,
@@ -360,7 +360,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 92,
@@ -374,7 +374,7 @@
             }
           ],
           "methodology": "Documentation completeness and clarity review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 80,
@@ -388,7 +388,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 91,
@@ -402,7 +402,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Marked transparency improvement via the ~33% factual-error reduction. Computer-use action logging aids auditability of agentic runs."
@@ -423,7 +423,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 95,
@@ -437,7 +437,7 @@
             }
           ],
           "methodology": "SDK quality, documentation, and maintenance review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 90,
@@ -448,10 +448,16 @@
               "url": "https://developers.openai.com/api/docs/deprecations",
               "date": "2026-04-24",
               "value": "Clear deprecation schedule; GPT-5.4 remains supported but OpenAI designates GPT-5.5 as the migration target for the GPT-5.x line"
+            },
+            {
+              "source": "OpenAI Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-07-09",
+              "value": "Re-verified: GPT-5.4 not on the deprecations list; gpt-5.4-mini and gpt-5.4-nano are the named replacements for gpt-5-mini/gpt-5-nano (shutdown 2026-12-11) and gpt-4.1-nano (shutdown 2026-10-23)"
             }
           ],
           "methodology": "Review of versioning policy and historical deprecation practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 94,
@@ -465,7 +471,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 94,
@@ -479,7 +485,7 @@
             }
           ],
           "methodology": "Support and documentation assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 97,
@@ -493,7 +499,7 @@
             }
           ],
           "methodology": "Ecosystem breadth and depth analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 91,
@@ -507,7 +513,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent operational maturity with the full variant family. Procurement caveat: superseded by GPT-5.5 only six weeks after release; plan migrations accordingly."
@@ -602,8 +608,8 @@
     "pricing": {
       "input": "$2.50 per 1M tokens",
       "output": "$15.00 per 1M tokens",
-      "notes": "Applies up to 272K input tokens; pricing doubles above that threshold. Thinking, Pro, mini, and nano variants priced separately.",
-      "last_verified": "2026-06-10"
+      "notes": "Confirmed on official pricing page 2026-07-09 (Batch 50% discount). Variants: gpt-5.4-mini $0.75/$4.50, gpt-5.4-nano $0.20/$1.25, gpt-5.4-pro $30/$180 per 1M. Base-rate applies up to 272K input tokens; pricing doubles above that threshold (per 2026-06-10 verification).",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1050000,
     "max_output": 128000,

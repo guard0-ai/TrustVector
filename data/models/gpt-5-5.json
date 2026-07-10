@@ -3,10 +3,10 @@
   "type": "model",
   "name": "GPT-5.5",
   "provider": "OpenAI",
-  "version": "gpt-5-5-2026-04-24",
-  "last_evaluated": "2026-06-10",
+  "version": "gpt-5-5-2026-04-23",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's current flagship (codename 'Spud') and first fully retrained base model since GPT-4.5. ~1.05M context, 85.0% ARC-AGI-2, 93.6% GPQA Diamond, 58.6% SWE-Bench Pro. Designated migration target for most of the GPT-5.x line.",
+  "description": "OpenAI's flagship from April 2026 (codename 'Spud'), first fully retrained base model since GPT-4.5. Succeeded at the top of the lineup by the GPT-5.6 family (Sol/Terra/Luna, publicly released 2026-07-09) but fully supported with no announced shutdown, and still the designated migration target for most of the GPT-5.x line. ~1.05M context, 85.0% ARC-AGI-2, 93.6% GPQA Diamond, 58.6% SWE-Bench Pro.",
   "website": "https://openai.com/index/introducing-gpt-5-5/",
 
   "trust_vector": {
@@ -31,7 +31,7 @@
             }
           ],
           "methodology": "Industry-standard coding and terminal benchmarks measuring real-world software engineering tasks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 98,
@@ -57,7 +57,7 @@
             }
           ],
           "methodology": "PhD-level science, frontier mathematics, and abstract reasoning benchmarks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 97,
@@ -77,7 +77,7 @@
             }
           ],
           "methodology": "Expert-comparison knowledge work and computer-use benchmarks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 95,
@@ -91,7 +91,7 @@
             }
           ],
           "methodology": "Internal consistency testing reported by provider across reasoning effort levels",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.0s (standard) / longer with extended reasoning",
@@ -105,7 +105,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "4.0s (standard reasoning effort)",
@@ -119,7 +119,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "~1,050,000 tokens input / 128,000 output",
@@ -133,7 +133,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -147,7 +147,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "First fully retrained base since GPT-4.5. State-of-the-art across reasoning (85.0% ARC-AGI-2, 93.6% GPQA) and agentic coding (82.7% Terminal-Bench 2.0). ~40% more token-efficient than GPT-5.4."
@@ -168,7 +168,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 91,
@@ -182,7 +182,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing against jailbreak datasets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 85,
@@ -196,7 +196,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 92,
@@ -210,7 +210,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 87,
@@ -224,7 +224,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Mature multi-layer safety stack. Retrained base required full safety recalibration, which OpenAI reports as complete; long-tail agentic behaviors still being characterized by third parties."
@@ -245,7 +245,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -259,7 +259,7 @@
             }
           ],
           "methodology": "Policy review of data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days (zero retention available)",
@@ -273,7 +273,7 @@
             }
           ],
           "methodology": "Terms of service and enterprise documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -287,7 +287,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -301,7 +301,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 88,
@@ -315,7 +315,7 @@
             }
           ],
           "methodology": "Enterprise feature review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard OpenAI enterprise posture: SOC 2, no API-data training by default, 30-day default retention with zero-data-retention options."
@@ -336,7 +336,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 93,
@@ -350,7 +350,7 @@
             }
           ],
           "methodology": "Factual accuracy testing on QA datasets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 86,
@@ -364,7 +364,7 @@
             }
           ],
           "methodology": "Bias benchmarks and demographic testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 90,
@@ -378,7 +378,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 94,
@@ -392,7 +392,7 @@
             }
           ],
           "methodology": "Documentation completeness and clarity review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 80,
@@ -406,7 +406,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 92,
@@ -420,7 +420,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong transparency with reasoning summaries and detailed release documentation. Training data disclosure remains at industry-standard (limited) level."
@@ -441,7 +441,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 95,
@@ -455,7 +455,7 @@
             }
           ],
           "methodology": "SDK quality, documentation, and maintenance review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 92,
@@ -466,10 +466,22 @@
               "url": "https://developers.openai.com/api/docs/deprecations",
               "date": "2026-04-24",
               "value": "Published deprecation schedule; GPT-5.5 is the designated migration target for most of the GPT-5.x line"
+            },
+            {
+              "source": "OpenAI Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-07-09",
+              "value": "Re-verified: GPT-5.5 remains the named replacement for gpt-5, gpt-5.1, gpt-5.2-chat-latest, gpt-5.2-codex, and gpt-5.3-chat-latest deprecations; no GPT-5.5 deprecation announced"
+            },
+            {
+              "source": "OpenAI: Previewing GPT-5.6 Sol",
+              "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
+              "date": "2026-07-09",
+              "value": "GPT-5.6 family (Sol/Terra/Luna) previewed 2026-06-26 under U.S. government-requested partner-only restrictions and publicly released 2026-07-09; Sol priced $5/$30, Terra $2.50/$15, Luna $1/$6 per 1M tokens"
             }
           ],
           "methodology": "Review of versioning policy and historical deprecation practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 94,
@@ -483,7 +495,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 94,
@@ -497,7 +509,7 @@
             }
           ],
           "methodology": "Support and documentation assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 97,
@@ -511,7 +523,7 @@
             }
           ],
           "methodology": "Ecosystem breadth and depth analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 91,
@@ -525,10 +537,10 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Industry-leading operational maturity. As the designated GPT-5.x migration target, GPT-5.5 offers the longest expected support horizon in the OpenAI lineup."
+      "notes": "Industry-leading operational maturity. As the designated GPT-5.x migration target, GPT-5.5 offers a long expected support horizon even after the GPT-5.6 family (Sol/Terra/Luna) launched 2026-07-09."
     }
   },
 
@@ -597,6 +609,7 @@
 
   "limitations": [
     "Premium pricing: $5/$30 per 1M tokens (2x GPT-5.4's base rate)",
+    "No longer the newest model: GPT-5.6 family released 2026-07-09; GPT-5.6 Terra is reported competitive with GPT-5.5 at half the price ($2.50/$15)",
     "Not HIPAA eligible",
     "30-day default API data retention (zero retention requires enterprise arrangement)",
     "GPT-5.5 Pro is very expensive ($30/$180 per 1M)",
@@ -622,8 +635,8 @@
     "pricing": {
       "input": "$5.00 per 1M tokens",
       "output": "$30.00 per 1M tokens",
-      "notes": "Batch and Flex processing at 50% discount. GPT-5.5 Pro priced at $30/$180 per 1M tokens.",
-      "last_verified": "2026-06-10"
+      "notes": "Confirmed on official pricing page 2026-07-09. Cached input $0.50 per 1M; Batch at 50% discount ($2.50/$15). GPT-5.5 Pro priced at $30/$180 per 1M tokens.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1050000,
     "max_output": 128000,

@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Time Server",
   "provider": "Anthropic",
-  "version": "2025.9.25",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.6.4",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official MCP reference server for time and timezone operations. Provides AI models with current time information, timezone conversions, date calculations, and scheduling assistance. One of the seven reference servers that remain actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09 (latest spec 2025-11-25).",
+  "description": "Official MCP reference server for time and timezone operations. Provides AI models with current time information, timezone conversions, date calculations, and scheduling assistance. One of the seven reference servers that remain actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09 (latest stable spec 2025-11-25; 2026-07-28 spec revision at release-candidate stage as of 2026-07).",
   "website": "https://modelcontextprotocol.io/docs/servers/time",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Time accuracy verification",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "timezone_conversion_accuracy": {
           "score": 93,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Conversion accuracy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "dst_handling": {
           "score": 90,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "DST edge case testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "date_calculation_reliability": {
           "score": 91,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Date calculation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "response_speed": {
           "score": 95,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Operation authorization review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "system_time_manipulation_risk": {
           "score": 100,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "System modification testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_exposure_risk": {
           "score": 92,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Data flow security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "timezone_inference_privacy": {
           "score": 90,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Privacy impact assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_consumption": {
           "score": 95,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Resource consumption testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Location privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "temporal_pattern_exposure": {
           "score": 88,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Pattern analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_minimization": {
           "score": 92,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Data minimization review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 88,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 92,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "timezone_data_source_clarity": {
           "score": 88,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Data source transparency review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_performance": {
           "score": 95,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 95,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Reliability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 90,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Feature completeness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 90,
@@ -355,10 +355,16 @@
               "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
               "date": "2025-12-09",
               "value": "time is one of the seven reference servers still actively maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09"
+            },
+            {
+              "source": "PyPI - mcp-server-time",
+              "url": "https://pypi.org/project/mcp-server-time/",
+              "date": "2026-07-09",
+              "value": "Latest release 2026.6.4 (published 2026-06-04); still listed among the seven maintained reference servers in modelcontextprotocol/servers README (repo ~88,300 stars, not archived)"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -378,7 +384,7 @@
     "Query patterns may reveal user schedule to LLM provider",
     "Depends on system time accuracy and timezone database updates",
     "No advanced scheduling or reminder capabilities",
-    "STATUS 2026-06-10: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); governance now under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
+    "STATUS 2026-07-09: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); latest PyPI release 2026.6.4 (2026-06-04); no known CVEs against this server; governance under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -391,7 +397,7 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "github_stars": 58700,
+    "github_stars": 88259,
     "api_dependency": "System time APIs, IANA Time Zone Database",
     "authentication": "None required",
     "first_release": "2024-11",

@@ -1,0 +1,524 @@
+{
+  "id": "openclaw",
+  "type": "agent",
+  "name": "OpenClaw",
+  "provider": "OpenClaw Foundation",
+  "version": "2026.x (rolling; CVE-2026-28466 patched in 2026.2.14)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Viral MIT-licensed open-source personal AI agent (formerly Clawdbot, then Moltbot) stewarded by the OpenClaw Foundation with OpenAI backing. Runs on the user's own machine and acts through WhatsApp, Telegram, Signal, Discord, and iMessage; it browses, emails, shops, and controls the desktop with any BYO LLM. The fastest repo to ~350K+ GitHub stars and 2026's defining agent-security story: hundreds of CVEs, mass-exposed instances, and malicious ClawHub skills.",
+  "website": "https://github.com/openclaw/openclaw",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 75,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DataCamp - What Is OpenClaw?",
+              "url": "https://www.datacamp.com/blog/what-is-openclaw",
+              "date": "2026-06-15",
+              "value": "Completes real-world personal-assistant tasks (research, email, shopping, scheduling, device control) through messaging apps; quality depends heavily on the BYO LLM configured"
+            },
+            {
+              "source": "Wikipedia - OpenClaw",
+              "url": "https://en.wikipedia.org/wiki/OpenClaw",
+              "date": "2026-07-09",
+              "value": "Widely adopted general-purpose personal agent, but documented incidents of unprompted autonomous actions (e.g., the February 2026 MoltMatch dating-profile incident)"
+            }
+          ],
+          "methodology": "Review of documented capabilities and incident reports; accuracy varies with the user-configured model and skills",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "Gateway/node architecture reliably drives messaging platforms (WhatsApp, Telegram, Signal, Discord, iMessage), browser, email, and desktop control across a large skill ecosystem"
+            }
+          ],
+          "methodology": "Architecture review of gateway-to-node invocation model and breadth of working integrations reported by the community",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DataCamp - What Is OpenClaw?",
+              "url": "https://www.datacamp.com/blog/what-is-openclaw",
+              "date": "2026-06-15",
+              "value": "Handles long-horizon tasks including scheduled routines and proactive heartbeat check-ins; planning quality is delegated to the configured LLM"
+            }
+          ],
+          "methodology": "Assessment of long-horizon task orchestration, scheduled jobs, and proactive agent behavior",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "Persistent local memory files and per-contact context give the agent durable cross-session memory of users, preferences, and prior conversations"
+            }
+          ],
+          "methodology": "Review of local persistent memory design and cross-session continuity behavior",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Wikipedia - OpenClaw",
+              "url": "https://en.wikipedia.org/wiki/OpenClaw",
+              "date": "2026-07-09",
+              "value": "Autonomous behavior has gone off-script in documented incidents (agents taking actions users never directed); recovery relies on the user noticing via chat"
+            }
+          ],
+          "methodology": "Incident review; always-on autonomy without strong guardrails means errors can compound before a human intervenes",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "Multi-agent routing lets one gateway host multiple agent personas across channels; agent-to-agent messaging is community-driven rather than a hardened framework feature"
+            }
+          ],
+          "methodology": "Review of multi-agent routing and community multi-agent usage patterns",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 37,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 25,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub Advisory GHSA-gv46-4xfq-jv58 (CVE-2026-28466)",
+              "url": "https://github.com/advisories/GHSA-gv46-4xfq-jv58",
+              "date": "2026-02-14",
+              "value": "RCE via node-invoke approval bypass (CVSS 9.4): gateway failed to sanitize RPC parameters, letting attackers inject 'approved: true' to bypass exec approval and run arbitrary shell commands; patched in 2026.2.14"
+            },
+            {
+              "source": "Kaspersky - OpenClaw found unsafe for use",
+              "url": "https://me-en.kaspersky.com/blog/openclaw-vulnerabilities-exposed/25233/",
+              "date": "2026-02-10",
+              "value": "Runs with full user privileges by default (shell, filesystem, email, messaging); a late-January 2026 audit identified 512 vulnerabilities, eight critical"
+            }
+          ],
+          "methodology": "Review of default execution model (unsandboxed, full user privileges) and sandbox-bypass CVE history; Docker isolation is documented but opt-in",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 22,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ARMO - CVE-2026-32922 analysis",
+              "url": "https://www.armosec.io/blog/cve-2026-32922-openclaw-privilege-escalation-cloud-security/",
+              "date": "2026-03-29",
+              "value": "CVE-2026-32922 (CVSS 9.9): token-rotation race condition converts a pairing token into full admin control with RCE; ARMO also measured 135,000+ internet-exposed instances in 82 countries, 63% with no authentication"
+            },
+            {
+              "source": "OpenClaw CVE trackers (jgamblin/OpenClawCVEs)",
+              "url": "https://github.com/jgamblin/OpenClawCVEs/",
+              "date": "2026-07-09",
+              "value": "CVE-2026-22172 (CVSS 9.9) allowed WebSocket clients to self-declare admin scopes, bypassing gateway authentication entirely"
+            }
+          ],
+          "methodology": "Review of authentication CVEs and internet-exposure measurements; two CVSS 9.9 auth-bypass/privilege-escalation flaws plus majority-unauthenticated public deployments",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 20,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Wikipedia - OpenClaw (Cisco research)",
+              "url": "https://en.wikipedia.org/wiki/OpenClaw",
+              "date": "2026-07-09",
+              "value": "Susceptible to prompt injection by design: ingests untrusted content from messaging apps, email, and the web while holding broad permissions; Cisco researchers found third-party skills exfiltrating data without user awareness"
+            },
+            {
+              "source": "Unit 42 - OpenClaw's skill marketplace and the AI supply chain threat",
+              "url": "https://unit42.paloaltonetworks.com/openclaw-ai-supply-chain-risk/",
+              "date": "2026-06-20",
+              "value": "Unit 42 found malicious ClawHub skills that appeared legitimate, including runtime agentic affiliate injection and agentic front-running - novel injection-style attacks executed through the agent itself"
+            }
+          ],
+          "methodology": "Attack-surface review: untrusted inbound channels plus autonomous tool execution with no robust built-in injection defenses; vendor research confirms in-the-wild exploitation",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 28,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kaspersky - OpenClaw found unsafe for use",
+              "url": "https://me-en.kaspersky.com/blog/openclaw-vulnerabilities-exposed/25233/",
+              "date": "2026-02-10",
+              "value": "Agent aggregates credentials, API keys, message history, email, and calendar access in one local trust domain; compromise of the agent exposes everything it touches"
+            },
+            {
+              "source": "TechRadar - Malicious OpenClaw skills including macOS infostealers",
+              "url": "https://www.techradar.com/pro/security/multiple-malicious-openclaw-skills-found-online-including-two-macos-infostealers",
+              "date": "2026-06-18",
+              "value": "Malicious ClawHub skills delivered macOS infostealers, demonstrating that third-party skills execute inside the agent's full data context"
+            }
+          ],
+          "methodology": "Data-flow review: single-process access to messaging, email, credentials, and files with skills running in the same context",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "MIT-licensed, fully open source (TypeScript/Swift) with public security advisories and rapid patch releases; foundation-governed since February 2026"
+            }
+          ],
+          "methodology": "License, source availability, and advisory-process review; transparency is high even though the security record is poor",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 56,
+      "criteria": {
+        "data_retention": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "Self-hosted: no vendor retains user data, but the agent persists message history, memories, and credentials in local plaintext files that hundreds of CVEs and malicious skills have targeted"
+            }
+          ],
+          "methodology": "Review of local data persistence model and its practical exposure given the vulnerability history",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 35,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kaspersky - OpenClaw found unsafe for use",
+              "url": "https://me-en.kaspersky.com/blog/openclaw-vulnerabilities-exposed/25233/",
+              "date": "2026-02-10",
+              "value": "No compliance program, DPA, or certifications; the agent processes third parties' personal messages and contact data with no consent mechanism, and regulators (China, March 2026) have restricted state use"
+            }
+          ],
+          "methodology": "Compliance posture review; hobbyist-governed foundation project with no formal privacy or compliance framework",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 45,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "DataCamp - What Is OpenClaw?",
+              "url": "https://www.datacamp.com/blog/what-is-openclaw",
+              "date": "2026-06-15",
+              "value": "BYO-LLM design sends personal message content to whichever model provider is configured (OpenAI, Anthropic, DeepSeek, or local); third-party skills can add undisclosed data flows"
+            },
+            {
+              "source": "Unit 42 - OpenClaw's skill marketplace and the AI supply chain threat",
+              "url": "https://unit42.paloaltonetworks.com/openclaw-ai-supply-chain-risk/",
+              "date": "2026-06-20",
+              "value": "Documented ClawHub skills exfiltrating data to third parties without user awareness"
+            }
+          ],
+          "methodology": "Data-flow analysis across model providers and the unvetted skill supply chain",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "Runs entirely on user hardware (Mac, Linux, VPS, Raspberry Pi) and supports local models, enabling fully self-hosted operation"
+            }
+          ],
+          "methodology": "Deployment options assessment including fully local model configurations",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 78,
+      "criteria": {
+        "documentation_quality": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository and docs",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "Extensive setup, gateway, and security-hardening docs exist, but breakneck release churn and repeated renames leave documentation lagging the code"
+            }
+          ],
+          "methodology": "Documentation completeness review against actual configuration surface",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "Session logs and chat transcripts record agent actions, but always-on background autonomy (heartbeats, scheduled tasks) can act without a human watching"
+            }
+          ],
+          "methodology": "Review of logging, transcript visibility, and unattended-operation blind spots",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Wikipedia - OpenClaw",
+              "url": "https://en.wikipedia.org/wiki/OpenClaw",
+              "date": "2026-07-09",
+              "value": "Conversational interface explains actions when asked, but incidents like MoltMatch show the agent taking consequential actions users could not anticipate or trace to an instruction"
+            }
+          ],
+          "methodology": "Explainability assessment of autonomous action decisions versus user intent",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "MIT license, fully open codebase, public advisories, foundation governance independent of any single company (OpenAI is primary financial sponsor)"
+            }
+          ],
+          "methodology": "License and source availability review",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 97,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Wikipedia - OpenClaw",
+              "url": "https://en.wikipedia.org/wiki/OpenClaw",
+              "date": "2026-03-02",
+              "value": "247,000 stars and 47,700 forks as of 2026-03-02 - the fastest-growing repository in GitHub history (React needed 10+ years to reach 230K)"
+            },
+            {
+              "source": "OpenClaw statistics roundups",
+              "url": "https://www.gradually.ai/en/openclaw-statistics/",
+              "date": "2026-06-30",
+              "value": "Secondary trackers report ~355K stars in five months and 378K+ by June 2026; figures conflict across sources, so we cite the range 247K (March, Wikipedia) to ~355-378K (June, unofficial)"
+            }
+          ],
+          "methodology": "Community engagement analysis; star counts conflict between Wikipedia (March) and unofficial June trackers, so both are cited",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 55,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Wikipedia - OpenClaw (maintainer statement)",
+              "url": "https://en.wikipedia.org/wiki/OpenClaw",
+              "date": "2026-07-09",
+              "value": "Installation is a short CLI flow, but a maintainer warned: 'if you can't understand how to run a command line, this is far too dangerous of a project for you to use safely'"
+            }
+          ],
+          "methodology": "Setup assessment: quick to install, hard to configure safely (auth, network exposure, skill vetting are on the user)",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "Designed as a single-user personal agent per gateway; no multi-tenant, fleet, or enterprise orchestration story"
+            }
+          ],
+          "methodology": "Architecture review for multi-user and organizational deployment",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 75,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "Free MIT software; costs are BYO LLM tokens, which always-on heartbeats and long chat histories can inflate unpredictably"
+            }
+          ],
+          "methodology": "Pricing model analysis of free software plus variable model-API spend",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 50,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenClaw GitHub repository",
+              "url": "https://github.com/openclaw/openclaw",
+              "date": "2026-07-09",
+              "value": "Local logs and web UI exist, but there is no built-in audit trail, alerting, or telemetry suitable for security monitoring of an agent with this much authority"
+            }
+          ],
+          "methodology": "Monitoring and audit capability review against the risk profile of the deployment",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 25,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "flyingpenguin - 433 CVEs analysis",
+              "url": "https://www.flyingpenguin.com/openclaw-is-cooked-433-cves-patched-by-agents-that-cant-fix-whats-broken/",
+              "date": "2026-05-15",
+              "value": "~433 accumulated CVEs within 164 days of first ship (138+ by April 2026 per OpenCVE trackers; 413 published in the 2026-05-06 cvelistV5 snapshot) - totals conflict slightly across trackers but all are in the hundreds"
+            },
+            {
+              "source": "Wikipedia - OpenClaw (China restriction)",
+              "url": "https://en.wikipedia.org/wiki/OpenClaw",
+              "date": "2026-07-09",
+              "value": "March 2026: China restricted state enterprises and government agencies from running OpenClaw; Palo Alto Networks, Cisco, Tenable, and Kaspersky all published advisories"
+            },
+            {
+              "source": "OpenClaw security news archive",
+              "url": "https://github.com/joylarkin/openclaw-security-news",
+              "date": "2026-07-09",
+              "value": "Curated archive of global government warnings and vendor advisories about OpenClaw, updated continuously through 2026"
+            }
+          ],
+          "methodology": "Production maturity assessment from CVE velocity, government restrictions, vendor advisories, and release churn",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "research-assistant": {
+      "overall": 62,
+      "notes": "Genuinely useful always-on assistant for research and errands via chat, if security hardening is applied"
+    },
+    "content-creation": {
+      "overall": 60,
+      "notes": "Drafts messages, emails, and posts across channels; output quality depends on the configured model"
+    },
+    "customer-support": {
+      "overall": 30,
+      "notes": "Do not expose to untrusted users: majority of internet-facing instances lack auth and injection defenses are weak"
+    },
+    "financial-analysis": {
+      "overall": 22,
+      "notes": "Unsuitable: agent-adjacent crypto theft, infostealer skills, and credential aggregation make financial use hazardous"
+    }
+  },
+  "best_for": [
+    "Technical hobbyists who want a self-hosted personal agent and can harden it themselves",
+    "Experimentation with messaging-native agent UX on isolated, dedicated hardware",
+    "Researchers studying agent security, skill supply chains, and prompt injection in the wild"
+  ],
+  "not_recommended_for": [
+    "Non-technical users (a maintainer called it 'far too dangerous' for them)",
+    "Any enterprise, government, or regulated environment",
+    "Machines holding credentials, wallets, or sensitive personal/work data",
+    "Internet-exposed deployment without authentication and network isolation"
+  ],
+  "strengths": [
+    "Unprecedented community momentum: fastest-growing GitHub repo ever (247K stars by March 2026, ~355-378K reported by June)",
+    "Acts where users already are: WhatsApp, Telegram, Signal, Discord, iMessage",
+    "Fully open source (MIT) with foundation governance and OpenAI financial backing",
+    "Model-agnostic BYO-LLM design, including fully local models",
+    "Huge skill ecosystem (ClawHub) covering browsing, email, shopping, and desktop control",
+    "Self-hosted: no vendor cloud holds user data",
+    "Rapid patch cadence with public security advisories"
+  ],
+  "limitations": [
+    "Worst security record of any agent in this registry: 138+ CVEs by April 2026 and ~413-433 by mid-2026 (sources conflict), including CVSS 9.9 auth bypass (CVE-2026-22172), CVSS 9.9 privilege escalation (CVE-2026-32922), and RCE via approval bypass (CVE-2026-28466 / GHSA-gv46-4xfq-jv58)",
+    "135,000+ internet-exposed instances measured, ~63% with no authentication (ARMO, March 2026)",
+    "ClawHub supply chain compromised at scale: 1,100-1,400 malicious skills reported (including macOS infostealers) plus typosquat campaigns; roughly 1 in 12 packages carried malicious payloads in one audit",
+    "No default sandboxing: runs with full user privileges over shell, files, email, and messages",
+    "Prompt injection through inbound messages, email, and web content is structurally unsolved",
+    "China restricted state/government use (March 2026); Palo Alto, Cisco, Tenable, and Kaspersky issued advisories",
+    "No compliance posture (no DPA, certifications, or consent handling for third-party message data)"
+  ],
+  "metadata": {
+    "license": "MIT",
+    "repository": "https://github.com/openclaw/openclaw",
+    "supported_models": [
+      "Anthropic Claude (BYOK)",
+      "OpenAI GPT models (BYOK)",
+      "DeepSeek and other API models",
+      "Local models"
+    ],
+    "languages": [
+      "TypeScript",
+      "Swift"
+    ],
+    "deployment_type": "Self-hosted (Mac, Linux, VPS, Raspberry Pi)",
+    "architecture": "Local gateway + node hosts bridging messaging platforms to a BYO LLM, with a directory-based skills system (ClawHub)",
+    "first_release": "2025-11-24 (as Clawdbot); renamed Moltbot 2026-01-27, OpenClaw 2026-01-30",
+    "governance": "OpenClaw Foundation (est. Feb 2026, chaired by creator Peter Steinberger, who joined OpenAI 2026-02-14; OpenAI is primary financial sponsor)",
+    "pricing": "Free (MIT); users pay their own LLM API costs",
+    "github_stars": "247K (2026-03-02, Wikipedia) to ~355-378K (June 2026, unofficial trackers; sources conflict)",
+    "security_track_record": "138+ CVEs by 2026-04; ~413-433 by mid-2026 (jgamblin/OpenClawCVEs, OpenCVE, days-since-openclaw-cve counter); 135K+ exposed instances, 63% no auth (ARMO)"
+  },
+  "related": [
+    "goose",
+    "autogpt",
+    "manus",
+    "agentgpt",
+    "claude-code"
+  ],
+  "tags": [
+    "personal-agent",
+    "open-source",
+    "messaging",
+    "self-hosted",
+    "high-risk"
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "id": "microsoft-scout",
+  "type": "agent",
+  "name": "Microsoft Scout",
+  "provider": "Microsoft",
+  "version": "Frontier preview (experimental, announced Build 2026)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Always-on autonomous personal agent for Microsoft 365, built on the open-source OpenClaw runtime. Announced at Build 2026 (2026-06-02) as an experimental Frontier-program release: a Windows/macOS desktop app that reads/writes files, runs shell commands, drives a browser, and manages email, calendar, and Teams. Pairs 2026's strongest enterprise governance — per-agent Entra identity, task-scoped credentials, in-line Purview DLP, human sign-off — with a heavily CVE-burdened OSS core.",
+  "website": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 75,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 72,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Microsoft 365 Blog - Introducing Microsoft Scout",
+              "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+              "date": "2026-06-02",
+              "value": "Proactively schedules meetings across time zones, generates prep materials, blocks calendar time for deliverables, and flags stalled decisions; Microsoft employees dogfooded an early desktop build, but no independent completion data exists yet"
+            }
+          ],
+          "methodology": "Assessment based on vendor-described capabilities and internal dogfooding; experimental preview with no independent benchmark or field data",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Broad, mature tool integrations: file read/write, shell with tiered permissions, Playwright browser automation, Microsoft Graph (mail, calendar, Teams, OneDrive), and bundled Office document skills"
+            }
+          ],
+          "methodology": "Review of the documented tool stack combining OpenClaw's proven runtime tools with first-party Microsoft 365 integrations",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Works through multi-step tasks showing progress in real time; autonomous modes include Heartbeat (15-120 min background check-ins) and Automations (scheduled or condition-triggered tasks)"
+            }
+          ],
+          "methodology": "Evaluation of documented autonomous execution modes and multi-step task handling",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Remembers preferences and decisions across conversations; always-on identity persists as a continuous agent rather than per-session instances"
+            }
+          ],
+          "methodology": "Review of cross-conversation memory and persistent agent identity design",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 68,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "InfoQ - Microsoft Scout announced at Build 2026",
+              "url": "https://www.infoq.com/news/2026/06/microsoft-scout-openclaw-build/",
+              "date": "2026-06-05",
+              "value": "Inherits OpenClaw's agent loop retry behavior; a policy conformance system continuously checks operation against guidelines, but recovery behavior in unattended always-on operation is unproven at preview stage"
+            }
+          ],
+          "methodology": "Inference from the OpenClaw runtime plus the conformance checking design; no independent reliability data for the experimental release",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Launches specialized sub-agents that run in parallel for research, code review, and complex tasks, reporting results when finished; custom skills via SKILL.md files"
+            }
+          ],
+          "methodology": "Review of sub-agent delegation and skill extensibility",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 64,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 52,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Runs directly on the user's Windows/macOS desktop with permissioned access to the file system, shell, and browser — a tiered permission system and sensitive-directory flags, but no VM or OS-level isolation of execution by default"
+            },
+            {
+              "source": "GitHub - jgamblin/OpenClawCVEs tracker",
+              "url": "https://github.com/jgamblin/OpenClawCVEs/",
+              "date": "2026-04-04",
+              "value": "The underlying OpenClaw runtime logged 137 security advisories between 2026-02-02 and 2026-04-04 alone (~one every 15 hours); its first formal audit (2026-01-25) found 512 vulnerabilities including 8 critical, and hundreds of CVEs are now tracked"
+            }
+          ],
+          "methodology": "Architecture review: desktop-native execution with permission gating rather than isolation, scored against the OpenClaw core's exceptional CVE volume (including RCE CVE-2026-25253 and CVSS 9.9 privilege escalations CVE-2026-22172/CVE-2026-32922)",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft 365 Blog - Introducing Microsoft Scout",
+              "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+              "date": "2026-06-02",
+              "value": "Each agent operates under its own governed Entra identity (not a shared service account); credentials are scoped to the task at hand and redacted from logs and diagnostics; sensitive actions can require human sign-off before proceeding"
+            },
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Granular permissions: enable/disable capability categories (file system, shell, browser, M365), per-command shell auto-approve lists, and sensitive directories that always require explicit approval"
+            }
+          ],
+          "methodology": "Review of identity architecture, credential scoping, approval gates, and permission granularity — the strongest agent access-control story evaluated to date",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 52,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Help Net Security - Microsoft Scout opens a new category of always-on Autopilots",
+              "url": "https://www.helpnetsecurity.com/2026/06/03/microsoft-scout-personal-agent/",
+              "date": "2026-06-03",
+              "value": "Always-on operation across email, chats, web pages, and documents is a maximal injection surface; human sign-off on sensitive actions and the policy conformance system mitigate, but unattended Heartbeat/Automation runs execute without a user watching"
+            }
+          ],
+          "methodology": "Threat surface analysis of always-on ingestion of untrusted content combined with desktop shell/browser reach; governance gates credit partially offset the OpenClaw heritage and unattended autonomy",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft 365 Blog - Introducing Microsoft Scout",
+              "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+              "date": "2026-06-02",
+              "value": "Microsoft Purview policies including sensitivity labels and data loss prevention are enforced in the moment as the agent acts; M365 data stays within the tenant boundary, though the agent itself spans local files, shell, and web"
+            }
+          ],
+          "methodology": "Review of in-line Purview DLP enforcement and tenant boundaries versus the broad local-plus-cloud reach of a single agent identity",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 66,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "The New Stack - Microsoft made the agent runtime free",
+              "url": "https://thenewstack.io/microsoft-scout-openclaw-runtime/",
+              "date": "2026-06-04",
+              "value": "Built openly on the OpenClaw open-source runtime, with Microsoft contributing policy conformance upstream; the Scout product layer, M365 integrations, and models remain proprietary"
+            }
+          ],
+          "methodology": "Source availability assessment: inspectable OSS core (a transparency positive that also exposes its CVE record) with a closed proprietary shell",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 74,
+      "criteria": {
+        "data_retention": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Operates under Microsoft 365 enterprise data commitments and existing customer-agreement preview terms; tenant data handling follows M365 retention policies, though Frontier preview terms are less settled than GA services"
+            }
+          ],
+          "methodology": "Review of M365 enterprise retention commitments as applied to a preview service",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Blog - Introducing the First Frontier Suite",
+              "url": "https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/",
+              "date": "2026-03-09",
+              "value": "Ships inside the Microsoft 365 compliance umbrella (E7 Frontier Suite bundles E5 security/compliance, Entra Suite, Agent 365) with Purview, eDiscovery, and EU Data Boundary applying to agent activity"
+            }
+          ],
+          "methodology": "Compliance posture assessment under Microsoft's certifications and the E7 suite's integrated compliance stack",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Processing stays within Microsoft's cloud and the local device; no third-party model providers, though browser automation can reach arbitrary sites the user permits"
+            }
+          ],
+          "methodology": "Data flow analysis of first-party processing versus user-permitted web reach",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Desktop application executes locally on Windows 11/macOS 12+ against local files and shell, but requires the M365 cloud, Entra, Frontier enrollment, and cloud model inference — no self-hosted or air-gapped mode"
+            }
+          ],
+          "methodology": "Deployment options assessment: substantial local execution surface tethered to Microsoft's cloud",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 74,
+      "criteria": {
+        "documentation_quality": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout documentation",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Full Microsoft Learn documentation set at announcement covering architecture, permissions, autonomous modes, skills, and setup — unusual completeness for an experimental preview"
+            }
+          ],
+          "methodology": "Documentation completeness review of the Learn corpus and admin guidance",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Microsoft launches Scout",
+              "url": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/",
+              "date": "2026-06-02",
+              "value": "Built-in policy conformance system continuously checks operation against set guidelines, with each conformance check producing its own audit trail; real-time progress display and per-agent Entra identity make actions attributable"
+            }
+          ],
+          "methodology": "Review of audit-trail-per-conformance-check design, identity attribution, and live progress visibility",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Shows tool selection and step-by-step progress in real time and asks for approval before sensitive actions (sending email, running commands, writing files)"
+            }
+          ],
+          "methodology": "Assessment of progress narration and pre-action approval clarity; autonomous background runs are less observable in the moment",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 60,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "The New Stack - Microsoft made the agent runtime free",
+              "url": "https://thenewstack.io/microsoft-scout-openclaw-runtime/",
+              "date": "2026-06-04",
+              "value": "The OpenClaw runtime core is open source with Microsoft contributing upstream (policy conformance), but Scout's product layer, Graph integrations, and governance plane are closed"
+            }
+          ],
+          "methodology": "Open source assessment of the hybrid OSS-core/proprietary-shell model",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Thurrott - Build 2026: Microsoft unveils Scout",
+              "url": "https://www.thurrott.com/a-i/336926/build-2026-microsoft-unveils-scout-personal-work-agent-and-new-in-house-ai-models",
+              "date": "2026-06-02",
+              "value": "Major Build 2026 launch attention and a very active upstream OpenClaw community, but Scout itself is gated to Frontier participants with a small early-access population"
+            }
+          ],
+          "methodology": "Community engagement analysis of upstream OSS activity versus the gated preview product",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 63,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 66,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Native M365 integration once running, but access requires Frontier program enrollment, opt-in attestation, Intune configuration, and Copilot licensing — meaningful admin setup before first use"
+            }
+          ],
+          "methodology": "Onboarding friction assessment covering Frontier enrollment, licensing prerequisites, and tenant configuration",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 66,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "One always-on personal agent per user with parallel sub-agents; org-wide fleet management arrives via Agent 365 in E7, but preview capacity limits are undocumented"
+            }
+          ],
+          "methodology": "Assessment of per-user agent model, sub-agent parallelism, and fleet governance via Agent 365",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 52,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft Blog - Introducing the First Frontier Suite",
+              "url": "https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/",
+              "date": "2026-03-09",
+              "value": "Positioned within the Microsoft 365 E7 Frontier Suite at $99/user/month (GA 2026-05-01), with agent usage billed on top via Copilot Credits"
+            },
+            {
+              "source": "Microsoft Learn - Usage-based billing with Copilot Credits",
+              "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits",
+              "date": "2026-06-16",
+              "value": "Copilot Credits pay-as-you-go at $0.01/credit went live for agent workloads 2026-06-16; per-task cost varies with model, context retrieved, tool calls, and runtime — an always-on agent makes monthly spend hard to forecast"
+            }
+          ],
+          "methodology": "Pricing analysis of the fixed E7 seat cost stacked with variable usage-based Copilot Credits for a continuously running agent",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Microsoft 365 Blog - Introducing Microsoft Scout",
+              "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+              "date": "2026-06-02",
+              "value": "Per-conformance-check audit trails, Entra identity attribution, Purview enforcement, Intune management, and Copilot Credits cost dashboards give admins end-to-end observability of agent activity and spend"
+            }
+          ],
+          "methodology": "Review of the integrated audit, identity, DLP, device management, and cost monitoring stack",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 48,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Microsoft Learn - Microsoft Scout overview",
+              "url": "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+              "date": "2026-06-04",
+              "value": "Explicitly prerelease: experimental Frontier preview with restricted functionality, no GA timeline, and Microsoft's warning that availability and capabilities may change"
+            }
+          ],
+          "methodology": "Maturity assessment: weeks-old experimental preview of a new product category (always-on Autopilots) on a fast-moving OSS core",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "research-assistant": {
+      "overall": 74,
+      "notes": "Parallel sub-agent research across M365 content and the web, with results delivered into Office documents"
+    },
+    "data-analysis": {
+      "overall": 72,
+      "notes": "Excel skill plus shell access support spreadsheet and scripted analysis within governed boundaries"
+    },
+    "content-creation": {
+      "overall": 74,
+      "notes": "Bundled Word/PowerPoint/Loop skills and co-create mode produce and jointly edit documents"
+    },
+    "customer-support": {
+      "overall": 55,
+      "notes": "Personal productivity agent, not a customer-facing bot; can triage a user's own inbox but is not built for support queues"
+    },
+    "code-generation": {
+      "overall": 62,
+      "notes": "Can edit code, run builds/tests via shell, and delegate code review to sub-agents, but GitHub Copilot remains Microsoft's dedicated coding agent"
+    }
+  },
+  "best_for": [
+    "M365-centric enterprises piloting always-on personal agents under real governance (Entra, Purview, Intune) rather than consumer-grade controls",
+    "Executives and knowledge workers wanting proactive calendar, email, and deliverable management inside the tenant boundary",
+    "Security teams that need per-agent identity, task-scoped credentials, and audit trails as hard requirements",
+    "Organizations already committed to E7/Frontier that want early influence over the Autopilot category"
+  ],
+  "not_recommended_for": [
+    "Production or business-critical workflows — this is an explicitly experimental preview with no GA timeline",
+    "Organizations unwilling to accept an agent core (OpenClaw) with hundreds of recent CVEs, even behind Microsoft's governance layer",
+    "Cost-sensitive teams: $99/user/mo E7 positioning plus unpredictable always-on Copilot Credits burn",
+    "Tenants outside the Frontier program or without Copilot licensing"
+  ],
+  "strengths": [
+    "Best-in-class agent governance: each agent gets its own governed Entra identity instead of a shared service account",
+    "Task-scoped credentials that are redacted from logs and diagnostics",
+    "In-line Purview enforcement: sensitivity labels and DLP applied at the moment the agent acts",
+    "Human sign-off gates on sensitive actions, plus granular per-capability and per-command permissions",
+    "Policy conformance system where every check produces its own audit trail",
+    "Deep native M365 reach (mail, calendar, Teams, OneDrive, Office skills) with sub-agent delegation and custom SKILL.md skills",
+    "Open-source OpenClaw core with Microsoft contributing governance work upstream"
+  ],
+  "limitations": [
+    "Wraps a heavily CVE-burdened OSS core: OpenClaw logged 137 advisories in Feb-Apr 2026 alone, a 512-finding first audit, and critical RCE/privilege-escalation CVEs (CVE-2026-25253, CVE-2026-22172, CVE-2026-32922) — Microsoft's governance layer cannot patch faster than upstream",
+    "Runs natively on the user's desktop with file/shell/browser reach — permission-gated but not VM-isolated by default",
+    "Always-on ingestion of email, chats, and web content is a maximal prompt-injection surface, and Heartbeat/Automation runs execute unattended",
+    "Experimental Frontier preview: restricted functionality, may never reach GA, capabilities can change without notice",
+    "Expensive and hard to forecast: E7 Frontier Suite at $99/user/mo plus usage-based Copilot Credits ($0.01/credit, live 2026-06-16) for a continuously running agent",
+    "Heavy prerequisites: Frontier enrollment, opt-in attestation, Intune configuration, and Copilot licensing",
+    "Windows 11/macOS 12+ desktop only; no web, mobile, or self-hosted option"
+  ],
+  "metadata": {
+    "license": "Proprietary product layer on the open-source OpenClaw runtime (Microsoft contributes policy conformance upstream)",
+    "supported_models": [
+      "Microsoft-hosted models (Copilot stack, including new in-house models announced at Build 2026)"
+    ],
+    "deployment_type": "Desktop app (Windows 11+, macOS 12+) with local file/shell/browser execution tied to the Microsoft 365 cloud",
+    "architecture": "OpenClaw open-source agent runtime + Microsoft governance plane (Entra Agent ID, Purview DLP, Intune, policy conformance system)",
+    "tool_support": [
+      "File system read/write (permissioned)",
+      "Shell with tiered permissions",
+      "Playwright browser automation",
+      "Microsoft 365: mail, calendar, Teams, OneDrive, meetings",
+      "Bundled Word/Excel/PowerPoint/Loop skills; custom SKILL.md skills",
+      "Sub-agents, Heartbeat background runs, Automations"
+    ],
+    "first_release": "Announced Build 2026 (2026-06-02); experimental preview via the Frontier program",
+    "pricing": "Positioned with Microsoft 365 E7 Frontier Suite ($99/user/mo, GA 2026-05-01); agent usage billed via Copilot Credits ($0.01/credit pay-as-you-go, live 2026-06-16)"
+  },
+  "related_entities": [
+    "openclaw",
+    "chatgpt-agent",
+    "claude-cowork",
+    "github-copilot-coding-agent",
+    "microsoft-agent-framework"
+  ],
+  "tags": [
+    "autonomous",
+    "always-on",
+    "enterprise",
+    "microsoft",
+    "openclaw-based"
+  ]
+}

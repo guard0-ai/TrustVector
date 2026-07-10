@@ -4,9 +4,9 @@
   "name": "Salesforce Einstein Bots",
   "provider": "Salesforce",
   "version": "Einstein GPT",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "TRANSITIONING: Einstein Copilot was retired and absorbed into Agentforce (Jan 2025, Spring '25 release), and Salesforce is steering Einstein Bots customers toward Agentforce agents. Einstein Bots remains Salesforce's CRM-integrated chatbot platform, combining Einstein AI with CRM data for personalized interactions and human-agent handoffs.",
+  "description": "TRANSITIONING: Einstein Copilot was retired into Agentforce (Jan 2025, Spring '25 release) and Salesforce is steering Einstein Bots customers toward Agentforce. Einstein Bots has no announced end-of-life as of mid-2026 but is effectively legacy: Legacy Chat was fully retired February 14, 2026 (bots must run on Messaging for In-App and Web), Article Answers was retired December 31, 2025, and a 'Create AI Agents from Einstein Bots' scaffolding tool aids migration to Agentforce agents.",
   "website": "https://www.salesforce.com/products/service-cloud/features/einstein-bots/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Intent accuracy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "crm_integration": {
           "score": 95,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "CRM integration assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "dialog_flow": {
           "score": 84,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Conversation design testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "handoff_to_agent": {
           "score": 92,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Handoff workflow testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "personalization": {
           "score": 88,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Personalization capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "400-900ms average",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 92,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_governance": {
           "score": 90,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Data governance assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_trail": {
           "score": 89,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Audit capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "compliance": {
           "score": 91,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 91,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "hipaa_compliance": {
           "score": 90,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Healthcare compliance review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_protection": {
           "score": 87,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "PII protection testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_sovereignty": {
           "score": 89,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data residency assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "analytics": {
           "score": 86,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Analytics capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "testing_tools": {
           "score": 81,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Testing features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "explainability": {
           "score": 78,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Explainability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -330,7 +330,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 91,
@@ -344,7 +344,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 80,
@@ -358,7 +358,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 87,
@@ -372,7 +372,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "channel_support": {
           "score": 90,
@@ -383,10 +383,16 @@
               "url": "https://help.salesforce.com/s/articleView?id=sf.messaging_overview.htm",
               "date": "2024-10-01",
               "value": "SMS, WhatsApp, Facebook Messenger, Web Chat, Slack"
+            },
+            {
+              "source": "Salesforce Legacy Chat retirement",
+              "url": "https://help.salesforce.com/s/articleView?id=005134861&language=en_US&type=1",
+              "date": "2026-07-09",
+              "value": "Legacy Chat fully retired February 14, 2026 - Einstein Bots must run on Messaging for In-App and Web; Article Answers retired December 31, 2025"
             }
           ],
           "methodology": "Channel integration assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "workflow_automation": {
           "score": 89,
@@ -400,7 +406,7 @@
             }
           ],
           "methodology": "Automation capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -420,7 +426,7 @@
     "Not suitable for organizations not using Salesforce CRM",
     "Conversation design less sophisticated than specialized platforms",
     "Einstein AI capabilities lag behind latest LLM-based systems",
-    "Product direction has shifted to Agentforce: Einstein Copilot retired (Jan 2025) and Einstein Bots are being steered toward Agentforce agents"
+    "Product direction shifted to Agentforce (Einstein Copilot retired Jan 2025); Legacy Chat fully retired February 14, 2026 and Article Answers December 31, 2025, and migration to Agentforce is a rebuild - the 'Create AI Agents from Einstein Bots' tool only scaffolds Topics/Actions from existing intents and dialogs"
   ],
   "metadata": {
     "license": "Proprietary",

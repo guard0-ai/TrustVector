@@ -3,10 +3,10 @@
   "type": "model",
   "name": "GPT-4.1",
   "provider": "OpenAI",
-  "version": "2025-01",
-  "last_evaluated": "2025-11-08",
+  "version": "gpt-4.1-2025-04-14",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's flagship GPT-4.1 model offering strong general-purpose capabilities across diverse tasks. The standard choice for production applications requiring reliable, high-quality outputs.",
+  "description": "LEGACY: retired from ChatGPT 2026-02-13 but still available in the API with no announced shutdown (as of 2026-07-09). Previous-generation general-purpose GPT-4.1 model with a 1,047,576-token context window. OpenAI recommends GPT-5.x models for new work.",
   "website": "https://openai.com/gpt-4-1",
   "trust_vector": {
     "performance_reliability": {
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 84,
@@ -50,7 +50,7 @@
             }
           ],
           "methodology": "Mathematical and scientific reasoning benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 86,
@@ -70,7 +70,7 @@
             }
           ],
           "methodology": "Crowdsourced comparisons and comprehensive knowledge testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 85,
@@ -84,7 +84,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.2s",
@@ -98,7 +98,7 @@
             }
           ],
           "methodology": "Median latency for API requests",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "2.4s",
@@ -112,21 +112,21 @@
             }
           ],
           "methodology": "95th percentile response time",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
-          "value": "128,000 tokens",
+          "value": "1,047,576 tokens",
           "confidence": "high",
           "evidence": [
             {
-              "source": "OpenAI API Documentation",
-              "url": "https://platform.openai.com/docs/models/gpt-4-1",
-              "date": "2025-01-15",
-              "value": "128K token context window"
+              "source": "OpenAI Model Page: gpt-4.1",
+              "url": "https://developers.openai.com/api/docs/models/gpt-4.1",
+              "date": "2026-07-09",
+              "value": "1,047,576 token context window; 32,768 max output tokens"
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -140,7 +140,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong general-purpose performance with good balance across coding, reasoning, and knowledge tasks. Flagship model for most production use cases."
@@ -160,7 +160,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 88,
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 83,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 87,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 85,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Review of API security features",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security posture with comprehensive safety systems. Robust protection against adversarial attacks."
@@ -236,7 +236,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -250,7 +250,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days",
@@ -264,7 +264,7 @@
             }
           ],
           "methodology": "Review of terms of service",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -278,7 +278,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -292,7 +292,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 75,
@@ -306,7 +306,7 @@
             }
           ],
           "methodology": "Review of data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard enterprise privacy practices with SOC 2 Type II certification. 30-day retention period."
@@ -326,7 +326,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 82,
@@ -340,7 +340,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 79,
@@ -354,7 +354,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 81,
@@ -368,7 +368,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 87,
@@ -382,7 +382,7 @@
             }
           ],
           "methodology": "Review of documentation completeness",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 74,
@@ -396,7 +396,7 @@
             }
           ],
           "methodology": "Review of public disclosures",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 86,
@@ -410,7 +410,7 @@
             }
           ],
           "methodology": "Analysis of safety mechanisms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good transparency with solid explainability. Lower hallucination rate than smaller models. Comprehensive safety systems."
@@ -430,7 +430,7 @@
             }
           ],
           "methodology": "Review of API design",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 93,
@@ -444,7 +444,7 @@
             }
           ],
           "methodology": "Review of SDK quality",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 86,
@@ -455,10 +455,16 @@
               "url": "https://platform.openai.com/docs/versioning",
               "date": "2025-01-15",
               "value": "Clear versioning with deprecation notices"
+            },
+            {
+              "source": "OpenAI: Retiring GPT-4o and older models",
+              "url": "https://openai.com/index/retiring-gpt-4o-and-older-models/",
+              "date": "2026-07-09",
+              "value": "GPT-4.1 retired from ChatGPT 2026-02-13; API access continues with no announced shutdown (not on the API deprecations list as of 2026-07-09)"
             }
           ],
           "methodology": "Review of versioning approach",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 85,
@@ -472,7 +478,7 @@
             }
           ],
           "methodology": "Review of monitoring tools",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 89,
@@ -486,7 +492,7 @@
             }
           ],
           "methodology": "Assessment of support channels",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 95,
@@ -500,7 +506,7 @@
             }
           ],
           "methodology": "Analysis of integrations",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -514,7 +520,7 @@
             }
           ],
           "methodology": "Review of licensing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent operational maturity with industry-leading ecosystem and developer experience."
@@ -603,7 +609,7 @@
   "strengths": [
     "Strong general-purpose performance (66.3% MMLU)",
     "Good balance of quality and speed (~1.2s p50)",
-    "Large 128K context window for document processing",
+    "Very large context window (1,047,576 tokens) for document processing",
     "Mature ecosystem with extensive integrations",
     "Reliable uptime and infrastructure (99.9%)",
     "Comprehensive safety and security features"
@@ -614,7 +620,8 @@
     "Not HIPAA eligible",
     "Limited regional data residency options",
     "Higher pricing than smaller models",
-    "Training data transparency limited"
+    "Training data transparency limited",
+    "LEGACY: retired from ChatGPT 2026-02-13; API continues but OpenAI recommends GPT-5.x for new work"
   ],
   "best_for": [
     "General-purpose production applications",
@@ -633,11 +640,13 @@
   ],
   "metadata": {
     "pricing": {
-      "input": "$2.50 per 1M tokens",
-      "output": "$10.00 per 1M tokens",
-      "notes": "Standard flagship pricing"
+      "input": "$2.00 per 1M tokens",
+      "output": "$8.00 per 1M tokens",
+      "notes": "Cached input $0.50 per 1M. Confirmed on official model page 2026-07-09; no longer listed on OpenAI's main pricing page.",
+      "last_verified": "2026-07-09"
     },
-    "context_window": 128000,
+    "context_window": 1047576,
+    "max_output": 32768,
     "languages": [
       "English",
       "Spanish",

@@ -4,9 +4,9 @@
   "name": "Qwen2.5-VL-32B",
   "provider": "Alibaba",
   "version": "20251020",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Multimodal vision-language model from Alibaba, now two generations behind: superseded first by Qwen3-VL (Sep 2025) and then by the natively-multimodal Qwen3.5 (released 2026-02-16). Historically achieved 42.9% on SWE-bench with strong image understanding at competitive pricing; new deployments should evaluate Qwen3.5 instead.",
+  "description": "Multimodal vision-language model from Alibaba, now three generations behind: superseded by Qwen3-VL (Sep 2025), the natively-multimodal Qwen3.5 (released 2026-02-16), and the multimodal-input Qwen3.6 open models (Apr 2026). Historically achieved 42.9% on SWE-bench with strong image understanding at competitive pricing; new deployments should evaluate Qwen3.5/Qwen3.6 instead.",
   "website": "https://qwenlm.github.io/",
   "trust_vector": {
     "performance_reliability": {
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Standard coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 84,
@@ -44,7 +44,7 @@
             }
           ],
           "methodology": "Reasoning benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 88,
@@ -58,7 +58,7 @@
             }
           ],
           "methodology": "Knowledge testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "vision_accuracy": {
           "score": 92,
@@ -72,7 +72,7 @@
             }
           ],
           "methodology": "Vision-specific benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 84,
@@ -86,7 +86,7 @@
             }
           ],
           "methodology": "Internal testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.6s",
@@ -100,7 +100,7 @@
             }
           ],
           "methodology": "Median latency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "32,768 tokens",
@@ -114,7 +114,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 96,
@@ -128,7 +128,7 @@
             }
           ],
           "methodology": "Historical data",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong vision capabilities with good coding performance. 32B parameter size provides good balance."
@@ -148,7 +148,7 @@
             }
           ],
           "methodology": "OWASP testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 81,
@@ -162,7 +162,7 @@
             }
           ],
           "methodology": "Adversarial testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 78,
@@ -176,7 +176,7 @@
             }
           ],
           "methodology": "Policy analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 83,
@@ -190,7 +190,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 81,
@@ -204,7 +204,7 @@
             }
           ],
           "methodology": "Security review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Adequate security with standard guardrails."
@@ -224,7 +224,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 85,
@@ -238,7 +238,7 @@
             }
           ],
           "methodology": "Policy analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "90 days",
@@ -252,7 +252,7 @@
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 76,
@@ -266,7 +266,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 80,
@@ -280,7 +280,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 73,
@@ -294,7 +294,7 @@
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Limited privacy for Western markets. Asian data residency."
@@ -314,7 +314,7 @@
             }
           ],
           "methodology": "Feature evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 81,
@@ -328,7 +328,7 @@
             }
           ],
           "methodology": "QA testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 79,
@@ -342,7 +342,7 @@
             }
           ],
           "methodology": "Bias testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 80,
@@ -356,7 +356,7 @@
             }
           ],
           "methodology": "Confidence assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 86,
@@ -370,7 +370,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 75,
@@ -384,7 +384,7 @@
             }
           ],
           "methodology": "Disclosure review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 84,
@@ -398,7 +398,7 @@
             }
           ],
           "methodology": "Safety analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Moderate transparency with standard safety features."
@@ -418,7 +418,7 @@
             }
           ],
           "methodology": "API review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 84,
@@ -432,7 +432,7 @@
             }
           ],
           "methodology": "SDK review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 74,
@@ -449,11 +449,17 @@
               "url": "https://qwen.ai/blog?id=qwen3.5",
               "date": "2026-06-10",
               "value": "Two generations behind: superseded by Qwen3-VL (Sep 2025) and natively-multimodal Qwen3.5 (released 2026-02-16)"
+            },
+            {
+              "source": "MarkTechPost - Qwen3.6-27B release",
+              "url": "https://www.marktechpost.com/2026/04/22/alibaba-qwen-team-releases-qwen3-6-27b-a-dense-open-weight-model-outperforming-397b-moe-on-agentic-coding-benchmarks/",
+              "date": "2026-07-09",
+              "value": "Now three generations behind: Qwen3.6 open models (35B-A3B on 2026-04-16, 27B dense on 2026-04-22, Apache 2.0, 256K context, text/image/video input) further supersede this line"
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2026-06-10",
-          "notes": "Open weights remain available, but the line has moved on to Qwen3.5"
+          "last_verified": "2026-07-09",
+          "notes": "Open weights remain available, but the line has moved on to Qwen3.5/Qwen3.6"
         },
         "monitoring_observability": {
           "score": 81,
@@ -467,7 +473,7 @@
             }
           ],
           "methodology": "Tool review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 82,
@@ -481,7 +487,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 80,
@@ -495,7 +501,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -509,7 +515,7 @@
             }
           ],
           "methodology": "License review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good operational quality with open-source license."
@@ -520,7 +526,7 @@
       "overall": 86,
       "notes": "Good coding with vision support. Useful for UI/UX code generation from images.",
       "alternatives": [
-        "claude-4-sonnet",
+        "claude-sonnet-4",
         "openai-o4-mini"
       ]
     },
@@ -535,8 +541,7 @@
       "overall": 84,
       "notes": "Good for content with visual elements. Can describe and analyze images.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     },
     "data-analysis": {
@@ -550,21 +555,21 @@
       "overall": 87,
       "notes": "Strong for research with visual materials. Can analyze papers with diagrams.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "legal-compliance": {
       "overall": 75,
       "notes": "Limited compliance for Western markets. Data residency concerns.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "healthcare": {
       "overall": 82,
       "notes": "Good for medical image analysis but limited Western compliance.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "gemini-2-0-flash"
       ]
     },
@@ -572,7 +577,7 @@
       "overall": 83,
       "notes": "Good for analyzing financial charts and visual reports.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "education": {
@@ -586,8 +591,7 @@
       "overall": 82,
       "notes": "Good for visual storytelling and image-based creative content.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     }
   },
@@ -606,7 +610,7 @@
     "Smaller context window (32K tokens)",
     "Lower coding benchmarks (42.9% SWE-bench)",
     "Growing but less mature ecosystem",
-    "Superseded: two generations behind, replaced by Qwen3-VL (Sep 2025) and the natively-multimodal Qwen3.5 (released 2026-02-16)"
+    "Superseded: three generations behind, replaced by Qwen3-VL (Sep 2025), the natively-multimodal Qwen3.5 (2026-02-16), and the Qwen3.6 open models (Apr 2026)"
   ],
   "best_for": [
     "Visual AI applications requiring image understanding",
@@ -627,7 +631,7 @@
     "pricing": {
       "input": "$0.40 per 1M tokens",
       "output": "$1.20 per 1M tokens",
-      "notes": "Highly competitive pricing for vision model"
+      "notes": "Historical DashScope pricing for a superseded model; current hosted availability and rates not re-verified — self-hosting from Apache-2.0 weights remains the reliable route"
     },
     "context_window": 32768,
     "languages": [

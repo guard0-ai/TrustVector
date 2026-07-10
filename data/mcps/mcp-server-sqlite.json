@@ -4,7 +4,7 @@
   "name": "MCP SQLite Server",
   "provider": "Anthropic (Archived)",
   "version": "2025.4.24",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "ARCHIVED WITH UNPATCHED VULNERABILITY: Former Anthropic reference MCP server for SQLite, archived 2025-05-29 to the servers-archived repository. The archived code contains the same class of unpatched SQL injection flaw disclosed by Trend Micro (June 2025) and will not receive fixes; the archive README provides no security guarantees. Not recommended for new deployments.",
   "website": "https://modelcontextprotocol.io/docs/servers/sqlite",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Query performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "schema_introspection": {
           "score": 92,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Schema discovery testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_integrity": {
           "score": 90,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Transaction testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "concurrent_access": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Concurrency testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_handling": {
           "score": 88,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error scenario testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Vulnerability disclosure review and code analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "file_access_control": {
           "score": 70,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_modification_risk": {
           "score": 50,
@@ -133,7 +133,7 @@
             }
           ],
           "methodology": "Write operation risk assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "encryption_support": {
           "score": 65,
@@ -147,7 +147,7 @@
             }
           ],
           "methodology": "Encryption capabilities review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 75,
@@ -161,7 +161,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -180,7 +180,7 @@
             }
           ],
           "methodology": "Data flow and exposure analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_protection": {
           "score": 62,
@@ -194,7 +194,7 @@
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_processing": {
           "score": 88,
@@ -208,7 +208,7 @@
             }
           ],
           "methodology": "Data processing architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "score": 75,
@@ -222,7 +222,7 @@
             }
           ],
           "methodology": "Data retention control review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -241,7 +241,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_visibility": {
           "score": 92,
@@ -255,7 +255,7 @@
             }
           ],
           "methodology": "Query traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 95,
@@ -269,7 +269,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "sqlite_transparency": {
           "score": 88,
@@ -283,7 +283,7 @@
             }
           ],
           "methodology": "Database engine transparency review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -302,7 +302,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "performance": {
           "score": 92,
@@ -316,7 +316,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_efficiency": {
           "score": 94,
@@ -330,7 +330,7 @@
             }
           ],
           "methodology": "Resource utilization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "portability": {
           "score": 90,
@@ -344,7 +344,7 @@
             }
           ],
           "methodology": "Cross-platform testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "maintenance": {
           "score": 58,
@@ -359,12 +359,12 @@
             {
               "source": "MCP servers-archived repository",
               "url": "https://github.com/modelcontextprotocol/servers-archived",
-              "date": "2026-06-10",
-              "value": "MCP server archived 2025-05-29; repository read-only, no maintainer, no bug fixes or security patches will be released"
+              "date": "2026-07-09",
+              "value": "Re-verified 2026-07-09: repository archived 2025-05-29 and read-only; README states 'NO SECURITY GUARANTEES ARE PROVIDED FOR THESE ARCHIVED SERVERS' and no security updates or bug fixes will be provided; sqlite remains in the archived list and is absent from the seven maintained servers in modelcontextprotocol/servers"
             }
           ],
           "methodology": "Maintenance overhead assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }

@@ -1,0 +1,673 @@
+{
+  "id": "claude-sonnet-5",
+  "type": "model",
+  "name": "Claude Sonnet 5",
+  "provider": "Anthropic",
+  "version": "5",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Anthropic's Sonnet-tier flagship (released 2026-06-30), positioned as the cheaper way to run agents: 72.7% SWE-bench Verified (vs Sonnet 4.6's 62.3%), 80.4% Terminal-Bench 2.1, 81.2% OSWorld-Verified — approaching Opus 4.8 at a fraction of the cost. Same $3/$15 standard price as Sonnet 4.6 with intro $2/$10 through 2026-08-31, 1M context, effort parameter incl. xhigh, and deliberately low cyber capability with default-on safeguards.",
+  "website": "https://www.anthropic.com/claude/sonnet",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 94,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "72.7% SWE-bench Verified vs Sonnet 4.6's 62.3%; described as the most agentic Sonnet model yet with sustained coding and debugging"
+            },
+            {
+              "source": "MarkTechPost benchmark comparison",
+              "url": "https://www.marktechpost.com/2026/06/30/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/",
+              "date": "2026-06-30",
+              "value": "63.2% SWE-bench Pro (vs Sonnet 4.6's 58.1%, Opus 4.8's 69.2%); 80.4% Terminal-Bench 2.1 (vs Sonnet 4.6's 67.0%)"
+            },
+            {
+              "source": "TechCrunch",
+              "url": "https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/",
+              "date": "2026-06-30",
+              "value": "Runs agentic coding workloads autonomously at a level that recently required larger, more expensive models"
+            }
+          ],
+          "methodology": "Provider-published coding benchmarks cross-checked against independent launch coverage; SWE-bench Verified, SWE-bench Pro, and Terminal-Bench 2.1",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_reasoning": {
+          "score": 92,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MarkTechPost benchmark comparison",
+              "url": "https://www.marktechpost.com/2026/06/30/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/",
+              "date": "2026-06-30",
+              "value": "57.4% Humanity's Last Exam (with tools) vs Sonnet 4.6's 46.8% and Opus 4.8's 57.9% — near-Opus reasoning at Sonnet price"
+            }
+          ],
+          "methodology": "Provider-published reasoning benchmarks; independent replication still limited nine days post-launch",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_general": {
+          "score": 93,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MarkTechPost benchmark comparison",
+              "url": "https://www.marktechpost.com/2026/06/30/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/",
+              "date": "2026-06-30",
+              "value": "GDPval-AA v2 knowledge-work score of 1,618, marginally above Opus 4.8's 1,615; 81.2% OSWorld-Verified computer use"
+            },
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Substantial improvement over Sonnet 4.6 on reasoning, tool use, coding, and knowledge work; strict improvement on BrowseComp agentic search"
+            }
+          ],
+          "methodology": "Knowledge-work and computer-use benchmark review from provider announcement and third-party comparisons",
+          "last_verified": "2026-07-09"
+        },
+        "output_consistency": {
+          "score": 92,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Self-verifies its own output without explicit prompting; effort parameter gives repeatable quality/cost control across low/medium/high/xhigh"
+            }
+          ],
+          "methodology": "Review of documented behavior controls; repeated-run consistency data still limited post-launch. Note the updated tokenizer maps identical input to roughly 1.0-1.35x more tokens than Sonnet 4.6",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p50": {
+          "value": "~1.5s",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-07-08",
+              "value": "Early measurements comparable to Sonnet 4.6 at low/medium effort; launch-window sample is small"
+            }
+          ],
+          "methodology": "Median latency for API requests with standard prompt sizes; limited launch-window sample",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p95": {
+          "value": "~4.0s",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models",
+              "date": "2026-07-08",
+              "value": "Early p95 around 4s; higher at xhigh effort with deeper reasoning"
+            }
+          ],
+          "methodology": "95th percentile response time across diverse workloads; limited launch-window sample",
+          "last_verified": "2026-07-09"
+        },
+        "context_window": {
+          "value": "1,000,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MarkTechPost benchmark comparison",
+              "url": "https://www.marktechpost.com/2026/06/30/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/",
+              "date": "2026-06-30",
+              "value": "1M token context window; API model string claude-sonnet-5"
+            }
+          ],
+          "methodology": "Specification review from launch documentation and coverage. Max output tokens not yet confirmed in public docs",
+          "last_verified": "2026-07-09"
+        },
+        "uptime": {
+          "score": 97,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Status Page",
+              "url": "https://status.claude.com/",
+              "date": "2026-07-09",
+              "value": "Claude API uptime 99.57% (last 90 days); no Sonnet 5-specific incidents since the 2026-06-30 launch"
+            }
+          ],
+          "methodology": "Platform uptime from official status page; model-specific track record is only ~9 days old, so score held slightly below the platform baseline",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Biggest Sonnet-generation jump in the registry: +10.4 points SWE-bench Verified and +13.4 Terminal-Bench 2.1 over Sonnet 4.6, closing most of the gap to Opus 4.8 (and edging it on GDPval-AA v2). Scores held slightly conservative pending independent benchmark replication — the model is nine days old."
+    },
+
+    "security": {
+      "overall_score": 91,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 92,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Improved resistance to prompt injection attacks vs Sonnet 4.6; generally safer to use in agentic contexts"
+            }
+          ],
+          "methodology": "Review of provider safety evaluations against OWASP LLM01 patterns; third-party red-team data still limited at launch",
+          "last_verified": "2026-07-09"
+        },
+        "jailbreak_resistance": {
+          "score": 93,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Lower rate of undesirable behaviors than Sonnet 4.6, with improved refusal of malicious requests"
+            },
+            {
+              "source": "Anthropic Constitutional AI",
+              "url": "https://www.anthropic.com/news/claudes-constitution",
+              "date": "2026-06-30",
+              "value": "Constitutional AI alignment carried forward with well-calibrated refusals"
+            }
+          ],
+          "methodology": "Testing against adversarial prompt datasets and review of provider safety documentation",
+          "last_verified": "2026-07-09"
+        },
+        "data_leakage_prevention": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Privacy Statement",
+              "url": "https://www.anthropic.com/legal/privacy",
+              "date": "2026-06-30",
+              "value": "No training on user data without explicit consent; training opt-out by default for API traffic"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and data handling practices",
+          "last_verified": "2026-07-09"
+        },
+        "output_safety": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Cyber safeguards enabled by default (equivalent to Opus 4.7/4.8, less strict than Fable 5); deliberately not trained on cyber tasks — 0.0% success on full Firefox exploit development"
+            },
+            {
+              "source": "Anthropic Trust Center",
+              "url": "https://trust.anthropic.com/",
+              "date": "2026-06-30",
+              "value": "Released with safety evaluations under the Responsible Scaling Policy"
+            }
+          ],
+          "methodology": "Review of provider safety evaluations across harmful content and offensive-cyber categories",
+          "last_verified": "2026-07-09"
+        },
+        "api_security": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic API Documentation",
+              "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+              "date": "2026-07-09",
+              "value": "API key authentication, HTTPS only, rate limiting, workspace scoping; same hardened API surface as the Sonnet 4.6/Opus 4.8 generation"
+            }
+          ],
+          "methodology": "Review of API security features and best practices",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Strong safety posture with a notable design choice: offensive-cyber capability is intentionally kept much lower than the Opus line, with cyber safeguards on by default. Anthropic reports fewer undesirable agentic behaviors than Sonnet 4.6."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 93,
+      "criteria": {
+        "data_residency": {
+          "value": "US, EU (customer choice)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Enterprise Documentation",
+              "url": "https://www.anthropic.com/claude/enterprise",
+              "date": "2026-06-30",
+              "value": "Data residency options for US and EU enterprise customers"
+            }
+          ],
+          "methodology": "Review of enterprise documentation and privacy policies",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_optout": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Privacy Policy",
+              "url": "https://www.anthropic.com/legal/privacy",
+              "date": "2026-06-30",
+              "value": "Opt-out available; no training on API data by default"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and data usage terms",
+          "last_verified": "2026-07-09"
+        },
+        "data_retention": {
+          "value": "0 days (ephemeral)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Terms of Service",
+              "url": "https://www.anthropic.com/legal/terms",
+              "date": "2026-06-30",
+              "value": "API prompts and outputs not retained (except for trust & safety)"
+            }
+          ],
+          "methodology": "Review of terms of service and data retention policies",
+          "last_verified": "2026-07-09"
+        },
+        "pii_handling": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Privacy Documentation",
+              "url": "https://docs.anthropic.com/en/docs/resources/data-protection",
+              "date": "2026-06-30",
+              "value": "Customer responsible for PII redaction"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-07-09"
+        },
+        "compliance_certifications": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Trust Center",
+              "url": "https://trust.anthropic.com/",
+              "date": "2026-07-09",
+              "value": "SOC 2 Type II, GDPR compliant, HIPAA eligible — same posture as the rest of the Claude line"
+            }
+          ],
+          "methodology": "Verification of compliance certifications and audit reports",
+          "last_verified": "2026-07-09"
+        },
+        "zero_data_retention": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic API Documentation",
+              "url": "https://docs.anthropic.com/en/docs/resources/data-protection",
+              "date": "2026-06-30",
+              "value": "Ephemeral data processing; zero data retention configuration available"
+            }
+          ],
+          "methodology": "Review of data handling practices",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Inherits Anthropic's full enterprise privacy posture from day one: ephemeral data handling, SOC 2 Type II, GDPR, HIPAA eligible."
+    },
+
+    "trust_transparency": {
+      "overall_score": 88,
+      "criteria": {
+        "explainability": {
+          "score": 91,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Effort parameter (low/medium/high/xhigh) makes reasoning depth explicit and controllable; self-verification behavior surfaced in outputs"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency and explanation capabilities",
+          "last_verified": "2026-07-09"
+        },
+        "hallucination_rate": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Lower hallucination and sycophancy rates than Sonnet 4.6 per launch safety evaluations"
+            }
+          ],
+          "methodology": "Review of provider evaluations; independent factual-QA measurement still limited at launch",
+          "last_verified": "2026-07-09"
+        },
+        "bias_fairness": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Responsible Scaling Policy",
+              "url": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy",
+              "date": "2026-06-30",
+              "value": "Regular bias testing and mitigation under the Responsible Scaling Policy"
+            }
+          ],
+          "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
+          "last_verified": "2026-07-09"
+        },
+        "uncertainty_quantification": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Lower sycophancy and self-verification behavior suggest improved calibration over Sonnet 4.6"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-07-09"
+        },
+        "model_card_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Detailed launch documentation covering benchmarks, safety evaluations (incl. cyber capability testing), tokenizer change, and pricing; a BrowseComp methodology correction was published transparently as a changelog entry"
+            }
+          ],
+          "methodology": "Review of documentation completeness and clarity",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_transparency": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Public Statements",
+              "url": "https://www.anthropic.com/news",
+              "date": "2026-06-30",
+              "value": "General description provided; detailed sources and knowledge cutoff not disclosed at launch"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-07-09"
+        },
+        "guardrails": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Constitutional AI",
+              "url": "https://www.anthropic.com/news/claudes-constitution",
+              "date": "2026-06-30",
+              "value": "Constitutional AI guardrails plus default-on cyber safeguards and deliberately restricted offensive-cyber training"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Transparent launch documentation, including an unusually candid cyber-capability section and a public benchmark-methodology correction. Knowledge cutoff not yet published."
+    },
+
+    "operational_excellence": {
+      "overall_score": 90,
+      "criteria": {
+        "api_design_quality": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic API Documentation",
+              "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+              "date": "2026-07-09",
+              "value": "Same modern API surface as the Sonnet 4.6 generation: effort parameter (low/medium/high/xhigh), structured outputs, streaming, tool use; stable claude-sonnet-5 model string"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-07-09"
+        },
+        "sdk_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic SDKs",
+              "url": "https://github.com/anthropics",
+              "date": "2026-06-30",
+              "value": "Official SDKs (Python, TypeScript, Java, Go, Ruby, C#, PHP) with day-one Sonnet 5 support"
+            }
+          ],
+          "methodology": "Review of SDK quality, documentation, and maintenance",
+          "last_verified": "2026-07-09"
+        },
+        "versioning_policy": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic API Versioning",
+              "url": "https://platform.claude.com/docs/en/api/versioning",
+              "date": "2026-06-30",
+              "value": "Clear versioning with advance deprecation notice; Sonnet 4.6 remains Active with tentative retirement not sooner than 2027-02-17, giving a long migration runway"
+            }
+          ],
+          "methodology": "Review of versioning policy and historical practices",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_observability": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Console",
+              "url": "https://console.anthropic.com/",
+              "date": "2026-06-30",
+              "value": "Usage dashboard with metrics, cost tracking, and workspace controls"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-07-09"
+        },
+        "support_quality": {
+          "score": 91,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Support",
+              "url": "https://support.anthropic.com/",
+              "date": "2026-06-30",
+              "value": "Email support, developer community, comprehensive docs and migration guidance from Sonnet 4.6"
+            }
+          ],
+          "methodology": "Assessment of documentation, community, and support responsiveness",
+          "last_verified": "2026-07-09"
+        },
+        "ecosystem_maturity": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Default model for Claude Free and Pro plans; available on Max/Team/Enterprise, Claude Code, the Claude API, Claude Platform on AWS, and Microsoft Foundry — Google Vertex AI listed as coming soon"
+            }
+          ],
+          "methodology": "Analysis of availability surfaces and third-party integrations; score held below Sonnet 4.6 until Vertex AI availability lands and framework defaults migrate",
+          "last_verified": "2026-07-09"
+        },
+        "license_terms": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Anthropic Commercial Terms",
+              "url": "https://www.anthropic.com/legal/commercial-terms",
+              "date": "2026-06-30",
+              "value": "Standard commercial terms; enterprise agreements available"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Drop-in adoption for existing Claude users, with one real migration caveat: the updated tokenizer maps the same input to roughly 1.0-1.35x more tokens than Sonnet 4.6, so per-request cost can rise even at identical per-token prices. Vertex AI availability still pending as of 2026-07-09."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 95,
+      "notes": "72.7% SWE-bench Verified and 80.4% Terminal-Bench 2.1 — near-Opus agentic coding at Sonnet pricing. The new best default for production coding agents.",
+      "alternatives": ["claude-opus-4-8", "claude-fable-5"]
+    },
+    "customer-support": {
+      "overall": 93,
+      "notes": "The Sonnet support sweet spot, now smarter at the same price; use effort 'low' for high-volume tiers. Intro pricing makes migration trials cheap through August.",
+      "alternatives": ["claude-haiku-4-5", "gpt-5-5"]
+    },
+    "content-creation": {
+      "overall": 91,
+      "notes": "Strong long-form and marketing content with fast turnaround; Opus/Fable tiers still lead on the most nuanced pieces.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    },
+    "data-analysis": {
+      "overall": 92,
+      "notes": "1M context for large datasets with GDPval-AA v2 knowledge-work performance that edges Opus 4.8, at workhorse pricing.",
+      "alternatives": ["gemini-3-1-pro", "claude-opus-4-8"]
+    },
+    "research-assistant": {
+      "overall": 92,
+      "notes": "1M context, strict BrowseComp improvement over Sonnet 4.6, and strong synthesis. Opus/Fable preferred for the hardest research.",
+      "alternatives": ["claude-fable-5", "gemini-3-1-pro"]
+    },
+    "legal-compliance": {
+      "overall": 90,
+      "notes": "Anthropic cites legal research and insurance workflows as target use cases; HIPAA eligible with 1M context for contract repositories.",
+      "alternatives": ["claude-opus-4-8", "claude-fable-5"]
+    },
+    "healthcare": {
+      "overall": 89,
+      "notes": "HIPAA eligible with strong privacy controls; real-world clinical validation is still early nine days post-launch.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
+    },
+    "financial-analysis": {
+      "overall": 91,
+      "notes": "Near-Opus reasoning (57.4% HLE with tools) at predictable cost; escalate the hardest modeling to Opus 4.8 or Fable 5.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    },
+    "education": {
+      "overall": 92,
+      "notes": "Fast, patient explanations at a price point that scales; default model on Free/Pro plans broadens reach.",
+      "alternatives": ["claude-haiku-4-5", "gpt-5-5"]
+    },
+    "creative-writing": {
+      "overall": 88,
+      "notes": "Capable creative writing with good narrative flow; Opus tier produces more distinctive prose.",
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
+    }
+  },
+
+  "strengths": [
+    "72.7% SWE-bench Verified and 80.4% Terminal-Bench 2.1 — a 10+ point generation-over-generation jump at the same standard price",
+    "Near-Opus performance (57.4% HLE with tools vs Opus 4.8's 57.9%; edges Opus 4.8 on GDPval-AA v2) at $3/$15",
+    "Introductory $2/$10 pricing through 2026-08-31 makes agent migration trials cheap",
+    "1M token context window with effort parameter (low/medium/high/xhigh)",
+    "Self-verification behavior and lower hallucination/sycophancy rates than Sonnet 4.6",
+    "Deliberately low offensive-cyber capability with default-on safeguards — a safety plus for most deployments",
+    "HIPAA eligible with ephemeral data handling from day one"
+  ],
+
+  "limitations": [
+    "Released 2026-06-30 — independent benchmark replication and production track record still limited",
+    "Updated tokenizer maps identical input to roughly 1.0-1.35x more tokens than Sonnet 4.6, partially offsetting per-token price parity",
+    "Google Vertex AI availability still pending at evaluation time (AWS and Microsoft Foundry live)",
+    "Intentionally weak at sanctioned cybersecurity work — use Opus tier for authorized cyber tasks",
+    "Knowledge cutoff and max output tokens not yet published",
+    "Opus 4.8 still leads on the hardest agentic coding (69.2% vs 63.2% SWE-bench Pro)"
+  ],
+
+  "best_for": [
+    "Production agent fleets seeking Opus-adjacent quality at Sonnet cost (Anthropic's own 'cheaper way to run agents' positioning)",
+    "Agentic coding, browser, and terminal automation at scale",
+    "High-volume customer support and conversational applications",
+    "Long-context analysis of large document sets on a budget",
+    "Enterprise workflows (legal research, insurance) needing strong compliance posture"
+  ],
+
+  "not_recommended_for": [
+    "Frontier-difficulty reasoning and coding where Opus 4.8 or Fable 5 is warranted",
+    "Sanctioned offensive-security / cyber work (capability deliberately restricted)",
+    "Teams requiring Google Vertex AI availability today",
+    "Audio processing applications"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "$3.00 per 1M tokens",
+      "output": "$15.00 per 1M tokens",
+      "notes": "Introductory pricing $2/$10 per 1M through 2026-08-31, then standard $3/$15 (same as Sonnet 4.6). Prompt caching (cache reads at 0.1x input) and 50% Batch API discount apply. Note the updated tokenizer yields ~1.0-1.35x more tokens for identical input vs Sonnet 4.6.",
+      "last_verified": "2026-07-09"
+    },
+    "context_window": 1000000,
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Italian",
+      "Portuguese",
+      "Japanese",
+      "Korean",
+      "Chinese",
+      "Arabic",
+      "Hindi"
+    ],
+    "modalities": ["text", "image (input)", "document", "computer-use"],
+    "api_endpoint": "https://api.anthropic.com/v1/messages",
+    "api_model_id": "claude-sonnet-5",
+    "open_source": false,
+    "architecture": "Transformer-based with Constitutional AI alignment, effort parameter (low/medium/high/xhigh), self-verification, and an updated tokenizer",
+    "parameters": "Not disclosed",
+    "knowledge_cutoff": "Not published at launch (as of 2026-07-09)",
+    "release_date": "2026-06-30"
+  },
+
+  "related_entities": ["claude-sonnet-4-6", "claude-opus-4-8", "claude-fable-5", "claude-haiku-4-5", "gpt-5-6"],
+
+  "tags": [
+    "coding",
+    "agentic",
+    "production",
+    "enterprise",
+    "hipaa-eligible",
+    "effort-parameter",
+    "computer-use",
+    "long-context",
+    "value-workhorse",
+    "new-release"
+  ]
+}

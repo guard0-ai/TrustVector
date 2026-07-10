@@ -1,0 +1,445 @@
+{
+  "id": "mcp-server-snowflake",
+  "type": "mcp",
+  "name": "MCP Snowflake Server",
+  "provider": "Snowflake (Official)",
+  "version": "Managed MCP server (GA 2025-11-04); snowflake-labs-mcp 1.x (deprecated)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Official Snowflake MCP server, GA since 2025-11-04 as a fully managed in-account endpoint (CREATE MCP SERVER object). Exposes Cortex Analyst NL-to-SQL over semantic views, Cortex Search, Cortex Agents, SQL execution with configurable read-only mode, and custom UDF/procedure tools. OAuth 2.0 or Programmatic Access Token auth with per-tool RBAC; masking and data policies apply. The self-hosted snowflake-labs-mcp (PyPI) was deprecated in May 2026 in favor of the managed server.",
+  "website": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 84,
+      "criteria": {
+        "api_reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake-managed MCP server GA release note",
+              "url": "https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp",
+              "date": "2025-11-04",
+              "value": "Managed MCP server reached general availability on 2025-11-04 after an October 2025 preview; runs inside Snowflake's platform with no separate infrastructure, inheriting platform reliability (not supported in government regions)"
+            }
+          ],
+          "methodology": "Endpoint availability and GA-status review",
+          "last_verified": "2026-07-09"
+        },
+        "nl_to_sql_accuracy": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Snowflake-managed MCP server documentation",
+              "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "date": "2026-07-09",
+              "value": "Cortex Analyst tools translate natural language to SQL, constrained to semantic views (semantic models are not supported), which bounds hallucinated joins but limits coverage"
+            }
+          ],
+          "methodology": "NL-to-SQL capability review; semantic-view grounding improves accuracy but accuracy still depends on semantic view quality",
+          "last_verified": "2026-07-09"
+        },
+        "search_retrieval_quality": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Snowflake Managed MCP Servers announcement",
+              "url": "https://www.snowflake.com/en/blog/managed-mcp-servers-secure-data-agents/",
+              "date": "2025-10-02",
+              "value": "Cortex Search provides semantic search over unstructured documents as MCP tools, plus Cortex Knowledge Extensions for licensed third-party content"
+            }
+          ],
+          "methodology": "Retrieval capability assessment based on Cortex Search service documentation",
+          "last_verified": "2026-07-09"
+        },
+        "sql_execution": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake-managed MCP server documentation",
+              "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "date": "2026-07-09",
+              "value": "SQL execution tool supports configurable read-only mode, query timeout, and warehouse selection; custom tools via UDFs and stored procedures"
+            }
+          ],
+          "methodology": "SQL tool feature review",
+          "last_verified": "2026-07-09"
+        },
+        "error_handling": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Snowflake-managed MCP server documentation",
+              "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "date": "2026-07-09",
+              "value": "Documented guardrails: 50 tools per server maximum, 250 KB response truncation for generic/SQL tools, and a recursion depth limit of 10 invocations"
+            }
+          ],
+          "methodology": "Failure-mode and limit documentation review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 82,
+      "criteria": {
+        "authentication_security": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake-managed MCP server documentation",
+              "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "date": "2026-07-09",
+              "value": "OAuth 2.0 via Snowflake security integrations is the recommended path; Programmatic Access Tokens supported with least-privilege role assignment; Snowflake advises OAuth over hardcoded tokens and network policies for client provider IPs"
+            }
+          ],
+          "methodology": "Authentication mechanism review",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake-managed MCP server documentation",
+              "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "date": "2026-07-09",
+              "value": "Per-tool RBAC: access to the MCP server object alone does not grant tool access — individual privileges are required per tool; standard Snowflake role-based access, masking, and data policies apply to all agent operations"
+            }
+          ],
+          "methodology": "Access control model review; per-tool privilege separation is stronger than most MCP servers evaluated",
+          "last_verified": "2026-07-09"
+        },
+        "data_modification_control": {
+          "score": 76,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake-managed MCP server documentation",
+              "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "date": "2026-07-09",
+              "value": "SQL execution tool offers a configurable read-only mode; when writes are enabled the agent can modify data within the session role's privileges, and OAuth sessions use only the user's DEFAULT_ROLE (secondary roles unsupported)"
+            }
+          ],
+          "methodology": "Write-surface assessment; read-only mode plus RBAC scoping mitigates but writes to production data remain possible when enabled",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_resilience": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Snowflake Managed MCP Servers announcement",
+              "url": "https://www.snowflake.com/en/blog/managed-mcp-servers-secure-data-agents/",
+              "date": "2025-10-02",
+              "value": "All operations occur within Snowflake's governed perimeter with masking and policies enforced server-side, limiting blast radius; however query results containing untrusted content still reach the LLM and no result-wrapping mitigation is documented"
+            }
+          ],
+          "methodology": "Prompt-injection exposure analysis; governed perimeter constrains impact but the generic MCP injection vector via returned data is unmitigated",
+          "last_verified": "2026-07-09"
+        },
+        "credential_management": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake-managed MCP server documentation",
+              "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "date": "2026-07-09",
+              "value": "Managed OAuth flow avoids long-lived credentials in client config; PATs are revocable and role-scoped; no connection strings or account passwords are placed in MCP client configuration"
+            }
+          ],
+          "methodology": "Credential handling review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 80,
+      "criteria": {
+        "data_residency": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake-managed MCP server documentation",
+              "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "date": "2026-07-09",
+              "value": "MCP server runs inside the customer's Snowflake account and region; data does not leave Snowflake's perimeter for tool execution (not available in government regions)"
+            }
+          ],
+          "methodology": "Data residency review",
+          "last_verified": "2026-07-09"
+        },
+        "compliance_certifications": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake Trust Center",
+              "url": "https://www.snowflake.com/en/product/features/security-compliance/",
+              "date": "2026-07-09",
+              "value": "Underlying platform holds SOC 2 Type II, ISO 27001, PCI DSS, HIPAA, FedRAMP and other certifications that extend to in-perimeter MCP execution"
+            }
+          ],
+          "methodology": "Platform certification review",
+          "last_verified": "2026-07-09"
+        },
+        "data_exposure_to_llm": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP Architecture",
+              "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+              "date": "2026-07-09",
+              "value": "Query results, search hits, and semantic view metadata returned by tools are sent to the connected LLM provider — masking policies apply before egress but returned data is exposed per the client provider's terms"
+            }
+          ],
+          "methodology": "Data flow analysis",
+          "last_verified": "2026-07-09"
+        },
+        "governance_policy_enforcement": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake Managed MCP Servers announcement",
+              "url": "https://www.snowflake.com/en/blog/managed-mcp-servers-secure-data-agents/",
+              "date": "2025-10-02",
+              "value": "The same user and group access controls, masking, and data policies apply to agent access as to any other Snowflake access path — governance is enforced server-side, not by the MCP client"
+            }
+          ],
+          "methodology": "Governance enforcement review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 76,
+      "criteria": {
+        "documentation_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake Documentation",
+              "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "date": "2026-07-09",
+              "value": "First-party documentation covering CREATE MCP SERVER YAML specification, tool types, auth setup, limits, and security guidance, maintained alongside the GA product"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 60,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake-Labs/mcp repository",
+              "url": "https://github.com/Snowflake-Labs/mcp",
+              "date": "2026-07-09",
+              "value": "The managed MCP server is closed-source; the open-source Apache 2.0 snowflake-labs-mcp (292 stars) is deprecated and no longer maintained (final PyPI release 2026-05-15), with users directed to the managed server"
+            }
+          ],
+          "methodology": "Source availability review; scored down because the actively supported path is proprietary and the open-source path is end-of-life",
+          "last_verified": "2026-07-09"
+        },
+        "audit_logging": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake Access History",
+              "url": "https://docs.snowflake.com/en/user-guide/access-history",
+              "date": "2026-07-09",
+              "value": "Agent-issued SQL and tool invocations run as governed Snowflake queries, appearing in query history and access history for audit"
+            }
+          ],
+          "methodology": "Audit trail assessment",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "snowflake-labs-mcp on PyPI",
+              "url": "https://pypi.org/project/snowflake-labs-mcp/",
+              "date": "2026-07-09",
+              "value": "Community activity migrated from the deprecated labs repo to Snowflake's official support channels; managed-server feedback flows through Snowflake support rather than public issue trackers"
+            }
+          ],
+          "methodology": "Community engagement analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 83,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake-managed MCP server documentation",
+              "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+              "date": "2026-07-09",
+              "value": "Setup requires a CREATE MCP SERVER statement with a YAML tool specification plus an OAuth security integration or PAT — more admin steps than one-click hosted servers, but no infrastructure to run"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake Warehouses",
+              "url": "https://docs.snowflake.com/en/user-guide/warehouses",
+              "date": "2026-07-09",
+              "value": "Tool execution scales on Snowflake virtual warehouses with per-tool warehouse selection; capacity is elastic and independent of the MCP endpoint"
+            }
+          ],
+          "methodology": "Scalability review",
+          "last_verified": "2026-07-09"
+        },
+        "cost_efficiency": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Snowflake Cortex pricing",
+              "url": "https://www.snowflake.com/legal-files/CreditConsumptionTable.pdf",
+              "date": "2026-07-09",
+              "value": "Agent queries consume warehouse credits and Cortex Analyst/Search incur Cortex consumption charges; costs of exploratory agent traffic can be material without resource monitors"
+            }
+          ],
+          "methodology": "Cost analysis for agent-driven workloads",
+          "last_verified": "2026-07-09"
+        },
+        "integration_ecosystem": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake Managed MCP Servers announcement",
+              "url": "https://www.snowflake.com/en/blog/managed-mcp-servers-secure-data-agents/",
+              "date": "2025-10-02",
+              "value": "Standards-based streamable HTTP endpoint works with Claude, Cursor, and other MCP clients; integrates the broader Cortex ecosystem including Knowledge Extensions (AP, Washington Post, NASDAQ, MSCI)"
+            }
+          ],
+          "methodology": "Ecosystem integration review",
+          "last_verified": "2026-07-09"
+        },
+        "managed_operations": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Snowflake Managed MCP Servers announcement",
+              "url": "https://www.snowflake.com/en/blog/managed-mcp-servers-secure-data-agents/",
+              "date": "2025-10-02",
+              "value": "No separate infrastructure to deploy, patch, or monitor — the MCP endpoint is operated by Snowflake inside the customer account"
+            }
+          ],
+          "methodology": "Operational burden assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Fully managed, GA MCP endpoint inside the Snowflake account — no infrastructure to run",
+    "Per-tool RBAC: server access alone does not grant tool access; masking and data policies enforced server-side",
+    "OAuth 2.0 security integrations or revocable PATs — no passwords or connection strings in client config",
+    "Cortex Analyst NL-to-SQL grounded in semantic views reduces hallucinated queries",
+    "SQL execution tool with configurable read-only mode, query timeout, and warehouse selection",
+    "Full audit trail via Snowflake query history and access history"
+  ],
+  "limitations": [
+    "Managed server is closed-source; the open-source snowflake-labs-mcp is deprecated (final release 2026-05-15)",
+    "Query and search results are exposed to the connected LLM provider",
+    "When the SQL tool's read-only mode is off, agents can write to production data within the role's privileges",
+    "OAuth sessions use only the user's DEFAULT_ROLE; secondary roles unsupported",
+    "Response truncation at 250 KB and 50-tool cap can constrain large workloads",
+    "Cortex Analyst supports semantic views only (not semantic models); not available in government regions",
+    "No documented result-wrapping or other prompt-injection countermeasure for untrusted data in results"
+  ],
+  "metadata": {
+    "license": "Proprietary (managed service); deprecated snowflake-labs-mcp was Apache 2.0",
+    "supported_platforms": ["Any MCP client (remote streamable HTTP)"],
+    "programming_languages": ["N/A (managed service); Python (deprecated labs server)"],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/Snowflake-Labs/mcp",
+    "github_stars": 292,
+    "docs": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+    "remote_endpoint": "https://<account_url>/api/v2/databases/{database}/schemas/{schema}/mcp-servers/{name}",
+    "api_dependency": "Snowflake Cortex (Analyst, Search, Agents), Snowflake SQL engine",
+    "authentication": "OAuth 2.0 via Snowflake security integration (recommended); Programmatic Access Token",
+    "security_controls": ["per-tool RBAC", "SQL read-only mode", "masking and data policies", "network policies", "query timeout and warehouse scoping"],
+    "ga_date": "2025-11-04",
+    "first_release": "2025-10 (public preview); labs server early 2025",
+    "deprecated_predecessor": "snowflake-labs-mcp (PyPI), deprecated May 2026, final release 2026-05-15",
+    "maintained_by": "Snowflake",
+    "transport_types": ["streamable-http (managed)"]
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 78,
+      "notes": "Good for generating SQL and Snowflake object DDL against real schemas"
+    },
+    "customer-support": {
+      "overall": 72,
+      "notes": "Cortex Search over support content works well; guard customer PII exposure"
+    },
+    "content-creation": {
+      "overall": 68,
+      "notes": "Limited direct fit; useful for data-backed content via Cortex Search"
+    },
+    "data-analysis": {
+      "overall": 92,
+      "notes": "Primary use case: governed NL-to-SQL over semantic views plus warehouse-scale SQL"
+    },
+    "research-assistant": {
+      "overall": 84,
+      "notes": "Strong retrieval over enterprise documents with Cortex Search and Knowledge Extensions"
+    },
+    "legal-compliance": {
+      "overall": 74,
+      "notes": "Server-side masking, RBAC, and audit history support compliance workflows"
+    },
+    "healthcare": {
+      "overall": 70,
+      "notes": "HIPAA-certified platform helps, but LLM exposure of results needs careful policy design"
+    },
+    "financial-analysis": {
+      "overall": 86,
+      "notes": "Governed access to financial marts with masking policies; strong audit trail"
+    },
+    "education": {
+      "overall": 76,
+      "notes": "Good for teaching governed analytics, though account setup is enterprise-oriented"
+    },
+    "creative-writing": {
+      "overall": 50,
+      "notes": "Not a fit beyond retrieving reference data for narratives"
+    }
+  },
+  "best_for": [
+    "Enterprises exposing governed Snowflake data to AI agents without new infrastructure",
+    "Data teams wanting NL-to-SQL grounded in semantic views rather than raw schema guessing",
+    "Organizations requiring per-tool RBAC, masking, and full audit trails for agent access",
+    "Teams migrating off the deprecated snowflake-labs-mcp self-hosted server"
+  ],
+  "related_entities": ["mcp-server-databricks", "mcp-server-postgres", "mcp-server-elasticsearch", "mcp-server-mongodb"],
+  "tags": ["database", "data-warehouse", "sql", "nl-to-sql", "mcp", "model-context-protocol", "snowflake", "managed"]
+}

@@ -4,9 +4,9 @@
   "name": "Llama 3.3 70B",
   "provider": "Meta",
   "version": "2024-12",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Meta's powerful 70B parameter Llama 3.3 model offering strong performance with open-source flexibility and an excellent balance of capability and resource efficiency for self-hosted deployments. Remains one of Meta's legacy open models: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models in 2026.",
+  "description": "Meta's powerful 70B parameter Llama 3.3 model offering strong performance with open-source flexibility and an excellent balance of capability and resource efficiency for self-hosted deployments. Remains one of Meta's legacy open models: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models with Muse Spark (April 2026). Weights remain widely available and hosted as of July 2026.",
   "website": "https://llama.meta.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 82,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Mathematical benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 76,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Knowledge testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 77,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Internal testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.4s",
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Median latency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "2.8s",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "95th percentile",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "128,000 tokens",
@@ -108,7 +108,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 95,
@@ -122,7 +122,7 @@
             }
           ],
           "methodology": "Deployment-dependent",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong mathematical reasoning (77% MATH). Good balance for self-hosted deployments."
@@ -142,7 +142,7 @@
             }
           ],
           "methodology": "Adversarial testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 79,
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 85,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Deployment analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 80,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Safety benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 82,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "Deployment review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good baseline security with self-hosted control."
@@ -218,7 +218,7 @@
             }
           ],
           "methodology": "Deployment analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 98,
@@ -232,7 +232,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "User-controlled",
@@ -246,7 +246,7 @@
             }
           ],
           "methodology": "Deployment analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 92,
@@ -260,7 +260,7 @@
             }
           ],
           "methodology": "Architecture review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 94,
@@ -274,7 +274,7 @@
             }
           ],
           "methodology": "Deployment options",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 98,
@@ -288,7 +288,7 @@
             }
           ],
           "methodology": "Deployment analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional privacy with self-hosted deployment."
@@ -308,7 +308,7 @@
             }
           ],
           "methodology": "Reasoning evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 82,
@@ -322,7 +322,7 @@
             }
           ],
           "methodology": "Community evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 82,
@@ -336,7 +336,7 @@
             }
           ],
           "methodology": "Bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 83,
@@ -350,7 +350,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 91,
@@ -364,7 +364,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 87,
@@ -378,7 +378,7 @@
             }
           ],
           "methodology": "Technical documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 89,
@@ -392,7 +392,7 @@
             }
           ],
           "methodology": "Safety system review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong transparency as open-source model."
@@ -412,7 +412,7 @@
             }
           ],
           "methodology": "API review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 87,
@@ -426,7 +426,7 @@
             }
           ],
           "methodology": "SDK review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 88,
@@ -440,7 +440,7 @@
             }
           ],
           "methodology": "Versioning review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 79,
@@ -454,7 +454,7 @@
             }
           ],
           "methodology": "Tool review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 83,
@@ -468,7 +468,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 88,
@@ -482,7 +482,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -496,7 +496,7 @@
             }
           ],
           "methodology": "License review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good operational maturity with mature Llama ecosystem."
@@ -507,7 +507,7 @@
       "overall": 76,
       "notes": "Moderate coding capabilities. Better options for complex development.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "gpt-4-1"
       ]
     },
@@ -529,7 +529,7 @@
       "overall": 84,
       "notes": "Strong mathematical reasoning (77% MATH) for analysis.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "openai-o3"
       ]
     },
@@ -537,14 +537,14 @@
       "overall": 78,
       "notes": "Good for research with solid knowledge base.",
       "alternatives": [
-        "llama-4-behemoth"
+        "llama-4-maverick"
       ]
     },
     "legal-compliance": {
       "overall": 82,
       "notes": "Good for legal with data sovereignty via self-hosting.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "claude-sonnet-4-5"
       ]
     },
@@ -552,7 +552,7 @@
       "overall": 86,
       "notes": "Good for healthcare with self-hosted HIPAA compliance.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "claude-sonnet-4-5"
       ]
     },
@@ -560,7 +560,7 @@
       "overall": 83,
       "notes": "Strong math capabilities for financial modeling.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "openai-o3"
       ]
     },
@@ -568,7 +568,7 @@
       "overall": 82,
       "notes": "Good for education with strong mathematical reasoning.",
       "alternatives": [
-        "llama-4-behemoth"
+        "llama-4-maverick"
       ]
     },
     "creative-writing": {
@@ -594,7 +594,7 @@
     "No managed API from Meta",
     "Deployment expertise needed",
     "Uptime depends on hosting",
-    "Legacy status: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models in 2026, so future open updates are unlikely"
+    "Legacy status: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models (Muse Spark, April 2026), so future open updates are unlikely"
   ],
   "best_for": [
     "Self-hosted deployments requiring data sovereignty",
@@ -615,7 +615,8 @@
     "pricing": {
       "input": "Self-hosted (infrastructure costs)",
       "output": "Self-hosted (infrastructure costs)",
-      "notes": "Open-source. Typically $0.30-1.00 per 1M tokens with optimized deployment."
+      "notes": "Open-source. Typically $0.30-1.00 per 1M tokens with optimized deployment; hosted APIs (DeepInfra, Together, etc.) remain in that range as of July 2026.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 128000,
     "languages": [
@@ -639,7 +640,7 @@
     "parameters": "70B"
   },
   "related_entities": [
-    "llama-4-behemoth",
+    "llama-4-maverick",
     "llama-4-scout",
     "llama-3-1-405b"
   ],

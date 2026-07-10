@@ -3,8 +3,8 @@
   "type": "agent",
   "name": "Claude Agent SDK",
   "provider": "Anthropic",
-  "version": "0.x",
-  "last_evaluated": "2026-06-10",
+  "version": "0.3.x",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "SDK exposing Claude Code's production agent harness (tool loop, permission system, subagents, MCP) for building general-purpose agents in TypeScript and Python. Renamed from Claude Code SDK in September 2025.",
   "website": "https://code.claude.com/docs/en/agent-sdk/overview",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Evaluation of agents built on the SDK harness across coding and non-coding tasks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Testing of built-in tool loop, custom tool definitions, and MCP server integration",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 88,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Long-horizon agent task evaluation using the SDK's managed loop and compaction",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 80,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Review of session resume, memory file support, and context compaction behavior",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 84,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Observed recovery from tool errors and failed commands in SDK-built agents",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 86,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Testing of programmatic subagent definition and parallel delegation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Review of inherited sandbox configuration and bash isolation options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 87,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Assessment of permission rules, programmatic approval callbacks, and hook-based gating",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 78,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Review of documented mitigations and developer responsibility for untrusted input handling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 80,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Architecture review of session/subagent context isolation in self-hosted deployments",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 60,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "License and source availability review of npm/PyPI packages",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Review of Anthropic API retention terms and local-state architecture",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 82,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance certification review including cloud-provider routing options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 78,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis across supported model endpoints",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 55,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment for self-hosted harness with cloud-only inference",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review across both language SDKs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 84,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Review of message stream observability and hook-based audit trails",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 82,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Assessment of streamed reasoning visibility and permission-request context",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 55,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment of SDK packages and underlying harness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 80,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Community engagement analysis via package downloads, release cadence, and ecosystem projects",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Integration complexity assessment from install to first working agent",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 84,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Assessment of horizontal scaling patterns and API rate limit constraints",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 70,
@@ -349,10 +349,16 @@
               "url": "https://www.anthropic.com/pricing",
               "date": "2026-05-01",
               "value": "Free SDK; costs are pay-as-you-go Claude tokens, which vary widely with agent autonomy and task length"
+            },
+            {
+              "source": "Claude Agent SDK documentation",
+              "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+              "date": "2026-07-09",
+              "value": "Since 2026-06-15, Agent SDK and non-interactive (claude -p) usage on subscription plans draws from a separate monthly Agent SDK credit ($20 on Pro, $100 on Max 5x, $200 on Max 20x), capping subscription-based SDK spend"
             }
           ],
-          "methodology": "Pricing model analysis of token-based costs for long-running agents",
-          "last_verified": "2026-06-10"
+          "methodology": "Pricing model analysis of token-based costs for long-running agents, including the June 2026 subscription-credit change",
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 78,
@@ -366,7 +372,7 @@
             }
           ],
           "methodology": "Review of built-in usage reporting and integration points for external observability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 85,
@@ -380,7 +386,7 @@
             }
           ],
           "methodology": "Maturity assessment based on shared production harness and release stability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -444,7 +450,7 @@
       "Subagents"
     ],
     "first_release": "2025 (as Claude Code SDK); renamed Claude Agent SDK 2025-09-29",
-    "pricing": "Free SDK; pay-as-you-go Claude token costs",
+    "pricing": "Free SDK; pay-as-you-go Claude token costs via API, or monthly Agent SDK credits on subscription plans since 2026-06-15 ($20 Pro / $100 Max 5x / $200 Max 20x)",
     "packages": [
       "@anthropic-ai/claude-agent-sdk (npm)",
       "claude-agent-sdk (PyPI)"

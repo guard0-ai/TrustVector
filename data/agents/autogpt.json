@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "AutoGPT",
   "provider": "Significant Gravitas",
-  "version": "0.6.36",
-  "last_evaluated": "2025-11-09",
+  "version": "0.6.61",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Autonomous AI agent that attempts to achieve user-defined goals by breaking them into sub-tasks, using internet access, memory management, and file operations. Pioneered the autonomous agent paradigm.",
+  "description": "Autonomous AI agent project that pioneered the autonomous agent paradigm. Development has shifted from the classic self-hosted agent to the AutoGPT Platform (still in beta as of mid-2026), a visual agent builder with workflow automation, an expanding plugin/block ecosystem, and cloud-hosted deployment alongside self-hosting. The repository remains one of the most starred open-source projects (185k+ stars) with active development.",
   "website": "https://docs.agpt.co/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Based on community feedback and testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 72,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 70,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex task testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 75,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory system evaluation",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 62,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "autonomy_level": {
           "score": 78,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Autonomy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 65,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 60,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 68,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 92,
@@ -164,12 +164,12 @@
             {
               "source": "GitHub Repository",
               "url": "https://github.com/Significant-Gravitas/AutoGPT",
-              "date": "2024-10-15",
-              "value": "MIT licensed, 165k+ stars, fully transparent code"
+              "date": "2026-07-09",
+              "value": "MIT licensed, 185k+ stars, fully transparent code"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 68,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 65,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 78,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 74,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 76,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 92,
@@ -286,12 +286,12 @@
             {
               "source": "GitHub Repository",
               "url": "https://github.com/Significant-Gravitas/AutoGPT",
-              "date": "2024-10-15",
-              "value": "MIT licensed, 165k+ stars, pioneering autonomous agent project"
+              "date": "2026-07-09",
+              "value": "MIT licensed, 185k+ stars, pioneering autonomous agent project"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 65,
@@ -302,10 +302,17 @@
               "url": "https://github.com/Significant-Gravitas/AutoGPT",
               "date": "2024-10-15",
               "value": "Activity has decreased from peak, focus shifting to AutoGPT Platform"
+            },
+            {
+              "source": "GitHub Repository / Releases",
+              "url": "https://github.com/Significant-Gravitas/AutoGPT/releases",
+              "date": "2026-07-09",
+              "value": "Development active on AutoGPT Platform: repo pushed 2026-07-09, 185k+ stars, steady platform beta releases through 2026 (v0.6.61, May 2026)"
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09",
+          "notes": "Focus is now the AutoGPT Platform rather than the classic agent; platform development is active"
         }
       }
     },
@@ -324,7 +331,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 62,
@@ -338,7 +345,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 60,
@@ -352,7 +359,7 @@
             }
           ],
           "methodology": "Cost analysis",
-          "last_verified": "2025-11-09",
+          "last_verified": "2026-07-09",
           "notes": "Can rack up significant API costs in continuous mode"
         },
         "monitoring_capabilities": {
@@ -367,7 +374,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 58,
@@ -381,7 +388,7 @@
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -419,9 +426,10 @@
       "Code execution",
       "Plugins"
     ],
-    "github_stars": "180000+",
+    "github_stars": "185000+",
     "first_release": "2023",
-    "latest_release": "autogpt-platform-beta-v0.6.36 (November 2025)"
+    "latest_release": "autogpt-platform-beta-v0.6.61 (May 2026)",
+    "platform_status": "AutoGPT Platform in beta (visual agent builder, cloud or self-hosted); classic agent no longer the development focus"
   },
   "use_case_ratings": {
     "customer-support": {

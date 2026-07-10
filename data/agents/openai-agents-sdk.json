@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "OpenAI Agents SDK",
   "provider": "OpenAI",
-  "version": "1.x",
-  "last_evaluated": "2026-06-10",
+  "version": "0.x (Python 0.18.0)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Production-ready multi-agent orchestration framework built around agents, handoffs, guardrails, and tracing. Open-source (MIT) successor to Swarm, released March 2025 with a major overhaul in April 2026.",
+  "description": "Production-ready multi-agent orchestration framework built around agents, handoffs, guardrails, and tracing. Open-source (MIT) successor to Swarm, released March 2025 with a major overhaul in April 2026 that added a model-native harness (filesystem tools, shell execution, apply-patch edits) and native sandboxed execution for long-horizon tasks.",
   "website": "https://openai.github.io/openai-agents-python/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Evaluation of agent task success across single- and multi-agent configurations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 87,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Testing of function tools, hosted tools, and schema-validated argument handling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Multi-step task evaluation across the agent loop and handoff chains",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 78,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Review of session backends and cross-run conversation persistence",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 80,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Testing of exception handling, guardrail tripwires, and tool failure paths",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 90,
@@ -94,26 +94,33 @@
             }
           ],
           "methodology": "Multi-agent coordination testing using handoffs and agents-as-tools patterns",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 77,
+      "overall_score": 79,
       "criteria": {
         "tool_sandboxing": {
-          "score": 65,
+          "score": 75,
           "confidence": "medium",
           "evidence": [
             {
               "source": "OpenAI Agents SDK documentation",
               "url": "https://openai.github.io/openai-agents-python/tools/",
               "date": "2026-04-15",
-              "value": "No built-in sandbox for custom function tools; hosted tools (code interpreter) run in OpenAI's sandboxed environments"
+              "value": "No built-in sandbox for arbitrary custom function tools; hosted tools (code interpreter) run in OpenAI's sandboxed environments"
+            },
+            {
+              "source": "OpenAI: The next evolution of the Agents SDK",
+              "url": "https://openai.com/index/the-next-evolution-of-the-agents-sdk/",
+              "date": "2026-04-15",
+              "value": "April 2026 overhaul added native sandbox execution for harness work (files, shell, code edits), launching first in Python with TypeScript to follow"
             }
           ],
           "methodology": "Security architecture review of custom tool execution versus hosted tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09",
+          "notes": "Score raised 65 to 75: April 2026 release added native sandboxed execution for harness/shell/file operations; custom function tools still execute unsandboxed"
         },
         "access_control": {
           "score": 70,
@@ -127,7 +134,7 @@
             }
           ],
           "methodology": "Assessment of tool scoping, approval flows, and developer-implemented controls",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 80,
@@ -141,7 +148,7 @@
             }
           ],
           "methodology": "Guardrail configuration testing against adversarial and off-policy inputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 75,
@@ -155,7 +162,7 @@
             }
           ],
           "methodology": "Review of run context isolation and self-hosted deployment boundaries",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -169,7 +176,7 @@
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +195,7 @@
             }
           ],
           "methodology": "Review of OpenAI API retention terms and self-managed session storage",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 80,
@@ -202,7 +209,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment for framework plus default model provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 72,
@@ -216,7 +223,7 @@
             }
           ],
           "methodology": "Data flow analysis of default tracing export and model provider routing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 87,
@@ -230,7 +237,7 @@
             }
           ],
           "methodology": "Deployment options assessment including non-OpenAI and local model routing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +256,7 @@
             }
           ],
           "methodology": "Documentation completeness review across Python and TypeScript SDKs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 92,
@@ -263,7 +270,7 @@
             }
           ],
           "methodology": "Review of built-in trace spans, dashboard visualization, and OpenTelemetry export",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 84,
@@ -277,7 +284,7 @@
             }
           ],
           "methodology": "Assessment of trace-based explanation of agent routing and tool decisions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 95,
@@ -291,7 +298,7 @@
             }
           ],
           "methodology": "Open source assessment of license, source availability, and public development",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 90,
@@ -302,10 +309,16 @@
               "url": "https://github.com/openai/openai-agents-python",
               "date": "2026-06-01",
               "value": "Tens of thousands of stars, frequent releases, and a large contributor and integration ecosystem"
+            },
+            {
+              "source": "openai-agents on PyPI",
+              "url": "https://pypi.org/project/openai-agents/",
+              "date": "2026-07-09",
+              "value": "Rapid release cadence continues: Python 0.18.0 released 2026-07-07 (0.17.x through June); repo at ~27,800 stars"
             }
           ],
           "methodology": "Community engagement analysis via GitHub stars, contributor activity, and release cadence",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +337,7 @@
             }
           ],
           "methodology": "Integration complexity assessment from install to working multi-agent app",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 84,
@@ -338,7 +351,7 @@
             }
           ],
           "methodology": "Assessment of stateless runner scaling and provider rate limit constraints",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 85,
@@ -352,7 +365,7 @@
             }
           ],
           "methodology": "Pricing model analysis of free framework plus pay-per-token model usage",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 90,
@@ -366,7 +379,7 @@
             }
           ],
           "methodology": "Monitoring features assessment including built-in and third-party observability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 86,
@@ -380,7 +393,7 @@
             }
           ],
           "methodology": "Maturity assessment from release history, API stability, and enterprise adoption",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -422,10 +435,11 @@
     "Free framework; costs limited to model usage"
   ],
   "limitations": [
-    "No built-in sandboxing for custom function tools; execution safety is developer-owned",
+    "Custom function tools still run unsandboxed (native sandbox added April 2026 covers harness/shell/file work, Python first)",
     "Tracing exports run data to OpenAI by default unless explicitly disabled",
     "Some hosted tools and tracing features work best only with OpenAI models",
-    "April 2026 overhaul introduced breaking changes requiring migration",
+    "April 2026 overhaul introduced breaking changes requiring migration (dropped Python 3.9, requires openai v2.x, refusals now raise ModelRefusalError)",
+    "Python package still versioned 0.x with frequent releases despite production positioning",
     "Less opinionated about deployment, requiring infrastructure decisions from the team"
   ],
   "metadata": {
@@ -447,6 +461,8 @@
       "Agents as tools"
     ],
     "first_release": "2025-03-11; major overhaul 2026-04-15",
+    "current_version": "Python 0.18.0 (2026-07-07)",
+    "github_stars": "27700+",
     "pricing": "Free (MIT); pay only model API rates",
     "predecessor": "OpenAI Swarm (experimental)"
   },

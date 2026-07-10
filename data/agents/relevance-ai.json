@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "Relevance AI",
   "provider": "Relevance AI Pty Ltd",
-  "version": "2025.1",
-  "last_evaluated": "2025-01-14",
+  "version": "Current (SaaS)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "No-code AI agent platform that enables teams to build, customize, and deploy AI workforce agents. Features visual workflow builders, tool integrations, and the ability to create specialized AI employees for various business functions including sales, support, and research.",
+  "description": "No-code AI agent platform that enables teams to build, customize, and deploy AI workforce agents. Features visual workflow builders, tool integrations, and the ability to create specialized AI employees for various business functions including sales, support, and research. Raised a $24M Series B (May 2025, led by Bessemer) on the back of rapid growth (40,000 agents registered in January 2025 alone); pricing now splits usage into Actions and Vendor Credits, with BYO LLM API keys on paid plans.",
   "website": "https://relevanceai.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Task completion testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "tool_integration": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "workflow_reliability": {
           "score": 80,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Workflow reliability testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "model_flexibility": {
           "score": 85,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Model flexibility review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "error_handling": {
           "score": 78,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Security certification review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "api_key_management": {
           "score": 78,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Key management review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "action_permissions": {
           "score": 75,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Permission model review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 78,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Audit capability review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -160,7 +160,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "third_party_llm_exposure": {
           "score": 72,
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "score": 78,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Retention policy review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -207,7 +207,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "agent_visibility": {
           "score": 85,
@@ -221,7 +221,7 @@
             }
           ],
           "methodology": "Visibility assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "pricing_transparency": {
           "score": 82,
@@ -230,12 +230,12 @@
             {
               "source": "Relevance AI Pricing",
               "url": "https://relevanceai.com/pricing",
-              "date": "2025-01-10",
-              "value": "Clear pricing tiers with credit-based system"
+              "date": "2026-07-09",
+              "value": "Clear pricing tiers; usage split into Actions (task runs) and Vendor Credits (AI compute), Vendor Credits roll over indefinitely"
             }
           ],
           "methodology": "Pricing review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "community_engagement": {
           "score": 80,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Community engagement review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -268,7 +268,7 @@
             }
           ],
           "methodology": "Usability assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "template_library": {
           "score": 85,
@@ -282,7 +282,7 @@
             }
           ],
           "methodology": "Template library review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "deployment_speed": {
           "score": 88,
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Deployment speed testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "cost_efficiency": {
           "score": 80,
@@ -305,12 +305,12 @@
             {
               "source": "Relevance AI Pricing",
               "url": "https://relevanceai.com/pricing",
-              "date": "2025-01-10",
-              "value": "Credit-based pricing with free tier available"
+              "date": "2026-07-09",
+              "value": "Free tier (200 Actions/month), Pro from $19/month (annual, 2,500 Actions), Team $234/month (annual; $349 monthly, 7,000 Actions); Pro+ plans support bring-your-own OpenAI/Anthropic/Google API keys, bypassing Vendor Credits"
             }
           ],
           "methodology": "Cost analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "customization": {
           "score": 82,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Customization review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -397,10 +397,11 @@
     "license": "Proprietary",
     "supported_platforms": ["Cloud"],
     "deployment_type": "SaaS",
-    "pricing": "Free tier, Pro from $19/month, Team from $199/month",
+    "pricing": "Free: 200 Actions/month; Pro from $19/month (annual); Team $234/month (annual, $349 monthly); Enterprise custom (verified 2026-07-09)",
     "certifications": ["SOC 2 Type II"],
     "founded": "2020",
     "headquarters": "Sydney, Australia",
+    "funding": "Series B $24M (May 2025, led by Bessemer Venture Partners; total raised $37M)",
     "supported_llms": ["OpenAI", "Anthropic", "Google", "Cohere"]
   },
   "tags": ["no-code", "workflow-automation", "sales", "marketing", "research"]

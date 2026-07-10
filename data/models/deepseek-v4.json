@@ -4,9 +4,9 @@
   "name": "DeepSeek-V4",
   "provider": "DeepSeek",
   "version": "20260424-preview",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "DeepSeek's preview flagship family: V4-Pro (1.6T total / 49B active MoE, the largest open-weight release ever) and V4-Flash (284B/13B). 1M-token context with up to 384K output, built on manifold-constrained Hyper Connections and Constrained Sparse Attention. MIT license. Vendor benchmark claims await broad independent verification.",
+  "description": "DeepSeek's preview flagship family: V4-Pro (1.6T total / 49B active MoE, largest open-weight release ever) and V4-Flash (284B/13B). 1M context, up to 384K output, via manifold-constrained Hyper Connections and Constrained Sparse Attention. MIT license. Vendor benchmarks await broad independent verification. Per DeepSeek (2026-06-30), V4 graduates to official release mid-July 2026 — same model names, with peak-hour API pricing (2x baseline, Beijing 9:00-12:00 and 14:00-18:00).",
   "website": "https://www.deepseek.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Vendor-reported coding benchmarks; medium confidence pending broad independent verification of preview-release claims",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 95,
@@ -44,7 +44,7 @@
             }
           ],
           "methodology": "Vendor-reported reasoning benchmarks; medium confidence until third-party evaluations of the preview mature",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 93,
@@ -58,7 +58,7 @@
             }
           ],
           "methodology": "Community leaderboard positions and vendor benchmarks for a preview release",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 85,
@@ -72,7 +72,7 @@
             }
           ],
           "methodology": "Repeated-prompt testing and community preview feedback",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "2.2s (V4-Pro), ~0.9s (V4-Flash)",
@@ -86,7 +86,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes from independent benchmarking",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "5.5s (V4-Pro)",
@@ -100,7 +100,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads from independent benchmarking",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,000,000 tokens",
@@ -114,7 +114,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 92,
@@ -128,7 +128,7 @@
             }
           ],
           "methodology": "Status-page history since the 2026-04-24 launch",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Largest open-weight release ever (V4-Pro: 1.6T total / 49B active). Vendor benchmarks are impressive but this is a preview: score confidence is medium until independent verification matures. V4-Flash (284B/13B) offers a much cheaper deployment point."
@@ -148,7 +148,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection patterns; limited preview-stage coverage",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 82,
@@ -162,7 +162,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing; assessment accounts for open-weight modifiability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 80,
@@ -176,7 +176,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy plus self-hosting option for full data isolation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 84,
@@ -190,7 +190,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories on default weights",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 85,
@@ -204,7 +204,7 @@
             }
           ],
           "methodology": "Review of API security features and transport guarantees",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Security posture mirrors V3.2 but with thinner preview-stage red-team coverage. Open weights shift safety responsibility to deployers who fine-tune or self-host."
@@ -224,7 +224,7 @@
             }
           ],
           "methodology": "Review of privacy policy and hosting options; China-jurisdiction caveat applies only to the first-party API",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 85,
@@ -238,7 +238,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms for the hosted API",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Per first-party API policy (China-hosted); zero when self-hosted",
@@ -252,7 +252,7 @@
             }
           ],
           "methodology": "Review of terms of service; retention is deployment-dependent for open-weight models",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 76,
@@ -266,7 +266,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 70,
@@ -280,7 +280,7 @@
             }
           ],
           "methodology": "Verification of certifications for the first-party platform; third-party hosts inherit their own certifications",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 80,
@@ -294,7 +294,7 @@
             }
           ],
           "methodology": "Review of data handling across first-party API, third-party hosts, and self-hosting",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Same split as all DeepSeek releases: the first-party API is China-hosted with China-jurisdiction residency and no Western certifications, while self-hosting or Western third-party hosting avoids those concerns. V4-Pro's 1.6T size makes self-hosting far harder than V4-Flash."
@@ -314,7 +314,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and trace accessibility",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 80,
@@ -328,7 +328,7 @@
             }
           ],
           "methodology": "Limited factual QA testing during the preview period",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 75,
@@ -342,7 +342,7 @@
             }
           ],
           "methodology": "Preliminary bias probing; formal evaluations pending",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 78,
@@ -356,7 +356,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 85,
@@ -370,7 +370,7 @@
             }
           ],
           "methodology": "Review of preview documentation completeness against DeepSeek's historical technical-report standard",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 74,
@@ -384,7 +384,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 79,
@@ -398,7 +398,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms in default weights",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Architectural novelty (manifold-constrained Hyper Connections, Constrained Sparse Attention) is disclosed, but the preview lacks the full technical report and independent benchmark replication DeepSeek usually delivers. Treat vendor claims with medium confidence."
@@ -418,7 +418,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 84,
@@ -432,7 +432,7 @@
             }
           ],
           "methodology": "Review of SDK compatibility and inference-framework support",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 74,
@@ -443,10 +443,16 @@
               "url": "https://api-docs.deepseek.com/quick_start/pricing",
               "date": "2026-04-24",
               "value": "Legacy deepseek-chat/deepseek-reasoner endpoints deprecate 2026-07-24, a three-month migration window"
+            },
+            {
+              "source": "TechNode",
+              "url": "https://technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/",
+              "date": "2026-06-30",
+              "value": "Official V4 release planned for mid-July 2026 (graduation from preview, same model names) with peak-hour pricing at 2x baseline during Beijing 9:00-12:00 and 14:00-18:00; users get 24-hour email notice before billing changes"
             }
           ],
           "methodology": "Review of deprecation timelines and migration windows",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 82,
@@ -460,7 +466,7 @@
             }
           ],
           "methodology": "Review of monitoring tools across deployment options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 74,
@@ -474,7 +480,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 84,
@@ -488,7 +494,7 @@
             }
           ],
           "methodology": "Analysis of third-party hosting availability six weeks post-release",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 97,
@@ -502,7 +508,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Aggressive pricing (V4-Pro $0.435/$0.87, V4-Flash $0.14/$0.28 per 1M) and MIT licensing, but the short legacy-endpoint deprecation window (2026-07-24) and preview status demand migration agility. V4-Pro self-hosting is feasible only for well-resourced organizations."
@@ -569,13 +575,13 @@
     "Inherits DeepSeek's frontier reasoning lineage from V3.2/Speciale"
   ],
   "limitations": [
-    "Preview status: behavior, pricing, and endpoints may change; vendor benchmark claims not yet broadly independently verified",
+    "Preview status until mid-July 2026 official release; vendor benchmark claims not yet broadly independently verified and full technical report not yet published",
+    "Peak-hour API pricing (2x baseline, Beijing 9:00-12:00 and 14:00-18:00) takes effect at the official release, complicating cost planning for workloads in those windows",
     "First-party API is China-hosted: China-jurisdiction data residency and no SOC 2/HIPAA/FedRAMP (self-hosting or Western hosts avoid this)",
     "V4-Pro's 1.6T footprint makes self-hosting impractical for all but the largest organizations",
     "Short migration window: legacy deepseek-chat/deepseek-reasoner endpoints deprecate 2026-07-24",
     "Text-only: no native vision or audio",
-    "No enterprise SLA or dedicated support on the first-party platform",
-    "Full technical report not yet published for the preview"
+    "No enterprise SLA or dedicated support on the first-party platform"
   ],
   "best_for": [
     "Million-token context workloads: whole-repository coding, corpus-scale research, multi-document analysis",
@@ -593,8 +599,8 @@
     "pricing": {
       "input": "$0.435 per 1M tokens (V4-Pro); $0.14 per 1M (V4-Flash, $0.0028 cache hit)",
       "output": "$0.87 per 1M tokens (V4-Pro); $0.28 per 1M (V4-Flash)",
-      "notes": "Preview pricing per official pricing page; legacy deepseek-chat/deepseek-reasoner endpoints deprecate 2026-07-24. Self-hosting is infrastructure-cost-only under MIT license.",
-      "last_verified": "2026-06-10"
+      "notes": "Preview pricing per official pricing page; legacy deepseek-chat/deepseek-reasoner endpoints deprecate 2026-07-24. At the mid-July 2026 official release, peak-hour pricing takes effect: 2x baseline during Beijing 9:00-12:00 and 14:00-18:00 (off-peak rates unchanged). Self-hosting is infrastructure-cost-only under MIT license.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1000000,
     "max_output": 384000,

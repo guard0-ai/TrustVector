@@ -3,8 +3,8 @@
   "type": "agent",
   "name": "LangGraph Agent",
   "provider": "LangChain",
-  "version": "1.0",
-  "last_evaluated": "2026-06-10",
+  "version": "1.x",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "LangChain's graph-based agent framework for building stateful, multi-actor applications with cycles and controllable execution flow. Reached 1.0 GA on 2025-10-22, adding durable execution and middleware. Enables complex, cyclic agent workflows with human-in-the-loop capabilities and production-grade persistence.",
   "website": "https://langchain-ai.github.io/langgraph/",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Based on underlying model performance and framework overhead",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 90,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex task testing with graph execution",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 87,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory persistence testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 82,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Variable (2-8s typical)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 78,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 80,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 85,
@@ -152,10 +152,17 @@
               "url": "https://langchain-ai.github.io/langgraph/how-tos/persistence/",
               "date": "2024-10-01",
               "value": "Thread-based isolation when using proper checkpointing"
+            },
+            {
+              "source": "Check Point Research - Exploiting LangGraph's Checkpointer",
+              "url": "https://research.checkpoint.com/2026/from-sqli-to-rce-exploiting-langgraphs-checkpointer/",
+              "date": "2026-03-29",
+              "value": "Checkpointer CVEs disclosed: CVE-2025-64439 (JsonPlusSerializer json-mode RCE, fixed in langgraph-checkpoint 3.0), CVE-2025-67644 (SQLite checkpointer SQLi), CVE-2026-28277 (unsafe msgpack deserialization to RCE), CVE-2026-27022 (Redis checkpointer injection); patched in langgraph 1.0.10+, langgraph-checkpoint-sqlite 3.0.1+, langgraph-checkpoint-redis 1.0.2+"
             }
           ],
-          "methodology": "Data architecture review",
-          "last_verified": "2025-11-09"
+          "methodology": "Data architecture review plus disclosed vulnerability analysis",
+          "last_verified": "2026-07-09",
+          "notes": "Score held at 85: the March 2026 checkpointer vulnerability cluster was patched promptly and current 1.2.x releases are well past the fixed versions; self-hosters on SQLite/Redis checkpointers must keep dependencies current"
         },
         "open_source_transparency": {
           "score": 95,
@@ -169,7 +176,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +195,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 85,
@@ -202,7 +209,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 75,
@@ -216,7 +223,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 95,
@@ -230,7 +237,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +256,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 90,
@@ -263,7 +270,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 82,
@@ -277,7 +284,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 95,
@@ -291,7 +298,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -310,7 +317,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 85,
@@ -324,7 +331,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 90,
@@ -338,7 +345,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 88,
@@ -352,7 +359,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 82,
@@ -369,10 +376,16 @@
               "url": "https://blog.langchain.com/langchain-langgraph-1dot0/",
               "date": "2026-06-10",
               "value": "LangGraph 1.0 GA released 2025-10-22 with durable execution and middleware; large, mature ecosystem"
+            },
+            {
+              "source": "langgraph on PyPI",
+              "url": "https://pypi.org/project/langgraph/",
+              "date": "2026-07-09",
+              "value": "Steady 1.x cadence: latest release 1.2.8 (2026-07-06); repo at ~36,900 stars with daily activity; 1.x promises no breaking changes until 2.0"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Score raised: 1.0 GA milestone and ecosystem maturity"
         }
       }
@@ -390,10 +403,9 @@
     "Steeper learning curve compared to simpler agent frameworks",
     "Requires more code for simple use cases",
     "Security and sandboxing must be implemented by developer",
-    "Relatively newer framework with evolving APIs",
     "Performance overhead from graph execution layer",
-    "Limited managed service options (LangGraph Cloud in beta)",
-    "Status (2026-06): 1.0 GA since 2025-10-22 (durable execution, middleware); earlier evolving-API concerns are largely resolved"
+    "March 2026 checkpointer CVEs (SQLi and deserialization to RCE) require self-hosters to stay on langgraph 1.0.10+/current checkpoint packages",
+    "Status (2026-07): 1.x stable (1.2.8 as of 2026-07-06); 1.0 GA since 2025-10-22 (durable execution, middleware); earlier evolving-API concerns are resolved and managed deployment is GA via LangGraph Platform"
   ],
   "metadata": {
     "license": "MIT",
@@ -407,17 +419,20 @@
       "Python",
       "JavaScript/TypeScript"
     ],
-    "deployment_type": "Self-hosted or LangGraph Cloud",
+    "deployment_type": "Self-hosted or LangGraph Platform (managed, GA)",
     "tool_support": [
       "LangChain tools",
       "Custom tools",
       "Function calling"
     ],
-    "github_stars": "11700+",
+    "github_stars": "36800+",
     "monthly_downloads": "7M+ on PyPI",
     "first_release": "2024",
     "pricing": "Free (MIT license) - Cloud deployment via LangSmith Plus/Enterprise plans",
-    "ga_version": "1.0 (October 2025)"
+    "pricing_last_verified": "2026-07-09",
+    "ga_version": "1.0 (October 2025)",
+    "current_version": "1.2.8 (2026-07-06)",
+    "security_advisories": "CVE-2025-64439, CVE-2025-67644, CVE-2026-28277, CVE-2026-27022 (checkpointer SQLi/deserialization, disclosed March 2026; fixed in langgraph 1.0.10+, langgraph-checkpoint-sqlite 3.0.1+, langgraph-checkpoint-redis 1.0.2+)"
   },
   "use_case_ratings": {
     "customer-support": {

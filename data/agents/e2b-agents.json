@@ -4,7 +4,7 @@
   "name": "E2B Agents",
   "provider": "E2B",
   "version": "Cloud SDK",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Secure cloud runtime for AI agents with code interpreter capabilities. Provides sandboxed environments for executing agent-generated code safely, with support for multiple programming languages and pre-built integrations.",
   "website": "https://e2b.dev/",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Code execution testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "sandbox_isolation": {
           "score": 92,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Isolation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_language_support": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Language capability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "startup_latency": {
           "score": 76,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Latency testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "file_system_support": {
           "score": 84,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "File operations testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "50-500ms (warm), 1-3s (cold start)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "network_isolation": {
           "score": 90,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Network security testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "code_sandboxing": {
           "score": 94,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Sandbox security testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_authentication": {
           "score": 88,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Authentication testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_encryption": {
           "score": 86,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Encryption assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 79,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "ephemeral_environments": {
           "score": 90,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data lifecycle assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "code_privacy": {
           "score": 76,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Code privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 75,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Logging assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "sdk_support": {
           "score": 86,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "SDK assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_sdk": {
           "score": 84,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_visibility": {
           "score": 80,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_examples": {
           "score": 78,
@@ -319,7 +319,7 @@
             }
           ],
           "methodology": "Community resources assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 85,
@@ -352,21 +352,21 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 78,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "Pricing",
+              "source": "E2B Pricing",
               "url": "https://e2b.dev/pricing",
-              "date": "2024-10-01",
-              "value": "Usage-based pricing, free tier available"
+              "date": "2026-07-09",
+              "value": "Hobby plan free with one-time $100 usage credit; Pro $150/mo with 24-hour sessions and more concurrent sandboxes; Enterprise custom with BYOC/on-prem/self-hosted options. Usage billed per second (~$0.05/hr for a 1 vCPU sandbox)"
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 80,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "framework_integrations": {
           "score": 88,
@@ -394,7 +394,7 @@
             }
           ],
           "methodology": "Integration ecosystem assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 84,
@@ -408,7 +408,7 @@
             }
           ],
           "methodology": "Uptime monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -422,11 +422,10 @@
     "Multi-language support (Python, JavaScript, custom)"
   ],
   "limitations": [
-    "Cloud-only, no self-hosting option currently",
+    "Self-hosting/BYOC (AWS and GCP) is enterprise-only and not self-serve; standard tiers are managed cloud only",
     "Usage-based pricing can be unpredictable for high-volume use",
     "Cold start latency (1-3s) can impact performance",
     "Limited to code execution use cases",
-    "Newer service with less production track record",
     "Network restrictions may limit some agent capabilities"
   ],
   "metadata": {
@@ -440,7 +439,7 @@
       "TypeScript",
       "Custom environments"
     ],
-    "deployment_type": "Managed cloud service",
+    "deployment_type": "Managed cloud service; enterprise BYOC (AWS/GCP), on-prem, and self-hosted options",
     "tool_support": [
       "Agent framework integrations",
       "Custom code execution"
@@ -454,7 +453,7 @@
       "Custom"
     ],
     "github_org": "https://github.com/e2b-dev",
-    "pricing": "Free tier available, Paid plans from $150/month + usage"
+    "pricing": "Hobby free (one-time $100 usage credit); Pro $150/mo + per-second usage (~$0.05/hr per 1 vCPU sandbox); Enterprise custom (BYOC/on-prem/self-hosted)"
   },
   "use_case_ratings": {
     "customer-support": {

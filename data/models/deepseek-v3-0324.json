@@ -4,9 +4,9 @@
   "name": "DeepSeek V3 0324",
   "provider": "DeepSeek",
   "version": "0324",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "DeepSeek's March 2025 open-weights V3 checkpoint, now superseded by DeepSeek V3.1 (Aug 2025), V3.2 (Dec 2025), and V4 (Apr 2026). The legacy deepseek-chat endpoint name is scheduled for deprecation on 2026-07-24. Historically offered strong performance at competitive pricing for developers seeking capable models with transparent weights and commercial-friendly licensing.",
+  "description": "DeepSeek's March 2025 open-weights V3 checkpoint, now superseded by DeepSeek V3.1 (Aug 2025), V3.2 (Dec 2025), and V4 (Apr 2026). The legacy deepseek-chat name no longer serves this checkpoint — it routes to V4-Flash's non-thinking mode and is removed 2026-07-24 (15:59 UTC). V3-0324 remains available only via third-party hosts or self-hosted open weights. Historically offered strong performance at competitive pricing with transparent weights and commercial-friendly licensing.",
   "website": "https://www.deepseek.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 79,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Mathematical reasoning benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 80,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Knowledge testing benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 77,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Community evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.2s",
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Median latency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "2.6s",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "95th percentile",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "64,000 tokens",
@@ -108,7 +108,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 92,
@@ -122,7 +122,7 @@
             }
           ],
           "methodology": "Historical uptime",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong performance for open-weights model. Good balance of capabilities and cost."
@@ -142,7 +142,7 @@
             }
           ],
           "methodology": "Community adversarial testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 75,
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Adversarial testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 78,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Policy analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 76,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 78,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "API security review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Moderate security for open-weights model. Additional safeguards recommended."
@@ -218,7 +218,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 82,
@@ -232,7 +232,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "90 days",
@@ -246,7 +246,7 @@
             }
           ],
           "methodology": "Terms review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 76,
@@ -260,7 +260,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 72,
@@ -274,7 +274,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 68,
@@ -288,7 +288,7 @@
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard privacy practices. 90-day retention longer than some competitors."
@@ -308,7 +308,7 @@
             }
           ],
           "methodology": "Reasoning evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 79,
@@ -322,7 +322,7 @@
             }
           ],
           "methodology": "Community evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 78,
@@ -336,7 +336,7 @@
             }
           ],
           "methodology": "Bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 80,
@@ -350,7 +350,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 88,
@@ -364,7 +364,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 85,
@@ -378,7 +378,7 @@
             }
           ],
           "methodology": "Technical documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 82,
@@ -392,7 +392,7 @@
             }
           ],
           "methodology": "Safety system analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good transparency for open-weights model. Comprehensive documentation."
@@ -412,7 +412,7 @@
             }
           ],
           "methodology": "API review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 80,
@@ -426,7 +426,7 @@
             }
           ],
           "methodology": "SDK review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 72,
@@ -443,11 +443,17 @@
               "url": "https://api-docs.deepseek.com/quick_start/pricing",
               "date": "2026-06-10",
               "value": "Legacy deepseek-chat endpoint name deprecates 2026-07-24; superseded by V3.1, V3.2, and V4"
+            },
+            {
+              "source": "DeepSeek API Change Log",
+              "url": "https://api-docs.deepseek.com/updates/",
+              "date": "2026-07-09",
+              "value": "deepseek-chat alias currently routes to deepseek-v4-flash non-thinking mode (no longer serves V3-0324); alias removed 2026-07-24 15:59 UTC, after which requests using it fail"
             }
           ],
           "methodology": "Versioning review",
-          "last_verified": "2026-06-10",
-          "notes": "Model superseded; endpoint deprecation requires migration to V3.2/V4"
+          "last_verified": "2026-07-09",
+          "notes": "Model superseded; first-party endpoint no longer serves this checkpoint. Migration to deepseek-v4-flash/-pro required before 2026-07-24"
         },
         "monitoring_observability": {
           "score": 76,
@@ -461,7 +467,7 @@
             }
           ],
           "methodology": "Tool review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 78,
@@ -475,7 +481,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 79,
@@ -489,7 +495,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 88,
@@ -503,7 +509,7 @@
             }
           ],
           "methodology": "License review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good operational maturity with OpenAI-compatible API. Growing ecosystem."
@@ -514,8 +520,7 @@
       "overall": 81,
       "notes": "Good coding (59.4% HumanEval) at competitive pricing.",
       "alternatives": [
-        "gpt-4-1",
-        "deepseek-coder"
+        "gpt-4-1"
       ]
     },
     "customer-support": {
@@ -599,7 +604,7 @@
     "Smaller ecosystem than established providers",
     "Less mature enterprise support",
     "Smaller context window (64K tokens)",
-    "Superseded by DeepSeek V3.1/V3.2/V4; legacy deepseek-chat endpoint name deprecates 2026-07-24"
+    "Superseded by DeepSeek V3.1/V3.2/V4; legacy deepseek-chat alias now routes to V4-Flash (not this checkpoint) and is removed 2026-07-24, leaving third-party hosts or self-hosting as the only ways to run V3-0324"
   ],
   "best_for": [
     "Cost-sensitive applications requiring good performance",
@@ -618,10 +623,10 @@
   ],
   "metadata": {
     "pricing": {
-      "input": "$0.27 per 1M tokens",
-      "output": "$1.09 per 1M tokens",
-      "notes": "Highly competitive pricing for performance level (cache miss pricing)",
-      "last_verified": "2025-11-09"
+      "input": "$0.27 per 1M tokens (historical first-party pricing)",
+      "output": "$1.09 per 1M tokens (historical first-party pricing)",
+      "notes": "Historical first-party API pricing no longer applies: the deepseek-chat alias now serves V4-Flash at V4 pricing and is removed 2026-07-24. V3-0324 is now served only by third-party hosts (rates vary) or self-hosted from open weights.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 64000,
     "languages": [

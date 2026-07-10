@@ -1,0 +1,467 @@
+{
+  "id": "jetbrains-junie",
+  "type": "agent",
+  "name": "Junie",
+  "provider": "JetBrains",
+  "version": "GA (out of beta June 2026)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "JetBrains' AI coding agent, out of beta since June 2026 and ranked the #1 coding agent on the independent SWE-Rebench benchmark (61.6% resolved, 72.7% pass@5). Junie plans before it codes, debugs with the IDE's real debugger, reviews pull requests with project context, and runs from JetBrains IDEs, a terminal CLI, or CI (GitHub Actions/GitLab). LLM-agnostic with BYOK and local-model support; included in JetBrains AI subscription tiers.",
+  "website": "https://junie.jetbrains.com/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 80,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "Ranked #1 coding agent on the latest SWE-Rebench run with 61.6% resolved and 72.7% pass@5, ahead of other agents and competitive with raw frontier models"
+            }
+          ],
+          "methodology": "Review of independent SWE-Rebench benchmark placement plus GA feature assessment; SWE-Rebench is a continuously refreshed, contamination-resistant benchmark",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "Uses the IDE's real toolchain: debugger (breakpoints, stack inspection, expression evaluation), test runners, and DataGrip-configured database connections for SQL validation"
+            }
+          ],
+          "methodology": "Assessment of IDE-native tool integration (debugger, run configurations, database access) versus shell-only agents",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "Plan Mode produces a structured planning document with product requirements, technical design, and delivery stages before generating code"
+            }
+          ],
+          "methodology": "Evaluation of plan-first workflow and plan adherence on multi-file tasks",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Junie by JetBrains",
+              "url": "https://junie.jetbrains.com/",
+              "date": "2026-07-09",
+              "value": "Project guidelines files (.junie/guidelines.md) and IDE project model provide persistent project context; cross-session memory is thinner than dedicated knowledge-base systems"
+            }
+          ],
+          "methodology": "Review of guidelines files, IDE index-backed context, and session persistence behavior",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "Agentic debugging sets breakpoints and inspects program state to diagnose failures rather than guess-and-retry with print logging; iterates on failing tests"
+            }
+          ],
+          "methodology": "Assessment of debugger-driven failure diagnosis and test-iteration loops",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "Single unified engine across IDE chat, tool window, and CLI via the Agent Communication Protocol (ACP); supports background/long-running tasks and CI-triggered runs, but no native multi-agent orchestration"
+            }
+          ],
+          "methodology": "Review of ACP-based surface unification, background task support, and absence of subagent/fan-out primitives",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 65,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Junie by JetBrains",
+              "url": "https://junie.jetbrains.com/",
+              "date": "2026-07-09",
+              "value": "Runs in the developer's IDE/terminal with action approval modes (including a stricter approval mode versus 'brave' auto-run); no OS-level kernel-enforced sandbox documented"
+            }
+          ],
+          "methodology": "Review of execution model: approval-gated local execution rather than kernel-level isolation; CI runs inherit the pipeline's isolation",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains AI plans and usage",
+              "url": "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html",
+              "date": "2026-07-09",
+              "value": "Organization-level administration via JetBrains AI Enterprise and IDE Services: centralized provisioning, quota management, and model allowlisting for teams"
+            }
+          ],
+          "methodology": "Review of enterprise administration, license/quota controls, and per-user authentication (JetBrains Account, API keys, BYOK)",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 62,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "Junie processes repository content and PR diffs (including via GitHub Actions/GitLab automation); injection-specific mitigations are not publicly documented"
+            }
+          ],
+          "methodology": "Threat surface analysis of PR-review automation and repo content processing; no published injection defense documentation or third-party research found",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains Trust Center",
+              "url": "https://trust-center.jetbrains.com/",
+              "date": "2026-07-09",
+              "value": "SOC 2 Type II report specifically covering Junie is available in the JetBrains Trust Center, alongside penetration testing reports and infrastructure security documentation"
+            }
+          ],
+          "methodology": "Review of Junie-scoped SOC 2 Type II attestation and JetBrains infrastructure security posture",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 45,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "JetBrains Junie GitHub repository",
+              "url": "https://github.com/JetBrains/junie",
+              "date": "2026-07-09",
+              "value": "Proprietary product under JetBrains AI Service Terms; public GitHub repo hosts installers, release management, and issue tracking, not agent source code"
+            }
+          ],
+          "methodology": "License and source availability review; open ACP protocol adoption partially offsets the closed core",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 73,
+      "criteria": {
+        "data_retention": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains AI plans and usage",
+              "url": "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html",
+              "date": "2026-07-09",
+              "value": "JetBrains AI terms commit to not using customer code to train models; detailed collection settings and opt-outs are configurable per organization"
+            }
+          ],
+          "methodology": "Review of JetBrains AI service terms, training commitments, and data collection settings",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains Trust Center",
+              "url": "https://trust-center.jetbrains.com/",
+              "date": "2026-07-09",
+              "value": "SOC 2 Type II (Junie-scoped) and GDPR compliance documentation available; JetBrains is an EU-headquartered (Czech) vendor with long-standing enterprise compliance practice, including ISO 27001-aligned controls per its security knowledge base"
+            }
+          ],
+          "methodology": "Compliance certification and documentation review via the JetBrains Trust Center (NDA-gated reports)",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains Junie GitHub repository",
+              "url": "https://github.com/JetBrains/junie",
+              "date": "2026-07-09",
+              "value": "Default operation routes code to third-party LLM providers (Anthropic, OpenAI, Google); BYOK (including xAI, OpenRouter, GitHub Copilot) and local runtimes (Ollama, LM Studio, LiteLLM) let teams control the data path"
+            }
+          ],
+          "methodology": "Data flow analysis of managed model routing versus BYOK/local alternatives",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "Supports any model without lock-in: local runtimes via LiteLLM, LM Studio, and Ollama; JetBrains AI Enterprise offers on-premises deployment for organizations"
+            }
+          ],
+          "methodology": "Deployment options assessment covering local model runtimes and JetBrains AI Enterprise on-prem offering",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 71,
+      "criteria": {
+        "documentation_quality": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Junie by JetBrains",
+              "url": "https://junie.jetbrains.com/",
+              "date": "2026-07-09",
+              "value": "Well-maintained documentation across the Junie site, JetBrains Help (licensing, quotas), and GA/CLI blog posts covering IDE, CLI, and CI usage"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review across product site, help center, and blogs",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "Step-by-step visible actions in the IDE tool window with reviewable diffs; CLI and CI runs produce inspectable logs and PR review comments"
+            }
+          ],
+          "methodology": "Review of in-IDE action visibility, diff review flow, and CI run artifacts",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "Plan Mode documents requirements, technical design, and delivery stages before execution; PR reviews explain findings in project context"
+            }
+          ],
+          "methodology": "Assessment of plan document quality and change justification in reviews",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 40,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "JetBrains Junie GitHub repository",
+              "url": "https://github.com/JetBrains/junie",
+              "date": "2026-07-09",
+              "value": "Closed-source agent; public repo (324 stars) is a distribution and issue-tracking channel only"
+            }
+          ],
+          "methodology": "Open source assessment of agent core and distribution artifacts",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains Junie GitHub repository",
+              "url": "https://github.com/JetBrains/junie",
+              "date": "2026-07-09",
+              "value": "Active Discord community and GitHub issue tracking; backed by JetBrains' large IDE user base, though the standalone Junie community is younger and smaller than incumbent agents'"
+            }
+          ],
+          "methodology": "Community engagement analysis via Discord, GitHub activity, and JetBrains ecosystem reach",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 78,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "Ships inside all JetBrains IDEs with existing project models and run configurations; CLI installs via shell script, Homebrew, or npm; PR review via GitHub Actions and GitLab"
+            }
+          ],
+          "methodology": "Integration surface assessment: zero-setup for the very large existing JetBrains IDE install base",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie CLI beta",
+              "url": "https://blog.jetbrains.com/junie/2026/03/junie-cli-the-llm-agnostic-coding-agent-is-now-in-beta/",
+              "date": "2026-03-18",
+              "value": "CLI and CI/CD execution enable headless automation and PR-review pipelines; primarily a per-developer agent rather than a managed parallel cloud-agent fleet"
+            }
+          ],
+          "methodology": "Assessment of headless/CI usage and parallelism model; no managed cloud sandbox fleet comparable to cloud-agent products",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains AI plans and pricing",
+              "url": "https://www.jetbrains.com/ai-ides/buy/",
+              "date": "2026-07-09",
+              "value": "Fixed subscription tiers: AI Free $0 (small monthly credit quota), AI Pro $10/mo, AI Ultimate $30/mo ($20/mo annual), AI Enterprise custom; credit top-ups at ~$1/credit; BYOK shifts inference cost to the customer's own provider"
+            }
+          ],
+          "methodology": "Pricing model analysis: predictable flat tiers with quota-based credits; complex agentic tasks can exhaust quotas quickly, and quota-to-task mapping is opaque",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "JetBrains AI plans and usage",
+              "url": "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html",
+              "date": "2026-07-09",
+              "value": "Per-user credit/quota usage tracking in the IDE and JetBrains Account; enterprise usage administration via JetBrains AI Enterprise, but no agent-specific observability stack (e.g., OTel export)"
+            }
+          ],
+          "methodology": "Review of quota dashboards and enterprise usage administration; limited dedicated agent telemetry",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "JetBrains blog - Junie out of beta",
+              "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+              "date": "2026-06-17",
+              "value": "GA June 2026 on a unified ACP-based engine, backed by JetBrains' 25-year track record, millions of IDE users, and Junie-scoped SOC 2 Type II attestation"
+            }
+          ],
+          "methodology": "Maturity assessment combining GA status, vendor stability, and compliance attestation; agent itself has only weeks of GA history",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 85,
+      "notes": "Top-ranked on SWE-Rebench; strongest inside JetBrains IDEs where it leverages the debugger, inspections, and project model"
+    },
+    "data-analysis": {
+      "overall": 70,
+      "notes": "Good for code-centric data work (SQL via DataGrip connections, scripts); not an analytics product"
+    },
+    "research-assistant": {
+      "overall": 62,
+      "notes": "Codebase exploration and PR-context research are solid; general research is out of scope"
+    },
+    "education": {
+      "overall": 72,
+      "notes": "Plan documents and debugger-driven walkthroughs are instructive; free tier gives students a low-cost entry point"
+    }
+  },
+  "best_for": [
+    "Teams already standardized on JetBrains IDEs wanting a native agent with zero new tooling",
+    "Developers who value debugger-driven fixing over log-and-retry agent loops",
+    "Organizations wanting model choice: managed models, BYOK, or fully local runtimes",
+    "PR review automation in GitHub Actions/GitLab with project-context awareness",
+    "Cost-sensitive teams preferring flat subscription tiers over usage-metered agents"
+  ],
+  "strengths": [
+    "Ranked #1 coding agent on independent SWE-Rebench (61.6% resolved, 72.7% pass@5)",
+    "Debugs with the IDE's real debugger: breakpoints, stack inspection, expression evaluation",
+    "Plan Mode produces structured requirements/design/delivery-stage documents before coding",
+    "LLM-agnostic: BYOK (Anthropic, OpenAI, Google, xAI, OpenRouter) and local runtimes (Ollama, LM Studio, LiteLLM)",
+    "Runs everywhere JetBrains users work: IDE, terminal CLI, GitHub Actions, GitLab",
+    "Enterprise trust anchored in JetBrains: Junie-scoped SOC 2 Type II, Trust Center, and AI Enterprise on-prem option",
+    "Predictable flat pricing tiers, including a free tier"
+  ],
+  "limitations": [
+    "GA only since June 2026; limited production track record and third-party security research",
+    "Closed-source core; public GitHub repo is distribution-only",
+    "No OS-level sandbox for local execution; safety relies on approval modes",
+    "Prompt injection defenses are not publicly documented despite automated PR-review surface",
+    "Credit quotas are small (roughly 3/10/35 credits per month across Free/Pro/Ultimate) and complex agent tasks consume them quickly",
+    "No managed cloud agent fleet; parallel/background execution is bounded by local and CI resources",
+    "Strongest value requires the JetBrains IDE ecosystem; CLI-only users lose the debugger advantage"
+  ],
+  "metadata": {
+    "repository": "https://github.com/JetBrains/junie",
+    "license": "Proprietary (JetBrains AI Service Terms); public repo for distribution and issues",
+    "supported_models": [
+      "JetBrains-managed frontier models (Anthropic, OpenAI, Google)",
+      "BYOK: Anthropic, OpenAI, Google, xAI, OpenRouter, GitHub Copilot",
+      "Local: Ollama, LM Studio, LiteLLM"
+    ],
+    "programming_languages": [
+      "All languages supported by JetBrains IDEs (Java, Kotlin, Python, Go, JS/TS, PHP, C#, C++, Ruby, Rust, etc.)"
+    ],
+    "deployment_type": "IDE-embedded and local CLI; CI via GitHub Actions/GitLab; on-prem via JetBrains AI Enterprise",
+    "tool_support": [
+      "IDE debugger (agentic debugging)",
+      "Plan Mode",
+      "PR review (GitHub Actions, GitLab, CLI, plugin)",
+      "Database access via DataGrip connections",
+      "Agent Communication Protocol (ACP)"
+    ],
+    "first_release": "Preview January 2025; CLI beta March 2026; GA June 2026",
+    "pricing": "Included in JetBrains AI tiers: AI Free $0, AI Pro $10/mo, AI Ultimate $30/mo ($20/mo annual), AI Enterprise custom; credit-quota based with ~$1/credit top-ups; BYOK available"
+  },
+  "related_entities": [
+    "claude-code",
+    "openai-codex",
+    "github-copilot-coding-agent",
+    "cursor-agent",
+    "gemini-cli"
+  ],
+  "tags": [
+    "coding-agent",
+    "ide-native",
+    "jetbrains",
+    "llm-agnostic",
+    "byok"
+  ]
+}

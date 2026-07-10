@@ -2,12 +2,12 @@
   "id": "mcp-server-elasticsearch",
   "type": "mcp",
   "name": "MCP Elasticsearch Server",
-  "provider": "Community",
-  "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "provider": "Elastic",
+  "version": "0.4.6 (deprecated; successor: Agent Builder MCP)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Community-maintained MCP server for Elasticsearch search and analytics operations. Enables AI models to perform full-text search, aggregations, indexing, and data analytics on large-scale datasets. Essential for AI-powered search optimization, log analysis, and business intelligence workflows.",
-  "website": "https://github.com/modelcontextprotocol/servers",
+  "description": "Official Elastic MCP server (elastic/mcp-server-elasticsearch) exposing read-oriented tools - list_indices, get_mappings, search, esql, get_shards - for full-text search, ES|QL, and analytics. IMPORTANT: the standalone server is deprecated (v0.4.6, 2025-10-24, critical security updates only); Elastic directs users to the Agent Builder MCP endpoint ({KIBANA_URL}/api/agent_builder/mcp), GA in Elastic 9.2+ and Elasticsearch Serverless, with API key authentication.",
+  "website": "https://github.com/elastic/mcp-server-elasticsearch",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 84,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Search relevance testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "aggregation_reliability": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Aggregation accuracy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "large_index_performance": {
           "score": 78,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cluster_stability": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Cluster stability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 83,
@@ -74,18 +74,18 @@
           "evidence": [
             {
               "source": "Implementation Review",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
               "value": "Handles Elasticsearch errors with retry and timeout management"
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 69,
+      "overall_score": 75,
       "criteria": {
         "authentication_security": {
           "score": 78,
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "credential_exposure_risk": {
           "score": 62,
@@ -113,49 +113,49 @@
             }
           ],
           "methodology": "Credential security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_injection_risk": {
-          "score": 65,
+          "score": 68,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Security Analysis",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "AI can construct arbitrary queries and scripts"
+              "source": "elastic/mcp-server-elasticsearch Repository",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
+              "value": "AI can construct arbitrary search and ES|QL queries; blast radius is limited to reads since no write tools exist, but expensive queries and broad data reads remain possible"
             }
           ],
           "methodology": "Injection vulnerability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "index_modification_risk": {
-          "score": 60,
+          "score": 82,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Elasticsearch API",
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html",
-              "date": "2025-11-16",
-              "value": "AI can index, update, and delete documents within permissions"
+              "source": "elastic/mcp-server-elasticsearch Repository",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
+              "value": "The official server ships only read-oriented tools (list_indices, get_mappings, search, esql, get_shards); it exposes no document indexing, update, or write tools"
             }
           ],
-          "methodology": "Operation authorization testing",
-          "last_verified": "2025-11-09"
+          "methodology": "Operation authorization testing; raised from 60 because the official Elastic server's tool surface is read-only, unlike earlier community servers with write tools",
+          "last_verified": "2026-07-09"
         },
         "index_deletion_risk": {
-          "score": 68,
-          "confidence": "medium",
+          "score": 85,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Implementation Review",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Can delete indices if permissions allow"
+              "source": "elastic/mcp-server-elasticsearch Repository",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
+              "value": "No index deletion or index management tools are exposed by the official server"
             }
           ],
-          "methodology": "Destructive operation testing",
-          "last_verified": "2025-11-09"
+          "methodology": "Destructive operation testing; raised from 68 as the official tool surface contains no deletion capability",
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 80,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_in_logs": {
           "score": 60,
@@ -196,13 +196,13 @@
           "evidence": [
             {
               "source": "Privacy Analysis",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
               "value": "Log data and application logs may contain PII"
             }
           ],
           "methodology": "PII exposure assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "field_level_security": {
           "score": 72,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Field security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 68,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "index_pattern_exposure": {
           "score": 70,
@@ -238,13 +238,13 @@
           "evidence": [
             {
               "source": "Privacy Analysis",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
               "value": "Index names and mappings may reveal data structure"
             }
           ],
           "methodology": "Index privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -257,13 +257,13 @@
           "evidence": [
             {
               "source": "Elasticsearch MCP Docs",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
               "value": "Good documentation but community-maintained with evolving coverage"
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_visibility": {
           "score": 82,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Query logging assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 88,
@@ -285,13 +285,13 @@
           "evidence": [
             {
               "source": "GitHub Repository",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Open source community implementation"
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
+              "value": "Official Elastic implementation, open source under Apache 2.0 (Rust, ~686 stars)"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 70,
@@ -299,18 +299,18 @@
           "evidence": [
             {
               "source": "MCP Server Documentation",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
               "value": "Clear but incomplete documentation of supported Elasticsearch APIs"
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 81,
+      "overall_score": 76,
       "criteria": {
         "ease_of_setup": {
           "score": 80,
@@ -318,13 +318,13 @@
           "evidence": [
             {
               "source": "Setup Documentation",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
               "value": "Requires Elasticsearch connection URL and credentials"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "search_performance": {
           "score": 82,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 83,
@@ -352,35 +352,35 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_coverage": {
-          "score": 80,
+          "score": 72,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Elasticsearch MCP Server",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Covers search, aggregations, indexing, and index management"
+              "source": "elastic/mcp-server-elasticsearch Repository",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
+              "value": "Deliberately narrow read-only surface: search, ES|QL, index listing, mappings, and shard info; no indexing or index management tools. Broader/custom tool coverage now comes from the Agent Builder MCP endpoint"
             }
           ],
-          "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "methodology": "Feature coverage assessment; lowered from 80 as the official server's surface is narrower than the previously described community coverage",
+          "last_verified": "2026-07-09"
         },
         "community_support": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 62,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "GitHub Community",
-              "url": "https://github.com/modelcontextprotocol/servers/discussions",
-              "date": "2025-11-16",
-              "value": "Community-maintained with moderate activity"
+              "source": "elastic/mcp-server-elasticsearch Repository",
+              "url": "https://github.com/elastic/mcp-server-elasticsearch",
+              "date": "2026-07-09",
+              "value": "Repository carries a deprecation notice: only critical security updates going forward; users are directed to the Agent Builder MCP endpoint in Elastic 9.2+ / Serverless"
             }
           ],
-          "methodology": "Community support assessment",
-          "last_verified": "2025-11-09"
+          "methodology": "Community support assessment; lowered from 75 due to the standalone server's deprecation",
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -434,36 +434,42 @@
     "Educators teaching search technology and data analytics"
   ],
   "strengths": [
-    "Highly accurate full-text search with relevance scoring",
-    "Powerful aggregation framework for analytics and insights",
-    "Built on mature Elasticsearch client libraries",
+    "Highly accurate full-text search with relevance scoring, plus ES|QL query support",
+    "Official Elastic implementation, open source under Apache 2.0",
+    "Read-only tool surface limits blast radius (no write or index management tools)",
     "Excellent for log analysis and business intelligence",
-    "Open source community implementation",
-    "Comprehensive audit logging in X-Pack Security"
+    "Supports stdio and streamable-HTTP transports",
+    "Clear migration path to the GA Agent Builder MCP endpoint with custom tools"
   ],
   "limitations": [
+    "DEPRECATED: standalone server receives only critical security updates; Elastic directs users to the Agent Builder MCP endpoint (Elastic 9.2+/Serverless)",
     "Search results and indexed documents exposed to LLM provider",
     "Log data may contain PII and sensitive information",
-    "AI can modify and delete indices within permission scope",
-    "Elasticsearch credentials accessible to AI",
-    "Performance issues with very large indices without optimization",
-    "Field-level security requires X-Pack and careful configuration"
+    "Elasticsearch credentials/API keys stored in local client configuration",
+    "Arbitrary search and ES|QL queries can be expensive on large indices",
+    "Field-level security requires platform security features and careful configuration"
   ],
   "metadata": {
-    "license": "MIT",
+    "license": "Apache 2.0",
     "supported_platforms": [
-      "All platforms with Node.js/Python"
+      "All platforms (Rust binary, Docker); Agent Builder MCP via Kibana endpoint"
     ],
     "programming_languages": [
-      "TypeScript",
-      "Python"
+      "Rust"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "api_dependency": "Elasticsearch client libraries",
-    "authentication": "API keys, Basic auth, X-Pack Security",
-    "first_release": "2024-11",
-    "maintained_by": "Community"
+    "github_repo": "https://github.com/elastic/mcp-server-elasticsearch",
+    "status": "Deprecated (critical security updates only) as of the v0.4.x line",
+    "successor": "Elastic Agent Builder MCP endpoint: {KIBANA_URL}/api/agent_builder/mcp (GA in Elastic 9.2+ and Elasticsearch Serverless)",
+    "latest_release": "v0.4.6 (2025-10-24)",
+    "transport_types": [
+      "stdio",
+      "streamable-http"
+    ],
+    "api_dependency": "Elasticsearch REST API",
+    "authentication": "Elasticsearch API keys or username/password; Agent Builder endpoint uses Kibana API keys",
+    "first_release": "2025",
+    "maintained_by": "Elastic"
   },
   "tags": [
     "search",

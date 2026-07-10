@@ -1,0 +1,471 @@
+{
+  "id": "lovable",
+  "type": "agent",
+  "name": "Lovable",
+  "provider": "Lovable AB",
+  "version": "Lovable Agent (2026)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Leading prompt-to-app 'vibe coding' platform from Stockholm-based Lovable AB (ex GPT Engineer): natural language in, deployed full-stack web app out, with Supabase-backed Lovable Cloud. Launched Nov 2024; crossed $400M ARR in Feb 2026 with ~8M users ($330M Series B at $6.6B, Dec 2025). The epicenter of the vibe-coding security debate: its own posture is certified (SOC 2, ISO 27001), but apps it generates have repeatedly shipped without proper access controls.",
+  "website": "https://lovable.dev/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 67,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Lovable added $100M in revenue in a month",
+              "url": "https://techcrunch.com/2026/03/11/lovable-says-it-added-100m-in-revenue-last-month-alone-with-just-146-employees/",
+              "date": "2026-03-11",
+              "value": "8M+ users shipping working apps at scale (25M+ projects, 1M+ new projects weekly by mid-2026) evidences strong completion on prototype- and MVP-class builds"
+            }
+          ],
+          "methodology": "Assessment of prompt-to-working-app completion from adoption data and user reports; reliability drops on complex multi-service apps and long iterative sessions",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Lovable Blog - Introducing Lovable Cloud and AI",
+              "url": "https://lovable.dev/blog/lovable-cloud",
+              "date": "2025-09-29",
+              "value": "Lovable Cloud provisions Supabase-backed databases, auth, storage, and edge functions automatically; Lovable AI routes model calls without user API keys"
+            }
+          ],
+          "methodology": "Review of platform tool reliability across code generation, backend provisioning, and deployment",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Lovable Documentation",
+              "url": "https://docs.lovable.dev/",
+              "date": "2026-06-01",
+              "value": "Agent mode decomposes feature requests into multi-step build plans across frontend, backend, and integrations, though planning is shallower than spec-first tools"
+            }
+          ],
+          "methodology": "Evaluation of task decomposition and plan adherence on multi-feature builds",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Lovable Blog - How Lovable protects your apps automatically",
+              "url": "https://lovable.dev/blog/how-lovable-protects-your-apps-automatically",
+              "date": "2026-06-01",
+              "value": "Project chat history and a 'security memory' of past findings persist per project; knowledge files carry conventions across sessions"
+            }
+          ],
+          "methodology": "Review of project-scoped context, chat history, and knowledge persistence",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Lovable Documentation",
+              "url": "https://docs.lovable.dev/",
+              "date": "2026-06-01",
+              "value": "'Try to Fix' loops resolve many build errors automatically, but users commonly report credit-consuming fix loops on stubborn errors"
+            }
+          ],
+          "methodology": "Assessment of automatic error resolution behavior and documented failure loops from user reports",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 58,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Lovable Documentation",
+              "url": "https://docs.lovable.dev/",
+              "date": "2026-06-01",
+              "value": "Single-agent model per project with team collaboration features; no parallel multi-agent orchestration comparable to IDE-native agent platforms"
+            }
+          ],
+          "methodology": "Review of multi-agent and team collaboration capabilities",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 51,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 64,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Lovable Security",
+              "url": "https://lovable.dev/security",
+              "date": "2026-06-01",
+              "value": "Generation and hosting run entirely in Lovable's managed cloud (no local execution); Lovable Cloud is fronted by WAF controls, network isolation, encrypted storage, and adaptive rate limiting"
+            }
+          ],
+          "methodology": "Security architecture review of the managed-cloud execution model; no user-machine exposure, but platform-side controls are the single boundary",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Lovable Pricing",
+              "url": "https://lovable.dev/pricing",
+              "date": "2026-07-09",
+              "value": "SSO and security-center features are gated to Business ($50/mo) and Enterprise tiers; SOC 2 Type II and ISO 27001:2022 certifications cover the platform's own controls"
+            }
+          ],
+          "methodology": "Review of identity and org-level controls across plan tiers",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 46,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "The Hacker News - Guardio VibeScamming benchmark",
+              "url": "https://thehackernews.com/2025/04/lovable-ai-found-most-vulnerable-to.html",
+              "date": "2025-04-09",
+              "value": "Guardio's VibeScamming benchmark scored Lovable 1.8/10 (worst of tested tools): it generated and auto-hosted working phishing pages with minimal jailbreaking, evidencing weak misuse and injection resistance"
+            }
+          ],
+          "methodology": "Assessment of resistance to adversarial prompting and misuse, anchored on the published Guardio benchmark and Proofpoint reports of tens of thousands of Lovable-hosted phishing URLs monthly since Feb 2025",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 52,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "The Register - Lovable denies data leak, cites 'intentional behavior'",
+              "url": "https://www.theregister.com/2026/04/20/lovable_denies_data_leak/",
+              "date": "2026-04-20",
+              "value": "A February 2026 backend regression exposed public-project chat histories, source code, and embedded credentials via a BOLA flaw until 2026-04-20; the researcher's report was initially dismissed as 'intentional behavior' before a fix shipped within hours of public disclosure"
+            },
+            {
+              "source": "NVD - CVE-2025-48757",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-48757",
+              "date": "2025-05-29",
+              "value": "CVE-2025-48757: Lovable-generated apps shipped without Supabase Row Level Security; a scan of 1,645 apps found ~10.3% exposing sensitive data to unauthenticated requests. No platform patch, remediated via workarounds and later scanning"
+            }
+          ],
+          "methodology": "Review of platform tenant isolation (one confirmed 2026 exposure incident) plus the systemic isolation failure in generated apps (missing RLS); both directions weigh on this score",
+          "last_verified": "2026-07-09",
+          "notes": "Systemic risk: the platform's certified posture does not transfer to the apps it produces. The Moltbook breach (1.5M agent API tokens via a client-exposed Supabase key without RLS, Wiz, Feb 2026) was not attributed to Lovable but is the same vibe-coding/no-RLS pattern at ecosystem scale."
+        },
+        "open_source_transparency": {
+          "score": 32,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Lovable",
+              "url": "https://lovable.dev/",
+              "date": "2026-06-01",
+              "value": "Platform and agent are proprietary (the predecessor GPT Engineer was open source); generated app code is exportable to GitHub, which aids auditability of outputs but not of the platform"
+            }
+          ],
+          "methodology": "Source availability assessment; credit for full code export, none for the closed platform",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Score the product two ways: Lovable's own corporate posture (SOC 2 Type II, ISO 27001, WAF, security scanning) is solid mid-tier; the systemic security of what it produces is the industry's cautionary tale (CVE-2025-48757, ~10% of scanned apps leaking data, phishing abuse at scale)."
+    },
+    "privacy_compliance": {
+      "overall_score": 54,
+      "criteria": {
+        "data_retention": {
+          "score": 56,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Lovable Privacy Policy",
+              "url": "https://lovable.dev/privacy",
+              "date": "2026-06-01",
+              "value": "GDPR-aligned privacy policy and DPA; the Feb-Apr 2026 exposure of public-project chat histories showed prompts/chat data are retained and were insufficiently protected until all public projects were converted private"
+            }
+          ],
+          "methodology": "Review of retention practices and the 2026 incident's implications for stored prompt/chat data",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 76,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Lovable Security",
+              "url": "https://lovable.dev/security",
+              "date": "2026-06-01",
+              "value": "SOC 2 Type I and Type II, ISO 27001:2022 certified (Aug 2025), GDPR DPA available, public trust center at trust.lovable.dev; EU (Swedish) company subject to GDPR natively"
+            }
+          ],
+          "methodology": "Compliance documentation and certification assessment",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Cloud Press Corner - Lovable expands collaboration",
+              "url": "https://www.googlecloudpresscorner.com/2026-06-03-Lovable-Expands-Collaboration-With-Google-Cloud-to-Scale-AI-Powered-Software-Creation",
+              "date": "2026-06-03",
+              "value": "Prompts and code are processed by Gemini (default via Lovable AI) and Anthropic Claude via Google Cloud/Vertex under Lovable's multi-year Google Cloud deal; app backends run on Supabase"
+            }
+          ],
+          "methodology": "Data flow analysis across model providers and backend subprocessors",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 25,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Lovable Documentation",
+              "url": "https://docs.lovable.dev/",
+              "date": "2026-06-01",
+              "value": "Fully hosted SaaS; no self-hosted or offline option. Code export to GitHub allows leaving the platform but not running it locally"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 62,
+      "criteria": {
+        "documentation_quality": {
+          "score": 74,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Lovable Documentation",
+              "url": "https://docs.lovable.dev/",
+              "date": "2026-06-01",
+              "value": "Well-organized docs covering features, security view, integrations, and a public changelog; security guidance for builders has expanded materially since 2025"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Lovable Documentation - Project security view",
+              "url": "https://docs.lovable.dev/features/security-view",
+              "date": "2026-06-01",
+              "value": "Chat history records agent actions per project, all generated code is inspectable/exportable, and the security view surfaces scan findings; there is no step-level tool-call audit trail comparable to agent IDEs"
+            }
+          ],
+          "methodology": "Review of action visibility, code inspectability, and audit trail depth",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Lovable Blog - How Lovable protects your apps automatically",
+              "url": "https://lovable.dev/blog/how-lovable-protects-your-apps-automatically",
+              "date": "2026-06-01",
+              "value": "The agent narrates what it builds and the June 2026 security features explain findings and fixes, but architectural decisions are largely implicit for the non-technical target audience"
+            }
+          ],
+          "methodology": "Assessment of build rationale quality, considering the platform's non-developer audience",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "TechCrunch - Lovable becomes a unicorn",
+              "url": "https://techcrunch.com/2025/07/17/lovable-becomes-a-unicorn-with-200m-series-a-just-8-months-after-launch/",
+              "date": "2025-07-17",
+              "value": "Grew out of the open-source GPT Engineer project (50K+ GitHub stars), but the Lovable platform itself is closed source; users own and can export generated code"
+            }
+          ],
+          "methodology": "Open source assessment crediting OSS heritage and code ownership, not platform openness",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "TechCrunch - Lovable added $100M in revenue in a month",
+              "url": "https://techcrunch.com/2026/03/11/lovable-says-it-added-100m-in-revenue-last-month-alone-with-just-146-employees/",
+              "date": "2026-03-11",
+              "value": "~8M users, $400M ARR (Feb 2026), 25M+ projects, and one of the largest builder communities in AI; fast feature cadence through 2026"
+            }
+          ],
+          "methodology": "Community engagement and release cadence analysis",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Transparency caveat: the April 2026 disclosure was mishandled at first (researcher's report dismissed as 'intentional behavior', HackerOne triage failure) before Lovable published a same-week postmortem admitting its response 'missed the mark' (lovable.dev/blog/our-response-to-the-april-2026-incident, 2026-04-22)."
+    },
+    "operational_excellence": {
+      "overall_score": 70,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Lovable",
+              "url": "https://lovable.dev/",
+              "date": "2026-06-01",
+              "value": "Prompt-to-published-app in minutes with built-in hosting, auth, and database; the lowest barrier to entry of any evaluated agent, aimed at the 99% who cannot code"
+            }
+          ],
+          "methodology": "Onboarding and integration friction assessment",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Cloud Press Corner - Lovable expands collaboration",
+              "url": "https://www.googlecloudpresscorner.com/2026-06-03-Lovable-Expands-Collaboration-With-Google-Cloud-to-Scale-AI-Powered-Software-Creation",
+              "date": "2026-06-03",
+              "value": "Multi-year Google Cloud deal with a 5x infrastructure expansion; platform processes 1M+ new projects weekly and 600M monthly visits"
+            }
+          ],
+          "methodology": "Platform scalability assessment; generated apps inherit Supabase scaling characteristics",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 64,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Lovable Pricing",
+              "url": "https://lovable.dev/pricing",
+              "date": "2026-07-09",
+              "value": "Free (5 daily credits, capped ~30/mo); Pro $25/mo for 100 credits; Business $50/mo; Enterprise custom. Credits per message are transparent, but fix-loops burn credits and a separate Lovable Cloud usage layer bills as apps scale"
+            }
+          ],
+          "methodology": "Pricing model analysis; simple tiers offset by variable credit consumption and a second usage-based cloud billing layer",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Lovable Blog - How Lovable protects your apps automatically",
+              "url": "https://lovable.dev/blog/how-lovable-protects-your-apps-automatically",
+              "date": "2026-06-01",
+              "value": "Automatic pre-publish security scan (10-15s), opt-in Deep Security Scan (2-4 min) with Auto-Fix, dependency checks, and a per-project security view; app-level operational observability remains thin"
+            }
+          ],
+          "methodology": "Monitoring and security posture visibility assessment",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Vibe-coding startup Lovable raises $330M at a $6.6B valuation",
+              "url": "https://techcrunch.com/2025/12/18/vibe-coding-startup-lovable-raises-330m-at-a-6-6b-valuation/",
+              "date": "2025-12-18",
+              "value": "Strong vendor viability ($330M Series B at $6.6B closed 2025-12-18; $12B round in talks per Forbes 2026-06-05), but only ~$20M of ARR is enterprise, and generated apps routinely need security hardening before production use"
+            }
+          ],
+          "methodology": "Vendor maturity versus output production-readiness assessment; company trajectory is excellent, generated-app readiness is the persistent gap",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 74,
+      "notes": "Category-defining for prompt-to-app prototypes and MVPs; not designed for existing codebases, and outputs need security review before production"
+    },
+    "content-creation": {
+      "overall": 76,
+      "notes": "Excellent for landing pages, marketing sites, and interactive content shipped directly to hosting"
+    },
+    "education": {
+      "overall": 72,
+      "notes": "Free tier and instant results make it a popular way for non-programmers to learn product building, though it teaches little about the underlying code"
+    },
+    "data-analysis": {
+      "overall": 58,
+      "notes": "Can build dashboards backed by Supabase, but has no analytics tooling of its own and struggles with complex data workloads"
+    }
+  },
+  "best_for": [
+    "Founders and non-technical builders shipping MVPs, internal tools, and landing pages from prompts",
+    "Rapid prototyping and idea validation before committing engineering resources",
+    "Small teams wanting integrated hosting, auth, and database without DevOps",
+    "Design-forward web apps where speed to publish matters more than architectural control"
+  ],
+  "strengths": [
+    "Fastest prompt-to-published-app experience in the category; 8M+ users and 25M+ projects validate the workflow",
+    "Lovable Cloud integrates Supabase database, auth, storage, and model access with zero setup",
+    "Certified corporate posture: SOC 2 Type I/II, ISO 27001:2022, GDPR DPA, public trust center",
+    "Meaningful security response since 2025: automatic pre-publish scans, Deep Security Scan with Auto-Fix, security memory, and dependency checks (June 2026)",
+    "Full code ownership and GitHub export prevent platform lock-in",
+    "Exceptional commercial trajectory: $400M ARR (Feb 2026) with 146 employees, $6.6B valuation (Dec 2025)"
+  ],
+  "limitations": [
+    "Systemic output-security problem: CVE-2025-48757 (missing Supabase RLS) exposed ~10.3% of 1,645 scanned apps, and the pattern persists across the vibe-coding ecosystem (cf. the unattributed Moltbook breach exposing 1.5M tokens)",
+    "Feb-Apr 2026 platform incident exposed public-project chat histories and source code; initial dismissal of the researcher's report damaged disclosure credibility",
+    "Guardio's VibeScamming benchmark (1.8/10) and Proofpoint data show the platform is heavily abused to generate and host phishing pages",
+    "Non-technical users cannot evaluate the security of what they ship; scanning helps but is not enforced remediation",
+    "Credit consumption is unpredictable on error-fix loops, plus a second usage-based cloud billing layer",
+    "Cloud-only, closed-source platform with limited enterprise controls below the $50/mo Business tier"
+  ],
+  "metadata": {
+    "license": "Proprietary (generated code owned by users, exportable to GitHub)",
+    "supported_models": [
+      "Google Gemini (default via Lovable AI, no user API keys)",
+      "Anthropic Claude via Google Cloud/Vertex partnership"
+    ],
+    "programming_languages": [
+      "TypeScript/React frontends with Supabase (Postgres) backends"
+    ],
+    "deployment_type": "Fully hosted SaaS (Lovable Cloud on Google Cloud + Supabase); one-click publish with custom domains",
+    "tool_support": [
+      "Supabase database, auth, and storage provisioning",
+      "Built-in hosting and publishing",
+      "GitHub two-way sync and code export",
+      "Security scanning (pre-publish + Deep Security Scan with Auto-Fix)",
+      "Figma import and visual edits"
+    ],
+    "first_release": "November 2024 (evolved from the open-source GPT Engineer project)",
+    "pricing": "Free (5 daily credits); Pro $25/mo (100 credits); Business $50/mo (SSO, security center); Enterprise custom; separate usage-based Lovable Cloud billing",
+    "company": "Lovable AB (Stockholm; $200M Series A at $1.8B Jul 2025; $330M Series B at $6.6B closed 2025-12-18 led by CapitalG and Menlo; $400M ARR Feb 2026 with ~8M users and 146 employees; ~$12B round in talks as of Jun 2026)",
+    "security_incidents": "CVE-2025-48757 (generated apps missing Supabase RLS; disclosed 2025-05-29, no platform patch, mitigated via scanning/workarounds; CVSS scored 8.26-9.3 depending on source); Feb 3 - Apr 20, 2026 backend regression exposing public-project chat histories and source code (fixed within ~2h of public disclosure, postmortem 2026-04-22)"
+  },
+  "related_entities": [
+    "replit-agent",
+    "cursor-agent",
+    "github-copilot-coding-agent",
+    "devin"
+  ],
+  "tags": [
+    "app-builder",
+    "vibe-coding",
+    "no-code",
+    "proprietary"
+  ]
+}

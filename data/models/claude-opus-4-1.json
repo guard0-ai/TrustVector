@@ -3,10 +3,10 @@
   "type": "model",
   "name": "Claude Opus 4.1",
   "provider": "Anthropic",
-  "version": "20250530",
-  "last_evaluated": "2025-11-07",
+  "version": "20250805",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Anthropic's most powerful model with state-of-the-art reasoning, ASL-3 safety level, and exceptional performance on complex tasks. Flagship model for mission-critical applications.",
+  "description": "DEPRECATED: Anthropic deprecated Claude Opus 4.1 (claude-opus-4-1-20250805) on 2026-06-05; it will be retired on 2026-08-05 and requests will then fail. Recommended replacement: Claude Opus 4.8. Historically a flagship model with state-of-the-art reasoning, ASL-3 safety level, and exceptional performance on complex tasks.",
   "website": "https://www.anthropic.com/claude",
 
   "trust_vector": {
@@ -25,7 +25,7 @@
             }
           ],
           "methodology": "Coding benchmarks and real-world engineering tasks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 98,
@@ -45,7 +45,7 @@
             }
           ],
           "methodology": "PhD-level reasoning and mathematics benchmarks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 95,
@@ -59,7 +59,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 94,
@@ -73,7 +73,7 @@
             }
           ],
           "methodology": "Internal consistency testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "2.1s",
@@ -87,7 +87,7 @@
             }
           ],
           "methodology": "Real-world API latency measurements",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "4.2s",
@@ -101,7 +101,7 @@
             }
           ],
           "methodology": "95th percentile measurements",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "200,000 tokens",
@@ -115,21 +115,21 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Anthropic Status",
-              "url": "https://status.anthropic.com/",
-              "date": "2025-11-01",
-              "value": "99.95% uptime (last 90 days)"
+              "source": "Anthropic Status Page",
+              "url": "https://status.claude.com/",
+              "date": "2026-07-09",
+              "value": "Claude API uptime 99.57% (last 90 days); model still served until retirement on 2026-08-05"
             }
           ],
           "methodology": "Historical uptime data",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Highest reasoning capability among all models. Best for extremely complex, mission-critical tasks requiring maximum intelligence."
@@ -150,7 +150,7 @@
             }
           ],
           "methodology": "OWASP LLM security testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 95,
@@ -164,7 +164,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 88,
@@ -178,7 +178,7 @@
             }
           ],
           "methodology": "Privacy policy and data handling review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 96,
@@ -192,7 +192,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 90,
@@ -206,7 +206,7 @@
             }
           ],
           "methodology": "API security feature review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Industry-leading security with ASL-3 safety classification. Best-in-class for high-risk applications."
@@ -227,7 +227,7 @@
             }
           ],
           "methodology": "Enterprise documentation review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 95,
@@ -241,7 +241,7 @@
             }
           ],
           "methodology": "Privacy policy analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "0 days (ephemeral)",
@@ -255,7 +255,7 @@
             }
           ],
           "methodology": "Terms of service review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 90,
@@ -269,7 +269,7 @@
             }
           ],
           "methodology": "Data protection capabilities review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 94,
@@ -283,7 +283,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 98,
@@ -297,7 +297,7 @@
             }
           ],
           "methodology": "Data handling practices review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional privacy with zero retention and HIPAA eligibility. Best for highly regulated industries."
@@ -318,7 +318,7 @@
             }
           ],
           "methodology": "Reasoning transparency evaluation",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 89,
@@ -332,7 +332,7 @@
             }
           ],
           "methodology": "Factual accuracy testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 85,
@@ -346,7 +346,7 @@
             }
           ],
           "methodology": "Bias benchmarks and testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 88,
@@ -360,7 +360,7 @@
             }
           ],
           "methodology": "Qualitative confidence assessment",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 93,
@@ -374,7 +374,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 80,
@@ -388,7 +388,7 @@
             }
           ],
           "methodology": "Public disclosure review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 97,
@@ -402,14 +402,14 @@
             }
           ],
           "methodology": "Safety mechanism analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent transparency with superior explainability. ASL-3 classification demonstrates commitment to safety and transparency."
     },
 
     "operational_excellence": {
-      "overall_score": 91,
+      "overall_score": 86,
       "criteria": {
         "api_design_quality": {
           "score": 93,
@@ -423,7 +423,7 @@
             }
           ],
           "methodology": "API design review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 92,
@@ -437,10 +437,10 @@
             }
           ],
           "methodology": "SDK quality assessment",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
-          "score": 90,
+          "score": 75,
           "confidence": "high",
           "evidence": [
             {
@@ -448,10 +448,17 @@
               "url": "https://docs.anthropic.com/en/api/versioning",
               "date": "2025-06-01",
               "value": "Clear versioning with deprecation notices"
+            },
+            {
+              "source": "Anthropic Model Deprecations",
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "date": "2026-07-09",
+              "value": "Deprecated 2026-06-05; retirement 2026-08-05; recommended replacement claude-opus-4-8"
             }
           ],
           "methodology": "Versioning policy review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09",
+          "notes": "Score reduced from 90: model is deprecated with retirement imminent (2026-08-05)"
         },
         "monitoring_observability": {
           "score": 88,
@@ -465,7 +472,7 @@
             }
           ],
           "methodology": "Observability tools review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 92,
@@ -479,10 +486,10 @@
             }
           ],
           "methodology": "Support quality assessment",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
-          "score": 91,
+          "score": 84,
           "confidence": "high",
           "evidence": [
             {
@@ -493,7 +500,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 93,
@@ -507,63 +514,63 @@
             }
           ],
           "methodology": "License terms review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Strong operational maturity with enterprise-grade support and documentation. Well-suited for mission-critical applications."
+      "notes": "Deprecated 2026-06-05 with retirement on 2026-08-05; migration target is Claude Opus 4.8 ($5/$25, a 67% price cut vs Opus 4.1's $15/$75). Versioning and ecosystem scores reduced to reflect deprecation."
     }
   },
 
   "use_case_ratings": {
     "code-generation": {
       "overall": 95,
-      "notes": "Exceptional for complex software architecture and system design. Best for mission-critical code requiring maximum reliability.",
-      "alternatives": ["claude-sonnet-4-5", "gpt-5"]
+      "notes": "Exceptional for complex software architecture and system design in its era. Deprecated — migrate to Opus 4.8.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
     },
     "customer-support": {
       "overall": 90,
       "notes": "Excellent quality but higher latency and cost than alternatives. Best for premium support requiring maximum empathy.",
-      "alternatives": ["gpt-5", "claude-sonnet-4-5"]
+      "alternatives": ["claude-sonnet-4-6", "claude-haiku-4-5"]
     },
     "content-creation": {
       "overall": 96,
       "notes": "Outstanding for long-form, complex content requiring deep thinking. Natural, engaging writing.",
-      "alternatives": ["gpt-5"]
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
     },
     "data-analysis": {
       "overall": 97,
-      "notes": "Best-in-class for complex analytical tasks. Exceptional at multi-step reasoning and insight generation.",
-      "alternatives": ["claude-sonnet-4-5"]
+      "notes": "Best-in-class for complex analytical tasks in its era. Exceptional at multi-step reasoning and insight generation.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
     },
     "research-assistant": {
       "overall": 97,
       "notes": "Superior for academic and professional research. Exceptional synthesis and critical analysis.",
-      "alternatives": ["gpt-5", "claude-sonnet-4-5"]
+      "alternatives": ["claude-opus-4-8", "gemini-3-1-pro"]
     },
     "legal-compliance": {
       "overall": 95,
-      "notes": "Best for legal work requiring maximum accuracy and privacy. HIPAA eligible with zero retention.",
-      "alternatives": ["claude-sonnet-4-5"]
+      "notes": "Best for legal work requiring maximum accuracy and privacy in its era. HIPAA eligible with zero retention.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
     },
     "healthcare": {
       "overall": 94,
-      "notes": "Top choice for healthcare with HIPAA eligibility and ASL-3 safety. Maximum privacy and accuracy.",
-      "alternatives": ["claude-sonnet-4-5"]
+      "notes": "Top choice for healthcare in its era with HIPAA eligibility and ASL-3 safety. Maximum privacy and accuracy.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
     },
     "financial-analysis": {
       "overall": 96,
       "notes": "Exceptional for complex financial modeling and risk analysis. Superior quantitative reasoning.",
-      "alternatives": ["gpt-5", "claude-sonnet-4-5"]
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
     },
     "education": {
       "overall": 95,
       "notes": "Outstanding for advanced education with detailed explanations and Socratic teaching.",
-      "alternatives": ["gpt-5", "claude-sonnet-4-5"]
+      "alternatives": ["claude-sonnet-4-6", "gpt-5-5"]
     },
     "creative-writing": {
       "overall": 94,
       "notes": "Excellent for sophisticated creative projects. Strong narrative structure and character depth.",
-      "alternatives": ["gpt-5"]
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
     }
   },
 
@@ -577,6 +584,7 @@
   ],
 
   "limitations": [
+    "DEPRECATED 2026-06-05; retires 2026-08-05 — migrate to Claude Opus 4.8 (claude-opus-4-8) before then",
     "Highest latency (~2.1s p50) and cost among evaluated models",
     "Premium pricing ($15/$75 per 1M tokens)",
     "Overkill for simple tasks - use Sonnet for better value",
@@ -593,6 +601,7 @@
   ],
 
   "not_recommended_for": [
+    "Any new deployments — the model is deprecated and retires 2026-08-05; use Claude Opus 4.8",
     "Simple tasks where Sonnet provides better value",
     "Real-time applications requiring sub-second latency",
     "High-volume, cost-sensitive workloads",
@@ -603,10 +612,11 @@
     "pricing": {
       "input": "$15.00 per 1M tokens",
       "output": "$75.00 per 1M tokens",
-      "notes": "Premium tier - 5x cost of Sonnet, use only when necessary",
-      "last_verified": "2025-11-09"
+      "notes": "Premium tier - 5x cost of Sonnet. Confirmed still $15/$75 as of 2026-07-09; successor Opus 4.8 costs $5/$25, so migration also cuts cost 67%.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 200000,
+    "max_output": 32000,
     "languages": [
       "English",
       "Spanish",
@@ -627,10 +637,10 @@
     "parameters": "Not disclosed"
   },
 
-  "related_entities": ["claude-sonnet-4-5", "gpt-5", "gemini-2-5-pro"],
+  "related_entities": ["claude-opus-4-8", "claude-opus-4-5", "claude-sonnet-4-6", "gpt-5-5"],
 
   "tags": [
-    "flagship",
+    "deprecated",
     "highest-reasoning",
     "asl-3-safety",
     "hipaa-eligible",

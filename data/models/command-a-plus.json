@@ -4,7 +4,7 @@
   "name": "Command A+",
   "provider": "Cohere",
   "version": "20260520",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Cohere's Apache 2.0 open-weight 218B sparse MoE (25B active) unifying Command A, A Reasoning, A Vision, and A Translate. Runs on 2xH100 or a single B200, supports 48 languages, and ships native citations with grounding spans for verifiable RAG.",
   "website": "https://cohere.com/blog/command-a-plus",
@@ -24,8 +24,8 @@
               "value": "Solid coding performance; competitive with open peers but not the headline focus"
             }
           ],
-          "methodology": "Vendor-reported coding benchmarks; independent replication still emerging three weeks post-release",
-          "last_verified": "2026-06-10"
+          "methodology": "Vendor-reported coding benchmarks; independent replication still limited roughly seven weeks post-release",
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 87,
@@ -39,7 +39,7 @@
             }
           ],
           "methodology": "Vendor-reported reasoning benchmarks pending broad independent verification",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 88,
@@ -53,7 +53,7 @@
             }
           ],
           "methodology": "Review of vendor benchmarks emphasizing enterprise RAG, translation, and multilingual tasks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 88,
@@ -67,7 +67,7 @@
             }
           ],
           "methodology": "Review of grounded-generation behavior and enterprise consistency claims",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "2.0s",
@@ -81,7 +81,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "4.5s",
@@ -95,7 +95,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "256,000 tokens",
@@ -109,7 +109,7 @@
             }
           ],
           "methodology": "Provider documentation; A+ figure carried from Command A line pending explicit spec sheet",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 97,
@@ -123,7 +123,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Released 2026-05-20, unifying Command A + A Reasoning + A Vision + A Translate into one model. Efficient serving (25B active, 2xH100 or 1xB200). Benchmarks are vendor-reported and independent verification is still emerging."
@@ -144,7 +144,7 @@
             }
           ],
           "methodology": "Review of vendor security documentation and enterprise deployment guidance against OWASP LLM01 patterns",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 84,
@@ -158,7 +158,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets; deployer-dependent for self-hosted use",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 88,
@@ -172,7 +172,7 @@
             }
           ],
           "methodology": "Analysis of deployment isolation options and data handling practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 86,
@@ -186,7 +186,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 90,
@@ -200,7 +200,7 @@
             }
           ],
           "methodology": "Review of API security features, certifications, and enterprise controls",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strongest security posture among current open-weight releases thanks to Cohere's enterprise platform: SOC 2, VPC/private deployment, and a grounded-generation design that narrows injection surface in RAG."
@@ -221,7 +221,7 @@
             }
           ],
           "methodology": "Review of deployment documentation and residency options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and enterprise data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Configurable; zero retention available in private/VPC and self-hosted deployments",
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Review of terms of service and deployment-dependent retention",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 86,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 90,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 90,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Review of self-hosting and private deployment options enabling zero retention",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Best-in-class privacy posture for an open-weight model: Western jurisdiction, SOC 2, and a full spectrum from SaaS to on-premises. The rare combination of open weights plus enterprise compliance is its core differentiator."
@@ -312,7 +312,7 @@
             }
           ],
           "methodology": "Evaluation of citation fidelity and grounding-span behavior in retrieval workflows",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 88,
@@ -326,7 +326,7 @@
             }
           ],
           "methodology": "Testing on grounded QA workloads; ungrounded closed-book use performs closer to peers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 80,
@@ -340,7 +340,7 @@
             }
           ],
           "methodology": "Review of published bias evaluations and responsibility framework",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 84,
@@ -354,7 +354,7 @@
             }
           ],
           "methodology": "Assessment of confidence expression and grounding-span signaling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 88,
@@ -368,7 +368,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 74,
@@ -382,7 +382,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 84,
@@ -396,7 +396,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms and configurability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Native citations and grounding spans are a genuine trust differentiator: outputs in RAG mode are verifiable against source passages by construction, not post-hoc."
@@ -417,7 +417,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 88,
@@ -431,7 +431,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 84,
@@ -445,7 +445,7 @@
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 84,
@@ -459,7 +459,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 88,
@@ -473,7 +473,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 86,
@@ -487,7 +487,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations, cloud availability, and tooling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 96,
@@ -501,7 +501,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Mature enterprise platform behind a permissively licensed model. Apache 2.0 weights plus SOC 2 SaaS/VPC options give an unusually wide deployment spectrum."
@@ -571,8 +571,8 @@
   ],
 
   "limitations": [
-    "Command A+ pricing not clearly published as of 2026-06-10 (prior Command A was $2.50/$10 per 1M)",
-    "Benchmarks vendor-reported; independent verification still emerging three weeks post-release",
+    "Command A+ API pricing still not published as of 2026-07-09 — per-token rates are 'contact sales' (prior Command A was $2.50/$10 per 1M)",
+    "Benchmarks vendor-reported; independent verification still limited roughly seven weeks post-release",
     "Behind agentic-coding specialists on SWE-bench-style tasks",
     "Training data sources not disclosed in detail",
     "Smaller open-source community than Chinese open-weight ecosystems"
@@ -593,10 +593,10 @@
 
   "metadata": {
     "pricing": {
-      "input": "Not yet published (prior Command A: $2.50 per 1M tokens)",
-      "output": "Not yet published (prior Command A: $10.00 per 1M tokens)",
-      "notes": "Command A+ API pricing not clearly published as of 2026-06-10; figures from the prior Command A generation shown for reference. Low confidence — verify with Cohere before procurement.",
-      "last_verified": "2026-06-10"
+      "input": "Not published (prior Command A: $2.50 per 1M tokens)",
+      "output": "Not published (prior Command A: $10.00 per 1M tokens)",
+      "notes": "Re-checked 2026-07-09: Cohere still publishes no per-token rate for Command A+ — production pricing is 'contact sales'. Figures from the prior Command A generation shown for reference only; verify with Cohere before procurement.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 256000,
     "languages": [

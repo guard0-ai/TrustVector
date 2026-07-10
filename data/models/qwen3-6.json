@@ -1,0 +1,652 @@
+{
+  "id": "qwen3-6",
+  "type": "model",
+  "name": "Qwen3.6",
+  "provider": "Alibaba",
+  "version": "20260416",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Alibaba's Apache-2.0 open-weight Qwen3.6 family (Apr 2026): Qwen3.6-35B-A3B MoE (35B total / 3B active, 2026-04-16) and Qwen3.6-27B dense (2026-04-22). Hybrid Gated DeltaNet + Gated Attention with thinking mode and Thinking Preservation; 262K native context (~1M via YaRN); text, image, and video input across 201 languages. The 27B beats the 397B-A17B Qwen3.5 flagship on agentic coding (77.2% SWE-bench Verified). The newer Qwen3.7-Max/Plus frontier remains API-only.",
+  "website": "https://github.com/QwenLM/Qwen3.6",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 91,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 94,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "SWE-bench Verified 77.2%, SWE-bench Pro 53.5%, Terminal-Bench 2.0 59.3% — surpassing the 397B-A17B Qwen3.5 flagship on agentic coding"
+            },
+            {
+              "source": "NYU Shanghai RITS analysis",
+              "url": "https://rits.shanghai.nyu.edu/ai/qwen3-6-27b-a-dense-27b-model-that-beats-a-397b-moe-on-coding",
+              "date": "2026-04-25",
+              "value": "Independent analysis confirms the dense 27B edges past the 397B MoE Qwen3.5 on agentic coding benchmarks"
+            }
+          ],
+          "methodology": "Vendor agentic-coding benchmarks corroborated by independent analysis; independent harness runs tend to land below vendor peaks",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_reasoning": {
+          "score": 92,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "AIME 2026 94.1%, HMMT Feb 2026 84.3%, GPQA Diamond 87.8% in thinking mode"
+            },
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-35B-A3B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+              "date": "2026-04-16",
+              "value": "AIME 2026 92.7%, GPQA Diamond 86.0% with only 3B active parameters"
+            }
+          ],
+          "methodology": "Mathematical and scientific reasoning benchmarks from official model cards; vendor-reported, pending broader third-party replication",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_general": {
+          "score": 89,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "MMLU-Pro 86.2%; vision-language MMMU-Pro 75.8% and RefCOCO avg 92.5% with text, image, and video input"
+            }
+          ],
+          "methodology": "Knowledge and multimodal benchmark review across 201-language coverage; smaller models trail the 397B flagship on knowledge breadth",
+          "last_verified": "2026-07-09"
+        },
+        "output_consistency": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "Thinking Preservation retains reasoning traces across turns, improving multi-turn agent consistency in community testing"
+            }
+          ],
+          "methodology": "Repeated-prompt and multi-turn agent testing, supplemented by community reports since April 2026",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p50": {
+          "value": "27B: ~56 tok/s self-hosted (thinking mode is token-hungry); 35B-A3B: markedly faster with 3B active params",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "The AI Rankings - Qwen 3.6 review",
+              "url": "https://theairankings.com/alibaba/qwen-3-6/",
+              "date": "2026-07-09",
+              "value": "27B measured at ~56 tokens/s and described as token-hungry in thinking mode; 3B-active MoE variant targets high-throughput serving"
+            }
+          ],
+          "methodology": "Independent throughput measurements on reference hardware plus architecture analysis",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p95": {
+          "value": "Provider-dependent; long thinking traces stretch tail latency unless reasoning is toggled off",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "The AI Rankings - Qwen 3.6 review",
+              "url": "https://theairankings.com/alibaba/qwen-3-6/",
+              "date": "2026-07-09",
+              "value": "Default-on thinking mode with long reasoning traces; disabling thinking or capping output reduces tail latency"
+            }
+          ],
+          "methodology": "Qualitative assessment; per-provider p95 distributions not yet broadly published",
+          "last_verified": "2026-07-09"
+        },
+        "context_window": {
+          "value": "262,144 tokens native (extensible to ~1,010,000 via YaRN)",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "262,144-token native context, extensible to about 1,010,000 tokens with YaRN scaling"
+            }
+          ],
+          "methodology": "Official specification from model cards",
+          "last_verified": "2026-07-09"
+        },
+        "uptime": {
+          "score": 93,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Model Studio",
+              "url": "https://www.alibabacloud.com/en/product/modelstudio",
+              "date": "2026-07-09",
+              "value": "Hosted on Alibaba Cloud (incl. Singapore region) plus OpenRouter and other third-party hosts; self-hosting adds redundancy"
+            }
+          ],
+          "methodology": "Hosted-platform availability plus redundancy across third-party hosts and self-hosting",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Remarkable capability density: the 27B dense model beats Alibaba's own 397B-A17B Qwen3.5 flagship on agentic coding (77.2% SWE-bench Verified), and the 35B-A3B delivers near-flagship reasoning with 3B active parameters. Main caveats: vendor benchmarks run above independent evaluations, and default-on thinking mode is token-hungry."
+    },
+    "security": {
+      "overall_score": 83,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 83,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "QwenLM GitHub",
+              "url": "https://github.com/QwenLM/Qwen3.6",
+              "date": "2026-04-22",
+              "value": "Safety post-training documented; image and video input widen the injection surface, and dedicated red-team results are not yet published"
+            }
+          ],
+          "methodology": "Testing against OWASP LLM01 patterns including image/video-borne injection; limited third-party data given April 2026 launch",
+          "last_verified": "2026-07-09"
+        },
+        "jailbreak_resistance": {
+          "score": 82,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "Safety alignment across the family consistent with Qwen3.5 practice; open weights mean alignment is removable downstream"
+            }
+          ],
+          "methodology": "Adversarial prompt testing; assessment accounts for open-weight modifiability and launch recency",
+          "last_verified": "2026-07-09"
+        },
+        "data_leakage_prevention": {
+          "score": 81,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Trust Center",
+              "url": "https://www.alibabacloud.com/en/trust-center",
+              "date": "2026-04-22",
+              "value": "Standard data handling on hosted endpoints; self-hosting gives complete data control"
+            }
+          ],
+          "methodology": "Analysis of hosted-platform policies plus the self-hosting option for full data isolation",
+          "last_verified": "2026-07-09"
+        },
+        "output_safety": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "QwenLM GitHub",
+              "url": "https://github.com/QwenLM/Qwen3.6",
+              "date": "2026-04-22",
+              "value": "Multilingual safety filtering across 201 languages, consistent with the Qwen3.5 family's refusal behavior in community testing"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories and multiple languages on default weights",
+          "last_verified": "2026-07-09"
+        },
+        "api_security": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Model Studio",
+              "url": "https://www.alibabacloud.com/en/product/modelstudio",
+              "date": "2026-04-22",
+              "value": "API key authentication, HTTPS, RAM-based access control, and rate limiting on Alibaba Cloud"
+            }
+          ],
+          "methodology": "Review of API security features on the first-party hosted platform",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Inherits the Qwen family's solid multilingual guardrails, but the April 2026 launch means little independent red-teaming exists yet, and image/video input widens the attack surface. Open weights shift responsibility to deployers who fine-tune."
+    },
+    "privacy_compliance": {
+      "overall_score": 79,
+      "criteria": {
+        "data_residency": {
+          "value": "China/Singapore (Alibaba Cloud first-party); anywhere via self-hosting or third-party hosts",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Regions",
+              "url": "https://www.alibabacloud.com/en/global-locations",
+              "date": "2026-04-22",
+              "value": "First-party hosting on Alibaba Cloud is China-jurisdiction (with a Singapore international region); Apache-2.0 weights allow deployment in any jurisdiction"
+            }
+          ],
+          "methodology": "Review of hosting regions and licensing; China-jurisdiction caveat applies to Alibaba's first-party API, not self-hosted or Western-hosted deployments",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_optout": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Model Studio Terms",
+              "url": "https://www.alibabacloud.com/en/product/modelstudio",
+              "date": "2026-04-22",
+              "value": "Enterprise tier does not train on customer data; self-hosting removes the concern entirely"
+            }
+          ],
+          "methodology": "Analysis of hosted-platform data usage terms",
+          "last_verified": "2026-07-09"
+        },
+        "data_retention": {
+          "value": "Per Alibaba Cloud policy (region-dependent); zero when self-hosted",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Trust Center",
+              "url": "https://www.alibabacloud.com/en/trust-center",
+              "date": "2026-04-22",
+              "value": "Hosted retention follows Alibaba Cloud regional policies; self-hosted deployments retain nothing externally"
+            }
+          ],
+          "methodology": "Review of hosted-platform retention policies; retention is deployment-dependent for open-weight models",
+          "last_verified": "2026-07-09"
+        },
+        "pii_handling": {
+          "score": 77,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Documentation",
+              "url": "https://www.alibabacloud.com/en/trust-center",
+              "date": "2026-04-22",
+              "value": "Customer responsible for PII redaction; Alibaba Cloud provides surrounding data-governance tooling"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-07-09"
+        },
+        "compliance_certifications": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Trust Center",
+              "url": "https://www.alibabacloud.com/en/trust-center",
+              "date": "2026-04-22",
+              "value": "Alibaba Cloud holds ISO 27001/SOC reports for its infrastructure, but no HIPAA/FedRAMP path for the model service; Western-host deployments inherit those hosts' certifications"
+            }
+          ],
+          "methodology": "Verification of infrastructure certifications versus model-service-level compliance for Western regulated markets",
+          "last_verified": "2026-07-09"
+        },
+        "zero_data_retention": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Open-weight deployment options",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "No zero-retention guarantee on first-party hosting; self-hosting provides true zero external retention"
+            }
+          ],
+          "methodology": "Review of data handling across first-party API, third-party hosts, and self-hosting",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Same posture as Qwen3.5: Alibaba's first-party API is China-jurisdiction (Singapore region available), which concerns Western regulated buyers; Apache-2.0 self-hosting or Western third-party hosting fully avoids that. No HIPAA/FedRAMP for the model service. The small footprints (27B dense fits a single 24GB GPU in 4-bit) make compliant self-hosting unusually practical."
+    },
+    "trust_transparency": {
+      "overall_score": 81,
+      "criteria": {
+        "explainability": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "Thinking mode on by default exposes reasoning traces; Thinking Preservation keeps them across turns; fully inspectable when self-hosted"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency and trace accessibility",
+          "last_verified": "2026-07-09"
+        },
+        "hallucination_rate": {
+          "score": 80,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "The AI Rankings - Qwen 3.6 review",
+              "url": "https://theairankings.com/alibaba/qwen-3-6/",
+              "date": "2026-07-09",
+              "value": "Independent evaluations land below vendor benchmarks on complex tasks; dedicated factuality studies for Qwen3.6 not yet published"
+            }
+          ],
+          "methodology": "Early factual QA and grounding observations; limited independent data given April 2026 launch",
+          "last_verified": "2026-07-09"
+        },
+        "bias_fairness": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "Broad multilingual fairness work inherited from the Qwen line; topic-avoidance on China-politically-sensitive subjects persists in default weights"
+            }
+          ],
+          "methodology": "Evaluation on bias benchmarks across languages and politically sensitive topic probes",
+          "last_verified": "2026-07-09"
+        },
+        "uncertainty_quantification": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "Expresses uncertainty in thinking traces; final-answer calibration adequate but not independently characterized"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-07-09"
+        },
+        "model_card_quality": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-35B-A3B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+              "date": "2026-04-16",
+              "value": "Detailed cards: hybrid Gated DeltaNet + Gated Attention architecture, MoE layout (256 experts, 8 routed + 1 shared), benchmarks, output-length guidance, and deployment recipes"
+            }
+          ],
+          "methodology": "Review of model card and technical documentation completeness",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_transparency": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "QwenLM GitHub",
+              "url": "https://github.com/QwenLM/Qwen3.6",
+              "date": "2026-04-22",
+              "value": "Training methodology described at a high level; detailed data composition not disclosed, consistent with prior Qwen releases"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-07-09"
+        },
+        "guardrails": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "QwenLM GitHub",
+              "url": "https://github.com/QwenLM/Qwen3.6",
+              "date": "2026-04-22",
+              "value": "Multilingual safety alignment in released weights; removable by downstream fine-tuning"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms in default weights",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Strong open documentation and unusually inspectable reasoning via default-on thinking with Thinking Preservation. Typical Qwen gaps remain: limited training-data detail, topic-avoidance on politically sensitive subjects, and — given the recent launch — sparse independent factuality data."
+    },
+    "operational_excellence": {
+      "overall_score": 86,
+      "criteria": {
+        "api_design_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Model Studio",
+              "url": "https://www.alibabacloud.com/en/product/modelstudio",
+              "date": "2026-04-22",
+              "value": "OpenAI-compatible API with function calling, multimodal inputs, and thinking-mode toggles"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-07-09"
+        },
+        "sdk_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "Day-one support in vLLM, SGLang, KTransformers, and Hugging Face Transformers; actively maintained official repos"
+            }
+          ],
+          "methodology": "Review of SDK and inference-framework support",
+          "last_verified": "2026-07-09"
+        },
+        "versioning_policy": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "The AI Rankings - Qwen 3.6 review",
+              "url": "https://theairankings.com/alibaba/qwen-3-6/",
+              "date": "2026-07-09",
+              "value": "Staged open releases (35B-A3B 2026-04-16, 27B 2026-04-22) two months after Qwen3.5; open weights remain permanently available, softening the fast cadence"
+            },
+            {
+              "source": "innFactory - Qwen model overview",
+              "url": "https://innfactory.ai/en/ai-models/qwen/",
+              "date": "2026-07-09",
+              "value": "Family frontier has moved to proprietary API-only Qwen3.7-Max (May 2026) and Qwen3.7-Plus (Jun 2026); Qwen3.6 is the current open-weight generation"
+            }
+          ],
+          "methodology": "Review of release cadence and weight-availability guarantees",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_observability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Model Studio",
+              "url": "https://www.alibabacloud.com/en/product/modelstudio",
+              "date": "2026-04-22",
+              "value": "Usage dashboards and logging on Alibaba Cloud; full observability when self-hosting"
+            }
+          ],
+          "methodology": "Review of monitoring tools across deployment options",
+          "last_verified": "2026-07-09"
+        },
+        "support_quality": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Alibaba Cloud Support",
+              "url": "https://www.alibabacloud.com/en/contact-sales",
+              "date": "2026-04-22",
+              "value": "Alibaba Cloud offers paid enterprise support tiers; Western-market support depth lags US hyperscalers; strong community channels"
+            }
+          ],
+          "methodology": "Assessment of support tiers, documentation, and community responsiveness",
+          "last_verified": "2026-07-09"
+        },
+        "ecosystem_maturity": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Qwen Organization",
+              "url": "https://huggingface.co/Qwen",
+              "date": "2026-07-09",
+              "value": "Inherits the largest open-model ecosystem by derivative count; Qwen3.6-specific quantizations and fine-tunes accumulating since April 2026 but younger than the Qwen3.5 ladder"
+            }
+          ],
+          "methodology": "Analysis of derivative models, third-party hosting, and tooling integrations; scored slightly conservative given the ~3-month age",
+          "last_verified": "2026-07-09"
+        },
+        "license_terms": {
+          "score": 98,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card (Qwen3.6-27B)",
+              "url": "https://huggingface.co/Qwen/Qwen3.6-27B",
+              "date": "2026-04-22",
+              "value": "Apache 2.0 across both released models: unrestricted commercial use with explicit patent grant"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Rides the mature Qwen ecosystem: Apache 2.0 with patent grant, day-one vLLM/SGLang/KTransformers/transformers support, and hosted options from Alibaba Cloud ($0.60/$3.60 per 1M for 27B) to cheaper third-party hosts. Only two sizes released so far — the family ladder is thinner than Qwen3.5's 0.8B-397B range — and the newest family frontier (Qwen3.7-Max/Plus) is API-only."
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 93,
+      "notes": "77.2% SWE-bench Verified from a 27B dense model that self-hosts on a single 24GB GPU in 4-bit — exceptional agentic-coding economics; beats the 397B-A17B Qwen3.5 flagship.",
+      "alternatives": ["kimi-k2-6", "gpt-5-3-codex"]
+    },
+    "customer-support": {
+      "overall": 87,
+      "notes": "201-language coverage with a 3B-active MoE variant that serves high-volume tiers very cheaply; thinking mode should be toggled off for latency.",
+      "alternatives": ["qwen3-5", "claude-haiku-4-5"]
+    },
+    "content-creation": {
+      "overall": 85,
+      "notes": "Strong multilingual content with image and video understanding for visually grounded writing.",
+      "alternatives": ["claude-opus-4-6", "qwen3-5"]
+    },
+    "data-analysis": {
+      "overall": 88,
+      "notes": "Native image/video input handles charts and documents; 262K context (~1M via YaRN) covers large datasets at small-model cost.",
+      "alternatives": ["gemini-3-pro", "deepseek-v4"]
+    },
+    "research-assistant": {
+      "overall": 88,
+      "notes": "Multimodal document understanding, long context, and preserved reasoning traces suit iterative research workflows.",
+      "alternatives": ["deepseek-v4", "claude-opus-4-6"]
+    },
+    "legal-compliance": {
+      "overall": 75,
+      "notes": "First-party hosting is China-jurisdiction; viable for regulated legal work only via self-hosting or certified Western hosts.",
+      "alternatives": ["claude-opus-4-6"]
+    },
+    "healthcare": {
+      "overall": 73,
+      "notes": "No HIPAA path on first-party hosting; the small footprint makes self-hosted deployment in compliant infrastructure practical.",
+      "alternatives": ["claude-opus-4-6"]
+    },
+    "financial-analysis": {
+      "overall": 86,
+      "notes": "Strong quantitative reasoning (AIME 2026 94.1%) with chart/table understanding; data-residency planning required for regulated workloads.",
+      "alternatives": ["deepseek-v4", "gpt-5-5"]
+    },
+    "education": {
+      "overall": 90,
+      "notes": "201 languages, multimodal input, visible reasoning traces, and single-GPU deployability make it excellent for global and budget education deployments.",
+      "alternatives": ["qwen3-5", "deepseek-v3-2"]
+    },
+    "creative-writing": {
+      "overall": 83,
+      "notes": "Capable multilingual creative output with visual grounding; prose distinctiveness behind dedicated creative leaders.",
+      "alternatives": ["claude-opus-4-6", "deepseek-v4"]
+    }
+  },
+  "strengths": [
+    "27B dense model beats the 397B-A17B Qwen3.5 flagship on agentic coding: 77.2% SWE-bench Verified, 59.3% Terminal-Bench 2.0",
+    "Exceptional efficiency: 27B runs in ~18GB VRAM (4-bit) on a single 24GB GPU; 35B-A3B activates only 3B parameters",
+    "Apache 2.0 with patent grant across both released models",
+    "Multimodal input (text, image, video) across 201 languages and dialects",
+    "262K native context, extensible to ~1M tokens via YaRN",
+    "Thinking Preservation keeps reasoning traces across turns, improving iterative agent workflows",
+    "Day-one vLLM/SGLang/KTransformers/transformers support within the largest open-model ecosystem"
+  ],
+  "limitations": [
+    "First-party Alibaba Cloud hosting is China-jurisdiction (Singapore region available); no HIPAA/FedRAMP path for the model service — self-hosting or Western hosts avoid this",
+    "Vendor benchmarks notably exceed independent evaluations; still below closed frontier models on the most complex tasks",
+    "Token-hungry and relatively slow in default thinking mode (~56 tok/s for the 27B self-hosted)",
+    "Only two sizes released (27B dense, 35B-A3B) versus Qwen3.5's full 0.8B-397B ladder; family frontier Qwen3.7-Max/Plus is API-only",
+    "Topic-avoidance on politically sensitive subjects in default weights",
+    "Training-data composition disclosed only at a high level",
+    "Launched April 2026: limited independent red-teaming and factuality studies so far"
+  ],
+  "best_for": [
+    "Agentic coding assistants with frontier-adjacent quality on single-GPU budgets",
+    "Cost-efficient high-volume serving via the 3B-active 35B-A3B MoE",
+    "Global multilingual products needing 201-language coverage under an open license",
+    "Multimodal agents processing documents, images, and video natively",
+    "Compliant self-hosted deployments where the small footprint keeps infrastructure practical"
+  ],
+  "not_recommended_for": [
+    "Regulated Western workloads via Alibaba's first-party API",
+    "Latency-critical applications running default thinking mode",
+    "Audio input or any media generation applications",
+    "Frontier-difficulty tasks where closed models still lead",
+    "Teams needing a broad open size ladder today (only 27B and 35B-A3B released)"
+  ],
+  "metadata": {
+    "pricing": {
+      "input": "Free weights (Apache 2.0); hosted 27B $0.60 per 1M tokens on Alibaba Cloud (Singapore), 35B-A3B ~$0.15; OpenRouter from ~$0.14-$0.29",
+      "output": "Hosted 27B $3.60 per 1M tokens on Alibaba Cloud; OpenRouter ~$1.00 (35B-A3B) to ~$3.17 (27B)",
+      "notes": "Chinese Mainland endpoint is 60-70% cheaper than Singapore; batch invocation takes 50% off. Self-hosting is infrastructure-cost-only — the 27B fits a single 24GB GPU in 4-bit. Thinking-mode verbosity inflates output-token spend.",
+      "last_verified": "2026-07-09"
+    },
+    "context_window": 262144,
+    "max_output": 81920,
+    "languages": [
+      "English",
+      "Chinese",
+      "Japanese",
+      "Korean",
+      "Spanish",
+      "French",
+      "German",
+      "Portuguese",
+      "Russian",
+      "Arabic",
+      "Hindi",
+      "Indonesian",
+      "Vietnamese",
+      "Thai",
+      "and 187 more (201 total)"
+    ],
+    "modalities": ["text", "image (input)", "video (input)"],
+    "api_endpoint": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions",
+    "open_source": true,
+    "architecture": "Hybrid attention alternating Gated DeltaNet and Gated Attention layers; 27B dense (64 layers) and 35B-A3B MoE (256 experts, 8 routed + 1 shared); default-on thinking mode with Thinking Preservation",
+    "parameters": "27B dense; 35B total / 3B active (MoE)",
+    "knowledge_cutoff": "Not officially disclosed"
+  },
+  "related_entities": ["qwen3-5", "deepseek-v4", "kimi-k2-6", "glm-5", "minimax-m2"],
+  "tags": [
+    "open-source",
+    "apache-2-0",
+    "multimodal",
+    "multilingual",
+    "agentic",
+    "coding",
+    "long-context",
+    "chinese-provider",
+    "efficient"
+  ]
+}

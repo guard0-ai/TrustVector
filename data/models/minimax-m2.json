@@ -4,7 +4,7 @@
   "name": "MiniMax-M2",
   "provider": "MiniMax",
   "version": "20251027",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "MiniMax's MIT-licensed 230B MoE with only 10B active parameters, optimized for agentic tool calling and coding. Topped open-model agentic rankings at launch and undercut Claude pricing by roughly 92% while remaining fast due to its small active footprint.",
   "website": "https://www.minimax.io/news/minimax-m2",
@@ -31,7 +31,7 @@
             }
           ],
           "methodology": "Vendor benchmarks corroborated by independent press and leaderboard coverage; superseded at the top by 2026 releases",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 85,
@@ -45,7 +45,7 @@
             }
           ],
           "methodology": "Vendor-reported reasoning benchmarks and community evaluation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 84,
@@ -59,7 +59,7 @@
             }
           ],
           "methodology": "Independent composite benchmarking across knowledge domains",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 84,
@@ -73,7 +73,7 @@
             }
           ],
           "methodology": "Community testing of repeated runs and agentic trajectories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.8s",
@@ -87,7 +87,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "4.0s",
@@ -101,7 +101,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "204,800 tokens",
@@ -115,7 +115,7 @@
             }
           ],
           "methodology": "Official specification from model card",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 94,
@@ -129,10 +129,10 @@
             }
           ],
           "methodology": "Review of platform availability and self-hosting fallback options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Was the leading open agentic model at its October 2025 launch; still strong, but 2026 releases (GLM-5, Kimi K2.6) have surpassed it on raw benchmarks. Its 10B-active design remains a standout for speed and serving cost. Successor MiniMax-M3 announced 2026-06-01 (1M context) but weights not yet published."
+      "notes": "Was the leading open agentic model at its October 2025 launch; still strong, but 2026 releases (GLM-5, Kimi K2.6) have surpassed it on raw benchmarks. Its 10B-active design remains a standout for speed and serving cost. Successor MiniMax-M3 (428B total / 23B active, 1M context, native multimodality) launched 2026-06-01 with open weights published on Hugging Face by 2026-06-07."
     },
 
     "security": {
@@ -150,7 +150,7 @@
             }
           ],
           "methodology": "Review of vendor documentation and community testing against OWASP LLM01 patterns",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 75,
@@ -164,7 +164,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets; deployer-dependent for self-hosted use",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 74,
@@ -178,7 +178,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and self-hosting data-control options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 78,
@@ -192,7 +192,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 82,
@@ -206,7 +206,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard open-model posture without third-party audits. Self-hosting shifts security responsibility to the deployer."
@@ -233,7 +233,7 @@
             }
           ],
           "methodology": "Review of provider jurisdiction and third-party hosting options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 74,
@@ -247,7 +247,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Per MiniMax policy on first-party API (China jurisdiction); zero when self-hosted",
@@ -261,7 +261,7 @@
             }
           ],
           "methodology": "Review of terms of service and deployment-dependent retention",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 70,
@@ -275,7 +275,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 66,
@@ -289,7 +289,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 85,
@@ -303,7 +303,7 @@
             }
           ],
           "methodology": "Review of self-hosting deployment options enabling zero retention",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "First-party MiniMax API operates under Chinese jurisdiction — a material caveat for Western regulated industries. The small 10B-active footprint makes self-hosted mitigation cheaper than for other frontier-scale open models."
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and trajectory inspectability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 78,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets and tool-augmented workflows",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 74,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Review of published bias benchmarks and community evaluations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 76,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 85,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 72,
@@ -394,7 +394,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 76,
@@ -408,7 +408,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Open weights and interleaved-thinking traces provide reasonable transparency; training data disclosure and formal bias/safety evaluations are limited."
@@ -429,7 +429,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 80,
@@ -443,21 +443,21 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 76,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "MiniMax-M3 announcement",
-              "url": "https://www.minimax.io/news",
-              "date": "2026-06-01",
-              "value": "Successor M3 announced 2026-06-01 with 1M context, but weights not yet published as of 2026-06-10; M2 weights remain available"
+              "source": "MiniMax-M3 announcement and weights release",
+              "url": "https://www.minimax.io/blog/minimax-m3",
+              "date": "2026-07-09",
+              "value": "Successor M3 (428B/23B, 1M context, native multimodal) launched 2026-06-01; open weights published on Hugging Face by 2026-06-07, though training code and inference operators were not released. M2 weights remain available"
             }
           ],
           "methodology": "Review of versioning practices and weight availability across releases",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 76,
@@ -471,7 +471,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 76,
@@ -485,7 +485,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 84,
@@ -499,7 +499,7 @@
             }
           ],
           "methodology": "Analysis of third-party hosting, integrations, and tooling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 94,
@@ -513,10 +513,10 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Clean MIT licensing and dual OpenAI/Anthropic API compatibility lower switching costs. M3 transition (announced, weights unpublished) is the main forward-looking uncertainty."
+      "notes": "Clean MIT licensing and dual OpenAI/Anthropic API compatibility lower switching costs. Successor M3's weights shipped 2026-06-07, resolving the earlier roadmap uncertainty; M2 remains available but is now the previous generation."
     }
   },
 
@@ -585,7 +585,7 @@
   "limitations": [
     "First-party MiniMax API processes data under Chinese jurisdiction with no published Western compliance certifications",
     "Surpassed on raw benchmarks by 2026 open-weight releases (GLM-5, Kimi K2.6)",
-    "Successor M3 announced (2026-06-01) but weights unpublished, creating roadmap uncertainty",
+    "Superseded within MiniMax's own lineup: M3 (1M context, native multimodality) shipped with open weights in June 2026",
     "Text-only — no vision or audio modalities",
     "Limited published bias, safety, and red-team evaluations",
     "Interleaved thinking format requires prompt-handling care in some frameworks"
@@ -608,8 +608,8 @@
     "pricing": {
       "input": "$0.30 per 1M tokens (approx.)",
       "output": "$1.20 per 1M tokens (approx.)",
-      "notes": "Launched at roughly 8% of Claude Sonnet pricing; third-party host pricing varies.",
-      "last_verified": "2026-06-10"
+      "notes": "Launched at roughly 8% of Claude Sonnet pricing; third-party host pricing varies. First-party rates unchanged in July 2026 checks.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 204800,
     "languages": ["English", "Chinese", "Japanese", "Korean", "Spanish", "French", "German"],

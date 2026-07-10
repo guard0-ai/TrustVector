@@ -4,9 +4,9 @@
   "name": "Nova Pro",
   "provider": "Amazon",
   "version": "2025-01",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "SUPERSEDED by the Nova 2 family announced at re:Invent 2025-12-02 (Nova 2 Lite GA; Nova 2 Pro/Omni in preview), though the original Nova Pro is still served. Amazon model integrated with AWS services for enterprise customers requiring seamless AWS integration. New projects should evaluate Nova 2.",
+  "description": "SUPERSEDED by the Nova 2 family announced at re:Invent 2025-12-02 (Nova 2 Lite GA; Nova 2 Pro/Omni still in preview as of 2026-07-09), though the original Nova Pro is still served. Amazon model integrated with AWS services for enterprise customers requiring seamless AWS integration. New projects should evaluate Nova 2.",
   "website": "https://aws.amazon.com/bedrock/nova/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 72,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Mathematical reasoning",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 74,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Knowledge testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 75,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Internal testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.0s",
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "AWS infrastructure",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "2.0s",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "CloudWatch metrics",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "300,000 tokens",
@@ -108,7 +108,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -122,7 +122,7 @@
             }
           ],
           "methodology": "AWS service SLA",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Moderate performance with excellent AWS integration. Large 300K context window. Reliable AWS infrastructure."
@@ -142,7 +142,7 @@
             }
           ],
           "methodology": "AWS security testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 88,
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 92,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Policy analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 88,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Safety benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 93,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent security leveraging AWS infrastructure. Strong IAM and VPC integration."
@@ -218,7 +218,7 @@
             }
           ],
           "methodology": "AWS infrastructure review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 95,
@@ -232,7 +232,7 @@
             }
           ],
           "methodology": "Privacy policy",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "0 days (ephemeral)",
@@ -246,7 +246,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 90,
@@ -260,7 +260,7 @@
             }
           ],
           "methodology": "Feature review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 95,
@@ -274,7 +274,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 95,
@@ -288,7 +288,7 @@
             }
           ],
           "methodology": "Architecture review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional privacy with AWS infrastructure. HIPAA eligible, FedRAMP authorized. Zero data retention."
@@ -308,7 +308,7 @@
             }
           ],
           "methodology": "Reasoning evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 78,
@@ -322,7 +322,7 @@
             }
           ],
           "methodology": "Factual QA testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 80,
@@ -336,7 +336,7 @@
             }
           ],
           "methodology": "Bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 79,
@@ -350,7 +350,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 87,
@@ -364,7 +364,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 76,
@@ -378,7 +378,7 @@
             }
           ],
           "methodology": "Public disclosure review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 90,
@@ -392,7 +392,7 @@
             }
           ],
           "methodology": "Feature review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good transparency with AWS Guardrails. Comprehensive documentation."
@@ -412,7 +412,7 @@
             }
           ],
           "methodology": "API review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 96,
@@ -426,7 +426,7 @@
             }
           ],
           "methodology": "SDK review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 92,
@@ -441,12 +441,12 @@
             {
               "source": "AWS What's New: Nova 2 foundation models in Amazon Bedrock",
               "url": "https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock/",
-              "date": "2026-06-10",
-              "value": "Nova 2 family announced 2025-12-02 (Nova 2 Lite GA; Pro/Omni preview); original Nova Pro still served"
+              "date": "2026-07-09",
+              "value": "Nova 2 family announced 2025-12-02; as of 2026-07-09 Nova 2 Lite, Sonic, and Multimodal Embeddings are GA while Nova 2 Pro and Omni remain in preview; original Nova Pro still served on Bedrock"
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 97,
@@ -460,7 +460,7 @@
             }
           ],
           "methodology": "Observability review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 95,
@@ -474,7 +474,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 94,
@@ -488,7 +488,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 93,
@@ -502,7 +502,7 @@
             }
           ],
           "methodology": "Terms review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional operational excellence with full AWS integration. Best-in-class monitoring and support."
@@ -617,8 +617,8 @@
     "pricing": {
       "input": "$0.80 per 1M tokens (on-demand), $0.40 per 1M tokens (batch)",
       "output": "$3.20 per 1M tokens (on-demand), $1.60 per 1M tokens (batch)",
-      "notes": "AWS Bedrock pricing with 50% batch discount, volume discounts available",
-      "last_verified": "2025-11-09"
+      "notes": "AWS Bedrock pricing with 50% batch discount, volume discounts available. Re-confirmed unchanged ($0.80/$3.20 on-demand) as of July 2026.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 300000,
     "languages": [

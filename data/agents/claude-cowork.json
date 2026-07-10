@@ -1,0 +1,480 @@
+{
+  "id": "claude-cowork",
+  "type": "agent",
+  "name": "Claude Cowork",
+  "provider": "Anthropic",
+  "version": "1.x (desktop GA; web/mobile with cloud execution in beta as of 2026-07-08)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Anthropic's agentic workspace for non-technical knowledge work — 'Claude Code for the office.' Launched 2026-01-12 as a macOS desktop app that runs tasks in a sandboxed local VM (Apple Virtualization Framework with a custom Linux rootfs), expanding to web and mobile with cloud execution in July 2026. Turns natural-language goals into reports, spreadsheets, and organized files. Shipped with a disclosed prompt-injection-via-malicious-files risk that remains its central security tension.",
+  "website": "https://claude.com/product/cowork",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 83,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Claude Cowork expands to mobile and web",
+              "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/",
+              "date": "2026-07-07",
+              "value": "Analysis of 1.2M anonymized sessions across 600K+ organizations shows sustained production use: 33.4% business-process operations, 16.4% content creation, only 8.7% software development"
+            }
+          ],
+          "methodology": "Assessment of real-world completion using Anthropic's published session analysis and independent launch reviews; built on the proven Claude Code agent harness",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Cowork product page",
+              "url": "https://claude.com/product/cowork",
+              "date": "2026-07-07",
+              "value": "Mature toolset inherited from Claude Code: file manipulation, browser use, Office document generation, connectors (Slack, Google Drive, CRM), and MCP passthrough from the desktop app"
+            }
+          ],
+          "methodology": "Review of tool stack reliability across file, browser, document, and connector operations",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Cowork product page",
+              "url": "https://claude.com/product/cowork",
+              "date": "2026-07-07",
+              "value": "Outcome-based instruction ('what you need, not how'), parallel work streams, scheduled tasks, and unattended execution that continues after the laptop closes"
+            }
+          ],
+          "methodology": "Evaluation of goal decomposition, parallel task execution, and long-horizon unattended runs",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Claude Cowork expands to mobile and web",
+              "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/",
+              "date": "2026-07-07",
+              "value": "Cross-device continuity: start a task at a desk, get status updates on the phone, retrieve output later; cloud execution keeps sessions alive with no device online"
+            }
+          ],
+          "methodology": "Review of session continuity across desktop, web, and mobile plus workspace file persistence",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "PVIEITO - Inside Claude Cowork",
+              "url": "https://pvieito.com/2026/01/inside-claude-cowork",
+              "date": "2026-01-15",
+              "value": "Cowork is Claude Code running inside a VM orchestrated by Claude Desktop, inheriting its self-correcting agent loop; office-task failure modes are less publicly benchmarked than coding"
+            }
+          ],
+          "methodology": "Inference from the shared Claude Code agent loop plus observed retry behavior; limited independent data for non-coding tasks",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Cowork product page",
+              "url": "https://claude.com/product/cowork",
+              "date": "2026-07-07",
+              "value": "Specialized sub-agents handle end-to-end tasks; plugins bundle skills and workflows (brand voice, legal, finance)"
+            }
+          ],
+          "methodology": "Review of sub-agent delegation and plugin/skill composition capabilities",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 65,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PVIEITO - Inside Claude Cowork",
+              "url": "https://pvieito.com/2026/01/inside-claude-cowork",
+              "date": "2026-01-15",
+              "value": "On macOS, tasks run in a custom Linux VM (Ubuntu-based, ARM64) via Apple's VZVirtualMachine framework with VirtioFS folder sharing, bubblewrap and seccomp inside the VM, per-session sandbox users, and a network allowlist limited to package registries and Anthropic's API"
+            },
+            {
+              "source": "Claude Help Center - Use Claude Cowork safely",
+              "url": "https://support.claude.com/en/articles/13364135-use-claude-cowork-safely",
+              "date": "2026-07-07",
+              "value": "Cloud sessions run in isolated temporary environments on Anthropic servers that cannot reach home/company networks; however isolation limits where code executes, not what Claude reads or does with granted access"
+            }
+          ],
+          "methodology": "Architecture review of the local VM isolation stack and cloud execution environments; strong containment of code execution, but the allowlisted Anthropic API endpoint has been demonstrated as an exfiltration channel",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Cowork product page",
+              "url": "https://claude.com/product/cowork",
+              "date": "2026-07-07",
+              "value": "Users choose which folders and tools Claude can reach; deletions require approval; enterprise tier adds team-based permissions, spend limits, and per-department tool permissions"
+            }
+          ],
+          "methodology": "Review of folder scoping, approval gates for destructive actions, and enterprise admin controls; consumer defaults rely on users choosing safe folders",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 48,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "UC Strategies - Anthropic shipped Claude Cowork with a known security flaw",
+              "url": "https://ucstrategies.com/news/anthropic-shipped-claude-cowork-with-a-known-security-flaw-then-gave-it-to-millions-anyway/",
+              "date": "2026-01-16",
+              "value": "Prompt injection via malicious files was disclosed pre-launch (Johann Rehberger) and confirmed within 48 hours of the 2026-01-12 launch: a Word doc with 1-point white text made Cowork upload the user's financial documents to an attacker-controlled Anthropic account via the VM's allowlisted API"
+            },
+            {
+              "source": "Claude Help Center - Use Claude Cowork safely",
+              "url": "https://support.claude.com/en/articles/13364135-use-claude-cowork-safely",
+              "date": "2026-07-07",
+              "value": "Anthropic documents mitigations (RL training to refuse injected instructions, classifiers scanning untrusted content, deletion protection) but names prompt injection the primary threat and calls agent safety 'an active area of development'; Claude in Chrome and unattended scheduled tasks widen the exposure"
+            }
+          ],
+          "methodology": "Threat analysis of the untrusted-file-plus-consequential-action combination; score reflects a known, demonstrated exploitation path shipped at launch, partially offset by classifiers, training, and honest disclosure",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Help Center - Claude Cowork architecture overview",
+              "url": "https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview",
+              "date": "2026-07-07",
+              "value": "One VM instance serves multiple conversations, with each conversation in its own isolated session (dedicated sandbox users, bubblewrap); only explicitly shared folders cross the VM boundary"
+            }
+          ],
+          "methodology": "Review of per-session isolation within the shared VM and folder-scoped host access; cloud sessions are per-task and torn down at session end",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 52,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Help Center - Claude Cowork architecture overview",
+              "url": "https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview",
+              "date": "2026-07-07",
+              "value": "Proprietary product; Anthropic publishes unusually detailed architecture and safety documentation, but the agent harness, VM image, and classifiers are closed source"
+            }
+          ],
+          "methodology": "Source availability assessment; credit for published architecture documentation without released code",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 68,
+      "criteria": {
+        "data_retention": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic privacy policy",
+              "url": "https://www.anthropic.com/legal/privacy",
+              "date": "2026-03-01",
+              "value": "Consumer Pro/Max sessions follow Anthropic consumer retention terms; commercial tiers get training-exclusion defaults and retention controls. Cloud execution moves working files onto Anthropic servers for the session"
+            }
+          ],
+          "methodology": "Review of Anthropic retention commitments applied to Cowork's session files across consumer and enterprise tiers",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Anthropic Trust Center",
+              "url": "https://trust.anthropic.com/",
+              "date": "2026-03-01",
+              "value": "SOC 2 Type II certified with GDPR-aligned DPA available for commercial customers; Cowork enterprise tier adds admin controls and OpenTelemetry activity streaming"
+            }
+          ],
+          "methodology": "Compliance certification and DPA availability review under the Anthropic umbrella",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Cowork product page",
+              "url": "https://claude.com/product/cowork",
+              "date": "2026-07-07",
+              "value": "Processing stays with Anthropic (or customer-selected Bedrock/Google Cloud/Microsoft Foundry hosting); user-enabled connectors (Slack, Drive, CRM, email) move data to those services only when configured"
+            }
+          ],
+          "methodology": "Data flow analysis of model processing and opt-in connector traffic",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 42,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Help Center - Claude Cowork architecture overview",
+              "url": "https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview",
+              "date": "2026-07-07",
+              "value": "Desktop execution happens in a local VM on the user's machine, but Claude models are cloud-only and cloud execution runs entirely on Anthropic servers; no self-hosted or offline option"
+            }
+          ],
+          "methodology": "Deployment options assessment: local execution surface exists but model inference and cloud sessions require Anthropic's cloud",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 73,
+      "criteria": {
+        "documentation_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Help Center - Get started with Claude Cowork",
+              "url": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+              "date": "2026-07-07",
+              "value": "Detailed help center covering setup, safety, and a published architecture overview of the VM isolation stack — unusually candid for a consumer agent"
+            }
+          ],
+          "methodology": "Documentation completeness review including the dedicated safety and architecture articles",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Cowork product page",
+              "url": "https://claude.com/product/cowork",
+              "date": "2026-07-07",
+              "value": "Live progress visibility and plan display before significant actions; enterprise OpenTelemetry activity streaming exists, but Cowork activity 'is not yet captured in audit logs or Compliance API'"
+            }
+          ],
+          "methodology": "Review of session visibility versus enterprise audit coverage; the audit-log gap lowers the score",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Cowork product page",
+              "url": "https://claude.com/product/cowork",
+              "date": "2026-07-07",
+              "value": "Shows its plan and waits for approval before anything significant when permissions are enabled; deletions always require approval"
+            }
+          ],
+          "methodology": "Assessment of plan previews, approval prompts, and progress narration",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 40,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PVIEITO - Inside Claude Cowork",
+              "url": "https://pvieito.com/2026/01/inside-claude-cowork",
+              "date": "2026-01-15",
+              "value": "Closed-source product; internals are known mainly through third-party reverse engineering and Anthropic's architecture write-ups"
+            }
+          ],
+          "methodology": "Open source assessment of the agent harness, VM image, and desktop app",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "TechCrunch - Claude Cowork expands to mobile and web",
+              "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/",
+              "date": "2026-07-07",
+              "value": "1.2M sessions across 600K+ organizations within ~5 months of launch; rapid platform expansion (macOS to Windows/Linux/ChromeOS, web, mobile) and heavy public analysis"
+            }
+          ],
+          "methodology": "Adoption, release cadence, and public discussion volume analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 75,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Cowork product page",
+              "url": "https://claude.com/product/cowork",
+              "date": "2026-07-07",
+              "value": "Included in existing Claude Pro/Max subscriptions with no extra setup; desktop app installs the VM transparently; web and mobile need only a login"
+            }
+          ],
+          "methodology": "Onboarding friction assessment for non-technical users across desktop, web, and mobile",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Claude Cowork expands to mobile and web",
+              "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/",
+              "date": "2026-07-07",
+              "value": "Cloud execution (beta from 2026-07-07) runs parallel work streams that continue with no device online; five-hour usage windows cap sustained throughput"
+            }
+          ],
+          "methodology": "Assessment of parallel sessions, cloud continuation, and subscription rate-limit behavior",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Claude Cowork product page",
+              "url": "https://claude.com/product/cowork",
+              "date": "2026-07-07",
+              "value": "Flat subscription pricing: included in Pro ($20/mo) and Max ($100-$200/mo); no per-task metering, though Cowork consumes usage limits faster than chat"
+            }
+          ],
+          "methodology": "Pricing model analysis; flat subscriptions cap spend but usage limits can throttle heavy work",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 64,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Claude Cowork product page",
+              "url": "https://claude.com/product/cowork",
+              "date": "2026-07-07",
+              "value": "Enterprise tier offers admin analytics, spend limits, and OpenTelemetry streaming, but Cowork activity is not yet in audit logs or the Compliance API"
+            }
+          ],
+          "methodology": "Monitoring and audit tooling review; consumer tiers have per-session visibility only",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Claude Cowork expands to mobile and web",
+              "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/",
+              "date": "2026-07-07",
+              "value": "Six months old with fast iteration; web/mobile and cloud execution still in beta; launched with a known prompt-injection flaw, and enterprise audit integration is incomplete"
+            }
+          ],
+          "methodology": "Maturity assessment weighing rapid adoption against beta surfaces and the launch security record",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "content-creation": {
+      "overall": 84,
+      "notes": "Core use case: drafts, presentations, proposals, and reports were 16.4% of observed sessions, with document/spreadsheet output as the default deliverable"
+    },
+    "data-analysis": {
+      "overall": 80,
+      "notes": "Spreadsheet reconciliation and report assembly dominate the top usage category (33.4% business-process operations)"
+    },
+    "research-assistant": {
+      "overall": 78,
+      "notes": "Web browsing plus connector access supports multi-source research organized into documents, with cloud sessions continuing unattended"
+    },
+    "code-generation": {
+      "overall": 70,
+      "notes": "Inherits the Claude Code harness and can code (8.7% of sessions), but Claude Code itself is the better tool for engineering work"
+    }
+  },
+  "best_for": [
+    "Non-technical knowledge workers delegating 'work around work': reports, checklists, file organization, spreadsheet reconciliation",
+    "Finance, HR, and operations roles automating recurring business-process tasks",
+    "Existing Claude Pro/Max subscribers who want agentic task execution at no extra cost",
+    "Teams wanting cross-device task continuity with cloud execution that outlives the laptop"
+  ],
+  "not_recommended_for": [
+    "Processing untrusted documents or emails alongside sensitive files, given the demonstrated file-based prompt-injection exfiltration path",
+    "Regulated environments needing complete audit trails today (Cowork is not yet in audit logs or the Compliance API)",
+    "Air-gapped or data-residency-constrained deployments"
+  ],
+  "strengths": [
+    "Real VM isolation on desktop: custom Linux VM via Apple's VZVirtualMachine with bubblewrap, seccomp, per-session sandbox users, and a network allowlist",
+    "Built on the proven Claude Code agent harness, repurposed for office work with sub-agents, skills, and plugins",
+    "Explicit folder scoping and approval gates: Claude can only reach folders the user grants, and deletions require approval",
+    "Cloud execution (July 2026 beta) continues tasks across desktop, web, and mobile with no device online",
+    "Unusually candid safety and architecture documentation, including named prompt-injection risks",
+    "Flat subscription pricing included in Pro/Max removes per-task cost anxiety",
+    "Massive early traction: 1.2M sessions across 600K+ organizations in ~5 months"
+  ],
+  "limitations": [
+    "Shipped 2026-01-12 with a pre-disclosed prompt-injection flaw: within 48 hours researchers showed a malicious Word doc (1-pt white text) exfiltrating financial documents via the VM's allowlisted Anthropic API",
+    "The core tension is architectural: sandboxing limits where code runs, not what Claude does with folders and connectors it was granted",
+    "Claude in Chrome, computer use, and unattended scheduled tasks each widen the injection-to-action surface",
+    "Cowork activity not yet captured in enterprise audit logs or the Compliance API",
+    "Web/mobile and cloud execution still beta with rollout gated by plan tier",
+    "Consumes subscription usage limits quickly; five-hour usage windows interrupt long tasks",
+    "Cloud-only models; no self-hosted or offline option"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_models": [
+      "Claude Opus",
+      "Claude Sonnet"
+    ],
+    "deployment_type": "Desktop app (local VM execution) + web/mobile with Anthropic-hosted cloud execution (beta)",
+    "architecture": "Claude Code harness inside a custom Linux VM (Apple Virtualization Framework/VZVirtualMachine on macOS; VirtioFS file sharing; bubblewrap + seccomp; network allowlist)",
+    "tool_support": [
+      "File and folder operations (scoped)",
+      "Browser use / Claude in Chrome",
+      "Office document, spreadsheet, and presentation generation",
+      "Connectors (Slack, Google Drive, CRM, email, calendar)",
+      "MCP passthrough, sub-agents, skills, and plugins",
+      "Scheduled tasks"
+    ],
+    "first_release": "2026-01-12 (macOS desktop, Max then Pro); web/mobile + cloud execution beta 2026-07-07",
+    "pricing": "Included in Claude Pro ($20/mo) and Max ($100-$200/mo); Team and Enterprise tiers add admin controls",
+    "usage_stats": "1.2M anonymized sessions across 600K+ organizations (late May 2026): 33.4% business-process ops, 16.4% content creation, 8.7% coding"
+  },
+  "related_entities": [
+    "claude-code",
+    "chatgpt-agent",
+    "microsoft-scout",
+    "manus"
+  ],
+  "tags": [
+    "autonomous",
+    "knowledge-work",
+    "consumer",
+    "sandboxed",
+    "anthropic"
+  ]
+}

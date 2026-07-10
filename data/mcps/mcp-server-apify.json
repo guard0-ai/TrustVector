@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "Apify MCP Server",
   "provider": "Apify",
-  "version": "2026.6",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official Apify MCP server (renamed from actors-mcp-server) exposing thousands of Apify Store Actors to AI agents — scrapers for social media, maps, e-commerce, and search. Agents can dynamically discover and run Actors via the @apify/actors-mcp-server package or the hosted OAuth endpoint at mcp.apify.com.",
+  "description": "Official Apify MCP server (renamed from actors-mcp-server) exposing thousands of Apify Store Actors - scrapers for social media, maps, e-commerce, and search - via the @apify/actors-mcp-server package (v0.11.x) or the hosted endpoint at mcp.apify.com (OAuth or Bearer API token, Streamable HTTP only; legacy SSE removed April 2026). The hosted server adds output-schema inference, agentic payments (x402 USDC on Base, Skyfire), and June 2026 MCP connectors for login-required apps.",
   "website": "https://github.com/apify/apify-mcp-server",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Platform stability and maturity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "actor_execution_success": {
           "score": 78,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Run success sampling across official and community Actors",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "dynamic_tool_discovery": {
           "score": 80,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Tool discovery relevance testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Rate limiting behavior review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 80,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Failure mode and recovery testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -92,14 +92,14 @@
           "confidence": "high",
           "evidence": [
             {
-              "source": "Apify MCP Documentation",
-              "url": "https://mcp.apify.com/",
-              "date": "2026-06-10",
-              "value": "Hosted server at mcp.apify.com uses OAuth; local stdio mode uses an Apify API token"
+              "source": "Apify MCP Server Repository",
+              "url": "https://github.com/apify/apify-mcp-server",
+              "date": "2026-07-09",
+              "value": "Hosted server at mcp.apify.com uses OAuth or an Authorization Bearer Apify API token over Streamable HTTP (legacy SSE endpoint removed April 2026); local stdio mode uses an Apify API token; agentic payments via x402 (USDC on Base) or Skyfire allow runs without a token"
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "dynamic_capability_risk": {
           "score": 55,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Runtime capability mutation threat modeling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "actor_supply_chain_risk": {
           "score": 58,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Supply chain analysis of community-published Actors",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "credential_handling": {
           "score": 78,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Token scope and exposure analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sandboxed_execution": {
           "score": 80,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Execution isolation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis of Actor inputs and outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 62,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "PII handling assessment of common Actor outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 62,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Data sharing and policy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_posture": {
           "score": 75,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 84,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 88,
@@ -258,12 +258,12 @@
             {
               "source": "Apify MCP Server Repository",
               "url": "https://github.com/apify/apify-mcp-server",
-              "date": "2026-06-10",
-              "value": "MIT-licensed open source server with 1,319 GitHub stars; many Store Actors also publish source, though not all"
+              "date": "2026-07-09",
+              "value": "MIT-licensed open source server with 1,755 GitHub stars; many Store Actors also publish source, though not all"
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_coverage_clarity": {
           "score": 80,
@@ -272,12 +272,12 @@
             {
               "source": "Apify MCP Server Repository",
               "url": "https://github.com/apify/apify-mcp-server",
-              "date": "2026-06-10",
-              "value": "Helper tools are documented, but the effective tool set is dynamic — it depends on which Actors are loaded at runtime"
+              "date": "2026-07-09",
+              "value": "Helper tools are documented (search-actors, fetch-actor-details, call-actor, dataset/key-value access, run management, docs search), but the effective tool set is dynamic — it depends on which Actors are loaded at runtime; hosted server adds output-schema inference for structured results"
             }
           ],
           "methodology": "Tool surface documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 80,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Run latency characterization",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 84,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Uptime and incident history analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 92,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Capability breadth assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 79,
@@ -347,12 +347,12 @@
             {
               "source": "GitHub Repository Metrics",
               "url": "https://github.com/apify/apify-mcp-server",
-              "date": "2026-06-10",
-              "value": "1,319 GitHub stars with active maintenance by Apify and a large existing Actor developer ecosystem"
+              "date": "2026-07-09",
+              "value": "1,755 GitHub stars (up from 1,319 in June 2026) with active maintenance by Apify (v0.11.5 released July 2026) and a large existing Actor developer ecosystem"
             }
           ],
           "methodology": "Community activity and adoption analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -361,7 +361,8 @@
     "Access to thousands of ready-made Apify Store Actors for social media, maps, e-commerce, and search scraping",
     "Dynamic tool discovery lets agents find and add the right Actor at runtime",
     "Actors run in isolated containers in Apify's cloud, not on the user's machine",
-    "Hosted OAuth endpoint (mcp.apify.com) and simple local npx setup",
+    "Hosted OAuth endpoint (mcp.apify.com, Streamable HTTP) and simple local npx setup",
+    "Hosted server infers output schemas for structured Actor results",
     "Full run auditability via the Apify console with logs, inputs, and cost tracking",
     "MIT-licensed open source server actively maintained by Apify"
   ],
@@ -369,7 +370,8 @@
     "Actors are community-published code of varying quality and provenance",
     "Dynamically added tools mutate the agent's capability surface after initial approval",
     "Scraped output frequently contains personal data with GDPR implications and no built-in PII filtering",
-    "Actor runs consume paid platform credits that an agent can spend autonomously",
+    "Actor runs consume paid platform credits that an agent can spend autonomously; agentic payment rails (x402, Skyfire) extend this to direct token-less spending",
+    "MCP connectors (June 2026) let Actors act on login-required apps (Notion, Slack, GitHub), widening the blast radius beyond scraping",
     "Community Actors can silently break when target websites change",
     "Scraped content is untrusted input that may carry prompt injection payloads"
   ],
@@ -383,15 +385,16 @@
       "TypeScript"
     ],
     "github_repo": "https://github.com/apify/apify-mcp-server",
-    "github_stars": 1319,
+    "github_stars": 1755,
     "package_name": "@apify/actors-mcp-server",
+    "package_version": "0.11.5",
     "previous_name": "actors-mcp-server",
     "api_dependency": "Apify platform API",
-    "authentication": "OAuth (hosted) or Apify API token (stdio)",
+    "authentication": "OAuth or Bearer API token (hosted); Apify API token (stdio); agentic payments via x402 (USDC on Base) or Skyfire",
     "maintained_by": "Apify",
     "transport_types": [
       "stdio",
-      "remote (hosted)"
+      "streamable-http (hosted; legacy SSE removed 2026-04)"
     ],
     "installation_methods": [
       "npm",

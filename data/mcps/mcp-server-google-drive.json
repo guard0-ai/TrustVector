@@ -4,9 +4,9 @@
   "name": "MCP Google Drive Server",
   "provider": "Anthropic (Archived)",
   "version": "1.0.0",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "ARCHIVED: Former Anthropic reference MCP server (gdrive) for accessing and searching Google Drive files, archived 2025-05-29 to the servers-archived repository and no longer maintained; the archive README provides no security guarantees. The underlying Google Drive API remains reliable, but this server receives no fixes and is not recommended for new deployments.",
+  "description": "ARCHIVED: Former Anthropic reference MCP server (gdrive) for accessing and searching Google Drive files, archived 2025-05-29 to servers-archived and no longer maintained; no security guarantees. Google now offers an official hosted Google Drive MCP server (drivemcp.googleapis.com) via the Workspace Developer Preview Program, announced May 2026, which is the recommended replacement. The archived server receives no fixes and is not recommended for new deployments.",
   "website": "https://developers.google.com/drive",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "File operation success rate testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "search_accuracy": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Search quality testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "document_parsing": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Document conversion testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "large_file_handling": {
           "score": 80,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Large file performance testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Authentication security review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "permission_scope_control": {
           "score": 78,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Permission scope testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "file_access_risk": {
           "score": 70,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access boundary testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sharing_control": {
           "score": 72,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Sharing permission testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 82,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Audit capabilities review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data exposure analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_protection": {
           "score": 65,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "workspace_data_control": {
           "score": 78,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Enterprise control assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "third_party_sharing": {
           "score": 72,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 80,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Compliance framework review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 85,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Operation traceability assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "mcp_implementation_clarity": {
           "score": 58,
@@ -274,10 +274,16 @@
               "url": "https://github.com/modelcontextprotocol/servers-archived",
               "date": "2026-06-10",
               "value": "Reference gdrive server archived 2025-05-29; repository read-only, README states no security guarantees are provided for archived servers"
+            },
+            {
+              "source": "Google Workspace MCP servers documentation",
+              "url": "https://developers.google.com/workspace/guides/configure-mcp-servers",
+              "date": "2026-07-09",
+              "value": "Google now provides an official Drive MCP server (https://drivemcp.googleapis.com/mcp/v1) with OAuth 2.0, available through the Workspace Developer Preview Program; rollout announced May 2026"
             }
           ],
           "methodology": "Implementation documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "permission_transparency": {
           "score": 80,
@@ -291,7 +297,7 @@
             }
           ],
           "methodology": "Permission clarity assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -310,7 +316,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_reliability": {
           "score": 90,
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Uptime analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "performance": {
           "score": 82,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 55,
@@ -358,7 +364,7 @@
             }
           ],
           "methodology": "Feature completeness assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost": {
           "score": 80,
@@ -372,7 +378,7 @@
             }
           ],
           "methodology": "Cost analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -391,7 +397,7 @@
     "Complex OAuth setup process requiring Google Cloud project",
     "AI can access and modify all files within granted permissions",
     "Subject to Google API rate limits and quotas",
-    "ARCHIVED 2025-05-29: reference gdrive server unmaintained with no security guarantees; prefer actively maintained Google Drive MCP alternatives"
+    "ARCHIVED 2025-05-29: reference gdrive server unmaintained with no security guarantees; prefer Google's official Drive MCP server (Workspace Developer Preview, May 2026) or other actively maintained alternatives"
   ],
   "metadata": {
     "license": "Varies (API proprietary, MCP implementation varies)",
@@ -410,7 +416,8 @@
     "rate_limits": "1000 queries per 100 seconds (default)",
     "first_release": "2024-11",
     "maintained_by": "None (Archived 2025-05-29)",
-    "repository": "https://github.com/modelcontextprotocol/servers-archived"
+    "repository": "https://github.com/modelcontextprotocol/servers-archived",
+    "replacement": "Google official Drive MCP server (https://drivemcp.googleapis.com/mcp/v1, Workspace Developer Preview Program)"
   },
   "use_case_ratings": {
     "code-generation": {

@@ -4,9 +4,9 @@
   "name": "Claude Sonnet 4.6",
   "provider": "Anthropic",
   "version": "4.6",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Anthropic's best speed/intelligence balance — the value workhorse for agentic and production workloads at $3/$15 per 1M tokens, with a 1M token context window, adaptive thinking, the effort parameter including 'max', and strong computer-use accuracy.",
+  "description": "Anthropic's previous-generation Sonnet workhorse, superseded by Claude Sonnet 5 (2026-06-30) as the best speed/intelligence balance at the same $3/$15 price. Still fully supported (Active, tentative retirement not sooner than 2027-02-17), with a 1M token context window, 128K max output, adaptive thinking, the effort parameter including 'max', and strong computer-use accuracy.",
   "website": "https://www.anthropic.com/claude/sonnet",
 
   "trust_vector": {
@@ -24,6 +24,12 @@
               "value": "Recommended model for agentic coding at the Sonnet tier; successor to Claude Sonnet 4.5"
             },
             {
+              "source": "Anthropic: Introducing Claude Sonnet 5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "date": "2026-06-30",
+              "value": "Sonnet 4.6 scores 62.3% SWE-bench Verified and 55.4% Terminal-bench vs Sonnet 5's 72.7% and 76.1%; Sonnet 5 is now the recommended Sonnet-tier model"
+            },
+            {
               "source": "Anthropic Migration Guide",
               "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
               "date": "2026-06-10",
@@ -31,7 +37,7 @@
             }
           ],
           "methodology": "Review of official model documentation and positioning for software engineering workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 90,
@@ -45,7 +51,7 @@
             }
           ],
           "methodology": "Review of documented thinking capabilities and reasoning benchmark positioning",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 92,
@@ -59,7 +65,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge and multimodal capability review against official documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 93,
@@ -73,7 +79,7 @@
             }
           ],
           "methodology": "Internal testing of output stability across effort levels and adaptive thinking",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.5s",
@@ -87,7 +93,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "3.5s",
@@ -101,7 +107,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,000,000 tokens",
@@ -110,12 +116,12 @@
             {
               "source": "Anthropic Models Documentation",
               "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
-              "date": "2026-06-10",
-              "value": "1M token context window; 64K max output tokens"
+              "date": "2026-07-09",
+              "value": "1M token context window; 128K max output tokens (up to 300K on the Message Batches API via the extended-output beta)"
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -123,16 +129,16 @@
           "evidence": [
             {
               "source": "Anthropic Status Page",
-              "url": "https://status.anthropic.com/",
-              "date": "2026-06-01",
-              "value": "99.9%+ uptime (last 90 days)"
+              "url": "https://status.claude.com/",
+              "date": "2026-07-09",
+              "value": "Claude API uptime 99.57% (last 90 days)"
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "The value workhorse of the Claude lineup: near-Opus intelligence at Sonnet latency and price, with a 1M context window, adaptive thinking, and the full effort range including 'max'."
+      "notes": "Former value workhorse of the Claude lineup: near-Opus intelligence at Sonnet latency and price, with a 1M context window, adaptive thinking, and the full effort range including 'max'. Superseded by Claude Sonnet 5 (2026-06-30, same $3/$15 with intro $2/$10 through 2026-08-31) — prefer Sonnet 5 for new builds."
     },
 
     "security": {
@@ -150,7 +156,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 93,
@@ -164,7 +170,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 87,
@@ -178,7 +184,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 94,
@@ -192,7 +198,7 @@
             }
           ],
           "methodology": "Comprehensive safety testing across harmful content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 88,
@@ -206,7 +212,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong safety posture. Like Opus 4.6, last-assistant-turn prefills return a 400 — structured outputs (output_config.format) are the supported replacement."
@@ -227,7 +233,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation and privacy policies",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 95,
@@ -241,7 +247,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "0 days (ephemeral)",
@@ -255,7 +261,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 88,
@@ -269,7 +275,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 94,
@@ -283,7 +289,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 95,
@@ -297,7 +303,7 @@
             }
           ],
           "methodology": "Review of data handling practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Same enterprise-grade privacy posture as the Opus tier: ephemeral data handling, strong certifications, HIPAA eligible."
@@ -318,7 +324,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 87,
@@ -332,7 +338,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets and real-world usage",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 84,
@@ -346,7 +352,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 86,
@@ -360,7 +366,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 91,
@@ -374,7 +380,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 78,
@@ -388,7 +394,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 95,
@@ -402,7 +408,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Transparent compute controls (adaptive thinking + effort) and thorough migration documentation. Follows instructions closely, reducing prompt-engineering opacity."
@@ -423,7 +429,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 92,
@@ -437,7 +443,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 88,
@@ -448,10 +454,16 @@
               "url": "https://docs.anthropic.com/en/api/versioning",
               "date": "2026-06-10",
               "value": "Clear versioning with advance deprecation notice; documented migration path from Sonnet 4.5 and retired 3.x Sonnets"
+            },
+            {
+              "source": "Anthropic Model Deprecations",
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "date": "2026-07-09",
+              "value": "Active; tentative retirement not sooner than February 17, 2027; recommended replacement for retired Sonnet 4"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 87,
@@ -465,7 +477,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 91,
@@ -479,7 +491,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 93,
@@ -493,7 +505,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations and tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 92,
@@ -507,7 +519,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Production-ready with multi-cloud availability. Migration from Sonnet 4.5 requires setting effort explicitly (4.6 defaults to high) and removing assistant prefills."
@@ -568,8 +580,8 @@
   },
 
   "strengths": [
-    "Best speed/intelligence balance in the Claude lineup at $3/$15 per 1M tokens",
-    "1M token context window with 64K max output",
+    "Strong speed/intelligence balance at $3/$15 per 1M tokens (Sonnet 5 now leads the tier)",
+    "1M token context window with 128K max output (300K on the Batch API extended-output beta)",
     "Adaptive thinking supported — no manual thinking budgets to tune",
     "Effort parameter including 'max' (not available on Sonnet 4.5 or Haiku)",
     "Strong computer-use accuracy for agentic automation",
@@ -581,7 +593,7 @@
     "Lower ceiling than Opus tier on the hardest reasoning and long-horizon agentic tasks",
     "Removed assistant prefills — code relying on prefills returns 400",
     "Effort defaults to high — Sonnet 4.5 migrations see higher latency/cost unless effort is set explicitly",
-    "64K max output (vs 128K on Opus 4.6+)",
+    "Superseded by Claude Sonnet 5 (2026-06-30): 62.3% vs 72.7% SWE-bench Verified at the same standard price",
     "No native audio capabilities"
   ],
 
@@ -595,8 +607,8 @@
 
   "not_recommended_for": [
     "Frontier-difficulty reasoning where Opus 4.8 is warranted",
+    "New Sonnet-tier deployments — Claude Sonnet 5 offers materially better agentic performance at the same standard price",
     "Workflows still dependent on assistant-turn prefills",
-    "Outputs beyond 64K tokens in a single response",
     "Audio processing applications"
   ],
 
@@ -604,11 +616,11 @@
     "pricing": {
       "input": "$3.00 per 1M tokens",
       "output": "$15.00 per 1M tokens",
-      "notes": "Same pricing as Sonnet 4.5. Batch API 50% discount. Prompt caching up to 90% savings.",
-      "last_verified": "2026-06-10"
+      "notes": "Same pricing as Sonnet 4.5. Batch API 50% discount. Prompt caching up to 90% savings. Confirmed unchanged at $3/$15 as of 2026-07-09; successor Sonnet 5 has the same standard price (intro $2/$10 through 2026-08-31).",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1000000,
-    "max_output": 64000,
+    "max_output": 128000,
     "languages": [
       "English",
       "Spanish",
@@ -627,7 +639,7 @@
     "open_source": false,
     "architecture": "Transformer-based with Constitutional AI alignment, adaptive thinking, and effort parameter",
     "parameters": "Not disclosed",
-    "knowledge_cutoff": "Not disclosed"
+    "knowledge_cutoff": "August 2025 (reliable); training data through January 2026"
   },
 
   "related_entities": ["claude-sonnet-4-5", "claude-opus-4-6", "claude-opus-4-8", "claude-haiku-4-5"],
@@ -642,6 +654,7 @@
     "effort-parameter",
     "computer-use",
     "long-context",
-    "value-workhorse"
+    "value-workhorse",
+    "previous-generation"
   ]
 }

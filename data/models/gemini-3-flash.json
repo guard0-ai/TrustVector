@@ -4,9 +4,9 @@
   "name": "Gemini 3 Flash",
   "provider": "Google",
   "version": "gemini-3-flash-preview",
-  "last_evaluated": "2026-01-14",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Google's efficiency model with Pro-level performance at 1/4 the price. 78% SWE-bench (beats Pro), 1M context, 3x faster than 2.5 Pro. Thinking level parameter for compute control.",
+  "description": "Google's efficiency model with Pro-level performance at low cost. 78% SWE-bench (beat Gemini 3 Pro), 1M context, 3x faster than 2.5 Pro. Thinking level parameter for compute control. Still served as gemini-3-flash-preview (no shutdown date announced), but superseded as Google's lead Flash tier by Gemini 3.5 Flash (2026-05-19), which Google lists as its designated replacement.",
   "website": "https://blog.google/products/gemini/gemini-3-flash/",
 
   "trust_vector": {
@@ -25,7 +25,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 94,
@@ -45,7 +45,7 @@
             }
           ],
           "methodology": "PhD-level reasoning benchmarks",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 93,
@@ -59,7 +59,7 @@
             }
           ],
           "methodology": "Multimodal understanding testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 92,
@@ -73,7 +73,7 @@
             }
           ],
           "methodology": "Consistency testing across thinking levels",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "0.5s",
@@ -87,7 +87,7 @@
             }
           ],
           "methodology": "Median latency measurements",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "1.5s",
@@ -101,7 +101,7 @@
             }
           ],
           "methodology": "95th percentile measurements",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,000,000 tokens",
@@ -115,7 +115,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -129,7 +129,7 @@
             }
           ],
           "methodology": "Historical uptime data",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional value: 78% SWE-bench beats Pro at 1/4 the price. 3x faster than 2.5 Pro with 1M context. Beats Pro on tool use and MMMU."
@@ -150,7 +150,7 @@
             }
           ],
           "methodology": "OWASP LLM security testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 87,
@@ -164,7 +164,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 84,
@@ -178,7 +178,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 89,
@@ -192,7 +192,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 88,
@@ -206,7 +206,7 @@
             }
           ],
           "methodology": "API security review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security inherited from Gemini 3 family. Google Cloud infrastructure provides enterprise-grade protection."
@@ -227,7 +227,7 @@
             }
           ],
           "methodology": "Cloud infrastructure review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -241,7 +241,7 @@
             }
           ],
           "methodology": "Terms review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Varies by tier",
@@ -255,7 +255,7 @@
             }
           ],
           "methodology": "Retention policy review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -269,7 +269,7 @@
             }
           ],
           "methodology": "Data protection review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 90,
@@ -283,7 +283,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 84,
@@ -297,7 +297,7 @@
             }
           ],
           "methodology": "Enterprise feature review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good privacy with Google Cloud. Free tier available. Enterprise options for enhanced compliance."
@@ -318,7 +318,7 @@
             }
           ],
           "methodology": "Reasoning transparency evaluation",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 87,
@@ -332,7 +332,7 @@
             }
           ],
           "methodology": "Factual accuracy testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 84,
@@ -346,7 +346,7 @@
             }
           ],
           "methodology": "Bias evaluation",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 86,
@@ -360,7 +360,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 90,
@@ -374,7 +374,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 82,
@@ -388,7 +388,7 @@
             }
           ],
           "methodology": "Public disclosure review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 90,
@@ -402,7 +402,7 @@
             }
           ],
           "methodology": "Safety mechanism review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong transparency with thinking level parameter. Configurable reasoning depth for different use cases."
@@ -423,7 +423,7 @@
             }
           ],
           "methodology": "API design review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 94,
@@ -437,10 +437,10 @@
             }
           ],
           "methodology": "SDK quality assessment",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
-          "score": 90,
+          "score": 88,
           "confidence": "high",
           "evidence": [
             {
@@ -448,10 +448,16 @@
               "url": "https://cloud.google.com/apis/design/versioning",
               "date": "2025-12-17",
               "value": "Clear versioning"
+            },
+            {
+              "source": "Gemini API Deprecations",
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+              "date": "2026-07-09",
+              "value": "gemini-3-flash-preview listed with no announced shutdown date; designated replacement is gemini-3.5-flash"
             }
           ],
           "methodology": "Versioning policy review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 94,
@@ -465,7 +471,7 @@
             }
           ],
           "methodology": "Observability review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 91,
@@ -479,7 +485,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 91,
@@ -489,11 +495,11 @@
               "source": "Google AI Ecosystem",
               "url": "https://ai.google.dev/",
               "date": "2025-12-17",
-              "value": "Default model in consumer Gemini app"
+              "value": "Launched as default model in consumer Gemini app (December 2025); Google's Flash positioning has since moved to Gemini 3.5 Flash"
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 91,
@@ -507,10 +513,10 @@
             }
           ],
           "methodology": "License review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Excellent operational maturity. Default model in Gemini consumer app. Free tier available in API."
+      "notes": "Excellent operational maturity. Free tier available in API. Still in preview ~7 months after launch; Google's deprecations page names gemini-3.5-flash as its designated replacement, so plan migrations accordingly."
     }
   },
 
@@ -578,10 +584,10 @@
   ],
 
   "limitations": [
-    "Preview status (not yet GA)",
+    "Preview status (never promoted to GA; still gemini-3-flash-preview)",
+    "SUPERSEDED: Gemini 3.5 Flash (2026-05-19) is now Google's lead Flash tier and the designated replacement, though no shutdown date is announced",
     "Slightly behind Pro on GPQA Diamond (90.4% vs 93.8%)",
     "Less deep reasoning than Pro's Deep Think mode",
-    "Newer model with less enterprise testing",
     "Slightly higher than 2.5 Flash pricing ($0.50 vs $0.30)"
   ],
 
@@ -601,10 +607,10 @@
 
   "metadata": {
     "pricing": {
-      "input": "$0.50 per 1M tokens",
+      "input": "$0.50 per 1M tokens (text/image/video), $1.00 (audio)",
       "output": "$3.00 per 1M tokens",
-      "notes": "1/4 the price of Gemini 3 Pro. 10x cheaper than GPT-4o input. Free tier available.",
-      "last_verified": "2026-01-14"
+      "notes": "Confirmed on the official Gemini API pricing page 2026-07-09. 1/4 the price of Gemini 3.1 Pro and 1/3 of Gemini 3.5 Flash. Free tier available.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1000000,
     "max_output": 64000,
@@ -620,9 +626,10 @@
     "knowledge_cutoff": "January 2025"
   },
 
-  "related_entities": ["gemini-3-pro", "gemini-2-0-flash", "claude-sonnet-4-5", "gpt-4o"],
+  "related_entities": ["gemini-3-5-flash", "gemini-3-1-pro", "gemini-3-pro", "gemini-2-0-flash", "claude-sonnet-4-5"],
 
   "tags": [
+    "superseded",
     "cost-effective",
     "fast",
     "1m-tokens",

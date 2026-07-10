@@ -1,0 +1,474 @@
+{
+  "id": "factory-droids",
+  "type": "agent",
+  "name": "Factory Droids",
+  "provider": "Factory AI",
+  "version": "Droids platform (2026, Missions era)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Factory AI's enterprise agent-native software development platform. Specialist autonomous Droids handle coding, testing, code review, refactoring, and DevOps work across Desktop, CLI, SDK, Slack, ticketing, and CI, with Missions enabling long-horizon multi-agent workflows. #1 on Terminal-Bench (Sept 2025); $220M raised at a $1.5B valuation (Apr 2026); used daily by hundreds of thousands of developers at enterprises including Nvidia, Adobe, and EY.",
+  "website": "https://factory.ai/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 82,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Factory - Droid #1 on Terminal-Bench",
+              "url": "https://factory.ai/news/terminal-bench",
+              "date": "2025-09-25",
+              "value": "Droid reached #1 on Terminal-Bench at 58.8%, outperforming Claude Code and Codex CLI; Factory harnesses held three of the top five slots (Opus 4.1 58.8%, GPT-5 52.5%, Sonnet 4 50.5%), showing harness design drives results across models"
+            },
+            {
+              "source": "Factory leaderboards documentation",
+              "url": "https://docs.factory.ai/leaderboards",
+              "date": "2026-07-09",
+              "value": "Factory maintains published leaderboard results and claims #1 status across leading software development agent benchmarks"
+            }
+          ],
+          "methodology": "Review of public Terminal-Bench leaderboard placement (product-harness category) and sustained benchmark results; vendor-run submissions weighted with independent leaderboard verification",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory Series C announcement",
+              "url": "https://factory.ai/news/series-c",
+              "date": "2026-04-16",
+              "value": "Droids operate across terminal, editor, Slack, ticketing, and CI with full system access and local context via Factory Desktop; works with any model and any interface"
+            }
+          ],
+          "methodology": "Assessment of multi-surface tool execution (shell, editor, integrations) and MCP/tool configuration reliability",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory Series C announcement",
+              "url": "https://factory.ai/news/series-c",
+              "date": "2026-04-16",
+              "value": "Missions capability enables long-horizon, multi-step, multi-agent workflows spanning stages of the SDLC"
+            }
+          ],
+          "methodology": "Evaluation of Missions long-horizon planning and spec-driven execution across multi-stage engineering tasks",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory documentation",
+              "url": "https://docs.factory.ai/",
+              "date": "2026-07-09",
+              "value": "Organization-level context: AGENTS.md project guidance, agent-readiness dashboard, and persistent org/repo context shared across Droids and sessions"
+            }
+          ],
+          "methodology": "Review of org context engineering, project guidance files, and cross-session context persistence",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory - Droid #1 on Terminal-Bench",
+              "url": "https://factory.ai/news/terminal-bench",
+              "date": "2025-09-25",
+              "value": "Terminal-Bench tasks include debugging, legacy modernization, and build/test loops where Droid's harness recovered from failures better than competing agents even on sub-frontier models"
+            }
+          ],
+          "methodology": "Inference from benchmark categories requiring iterative failure recovery plus documented test-iteration behavior",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory Series C announcement",
+              "url": "https://factory.ai/news/series-c",
+              "date": "2026-04-16",
+              "value": "Specialist Droids (coding, review, testing, docs, DevOps-style tasks) coordinate in multi-agent Missions; work is delegated from Slack, tickets, or CI and returns as reviewable output"
+            }
+          ],
+          "methodology": "Review of specialist-Droid division of labor, Missions multi-agent orchestration, and delegation surfaces",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 69,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory CLI security documentation",
+              "url": "https://docs.factory.ai/cli/account/security",
+              "date": "2026-07-09",
+              "value": "Shell commands and file edits execute locally with only necessary context/diffs sent to Factory's cloud; optional OS-level sandbox with kernel-enforced filesystem/network isolation (Beta); Droid Computers provide Factory-managed cloud sandboxes on Plus/Max"
+            }
+          ],
+          "methodology": "Architecture review of local execution scoping, beta OS-level sandbox, and managed cloud sandbox model",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Factory CLI security documentation",
+              "url": "https://docs.factory.ai/cli/account/security",
+              "date": "2026-07-09",
+              "value": "SAML 2.0/OIDC SSO with SCIM provisioning, role-based access controls, per-tool allow/ask/reject permissions, write access restricted to project directories, and enterprise-managed security policies"
+            }
+          ],
+          "methodology": "Review of identity, RBAC, tool-permission granularity, and centrally managed policy controls",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory CLI security documentation",
+              "url": "https://docs.factory.ai/cli/account/security",
+              "date": "2026-07-09",
+              "value": "Prompt injection detection and input sanitization documented as built-in, with risky operations requiring explicit user approval; effectiveness not yet validated by third-party research"
+            }
+          ],
+          "methodology": "Review of documented injection mitigations (rare among peers) tempered by absence of independent adversarial testing",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory CLI security documentation",
+              "url": "https://docs.factory.ai/cli/account/security",
+              "date": "2026-07-09",
+              "value": "TLS 1.3 in transit, AES-256 at rest with AWS KMS, customer-managed encryption keys (BYOK), zero data retention mode, and dedicated compute with partitioned inference on Enterprise"
+            }
+          ],
+          "methodology": "Review of encryption, key management, ZDR, and tenant partitioning claims",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Factory documentation",
+              "url": "https://docs.factory.ai/",
+              "date": "2026-07-09",
+              "value": "Fully proprietary platform and harness; no source code published, though docs, leaderboard methodology, and a public trust center (trust.factory.ai) provide partial transparency"
+            }
+          ],
+          "methodology": "Source availability assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 74,
+      "criteria": {
+        "data_retention": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory CLI security documentation",
+              "url": "https://docs.factory.ai/cli/account/security",
+              "date": "2026-07-09",
+              "value": "Explicit commitment that Factory never trains on customer code; Zero Data Retention mode included on Business tier and above"
+            }
+          ],
+          "methodology": "Review of no-training commitment and ZDR tier availability",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory CLI security documentation",
+              "url": "https://docs.factory.ai/cli/account/security",
+              "date": "2026-07-09",
+              "value": "SOC 2 Type II certified with regular penetration testing and GDPR-compliant operations; compliance documentation via trust.factory.ai"
+            }
+          ],
+          "methodology": "Compliance certification review (SOC 2 Type II, GDPR) via security docs and trust center",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory pricing",
+              "url": "https://factory.ai/pricing",
+              "date": "2026-07-09",
+              "value": "Workloads route to third-party frontier models (GPT-5, Claude Opus/Sonnet, Gemini); Enterprise offers dedicated compute with partitioned inference to tighten the data path"
+            }
+          ],
+          "methodology": "Data flow analysis of multi-provider model routing and enterprise inference isolation options",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory pricing",
+              "url": "https://factory.ai/pricing",
+              "date": "2026-07-09",
+              "value": "Enterprise tier offers on-premise deployment, data residency options, and customer-managed encryption keys; CLI executes locally by default, but the platform and inference are cloud services"
+            }
+          ],
+          "methodology": "Deployment options assessment: on-prem/private-cloud available at Enterprise, no self-contained air-gapped offering",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 66,
+      "criteria": {
+        "documentation_quality": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Factory documentation",
+              "url": "https://docs.factory.ai/",
+              "date": "2026-07-09",
+              "value": "Thorough docs spanning CLI, security, enterprise administration, leaderboard methodology, and integration setup"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory CLI security documentation",
+              "url": "https://docs.factory.ai/cli/account/security",
+              "date": "2026-07-09",
+              "value": "Complete session logging maintained with OpenTelemetry metrics integration and enterprise audit-oriented administration"
+            }
+          ],
+          "methodology": "Review of session logs, OTel telemetry, and audit features for governance",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory Series C announcement",
+              "url": "https://factory.ai/news/series-c",
+              "date": "2026-04-16",
+              "value": "Droids produce reviewable plans, diffs, and PR-style outputs; Missions expose multi-step progress, though internal harness decisions are less visible than open competitors"
+            }
+          ],
+          "methodology": "Assessment of plan/diff visibility and change justification in delegated workflows",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 25,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Factory documentation",
+              "url": "https://docs.factory.ai/",
+              "date": "2026-07-09",
+              "value": "Closed-source product; no public source repositories for the platform or Droid harness"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory Series C announcement",
+              "url": "https://factory.ai/news/series-c",
+              "date": "2026-04-16",
+              "value": "Hundreds of thousands of daily developers and revenue doubling month-over-month for six months; community is enterprise-customer-driven rather than open-source contributor-driven"
+            }
+          ],
+          "methodology": "Community and ecosystem engagement analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 81,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Factory Series C announcement",
+              "url": "https://factory.ai/news/series-c",
+              "date": "2026-04-16",
+              "value": "Droids accessible from Desktop, CLI, and SDK, plus Slack, ticketing systems, and CI; works with any model and existing developer tooling"
+            }
+          ],
+          "methodology": "Integration surface assessment across developer and team-workflow entry points",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory pricing",
+              "url": "https://factory.ai/pricing",
+              "date": "2026-07-09",
+              "value": "Droid Computers provide Factory-managed cloud sandboxes for parallel background agents; Enterprise supports unlimited members with dedicated compute; proven at Nvidia, Adobe, EY, Palo Alto Networks, Adyen scale"
+            }
+          ],
+          "methodology": "Assessment of parallel cloud execution, enterprise seat scaling, and named large-scale deployments",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory pricing",
+              "url": "https://factory.ai/pricing",
+              "date": "2026-07-09",
+              "value": "Individual tiers Pro $20/mo, Plus $100/mo (~5x usage), Max $200/mo (~10x usage); Business/Enterprise custom-priced with tailored usage limits per seat. Usage-based consumption within tiers varies with task size"
+            }
+          ],
+          "methodology": "Pricing model analysis: flat tiers with opaque underlying usage allowances; enterprise seat+usage blend requires negotiation",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory pricing",
+              "url": "https://factory.ai/pricing",
+              "date": "2026-07-09",
+              "value": "Billing tracking and agent-readiness dashboards on all paid tiers; session logging, OpenTelemetry metrics, and enterprise admin controls for governance"
+            }
+          ],
+          "methodology": "Review of usage dashboards, telemetry export, and admin governance tooling",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Factory Series C announcement",
+              "url": "https://factory.ai/news/series-c",
+              "date": "2026-04-16",
+              "value": "$150M Series C led by Khosla Ventures (Sequoia, Blackstone, Insight, NEA participating) at $1.5B valuation; $220M raised in total; revenue doubling monthly for six months with major enterprise customers"
+            }
+          ],
+          "methodology": "Vendor viability and deployment maturity assessment from funding, revenue trajectory, and named enterprise adoption",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 86,
+      "notes": "Terminal-Bench leader; specialist Droids cover coding, review, testing, and refactoring with strong results even on sub-frontier models"
+    },
+    "data-analysis": {
+      "overall": 68,
+      "notes": "Can script analyses and ML workflows in its environments, but the platform targets the software delivery lifecycle"
+    },
+    "research-assistant": {
+      "overall": 64,
+      "notes": "Codebase and ticket-context research is strong; general-purpose research is not the product's aim"
+    },
+    "customer-service": {
+      "overall": 40,
+      "notes": "Not designed for customer-facing conversational work; Slack presence is for engineering delegation only"
+    }
+  },
+  "best_for": [
+    "Enterprises wanting governed, auditable agents across the full SDLC (code, test, review, deploy)",
+    "Teams delegating engineering work from Slack, Jira/ticketing, and CI rather than an IDE",
+    "Organizations with strict procurement needs: SOC 2 Type II, ZDR, BYOK keys, on-prem options",
+    "Large-scale parallel agent execution via Factory-managed Droid Computers",
+    "Model-flexible shops running GPT-5, Claude, and Gemini through one harness"
+  ],
+  "strengths": [
+    "#1 on Terminal-Bench (58.8%, Sept 2025) with three of the top five harness slots, beating Claude Code and Codex CLI",
+    "Specialist Droids plus Missions for long-horizon, multi-step, multi-agent SDLC workflows",
+    "Strong enterprise security package: SOC 2 Type II, SSO/SCIM, RBAC, allow/ask/reject tool permissions, ZDR, BYOK keys, on-prem",
+    "Documented prompt injection detection and input sanitization - rare among coding agents",
+    "Observability for governance: complete session logs, OpenTelemetry metrics, admin dashboards",
+    "Proven enterprise adoption: Nvidia, Adobe, EY, Palo Alto Networks, Adyen; hundreds of thousands of daily developers",
+    "Strong vendor trajectory: $220M raised, $1.5B valuation (Apr 2026), revenue doubling monthly for six months"
+  ],
+  "limitations": [
+    "Fully closed-source platform and harness; transparency relies on vendor documentation",
+    "OS-level sandbox is still Beta; default local execution relies on permission gates",
+    "Usage allowances behind flat tiers are opaque, making heavy-use costs hard to forecast",
+    "Injection defenses and security claims lack independent third-party validation",
+    "Workloads depend on third-party frontier model providers (GPT-5, Claude, Gemini)",
+    "Rapid growth-stage company: pricing, packaging, and product surface have churned repeatedly since 2025",
+    "Best experience requires adopting Factory's platform surfaces; deep vendor coupling for SDLC-wide automation"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_models": [
+      "OpenAI GPT-5",
+      "Anthropic Claude Opus and Sonnet",
+      "Google Gemini",
+      "Additional models via harness (model-agnostic design)"
+    ],
+    "programming_languages": [
+      "Most major languages (Python, TypeScript, Java, Go, C++, etc.)"
+    ],
+    "deployment_type": "Cloud platform + local CLI/Desktop execution; Droid Computers managed cloud sandboxes; on-premise available at Enterprise",
+    "tool_support": [
+      "Droid CLI, Desktop, and SDK",
+      "Slack and ticketing (Jira/Linear-style) delegation",
+      "CI/CD integration",
+      "MCP and custom tools",
+      "OpenTelemetry metrics"
+    ],
+    "first_release": "Founded 2023; Droid CLI GA and Terminal-Bench #1 September 2025; Missions/Series C April 2026",
+    "pricing": "Individual: Pro $20/mo, Plus $100/mo, Max $200/mo (usage-tiered); Business (up to 150 seats, ZDR, SSO) and Enterprise (unlimited, dedicated compute, on-prem) custom seat+usage pricing",
+    "company_milestones": "$220M total raised; $150M Series C at $1.5B valuation led by Khosla Ventures (2026-04-16); revenue doubled month-over-month for six consecutive months; customers include Nvidia, Adobe, EY, Palo Alto Networks, Adyen"
+  },
+  "related_entities": [
+    "devin",
+    "claude-code",
+    "openai-codex",
+    "github-copilot-coding-agent",
+    "cursor-agent"
+  ],
+  "tags": [
+    "autonomous",
+    "enterprise",
+    "sdlc-platform",
+    "multi-agent",
+    "proprietary"
+  ]
+}

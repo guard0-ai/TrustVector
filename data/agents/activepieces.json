@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "Activepieces",
   "provider": "Activepieces",
-  "version": "0.x",
-  "last_evaluated": "2025-11-09",
+  "version": "0.86.2",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Open-source no-code business automation platform with AI capabilities. Self-hostable alternative to Zapier with visual workflow builder, 200+ app integrations, and LLM integration for intelligent automation.",
+  "description": "Open-source no-code business automation platform with AI agent capabilities. Self-hostable alternative to Zapier with visual workflow builder, 700+ app integrations (each also exposed as an MCP server for AI agents/LLM tools), and LLM integration for intelligent automation.",
   "website": "https://www.activepieces.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Workflow reliability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "ai_integration": {
           "score": 79,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "AI capability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "app_integrations": {
           "score": 82,
@@ -47,12 +47,12 @@
             {
               "source": "Pieces Catalog",
               "url": "https://www.activepieces.com/pieces",
-              "date": "2024-10-01",
-              "value": "200+ app integrations (pieces) with active development"
+              "date": "2026-07-09",
+              "value": "700+ app integrations (pieces) with active development; ~400 exposed as MCP servers"
             }
           ],
           "methodology": "Integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_handling": {
           "score": 76,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Error recovery testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "performance": {
           "score": 74,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Variable (self-hosted)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "authentication": {
           "score": 75,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Authentication testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "credential_storage": {
           "score": 78,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Credential security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 88,
@@ -150,12 +150,12 @@
             {
               "source": "GitHub",
               "url": "https://github.com/activepieces/activepieces",
-              "date": "2024-10-20",
-              "value": "MIT license, 9k+ stars, open source community"
+              "date": "2026-07-09",
+              "value": "MIT license, 23k+ stars, open source community"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 70,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "API security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 81,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment": {
           "score": 93,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_processing": {
           "score": 78,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "no_telemetry": {
           "score": 85,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Telemetry assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "visual_builder": {
           "score": 87,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "UI/UX assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 90,
@@ -286,12 +286,12 @@
             {
               "source": "GitHub",
               "url": "https://github.com/activepieces/activepieces",
-              "date": "2024-10-20",
-              "value": "MIT license, 9k+ stars, active development"
+              "date": "2026-07-09",
+              "value": "MIT license, 23k+ stars, active development (0.86.2 released July 8, 2026)"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_logs": {
           "score": 78,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 76,
@@ -319,7 +319,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Usability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 70,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 92,
@@ -361,12 +361,12 @@
             {
               "source": "Pricing",
               "url": "https://www.activepieces.com/pricing",
-              "date": "2024-10-01",
-              "value": "Free MIT open source, cloud from $250/month"
+              "date": "2026-07-09",
+              "value": "Free MIT open source (Community Edition); Cloud Standard: 10 free active flows then $5/active flow/month with unlimited runs; Ultimate: custom annual contract"
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 68,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "piece_ecosystem": {
           "score": 76,
@@ -389,12 +389,12 @@
             {
               "source": "Pieces",
               "url": "https://www.activepieces.com/pieces",
-              "date": "2024-10-01",
-              "value": "200+ pieces (integrations), growing ecosystem"
+              "date": "2026-07-09",
+              "value": "700+ pieces (integrations), fast-growing ecosystem with MCP server support"
             }
           ],
           "methodology": "Integration ecosystem assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 72,
@@ -408,7 +408,7 @@
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -466,8 +466,8 @@
     "No vendor lock-in with full data control",
     "Clean visual no-code interface for business users",
     "Free to use with only infrastructure costs",
-    "200+ app integrations with active development",
-    "Growing community and active GitHub development"
+    "700+ app integrations with active development, each usable as an MCP server",
+    "Growing community and active GitHub development (23k+ stars)"
   ],
   "limitations": [
     "Smaller integration ecosystem than commercial alternatives",
@@ -489,16 +489,18 @@
     ],
     "deployment_type": "Self-hosted (Docker) or Activepieces Cloud",
     "tool_support": [
-      "200+ app pieces",
+      "700+ app pieces",
       "Custom pieces",
-      "Webhooks"
+      "Webhooks",
+      "MCP servers"
     ],
-    "pricing_model": "Free open source, Cloud from $250/month",
-    "github_stars": "9000+",
+    "pricing_model": "Free open source (Community Edition); Cloud Standard: flow-based pricing ($5/active flow/month after 10 free, unlimited runs); Ultimate: custom",
+    "github_stars": "23000+",
     "first_release": "2022",
+    "latest_version": "0.86.2 (July 8, 2026)",
     "database": "PostgreSQL",
     "queue_system": "Redis (optional for scaling)",
-    "pricing": "Free self-hosted (MIT license), Cloud: $1 per 1,000 tasks. 300+ integrations, 280+ MCP servers"
+    "pricing": "Free self-hosted (MIT license); Cloud Standard: 10 free active flows, $5/active flow/month thereafter, unlimited runs (verified 2026-07-09). 700+ integrations, ~400 MCP servers"
   },
   "tags": [
     "automation",

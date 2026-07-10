@@ -4,7 +4,7 @@
   "name": "Claude Opus 4.8",
   "provider": "Anthropic",
   "version": "20260528",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Anthropic's flagship Opus model with state-of-the-art long-horizon agentic execution, knowledge work, and memory. 84% on Online-Mind2Web, dynamic multi-subagent workflows, ~4x less likely to miss its own code flaws than its predecessor, and 1M context at standard pricing.",
   "website": "https://www.anthropic.com/news/claude-opus-4-8",
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Agentic coding and web-agent benchmarks measuring long-horizon autonomous execution and self-verification",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 96,
@@ -44,7 +44,7 @@
             }
           ],
           "methodology": "Graduate-level reasoning and knowledge-work benchmarks evaluated with adaptive thinking at high effort",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 95,
@@ -58,7 +58,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge and multimodal testing, including high-resolution vision inherited from Opus 4.7",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 95,
@@ -72,7 +72,7 @@
             }
           ],
           "methodology": "Long-horizon agentic run consistency and self-verification testing across effort levels",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Same adaptive-thinking-only surface as Opus 4.7; effort parameter (incl. xhigh) controls depth"
         },
         "latency_p50": {
@@ -87,7 +87,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "6.5s",
@@ -101,7 +101,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,000,000 tokens",
@@ -115,21 +115,22 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
-          "score": 99,
+          "score": 98,
           "confidence": "high",
           "evidence": [
             {
               "source": "Anthropic Status Page",
-              "url": "https://status.anthropic.com/",
-              "date": "2026-06-10",
-              "value": "99.9%+ uptime (last 90 days)"
+              "url": "https://status.claude.com/",
+              "date": "2026-07-09",
+              "value": "Claude API uptime 99.57% (last 90 days); elevated-error incidents across models in early July 2026, including an Opus 4.8-specific incident on 2026-07-09"
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09",
+          "notes": "Score trimmed from 99 to 98: 90-day API uptime dipped below 99.9% amid early-July 2026 incident cluster"
         }
       },
       "notes": "Current flagship Opus. State-of-the-art long-horizon agentic execution, knowledge work, and memory; 84% Online-Mind2Web; dynamic multi-subagent workflows. Superseded only by the higher-tier Claude Fable 5."
@@ -149,7 +150,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks, including agentic browsing scenarios",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 94,
@@ -163,7 +164,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 88,
@@ -177,7 +178,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 95,
@@ -191,7 +192,7 @@
             }
           ],
           "methodology": "Comprehensive safety testing across harmful content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 89,
@@ -205,7 +206,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong safety posture with agentic-specific safeguards. Mid-session system prompts (beta) give operators a non-spoofable instruction channel for long-running sessions."
@@ -225,7 +226,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation and privacy policies",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 95,
@@ -239,7 +240,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Configurable; zero-retention available",
@@ -253,7 +254,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 88,
@@ -267,7 +268,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 94,
@@ -281,7 +282,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 95,
@@ -295,7 +296,7 @@
             }
           ],
           "methodology": "Review of data handling practices and trust center documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard Anthropic enterprise compliance posture: SOC 2 Type II, GDPR, HIPAA-eligible, training opt-out by default for API traffic."
@@ -315,7 +316,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 89,
@@ -329,7 +330,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets and self-verification evaluations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 85,
@@ -343,7 +344,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 88,
@@ -357,7 +358,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 93,
@@ -371,7 +372,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 78,
@@ -385,7 +386,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 96,
@@ -399,7 +400,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "More deliberate and transparent in long agentic runs than Opus 4.7 \u2014 narrates progress, flags uncertainty, and self-verifies code. Thinking text remains omitted by default."
@@ -419,7 +420,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Adaptive thinking only; effort levels include xhigh; task budgets (beta) supported"
         },
         "sdk_quality": {
@@ -434,7 +435,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 88,
@@ -445,10 +446,16 @@
               "url": "https://platform.claude.com/docs/en/api/versioning",
               "date": "2026-05-28",
               "value": "Clear versioning with advance deprecation notice; stable claude-opus-4-8 alias"
+            },
+            {
+              "source": "Anthropic Model Deprecations",
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "date": "2026-07-09",
+              "value": "Active; tentative retirement not sooner than May 28, 2027; recommended replacement for deprecated Opus 4.1 and retired Opus 4"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 87,
@@ -462,7 +469,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 91,
@@ -476,7 +483,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 92,
@@ -490,7 +497,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations and availability surfaces",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 92,
@@ -504,7 +511,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Drop-in upgrade from Opus 4.7 (identical API surface). 1M context at standard pricing with no long-context premium; optional fast mode at $10/$50."
@@ -625,8 +632,8 @@
     "pricing": {
       "input": "$5.00 per 1M tokens",
       "output": "$25.00 per 1M tokens",
-      "notes": "Fast mode available at $10/$50 per 1M. 1M context at standard pricing with no long-context premium. Batch API 50% discount, prompt caching savings apply.",
-      "last_verified": "2026-06-10"
+      "notes": "Fast mode available at $10/$50 per 1M. 1M context at standard pricing with no long-context premium. Batch API 50% discount, prompt caching savings apply. Confirmed unchanged at $5/$25 as of 2026-07-09.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1000000,
     "max_output": 128000,
@@ -654,7 +661,7 @@
     "open_source": false,
     "architecture": "Transformer-based with Constitutional AI alignment; adaptive thinking only with effort parameter including xhigh; same API surface as Opus 4.7",
     "parameters": "Not disclosed",
-    "knowledge_cutoff": "Not disclosed",
+    "knowledge_cutoff": "January 2026 (reliable knowledge and training data cutoff)",
     "release_date": "2026-05-28"
   },
   "related_entities": [

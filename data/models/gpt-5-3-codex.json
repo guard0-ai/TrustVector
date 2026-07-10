@@ -4,9 +4,9 @@
   "name": "GPT-5.3-Codex",
   "provider": "OpenAI",
   "version": "gpt-5-3-codex-2026-02-05",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's agentic coding specialist: ~80% SWE-bench Verified, 77.3% Terminal-Bench, SOTA on SWE-Bench Pro at release, ~25% faster than GPT-5.2-Codex. The 5.3 generation was Codex-only — there is no general-purpose GPT-5.3.",
+  "description": "OpenAI's agentic coding specialist, still active with no announced shutdown (as of 2026-07-09): ~80% SWE-bench Verified, 77.3% Terminal-Bench, SOTA on SWE-Bench Pro at release, ~25% faster than GPT-5.2-Codex. The 5.3 generation shipped no general-purpose API flagship — only this Codex model plus a gpt-5.3-chat-latest ChatGPT alias that shuts down 2026-08-10.",
   "website": "https://openai.com/index/introducing-gpt-5-3-codex/",
 
   "trust_vector": {
@@ -37,7 +37,7 @@
             }
           ],
           "methodology": "Industry-standard agentic coding benchmarks measuring real-world software engineering tasks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 88,
@@ -51,7 +51,7 @@
             }
           ],
           "methodology": "Reasoning benchmark review relative to general-purpose flagships",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 85,
@@ -65,7 +65,7 @@
             }
           ],
           "methodology": "Comparison against general-purpose models on non-coding workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 92,
@@ -79,7 +79,7 @@
             }
           ],
           "methodology": "Provider-reported reliability on multi-step agentic coding sessions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "~25% faster than GPT-5.2-Codex",
@@ -93,21 +93,21 @@
             }
           ],
           "methodology": "Provider-reported relative latency on agentic coding workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "400,000 tokens",
-          "confidence": "medium",
+          "confidence": "high",
           "evidence": [
             {
-              "source": "OpenRouter Model Page",
-              "url": "https://openrouter.ai/openai/gpt-5.3-codex",
-              "date": "2026-02-05",
-              "value": "400K token context window listed for gpt-5.3-codex"
+              "source": "OpenAI Model Page: gpt-5.3-codex",
+              "url": "https://developers.openai.com/api/docs/models/gpt-5.3-codex",
+              "date": "2026-07-09",
+              "value": "400K token context window; 128K max output tokens (official specification)"
             }
           ],
-          "methodology": "Third-party model registry specification",
-          "last_verified": "2026-06-10"
+          "methodology": "Official specification from provider",
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -121,7 +121,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Best-in-class agentic coding at release (~80% SWE-bench Verified, 77.3% Terminal-Bench, SOTA SWE-Bench Pro). Specialized model — general-purpose accuracy intentionally trails flagships."
@@ -142,7 +142,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 attacks including coding-agent vectors",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 89,
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing against jailbreak datasets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 84,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 90,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content and dangerous-action categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 86,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good security posture with sandboxing in Codex environments. Autonomous code execution warrants strict permissioning and review gates in production pipelines."
@@ -219,7 +219,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -233,7 +233,7 @@
             }
           ],
           "methodology": "Policy review of data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days (zero retention available)",
@@ -247,7 +247,7 @@
             }
           ],
           "methodology": "Terms of service and enterprise documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -261,7 +261,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -275,7 +275,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 88,
@@ -289,7 +289,7 @@
             }
           ],
           "methodology": "Enterprise feature review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard OpenAI enterprise posture. Proprietary source code sent as context is covered by no-training-by-default; zero-data-retention recommended for sensitive codebases."
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning and action transparency",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 88,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Code correctness evaluation with execution-based verification",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 83,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Bias benchmarks and demographic testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 86,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in agentic outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 90,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Documentation completeness and clarity review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 78,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 90,
@@ -394,7 +394,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Agent transcripts give strong action-level auditability. Execution-based verification reduces unchecked hallucination relative to chat-style code generation."
@@ -415,7 +415,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 95,
@@ -429,7 +429,7 @@
             }
           ],
           "methodology": "SDK quality, documentation, and maintenance review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 88,
@@ -443,7 +443,7 @@
             }
           ],
           "methodology": "Review of versioning policy and deprecation practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 94,
@@ -457,7 +457,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 93,
@@ -471,7 +471,7 @@
             }
           ],
           "methodology": "Support and documentation assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 96,
@@ -485,7 +485,7 @@
             }
           ],
           "methodology": "Ecosystem breadth and depth analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 91,
@@ -499,7 +499,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Deep coding-tool ecosystem (CLI, IDE, cloud agents). Codex line moves fast: GPT-5.2-Codex shuts down 2026-07-23, so plan for shorter model lifecycles than general flagships."
@@ -540,9 +540,8 @@
 
   "limitations": [
     "Specialized for coding — weaker than flagships on general reasoning and writing",
-    "No general-purpose GPT-5.3 exists; the 5.3 generation was Codex-only",
+    "No general-purpose GPT-5.3 API flagship; only the Codex model and a gpt-5.3-chat-latest alias (shutdown 2026-08-10)",
     "Fast Codex lifecycle: predecessor GPT-5.2-Codex shuts down 2026-07-23, suggesting shorter support horizons",
-    "Pricing confirmed primarily via third-party listings (medium confidence)",
     "Not HIPAA eligible; 30-day default retention",
     "Autonomous code execution requires sandboxing and review gates"
   ],
@@ -562,10 +561,10 @@
 
   "metadata": {
     "pricing": {
-      "input": "$1.75 per 1M tokens (approximate)",
-      "output": "$14.00 per 1M tokens (approximate)",
-      "notes": "Pricing per OpenRouter listing (https://openrouter.ai/openai/gpt-5.3-codex); confidence medium pending first-party pricing page confirmation.",
-      "last_verified": "2026-06-10"
+      "input": "$1.75 per 1M tokens",
+      "output": "$14.00 per 1M tokens",
+      "notes": "Confirmed on OpenAI's official pricing and model pages 2026-07-09. Cached input $0.175 per 1M; Priority tier $3.50/$28.00 per 1M.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 400000,
     "max_output": 128000,
@@ -588,7 +587,7 @@
     "open_source": false,
     "architecture": "Transformer-based, fine-tuned for agentic software engineering (Codex line)",
     "parameters": "Not disclosed",
-    "knowledge_cutoff": "Late 2025"
+    "knowledge_cutoff": "August 31, 2025"
   },
 
   "related_entities": ["gpt-5-2-codex", "gpt-5-5", "gpt-5-4", "claude-opus-4-8"],

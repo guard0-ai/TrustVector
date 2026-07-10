@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Memory Server",
   "provider": "Anthropic",
-  "version": "2025.9.25",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7.4",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "MCP reference server providing persistent memory and knowledge graph capabilities: long-term retention, entity relationship tracking, and contextual recall across conversations. One of the seven reference servers still actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation (Linux Foundation) on 2025-12-09, latest spec 2025-11-25. Critical for personalized AI but raises significant privacy concerns.",
+  "description": "MCP reference server providing persistent memory and knowledge graph capabilities: long-term retention, entity relationship tracking, and contextual recall across conversations. One of the seven reference servers still maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation (Linux Foundation) on 2025-12-09, latest stable spec 2025-11-25 (2026-07-28 revision at release-candidate stage). Critical for personalized AI but raises privacy concerns.",
   "website": "https://github.com/modelcontextprotocol/servers",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Retrieval accuracy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "knowledge_graph_integrity": {
           "score": 82,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Graph consistency testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "context_recall": {
           "score": 80,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Recall quality assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "storage_scalability": {
           "score": 84,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_performance": {
           "score": 81,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Query latency testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_modification_risk": {
           "score": 70,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Write operation risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_poisoning_risk": {
           "score": 68,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Data integrity risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_injection_protection": {
           "score": 78,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 72,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Privacy risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_retention_control": {
           "score": 68,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data retention controls review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "consent_management": {
           "score": 62,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Consent framework review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "right_to_deletion": {
           "score": 70,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "GDPR right to erasure assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "embedding_privacy": {
           "score": 65,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Embedding privacy analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Memory transparency assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "knowledge_graph_explainability": {
           "score": 75,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Explainability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "documentation_quality": {
           "score": 78,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 80,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Source code transparency review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "storage_efficiency": {
           "score": 78,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Storage efficiency testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "retrieval_performance": {
           "score": 81,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "maintenance_requirements": {
           "score": 77,
@@ -355,10 +355,16 @@
               "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
               "date": "2025-12-09",
               "value": "memory is one of the seven reference servers still actively maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09"
+            },
+            {
+              "source": "npm - @modelcontextprotocol/server-memory",
+              "url": "https://www.npmjs.com/package/@modelcontextprotocol/server-memory",
+              "date": "2026-07-09",
+              "value": "Latest release 2026.7.4 (published 2026-07-04); still listed among the seven maintained reference servers in modelcontextprotocol/servers README (repo ~88,300 stars, not archived)"
             }
           ],
           "methodology": "Maintenance overhead assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "backup_and_recovery": {
           "score": 80,
@@ -372,7 +378,7 @@
             }
           ],
           "methodology": "Backup capabilities review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -392,7 +398,7 @@
     "Limited consent management and data retention controls",
     "Memory poisoning risk - AI can store incorrect information",
     "GDPR/privacy compliance challenges without careful implementation",
-    "STATUS 2026-06-10: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); governance now under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
+    "STATUS 2026-07-09: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); latest npm release 2026.7.4 (2026-07-04); no known CVEs against this server; governance under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -405,7 +411,7 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "github_stars": 58700,
+    "github_stars": 88259,
     "storage_backends": [
       "SQLite",
       "PostgreSQL",

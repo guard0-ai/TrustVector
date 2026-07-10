@@ -328,11 +328,10 @@ export function ExportPDFButton({ entity }: ExportPDFButtonProps) {
       disabled={isExporting}
       data-export-button
       className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
-                 bg-green-950/60 text-green-400 border-2 border-green-500/40 rounded-lg
-                 hover:bg-green-950/80 hover:border-green-400/60 hover:text-green-300
+                 bg-transparent text-foreground border border-border rounded
+                 hover:border-primary hover:text-primary hover:bg-primary/5
                  disabled:opacity-50 disabled:cursor-not-allowed
-                 transition-all duration-200 tracking-wide uppercase
-                 shadow-[0_0_10px_rgba(34,197,94,0.1)] hover:shadow-[0_0_20px_rgba(34,197,94,0.2)]"
+                 transition-all duration-200 tracking-wide uppercase"
       aria-label={`Export ${entity.name} trust report as PDF`}
     >
       {isExporting ? (

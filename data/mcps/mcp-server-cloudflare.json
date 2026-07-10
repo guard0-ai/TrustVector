@@ -3,11 +3,11 @@
   "type": "mcp",
   "name": "MCP Cloudflare Server",
   "provider": "Cloudflare",
-  "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "version": "2026.7 (managed remote servers)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official Cloudflare MCP server for managing CDN, DNS, Workers, Pages, and security services. Enables AI models to configure edge computing, manage domains, deploy serverless functions, and control security policies. Essential for AI-powered edge infrastructure and web performance optimization.",
-  "website": "https://github.com/cloudflare/cloudflare-mcp-server",
+  "description": "Official Cloudflare catalog of managed remote MCP servers, connected over OAuth. The primary Cloudflare API server at https://mcp.cloudflare.com/mcp exposes 2,500+ API endpoints (DNS, Workers, R2, Zero Trust, and more) through two Code Mode tools, search() and execute(), in roughly 1,000 tokens. Sixteen additional product-specific servers cover documentation, Workers bindings and builds, observability, Radar, browser rendering, AI Gateway, audit logs, and more.",
+  "website": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 86,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "API stability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "dns_operation_success": {
           "score": 90,
@@ -32,13 +32,13 @@
           "evidence": [
             {
               "source": "Cloudflare MCP Server",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
               "value": "High success rate for DNS, CDN, and Workers operations"
             }
           ],
           "methodology": "Operation success testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "global_edge_performance": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Geographic performance testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 83,
@@ -74,46 +74,46 @@
           "evidence": [
             {
               "source": "Implementation Review",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
               "value": "Handles API errors with retry logic and fallback"
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 70,
+      "overall_score": 73,
       "criteria": {
         "authentication_security": {
-          "score": 80,
+          "score": 85,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Cloudflare API Authentication",
-              "url": "https://developers.cloudflare.com/fundamentals/api/get-started/keys/",
-              "date": "2025-11-16",
-              "value": "Uses API tokens with scoped permissions or legacy API keys"
+              "source": "Cloudflare Managed MCP Servers Documentation",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
+              "value": "Managed remote servers use an OAuth flow where the user is redirected to Cloudflare to authorize and select permissions; API token bearer auth remains available for CI/CD"
             }
           ],
-          "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "methodology": "Authentication mechanism review; raised from 80 as the default connection model is now OAuth with explicit permission selection rather than static API tokens",
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
-          "score": 65,
+          "score": 74,
           "confidence": "high",
           "evidence": [
             {
-              "source": "MCP Security Model",
-              "url": "https://modelcontextprotocol.io/docs/security",
-              "date": "2025-11-16",
-              "value": "Cloudflare API token stored locally; AI can perform actions within scope"
+              "source": "Cloudflare Managed MCP Servers Documentation",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
+              "value": "Remote OAuth connections avoid storing long-lived API tokens in client configuration; token exposure risk remains for CI/CD bearer-token setups"
             }
           ],
-          "methodology": "Token security analysis",
-          "last_verified": "2025-11-09"
+          "methodology": "Token security analysis; raised from 65 because the remote OAuth default removes locally stored long-lived tokens",
+          "last_verified": "2026-07-09"
         },
         "dns_manipulation_risk": {
           "score": 58,
@@ -121,13 +121,13 @@
           "evidence": [
             {
               "source": "Security Analysis",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
               "value": "AI can modify DNS records, potentially causing service disruption"
             }
           ],
           "methodology": "Operation risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "security_policy_modification": {
           "score": 62,
@@ -135,13 +135,13 @@
           "evidence": [
             {
               "source": "Security Analysis",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
               "value": "Can modify firewall rules, WAF settings, and security policies"
             }
           ],
           "methodology": "Security policy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 85,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "zone_access_control": {
           "score": 75,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "domain_information_disclosure": {
           "score": 68,
@@ -196,13 +196,13 @@
           "evidence": [
             {
               "source": "Privacy Analysis",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
               "value": "Domain names, origins, and infrastructure details may be exposed"
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "analytics_data_privacy": {
           "score": 75,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 72,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "secrets_in_workers": {
           "score": 70,
@@ -238,18 +238,18 @@
           "evidence": [
             {
               "source": "Security Analysis",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
               "value": "Workers code may contain secrets or sensitive configuration"
             }
           ],
           "methodology": "Secrets exposure assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "trust_transparency": {
-      "overall_score": 84,
+      "overall_score": 86,
       "criteria": {
         "documentation_quality": {
           "score": 87,
@@ -257,13 +257,13 @@
           "evidence": [
             {
               "source": "Cloudflare MCP Docs",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
               "value": "Comprehensive documentation with Cloudflare-specific examples"
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 88,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 90,
@@ -285,46 +285,46 @@
           "evidence": [
             {
               "source": "GitHub Repository",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
               "value": "Open source implementation from Cloudflare"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
-          "score": 72,
-          "confidence": "medium",
+          "score": 80,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "MCP Server Documentation",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
-              "value": "Clear but limited documentation of supported Cloudflare services"
+              "source": "Cloudflare Managed MCP Servers Documentation",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
+              "value": "Official docs enumerate every managed server with its endpoint URL and purpose; SSE transport is deprecated in favor of streamable-http at /mcp paths"
             }
           ],
-          "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "methodology": "API documentation review; raised from 72 as the current docs enumerate the full managed server catalog",
+          "last_verified": "2026-07-09"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 83,
+      "overall_score": 85,
       "criteria": {
         "ease_of_setup": {
-          "score": 82,
+          "score": 88,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Setup Documentation",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
-              "value": "Requires Cloudflare API token with appropriate zone permissions"
+              "source": "Cloudflare Managed MCP Servers Documentation",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
+              "value": "Zero-install: add the managed server URL (e.g. https://mcp.cloudflare.com/mcp) in an OAuth-capable MCP client and authorize; no local server or API token required for interactive use"
             }
           ],
-          "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "methodology": "Setup complexity assessment; raised from 82 as managed remote servers eliminate local installation and token provisioning",
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 88,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 90,
@@ -352,35 +352,35 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "service_coverage": {
-          "score": 78,
-          "confidence": "medium",
+          "score": 86,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Cloudflare MCP Server",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server",
-              "date": "2025-11-16",
-              "value": "Covers DNS, Workers, Pages, CDN, and security features"
+              "source": "Cloudflare Managed MCP Servers Documentation",
+              "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+              "date": "2026-07-09",
+              "value": "Primary API server exposes 2,500+ endpoints via Code Mode search()/execute(); 16 product-specific servers cover docs, bindings, builds, observability, Radar, containers, browser rendering, Logpush, AI Gateway, AI Search, audit logs, DNS analytics, DEX, CASB, and GraphQL"
             }
           ],
-          "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "methodology": "Feature coverage assessment; raised from 78 as coverage expanded to essentially the full Cloudflare API plus a broad server catalog",
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 77,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "GitHub Community",
-              "url": "https://github.com/cloudflare/cloudflare-mcp-server/discussions",
-              "date": "2025-11-16",
-              "value": "Growing adoption among Cloudflare users and edge developers"
+              "source": "cloudflare/mcp-server-cloudflare Repository",
+              "url": "https://github.com/cloudflare/mcp-server-cloudflare",
+              "date": "2026-07-09",
+              "value": "Growing adoption among Cloudflare users and edge developers; Cloudflare also publishes templates and skills for building remote MCP servers on Workers"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -433,34 +433,37 @@
     "Educators teaching serverless and edge computing concepts"
   ],
   "strengths": [
-    "Official Cloudflare implementation with edge computing expertise",
-    "Comprehensive edge infrastructure management (DNS, CDN, Workers, security)",
-    "Excellent global API performance with 300+ edge locations",
+    "Official Cloudflare managed remote MCP servers with OAuth and per-connection permission selection",
+    "Token-efficient Code Mode: 2,500+ API endpoints reachable through search()/execute() in about 1,000 tokens",
+    "Broad catalog of 16 product-specific servers (docs, observability, Radar, bindings, audit logs, and more)",
+    "Excellent global API performance on Cloudflare's edge network",
     "Full operation auditability through Cloudflare audit logs",
-    "Open source with Cloudflare support",
-    "High reliability with 99.95%+ uptime"
+    "Open source implementations with Cloudflare support; high reliability with 99.95%+ uptime"
   ],
   "limitations": [
     "Infrastructure configurations and Workers code exposed to LLM provider",
     "Risk of DNS manipulation causing service disruption",
-    "Can modify security policies and firewall rules",
+    "Can modify security policies and firewall rules within authorized permissions",
     "Domain names and infrastructure details may be disclosed",
     "Workers code may contain secrets or sensitive configuration",
-    "Requires careful API token scoping to limit access"
+    "execute() on the primary API server can reach any authorized endpoint, so OAuth permission selection must be scoped carefully; CI/CD bearer tokens still need manual scoping"
   ],
   "metadata": {
-    "license": "MIT",
+    "license": "Apache 2.0 (cloudflare/mcp-server-cloudflare)",
     "supported_platforms": [
-      "All platforms with Node.js/Python"
+      "Any OAuth-capable MCP client (remote managed servers); self-hostable on Cloudflare Workers"
     ],
     "programming_languages": [
-      "TypeScript",
-      "Python"
+      "TypeScript"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/cloudflare/cloudflare-mcp-server",
+    "github_repo": "https://github.com/cloudflare/mcp-server-cloudflare",
+    "remote_endpoint": "https://mcp.cloudflare.com/mcp (plus 16 product-specific *.mcp.cloudflare.com/mcp endpoints)",
+    "transport_types": [
+      "streamable-http (SSE deprecated)"
+    ],
     "api_dependency": "Cloudflare API v4",
-    "authentication": "Cloudflare API Token or API Key",
+    "authentication": "OAuth (interactive, with permission selection) or Cloudflare API token bearer auth (CI/CD)",
     "first_release": "2024-11",
     "maintained_by": "Cloudflare"
   },

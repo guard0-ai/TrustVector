@@ -3,11 +3,11 @@
   "type": "mcp",
   "name": "MCP Datadog Server",
   "provider": "Datadog",
-  "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "version": "hosted remote (GA 2026-03)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official Datadog MCP server for observability and monitoring integration. Enables AI models to query metrics, logs, traces, dashboards, and alerts. Includes infrastructure monitoring, APM, and security monitoring. Essential for AI-powered observability, performance optimization, and incident management workflows.",
-  "website": "https://github.com/DataDog/datadog-mcp-server",
+  "description": "Official Datadog MCP server for observability integration, generally available since March 2026 as a hosted streamable-HTTP remote (US1: https://mcp.datadoghq.com/api/unstable/mcp-server/mcp, with per-site regional endpoints) plus a local binary. Authenticates via OAuth 2.0 (recommended), access-token bearer header, or DD_API_KEY/DD_APPLICATION_KEY headers. Queries metrics, logs, traces, dashboards, and alerts; apm, code-exec, and remote-actions toolsets remain in preview.",
+  "website": "https://docs.datadoghq.com/mcp_server/",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 88,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Query success rate testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "log_search_accuracy": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Search accuracy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "real_time_monitoring": {
           "score": 90,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Real-time monitoring testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 86,
@@ -74,13 +74,13 @@
           "evidence": [
             {
               "source": "Implementation Review",
-              "url": "https://github.com/DataDog/datadog-mcp-server",
+              "url": "https://github.com/datadog-labs/mcp-server",
               "date": "2025-11-16",
               "value": "Handles API errors with exponential backoff and retry"
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -96,10 +96,16 @@
               "url": "https://docs.datadoghq.com/account_management/api-app-keys/",
               "date": "2025-11-16",
               "value": "Uses API keys and application keys with scoped permissions"
+            },
+            {
+              "source": "Datadog Docs - Set Up the MCP Server",
+              "url": "https://docs.datadoghq.com/mcp_server/setup/",
+              "date": "2026-07-09",
+              "value": "Hosted remote supports OAuth 2.0 (recommended, no long-lived credentials), personal/service access token bearer auth, or scoped DD_API_KEY/DD_APPLICATION_KEY headers from a service account"
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_key_exposure_risk": {
           "score": 65,
@@ -113,7 +119,7 @@
             }
           ],
           "methodology": "Credential security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "infrastructure_visibility_risk": {
           "score": 62,
@@ -121,13 +127,13 @@
           "evidence": [
             {
               "source": "Security Analysis",
-              "url": "https://github.com/DataDog/datadog-mcp-server",
+              "url": "https://github.com/datadog-labs/mcp-server",
               "date": "2025-11-16",
               "value": "AI can access detailed infrastructure topology and configurations"
             }
           ],
           "methodology": "Visibility risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitor_modification_control": {
           "score": 75,
@@ -141,7 +147,7 @@
             }
           ],
           "methodology": "Modification control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "organization_access_control": {
           "score": 80,
@@ -155,7 +161,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 88,
@@ -169,7 +175,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "log_data_privacy": {
           "score": 62,
@@ -196,13 +202,13 @@
           "evidence": [
             {
               "source": "Privacy Analysis",
-              "url": "https://github.com/DataDog/datadog-mcp-server",
+              "url": "https://github.com/datadog-labs/mcp-server",
               "date": "2025-11-16",
               "value": "Application logs may contain PII, credentials, and sensitive data"
             }
           ],
           "methodology": "Log privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "infrastructure_metadata_privacy": {
           "score": 68,
@@ -210,13 +216,13 @@
           "evidence": [
             {
               "source": "Privacy Analysis",
-              "url": "https://github.com/DataDog/datadog-mcp-server",
+              "url": "https://github.com/datadog-labs/mcp-server",
               "date": "2025-11-16",
               "value": "Infrastructure topology and host information may be exposed"
             }
           ],
           "methodology": "Infrastructure privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -230,7 +236,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "trace_data_privacy": {
           "score": 72,
@@ -244,7 +250,7 @@
             }
           ],
           "methodology": "Trace privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -257,13 +263,13 @@
           "evidence": [
             {
               "source": "Datadog MCP Docs",
-              "url": "https://github.com/DataDog/datadog-mcp-server",
+              "url": "https://github.com/datadog-labs/mcp-server",
               "date": "2025-11-16",
               "value": "Comprehensive documentation from official Datadog team"
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 88,
@@ -277,7 +283,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 92,
@@ -285,13 +291,13 @@
           "evidence": [
             {
               "source": "GitHub Repository",
-              "url": "https://github.com/DataDog/datadog-mcp-server",
+              "url": "https://github.com/datadog-labs/mcp-server",
               "date": "2025-11-16",
               "value": "Open source implementation from Datadog"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 75,
@@ -299,13 +305,13 @@
           "evidence": [
             {
               "source": "MCP Server Documentation",
-              "url": "https://github.com/DataDog/datadog-mcp-server",
+              "url": "https://github.com/datadog-labs/mcp-server",
               "date": "2025-11-16",
               "value": "Clear documentation of supported Datadog operations"
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -318,13 +324,19 @@
           "evidence": [
             {
               "source": "Setup Documentation",
-              "url": "https://github.com/DataDog/datadog-mcp-server",
+              "url": "https://github.com/datadog-labs/mcp-server",
               "date": "2025-11-16",
               "value": "Simple setup requiring Datadog API and application keys"
+            },
+            {
+              "source": "Datadog Docs - Set Up the MCP Server",
+              "url": "https://docs.datadoghq.com/mcp_server/setup/",
+              "date": "2026-07-09",
+              "value": "Hosted remote requires no install (streamable HTTP + OAuth); 15+ documented client integrations and a local binary fallback for restricted environments"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 88,
@@ -338,7 +350,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 92,
@@ -352,7 +364,7 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_coverage": {
           "score": 85,
@@ -360,13 +372,19 @@
           "evidence": [
             {
               "source": "Datadog MCP Server",
-              "url": "https://github.com/DataDog/datadog-mcp-server",
+              "url": "https://github.com/datadog-labs/mcp-server",
               "date": "2025-11-16",
               "value": "Covers metrics, logs, traces, dashboards, monitors, and infrastructure"
+            },
+            {
+              "source": "Datadog Docs - MCP Server",
+              "url": "https://docs.datadoghq.com/mcp_server/",
+              "date": "2026-07-09",
+              "value": "Core toolsets GA; apm, code-exec, and remote-actions toolsets remain in preview and require signup"
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "official_support": {
           "score": 90,
@@ -374,13 +392,19 @@
           "evidence": [
             {
               "source": "Datadog Team",
-              "url": "https://github.com/DataDog/datadog-mcp-server",
+              "url": "https://github.com/datadog-labs/mcp-server",
               "date": "2025-11-16",
               "value": "Officially maintained by Datadog with active support"
+            },
+            {
+              "source": "Datadog Press Release - MCP Server GA",
+              "url": "https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-mcp-server/",
+              "date": "2026-03-09",
+              "value": "Datadog MCP Server announced generally available, providing AI agents secure real-time access to unified observability data"
             }
           ],
           "methodology": "Maintainer support assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -436,6 +460,7 @@
   "strengths": [
     "Comprehensive observability platform (metrics, logs, traces, infrastructure)",
     "Official Datadog implementation with active support",
+    "Hosted remote GA since 2026-03 with OAuth 2.0 and per-site regional endpoints",
     "Highly reliable with 99.9%+ uptime on global infrastructure",
     "Excellent for AI-powered performance optimization and incident management",
     "Real-time alerting and monitoring with low latency",
@@ -447,28 +472,38 @@
     "Infrastructure topology and host information may be revealed",
     "Distributed traces may contain request parameters and user identifiers",
     "Subject to Datadog API rate limits",
-    "Requires careful log scrubbing to avoid sensitive data exposure"
+    "Requires careful log scrubbing to avoid sensitive data exposure",
+    "Some toolsets (apm, code-exec, remote-actions) still in preview and require signup"
   ],
   "metadata": {
-    "license": "MIT",
+    "license": "Hosted service (see datadog-labs/mcp-server repo for source terms)",
     "supported_platforms": [
-      "All platforms with Node.js/Python"
+      "Hosted remote (per-site endpoints, e.g. mcp.datadoghq.com)",
+      "Local binary (macOS, Linux, Windows)"
     ],
     "programming_languages": [
-      "TypeScript",
-      "Python"
+      "N/A (hosted service; local binary available)"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/DataDog/datadog-mcp-server",
+    "github_repo": "https://github.com/datadog-labs/mcp-server",
     "api_dependency": "Datadog REST API",
-    "authentication": "Datadog API Key and Application Key",
+    "authentication": "OAuth 2.0 (recommended), access token bearer header, or DD_API_KEY + DD_APPLICATION_KEY headers",
+    "remote_endpoint": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp (US1; per-site regional endpoints, e.g. mcp.datadoghq.eu)",
+    "remote_ga_date": "2026-03-09",
     "first_release": "2024-11",
-    "maintained_by": "Datadog"
+    "maintained_by": "Datadog",
+    "status": "Active - official Datadog MCP Server GA since 2026-03",
+    "transport_types": [
+      "streamable-http (hosted remote)",
+      "stdio (local binary)"
+    ]
   },
   "tags": [
     "monitoring",
     "observability",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "official",
+    "remote-server"
   ]
 }

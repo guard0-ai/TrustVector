@@ -4,9 +4,9 @@
   "name": "DeepSeek-R1",
   "provider": "DeepSeek",
   "version": "20251020",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "DeepSeek's standalone reasoning model, now superseded and discontinued as a product line. Its reasoning capabilities were folded into DeepSeek V3.1's hybrid thinking mode (Aug 2025), then V3.2 (Dec 2025) and V4 (Apr 2026); a successor 'R2' never shipped. The legacy deepseek-reasoner API endpoint is scheduled for deprecation on 2026-07-24. Historically achieved 53.6% on SWE-bench and 79.8% on HumanEval with strong coding and reasoning at competitive pricing.",
+  "description": "DeepSeek's standalone reasoning model, now superseded and discontinued. Its reasoning was folded into DeepSeek V3.1's hybrid thinking mode (Aug 2025), then V3.2 (Dec 2025) and V4 (Apr 2026); a successor 'R2' never shipped. The legacy deepseek-reasoner name no longer serves R1 — it routes to V4-Flash's thinking mode and is removed 2026-07-24 (15:59 UTC). R1 remains available only via third-party hosts or self-hosted open weights. Historically 53.6% SWE-bench and 79.8% HumanEval.",
   "website": "https://www.deepseek.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks measuring real-world software engineering tasks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 90,
@@ -50,7 +50,7 @@
             }
           ],
           "methodology": "Graduate-level reasoning benchmarks requiring multi-step problem solving",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 89,
@@ -70,7 +70,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge testing across domains",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 88,
@@ -84,7 +84,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts at various temperature settings",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.9s",
@@ -98,7 +98,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "3.4s",
@@ -112,7 +112,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "64,000 tokens",
@@ -126,7 +126,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 97,
@@ -140,7 +140,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong performance with excellent coding capabilities and efficient reasoning. Competitive latency despite reasoning optimization."
@@ -160,7 +160,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 84,
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 80,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 86,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Comprehensive safety testing across harmful content categories",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 84,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good security posture with standard guardrails. Adequate protection for typical use cases."
@@ -236,7 +236,7 @@
             }
           ],
           "methodology": "Review of documentation and privacy policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 88,
@@ -250,7 +250,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "60 days (configurable)",
@@ -264,7 +264,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 78,
@@ -278,7 +278,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 82,
@@ -292,7 +292,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 75,
@@ -306,7 +306,7 @@
             }
           ],
           "methodology": "Review of data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Moderate privacy posture. Data residency primarily in Asia. Limited compliance certifications for Western markets."
@@ -326,7 +326,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 80,
@@ -340,7 +340,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 78,
@@ -354,7 +354,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 79,
@@ -368,7 +368,7 @@
             }
           ],
           "methodology": "Assessment of confidence expression",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 85,
@@ -382,7 +382,7 @@
             }
           ],
           "methodology": "Review of documentation completeness",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 74,
@@ -396,7 +396,7 @@
             }
           ],
           "methodology": "Review of public disclosures",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 85,
@@ -410,7 +410,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Moderate transparency with standard safety features. Limited disclosure compared to Western providers."
@@ -430,7 +430,7 @@
             }
           ],
           "methodology": "Review of API design and consistency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 86,
@@ -444,7 +444,7 @@
             }
           ],
           "methodology": "Review of SDK quality and maintenance",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 74,
@@ -461,11 +461,17 @@
               "url": "https://api-docs.deepseek.com/quick_start/pricing",
               "date": "2026-06-10",
               "value": "Legacy deepseek-reasoner endpoint deprecates 2026-07-24; R1 line discontinued in favor of V3.1/V3.2/V4 hybrid thinking models"
+            },
+            {
+              "source": "DeepSeek API Change Log",
+              "url": "https://api-docs.deepseek.com/updates/",
+              "date": "2026-07-09",
+              "value": "deepseek-reasoner alias currently routes to deepseek-v4-flash thinking mode (no longer serves R1); alias removed 2026-07-24 15:59 UTC, after which requests using it fail"
             }
           ],
           "methodology": "Review of versioning practices",
-          "last_verified": "2026-06-10",
-          "notes": "Model superseded; endpoint deprecation requires migration to V3.2/V4"
+          "last_verified": "2026-07-09",
+          "notes": "Model superseded; first-party endpoint no longer serves R1 weights. Migration to deepseek-v4-pro/-flash required before 2026-07-24"
         },
         "monitoring_observability": {
           "score": 84,
@@ -479,7 +485,7 @@
             }
           ],
           "methodology": "Review of monitoring tools",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 85,
@@ -493,7 +499,7 @@
             }
           ],
           "methodology": "Assessment of support options",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 82,
@@ -507,7 +513,7 @@
             }
           ],
           "methodology": "Analysis of ecosystem maturity",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 93,
@@ -521,7 +527,7 @@
             }
           ],
           "methodology": "Review of licensing terms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good operational quality with open licensing. Growing ecosystem with room for maturity."
@@ -532,7 +538,7 @@
       "overall": 92,
       "notes": "Excellent coding with 53.6% SWE-bench and 79.8% HumanEval. Strong value proposition with competitive pricing.",
       "alternatives": [
-        "claude-4-sonnet",
+        "claude-sonnet-4",
         "openai-o1"
       ]
     },
@@ -540,23 +546,21 @@
       "overall": 81,
       "notes": "Adequate for customer support but not specialized. Good latency helps.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     },
     "content-creation": {
       "overall": 83,
       "notes": "Solid content generation capabilities at competitive pricing.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     },
     "data-analysis": {
       "overall": 89,
       "notes": "Strong analytical capabilities with good reasoning. Excellent value for price.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -564,7 +568,7 @@
       "overall": 87,
       "notes": "Good research capabilities with reasoning optimization.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -572,21 +576,21 @@
       "overall": 78,
       "notes": "Limited compliance certifications for Western markets. Data residency concerns.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "healthcare": {
       "overall": 76,
       "notes": "Not suitable for healthcare due to limited compliance certifications and data residency.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "financial-analysis": {
       "overall": 86,
       "notes": "Good analytical capabilities at competitive pricing.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -594,7 +598,7 @@
       "overall": 88,
       "notes": "Strong tutoring capabilities with good reasoning and affordable pricing.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -602,8 +606,7 @@
       "overall": 82,
       "notes": "Adequate creative capabilities at good value.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     }
   },
@@ -622,7 +625,7 @@
     "Limited transparency on training data",
     "Smaller context window (64K tokens)",
     "Less mature ecosystem compared to Western providers",
-    "Superseded: line discontinued in favor of DeepSeek V3.1/V3.2/V4 hybrid thinking; legacy deepseek-reasoner endpoint deprecates 2026-07-24"
+    "Superseded: line discontinued in favor of DeepSeek V3.1/V3.2/V4 hybrid thinking; legacy deepseek-reasoner alias now routes to V4-Flash (not R1) and is removed 2026-07-24, leaving third-party hosts or self-hosting as the only ways to run R1"
   ],
   "best_for": [
     "Cost-sensitive projects needing strong coding capabilities",
@@ -641,10 +644,10 @@
   ],
   "metadata": {
     "pricing": {
-      "input": "$0.55 per 1M tokens",
-      "output": "$2.19 per 1M tokens",
-      "notes": "Highly competitive pricing, significantly lower than Western alternatives",
-      "last_verified": "2025-11-09"
+      "input": "$0.55 per 1M tokens (historical first-party pricing)",
+      "output": "$2.19 per 1M tokens (historical first-party pricing)",
+      "notes": "Historical first-party API pricing no longer applies: the deepseek-reasoner alias now serves V4-Flash at V4 pricing and is removed 2026-07-24. R1 is now served only by third-party hosts (rates vary) or self-hosted from open weights.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 64000,
     "languages": [

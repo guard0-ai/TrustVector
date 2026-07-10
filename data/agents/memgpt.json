@@ -4,9 +4,9 @@
   "name": "Letta (formerly MemGPT)",
   "provider": "Letta Inc.",
   "version": "0.x",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "REBRANDED: MemGPT became Letta (Letta Inc., a UC Berkeley spinout) in September 2024; \"MemGPT\" now refers only to the underlying research technique. Letta is a memory-enhanced LLM agent platform enabling long-term context via virtual context management inspired by operating systems, overcoming context window limits for stateful agents.",
+  "description": "REBRANDED: MemGPT became Letta (Letta Inc., a UC Berkeley spinout) in September 2024; \"MemGPT\" now refers only to the research technique. Letta is a memory-enhanced LLM agent platform enabling long-term context via OS-inspired virtual context management. In March 2026 Letta announced a pivot to Letta Code, a client-side, model-agnostic agent harness with persistent memory, deprecating server-side memory tools, templates, identities, MCP integrations, and tool rules.",
   "website": "https://www.letta.com",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Memory system testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "long_context_handling": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Long context testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "conversation_continuity": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Continuity testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_integration": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "LLM integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "self_editing_memory": {
           "score": 76,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Self-editing capability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "1-5s (memory overhead)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Isolation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "self_hosting": {
           "score": 87,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_persistence": {
           "score": 80,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Data security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 90,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_security": {
           "score": 68,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Memory security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 77,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment": {
           "score": 90,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_data_sharing": {
           "score": 72,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_deletion": {
           "score": 76,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data deletion assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "research_backed": {
           "score": 92,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Research foundation assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_visibility": {
           "score": 80,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Transparency assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 88,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 76,
@@ -319,7 +319,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 74,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 88,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 70,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 72,
@@ -397,10 +397,17 @@
               "url": "https://www.letta.com/blog/memgpt-and-letta",
               "date": "2026-06-10",
               "value": "MemGPT rebranded to Letta (Letta Inc., UC Berkeley spinout, Sept 2024); active commercial development continues under the Letta name"
+            },
+            {
+              "source": "Letta's Next Phase (blog)",
+              "url": "https://www.letta.com/blog/our-next-phase/",
+              "date": "2026-07-09",
+              "value": "March 2026 pivot to Letta Code (open-source, client-side, model-agnostic agent harness with git-backed 'MemFS' memory); server-side memory tools, templates, identities, MCP integrations, and tool rules deprecated by mid-April 2026; letta server package latest 0.16.8 (May 2026), repo active (23.7k stars, pushed July 2026)"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09",
+          "notes": "Score held: development remains active, but the March 2026 architectural pivot and server-side feature deprecations add migration risk for teams built on the pre-2026 server APIs"
         },
         "cli_interface": {
           "score": 82,
@@ -414,7 +421,7 @@
             }
           ],
           "methodology": "CLI capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -422,7 +429,7 @@
   "strengths": [
     "Breakthrough memory system enabling unlimited conversation context",
     "Research-backed approach (published paper) with novel virtual context",
-    "Open source (Apache 2.0) with active community (12k+ stars)",
+    "Open source (Apache 2.0) with active community (23k+ stars)",
     "Self-hosting option for complete memory control",
     "Supports multiple LLM providers and local models",
     "Enables truly stateful, personalized agent interactions"
@@ -434,7 +441,7 @@
     "Active development, some features still experimental",
     "Limited production tooling and monitoring features",
     "Memory pagination can introduce unpredictability",
-    "Rebranded to Letta (Sept 2024): older MemGPT docs, package names, and repo links are outdated"
+    "Rebranded to Letta (Sept 2024, older MemGPT docs/packages outdated); March 2026 pivot to client-side Letta Code harness deprecated server-side memory tools, templates, identities, MCP integrations, and tool rules by mid-April 2026, requiring migration for existing server-based deployments"
   ],
   "metadata": {
     "license": "Apache 2.0",
@@ -447,18 +454,20 @@
     "programming_languages": [
       "Python"
     ],
-    "deployment_type": "Self-hosted (pip, Docker) or MemGPT Cloud",
+    "deployment_type": "Self-hosted (pip, Docker) or Letta Cloud; Letta Code client-side harness (2026)",
     "tool_support": [
       "Memory management",
       "Tool use",
       "Custom functions"
     ],
-    "pricing_model": "Free open source (MemGPT Cloud available)",
-    "github_stars": "12000+",
+    "pricing_model": "Free open source (Letta Cloud managed offering available)",
+    "github_stars": "23700+",
+    "github_repo": "https://github.com/letta-ai/letta",
+    "latest_version": "letta 0.16.8 (May 2026); Letta Code released April 2026",
     "first_release": "2023",
     "research_paper": "https://arxiv.org/abs/2310.08560",
     "storage_backends": "PostgreSQL, SQLite, Chroma",
-    "rebranding": "Now called Letta (formerly MemGPT)",
+    "rebranding": "Now called Letta (formerly MemGPT); flagship shifting to Letta Code client-side harness as of March 2026",
     "pricing": "Free (open source)"
   },
   "use_case_ratings": {

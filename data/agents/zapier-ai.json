@@ -4,9 +4,9 @@
   "name": "Zapier AI Actions",
   "provider": "Zapier",
   "version": "Current",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "No-code automation platform with AI actions for connecting AI models to 6000+ apps. Enables building intelligent automations and AI-powered workflows without coding through visual interface and natural language.",
+  "description": "No-code automation platform with AI actions for connecting AI models to 8,000+ apps. Enables building intelligent automations and AI-powered workflows without coding through visual interface and natural language. Now includes Zapier Agents (agents.zapier.com) for autonomous AI agents, Chatbots, and Zapier MCP for connecting external AI assistants to its app ecosystem.",
   "website": "https://zapier.com/ai",
   "trust_vector": {
     "performance_reliability": {
@@ -24,21 +24,21 @@
             }
           ],
           "methodology": "Workflow reliability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "ai_action_performance": {
           "score": 85,
           "confidence": "high",
           "evidence": [
             {
-              "source": "AI Actions",
-              "url": "https://actions.zapier.com/",
-              "date": "2024-10-15",
-              "value": "AI actions integrate with GPT and other LLMs"
+              "source": "AI Actions / Zapier Agents",
+              "url": "https://zapier.com/agents",
+              "date": "2026-07-09",
+              "value": "AI Actions integrate with LLMs; Zapier Agents product provides autonomous agents built into Zap workflows across all plans (with paid add-ons)"
             }
           ],
           "methodology": "AI integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "integration_reliability": {
           "score": 90,
@@ -47,12 +47,12 @@
             {
               "source": "App Integrations",
               "url": "https://zapier.com/apps",
-              "date": "2024-10-01",
-              "value": "6000+ app integrations with high uptime"
+              "date": "2026-07-09",
+              "value": "8,000+ app integrations with high uptime (9,000+ reachable via Zapier MCP/SDK)"
             }
           ],
           "methodology": "Integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "chatbots": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Chatbot capability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_handling": {
           "score": 83,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error recovery testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "1-30s average",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "authentication": {
           "score": 89,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Authentication testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "credential_storage": {
           "score": 88,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Credential security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "compliance": {
           "score": 90,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "app_permissions": {
           "score": 82,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Permission model assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 89,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "hipaa_compliance": {
           "score": 88,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Healthcare compliance review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_processing": {
           "score": 83,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_deletion": {
           "score": 86,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data rights assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "visual_editor": {
           "score": 92,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "UI/UX assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "task_history": {
           "score": 84,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "template_library": {
           "score": 87,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Template availability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 80,
@@ -319,7 +319,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Usability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 89,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 79,
@@ -361,12 +361,12 @@
             {
               "source": "Pricing",
               "url": "https://zapier.com/pricing",
-              "date": "2024-10-01",
-              "value": "Task-based pricing, free tier + paid from $19.99/month"
+              "date": "2026-07-09",
+              "value": "Task-based pricing: Free (100 tasks/month), Professional from $19.99/month (annual billing, 750 tasks), Team from $69/month, Enterprise custom; AI add-ons (Agents, Chatbots) priced separately"
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 85,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "integration_ecosystem": {
           "score": 98,
@@ -389,12 +389,12 @@
             {
               "source": "Apps",
               "url": "https://zapier.com/apps",
-              "date": "2024-10-01",
-              "value": "6000+ app integrations, industry leader"
+              "date": "2026-07-09",
+              "value": "8,000+ app integrations, industry leader"
             }
           ],
           "methodology": "Integration ecosystem assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 88,
@@ -408,17 +408,17 @@
             }
           ],
           "methodology": "Uptime monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
   },
   "strengths": [
-    "Industry-leading 6000+ app integrations, largest ecosystem",
+    "Industry-leading 8,000+ app integrations, largest ecosystem",
     "Exceptional no-code ease of use for non-technical users",
     "Strong enterprise security and compliance (SOC 2, ISO 27001, HIPAA)",
     "Reliable infrastructure with high uptime and automatic retries",
-    "AI Actions for integrating GPTs and chatbots with apps",
+    "AI Actions, Zapier Agents, Chatbots, and Zapier MCP for AI-app integration",
     "Extensive template library and documentation"
   ],
   "limitations": [
@@ -442,25 +442,27 @@
     ],
     "deployment_type": "Managed cloud service",
     "tool_support": [
-      "6000+ app integrations",
+      "8,000+ app integrations",
       "Webhooks",
-      "API requests"
+      "API requests",
+      "Zapier MCP"
     ],
-    "pricing_model": "Free tier + paid plans ($19.99-$69+/month)",
+    "pricing_model": "Free tier + paid plans ($19.99-$69+/month, annual billing)",
     "tasks_included": "100 to unlimited per month",
     "founded": "2011",
     "users": "6+ million",
     "ai_features": [
       "AI Actions",
+      "Zapier Agents",
       "Chatbots",
-      "ChatGPT plugin"
+      "Zapier MCP"
     ],
-    "pricing": "Free: 400 activities/month; Pro: $33.33/month for 1,500 activities; Chatbots from $20/month; Platform from $19.99/month"
+    "pricing": "Free: 100 tasks/month; Professional from $19.99/month (annual, 750 tasks); Team from $69/month; Enterprise custom; Zapier Agents and Chatbots available as add-ons"
   },
   "use_case_ratings": {
     "customer-support": {
       "overall": 90,
-      "notes": "Excellent for automating support across 6000+ tools"
+      "notes": "Excellent for automating support across 8,000+ tools"
     },
     "code-generation": {
       "overall": 70,
@@ -501,7 +503,7 @@
   },
   "best_for": [
     "Business users automating workflows with AI actions",
-    "Teams needing no-code AI integration with 6000+ apps",
+    "Teams needing no-code AI integration with 8,000+ apps",
     "Organizations wanting quick AI-powered automation",
     "Non-technical users adding AI to existing Zapier workflows"
   ],

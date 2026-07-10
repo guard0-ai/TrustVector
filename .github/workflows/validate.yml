@@ -35,6 +35,11 @@ jobs:
       - name: Run validation
         run: npm run validate
 
+      - name: Check data index is in sync
+        run: |
+          npm run generate:data-index
+          git diff --exit-code lib/data-index.ts || (echo "lib/data-index.ts is stale — run 'npm run generate:data-index' and commit it" && exit 1)
+
       - name: Type check
         run: npm run type-check
 

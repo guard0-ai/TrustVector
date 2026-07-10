@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "CrewAI",
   "provider": "CrewAI Inc.",
-  "version": "1.2.1",
-  "last_evaluated": "2025-11-09",
+  "version": "1.14.6",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Role-playing multi-agent framework for orchestrating collaborative autonomous agents. Agents work together as a crew with defined roles, goals, and backstories to tackle complex tasks through delegation and collaboration.",
+  "description": "Role-playing multi-agent framework for orchestrating collaborative autonomous agents. Agents work as a crew with defined roles, goals, and backstories to tackle complex tasks through delegation. Commercial offerings: the CrewAI AMP managed platform and self-hosted CrewAI Factory. Note: four Code Interpreter CVEs (CVE-2026-2275/2285/2286/2287) disclosed 2026-03-30; vendor reports all fixed in current releases, with the built-in CodeInterpreterTool removed in favor of external sandboxes.",
   "website": "https://www.crewai.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Based on multi-agent coordination testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 82,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex task testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 78,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory system evaluation",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 76,
@@ -74,13 +74,13 @@
           "evidence": [
             {
               "source": "Community Reports",
-              "url": "https://github.com/joaomdmoura/crewAI/issues",
+              "url": "https://github.com/crewAIInc/crewAI/issues",
               "date": "2024-09-20",
               "value": "Basic error handling, agent delegation can help recovery"
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 88,
@@ -94,26 +94,39 @@
             }
           ],
           "methodology": "Multi-agent coordination testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 74,
+      "overall_score": 72,
       "criteria": {
         "tool_sandboxing": {
-          "score": 68,
-          "confidence": "medium",
+          "score": 60,
+          "confidence": "high",
           "evidence": [
             {
               "source": "CrewAI Architecture",
               "url": "https://docs.crewai.com/",
               "date": "2024-10-01",
               "value": "No built-in sandboxing, relies on tool implementation"
+            },
+            {
+              "source": "CERT/CC VU#221883",
+              "url": "https://www.kb.cert.org/vuls/id/221883",
+              "date": "2026-03-30",
+              "value": "CVE-2026-2275, CVE-2026-2285, CVE-2026-2286, CVE-2026-2287: Code Interpreter fell back to unsandboxed execution when Docker unavailable (RCE), arbitrary local file read in JSON loader, and SSRF in RAG search tools via prompt injection"
+            },
+            {
+              "source": "CERT/CC VU#221883 (vendor statement)",
+              "url": "https://www.kb.cert.org/vuls/id/221883",
+              "date": "2026-05-20",
+              "value": "Vendor reports all issues fixed in current releases: CodeInterpreterTool removed entirely, allow_code_execution deprecated, centralized path/URL validation added; external sandboxes (E2B, Daytona) recommended for code execution"
             }
           ],
-          "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "methodology": "Security architecture review plus disclosed vulnerability analysis",
+          "last_verified": "2026-07-09",
+          "notes": "Score lowered 68 to 60: March 2026 CVE cluster showed sandbox fell back open (unsandboxed execution) under Docker failure; remediated by removing the built-in code interpreter, which shifts sandboxing responsibility to external providers"
         },
         "access_control": {
           "score": 72,
@@ -127,7 +140,7 @@
             }
           ],
           "methodology": "Access control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 75,
@@ -141,7 +154,7 @@
             }
           ],
           "methodology": "Injection attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 78,
@@ -155,7 +168,7 @@
             }
           ],
           "methodology": "Data architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 92,
@@ -163,13 +176,13 @@
           "evidence": [
             {
               "source": "CrewAI GitHub",
-              "url": "https://github.com/joaomdmoura/crewAI",
+              "url": "https://github.com/crewAIInc/crewAI",
               "date": "2024-10-20",
               "value": "Open source MIT license, 20k+ stars, active community"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +201,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 82,
@@ -196,13 +209,13 @@
           "evidence": [
             {
               "source": "Open Source Framework",
-              "url": "https://github.com/joaomdmoura/crewAI",
+              "url": "https://github.com/crewAIInc/crewAI",
               "date": "2024-10-01",
               "value": "GDPR compliance possible with proper configuration"
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 73,
@@ -216,7 +229,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 90,
@@ -230,7 +243,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +262,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 78,
@@ -263,7 +276,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 80,
@@ -277,7 +290,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 92,
@@ -285,13 +298,13 @@
           "evidence": [
             {
               "source": "GitHub Repository",
-              "url": "https://github.com/joaomdmoura/crewAI",
+              "url": "https://github.com/crewAIInc/crewAI",
               "date": "2024-10-20",
               "value": "MIT licensed, 20k+ stars, very active development"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 88,
@@ -299,13 +312,13 @@
           "evidence": [
             {
               "source": "GitHub Activity",
-              "url": "https://github.com/joaomdmoura/crewAI",
+              "url": "https://github.com/crewAIInc/crewAI",
               "date": "2024-10-20",
               "value": "Very active community with frequent updates"
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +337,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 75,
@@ -332,13 +345,13 @@
           "evidence": [
             {
               "source": "Community Discussions",
-              "url": "https://github.com/joaomdmoura/crewAI/discussions",
+              "url": "https://github.com/crewAIInc/crewAI/discussions",
               "date": "2024-09-15",
               "value": "Scalability depends on infrastructure and LLM rate limits"
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 88,
@@ -346,13 +359,13 @@
           "evidence": [
             {
               "source": "Open Source Pricing",
-              "url": "https://github.com/joaomdmoura/crewAI",
+              "url": "https://github.com/crewAIInc/crewAI",
               "date": "2024-10-01",
               "value": "Free framework, costs only from LLM API calls"
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 72,
@@ -366,7 +379,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 76,
@@ -374,13 +387,19 @@
           "evidence": [
             {
               "source": "Framework Maturity",
-              "url": "https://github.com/joaomdmoura/crewAI",
+              "url": "https://github.com/crewAIInc/crewAI",
               "date": "2024-10-20",
               "value": "Rapidly evolving framework, some API changes between versions"
+            },
+            {
+              "source": "crewai on PyPI",
+              "url": "https://pypi.org/project/crewai/",
+              "date": "2026-07-09",
+              "value": "Stable 1.x series: latest release 1.14.6 (2026-05-28); repo very active (~55,200 stars, pushed 2026-07-09); enterprise AMP platform and self-hosted Factory available"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -442,6 +461,7 @@
     "Good integration with LangChain tools ecosystem"
   ],
   "limitations": [
+    "Four CVEs disclosed 2026-03-30 (RCE via Code Interpreter sandbox fallback, arbitrary file read, SSRF); vendor fixed by removing the built-in CodeInterpreterTool, so code execution now requires an external sandbox (E2B, Daytona)",
     "Can be expensive with multiple agents making LLM calls",
     "Agent coordination overhead can increase latency",
     "Rapidly evolving API may require code updates",
@@ -466,11 +486,16 @@
       "Custom tools",
       "Built-in tools"
     ],
-    "github_stars": "39900+",
+    "github_stars": "55200+",
     "first_release": "2023",
-    "pricing": "Free (MIT license) - Costs only from LLM API calls",
+    "current_version": "1.14.6 (2026-05-28)",
+    "pricing": "Framework free (MIT) - Costs from LLM API calls. Managed CrewAI AMP platform: Free tier (50 executions/month), paid tiers from ~$25-99/month, custom Enterprise pricing; self-hosted CrewAI Factory for on-prem/private cloud",
+    "pricing_last_verified": "2026-07-09",
+    "funding": "$18M total including Series A led by Insight Partners (announced 2024-10-22)",
+    "enterprise_offering": "CrewAI AMP (managed SaaS) and CrewAI Factory (containerized self-hosted) with visual editor, observability, triggers, and guardrails",
     "python_requirement": "Python >=3.10 <3.14",
-    "adoption": "Powers 1.4B+ agentic automations globally"
+    "adoption": "Powers 1.4B+ agentic automations globally (vendor claim)",
+    "security_advisories": "CVE-2026-2275, CVE-2026-2285, CVE-2026-2286, CVE-2026-2287 (CERT VU#221883, disclosed 2026-03-30; vendor reports fixed in current releases as of 2026-05-20)"
   },
   "tags": [
     "multi-agent",

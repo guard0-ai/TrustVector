@@ -1,0 +1,443 @@
+{
+  "id": "mcp-server-clickhouse",
+  "type": "mcp",
+  "name": "MCP ClickHouse Server",
+  "provider": "ClickHouse (Official)",
+  "version": "mcp-clickhouse 0.4.0 (2026-06-03); Cloud Remote MCP; Managed ClickStack MCP",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Official ClickHouse MCP family: open-source mcp-clickhouse (PyPI, v0.4.0) plus ClickHouse Cloud Remote MCP at https://mcp.clickhouse.cloud/mcp with OAuth 2.0 and a Managed ClickStack MCP endpoint for observability. The local server is read-only by default; writes require CLICKHOUSE_ALLOW_WRITE_ACCESS=true, and destructive operations (DROP/TRUNCATE) need a second opt-in flag, CLICKHOUSE_ALLOW_DROP=true. Cloud remote tools are strictly read-only (readOnlyHint).",
+  "website": "https://github.com/ClickHouse/mcp-clickhouse",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 83,
+      "criteria": {
+        "query_execution": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "run_query executes SQL on ClickHouse clusters via the official client, inheriting ClickHouse's columnar analytical performance; optional chDB tool provides embedded in-process querying"
+            }
+          ],
+          "methodology": "Query execution capability review",
+          "last_verified": "2026-07-09"
+        },
+        "connection_stability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "Built on the official ClickHouse Python client with configurable connection env vars; supports ClickHouse Cloud and self-managed clusters, with an unauthenticated /health endpoint on HTTP/SSE transports"
+            }
+          ],
+          "methodology": "Connection stability assessment",
+          "last_verified": "2026-07-09"
+        },
+        "large_result_handling": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "list_tables supports pagination and filtering; very large SELECT result sets still need query-side LIMITs to avoid flooding the model context"
+            }
+          ],
+          "methodology": "Large result handling review",
+          "last_verified": "2026-07-09"
+        },
+        "error_handling": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "Middleware system allows request interception and custom handling; write/DDL attempts in read-only mode are rejected with explicit errors rather than executed"
+            }
+          ],
+          "methodology": "Error handling review",
+          "last_verified": "2026-07-09"
+        },
+        "remote_endpoint_reliability": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ClickHouse Cloud Remote MCP documentation",
+              "url": "https://clickhouse.com/docs/cloud/features/ai-ml/remote-mcp",
+              "date": "2026-07-09",
+              "value": "Fully managed remote MCP server at https://mcp.clickhouse.cloud/mcp, enabled per service from the Cloud console Connect menu; 13 read-only tools covering querying, schema exploration, service management, backups, ClickPipes, and billing"
+            }
+          ],
+          "methodology": "Managed endpoint reliability review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 78,
+      "criteria": {
+        "read_only_default": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "Local server defaults to read-only, preventing accidental mutations during AI exploration; the Cloud remote server goes further — all tools carry readOnlyHint: true and no tool can modify data or service configuration"
+            }
+          ],
+          "methodology": "Default-posture review; secure-by-default read-only stance on both local and remote variants",
+          "last_verified": "2026-07-09"
+        },
+        "graduated_write_gate": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "Two-tier opt-in: CLICKHOUSE_ALLOW_WRITE_ACCESS=true enables DDL/DML (CREATE, ALTER, INSERT, UPDATE, DELETE), while destructive operations (DROP TABLE, DROP DATABASE, TRUNCATE) require a separate CLICKHOUSE_ALLOW_DROP=true flag"
+            }
+          ],
+          "methodology": "Write-gate design review; the graduated two-flag model separating writes from destructive DDL is a good practice other database MCP servers should adopt",
+          "last_verified": "2026-07-09"
+        },
+        "authentication_security": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse Cloud Remote MCP documentation",
+              "url": "https://clickhouse.com/docs/cloud/features/ai-ml/remote-mcp",
+              "date": "2026-07-09",
+              "value": "Remote MCP authenticates via OAuth 2.0 scoped to the user's organizations and services; local HTTP/SSE transports require a bearer token (CLICKHOUSE_MCP_AUTH_TOKEN) or OAuth/OIDC delegation, with a development-only auth bypass flag"
+            }
+          ],
+          "methodology": "Authentication mechanism review; strong OAuth on remote, but local deployments can be misconfigured with the auth-disabled bypass",
+          "last_verified": "2026-07-09"
+        },
+        "credential_exposure": {
+          "score": 66,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "Local stdio deployments place CLICKHOUSE_USER/CLICKHOUSE_PASSWORD in environment variables or client config files; the OAuth-based Cloud remote avoids static credentials entirely"
+            }
+          ],
+          "methodology": "Credential security analysis; scored on the local path since it is the most common deployment",
+          "last_verified": "2026-07-09"
+        },
+        "query_injection_risk": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model Context Protocol security best practices",
+              "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices",
+              "date": "2026-07-09",
+              "value": "The AI constructs arbitrary SQL; untrusted content in query results can carry injected instructions back to the model — read-only default bounds the blast radius but exfiltration of readable data remains possible"
+            }
+          ],
+          "methodology": "Injection and prompt-injection exposure analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 70,
+      "criteria": {
+        "data_exposure_to_llm": {
+          "score": 66,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP Architecture",
+              "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+              "date": "2026-07-09",
+              "value": "Query results, schema listings, and (for ClickStack) telemetry data returned by tools are sent to the connected LLM provider"
+            }
+          ],
+          "methodology": "Data flow analysis",
+          "last_verified": "2026-07-09"
+        },
+        "pii_protection": {
+          "score": 60,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "No built-in PII detection or result filtering; any data readable by the configured ClickHouse user can reach the model"
+            }
+          ],
+          "methodology": "PII protection assessment",
+          "last_verified": "2026-07-09"
+        },
+        "self_hosted_option": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "Full self-hosting: pip/uv install, Docker, stdio/HTTP/SSE transports, and chDB embedded mode allow entirely local operation against self-managed ClickHouse"
+            }
+          ],
+          "methodology": "Self-hosting options review",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ClickHouse Cloud Remote MCP documentation",
+              "url": "https://clickhouse.com/docs/cloud/features/ai-ml/remote-mcp",
+              "date": "2026-07-09",
+              "value": "Remote MCP access is scoped to the authenticated user's organizations and services; database content shared with the LLM provider is governed by that provider's terms, not ClickHouse's"
+            }
+          ],
+          "methodology": "Data sharing analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 82,
+      "criteria": {
+        "documentation_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse Cloud Remote MCP documentation",
+              "url": "https://clickhouse.com/docs/cloud/features/ai-ml/remote-mcp",
+              "date": "2026-07-09",
+              "value": "First-party docs cover the repo README (env vars, flags, transports), Cloud remote MCP enablement, and ClickStack MCP blogs with setup for Claude Code, Cursor, and custom agents"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "Apache 2.0, officially maintained under the ClickHouse GitHub org (818+ stars, 192 forks); v0.4.0 released 2026-06-03 on PyPI as mcp-clickhouse"
+            }
+          ],
+          "methodology": "Source code and maintenance review",
+          "last_verified": "2026-07-09"
+        },
+        "query_visibility": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ClickHouse query_log documentation",
+              "url": "https://clickhouse.com/docs/operations/system-tables/query_log",
+              "date": "2026-07-09",
+              "value": "All agent-issued SQL is recorded in ClickHouse's system.query_log; MCP clients additionally surface each tool call for user review"
+            }
+          ],
+          "methodology": "Query logging assessment",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse blog — agentic analytics and ClickStack MCP",
+              "url": "https://clickhouse.com/blog/announcing-managed-clickstack-mcp-server",
+              "date": "2026-07-09",
+              "value": "Active first-party investment: remote MCP beta launch, AWS Marketplace AI Agents listing, Managed ClickStack MCP for observability agents, and regular releases on the open-source server"
+            }
+          ],
+          "methodology": "Community engagement analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 83,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "Local: uv/pip install mcp-clickhouse with a handful of env vars, plus an SQL Playground demo preset; Cloud: enable MCP from the service Connect menu and complete browser OAuth"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-07-09"
+        },
+        "query_performance": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse benchmarks",
+              "url": "https://benchmark.clickhouse.com/",
+              "date": "2026-07-09",
+              "value": "ClickHouse's columnar engine delivers sub-second analytical queries over billions of rows, making agent-driven exploratory analytics responsive"
+            }
+          ],
+          "methodology": "Performance review of the underlying engine for agent workloads",
+          "last_verified": "2026-07-09"
+        },
+        "deployment_flexibility": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "Four deployment shapes: local stdio, self-hosted HTTP/SSE, managed Cloud Remote MCP (mcp.clickhouse.cloud/mcp), and Managed ClickStack MCP (mcp.clickhouse.cloud/clickstack) for observability, plus embedded chDB mode"
+            }
+          ],
+          "methodology": "Deployment options review",
+          "last_verified": "2026-07-09"
+        },
+        "cost_efficiency": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ClickHouse Cloud pricing",
+              "url": "https://clickhouse.com/pricing",
+              "date": "2026-07-09",
+              "value": "Open-source server and self-managed ClickHouse are free; Cloud remote MCP has no separate fee but agent queries consume service compute"
+            }
+          ],
+          "methodology": "Cost analysis",
+          "last_verified": "2026-07-09"
+        },
+        "community_support": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ClickHouse MCP server repository",
+              "url": "https://github.com/ClickHouse/mcp-clickhouse",
+              "date": "2026-07-09",
+              "value": "818 stars, 192 forks, active issue tracker and releases (v0.4.0, 2026-06-03), maintained by ClickHouse with community contributions"
+            }
+          ],
+          "methodology": "Community support assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Read-only by default with a graduated write-gate: writes need CLICKHOUSE_ALLOW_WRITE_ACCESS=true and destructive DDL needs a second flag (CLICKHOUSE_ALLOW_DROP=true) — exemplary secure-by-default design",
+    "Managed Cloud Remote MCP with OAuth 2.0 and strictly read-only tools (readOnlyHint on all 13 tools)",
+    "Excellent analytical query performance for agent-driven data exploration",
+    "Flexible deployment: stdio, HTTP/SSE, managed remote, ClickStack observability endpoint, and embedded chDB",
+    "Open source (Apache 2.0) under the official ClickHouse org with active releases",
+    "Managed ClickStack MCP extends the same model to logs, metrics, and traces for incident-investigation agents"
+  ],
+  "limitations": [
+    "Query results are exposed to the LLM provider with no built-in PII detection or filtering",
+    "Local stdio deployments store database credentials in environment variables or client config",
+    "Development-only auth bypass flag (CLICKHOUSE_MCP_AUTH_DISABLED) can be dangerously misused on exposed HTTP transports",
+    "Once both write flags are enabled, the agent can perform destructive DDL within the DB user's grants",
+    "Prompt-injection via untrusted data in query results remains possible; read-only mode limits damage but not data exfiltration",
+    "Large result sets require query-side LIMITs to avoid flooding model context",
+    "Cloud Remote MCP requires ClickHouse Cloud; feature is disabled per service until explicitly enabled"
+  ],
+  "metadata": {
+    "license": "Apache 2.0",
+    "supported_platforms": ["All platforms with Python 3.10+; Docker; any MCP client (Cloud remote)"],
+    "programming_languages": ["Python"],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/ClickHouse/mcp-clickhouse",
+    "github_stars": 818,
+    "package_name": "mcp-clickhouse (PyPI)",
+    "latest_version": "0.4.0 (2026-06-03)",
+    "remote_endpoint": "https://mcp.clickhouse.cloud/mcp (Cloud Remote MCP); https://mcp.clickhouse.cloud/clickstack (Managed ClickStack MCP)",
+    "api_dependency": "ClickHouse Python client; chDB (optional embedded engine)",
+    "authentication": "Env-var credentials (stdio); bearer token or OAuth/OIDC (HTTP/SSE); OAuth 2.0 (Cloud remote)",
+    "security_controls": ["read-only default", "CLICKHOUSE_ALLOW_WRITE_ACCESS opt-in for DDL/DML", "CLICKHOUSE_ALLOW_DROP second opt-in for destructive operations", "readOnlyHint on all Cloud remote tools"],
+    "transport_types": ["stdio (default)", "http", "sse", "streamable-http (Cloud remote)"],
+    "maintained_by": "ClickHouse"
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 80,
+      "notes": "Strong for generating and validating ClickHouse SQL against live schemas"
+    },
+    "customer-support": {
+      "overall": 68,
+      "notes": "Useful for querying product analytics behind support questions"
+    },
+    "content-creation": {
+      "overall": 60,
+      "notes": "Limited fit; data-backed reporting and dashboard narratives"
+    },
+    "data-analysis": {
+      "overall": 94,
+      "notes": "Primary use case: fast agent-driven exploration of large analytical datasets"
+    },
+    "research-assistant": {
+      "overall": 82,
+      "notes": "Great for iterative hypothesis testing over large datasets"
+    },
+    "legal-compliance": {
+      "overall": 58,
+      "notes": "No PII filtering; requires scoped database users and read-only mode"
+    },
+    "healthcare": {
+      "overall": 52,
+      "notes": "Telemetry/analytics fit, but PHI exposure to the LLM needs strict controls"
+    },
+    "financial-analysis": {
+      "overall": 78,
+      "notes": "Excellent for market/event analytics; keep write flags off for production data"
+    },
+    "education": {
+      "overall": 86,
+      "notes": "SQL Playground preset makes it easy to teach analytical SQL with agents"
+    },
+    "creative-writing": {
+      "overall": 45,
+      "notes": "Minimal applicability beyond data lookups"
+    }
+  },
+  "best_for": [
+    "Analysts and engineers doing agent-driven exploration of large analytical datasets",
+    "Teams wanting secure-by-default database access with explicit, graduated write opt-ins",
+    "ClickHouse Cloud users preferring OAuth-scoped, strictly read-only managed access",
+    "Observability teams connecting incident-investigation agents via Managed ClickStack MCP"
+  ],
+  "related_entities": ["mcp-server-postgres", "mcp-server-elasticsearch", "mcp-server-snowflake", "mcp-server-databricks"],
+  "tags": ["database", "analytics", "olap", "observability", "sql", "mcp", "model-context-protocol", "clickhouse"]
+}

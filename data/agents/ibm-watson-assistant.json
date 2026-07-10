@@ -1,13 +1,13 @@
 {
   "id": "ibm-watson-assistant",
   "type": "agent",
-  "name": "IBM Watson Assistant",
+  "name": "IBM watsonx Assistant (now part of watsonx Orchestrate)",
   "provider": "IBM",
-  "version": "4.x",
-  "last_evaluated": "2025-11-09",
+  "version": "watsonx Orchestrate (2026)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "IBM's enterprise-grade conversational AI platform powered by Watson AI. Combines natural language understanding, dialog management, and integration capabilities for building sophisticated virtual agents across industries.",
-  "website": "https://www.ibm.com/cloud/watson-assistant",
+  "description": "CONSOLIDATED: Watson Assistant was rebranded watsonx Assistant (2023) and folded into IBM watsonx Orchestrate - the Assistant pricing page now redirects to Orchestrate, and IBM positions new implementations on Orchestrate, its agentic AI platform (next generation announced at Think 2026, May 2026, as a multi-agent orchestration and governance control plane). Existing Assistant deployments continue to run. Combines NLU, dialog skills, and integrations for enterprise virtual agents.",
+  "website": "https://www.ibm.com/products/watsonx-orchestrate",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 86,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Intent accuracy benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "entity_extraction": {
           "score": 87,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Entity extraction testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "dialog_management": {
           "score": 89,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex conversation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "context_awareness": {
           "score": 85,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Context retention testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "search_integration": {
           "score": 84,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Search capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "300-700ms average",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 90,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "private_endpoints": {
           "score": 88,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Network security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 87,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Audit capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "compliance": {
           "score": 91,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 90,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "hipaa_compliance": {
           "score": 89,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Healthcare compliance review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_masking": {
           "score": 86,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "PII protection testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_location": {
           "score": 89,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data residency assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "analytics_dashboard": {
           "score": 85,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Analytics capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "testing_tools": {
           "score": 82,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Testing features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "explainability": {
           "score": 80,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 90,
@@ -335,10 +335,16 @@
               "url": "https://www.ibm.com/cloud/watson-assistant",
               "date": "2024-10-01",
               "value": "Enterprise-grade scalability on IBM Cloud"
+            },
+            {
+              "source": "IBM watsonx Orchestrate",
+              "url": "https://www.ibm.com/products/watsonx-orchestrate",
+              "date": "2026-07-09",
+              "value": "Assistant capabilities now delivered within watsonx Orchestrate; next-generation multi-agent orchestration announced at IBM Think 2026 (May 2026)"
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 83,
@@ -349,10 +355,16 @@
               "url": "https://www.ibm.com/cloud/watson-assistant/pricing",
               "date": "2024-10-01",
               "value": "Free tier (1000 MAU), Plus $140/month, Enterprise custom pricing"
+            },
+            {
+              "source": "IBM watsonx Orchestrate pricing",
+              "url": "https://www.ibm.com/products/watsonx-orchestrate/pricing",
+              "date": "2026-07-09",
+              "value": "watsonx Assistant pricing page now redirects to watsonx Orchestrate pricing; Orchestrate Essentials starts around $500/month, Standard/Premium custom-priced; legacy Assistant plans (Lite free, Plus from $140/month) remain for existing customers"
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 86,
@@ -366,7 +378,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "channel_integrations": {
           "score": 88,
@@ -380,7 +392,7 @@
             }
           ],
           "methodology": "Integration options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "industry_solutions": {
           "score": 85,
@@ -394,7 +406,7 @@
             }
           ],
           "methodology": "Industry solutions assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -408,6 +420,7 @@
     "Comprehensive analytics and conversation insights"
   ],
   "limitations": [
+    "Product consolidated into watsonx Orchestrate: standalone watsonx Assistant is no longer IBM's lead offering, its pricing page redirects to Orchestrate, and new implementations should start there; repeated rebranding (Watson Assistant -> watsonx Assistant -> watsonx Orchestrate) makes older documentation and links stale",
     "Higher cost compared to modern cloud alternatives",
     "IBM Cloud platform lock-in and complexity",
     "Steeper learning curve for dialog tree design",
@@ -436,7 +449,7 @@
       "Watson services",
       "Custom integrations"
     ],
-    "pricing_model": "Free (1000 MAU), Plus ($140/month), Enterprise (custom)",
+    "pricing_model": "Sold via watsonx Orchestrate: Essentials from ~$500/month, Standard/Premium custom; legacy Assistant plans (Lite free, Plus from $140/month) for existing customers",
     "supported_languages": "13 languages",
     "industry_packs": [
       "Banking",
@@ -450,7 +463,10 @@
       "On-premises option"
     ],
     "cloud_pak": "Available in Cloud Pak for Data",
-    "pricing": "Free plan available, Paid plans from $140/month, Enterprise custom pricing"
+    "pricing": "New purchases via watsonx Orchestrate (Essentials from ~$500/month, higher tiers custom); legacy watsonx Assistant plans (Lite free, Plus from $140/month) remain for existing customers",
+    "successor_products": [
+      "IBM watsonx Orchestrate"
+    ]
   },
   "use_case_ratings": {
     "customer-support": {
@@ -502,6 +518,7 @@
   ],
   "tags": [
     "ibm",
-    "enterprise"
+    "enterprise",
+    "rebranded"
   ]
 }

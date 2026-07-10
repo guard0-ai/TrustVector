@@ -3,11 +3,11 @@
   "type": "mcp",
   "name": "MCP Azure Server",
   "provider": "Microsoft",
-  "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "version": "2.0 (GA)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official Microsoft MCP server for Azure cloud services integration. Enables AI models to interact with Azure resources including Virtual Machines, Storage, Databases, App Services, and monitoring. Essential for AI-powered Azure infrastructure management and DevOps workflows.",
-  "website": "https://github.com/azure/azure-mcp-server",
+  "description": "Official Microsoft MCP server for Azure cloud services, generally available as Azure MCP Server 2.0 (2026-04-10) with tools spanning 44+ Azure service areas including compute, storage, databases, AI/ML, monitoring, and governance. Development now lives in the microsoft/mcp monorepo (the former Azure/azure-mcp repo is archived). Installable via npm (@azure/mcp), MCPB bundles for Claude Desktop, VS Code, NuGet, PyPI, and Docker, with a self-hosted remote HTTP mode.",
+  "website": "https://github.com/microsoft/mcp/tree/main/servers/Azure.Mcp.Server",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 84,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "API stability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_operation_success": {
           "score": 85,
@@ -32,13 +32,13 @@
           "evidence": [
             {
               "source": "Azure MCP Server",
-              "url": "https://github.com/azure/azure-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://github.com/microsoft/mcp/tree/main/servers/Azure.Mcp.Server",
+              "date": "2026-07-09",
               "value": "High success rate for resource management operations"
             }
           ],
           "methodology": "Operation success testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 80,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_region_performance": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Geographic performance testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 83,
@@ -74,13 +74,13 @@
           "evidence": [
             {
               "source": "Implementation Review",
-              "url": "https://github.com/azure/azure-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://github.com/microsoft/mcp/tree/main/servers/Azure.Mcp.Server",
+              "date": "2026-07-09",
               "value": "Handles Azure API errors with retry and fallback logic"
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -88,18 +88,18 @@
       "overall_score": 72,
       "criteria": {
         "authentication_security": {
-          "score": 82,
+          "score": 84,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Azure Authentication",
-              "url": "https://docs.microsoft.com/en-us/azure/active-directory/develop/",
-              "date": "2025-11-16",
-              "value": "Uses Azure AD with service principals or managed identities"
+              "source": "Azure MCP Server README (microsoft/mcp)",
+              "url": "https://github.com/microsoft/mcp/blob/main/servers/Azure.Mcp.Server/README.md",
+              "date": "2026-07-09",
+              "value": "Credentials handled through the official Azure Identity SDK: Azure CLI (az login), environment credentials, managed identity, and Microsoft Entra ID; no raw secrets in MCP client config required"
             }
           ],
-          "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "methodology": "Authentication mechanism review; small raise from 82 reflecting standardized Azure Identity SDK credential chain in the GA release",
+          "last_verified": "2026-07-09"
         },
         "credential_exposure_risk": {
           "score": 65,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Credential security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rbac_enforcement": {
           "score": 80,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Authorization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "destructive_operation_risk": {
           "score": 60,
@@ -135,13 +135,13 @@
           "evidence": [
             {
               "source": "Security Analysis",
-              "url": "https://github.com/azure/azure-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://github.com/microsoft/mcp/tree/main/servers/Azure.Mcp.Server",
+              "date": "2026-07-09",
               "value": "AI can delete resources, modify configurations, and manage infrastructure"
             }
           ],
           "methodology": "Operation authorization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 85,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "network_security": {
           "score": 75,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Network security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_in_resources": {
           "score": 65,
@@ -196,13 +196,13 @@
           "evidence": [
             {
               "source": "Security Analysis",
-              "url": "https://github.com/azure/azure-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://github.com/microsoft/mcp/tree/main/servers/Azure.Mcp.Server",
+              "date": "2026-07-09",
               "value": "May expose connection strings, keys, and secrets in resource configurations"
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "compliance_boundary_control": {
           "score": 72,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Compliance boundary assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_residency_considerations": {
           "score": 75,
@@ -244,12 +244,12 @@
             }
           ],
           "methodology": "Data residency review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "trust_transparency": {
-      "overall_score": 83,
+      "overall_score": 86,
       "criteria": {
         "documentation_quality": {
           "score": 85,
@@ -257,13 +257,13 @@
           "evidence": [
             {
               "source": "Azure MCP Docs",
-              "url": "https://github.com/azure/azure-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://github.com/microsoft/mcp/tree/main/servers/Azure.Mcp.Server",
+              "date": "2026-07-09",
               "value": "Comprehensive documentation with Azure-specific examples"
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 88,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 90,
@@ -285,46 +285,46 @@
           "evidence": [
             {
               "source": "GitHub Repository",
-              "url": "https://github.com/azure/azure-mcp-server",
-              "date": "2025-11-16",
+              "url": "https://github.com/microsoft/mcp/tree/main/servers/Azure.Mcp.Server",
+              "date": "2026-07-09",
               "value": "Open source implementation from Microsoft"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
-          "score": 70,
-          "confidence": "medium",
+          "score": 80,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "MCP Server Documentation",
-              "url": "https://github.com/azure/azure-mcp-server",
-              "date": "2025-11-16",
-              "value": "Clear but limited documentation of supported Azure services"
+              "source": "Azure MCP Server README (microsoft/mcp)",
+              "url": "https://github.com/microsoft/mcp/blob/main/servers/Azure.Mcp.Server/README.md",
+              "date": "2026-07-09",
+              "value": "GA documentation enumerates supported service areas and tools with per-service documentation in the microsoft/mcp monorepo"
             }
           ],
-          "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "methodology": "API documentation review; raised from 70 as GA docs now enumerate the tool surface",
+          "last_verified": "2026-07-09"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 80,
+      "overall_score": 81,
       "criteria": {
         "ease_of_setup": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 80,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Setup Documentation",
-              "url": "https://github.com/azure/azure-mcp-server",
-              "date": "2025-11-16",
-              "value": "Requires Azure AD app registration and service principal setup"
+              "source": "Azure MCP Server README (microsoft/mcp)",
+              "url": "https://github.com/microsoft/mcp/blob/main/servers/Azure.Mcp.Server/README.md",
+              "date": "2026-07-09",
+              "value": "Installable via npm (@azure/mcp), drag-and-drop MCPB bundles for Claude Desktop (no runtime required), VS Code integration, NuGet, PyPI, and Docker; authenticates with existing az login session"
             }
           ],
-          "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "methodology": "Setup complexity assessment; raised from 75 due to MCPB bundles and az-login-based auth removing service principal setup for interactive use",
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 82,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 85,
@@ -352,35 +352,35 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "service_coverage": {
-          "score": 78,
-          "confidence": "medium",
+          "score": 84,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Azure MCP Server",
-              "url": "https://github.com/azure/azure-mcp-server",
-              "date": "2025-11-16",
-              "value": "Covers major Azure services but not comprehensive"
+              "source": "Azure MCP Server README (microsoft/mcp)",
+              "url": "https://github.com/microsoft/mcp/blob/main/servers/Azure.Mcp.Server/README.md",
+              "date": "2026-07-09",
+              "value": "2.0 GA covers 44+ Azure service areas across compute, storage, databases, AI/ML, monitoring, and governance"
             }
           ],
-          "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "methodology": "Feature coverage assessment; raised from 78 as GA 2.0 substantially expanded service coverage",
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 72,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "GitHub Community",
-              "url": "https://github.com/azure/azure-mcp-server/discussions",
-              "date": "2025-11-16",
-              "value": "Growing adoption among Azure users"
+              "source": "microsoft/mcp Repository",
+              "url": "https://github.com/microsoft/mcp",
+              "date": "2026-07-09",
+              "value": "Active first-party development in the microsoft/mcp monorepo with frequent releases; growing adoption via VS Code, Claude Desktop MCPB bundles, and Visual Studio integration"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -433,34 +433,36 @@
     "Educators teaching Azure and cloud computing concepts"
   ],
   "strengths": [
-    "Official Microsoft implementation with Azure expertise",
-    "Comprehensive Azure resource management capabilities",
+    "Official Microsoft implementation, generally available as 2.0 since April 2026",
+    "Broad Azure resource management: tools across 44+ Azure service areas",
     "Built on reliable Azure APIs with strong SLAs",
     "Full operation auditability through Azure Activity Log",
-    "Open source with Microsoft support",
-    "Supports Azure RBAC for granular permissions"
+    "Open source (MIT) in the microsoft/mcp monorepo with Microsoft support",
+    "Supports Azure RBAC for granular permissions; credentials via the official Azure Identity SDK",
+    "Flexible distribution: npm, MCPB bundles, VS Code/Visual Studio integration, NuGet, PyPI, Docker, self-hosted remote HTTP"
   ],
   "limitations": [
     "Azure resource metadata and configurations exposed to LLM provider",
-    "Risk of destructive operations (resource deletion, network changes)",
-    "May expose connection strings, keys, and secrets",
-    "Complex setup requiring Azure AD configuration",
-    "Limited to supported Azure services (not comprehensive)",
+    "Risk of destructive operations (resource deletion, network changes); Microsoft warns autonomous or misconfigured clients may perform destructive actions and recommends least-privilege roles",
+    "May expose connection strings, keys, and secrets in resource configurations",
+    "Agent inherits the full RBAC permissions of the authenticated identity",
+    "Not every Azure service is covered despite broad 2.0 GA coverage",
     "Data residency considerations with LLM provider data sharing"
   ],
   "metadata": {
     "license": "MIT",
     "supported_platforms": [
-      "All platforms with Node.js/Python"
+      "Windows, macOS, Linux (x64/ARM64) via npm, MCPB bundles, NuGet, PyPI, Docker"
     ],
     "programming_languages": [
-      "TypeScript",
-      "Python"
+      "C# (.NET)"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/azure/azure-mcp-server",
-    "api_dependency": "Azure REST API, Azure SDK",
-    "authentication": "Azure AD, Service Principal, Managed Identity",
+    "github_repo": "https://github.com/microsoft/mcp/tree/main/servers/Azure.Mcp.Server",
+    "previous_repo": "https://github.com/Azure/azure-mcp (archived; development moved to microsoft/mcp)",
+    "api_dependency": "Azure REST API, Azure SDK, Azure Identity SDK",
+    "authentication": "Microsoft Entra ID via Azure Identity SDK (az login, environment credentials, managed identity)",
+    "ga_date": "2026-04-10",
     "first_release": "2024-11",
     "maintained_by": "Microsoft"
   },

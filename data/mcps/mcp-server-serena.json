@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "Serena MCP",
   "provider": "Oraios AI",
-  "version": "2026.6",
-  "last_evaluated": "2026-06-10",
+  "version": "1.5.3",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Open-source semantic coding toolkit from Oraios AI that turns any MCP-capable agent into an IDE-grade coding assistant. Uses language servers (LSP) for symbol-level code navigation and editing — find_symbol, find_referencing_symbols, precise symbol edits — plus project memory and shell execution. High-privilege local tooling: full filesystem and shell access.",
+  "description": "Open-source semantic coding toolkit from Oraios AI that turns any MCP-capable agent into an IDE-grade coding assistant. Uses language servers (LSP) for symbol-level code navigation and editing — find_symbol, find_referencing_symbols, precise symbol edits, plus refactoring tools (rename/move/inline) — with project memory and shell execution across 40+ languages. An optional paid JetBrains-plugin backend adds interactive debugging. High-privilege local tooling: full filesystem and shell access.",
   "website": "https://github.com/oraios/serena",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Accuracy testing of symbol resolution and reference finding against IDE ground truth in multi-file projects",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_success_rate": {
           "score": 84,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Hands-on testing of symbolic read/edit operations across project states",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "language_server_stability": {
           "score": 76,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Review of reported language-server issues and stress testing on large repositories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 80,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Error-path testing including LSP crashes, unindexed files, and invalid edits",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "large_project_handling": {
           "score": 82,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Token-efficiency and navigation testing on repositories with 100k+ lines",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Capability analysis of shell execution tooling and its abuse potential under prompt injection",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "filesystem_access_risk": {
           "score": 50,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Analysis of file read/write tool boundaries and project-scoping enforcement",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sandboxing_isolation": {
           "score": 45,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Review of process isolation, privilege boundaries, and available containment options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "credential_exposure_risk": {
           "score": 58,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Analysis of secret-reachability via file and shell tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "unauthorized_action_risk": {
           "score": 52,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Authorization boundary analysis of write and execution tools, including available mode-based restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis of tool outputs to the LLM provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 60,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy controls assessment of file-content handling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_data_control": {
           "score": 88,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Review of local execution model, memory storage, and data residency",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 85,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data sharing pathway analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 82,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging and observability assessment including the built-in dashboard",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "project_memory_transparency": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Review of memory persistence format, location, and influence on agent sessions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment including language-server prerequisites",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "performance": {
           "score": 80,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Latency and token-efficiency benchmarking on indexed projects",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 88,
@@ -319,12 +319,12 @@
             {
               "source": "Serena tool suite",
               "url": "https://github.com/oraios/serena",
-              "date": "2026-06-10",
-              "value": "Comprehensive coding toolkit: symbol search/references, symbol-level editing, pattern search, file operations, shell execution, project memory, and onboarding — spanning 20+ languages via LSP"
+              "date": "2026-07-09",
+              "value": "Comprehensive coding toolkit: symbol search/references, symbol-level editing, refactoring (rename/move/inline), pattern search, file operations, shell execution, project memory, and onboarding — spanning 40+ languages via LSP, with an optional paid JetBrains-plugin backend adding interactive debugging"
             }
           ],
           "methodology": "Feature completeness assessment against IDE-grade coding-agent needs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 88,
@@ -333,12 +333,12 @@
             {
               "source": "GitHub API",
               "url": "https://api.github.com/repos/oraios/serena",
-              "date": "2026-06-10",
-              "value": "25,204 stars as of 2026-06-10; widely adopted as a free, open-source way to add semantic code tools to Claude, and other MCP-capable agents"
+              "date": "2026-07-09",
+              "value": "~26,300 stars as of 2026-07-09; widely adopted as a free, open-source way to add semantic code tools to Claude, and other MCP-capable agents"
             }
           ],
           "methodology": "Adoption metrics and community-activity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "maintenance_activity": {
           "score": 90,
@@ -347,12 +347,12 @@
             {
               "source": "GitHub repository activity",
               "url": "https://github.com/oraios/serena/commits/main",
-              "date": "2026-06-10",
-              "value": "Very active development by Oraios AI with frequent releases, expanding language support, and responsive issue triage"
+              "date": "2026-07-09",
+              "value": "Very active development by Oraios AI with frequent releases (latest v1.5.3, 2026-05-26; 3,000+ commits), expanding language support, and responsive issue triage"
             }
           ],
           "methodology": "Commit frequency and release-cadence analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -362,7 +362,8 @@
     "Symbol-level reading/editing slashes token usage on large codebases versus whole-file approaches",
     "Fully open source (MIT), fully local — no hosted backend, no telemetry, no API costs",
     "Project memory system persists codebase knowledge across sessions as inspectable markdown",
-    "Broad language coverage (20+ languages) and active maintenance (25.2k stars)",
+    "Broad language coverage (40+ languages) and active maintenance (~26.3k stars)",
+    "Refactoring tools (rename/move/inline) and optional JetBrains-plugin backend with interactive debugging",
     "Modes/contexts allow restricting the tool surface, including disabling shell execution"
   ],
   "limitations": [
@@ -383,7 +384,8 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/oraios/serena",
-    "github_stars": 25204,
+    "github_stars": 26300,
+    "latest_release": "v1.5.3 (2026-05-26)",
     "package": "serena-agent (PyPI)",
     "api_dependency": "Local language servers (LSP) per language",
     "authentication": "None required (local operation)",

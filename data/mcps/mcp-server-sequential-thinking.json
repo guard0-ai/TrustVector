@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Sequential Thinking Server",
   "provider": "Anthropic",
-  "version": "2025.7.1",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7.4",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official MCP reference server enabling dynamic, extended reasoning and problem-solving sequences. Allows AI models to create structured thinking processes, break down complex problems, and maintain context across multi-step reasoning chains. One of the seven reference servers that remain actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09 (latest spec 2025-11-25).",
+  "description": "Official MCP reference server enabling dynamic, extended reasoning and problem-solving sequences: structured thinking processes, decomposition of complex problems, and context across multi-step reasoning chains. One of the seven reference servers still maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation (Linux Foundation) on 2025-12-09 (latest stable spec 2025-11-25; 2026-07-28 revision at release-candidate stage).",
   "website": "https://modelcontextprotocol.io/docs/servers/sequential-thinking",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Reasoning quality assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "context_preservation": {
           "score": 83,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Context retention testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "step_execution_reliability": {
           "score": 80,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Execution reliability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "complex_problem_handling": {
           "score": 78,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Problem-solving capability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 82,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Isolation boundary testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_exposure_risk": {
           "score": 85,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Data flow security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_resistance": {
           "score": 82,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Injection attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reasoning_manipulation_risk": {
           "score": 88,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Manipulation vulnerability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_consumption_limits": {
           "score": 90,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Resource limit testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data privacy analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "thought_process_exposure": {
           "score": 78,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "context_data_retention": {
           "score": 80,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Data retention assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 80,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reasoning_visibility": {
           "score": 90,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Process visibility assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "experimental_status_disclosure": {
           "score": 70,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Status disclosure review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reasoning_performance": {
           "score": 72,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 75,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Stability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "feature_maturity": {
           "score": 70,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Maturity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 68,
@@ -355,10 +355,16 @@
               "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
               "date": "2025-12-09",
               "value": "sequential-thinking is one of the seven reference servers still actively maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09"
+            },
+            {
+              "source": "npm - @modelcontextprotocol/server-sequential-thinking",
+              "url": "https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking",
+              "date": "2026-07-09",
+              "value": "Latest release 2026.7.4 (published 2026-07-04); still listed among the seven maintained reference servers in modelcontextprotocol/servers README (repo ~88,300 stars, not archived)"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -378,7 +384,7 @@
     "Reasoning steps exposed to LLM provider",
     "Relatively low community adoption due to specialized use case",
     "Documentation and best practices still evolving",
-    "STATUS 2026-06-10: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); governance now under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
+    "STATUS 2026-07-09: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); latest npm release 2026.7.4 (2026-07-04); no known CVEs against this server; governance under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -391,7 +397,7 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "github_stars": 58700,
+    "github_stars": 88259,
     "api_dependency": "None (MCP protocol only)",
     "authentication": "None required",
     "first_release": "2024-11",

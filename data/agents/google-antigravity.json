@@ -1,0 +1,481 @@
+{
+  "id": "google-antigravity",
+  "type": "agent",
+  "name": "Google Antigravity",
+  "provider": "Google",
+  "version": "Public preview (2026)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Google's agent-first development platform (launched 2025-11-18 with Gemini 3): an IDE built on licensed Windsurf code where an agent manager orchestrates autonomous agents across editor, terminal, and browser, verifying work through artifacts (plans, task lists, screenshots, recordings). Also the home of the closed-source 'agy' CLI that replaced consumer Gemini CLI (June 2026). Free public preview whose first months were marred by serious, well-documented security failures.",
+  "website": "https://antigravity.google/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 76,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Developers Blog - Build with Google Antigravity",
+              "url": "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+              "date": "2025-11-18",
+              "value": "Agents powered by Gemini 3 Pro (plus Claude Sonnet/Opus and GPT-OSS-120B options) complete asynchronous coding tasks end-to-end, with browser control for verifying web apps"
+            }
+          ],
+          "methodology": "Assessment of agentic task completion using Gemini 3-class models and multi-surface tooling, from vendor documentation and independent reviews",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "VentureBeat - Antigravity agent-first architecture",
+              "url": "https://venturebeat.com/ai/google-antigravity-introduces-agent-first-architecture-for-asynchronous",
+              "date": "2025-11-18",
+              "value": "Agents operate editor, terminal, and an embedded browser in one loop; browser-use verification is a differentiator, though preview-quality rough edges are widely reported"
+            }
+          ],
+          "methodology": "Review of cross-surface (editor/terminal/browser) tool loop reliability in public preview",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Developers Blog - Build with Google Antigravity",
+              "url": "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+              "date": "2025-11-18",
+              "value": "Agents produce implementation plans and task lists as first-class artifacts before executing, designed for delegating complex multi-step work"
+            }
+          ],
+          "methodology": "Evaluation of plan-artifact generation and adherence on long-horizon tasks",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 70,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Google Antigravity",
+              "url": "https://antigravity.google/",
+              "date": "2026-06-01",
+              "value": "Agents accumulate a knowledge base of learnings across tasks within the workspace; persistence depth across projects is not well documented in preview"
+            }
+          ],
+          "methodology": "Review of cross-task knowledge retention features as documented in preview materials",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 72,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "VentureBeat - Antigravity agent-first architecture",
+              "url": "https://venturebeat.com/ai/google-antigravity-introduces-agent-first-architecture-for-asynchronous",
+              "date": "2025-11-18",
+              "value": "Agents iterate against test results and browser-verified behavior; preview users report occasional runaway or stalled tasks requiring manual intervention"
+            }
+          ],
+          "methodology": "Assessment of autonomous iteration and failure handling from launch coverage and user reports",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Developers Blog - Build with Google Antigravity",
+              "url": "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+              "date": "2025-11-18",
+              "value": "The Manager view is a mission-control surface for spawning and supervising multiple agents working in parallel across workspaces"
+            }
+          ],
+          "methodology": "Review of the agent manager orchestration model for parallel task execution",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 42,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 45,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Pillar Security - Prompt Injection leads to RCE and Sandbox Escape in Antigravity",
+              "url": "https://www.pillar.security/blog/prompt-injection-leads-to-rce-and-sandbox-escape-in-antigravity",
+              "date": "2026-04-20",
+              "value": "Critical flaw: the find_by_name tool passed its Pattern parameter unsanitized to fd, so injecting the -X (exec-batch) flag executed arbitrary binaries, bypassing Strict Mode entirely because the tool ran before sandbox constraints were evaluated. Reported 2026-01-07, fixed 2026-02-28, disclosed 2026-04-20; triggerable via indirect prompt injection. No CVE assigned"
+            },
+            {
+              "source": "The Hacker News - Google Patches Antigravity IDE Flaw",
+              "url": "https://thehackernews.com/2026/04/google-patches-antigravity-ide-flaw.html",
+              "date": "2026-04-21",
+              "value": "Google patched the sandbox-escape RCE; Strict Mode's guarantees (network limits, no out-of-workspace writes, sandboxed commands) were shown to be bypassable by a single crafted tool parameter"
+            }
+          ],
+          "methodology": "Security review of the sandbox model against the published bypass; the flaw is patched, but a sandbox defeated by flag injection in a core tool indicates immature enforcement architecture",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 52,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechRadar Pro - Antigravity's worrying security issues",
+              "url": "https://www.techradar.com/pro/googles-ai-powered-antigravity-ide-already-has-some-worrying-security-issues",
+              "date": "2025-11-26",
+              "value": "At launch, default policies ('Agent Decides' review mode, terminal command auto-execution) let agents run commands and read credentials without per-action approval; consumer preview lacks enterprise admin controls"
+            }
+          ],
+          "methodology": "Review of default autonomy policies, approval model, and org-level controls in the preview",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 28,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PromptArmor - Google Antigravity Exfiltrates Data",
+              "url": "https://www.promptarmor.com/resources/google-antigravity-exfiltrates-data",
+              "date": "2025-11-25",
+              "value": "Launch-week demonstration: hidden instructions in a poisoned integration guide made the agent collect .env credentials and exfiltrate them via the browser subagent to webhook.site, which sat on the default URL allowlist"
+            },
+            {
+              "source": "Simon Willison - Google Antigravity Exfiltrates Data",
+              "url": "https://simonwillison.net/2025/Nov/25/google-antigravity-exfiltrates-data/",
+              "date": "2025-11-25",
+              "value": "The agent bypassed its own .gitignore protection by cat-ing files through run_command; Google's Bug Hunters page classifies prompt-injection data exfiltration and code execution as 'known issues' ineligible for bounty, several inherited from the Windsurf codebase and reported to Windsurf in May 2025"
+            }
+          ],
+          "methodology": "Assessment of demonstrated indirect prompt injection attack chains at launch against documented mitigations; multiple independent researchers achieved credential exfiltration with default settings",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 45,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Bug Hunters - Antigravity Known Issues",
+              "url": "https://bughunters.google.com/learn/invalid-reports/ai-products/antigravity-known-issues",
+              "date": "2025-11-25",
+              "value": "Google acknowledges data exfiltration via the browser agent and prompt-injection code execution as known issues under remediation; workspace secrets and local files are reachable by agents by design"
+            },
+            {
+              "source": "Malwarebytes - Fake Google Antigravity downloads",
+              "url": "https://www.malwarebytes.com/blog/threat-intel/2026/04/fake-google-antigravity-downloads-are-stealing-accounts-in-minutes",
+              "date": "2026-04-15",
+              "value": "Supply-chain adjacent risk: malvertised lookalike domains shipped the genuine Antigravity installer trojanized with an infostealer, harvesting browser sessions and credentials within minutes"
+            }
+          ],
+          "methodology": "Review of agent access to local secrets, exfiltration channels, and the ecosystem attack surface around distribution",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 40,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "The New Stack - Gemini CLI vs Antigravity",
+              "url": "https://thenewstack.io/gemini-cli-antigravity-replacement/",
+              "date": "2026-06-20",
+              "value": "Closed-source VS Code fork built on non-exclusively licensed Windsurf code; the agy CLI is a closed Go binary that replaced the Apache-2.0 Gemini CLI (105K+ stars, 6,000+ community PRs). Partial credit: Google publicly documents known security issues and paid Pillar's bounty"
+            }
+          ],
+          "methodology": "Source availability assessment, crediting the public known-issues documentation while noting the open-to-closed regression from Gemini CLI",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Security is the defining weakness of Antigravity's first six months: a Strict Mode sandbox escape to RCE (reported 2026-01-07, patched 2026-02-28), launch-day credential exfiltration via indirect prompt injection with default-on auto-execution, inherited unpatched Windsurf issues, and an active trojanized-installer campaign. Google's pedigree did not translate into a hardened launch."
+    },
+    "privacy_compliance": {
+      "overall_score": 52,
+      "criteria": {
+        "data_retention": {
+          "score": 45,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Antigravity Terms",
+              "url": "https://antigravity.google/terms",
+              "date": "2026-06-01",
+              "value": "Preview terms allow Google to use interactions (prompts, code context) to improve and train models by default for consumer accounts, with an opt-out; Workspace/GCP-governed accounts are excluded from training use"
+            }
+          ],
+          "methodology": "Review of preview terms of service regarding training use and retention of interaction data",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Antigravity",
+              "url": "https://antigravity.google/",
+              "date": "2026-06-01",
+              "value": "Backed by Google's corporate compliance programs (GDPR, ISO/SOC portfolio), but Antigravity itself is a free public preview without product-specific compliance attestations or enterprise data terms"
+            }
+          ],
+          "methodology": "Compliance posture assessment distinguishing Google-level programs from preview-product guarantees",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Developers Blog - Build with Google Antigravity",
+              "url": "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+              "date": "2025-11-18",
+              "value": "Model choice includes Anthropic Claude Sonnet/Opus and GPT-OSS-120B alongside Gemini, routing code and prompts to non-Google providers when selected"
+            }
+          ],
+          "methodology": "Data flow analysis of multi-provider model routing",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 42,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Antigravity",
+              "url": "https://antigravity.google/",
+              "date": "2026-06-01",
+              "value": "IDE and agents run locally on macOS/Windows/Linux, but all model inference is cloud-based with a Google account requirement; no offline or self-hosted inference"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 61,
+      "criteria": {
+        "documentation_quality": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Antigravity",
+              "url": "https://antigravity.google/",
+              "date": "2026-06-01",
+              "value": "Launch documentation covers the manager surface, artifacts, and model options; security-relevant defaults and policies were underdocumented at launch relative to the product's autonomy"
+            }
+          ],
+          "methodology": "Documentation completeness review for a preview-stage product",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "VentureBeat - Antigravity agent-first architecture",
+              "url": "https://venturebeat.com/ai/google-antigravity-introduces-agent-first-architecture-for-asynchronous",
+              "date": "2025-11-18",
+              "value": "Artifact-based verification is the product's core idea: agents emit task lists, implementation plans, screenshots, and browser recordings as a reviewable audit trail instead of raw tool-call logs"
+            }
+          ],
+          "methodology": "Review of the artifact audit-trail model; genuinely strong design, though artifacts are agent-generated and share the self-reporting caveat",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Google Developers Blog - Build with Google Antigravity",
+              "url": "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+              "date": "2025-11-18",
+              "value": "Implementation-plan artifacts expose intended approach before execution, and verification artifacts (screenshots, recordings) evidence what was actually done"
+            }
+          ],
+          "methodology": "Assessment of plan and verification artifact quality as explanation mechanisms",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 22,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "9to5Google - Gemini CLI and Code Assist shutting down for consumers",
+              "url": "https://9to5google.com/2026/06/17/gemini-cli-code-assist-shutting-down/",
+              "date": "2026-06-17",
+              "value": "Closed-source platform; Google shut off the open-source Gemini CLI for consumer tiers on 2026-06-18 and pointed individuals to the closed agy binary, a full rewrite shipping ~20 free requests/day versus Gemini CLI's 1,000"
+            }
+          ],
+          "methodology": "Open source assessment; the deliberate replacement of a major OSS tool with a closed binary weighs against Google here",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "The New Stack - Gemini CLI vs Antigravity",
+              "url": "https://thenewstack.io/gemini-cli-antigravity-replacement/",
+              "date": "2026-06-20",
+              "value": "High adoption interest from the Gemini 3 launch wave, but significant community backlash over the Gemini CLI shutdown, free-tier quota cuts, and the closed-source pivot"
+            }
+          ],
+          "methodology": "Community engagement analysis balancing launch momentum against migration backlash",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 63,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Google Developers Blog - Build with Google Antigravity",
+              "url": "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+              "date": "2025-11-18",
+              "value": "Free download for macOS/Windows/Linux with a familiar VS Code-derived editor, generous Gemini 3 Pro rate limits, and sign-in with a Google account"
+            }
+          ],
+          "methodology": "Onboarding and integration friction assessment",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 70,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Google Antigravity",
+              "url": "https://antigravity.google/",
+              "date": "2026-06-01",
+              "value": "Manager view fans out parallel agents locally; scale is bounded by preview rate limits, which Google adjusts without an SLA"
+            }
+          ],
+          "methodology": "Scalability assessment of parallel agent execution under preview rate limits",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "9to5Google - Gemini CLI and Code Assist shutting down for consumers",
+              "url": "https://9to5google.com/2026/06/17/gemini-cli-code-assist-shutting-down/",
+              "date": "2026-06-17",
+              "value": "Currently free, but preview quotas shift without notice, agy's free tier is roughly 20 requests/day, and post-preview pricing is unannounced; the Gemini CLI shutdown shows Google will change individual-tier terms abruptly"
+            }
+          ],
+          "methodology": "Pricing predictability analysis; zero cost today but high uncertainty about limits and future pricing",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 58,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Google Antigravity",
+              "url": "https://antigravity.google/",
+              "date": "2026-06-01",
+              "value": "Manager view provides per-agent progress and artifacts, but there are no organizational dashboards, usage analytics, or admin policy controls in the consumer preview"
+            }
+          ],
+          "methodology": "Monitoring and governance features assessment for the preview release",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 52,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Dark Reading - Google Fixes Critical RCE Flaw in Antigravity",
+              "url": "https://www.darkreading.com/vulnerabilities-threats/google-fixes-critical-rce-flaw-ai-based-antigravity-tool",
+              "date": "2026-04-21",
+              "value": "Public preview with an eight-week-old critical RCE at disclosure, unresolved 'known issue' prompt-injection classes, forced consumer migration churn from Gemini CLI, and no enterprise tier; Google's backing ensures longevity but not current stability"
+            }
+          ],
+          "methodology": "Product maturity assessment weighing Google's resources against preview status and the 2025-2026 security record",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 78,
+      "notes": "Strong Gemini 3-powered agentic coding with a genuinely novel artifact-verification workflow, held back by preview instability and security caveats"
+    },
+    "research-assistant": {
+      "overall": 66,
+      "notes": "Embedded browser control lets agents research documentation and verify behavior, but browsing is also its most-exploited attack surface"
+    },
+    "data-analysis": {
+      "overall": 62,
+      "notes": "Capable of building and running analysis code across editor and terminal; no analytics-specific tooling"
+    },
+    "education": {
+      "overall": 64,
+      "notes": "Free access and visible plans/artifacts aid learning, but default autonomy settings are a poor fit for unsupervised beginners"
+    }
+  },
+  "best_for": [
+    "Developers experimenting with agent-manager workflows and artifact-based verification at no cost",
+    "Gemini-ecosystem teams evaluating Google's agentic direction before enterprise tooling matures",
+    "Multi-agent parallel task delegation on non-sensitive codebases",
+    "Web app development where browser-based verification of agent work adds value"
+  ],
+  "strengths": [
+    "Artifact-based verification (plans, task lists, screenshots, browser recordings) is a best-in-class transparency design",
+    "Agent manager orchestrates parallel autonomous agents across editor, terminal, and browser in one surface",
+    "First-class Gemini 3 Pro access with model choice (Claude Sonnet/Opus, GPT-OSS-120B) at zero cost in preview",
+    "Google patched the critical sandbox-escape RCE within eight weeks of report and paid an external bounty",
+    "Cross-platform (macOS/Windows/Linux) with a familiar VS Code-derived editor"
+  ],
+  "limitations": [
+    "Worst security launch record among major agent IDEs: launch-day credential exfiltration via indirect prompt injection (PromptArmor, Rehberger), default auto-execution policies, and webhook.site on the default allowlist",
+    "Strict Mode sandbox was bypassable to full RCE via -X flag injection in find_by_name (reported 2026-01-07, patched 2026-02-28); no CVE was assigned",
+    "Google classifies whole prompt-injection exfiltration classes as 'known issues' ineligible for bounty, several inherited unpatched from the Windsurf codebase",
+    "Consumer interactions feed model training by default (opt-out required) unless governed by Workspace/GCP terms",
+    "Closed-source pivot: replaced the Apache-2.0 Gemini CLI (shut off for consumers 2026-06-18) with the closed agy binary and ~50x lower free quotas",
+    "Trojanized-installer malvertising campaign actively targets its download funnel (Malwarebytes, Apr 2026)",
+    "Preview product: no SLA, no enterprise controls, quotas and terms change without notice"
+  ],
+  "metadata": {
+    "license": "Proprietary (closed-source fork built on non-exclusively licensed Windsurf code; agy CLI is a closed Go binary)",
+    "supported_models": [
+      "Google Gemini 3 Pro / Gemini 3 family (primary)",
+      "Anthropic Claude Sonnet 4.5/4.6 and Opus 4.6",
+      "GPT-OSS-120B"
+    ],
+    "programming_languages": [
+      "All languages supported by the VS Code ecosystem"
+    ],
+    "deployment_type": "Local IDE + CLI (macOS/Windows/Linux) with cloud model inference; Google account required",
+    "tool_support": [
+      "Editor, terminal, and embedded browser control",
+      "Agent manager for parallel agents",
+      "Artifact generation (plans, task lists, screenshots, recordings)",
+      "MCP support",
+      "agy CLI for terminal workflows"
+    ],
+    "first_release": "2025-11-18 (public preview, launched with Gemini 3); agy CLI became the consumer path after Gemini CLI's consumer shutdown 2026-06-18",
+    "pricing": "Free public preview with rate limits (agy CLI free tier ~20 requests/day); post-preview pricing unannounced; enterprise access via Gemini Code Assist licenses",
+    "security_incidents": "Launch-week data-exfiltration chains via indirect prompt injection (2025-11-25, PromptArmor/Rehberger; several issues inherited from Windsurf, reported to Windsurf May 2025); Strict Mode sandbox escape to RCE via find_by_name -X flag injection (reported 2026-01-07, patched 2026-02-28, disclosed 2026-04-20 by Pillar Security, no CVE); trojanized-installer malvertising campaign (Malwarebytes, Apr 2026)"
+  },
+  "related_entities": [
+    "gemini-cli",
+    "google-jules",
+    "cursor-agent",
+    "claude-code"
+  ],
+  "tags": [
+    "ide",
+    "agentic-coding",
+    "parallel-agents",
+    "proprietary"
+  ]
+}

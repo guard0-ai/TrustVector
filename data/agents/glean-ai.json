@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "Glean AI",
   "provider": "Glean Technologies Inc.",
-  "version": "2025.1",
-  "last_evaluated": "2025-01-14",
+  "version": "Current (SaaS)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Enterprise AI platform for work that unifies information across business tools and applications. Provides intelligent search, knowledge discovery, and AI assistants that understand organizational context for improved productivity.",
+  "description": "Enterprise 'Work AI' platform that unifies information across business tools and applications. Has expanded well beyond enterprise search into AI assistants and autonomous agents that execute tasks across the business (Glean Assistant, Glean Agents, plus Glean Protect for agent governance/security). Raised a $150M Series F at a $7.2B valuation (June 2025) and crossed $300M ARR by May 2026; customers include Dell, Workday, and Palo Alto Networks.",
   "website": "https://www.glean.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Search quality testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "knowledge_synthesis": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Knowledge synthesis testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "integration_coverage": {
           "score": 92,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Integration coverage review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "response_quality": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Response quality assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "personalization": {
           "score": 85,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Personalization testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -94,12 +94,12 @@
             {
               "source": "Glean Security",
               "url": "https://www.glean.com/security",
-              "date": "2025-01-10",
-              "value": "SOC 2 Type II, ISO 27001, GDPR compliant"
+              "date": "2026-07-09",
+              "value": "SOC 2 Type II, ISO/IEC 27001, ISO/IEC 42001:2023 (AI management systems), HIPAA, GDPR compliant; Trust Center at trust.glean.com"
             }
           ],
           "methodology": "Security certification review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "permission_inheritance": {
           "score": 95,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Permission model review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_encryption": {
           "score": 92,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Encryption review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "sso_integration": {
           "score": 92,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "SSO integration review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "zero_trust_architecture": {
           "score": 88,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Architecture review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "GDPR compliance review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 92,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data isolation review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_residency": {
           "score": 88,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Data residency review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "no_training_on_data": {
           "score": 90,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "source_attribution": {
           "score": 92,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Attribution testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "activity_logging": {
           "score": 85,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging capability review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "model_transparency": {
           "score": 78,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Model transparency review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Deployment assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "user_adoption": {
           "score": 90,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "User experience review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 88,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Scalability assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 88,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Support quality review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "api_extensibility": {
           "score": 82,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "API capability review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -410,7 +410,7 @@
     "Respects existing permission models",
     "100+ pre-built connectors",
     "AI responses grounded in organizational knowledge",
-    "Strong enterprise security (SOC 2, ISO 27001)",
+    "Strong enterprise security (SOC 2 Type II, ISO 27001, ISO 42001, HIPAA)",
     "No customer data used for training"
   ],
   "limitations": [
@@ -427,10 +427,11 @@
     "deployment_type": "SaaS",
     "connectors": "100+",
     "pricing": "Enterprise pricing - contact sales",
-    "certifications": ["SOC 2 Type II", "ISO 27001", "GDPR"],
+    "certifications": ["SOC 2 Type II", "ISO 27001", "ISO/IEC 42001:2023", "HIPAA", "GDPR"],
     "founded": "2019",
     "headquarters": "Palo Alto, CA",
-    "funding": "Series D ($200M at $2.2B valuation)"
+    "funding": "Series F ($150M at $7.2B valuation, June 2025, led by Wellington Management)",
+    "annual_revenue": "$300M+ ARR (May 2026)"
   },
   "tags": ["enterprise", "knowledge-management", "search", "productivity"]
 }

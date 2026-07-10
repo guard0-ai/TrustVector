@@ -1,0 +1,684 @@
+{
+  "id": "nemotron-3-ultra",
+  "type": "model",
+  "name": "Nemotron 3 Ultra",
+  "provider": "NVIDIA",
+  "version": "20260604",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "NVIDIA's open frontier reasoning model, released 2026-06-04 to complete the Nemotron 3 rollout (Nano Dec 2025, Super Mar 2026): a 550B total / 55B active LatentMoE hybrid Mamba-Transformer under OpenMDW-1.1 with open weights, training data, and recipes. 1M-token context, 71.9% SWE-bench Verified (vendor), Artificial Analysis Index 48 — the top-scoring US open-weight model — with ~140 tok/s decode and the best non-hallucination score in its comparison set (78.7 AA-Omniscience).",
+  "website": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 91,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 94,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MarkTechPost - Nemotron 3 Ultra release coverage",
+              "url": "https://www.marktechpost.com/2026/06/04/nvidia-ai-releases-nemotron-3-ultra-an-open-550b-mixture-of-experts-hybrid-mamba-transformer-for-long-running-agents/",
+              "date": "2026-06-04",
+              "value": "SWE-bench Verified 71.9, IOI 2025 570.0 (vendor-reported)"
+            },
+            {
+              "source": "Digital Applied independent analysis",
+              "url": "https://www.digitalapplied.com/blog/nvidia-nemotron-3-ultra-550b-open-reasoning-model-2026",
+              "date": "2026-06-05",
+              "value": "SWE-bench Verified 65.0-70.4 across five agent harnesses in independent runs, slightly below the 71.9 vendor peak; Terminal-Bench 2.1 56.4 (vendor-stated)"
+            }
+          ],
+          "methodology": "Vendor coding benchmarks cross-checked against independent multi-harness SWE-bench reproductions",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_reasoning": {
+          "score": 92,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Artificial Analysis Intelligence Index (via Digital Applied)",
+              "url": "https://www.digitalapplied.com/blog/nvidia-nemotron-3-ultra-550b-open-reasoning-model-2026",
+              "date": "2026-06-05",
+              "value": "Intelligence Index 48 (#9 of 89): highest-scoring US open-weight model, 6 points behind open leader Kimi K2.6 (54)"
+            },
+            {
+              "source": "MarkTechPost - Nemotron 3 Ultra release coverage",
+              "url": "https://www.marktechpost.com/2026/06/04/nvidia-ai-releases-nemotron-3-ultra-an-open-550b-mixture-of-experts-hybrid-mamba-transformer-for-long-running-agents/",
+              "date": "2026-06-04",
+              "value": "PinchBench 90.0 held-out; post-trained with SFT, RLVR, and Multi-teacher On-Policy Distillation for long-running agent reasoning"
+            }
+          ],
+          "methodology": "Independent aggregate intelligence index plus vendor reasoning benchmarks; some vendor numbers await third-party replication",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_general": {
+          "score": 90,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MarkTechPost - Nemotron 3 Ultra release coverage",
+              "url": "https://www.marktechpost.com/2026/06/04/nvidia-ai-releases-nemotron-3-ultra-an-open-550b-mixture-of-experts-hybrid-mamba-transformer-for-long-running-agents/",
+              "date": "2026-06-04",
+              "value": "AA-Omniscience 78.7, the highest non-hallucination score in its comparison set; RULER 94.7 at 1M tokens"
+            }
+          ],
+          "methodology": "Knowledge and long-context retrieval benchmarks from launch materials, corroborated by independent press analysis",
+          "last_verified": "2026-07-09"
+        },
+        "output_consistency": {
+          "score": 86,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Digital Applied independent analysis",
+              "url": "https://www.digitalapplied.com/blog/nvidia-nemotron-3-ultra-550b-open-reasoning-model-2026",
+              "date": "2026-06-05",
+              "value": "Stable results across agent harnesses but notably verbose: ~2.3x more output tokens than peer models"
+            }
+          ],
+          "methodology": "Cross-harness benchmark variance and community reports; only one month of production usage available",
+          "last_verified": "2026-07-09",
+          "notes": "Launch-recency: limited repeated-run data from the community so far"
+        },
+        "latency_p50": {
+          "value": "~1.3s time-to-first-token; ~140 tokens/s decode (hosted)",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Digital Applied independent analysis",
+              "url": "https://www.digitalapplied.com/blog/nvidia-nemotron-3-ultra-550b-open-reasoning-model-2026",
+              "date": "2026-06-05",
+              "value": "140.3 tokens/s output (#7 of 89 models) with 1.33s time-to-first-token; several times faster than Kimi K2.6 (50-100 tok/s)"
+            },
+            {
+              "source": "MarkTechPost - Nemotron 3 Ultra release coverage",
+              "url": "https://www.marktechpost.com/2026/06/04/nvidia-ai-releases-nemotron-3-ultra-an-open-550b-mixture-of-experts-hybrid-mamba-transformer-for-long-running-agents/",
+              "date": "2026-06-04",
+              "value": "5.9x throughput vs GLM-5.1 and 4.8x vs Kimi K2.6 at 8K input / 64K output (vendor)"
+            }
+          ],
+          "methodology": "Independent hosted-endpoint speed measurements plus vendor throughput comparisons",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p95": {
+          "value": "Provider-dependent; fast decode limits tail latency, but reasoning verbosity (~2.3x peer token counts) lengthens end-to-end task time",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Digital Applied independent analysis",
+              "url": "https://www.digitalapplied.com/blog/nvidia-nemotron-3-ultra-550b-open-reasoning-model-2026",
+              "date": "2026-06-05",
+              "value": "High decode speed offset by 2.3x output-token verbosity on reasoning tasks; per-provider tail latencies not yet broadly characterized"
+            }
+          ],
+          "methodology": "Qualitative assessment from early independent benchmarking; p95 distributions not yet published one month post-launch",
+          "last_verified": "2026-07-09"
+        },
+        "context_window": {
+          "value": "1,000,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card",
+              "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+              "date": "2026-06-04",
+              "value": "1M-token context window; RULER 94.7 at 1M tokens (some hosts serve reduced limits)"
+            }
+          ],
+          "methodology": "Official specification from model card; note that individual API providers may cap served context",
+          "last_verified": "2026-07-09"
+        },
+        "uptime": {
+          "score": 92,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenRouter model listing",
+              "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b",
+              "date": "2026-07-09",
+              "value": "Day-zero availability across 25+ platforms (NVIDIA NIM, OpenRouter, Together AI, Fireworks, Perplexity, SageMaker JumpStart) plus self-hosting redundancy"
+            }
+          ],
+          "methodology": "Multi-provider availability assessment; only one month of hosted operating history",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Strongest US open-weight model on the Artificial Analysis Intelligence Index (48, #9 overall) with class-leading decode speed (~140 tok/s) and a 1M-token context. Vendor benchmark peaks (SWE-bench 71.9) run a few points above independent multi-harness reproductions (65.0-70.4). Verbosity (~2.3x peer output tokens) is the main efficiency caveat."
+    },
+    "security": {
+      "overall_score": 82,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 80,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card",
+              "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+              "date": "2026-06-04",
+              "value": "Safety post-training documented; no published third-party injection red-team results one month post-launch"
+            }
+          ],
+          "methodology": "Review of vendor safety documentation; independent OWASP LLM01 testing not yet available for this release",
+          "last_verified": "2026-07-09"
+        },
+        "jailbreak_resistance": {
+          "score": 80,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Digital Applied independent analysis",
+              "url": "https://www.digitalapplied.com/blog/nvidia-nemotron-3-ultra-550b-open-reasoning-model-2026",
+              "date": "2026-06-05",
+              "value": "NVIDIA ships a companion Nemotron 3.5 Content Safety model (4B, 23 safety categories, 12 languages, released 2026-06-02); base alignment is removable downstream given open weights"
+            }
+          ],
+          "methodology": "Assessment of vendor guardrail stack; accounts for open-weight modifiability and absence of independent adversarial evaluations",
+          "last_verified": "2026-07-09"
+        },
+        "data_leakage_prevention": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card",
+              "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+              "date": "2026-06-04",
+              "value": "Open weights allow fully self-hosted deployment with complete data control; hosted access follows each provider's data handling terms"
+            }
+          ],
+          "methodology": "Analysis of deployment options: self-hosting gives full data isolation, hosted routes depend on provider policies",
+          "last_verified": "2026-07-09"
+        },
+        "output_safety": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "NVIDIA Nemotron research page",
+              "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+              "date": "2026-06-04",
+              "value": "Safety-aligned release with documented post-training; pairs with the Nemotron 3.5 Content Safety classifier covering 23 categories across 12 languages"
+            }
+          ],
+          "methodology": "Review of default-weight safety behavior and the vendor's companion moderation stack",
+          "last_verified": "2026-07-09"
+        },
+        "api_security": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenRouter model listing",
+              "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b",
+              "date": "2026-07-09",
+              "value": "NVIDIA NIM and major hosts provide API-key authentication, HTTPS, and rate limiting via OpenAI-compatible endpoints"
+            }
+          ],
+          "methodology": "Review of API security features on NVIDIA NIM and principal third-party hosts",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Reasonable default safety stack including a dedicated companion content-safety model, but almost no independent red-team literature exists yet given the June 2026 launch. Open weights shift guardrail responsibility to deployers who fine-tune."
+    },
+    "privacy_compliance": {
+      "overall_score": 83,
+      "criteria": {
+        "data_residency": {
+          "value": "Deployment-dependent: US-jurisdiction NVIDIA NIM, 25+ third-party hosts, or self-hosted in any region",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Digital Applied independent analysis",
+              "url": "https://www.digitalapplied.com/blog/nvidia-nemotron-3-ultra-550b-open-reasoning-model-2026",
+              "date": "2026-06-05",
+              "value": "Day-zero availability on OpenRouter, NVIDIA NIM, Together AI, Fireworks, Perplexity, and Amazon SageMaker JumpStart; OpenMDW weights allow deployment anywhere"
+            }
+          ],
+          "methodology": "Review of hosting options and open-weight licensing; residency is fully controllable via self-hosting",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_optout": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "NVIDIA Privacy Policy",
+              "url": "https://www.nvidia.com/en-us/privacy/",
+              "date": "2026-06-04",
+              "value": "NVIDIA hosted services do not train on API data by default; self-hosting removes the concern entirely"
+            }
+          ],
+          "methodology": "Analysis of NVIDIA hosted-service terms plus the self-hosting option",
+          "last_verified": "2026-07-09"
+        },
+        "data_retention": {
+          "value": "Per host policy on managed endpoints; zero external retention when self-hosted",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "NVIDIA Terms of Service",
+              "url": "https://www.nvidia.com/en-us/terms/",
+              "date": "2026-06-04",
+              "value": "Hosted retention follows NVIDIA or third-party host policies; open weights make retention fully deployment-dependent"
+            }
+          ],
+          "methodology": "Review of hosted-platform retention policies across the deployment spectrum",
+          "last_verified": "2026-07-09"
+        },
+        "pii_handling": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card",
+              "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+              "date": "2026-06-04",
+              "value": "Customer responsible for PII redaction; NVIDIA documents data provenance and provides NeMo Guardrails tooling in the surrounding stack"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and deployer responsibilities",
+          "last_verified": "2026-07-09"
+        },
+        "compliance_certifications": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "NVIDIA Trust Center",
+              "url": "https://www.nvidia.com/en-us/trust/",
+              "date": "2026-06-04",
+              "value": "NVIDIA infrastructure holds SOC 2 Type II and GDPR programs; no model-service HIPAA/FedRAMP path — regulated deployments inherit certifications from the chosen host (e.g., SageMaker) or self-hosted environment"
+            }
+          ],
+          "methodology": "Verification of provider infrastructure certifications versus model-service-level compliance",
+          "last_verified": "2026-07-09"
+        },
+        "zero_data_retention": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card",
+              "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+              "date": "2026-06-04",
+              "value": "No formal zero-retention guarantee on hosted endpoints; self-hosting provides true zero external retention"
+            }
+          ],
+          "methodology": "Review of data handling across NVIDIA NIM, third-party hosts, and self-hosting",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "US-jurisdiction provider with unusually flexible residency thanks to open weights and 25+ hosts, including hyperscaler routes (SageMaker JumpStart) that carry their own certifications. No model-level HIPAA/FedRAMP; regulated buyers should deploy via certified infrastructure."
+    },
+    "trust_transparency": {
+      "overall_score": 85,
+      "criteria": {
+        "explainability": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MarkTechPost - Nemotron 3 Ultra release coverage",
+              "url": "https://www.marktechpost.com/2026/06/04/nvidia-ai-releases-nemotron-3-ultra-an-open-550b-mixture-of-experts-hybrid-mamba-transformer-for-long-running-agents/",
+              "date": "2026-06-04",
+              "value": "Reasoning model exposing chain-of-thought traces; fully inspectable weights and recipes when self-hosted"
+            }
+          ],
+          "methodology": "Evaluation of reasoning-trace accessibility and weight/recipe inspectability",
+          "last_verified": "2026-07-09"
+        },
+        "hallucination_rate": {
+          "score": 88,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MarkTechPost - Nemotron 3 Ultra release coverage",
+              "url": "https://www.marktechpost.com/2026/06/04/nvidia-ai-releases-nemotron-3-ultra-an-open-550b-mixture-of-experts-hybrid-mamba-transformer-for-long-running-agents/",
+              "date": "2026-06-04",
+              "value": "78.7 on AA-Omniscience — the highest non-hallucination score in its comparison set"
+            }
+          ],
+          "methodology": "Non-hallucination benchmark results from launch materials, pending broader independent replication",
+          "last_verified": "2026-07-09"
+        },
+        "bias_fairness": {
+          "score": 78,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card",
+              "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+              "date": "2026-06-04",
+              "value": "NVIDIA Responsible AI documentation and data provenance disclosed; independent bias audits not yet published for this release"
+            }
+          ],
+          "methodology": "Review of vendor responsible-AI disclosures; third-party fairness evaluations pending given launch recency",
+          "last_verified": "2026-07-09"
+        },
+        "uncertainty_quantification": {
+          "score": 78,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card",
+              "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+              "date": "2026-06-04",
+              "value": "Expresses uncertainty within reasoning traces; calibration data not yet independently characterized"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-07-09"
+        },
+        "model_card_quality": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Nemotron v3 collection",
+              "url": "https://huggingface.co/collections/nvidia/nvidia-nemotron-v3",
+              "date": "2026-06-04",
+              "value": "Detailed cards for BF16, Base-BF16, NVFP4, and GenRM variants covering architecture (LatentMoE, MTP), training phases, data cutoffs (pre-train Sep 2025, post-train May 2026), and deployment recipes"
+            }
+          ],
+          "methodology": "Review of model card and technical documentation completeness",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_transparency": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Base model card",
+              "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16",
+              "date": "2026-06-04",
+              "value": "Openly released training corpora: 20T-token pre-training mix documented (Nemotron-CC, Common Crawl snapshots CC-MAIN-2013-20 through 2025-13), plus 10M SFT samples and 1M RL tasks published under OpenMDW-1.1"
+            }
+          ],
+          "methodology": "Review of published training datasets and recipes; best-in-class disclosure among frontier-scale models",
+          "last_verified": "2026-07-09"
+        },
+        "guardrails": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Digital Applied independent analysis",
+              "url": "https://www.digitalapplied.com/blog/nvidia-nemotron-3-ultra-550b-open-reasoning-model-2026",
+              "date": "2026-06-05",
+              "value": "Safety alignment in released weights plus the companion Nemotron 3.5 Content Safety 4B classifier; removable by downstream fine-tuning"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms in default weights and companion tooling",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Transparency is this release's standout: weights, 20T-token training data, and recipes are all published under OpenMDW-1.1 — materially beyond typical open-weight disclosure. Independent bias and calibration audits are still pending one month post-launch."
+    },
+    "operational_excellence": {
+      "overall_score": 85,
+      "criteria": {
+        "api_design_quality": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenRouter model listing",
+              "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b",
+              "date": "2026-07-09",
+              "value": "OpenAI-compatible endpoints via NVIDIA NIM and 25+ hosts with function calling and reasoning controls"
+            }
+          ],
+          "methodology": "Review of API design and feature completeness across NIM and principal hosts",
+          "last_verified": "2026-07-09"
+        },
+        "sdk_quality": {
+          "score": 87,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Digital Applied independent analysis",
+              "url": "https://www.digitalapplied.com/blog/nvidia-nemotron-3-ultra-550b-open-reasoning-model-2026",
+              "date": "2026-06-05",
+              "value": "Day-zero support in vLLM, SGLang, and TensorRT-LLM; Hugging Face Transformers integration; single NVFP4 checkpoint spans Ampere through Blackwell"
+            }
+          ],
+          "methodology": "Review of inference-framework support and deployment tooling at launch",
+          "last_verified": "2026-07-09"
+        },
+        "versioning_policy": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "NVIDIA Nemotron 3 family announcement",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models",
+              "date": "2025-12-15",
+              "value": "Predictable staged rollout: Nemotron 3 Nano (Dec 2025), Super 120B-A12B (2026-03-11), Ultra 550B-A55B (2026-06-04)"
+            },
+            {
+              "source": "NVIDIA Nemotron research page",
+              "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+              "date": "2026-07-09",
+              "value": "Open weights remain permanently downloadable, softening deprecation risk; note NVIDIA retired the prior Llama-3.1-based Nemotron line within about a year"
+            }
+          ],
+          "methodology": "Review of release cadence, family roadmap execution, and weight-availability guarantees",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_observability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenRouter model listing",
+              "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b",
+              "date": "2026-07-09",
+              "value": "Usage dashboards on NIM and third-party hosts; full observability when self-hosting on vLLM/SGLang/TRT-LLM stacks"
+            }
+          ],
+          "methodology": "Review of monitoring tools across deployment options",
+          "last_verified": "2026-07-09"
+        },
+        "support_quality": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "NVIDIA AI Enterprise",
+              "url": "https://www.nvidia.com/en-us/ai/enterprise/",
+              "date": "2026-06-04",
+              "value": "Enterprise support with SLAs available via NVIDIA AI Enterprise; strong developer documentation and community channels"
+            }
+          ],
+          "methodology": "Assessment of enterprise support tiers, documentation, and community responsiveness",
+          "last_verified": "2026-07-09"
+        },
+        "ecosystem_maturity": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Hugging Face Nemotron v3 collection",
+              "url": "https://huggingface.co/collections/nvidia/nvidia-nemotron-v3",
+              "date": "2026-07-09",
+              "value": "Complete family ladder (Nano 30B-A3B, Super 120B-A12B, Ultra 550B-A55B) with early community quantizations (e.g., Unsloth GGUF); derivative ecosystem still nascent one month post-launch"
+            }
+          ],
+          "methodology": "Analysis of derivative models, third-party hosting breadth, and tooling integrations; scored conservatively given launch recency",
+          "last_verified": "2026-07-09"
+        },
+        "license_terms": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face Model Card",
+              "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+              "date": "2026-06-04",
+              "value": "OpenMDW License 1.1 (Linux Foundation): permissive, covers weights, data, and recipes, with patent-termination clause; less legally familiar to enterprises than Apache 2.0"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Strong launch operations: day-zero support across 25+ hosts and all major inference frameworks, plus a single NVFP4 checkpoint spanning Ampere to Blackwell. Ecosystem and monitoring scores held conservative pending more production history; OpenMDW-1.1 is permissive but newer than Apache 2.0."
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 91,
+      "notes": "71.9% SWE-bench Verified (vendor; 65.0-70.4 independent) with fast decode suits agentic coding; verbosity raises per-task output cost.",
+      "alternatives": [
+        "kimi-k2-6",
+        "gpt-5-3-codex"
+      ]
+    },
+    "customer-support": {
+      "overall": 81,
+      "notes": "Capable but text-only, verbose, and primarily English-optimized; oversized for most support tiers.",
+      "alternatives": [
+        "claude-haiku-4-5",
+        "gemini-3-5-flash"
+      ]
+    },
+    "content-creation": {
+      "overall": 82,
+      "notes": "Solid structured writing; reasoning verbosity requires prompt discipline for concise content.",
+      "alternatives": [
+        "claude-opus-4-6",
+        "gpt-5-5"
+      ]
+    },
+    "data-analysis": {
+      "overall": 89,
+      "notes": "1M-token context with RULER 94.7 handles very large datasets and logs; text-only, so charts/images need preprocessing.",
+      "alternatives": [
+        "gemini-3-pro",
+        "claude-opus-4-6"
+      ]
+    },
+    "research-assistant": {
+      "overall": 90,
+      "notes": "1M context plus the best non-hallucination score in its set (78.7 AA-Omniscience) suits long-document research and long-running agents.",
+      "alternatives": [
+        "gemini-3-pro",
+        "claude-opus-4-6"
+      ]
+    },
+    "legal-compliance": {
+      "overall": 79,
+      "notes": "Compliance is deployment-dependent: viable via certified hosts (e.g., SageMaker) or self-hosting; no model-service certifications.",
+      "alternatives": [
+        "claude-opus-4-6"
+      ]
+    },
+    "healthcare": {
+      "overall": 74,
+      "notes": "No HIPAA path on NVIDIA-hosted endpoints; deploy in compliant infrastructure via open weights.",
+      "alternatives": [
+        "claude-opus-4-6"
+      ]
+    },
+    "financial-analysis": {
+      "overall": 86,
+      "notes": "Strong reasoning and long-context document processing; independent calibration data still limited.",
+      "alternatives": [
+        "gpt-5-5",
+        "claude-opus-4-6"
+      ]
+    },
+    "education": {
+      "overall": 83,
+      "notes": "Clear reasoning traces aid tutoring, but verbosity and English-first coverage limit fit versus multilingual alternatives.",
+      "alternatives": [
+        "qwen3-5",
+        "gemini-3-flash"
+      ]
+    },
+    "creative-writing": {
+      "overall": 78,
+      "notes": "Reasoning-optimized rather than prose-optimized; competent but not distinctive creative output.",
+      "alternatives": [
+        "claude-opus-4-6",
+        "gpt-5-5"
+      ]
+    }
+  },
+  "strengths": [
+    "Top-scoring US open-weight model: Artificial Analysis Intelligence Index 48 (#9 of 89)",
+    "Radical transparency: weights, 20T-token training data, and recipes all released under OpenMDW-1.1",
+    "1M-token context with RULER 94.7 at full length",
+    "Fast for its class: ~140 tok/s decode, 1.33s TTFT; vendor-reported 4.8-5.9x throughput vs open peers",
+    "Best non-hallucination score in its comparison set (78.7 AA-Omniscience)",
+    "Single NVFP4 checkpoint runs across Ampere, Hopper, and Blackwell; day-zero vLLM/SGLang/TRT-LLM support",
+    "Completes a predictable family ladder (Nano 30B-A3B, Super 120B-A12B, Ultra 550B-A55B)"
+  ],
+  "limitations": [
+    "Very verbose: ~2.3x more output tokens than peers, inflating cost and end-to-end latency on reasoning tasks",
+    "Trails the open-weight leader Kimi K2.6 by 6 Intelligence Index points (48 vs 54)",
+    "Vendor benchmark peaks exceed independent reproductions (SWE-bench 71.9 vendor vs 65.0-70.4 across harnesses)",
+    "Text-only: no image, audio, or video input",
+    "Launched 2026-06-04: minimal independent red-teaming, bias audits, or production track record",
+    "550B total parameters require serious multi-GPU infrastructure to self-host",
+    "OpenMDW-1.1 license is permissive but less familiar to enterprise legal teams than Apache 2.0"
+  ],
+  "best_for": [
+    "Long-running autonomous agents needing 1M-token context and low hallucination",
+    "Organizations requiring full-stack auditability (open weights, data, and recipes)",
+    "Agentic coding on US-jurisdiction open infrastructure",
+    "NVIDIA-based self-hosting from Ampere to Blackwell via one NVFP4 checkpoint",
+    "Long-document analysis and retrieval at extreme context lengths"
+  ],
+  "not_recommended_for": [
+    "Multimodal applications (image/audio/video input)",
+    "Cost-sensitive workloads where output-token verbosity dominates spend",
+    "Regulated deployments via NVIDIA-hosted endpoints alone (no HIPAA/FedRAMP model-service path)",
+    "Teams without GPU infrastructure that also need on-prem deployment",
+    "High-assurance uses requiring an established independent security track record"
+  ],
+  "metadata": {
+    "pricing": {
+      "input": "Free weights (OpenMDW-1.1); hosted ~$0.50 per 1M tokens (OpenRouter reference)",
+      "output": "Hosted ~$2.20 per 1M tokens (OpenRouter reference); free-tier variant available",
+      "notes": "Self-hosting is infrastructure-cost-only. Budget for ~2.3x peer output-token verbosity on reasoning tasks, which erodes headline per-token savings. Rates vary by host.",
+      "last_verified": "2026-07-09"
+    },
+    "context_window": 1000000,
+    "languages": [
+      "English",
+      "German",
+      "Spanish",
+      "French",
+      "Italian",
+      "Japanese"
+    ],
+    "modalities": [
+      "text"
+    ],
+    "api_endpoint": "https://integrate.api.nvidia.com/v1",
+    "open_source": true,
+    "architecture": "LatentMoE hybrid Mamba-Transformer: interleaved Mamba-2, MoE (512 experts, top-22 active), and select attention layers across 108 layers, with Multi-Token Prediction and NVFP4 4-bit pretraining",
+    "parameters": "550B total / 55B active"
+  },
+  "related_entities": [
+    "nemotron-ultra-253b",
+    "kimi-k2-6",
+    "glm-5",
+    "qwen3-5",
+    "deepseek-v4"
+  ],
+  "tags": [
+    "open-source",
+    "mixture-of-experts",
+    "hybrid-mamba-transformer",
+    "long-context",
+    "reasoning",
+    "agentic",
+    "open-training-data",
+    "nvidia-ecosystem",
+    "flagship"
+  ]
+}

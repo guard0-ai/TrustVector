@@ -4,9 +4,9 @@
   "name": "Grok 3 [Beta]",
   "provider": "xAI",
   "version": "Beta",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "RETIRED: xAI retired Grok 3 on 2026-05-15; retired API slugs now silently redirect to Grok 4.3 at Grok 4.3 pricing. Historically xAI's flagship beta model with exceptional coding performance and real-time knowledge via X platform. Migrate to Grok 4.3 (current xAI flagship) or Grok 4.1.",
+  "description": "RETIRED: xAI retired Grok 3 on 2026-05-15; retired API slugs now silently redirect to Grok 4.3 at Grok 4.3 pricing. Historically xAI's flagship beta model with exceptional coding performance and real-time knowledge via X platform. Migrate to Grok 4.3 or the new flagship Grok 4.5 (released 2026-07-08). Note: xAI merged into SpaceX and rebranded as SpaceXAI in mid-2026.",
   "website": "https://x.ai/grok",
   "trust_vector": {
     "performance_reliability": {
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 94,
@@ -50,7 +50,7 @@
             }
           ],
           "methodology": "Advanced reasoning benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 95,
@@ -70,7 +70,7 @@
             }
           ],
           "methodology": "Crowdsourced comparisons and knowledge testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 90,
@@ -84,7 +84,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Beta status may result in occasional inconsistencies"
         },
         "latency_p50": {
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Median latency for API requests",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "3.4s",
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "95th percentile response time",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "128,000 tokens",
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 96,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Historical uptime data",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Beta status, production SLA TBD"
         }
       },
@@ -162,7 +162,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 attacks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 86,
@@ -176,7 +176,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompts",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 80,
@@ -190,7 +190,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 84,
@@ -204,7 +204,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Beta status, safety systems still evolving"
         },
         "api_security": {
@@ -219,7 +219,7 @@
             }
           ],
           "methodology": "Review of API security features",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good security posture for beta product. Strong resistance to attacks, but systems still maturing."
@@ -239,7 +239,7 @@
             }
           ],
           "methodology": "Review of documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 82,
@@ -253,7 +253,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days",
@@ -267,7 +267,7 @@
             }
           ],
           "methodology": "Review of terms of service",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 76,
@@ -281,7 +281,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 78,
@@ -295,7 +295,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Beta status, certifications in progress"
         },
         "zero_data_retention": {
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Review of data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Evolving privacy practices for beta product. Compliance certifications in progress. 30-day data retention."
@@ -330,7 +330,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 84,
@@ -344,7 +344,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 78,
@@ -358,7 +358,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Beta status, bias mitigation evolving"
         },
         "uncertainty_quantification": {
@@ -373,7 +373,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 85,
@@ -387,7 +387,7 @@
             }
           ],
           "methodology": "Review of documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 80,
@@ -401,7 +401,7 @@
             }
           ],
           "methodology": "Review of public disclosures",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 84,
@@ -415,7 +415,7 @@
             }
           ],
           "methodology": "Analysis of safety mechanisms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good transparency for beta product. Real-time X integration provides current information. Some aspects still evolving."
@@ -435,7 +435,7 @@
             }
           ],
           "methodology": "Review of API design",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 80,
@@ -449,7 +449,7 @@
             }
           ],
           "methodology": "Review of SDK quality",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "SDKs still maturing"
         },
         "versioning_policy": {
@@ -465,12 +465,12 @@
             {
               "source": "xAI May 15 Retirement Migration Guide",
               "url": "https://docs.x.ai/developers/migration/may-15-retirement",
-              "date": "2026-06-10",
-              "value": "grok-3 retired 2026-05-15; retired slugs silently redirect to grok-4.3 at grok-4.3 pricing"
+              "date": "2026-07-09",
+              "value": "Re-confirmed: grok-3 among eight models retired 2026-05-15; retired slugs silently redirect to grok-4.3 and bill at grok-4.3 pricing ($1.25/$2.50 per 1M)"
             }
           ],
           "methodology": "Review of versioning",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 79,
@@ -484,7 +484,7 @@
             }
           ],
           "methodology": "Review of monitoring tools",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 80,
@@ -498,7 +498,7 @@
             }
           ],
           "methodology": "Assessment of support",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 66,
@@ -512,7 +512,7 @@
             }
           ],
           "methodology": "Analysis of ecosystem",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 88,
@@ -526,7 +526,7 @@
             }
           ],
           "methodology": "Review of licensing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Model retired 2026-05-15; retired slugs silently redirect to grok-4.3 at grok-4.3 pricing. Versioning and ecosystem scores reduced to reflect retirement."
@@ -648,10 +648,10 @@
   ],
   "metadata": {
     "pricing": {
-      "input": "Free for X Premium+ users",
-      "output": "Free for X Premium+ users",
-      "notes": "Free for X (Twitter) Premium+ subscribers, API pricing TBD",
-      "last_verified": "2025-11-09"
+      "input": "N/A (retired)",
+      "output": "N/A (retired)",
+      "notes": "Model retired 2026-05-15. Requests to the grok-3 slug are redirected to grok-4.3 and billed at grok-4.3 pricing ($1.25 input / $2.50 output per 1M tokens). Historically free for X Premium+ subscribers.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 128000,
     "languages": [

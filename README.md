@@ -7,10 +7,10 @@
 **Benchmarks tell you how smart an AI is. TrustVector tells you whether you can trust it in production.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Evaluations](https://img.shields.io/badge/Evaluations-156-blue.svg)](#-current-coverage)
-[![Models](https://img.shields.io/badge/Models-60-8A2BE2.svg)](/data/models)
-[![Agents](https://img.shields.io/badge/Agents-50-orange.svg)](/data/agents)
-[![MCP Servers](https://img.shields.io/badge/MCP_Servers-46-green.svg)](/data/mcps)
+[![Evaluations](https://img.shields.io/badge/Evaluations-196-blue.svg)](#-current-coverage)
+[![Models](https://img.shields.io/badge/Models-68-8A2BE2.svg)](/data/models)
+[![Agents](https://img.shields.io/badge/Agents-67-orange.svg)](/data/agents)
+[![MCP Servers](https://img.shields.io/badge/MCP_Servers-61-green.svg)](/data/mcps)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![GitHub Stars](https://img.shields.io/github/stars/guard0-ai/TrustVector?style=social)](https://github.com/guard0-ai/TrustVector)
 
@@ -22,15 +22,16 @@
 
 ---
 
-## 🚨 What our data found (June 2026)
+## 🚨 What our data found (July 2026)
 
 This isn't a list of logos. Every entry is an evidence-linked evaluation across **security, privacy, performance, transparency, and operations** — and the findings are uncomfortable:
 
-- ⚠️ **21 of 60 models** in the registry are **retired, deprecated, superseded, or were never released** — including models still hardcoded in thousands of production apps (Grok 3 now *silently redirects* to a different model; Gemini 2.0 Flash was shut down June 1).
-- 🩸 **Archived MCP reference servers ship unpatched SQL injection.** The Postgres reference server was still pulling ~21k weekly downloads *after* being archived with a known SQLi — we score it 51/100 on security so you don't find out the hard way.
-- 🕳️ **Popularity ≠ safety.** Context7 (57k★, the most-starred MCP server on GitHub) scores 86/100 on performance but **59/100 on security** after the "ContextCrush" registry-poisoning vulnerability. Playwright MCP: 88 performance, 60 security.
-- 🔓 **The agent you let browse the web matters.** General-purpose autonomous agents score as low as **50/100 on privacy** in our registry; sandboxed, permission-gated coding agents score 20+ points higher.
-- ⏳ **The OpenAI Assistants API sunsets August 26, 2026.** If you're on it, your migration window is measured in weeks. It's flagged.
+- ⚠️ **35+ of 68 models** in the registry are **retired, deprecated, superseded, or were never released** — including models still hardcoded in thousands of production apps (Grok 3 now *silently redirects* to a different model — at that model's pricing; Gemini 3 Pro was retired just 4 months after launch; GPT-5 itself has a December 2026 shutdown date).
+- 🚫 **Even the #1 model on the leaderboard can vanish.** Claude Fable 5 — the highest-scoring model in this registry — was suspended globally for 19 days in June 2026 under US export controls after a safeguard bypass was found. It's back, but our uptime and jailbreak scores now reflect it.
+- 🩸 **Archived MCP reference servers still ship unpatched SQL injection.** The Postgres reference server was still pulling ~21k weekly downloads *after* being archived with a known SQLi — we score it 51/100 on security so you don't find out the hard way. Meanwhile Langflow, Flowise, and n8n all had critical RCEs actively exploited in 2026 (all patched — check your version).
+- 🕳️ **Popularity ≠ safety.** Context7 (58k★, the most-starred MCP server on GitHub) scores 86/100 on performance but **59/100 on security** after the "ContextCrush" registry-poisoning vulnerability. Playwright MCP: 88 performance, 60 security.
+- 🔓 **The agent you let into your life matters.** OpenClaw — the viral open-source assistant with 300K+ GitHub stars — scores **37/100 on security** (hundreds of CVEs, 135K+ exposed instances). ByteDance's free Trae IDE scores **24/100 on privacy** (telemetry that survives opt-out, 5-year retention). Sandboxed, permission-gated coding agents score 30-50 points higher on both.
+- ⏳ **The OpenAI Assistants API sunsets August 26, 2026.** That's ~7 weeks out. If you're on it, your migration window is measured in weeks. It's flagged.
 
 **Every one of these claims links to a primary source with a date.** That's the whole point.
 
@@ -42,19 +43,21 @@ Overall = mean of 5 dimension scores. Full criteria, evidence URLs, and confiden
 
 | Model | Overall | Perf | Security | Privacy | Transparency | Ops |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Claude Fable 5** (Anthropic) | **92** | 98 | 92 | 93 | 88 | 91 |
+| **Claude Fable 5** (Anthropic) | **92** | 96 | 90 | 93 | 88 | 91 |
 | **Claude Opus 4.8** (Anthropic) | **92** | 96 | 92 | 93 | 88 | 91 |
+| **Claude Sonnet 5** (Anthropic) | **91** | 94 | 91 | 93 | 88 | 90 |
 | **GPT-5.5** (OpenAI) | **91** | 97 | 89 | 87 | 90 | 94 |
 | **Gemini 3.1 Pro** (Google) | **91** | 96 | 88 | 88 | 88 | 93 |
+| **GPT-5.6 Sol** (OpenAI) | **89** | 94 | 88 | 87 | 87 | 90 |
 | **Mistral Large 3** (Mistral, open) | **85** | 88 | 83 | 87 | 80 | 86 |
-| **Grok 4.3** (xAI) | **83** | 94 | 83 | 76 | 82 | 82 |
+| **Grok 4.3** (SpaceXAI) | **83** | 94 | 82 | 76 | 81 | 82 |
 | **DeepSeek-V4** (open) | **83** | 92 | 83 | 78 | 80 | 83 |
 | **GLM-5** (Z.ai, open) | **82** | 92 | 80 | 75 | 81 | 83 |
 | **Kimi K2.6** (Moonshot, open) | **81** | 91 | 79 | 75 | 80 | 82 |
 
 Notice the spread: models within 5 points of each other on *capability* differ by **15+ points on privacy and security**. If you're choosing a model for healthcare, legal, or finance, the right-hand columns are the ones that get you fired.
 
-And it's not just models — the same lens on **coding agents** (Claude Code 80, OpenAI Codex 82, Devin 71, Manus 64) and **MCP servers** (GitHub 82, Playwright 80, Context7 79, archived Postgres 72) exposes exactly where the trust gaps are.
+And it's not just models — the same lens on **agents** (Claude Code 80, OpenAI Codex 82, Devin 71, Claude Cowork 73, ChatGPT Agent 69, OpenClaw 60) and **MCP servers** (GitHub 82, Snowflake 81, Playwright 80, Asana 71, archived Postgres 72) exposes exactly where the trust gaps are.
 
 <div align="center">
 <img src="screenshots/details%20page.png" alt="TrustVector detail page — per-criterion scores with evidence" width="90%" />
@@ -130,22 +133,26 @@ Predefined profiles: `balanced` · `security_first` · `performance_focused` · 
 
 ## 📦 Current Coverage
 
-**156 evaluations** across 3 categories (last refreshed June 2026 — yes, including the models that launched *this month*):
+**196 evaluations** across 3 categories (last refreshed July 9, 2026 — every file re-verified against primary sources, same-day as the Grok 4.5 and GPT-5.6 launches):
 
 <details>
-<summary><b>🧠 AI Models (60)</b> — Claude Fable 5 → archived also-rans, all scored</summary>
+<summary><b>🧠 AI Models (68)</b> — Claude Fable 5 → archived also-rans, all scored</summary>
 
-**Frontier:** Claude Fable 5, Opus 4.8/4.7/4.6/4.5, Sonnet 4.6/4.5, Haiku 4.5 · GPT-5.5, GPT-5.4, GPT-5.3-Codex, GPT-5.2, GPT-5.1, GPT-5, o-series · Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 3 · Grok 4.3, Grok 4.1 · Nova 2 Lite, Nova Pro
+**Frontier:** Claude Fable 5, Sonnet 5, Opus 4.8/4.7/4.6/4.5, Sonnet 4.6/4.5, Haiku 4.5 · GPT-5.6 (Sol/Terra/Luna), GPT-5.5, GPT-5.4, GPT-5.3-Codex, GPT-5.2, GPT-5.1, GPT-5, o-series · Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 3 · Grok 4.5, Grok 4.3, Grok 4.1 · Nova 2 Lite, Nova Pro
 
-**Open-weight:** DeepSeek V4 / V3.2 / R1 · Qwen3.5 · Kimi K2.6 · GLM-5 · MiniMax-M2 · Mistral Large 3 · Command A+ · Gemma 4 / 3 · gpt-oss-120b/20b · Llama 4 / 3.x · Nemotron
+**Open-weight:** DeepSeek V4 / V3.2 / R1 · Qwen3.6 / 3.5 · Kimi K2.7-Code / K2.6 · GLM-5.2 / 5 · MiniMax M3 / M2 · Mistral Large 3 · Command A+ · Gemma 4 / 3 · gpt-oss-120b/20b · Llama 4 / 3.x · Nemotron 3 Ultra / Ultra 253B
 
 **[Browse all models →](/data/models)**
 </details>
 
 <details>
-<summary><b>🤖 AI Agents (50)</b> — coding agents, frameworks, enterprise platforms</summary>
+<summary><b>🤖 AI Agents (67)</b> — coding agents, personal assistants, frameworks, platforms</summary>
 
-**Coding & autonomous:** Claude Code, Claude Agent SDK, OpenAI Codex, Devin, Cursor, GitHub Copilot coding agent, Google Jules, Gemini CLI, Manus
+**Coding & autonomous:** Claude Code, Claude Agent SDK, OpenAI Codex, Devin, Cursor, GitHub Copilot coding agent, Google Jules, Gemini CLI, Cline, OpenCode, Goose, Warp, JetBrains Junie, Factory Droids, Manus
+
+**Personal & workspace agents:** Claude Cowork, ChatGPT Agent, Microsoft Scout, OpenClaw, Perplexity Comet, Poke
+
+**App builders & agentic IDEs:** Replit Agent, Lovable, Google Antigravity, Amazon Kiro, ByteDance Trae
 
 **Frameworks:** OpenAI Agents SDK, Google ADK, Microsoft Agent Framework, AWS Strands, LangGraph, CrewAI, LlamaIndex, Pydantic AI, smolagents, Mastra, Dify
 
@@ -155,11 +162,11 @@ Predefined profiles: `balanced` · `security_first` · `performance_focused` · 
 </details>
 
 <details>
-<summary><b>🔌 MCP Servers (46)</b> — incl. security advisories on archived servers</summary>
+<summary><b>🔌 MCP Servers (61)</b> — incl. security advisories on archived servers</summary>
 
-**Top ecosystem:** Context7, Chrome DevTools MCP, Playwright MCP, Serena
+**Top ecosystem:** Context7, Chrome DevTools MCP, Playwright MCP, Serena, Exa, Browserbase
 
-**Official vendor:** GitHub, Figma, Stripe, Notion, Vercel, Hugging Face, Zapier, Apify, Firecrawl, shadcn
+**Official vendor:** GitHub, Figma, Stripe, PayPal, Shopify, Notion, Vercel, Snowflake, Databricks, Salesforce, HubSpot, Asana, Box, Grafana, Neon, Canva, ClickHouse, Neo4j, Hugging Face, Zapier, Apify, Firecrawl, shadcn
 
 **Reference:** the 7 actively maintained servers (fetch, git, filesystem, memory, time, sequential-thinking, everything) — plus the **archived** ones (Puppeteer, Postgres, SQLite, Slack, …) flagged with security advisories so you don't `npx` your way into a CVE
 

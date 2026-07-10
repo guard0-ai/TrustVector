@@ -4,10 +4,10 @@
   "name": "MCP Kubernetes Server",
   "provider": "Community",
   "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Community-maintained MCP server for Kubernetes cluster management. Enables AI models to interact with Kubernetes API for pod management, deployment orchestration, service configuration, and cluster resource monitoring. Essential for AI-powered Kubernetes operations and cloud-native application management.",
-  "website": "https://github.com/modelcontextprotocol/servers",
+  "description": "Community-maintained MCP servers for Kubernetes cluster management; there is still no single official upstream Kubernetes MCP server. Two implementations lead: containers/kubernetes-mcp-server (Go-native, talks directly to the Kubernetes API, supports OpenShift, Red Hat-backed, in the Red Hat Ecosystem Catalog) and Flux159/mcp-server-kubernetes (TypeScript, wraps kubectl/helm). Enables pod management, deployment orchestration, service configuration, and cluster resource monitoring.",
+  "website": "https://github.com/containers/kubernetes-mcp-server",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 84,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "API stability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_operation_success": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Operation success testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cluster_state_accuracy": {
           "score": 88,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "State synchronization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_cluster_performance": {
           "score": 78,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Multi-cluster performance testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 82,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Authorization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "kubeconfig_exposure_risk": {
           "score": 62,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Credential security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "destructive_operation_risk": {
           "score": 58,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Operation risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "namespace_isolation": {
           "score": 72,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Isolation boundary testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "secret_access_risk": {
           "score": 65,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Secrets management assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 82,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pod_log_privacy": {
           "score": 63,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Log privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "secret_exposure_risk": {
           "score": 68,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Secret privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "configmap_data_privacy": {
           "score": 72,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Configuration privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 85,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 88,
@@ -288,10 +288,16 @@
               "url": "https://github.com/modelcontextprotocol/servers",
               "date": "2025-11-16",
               "value": "Open source community implementation"
+            },
+            {
+              "source": "containers/kubernetes-mcp-server",
+              "url": "https://github.com/containers/kubernetes-mcp-server",
+              "date": "2026-07-09",
+              "value": "Leading Go-native open-source implementation (Kubernetes and OpenShift) interacting directly with the Kubernetes API; Red Hat ships hardened container builds via its Ecosystem Catalog. Flux159/mcp-server-kubernetes (TypeScript, kubectl/helm wrapper) remains an active alternative"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "security_best_practices": {
           "score": 68,
@@ -305,7 +311,7 @@
             }
           ],
           "methodology": "Security documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 82,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 85,
@@ -352,7 +358,7 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_coverage": {
           "score": 82,
@@ -366,7 +372,7 @@
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 75,
@@ -377,10 +383,16 @@
               "url": "https://github.com/modelcontextprotocol/servers/discussions",
               "date": "2025-11-16",
               "value": "Community-maintained with moderate activity and support"
+            },
+            {
+              "source": "Red Hat Developer - Kubernetes MCP server",
+              "url": "https://developers.redhat.com/articles/2025/09/25/kubernetes-mcp-server-ai-powered-cluster-management",
+              "date": "2026-07-09",
+              "value": "Red Hat backing of containers/kubernetes-mcp-server (including Red Hat Ecosystem Catalog distribution) has strengthened maintenance and enterprise support for the ecosystem"
             }
           ],
           "methodology": "Community support assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -390,7 +402,8 @@
     "Built on stable and mature Kubernetes API",
     "Excellent for cloud-native application deployment automation",
     "Full operation auditability through Kubernetes audit logs",
-    "Open source community implementation",
+    "Open source community implementations (Go-native containers/kubernetes-mcp-server with Red Hat backing; TypeScript Flux159/mcp-server-kubernetes)",
+    "OpenShift support and Red Hat Ecosystem Catalog distribution for the containers implementation",
     "Supports RBAC for granular access control"
   ],
   "limitations": [
@@ -399,23 +412,27 @@
     "Pod logs and Kubernetes secrets accessible if RBAC permits",
     "Requires careful RBAC configuration to limit access",
     "Community-maintained with variable support quality",
-    "ConfigMaps and secrets may contain sensitive data"
+    "ConfigMaps and secrets may contain sensitive data",
+    "No official upstream (CNCF/Kubernetes project) MCP server; teams must choose among community implementations"
   ],
   "metadata": {
-    "license": "MIT",
+    "license": "Apache-2.0 (containers/kubernetes-mcp-server); MIT (Flux159/mcp-server-kubernetes)",
     "supported_platforms": [
-      "All platforms with kubectl"
+      "Linux",
+      "macOS",
+      "Windows"
     ],
     "programming_languages": [
-      "TypeScript",
-      "Python"
+      "Go (containers/kubernetes-mcp-server)",
+      "TypeScript (Flux159/mcp-server-kubernetes)"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/modelcontextprotocol/servers",
+    "github_repo": "https://github.com/containers/kubernetes-mcp-server",
+    "alternative_repo": "https://github.com/Flux159/mcp-server-kubernetes",
     "api_dependency": "Kubernetes API",
     "authentication": "kubeconfig, Service Account tokens",
     "first_release": "2024-11",
-    "maintained_by": "Community"
+    "maintained_by": "Community (containers org with Red Hat backing; Flux159)"
   },
   "use_case_ratings": {
     "code-generation": {

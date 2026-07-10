@@ -4,13 +4,13 @@
   "name": "Claude Fable 5",
   "provider": "Anthropic",
   "version": "20260609",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Anthropic's new top-tier model above Opus and the first generally available Mythos-class model. State-of-the-art on nearly all tested benchmarks at launch, including the highest frontier score on Cognition's FrontierCode. Adaptive thinking only, 1M context, 128K output.",
+  "description": "Anthropic's top-tier model above Opus and the most capable widely released Mythos-class model. State-of-the-art on nearly all tested benchmarks at launch, including the highest frontier score on Cognition's FrontierCode. Adaptive thinking only, 1M context, 128K output. Access was suspended globally 2026-06-12 under a US export-control directive after a reported safeguard bypass, and restored 2026-07-01 with a strengthened safety classifier.",
   "website": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
   "trust_vector": {
     "performance_reliability": {
-      "overall_score": 98,
+      "overall_score": 96,
       "criteria": {
         "task_accuracy_code": {
           "score": 99,
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Frontier coding benchmarks measuring real-world software engineering and long-horizon agentic coding tasks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 98,
@@ -44,7 +44,7 @@
             }
           ],
           "methodology": "Graduate and PhD-level reasoning benchmarks requiring multi-step problem solving, evaluated with adaptive thinking at high effort",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 97,
@@ -58,7 +58,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge and multimodal testing across text and vision inputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 96,
@@ -72,7 +72,7 @@
             }
           ],
           "methodology": "Repeated-run consistency testing across effort levels; adaptive-thinking-only surface removes sampling variance controls",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "No manual thinking budgets or temperature/top_p sampling parameters; behavior steered via prompting and the effort parameter"
         },
         "latency_p50": {
@@ -87,7 +87,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes; limited launch-window sample",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "7.0s",
@@ -101,7 +101,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads; limited launch-window sample",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,000,000 tokens",
@@ -115,27 +115,34 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
-          "score": 99,
+          "score": 82,
           "confidence": "high",
           "evidence": [
             {
               "source": "Anthropic Status Page",
-              "url": "https://status.anthropic.com/",
-              "date": "2026-06-10",
-              "value": "99.9%+ platform uptime (last 90 days); Fable 5 served on the same infrastructure"
+              "url": "https://status.claude.com/",
+              "date": "2026-07-09",
+              "value": "Claude API uptime 99.57% (last 90 days), but Fable 5 access was suspended entirely 2026-06-12 to 2026-07-01; elevated Fable 5 error incidents on 2026-07-03 post-redeployment"
+            },
+            {
+              "source": "Anthropic: Redeploying Claude Fable 5",
+              "url": "https://www.anthropic.com/news/redeploying-fable-5",
+              "date": "2026-07-01",
+              "value": "Global access suspended 2026-06-12 under US export-control directive; controls lifted 2026-06-30 and access restored 2026-07-01"
             }
           ],
-          "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "methodology": "Historical uptime data from official status page plus availability-event review",
+          "last_verified": "2026-07-09",
+          "notes": "Score reduced from 99: the model was fully unavailable for ~19 days (2026-06-12 to 2026-07-01) during the export-control suspension"
         }
       },
-      "notes": "Current highest-performing model in the registry. SOTA on nearly all tested benchmarks at launch, including the top frontier score on Cognition's FrontierCode. Latency data is preliminary (released 2026-06-09)."
+      "notes": "Current highest-performing model in the registry. SOTA on nearly all tested benchmarks at launch, including the top frontier score on Cognition's FrontierCode. Overall score reduced from 98 to 96 to reflect the 2026-06-12 to 2026-07-01 global access suspension (uptime criterion lowered); capability scores unchanged."
     },
     "security": {
-      "overall_score": 92,
+      "overall_score": 90,
       "criteria": {
         "prompt_injection_resistance": {
           "score": 93,
@@ -149,10 +156,10 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks; third-party red-team data still limited at launch",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
-          "score": 95,
+          "score": 88,
           "confidence": "high",
           "evidence": [
             {
@@ -160,10 +167,17 @@
               "url": "https://www.anthropic.com/news/claudes-constitution",
               "date": "2026-06-09",
               "value": "Constitutional AI alignment carried forward to the Mythos-class generation with strengthened refusal calibration"
+            },
+            {
+              "source": "Anthropic: Redeploying Claude Fable 5",
+              "url": "https://www.anthropic.com/news/redeploying-fable-5",
+              "date": "2026-07-01",
+              "value": "Amazon researchers demonstrated a safeguard-bypass technique enabling the model to identify software vulnerabilities, triggering a US export-control suspension; a new safety classifier now blocks the reported jailbreak in over 99% of cases and routes blocked requests to Opus 4.8"
             }
           ],
-          "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2026-06-10"
+          "methodology": "Testing against adversarial prompt datasets and review of publicly disclosed bypass incidents",
+          "last_verified": "2026-07-09",
+          "notes": "Score reduced from 95 after the publicly confirmed June 2026 safeguard bypass; mitigations (layered classifier, defense in depth) deployed before the 2026-07-01 redeployment"
         },
         "data_leakage_prevention": {
           "score": 88,
@@ -177,7 +191,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 96,
@@ -187,11 +201,11 @@
               "source": "Anthropic Launch Announcement",
               "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
               "date": "2026-06-09",
-              "value": "Released under Anthropic's Responsible Scaling Policy with frontier-tier safeguards; Claude Mythos 5 itself restricted to research partners"
+              "value": "Released under Anthropic's Responsible Scaling Policy with frontier-tier safeguards; Claude Mythos 5 offered separately via invitation-only Project Glasswing for defensive cybersecurity workflows"
             }
           ],
           "methodology": "Comprehensive safety testing across harmful content categories per Responsible Scaling Policy",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 89,
@@ -205,10 +219,10 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Frontier-tier safety posture; the unrestricted Mythos-class research model (Claude Mythos 5) is limited to research partners while Fable 5 is the generally available variant. Independent red-team coverage still accumulating at launch."
+      "notes": "Frontier-tier safety posture, tested in practice: a safeguard bypass found by Amazon researchers led to a US export-control suspension (2026-06-12 to 2026-07-01), answered with a strengthened layered safety classifier before redeployment. Claude Mythos 5 is offered separately via invitation-only Project Glasswing. Overall score reduced from 92 to 90 to reflect the confirmed bypass and its mitigation."
     },
     "privacy_compliance": {
       "overall_score": 93,
@@ -225,7 +239,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation and privacy policies",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 95,
@@ -239,7 +253,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Configurable; zero-retention available",
@@ -253,7 +267,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 88,
@@ -267,7 +281,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 94,
@@ -281,7 +295,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 95,
@@ -295,7 +309,7 @@
             }
           ],
           "methodology": "Review of data handling practices and trust center documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Same strong Anthropic compliance posture as the Opus line: SOC 2 Type II, GDPR, HIPAA-eligible, training opt-out by default for API traffic."
@@ -315,7 +329,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Thinking text is omitted by default; opt in to summarized display for visible reasoning"
         },
         "hallucination_rate": {
@@ -330,7 +344,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets; independent measurement still limited at launch",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 85,
@@ -344,7 +358,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 89,
@@ -358,7 +372,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 93,
@@ -372,7 +386,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 78,
@@ -386,7 +400,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 96,
@@ -400,7 +414,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong documentation and guardrails. Thinking content is omitted by default (summarized display is opt-in), which slightly reduces out-of-the-box reasoning visibility compared to older Opus defaults."
@@ -420,7 +434,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "One new breaking change vs Opus 4.8: explicit thinking disabled returns 400 \u2014 omit the thinking parameter instead. No temperature/top_p sampling parameters."
         },
         "sdk_quality": {
@@ -435,7 +449,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 88,
@@ -449,7 +463,7 @@
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 87,
@@ -463,7 +477,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 91,
@@ -477,22 +491,22 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
-          "score": 88,
-          "confidence": "medium",
+          "score": 90,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Anthropic Launch Announcement",
-              "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-              "date": "2026-06-09",
-              "value": "Available on the Anthropic API at launch; first generally available Mythos-class model \u2014 cloud-provider rollout following"
+              "source": "Anthropic Models Documentation",
+              "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+              "date": "2026-07-09",
+              "value": "Generally available on the Claude API, Claude Platform on AWS, Amazon Bedrock, Google Cloud Vertex AI, and Microsoft Foundry; also on Claude.ai, Claude Code, and Claude Cowork since 2026-07-01"
             }
           ],
           "methodology": "Analysis of third-party integrations and availability surfaces",
-          "last_verified": "2026-06-10",
-          "notes": "Released 2026-06-09; multi-cloud availability narrower than Opus line at evaluation time"
+          "last_verified": "2026-07-09",
+          "notes": "Multi-cloud availability now matches the Opus line; availability was interrupted 2026-06-12 to 2026-07-01 by the export-control suspension"
         },
         "license_terms": {
           "score": 92,
@@ -506,10 +520,10 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Same API surface as Opus 4.7/4.8 makes adoption straightforward for existing Claude users. Day-old release means ecosystem and operational track record are still maturing."
+      "notes": "Same API surface as Opus 4.7/4.8 makes adoption straightforward for existing Claude users. Now generally available across all major cloud platforms; operational track record includes the 2026-06-12 to 2026-07-01 suspension and post-redeployment error spikes in early July 2026."
     }
   },
   "use_case_ratings": {
@@ -597,7 +611,7 @@
   "strengths": [
     "State-of-the-art on nearly all tested benchmarks at launch; highest-performing model in the registry",
     "Highest frontier score on Cognition's FrontierCode coding benchmark",
-    "First generally available Mythos-class model (Claude Mythos 5 itself is restricted to research partners)",
+    "Most capable widely released Mythos-class model (Claude Mythos 5 is invitation-only via Project Glasswing)",
     "1M token context window with 128K max output, text + vision",
     "Adaptive thinking with effort parameter (low/medium/high/xhigh/max) for cost/quality control",
     "Strong compliance posture: SOC 2 Type II, GDPR, HIPAA-eligible, training opt-out by default for API"
@@ -606,7 +620,9 @@
     "Premium pricing at $10/$50 per 1M tokens (2x Opus 4.8)",
     "Adaptive thinking only \u2014 no manual thinking budgets, and no temperature/top_p sampling parameters",
     "Explicit thinking-disabled requests return 400 (omit the thinking parameter instead)",
-    "Released 2026-06-09 \u2014 independent benchmark replication and operational track record still limited",
+    "Released 2026-06-09 \u2014 independent benchmark replication still limited",
+    "Access suspended globally 2026-06-12 to 2026-07-01 under a US export-control directive following a reported safeguard bypass; restored with a strengthened safety classifier that routes blocked requests to Opus 4.8",
+    "Elevated error incidents in early July 2026 following redeployment (status page)",
     "Higher latency than Sonnet/Haiku tiers, especially at xhigh/max effort"
   ],
   "best_for": [
@@ -625,8 +641,8 @@
     "pricing": {
       "input": "$10.00 per 1M tokens",
       "output": "$50.00 per 1M tokens",
-      "notes": "2x Opus 4.8 pricing. Batch API 50% discount and prompt caching savings apply.",
-      "last_verified": "2026-06-10"
+      "notes": "2x Opus 4.8 pricing, unchanged since launch. Batch API 50% discount and prompt caching savings apply. On Claude.ai paid plans, included at up to 50% of weekly usage limits through 2026-07-07, then usage-credit pricing.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1000000,
     "max_output": 128000,
@@ -654,7 +670,7 @@
     "open_source": false,
     "architecture": "Mythos-class transformer with Constitutional AI alignment; adaptive thinking only with effort parameter (low/medium/high/xhigh/max)",
     "parameters": "Not disclosed",
-    "knowledge_cutoff": "Not disclosed",
+    "knowledge_cutoff": "January 2026 (reliable knowledge and training data cutoff)",
     "release_date": "2026-06-09"
   },
   "related_entities": [

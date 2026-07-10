@@ -4,7 +4,7 @@
   "name": "GLM-5",
   "provider": "Z.ai (Zhipu AI)",
   "version": "20260211",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Z.ai's MIT-licensed 744B-parameter MoE (40B active) with 77.8% SWE-bench Verified, 92.7% AIME 2026, and open-source leadership on BrowseComp and agentic benchmarks. Trained on 28.5T tokens with DeepSeek Sparse Attention.",
   "website": "https://huggingface.co/zai-org/GLM-5",
@@ -31,7 +31,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks with independent third-party verification",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 93,
@@ -51,7 +51,7 @@
             }
           ],
           "methodology": "Graduate and competition-level reasoning benchmarks requiring multi-step problem solving",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 90,
@@ -65,7 +65,7 @@
             }
           ],
           "methodology": "Independent agentic and general-capability benchmarking across domains",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 87,
@@ -79,7 +79,7 @@
             }
           ],
           "methodology": "Community testing with repeated prompts and long agent runs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "2.6s",
@@ -93,7 +93,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "6.0s",
@@ -107,7 +107,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "200,000 tokens",
@@ -121,7 +121,7 @@
             }
           ],
           "methodology": "Official specification from model card",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 95,
@@ -135,7 +135,7 @@
             }
           ],
           "methodology": "Review of platform availability and self-hosting fallback options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Among the strongest open-weight models released to date: 77.8% SWE-bench Verified, 92.7% AIME 2026, 86.0% GPQA-Diamond, with independent confirmation of open-source leadership on BrowseComp, Vending Bench 2, and MCP-Atlas."
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Review of safety documentation and community testing against OWASP LLM01 patterns",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 78,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets; deployer-dependent for self-hosted use",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 76,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and self-hosting data-control options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 81,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 84,
@@ -212,7 +212,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Solid for an open model; no published third-party security audit. Self-hosting shifts responsibility to the deployer."
@@ -239,7 +239,7 @@
             }
           ],
           "methodology": "Review of provider jurisdiction and third-party hosting options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 76,
@@ -253,7 +253,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Per Z.ai policy on first-party API (China jurisdiction); zero when self-hosted",
@@ -267,7 +267,7 @@
             }
           ],
           "methodology": "Review of terms of service and deployment-dependent retention",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 72,
@@ -281,7 +281,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 68,
@@ -295,7 +295,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 85,
@@ -309,7 +309,7 @@
             }
           ],
           "methodology": "Review of self-hosting deployment options enabling zero retention",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "First-party Z.ai API operates under Chinese jurisdiction — a material caveat for Western regulated industries. The unencumbered MIT license makes self-hosting or Western-host deployment a clean mitigation."
@@ -330,7 +330,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and trajectory inspectability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 81,
@@ -344,7 +344,7 @@
             }
           ],
           "methodology": "Testing on factual QA and grounded research benchmarks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 75,
@@ -358,7 +358,7 @@
             }
           ],
           "methodology": "Review of published bias benchmarks and community evaluations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 78,
@@ -372,7 +372,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 89,
@@ -386,7 +386,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 79,
@@ -400,7 +400,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 78,
@@ -414,7 +414,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Above-average transparency for an open frontier model: architecture, training scale, and benchmarks well documented with independent verification. Bias and safety evaluations remain thin."
@@ -435,7 +435,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 82,
@@ -449,7 +449,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 78,
@@ -460,10 +460,16 @@
               "url": "https://huggingface.co/zai-org",
               "date": "2026-04-07",
               "value": "Fast cadence: GLM-5.1 API launched 2026-03-27 with weights on 2026-04-07, same architecture; GLM-5 weights remain available"
+            },
+            {
+              "source": "Z.ai release notes / GLM-5.2 coverage",
+              "url": "https://docs.z.ai/release-notes/new-released",
+              "date": "2026-07-09",
+              "value": "GLM-5.2 released mid-June 2026: MIT-licensed 744B/40B MoE with a 1M-token context window, priced at $1.40/$4.40 per 1M; GLM-5 remains served and its weights remain available"
             }
           ],
           "methodology": "Review of versioning practices and weight availability across releases",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 78,
@@ -477,7 +483,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 79,
@@ -491,7 +497,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 86,
@@ -505,7 +511,7 @@
             }
           ],
           "methodology": "Analysis of third-party hosting, integrations, and tooling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 95,
@@ -519,10 +525,10 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Clean MIT licensing and strong ecosystem support. Note the rapid successor cadence: GLM-5.1 (same architecture) shipped within two months; evaluate which version your hosts actually serve."
+      "notes": "Clean MIT licensing and strong ecosystem support. Note the rapid successor cadence: GLM-5.1 shipped within two months and GLM-5.2 (1M context, MIT) within four; evaluate which version your hosts actually serve. GLM-5 weights remain available."
     }
   },
 
@@ -591,7 +597,7 @@
   "limitations": [
     "First-party Z.ai API processes data under Chinese jurisdiction with limited Western compliance certifications",
     "Text-only — no vision or audio modalities",
-    "Rapid successor cadence (GLM-5.1 within two months) creates version-tracking overhead",
+    "Rapid successor cadence (GLM-5.1 within two months, GLM-5.2 with 1M context by June 2026) creates version-tracking overhead",
     "Limited published bias, safety, and red-team evaluations",
     "Self-hosting a 744B MoE requires substantial GPU infrastructure",
     "English-language enterprise support is thin compared to Western providers"
@@ -612,10 +618,10 @@
 
   "metadata": {
     "pricing": {
-      "input": "$0.60 per 1M tokens (approx.)",
-      "output": "$1.92 per 1M tokens (approx.)",
-      "notes": "First-party Z.ai API pricing; third-party hosts vary. Successor GLM-5.1 priced similarly.",
-      "last_verified": "2026-06-10"
+      "input": "$0.60 per 1M tokens",
+      "output": "$1.92 per 1M tokens",
+      "notes": "First-party Z.ai API pricing, re-confirmed July 2026; third-party hosts vary. Successors are pricier: GLM-5.1 ~$0.97/$3.04 and GLM-5.2 $1.40/$4.40 per 1M, leaving GLM-5 as the budget option in the family.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 200000,
     "languages": ["English", "Chinese", "Japanese", "Korean", "Spanish", "French", "German"],

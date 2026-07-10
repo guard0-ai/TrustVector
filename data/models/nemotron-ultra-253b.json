@@ -4,9 +4,9 @@
   "name": "Nemotron Ultra 253B",
   "provider": "NVIDIA",
   "version": "20251101",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Massive 253B parameter model from NVIDIA's Llama-3.1-based Nemotron line, now superseded: NVIDIA discontinued this line in favor of the native Nemotron 3 family (announced 2025-12-15). Historically achieved 57.1% on SWE-bench and 80.08% on HumanEval, optimized for high-performance computing and complex coding tasks with GPU acceleration. New deployments should evaluate Nemotron 3 instead.",
+  "description": "253B parameter model from NVIDIA's Llama-3.1-based Nemotron line, now superseded: NVIDIA discontinued this line in favor of the native Nemotron 3 family, whose rollout completed in June 2026 (Nano 2025-12, Super 2026-03, and Nemotron 3 Ultra — a 550B total / 55B active MoE hybrid Mamba-Transformer — on 2026-06-04). Historically 57.1% SWE-bench and 80.08% HumanEval, optimized for HPC and complex coding with GPU acceleration. New deployments should evaluate Nemotron 3 Ultra instead.",
   "website": "https://www.nvidia.com/en-us/ai/nemotron/",
   "trust_vector": {
     "performance_reliability": {
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks measuring real-world software engineering tasks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 91,
@@ -50,7 +50,7 @@
             }
           ],
           "methodology": "Graduate-level reasoning benchmarks requiring multi-step problem solving",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 90,
@@ -70,7 +70,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge testing across domains",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 89,
@@ -84,7 +84,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts at various temperature settings",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Large model size provides good stability"
         },
         "latency_p50": {
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "3.8s",
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "128,000 tokens",
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent performance for a 253B parameter model with strong coding capabilities. GPU acceleration provides competitive latency despite model size."
@@ -161,7 +161,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 86,
@@ -175,7 +175,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 82,
@@ -189,7 +189,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 88,
@@ -203,7 +203,7 @@
             }
           ],
           "methodology": "Comprehensive safety testing across harmful content categories",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 87,
@@ -217,7 +217,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Solid security posture with enterprise-grade guardrails. Good protection for typical use cases."
@@ -237,7 +237,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation and privacy policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -251,7 +251,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days (configurable)",
@@ -265,7 +265,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 84,
@@ -279,7 +279,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 89,
@@ -293,7 +293,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 85,
@@ -307,7 +307,7 @@
             }
           ],
           "methodology": "Review of data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good privacy posture with enterprise options. SOC 2 Type II certified with configurable data retention."
@@ -327,7 +327,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 82,
@@ -341,7 +341,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets and real-world usage",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 80,
@@ -355,7 +355,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 81,
@@ -369,7 +369,7 @@
             }
           ],
           "methodology": "Assessment of confidence expression in outputs",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 87,
@@ -383,7 +383,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 76,
@@ -397,7 +397,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 88,
@@ -411,7 +411,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good transparency with comprehensive documentation. Standard hallucination and bias performance for models of this size."
@@ -431,7 +431,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 91,
@@ -445,7 +445,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 78,
@@ -462,11 +462,17 @@
               "url": "https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models",
               "date": "2026-06-10",
               "value": "Llama-3.1-based Nemotron line discontinued in favor of the native Nemotron 3 family (announced 2025-12-15)"
+            },
+            {
+              "source": "NVIDIA Nemotron 3 Ultra release",
+              "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+              "date": "2026-07-09",
+              "value": "Nemotron 3 rollout complete: Nemotron 3 Ultra (550B total / 55B active MoE hybrid Mamba-Transformer, open weights) released 2026-06-04 as the direct successor to this model"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2026-06-10",
-          "notes": "Model line discontinued; future development is in the Nemotron 3 family"
+          "last_verified": "2026-07-09",
+          "notes": "Model line discontinued; the replacement Nemotron 3 family is now fully shipped (Nano, Super, Ultra)"
         },
         "monitoring_observability": {
           "score": 88,
@@ -480,7 +486,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 89,
@@ -494,7 +500,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 88,
@@ -508,7 +514,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations and tools",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -522,7 +528,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent operational maturity leveraging NVIDIA's GPU ecosystem. Strong support and comprehensive monitoring tools."
@@ -533,7 +539,7 @@
       "overall": 93,
       "notes": "Excellent coding with 57.1% SWE-bench and 80.08% HumanEval. Strong performance on GPU-accelerated workloads.",
       "alternatives": [
-        "claude-4-sonnet",
+        "claude-sonnet-4",
         "openai-o1"
       ]
     },
@@ -541,23 +547,21 @@
       "overall": 84,
       "notes": "Good conversational capabilities but not specialized for customer support scenarios.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     },
     "content-creation": {
       "overall": 86,
       "notes": "Solid content generation capabilities with good structure.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     },
     "data-analysis": {
       "overall": 91,
       "notes": "Strong analytical capabilities, especially for GPU-accelerated data processing.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -565,7 +569,7 @@
       "overall": 88,
       "notes": "Good research capabilities with comprehensive knowledge base.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -573,21 +577,21 @@
       "overall": 85,
       "notes": "Good privacy posture with SOC 2 Type II. Enterprise options for compliance.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "healthcare": {
       "overall": 83,
       "notes": "SOC 2 certified but not HIPAA eligible by default. Enterprise options may be available.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "financial-analysis": {
       "overall": 89,
       "notes": "Strong analytical and mathematical capabilities.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -595,16 +599,14 @@
       "overall": 87,
       "notes": "Good tutoring capabilities with clear explanations.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     },
     "creative-writing": {
       "overall": 84,
       "notes": "Competent creative capabilities but not specialized for creative writing.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     }
   },
@@ -623,7 +625,7 @@
     "30-day default data retention (not ephemeral)",
     "Moderate latency (2.2s p50) despite GPU acceleration",
     "Smaller context window (128K) compared to competitors",
-    "Superseded: NVIDIA discontinued the Llama-3.1-based Nemotron line in favor of the native Nemotron 3 family (announced 2025-12-15)"
+    "Superseded: NVIDIA discontinued the Llama-3.1-based Nemotron line; its successor Nemotron 3 Ultra (550B MoE) shipped 2026-06-04, completing the Nemotron 3 family rollout"
   ],
   "best_for": [
     "GPU-accelerated workloads and HPC environments",
@@ -643,7 +645,7 @@
     "pricing": {
       "input": "$0.60 per 1M tokens",
       "output": "$1.80 per 1M tokens",
-      "notes": "Competitive pricing with GPU-optimized inference available",
+      "notes": "Competitive pricing with GPU-optimized inference available. Pricing for this superseded model not re-verifiable against current NVIDIA pages as of 2026-07-09 — confirm availability and rates before procurement.",
       "last_verified": "2025-11-09"
     },
     "context_window": 128000,

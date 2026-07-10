@@ -1,15 +1,14 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { getAllEntities } from '@/lib/data';
-import { calculateOverallScore, getScoreColor } from '@/framework/schema/types';
+import { getAllSummaries } from '@/lib/client-data';
 import { ScoreBadge } from '@/components/score-badge';
 import { GitCompare, X, Plus, Search } from 'lucide-react';
-import type { TrustVectorEntity } from '@/framework/schema/types';
+import type { EntitySummary } from '@/lib/summary-types';
 
 export default function ComparePage() {
-  const allEntities = getAllEntities();
-  const [selectedEntities, setSelectedEntities] = useState<TrustVectorEntity[]>([]);
+  const allEntities = getAllSummaries();
+  const [selectedEntities, setSelectedEntities] = useState<EntitySummary[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredEntities = useMemo(() => {
@@ -23,7 +22,7 @@ export default function ComparePage() {
     );
   }, [allEntities, searchQuery]);
 
-  const addEntity = (entity: TrustVectorEntity) => {
+  const addEntity = (entity: EntitySummary) => {
     if (selectedEntities.length < 4 && !selectedEntities.find((e) => e.id === entity.id)) {
       setSelectedEntities([...selectedEntities, entity]);
     }
@@ -44,25 +43,22 @@ export default function ComparePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="border-b-4 border-double border-foreground">
+      <section className="border-b border-border">
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 bg-sky-500 text-white border-2 border-foreground text-sm font-bold mb-6"
-              style={{ boxShadow: '3px 3px 0 0 black' }}
-            >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded text-sm font-semibold uppercase tracking-wide mb-6">
               <GitCompare className="w-4 h-4" />
               SIDE-BY-SIDE COMPARISON
             </div>
 
-            <h1 className="text-5xl sm:text-6xl font-black mb-4 tracking-tighter">
-              COMPARE
+            <h1 className="font-display text-5xl sm:text-6xl font-extrabold mb-4 tracking-[-0.045em] leading-[1.02]">
+              Compare
               <br />
-              <span className="text-primary">AI SYSTEMS</span>
+              <span className="text-primary">AI systems</span>
             </h1>
 
             <p className="text-xl text-muted-foreground">
-              Compare up to <span className="font-black text-foreground">4</span> AI models, agents, or MCPs
+              Compare up to <span className="font-bold text-foreground">4</span> AI models, agents, or MCPs
               <br />
               across all trust dimensions.
             </p>
@@ -74,11 +70,8 @@ export default function ComparePage() {
         {/* Entity Selection */}
         {selectedEntities.length < 4 && (
           <div className="max-w-4xl mx-auto mb-12">
-            <div
-              className="bg-white border-2 border-foreground p-6"
-              style={{ boxShadow: '4px 4px 0 0 black' }}
-            >
-              <h2 className="text-xl font-black uppercase tracking-wide mb-4">
+            <div className="bg-card border border-border rounded-lg shadow-card p-6">
+              <h2 className="text-xl font-bold tracking-wide mb-4">
                 Select Entities to Compare
               </h2>
 
@@ -89,30 +82,29 @@ export default function ComparePage() {
                   placeholder="SEARCH MODELS, AGENTS, OR MCPS..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="search-fancy pl-12 w-full"
+                  className="search-fancy"
                 />
               </div>
 
               <div className="max-h-64 overflow-y-auto space-y-2">
                 {filteredEntities.map((entity) => {
                   const isSelected = selectedEntities.find((e) => e.id === entity.id);
-                  const overallScore = calculateOverallScore(entity);
+                  const overallScore = entity.overall_score;
 
                   return (
                     <button
                       key={entity.id}
                       onClick={() => !isSelected && addEntity(entity)}
                       disabled={!!isSelected}
-                      className={`w-full flex items-center justify-between p-3 border-2 border-foreground transition-all ${
+                      className={`w-full flex items-center justify-between p-3 border border-border rounded-md transition-all ${
                         isSelected
                           ? 'bg-muted/50 opacity-50 cursor-not-allowed'
-                          : 'hover:bg-muted cursor-pointer hover:translate-x-[-2px] hover:translate-y-[-2px]'
+                          : 'hover:bg-muted cursor-pointer hover:-translate-y-0.5 hover:shadow-card'
                       }`}
-                      style={!isSelected ? { boxShadow: '2px 2px 0 0 black' } : {}}
                     >
                       <div className="flex items-center gap-3 text-left">
                         <div>
-                          <div className="font-black uppercase">{entity.name}</div>
+                          <div className="font-bold uppercase">{entity.name}</div>
                           <div className="text-sm text-muted-foreground">
                             {entity.provider} • {entity.type.toUpperCase()}
                           </div>
@@ -133,22 +125,19 @@ export default function ComparePage() {
         {/* Comparison Table */}
         {selectedEntities.length > 0 && (
           <div className="mb-12">
-            <div
-              className="bg-white border-2 border-foreground overflow-hidden"
-              style={{ boxShadow: '4px 4px 0 0 black' }}
-            >
+            <div className="bg-card border border-border rounded-lg shadow-card overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead className="bg-foreground text-background">
                     <tr>
-                      <th className="text-left p-4 font-black uppercase tracking-wide sticky left-0 bg-foreground z-10">
+                      <th className="text-left p-4 font-bold uppercase tracking-wide sticky left-0 bg-foreground z-10">
                         Metric
                       </th>
                       {selectedEntities.map((entity) => (
                         <th key={entity.id} className="text-left p-4 min-w-[200px]">
                           <div className="flex items-start justify-between gap-2">
                             <div>
-                              <div className="font-black uppercase">{entity.name}</div>
+                              <div className="font-bold uppercase">{entity.name}</div>
                               <div className="text-xs font-normal opacity-70">
                                 {entity.provider}
                               </div>
@@ -172,12 +161,12 @@ export default function ComparePage() {
 
                   <tbody>
                     {/* Overall Score */}
-                    <tr className="border-t-2 border-foreground bg-amber-50">
-                      <td className="p-4 font-black uppercase sticky left-0 bg-amber-50 z-10">
+                    <tr className="border-t border-border bg-emerald-50">
+                      <td className="p-4 font-bold uppercase sticky left-0 bg-emerald-50 z-10">
                         Overall Trust Score
                       </td>
                       {selectedEntities.map((entity) => {
-                        const score = calculateOverallScore(entity);
+                        const score = entity.overall_score;
                         return (
                           <td key={entity.id} className="p-4">
                             <ScoreBadge score={score} size="lg" showLabel />
@@ -190,7 +179,7 @@ export default function ComparePage() {
                     {dimensions.map((dimension, idx) => (
                       <tr
                         key={dimension.key}
-                        className={`border-t-2 border-foreground/20 ${idx % 2 === 0 ? 'bg-white' : 'bg-muted/30'}`}
+                        className={`border-t border-border ${idx % 2 === 0 ? 'bg-white' : 'bg-muted/30'}`}
                       >
                         <td
                           className="p-4 font-bold sticky left-0 z-10"
@@ -201,9 +190,9 @@ export default function ComparePage() {
                         </td>
                         {selectedEntities.map((entity) => {
                           const score =
-                            entity.trust_vector[
-                              dimension.key as keyof typeof entity.trust_vector
-                            ].overall_score;
+                            entity.dimensions[
+                              dimension.key as keyof typeof entity.dimensions
+                            ] ?? 0;
                           return (
                             <td key={entity.id} className="p-4">
                               <ScoreBadge score={score} size="md" />
@@ -214,7 +203,7 @@ export default function ComparePage() {
                     ))}
 
                     {/* Provider */}
-                    <tr className="border-t-2 border-foreground/20 bg-white">
+                    <tr className="border-t border-border bg-white">
                       <td className="p-4 font-bold sticky left-0 bg-white z-10">Provider</td>
                       {selectedEntities.map((entity) => (
                         <td key={entity.id} className="p-4 text-muted-foreground uppercase">
@@ -224,26 +213,26 @@ export default function ComparePage() {
                     </tr>
 
                     {/* Strengths / Limitations */}
-                    <tr className="border-t-2 border-foreground/20 bg-emerald-50">
+                    <tr className="border-t border-border bg-emerald-50">
                       <td className="p-4 font-bold sticky left-0 bg-emerald-50 z-10">Strengths</td>
                       {selectedEntities.map((entity) => (
                         <td key={entity.id} className="p-4">
-                          <span className="font-black text-emerald-600">{entity.strengths.length}</span>
+                          <span className="font-bold text-emerald-600">{entity.strengths_count}</span>
                         </td>
                       ))}
                     </tr>
 
-                    <tr className="border-t-2 border-foreground/20 bg-pink-50">
-                      <td className="p-4 font-bold sticky left-0 bg-pink-50 z-10">Limitations</td>
+                    <tr className="border-t border-border bg-amber-50">
+                      <td className="p-4 font-bold sticky left-0 bg-amber-50 z-10">Limitations</td>
                       {selectedEntities.map((entity) => (
                         <td key={entity.id} className="p-4">
-                          <span className="font-black text-pink-600">{entity.limitations.length}</span>
+                          <span className="font-bold text-amber-600">{entity.limitations_count}</span>
                         </td>
                       ))}
                     </tr>
 
                     {/* View Details Link */}
-                    <tr className="border-t-2 border-foreground bg-white">
+                    <tr className="border-t border-border bg-white">
                       <td className="p-4 font-bold sticky left-0 bg-white z-10">Details</td>
                       {selectedEntities.map((entity) => (
                         <td key={entity.id} className="p-4">
@@ -266,13 +255,10 @@ export default function ComparePage() {
         {/* Empty State */}
         {selectedEntities.length === 0 && (
           <div className="max-w-4xl mx-auto text-center py-20">
-            <div
-              className="inline-flex items-center justify-center w-20 h-20 bg-muted border-2 border-foreground mb-6"
-              style={{ boxShadow: '4px 4px 0 0 black' }}
-            >
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-muted border border-border rounded-lg mb-6">
               <GitCompare className="w-10 h-10 text-muted-foreground" />
             </div>
-            <h3 className="text-2xl font-black uppercase mb-2">No Entities Selected</h3>
+            <h3 className="text-2xl font-bold mb-2">No Entities Selected</h3>
             <p className="text-muted-foreground">
               Search and select up to 4 AI systems above to start comparing
             </p>

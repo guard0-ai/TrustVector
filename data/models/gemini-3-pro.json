@@ -4,9 +4,9 @@
   "name": "Gemini 3 Pro",
   "provider": "Google",
   "version": "gemini-3-pro-preview",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Former Google flagship, superseded by Gemini 3.1 Pro (GA 2026-02-19; ARC-AGI-2 77.1% vs 31.1%). Still served, with 1M token context, 1501 LMArena Elo (first model >1500), Deep Think mode for complex reasoning, and native multimodal. New projects should prefer Gemini 3.1 Pro.",
+  "description": "SHUT DOWN: Google retired Gemini 3 Pro Preview on 2026-03-09 (the gemini-pro-latest alias moved to 3.1 Pro on 2026-03-06); it is no longer served via the Gemini API or AI Studio. Historically a former Google flagship with 1M token context, 1501 LMArena Elo (first model >1500), Deep Think mode, and native multimodal. Migrate to Gemini 3.1 Pro (same pricing, ARC-AGI-2 77.1% vs 31.1%).",
   "website": "https://blog.google/products/gemini/gemini-3/",
 
   "trust_vector": {
@@ -31,7 +31,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 97,
@@ -63,7 +63,7 @@
             }
           ],
           "methodology": "PhD-level and world-leading reasoning benchmarks",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 96,
@@ -89,7 +89,7 @@
             }
           ],
           "methodology": "Crowdsourced and comprehensive testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 93,
@@ -103,7 +103,7 @@
             }
           ],
           "methodology": "Consistency and efficiency testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.5s",
@@ -117,7 +117,7 @@
             }
           ],
           "methodology": "Median latency measurements",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "4.0s",
@@ -131,7 +131,7 @@
             }
           ],
           "methodology": "95th percentile measurements",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,000,000 tokens",
@@ -145,7 +145,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -159,7 +159,7 @@
             }
           ],
           "methodology": "Historical uptime data",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "First model to exceed 1500 LMArena Elo. 1M context enables unprecedented document processing. 6x improvement on ARC-AGI-2 over 2.5 Pro."
@@ -180,7 +180,7 @@
             }
           ],
           "methodology": "OWASP LLM security testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 88,
@@ -194,7 +194,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 84,
@@ -208,7 +208,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 90,
@@ -222,7 +222,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 88,
@@ -236,7 +236,7 @@
             }
           ],
           "methodology": "API security review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security with Google Cloud infrastructure. Configurable safety filters provide flexibility."
@@ -257,7 +257,7 @@
             }
           ],
           "methodology": "Cloud infrastructure review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -271,7 +271,7 @@
             }
           ],
           "methodology": "Terms review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Varies by tier",
@@ -285,7 +285,7 @@
             }
           ],
           "methodology": "Data retention policy review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 83,
@@ -299,7 +299,7 @@
             }
           ],
           "methodology": "Data protection review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 91,
@@ -313,7 +313,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 84,
@@ -327,7 +327,7 @@
             }
           ],
           "methodology": "Enterprise feature review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good privacy with Google Cloud. HIPAA compliance available through Google Cloud Healthcare API."
@@ -348,7 +348,7 @@
             }
           ],
           "methodology": "Reasoning transparency evaluation",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 88,
@@ -362,7 +362,7 @@
             }
           ],
           "methodology": "Factual QA testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 85,
@@ -376,7 +376,7 @@
             }
           ],
           "methodology": "Bias benchmark evaluation",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 87,
@@ -390,7 +390,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 92,
@@ -404,7 +404,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 83,
@@ -418,7 +418,7 @@
             }
           ],
           "methodology": "Public disclosure review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 91,
@@ -432,14 +432,14 @@
             }
           ],
           "methodology": "Safety mechanism review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong transparency with Deep Think mode. Comprehensive documentation and configurable guardrails."
     },
 
     "operational_excellence": {
-      "overall_score": 93,
+      "overall_score": 91,
       "criteria": {
         "api_design_quality": {
           "score": 95,
@@ -453,7 +453,7 @@
             }
           ],
           "methodology": "API design review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 94,
@@ -467,10 +467,10 @@
             }
           ],
           "methodology": "SDK quality assessment",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
-          "score": 91,
+          "score": 80,
           "confidence": "high",
           "evidence": [
             {
@@ -480,14 +480,14 @@
               "value": "Clear versioning with migration guides"
             },
             {
-              "source": "Gemini API Changelog",
-              "url": "https://ai.google.dev/gemini-api/docs/changelog",
-              "date": "2026-06-10",
-              "value": "Superseded by Gemini 3.1 Pro (GA 2026-02-19; ARC-AGI-2 77.1% vs 31.1%)"
+              "source": "Gemini API Deprecations",
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+              "date": "2026-07-09",
+              "value": "gemini-3-pro-preview shut down 2026-03-09; gemini-pro-latest alias moved to 3.1 Pro on 2026-03-06; designated replacement is gemini-3.1-pro-preview (released 2026-02-19; ARC-AGI-2 77.1% vs 31.1%)"
             }
           ],
           "methodology": "Versioning policy review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 95,
@@ -501,7 +501,7 @@
             }
           ],
           "methodology": "Observability tools review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 93,
@@ -515,7 +515,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 92,
@@ -529,7 +529,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 91,
@@ -543,10 +543,10 @@
             }
           ],
           "methodology": "License review",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Excellent operational maturity with Google Cloud. First same-day launch across all Google AI platforms."
+      "notes": "Model retired 2026-03-09 after roughly four months in preview; no longer served. Operational history reflects its time in service on Google Cloud infrastructure."
     }
   },
 
@@ -619,7 +619,7 @@
     "Deep Think increases latency significantly",
     "Data retention policies less clear than Anthropic",
     "Newer model with less community testing",
-    "SUPERSEDED: Gemini 3.1 Pro (GA 2026-02-19) is now Google's most capable Pro model; this model is no longer the flagship"
+    "SHUT DOWN 2026-03-09: gemini-3-pro-preview is no longer served; migrate to Gemini 3.1 Pro"
   ],
 
   "best_for": [
@@ -631,8 +631,8 @@
   ],
 
   "not_recommended_for": [
+    "Any use: the model was shut down 2026-03-09 and API calls fail",
     "Applications requiring lowest possible latency",
-    "Projects needing GA/stable model status",
     "Highly specialized coding (prefer Codex/Claude Opus)"
   ],
 
@@ -641,8 +641,8 @@
       "input": "$2.00 per 1M tokens (<200K), $4.00 per 1M tokens (>200K)",
       "output": "$12.00 per 1M tokens (<200K), $18.00 per 1M tokens (>200K)",
       "consumer": "$19.99/month (Google AI Pro), $124.99/month (Gemini 3 Ultra)",
-      "notes": "Tiered pricing based on context length",
-      "last_verified": "2026-01-14"
+      "notes": "Historical pricing; model shut down 2026-03-09. Gemini 3.1 Pro carries identical API pricing.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1000000,
     "max_output": 64000,
@@ -661,7 +661,7 @@
   "related_entities": ["gemini-3-1-pro", "gemini-3-flash", "gemini-2-5-pro", "claude-opus-4-5", "gpt-5-2"],
 
   "tags": [
-    "superseded",
+    "retired",
     "long-context",
     "1m-tokens",
     "deep-think",

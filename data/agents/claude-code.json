@@ -3,8 +3,8 @@
   "type": "agent",
   "name": "Claude Code",
   "provider": "Anthropic",
-  "version": "2.x",
-  "last_evaluated": "2026-06-10",
+  "version": "2.1.x (2.1.204 as of 2026-07-08)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Anthropic's agentic coding tool available as a terminal CLI, IDE extensions, web, and desktop app. Plans and executes multi-step coding tasks with tiered permissions, OS-level sandboxing, MCP integration, hooks, subagents, and plugins/skills.",
   "website": "https://www.anthropic.com/claude-code",
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Benchmark results review plus adoption and revenue signals as proxy for sustained task success in production use",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 90,
@@ -44,7 +44,7 @@
             }
           ],
           "methodology": "Hands-on testing of built-in tools and MCP integrations across coding workflows",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 90,
@@ -58,7 +58,7 @@
             }
           ],
           "methodology": "Evaluation of plan mode and long-horizon task execution on multi-file repository changes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 82,
@@ -72,7 +72,7 @@
             }
           ],
           "methodology": "Review of memory file hierarchy, context compaction behavior, and cross-session resume",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 85,
@@ -86,7 +86,7 @@
             }
           ],
           "methodology": "Observed recovery behavior from failing builds, tests, and tool errors during evaluation sessions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 87,
@@ -100,15 +100,15 @@
             }
           ],
           "methodology": "Testing of subagent delegation, parallel task fan-out, and plugin-defined agents",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 78,
+      "overall_score": 77,
       "criteria": {
         "tool_sandboxing": {
-          "score": 88,
+          "score": 84,
           "confidence": "high",
           "evidence": [
             {
@@ -122,10 +122,16 @@
               "url": "https://www.anthropic.com/news/claude-code-on-the-web",
               "date": "2025-10-20",
               "value": "Web version executes tasks inside Anthropic-managed isolated sandboxes"
+            },
+            {
+              "source": "SentinelOne vulnerability database - CVE-2026-39861",
+              "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-39861/",
+              "date": "2026-07-09",
+              "value": "Two CVSS 10.0 sandbox-escape CVEs disclosed and patched in 2026 (CVE-2026-39861 symlink escape; CVE-2026-25725 settings.json protection bypass); ~28 CVEs total in the product's first year, with rapid vendor patching"
             }
           ],
-          "methodology": "Review of sandbox architecture (filesystem and network isolation) and managed cloud sandbox design",
-          "last_verified": "2026-06-10"
+          "methodology": "Review of sandbox architecture (filesystem and network isolation), managed cloud sandbox design, and 2026 CVE history; score reduced modestly (88 to 84) to reflect two max-severity sandbox escapes, balanced by fast patch turnaround",
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 85,
@@ -139,7 +145,7 @@
             }
           ],
           "methodology": "Assessment of permission model, allowlist granularity, and enterprise policy controls",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 80,
@@ -153,7 +159,7 @@
             }
           ],
           "methodology": "Review of documented mitigations and behavior when processing untrusted repository and web content",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 82,
@@ -167,7 +173,7 @@
             }
           ],
           "methodology": "Architecture review of session isolation in cloud sandboxes and local filesystem scoping",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 55,
@@ -181,7 +187,7 @@
             }
           ],
           "methodology": "License and source availability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -200,7 +206,7 @@
             }
           ],
           "methodology": "Review of Anthropic data retention commitments across consumer and commercial tiers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 82,
@@ -214,7 +220,7 @@
             }
           ],
           "methodology": "Compliance certification and DPA availability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 80,
@@ -228,7 +234,7 @@
             }
           ],
           "methodology": "Data flow analysis of code, prompt, and telemetry handling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 45,
@@ -242,7 +248,7 @@
             }
           ],
           "methodology": "Deployment options assessment including Bedrock/Vertex routing and air-gap feasibility",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -261,7 +267,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 85,
@@ -275,7 +281,7 @@
             }
           ],
           "methodology": "Review of session transcripts, hooks-based auditing, and OTel telemetry support",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 84,
@@ -289,7 +295,7 @@
             }
           ],
           "methodology": "Assessment of plan previews, inline reasoning, and diff-based change explanation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 50,
@@ -303,21 +309,21 @@
             }
           ],
           "methodology": "Open source assessment of core product and ecosystem components",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 90,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Claude Code GitHub repository",
-              "url": "https://github.com/anthropics/claude-code",
-              "date": "2026-06-01",
-              "value": "Highly active issue tracker, frequent releases, and a large plugin/skills ecosystem since launch"
+              "source": "Claude Code changelog",
+              "url": "https://code.claude.com/docs/en/changelog",
+              "date": "2026-07-08",
+              "value": "v2.1.204 released 2026-07-08; sustained near-daily release cadence, highly active issue tracker, and a large plugin/skills ecosystem"
             }
           ],
           "methodology": "Community engagement analysis via GitHub activity, release cadence, and ecosystem growth",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -336,7 +342,7 @@
             }
           ],
           "methodology": "Setup time and integration surface assessment across CLI, IDE, web, and desktop",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 85,
@@ -350,7 +356,7 @@
             }
           ],
           "methodology": "Assessment of parallel cloud sessions, headless/CI usage, and rate limit behavior",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 72,
@@ -364,7 +370,7 @@
             }
           ],
           "methodology": "Pricing model analysis comparing subscription caps versus variable API token costs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 80,
@@ -378,7 +384,7 @@
             }
           ],
           "methodology": "Review of OTel export, cost/usage tracking, and admin analytics features",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 90,
@@ -392,7 +398,7 @@
             }
           ],
           "methodology": "Maturity assessment from GA timeline, release stability, and enterprise adoption",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -434,7 +440,8 @@
     "Locked to Claude models; no local or third-party model support",
     "API pay-as-you-go costs can spike on large autonomous tasks",
     "Subscription rate limits can interrupt heavy daily usage",
-    "Autonomous edits still require human review for correctness and security"
+    "Autonomous edits still require human review for correctness and security",
+    "Notable 2026 CVE history (~28 CVEs in first year, including two patched CVSS 10.0 sandbox escapes: CVE-2026-39861, CVE-2026-25725) and an accidental full source-map leak in npm v2.1.88 (2026-03-31); patches shipped quickly but the attack surface is large"
   ],
   "metadata": {
     "license": "Proprietary (public releases repo at github.com/anthropics/claude-code)",

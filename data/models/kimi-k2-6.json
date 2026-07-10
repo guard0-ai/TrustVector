@@ -4,9 +4,9 @@
   "name": "Kimi K2.6",
   "provider": "Moonshot AI",
   "version": "20260420",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Moonshot AI's open-weight 1T-parameter MoE (32B active) with vendor-reported 80.2% SWE-Bench Verified and 58.6 SWE-Bench Pro. Agent Swarm orchestration scales to 300 sub-agents and 4,000 coordinated steps for long-horizon coding.",
+  "description": "Moonshot AI's open-weight 1T-parameter MoE (32B active) with vendor-reported 80.2% SWE-Bench Verified and 58.6 SWE-Bench Pro. Agent Swarm orchestration scales to 300 sub-agents and 4,000 coordinated steps for long-horizon coding. Remains Moonshot's general-purpose flagship as of July 2026; a coding-specialized sibling, Kimi K2.7-Code (built on K2.6, also open-weight Modified MIT), shipped 2026-06-12.",
   "website": "https://huggingface.co/moonshotai/Kimi-K2.6",
 
   "trust_vector": {
@@ -37,7 +37,7 @@
             }
           ],
           "methodology": "Vendor-reported industry-standard coding benchmarks; scores pending broad independent replication",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 90,
@@ -51,7 +51,7 @@
             }
           ],
           "methodology": "Vendor-reported tool-augmented reasoning benchmarks requiring multi-step problem solving",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 88,
@@ -65,7 +65,7 @@
             }
           ],
           "methodology": "Review of vendor benchmark suite and community evaluations across knowledge domains",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 85,
@@ -79,7 +79,7 @@
             }
           ],
           "methodology": "Community testing of repeated runs and long-horizon agent trajectories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "3.0s",
@@ -93,7 +93,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes; self-hosted latency depends on hardware",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "7.5s",
@@ -107,7 +107,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "262,144 tokens",
@@ -121,7 +121,7 @@
             }
           ],
           "methodology": "Official specification from model card",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 95,
@@ -135,7 +135,7 @@
             }
           ],
           "methodology": "Review of platform availability and self-hosting fallback options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Vendor-reported open-weight leadership on agentic coding (80.2% SWE-Bench Verified, 58.6 SWE-Bench Pro). Agent Swarm scales to 300 sub-agents / 4,000 coordinated steps. Most headline scores are vendor-reported and await independent replication."
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Review of vendor safety documentation and community red-team reports against OWASP LLM01 patterns",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 75,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets; open-weight deployments inherit deployer responsibility",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 76,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and self-hosting data-control options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 80,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories per vendor card and community reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 84,
@@ -212,7 +212,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard open-model security posture. No published third-party security audit; self-hosting shifts security responsibility to the deployer."
@@ -239,7 +239,7 @@
             }
           ],
           "methodology": "Review of provider jurisdiction and third-party hosting options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 75,
@@ -253,7 +253,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Per Moonshot policy on first-party API (China jurisdiction); zero when self-hosted",
@@ -267,7 +267,7 @@
             }
           ],
           "methodology": "Review of terms of service and deployment-dependent retention",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 72,
@@ -281,7 +281,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 68,
@@ -295,7 +295,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 85,
@@ -309,7 +309,7 @@
             }
           ],
           "methodology": "Review of self-hosting deployment options enabling zero retention",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "First-party API operates under Chinese jurisdiction — a material caveat for Western regulated industries. Open weights fully mitigate this for organizations able to self-host or use Western inference providers."
@@ -330,7 +330,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning and agent-trajectory transparency",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 80,
@@ -344,7 +344,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets and tool-augmented workflows",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 75,
@@ -358,7 +358,7 @@
             }
           ],
           "methodology": "Review of published bias benchmarks and community evaluations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 78,
@@ -372,7 +372,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 88,
@@ -386,7 +386,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 72,
@@ -400,7 +400,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 78,
@@ -414,7 +414,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Open weights and a detailed model card provide good architectural transparency; training data disclosure and independent benchmark verification remain limited."
@@ -435,7 +435,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 82,
@@ -449,7 +449,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 80,
@@ -460,10 +460,16 @@
               "url": "https://huggingface.co/moonshotai",
               "date": "2026-04-20",
               "value": "K2.6 supersedes K2.5/K2; prior weights remain available, but cadence is fast"
+            },
+            {
+              "source": "MarkTechPost - Kimi K2.7-Code release",
+              "url": "https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/",
+              "date": "2026-06-12",
+              "value": "Kimi K2.7-Code released 2026-06-12: coding-specialized open-weight model built on K2.6 (1T/32B active, 256K context, Modified MIT) with ~30% lower reasoning-token usage; vendor claims +21.8% on Kimi Code Bench v2 over K2.6 — all K2.7 benchmarks are Moonshot-proprietary with no independent public-suite results yet"
             }
           ],
           "methodology": "Review of versioning practices and weight availability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 78,
@@ -477,7 +483,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 78,
@@ -491,7 +497,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 86,
@@ -505,7 +511,7 @@
             }
           ],
           "methodology": "Analysis of third-party hosting, integrations, and tooling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 84,
@@ -519,7 +525,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions; attribution clause is trust-relevant for large-scale commercial use",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong open-model ecosystem presence. Modified MIT license is permissive for most users but the attribution clause above 100M MAU / $20M monthly revenue requires legal review at hyperscale."
@@ -529,7 +535,7 @@
   "use_case_ratings": {
     "code-generation": {
       "overall": 95,
-      "notes": "Vendor-reported 80.2% SWE-Bench Verified and 58.6 SWE-Bench Pro; Agent Swarm excels at long-horizon multi-file engineering.",
+      "notes": "Vendor-reported 80.2% SWE-Bench Verified and 58.6 SWE-Bench Pro; Agent Swarm excels at long-horizon multi-file engineering. For pure coding workloads, Moonshot's coding-specialized K2.7-Code (June 2026, built on K2.6) claims further gains with ~30% lower token usage.",
       "alternatives": ["claude-opus-4-8", "glm-5", "gpt-5-5"]
     },
     "customer-support": {
@@ -613,10 +619,10 @@
 
   "metadata": {
     "pricing": {
-      "input": "$0.95 per 1M tokens (approx.)",
-      "output": "$4.00 per 1M tokens (approx.)",
-      "notes": "First-party Moonshot API pricing; third-party hosts on OpenRouter vary. Self-hosting cost is infrastructure-dependent.",
-      "last_verified": "2026-06-10"
+      "input": "$0.95 per 1M tokens ($0.16 cache hit)",
+      "output": "$4.00 per 1M tokens",
+      "notes": "First-party Moonshot API pricing confirmed July 2026; cached input drops to $0.16 per 1M (~83% off). Third-party hosts on OpenRouter vary (some cheaper, e.g. $0.55/$2.00). Self-hosting cost is infrastructure-dependent.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 262144,
     "languages": ["English", "Chinese", "Japanese", "Korean", "Spanish", "French", "German"],

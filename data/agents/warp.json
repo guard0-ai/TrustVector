@@ -1,0 +1,481 @@
+{
+  "id": "warp",
+  "type": "agent",
+  "name": "Warp / Oz",
+  "provider": "Warp",
+  "version": "ADE 2.x; client open-sourced 2026-04-28",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Warp's Agentic Development Environment (ADE): a Rust-based terminal reimagined for prompt-driven, multi-agent software development, paired with Oz, its cloud agent orchestration platform. Warp 2.0 launched the ADE in June 2025; the client was open-sourced under dual MIT/AGPLv3 licensing on 2026-04-28 with OpenAI as founding repository sponsor. Used by nearly a million developers, including Docker and over half the Fortune 500.",
+  "website": "https://www.warp.dev/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 81,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp 2.0 ADE launch blog",
+              "url": "https://www.warp.dev/blog/reimagining-coding-agentic-development-environment",
+              "date": "2025-06-25",
+              "value": "Warp reported a 95% acceptance rate across 75 million lines of agent-generated code and 6-7 hours/week saved when running multiple agents"
+            },
+            {
+              "source": "TIME Best Inventions 2025",
+              "url": "https://time.com/collections/best-inventions-2025/7318249/warp-agentic-development-environment/",
+              "date": "2025-10-09",
+              "value": "Warp's ADE recognized in TIME's Best Inventions 2025, reflecting strong real-world task performance"
+            }
+          ],
+          "methodology": "Review of vendor-reported acceptance metrics and third-party recognition; no fully independent benchmark of the current agent stack, so vendor figures are weighted cautiously",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp GitHub repository",
+              "url": "https://github.com/warpdotdev/warp",
+              "date": "2026-07-09",
+              "value": "Built-in coding agents plus first-class hosting of external CLI agents (Claude Code, Codex, Gemini CLI) inside the ADE; MCP support and native terminal tooling"
+            }
+          ],
+          "methodology": "Review of built-in agent toolchain, external agent hosting, and MCP integration reliability in terminal workflows",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp open-source announcement",
+              "url": "https://www.warp.dev/newsroom/2026/4/28/warp-open-sources-its-agentic-development-environment",
+              "date": "2026-04-28",
+              "value": "Oz triages issues, asks clarifying questions, generates implementation plans, writes code, and opens pull requests end-to-end"
+            }
+          ],
+          "methodology": "Evaluation of Oz's plan-first lifecycle (triage, clarification, planning, implementation, PR) on open repository workflows",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp is now open-source blog",
+              "url": "https://www.warp.dev/blog/warp-is-now-open-source",
+              "date": "2026-04-28",
+              "value": "Oz platform handles orchestration, memory, and handoff across agent sessions; Warp Drive persists shared workflows, prompts, and environment context"
+            }
+          ],
+          "methodology": "Review of Warp Drive persistence and Oz cross-session memory/handoff claims; long-horizon memory less battle-tested than incumbents",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp 2.0 ADE launch blog",
+              "url": "https://www.warp.dev/blog/reimagining-coding-agentic-development-environment",
+              "date": "2025-06-25",
+              "value": "Agent management UI surfaces agents that are blocked or need help; agents iterate on failing commands and long-running tasks with human handoff"
+            }
+          ],
+          "methodology": "Observation of agent self-correction loops and human-in-the-loop escalation in the ADE's multi-agent management UI",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Warp open-source announcement",
+              "url": "https://www.warp.dev/newsroom/2026/4/28/warp-open-sources-its-agentic-development-environment",
+              "date": "2026-04-28",
+              "value": "Multi-agent orchestration is the core product: parallel local and cloud agents with a management UI, and Oz coordinating fleets of cloud agents with visible sessions, reviews, and progress"
+            }
+          ],
+          "methodology": "Assessment of parallel agent management, cloud agent fan-out via Oz, and cross-agent handoff as the product's primary design goal",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 75,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp cloud agents overview",
+              "url": "https://docs.warp.dev/platform/",
+              "date": "2026-07-09",
+              "value": "Cloud agents run in Warp-managed sandboxes (metered as compute credits); local agent commands execute in the user's terminal with permission/approval controls rather than OS-level sandboxing"
+            }
+          ],
+          "methodology": "Architecture review of cloud sandbox isolation versus local terminal execution; local runs rely on approval flows, not kernel-enforced isolation",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp pricing",
+              "url": "https://www.warp.dev/pricing",
+              "date": "2026-07-09",
+              "value": "Business plan adds SAML SSO and admin-configurable data controls; Enterprise adds advanced spend controls, enterprise admin controls, and self-hosted cloud agents"
+            }
+          ],
+          "methodology": "Review of identity (SSO), admin data controls, and per-plan governance features",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 62,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Warp documentation",
+              "url": "https://docs.warp.dev/",
+              "date": "2026-07-09",
+              "value": "Agents process untrusted repository content, issues, and web output; command approval gates risky actions, but injection-specific defenses are not publicly detailed"
+            }
+          ],
+          "methodology": "Threat surface analysis of Oz's autonomous issue triage/PR workflows and local agent command execution; limited public disclosure and no third-party security research yet",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp pricing and billing FAQs",
+              "url": "https://docs.warp.dev/support-and-community/plans-and-billing/pricing-faqs/",
+              "date": "2026-07-09",
+              "value": "All Warp-managed model traffic is covered by Zero Data Retention agreements with OpenAI, Anthropic, and Google; providers cannot store or train on user data. Business plan adds enforced ZDR"
+            }
+          ],
+          "methodology": "Review of ZDR agreements for managed model routing and per-run cloud sandbox separation",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Warp GitHub repository",
+              "url": "https://github.com/warpdotdev/warp",
+              "date": "2026-07-09",
+              "value": "Client codebase (98% Rust) open-sourced 2026-04-28 under dual licensing: MIT for the warpui UI framework, AGPLv3 for the rest; 63K stars and 5.2K forks by July 2026. Oz cloud platform remains proprietary"
+            }
+          ],
+          "methodology": "License and source availability review; full client auditability with a closed cloud orchestration backend",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 70,
+      "criteria": {
+        "data_retention": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp pricing and billing FAQs",
+              "url": "https://docs.warp.dev/support-and-community/plans-and-billing/pricing-faqs/",
+              "date": "2026-07-09",
+              "value": "Zero Data Retention agreements with model providers apply on all plans for Warp-managed traffic; Business and Enterprise plans add enforced ZDR and admin data controls"
+            }
+          ],
+          "methodology": "Review of published ZDR commitments across plan tiers and telemetry/data control settings",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp pricing (compliance footer)",
+              "url": "https://www.warp.dev/pricing",
+              "date": "2026-07-09",
+              "value": "SOC 2 certified; enterprise data governance offered on Enterprise plan. GDPR-specific documentation is less prominent than SOC 2 attestation"
+            }
+          ],
+          "methodology": "Compliance certification review; SOC 2 verified, GDPR posture inferred from data governance features rather than a published DPA page",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp pricing",
+              "url": "https://www.warp.dev/pricing",
+              "date": "2026-07-09",
+              "value": "Prompts and code route to third-party frontier models (OpenAI, Anthropic, Google) plus open models (Kimi, MiniMax, Qwen), mitigated by ZDR agreements and BYO-LLM/BYOK options"
+            }
+          ],
+          "methodology": "Data flow analysis of multi-provider model routing; third parties are in the loop by design, with contractual ZDR mitigation",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp pricing",
+              "url": "https://www.warp.dev/pricing",
+              "date": "2026-07-09",
+              "value": "Open-source client can be built from source; free tier supports bring-your-own inference (including local/open models), and Enterprise offers self-hosted cloud agents and BYO-LLM. Oz platform itself is cloud-hosted"
+            }
+          ],
+          "methodology": "Deployment options assessment: open client plus BYO-LLM enables substantial local control, but the Oz orchestration layer requires Warp's cloud",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 83,
+      "criteria": {
+        "documentation_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Warp documentation",
+              "url": "https://docs.warp.dev/",
+              "date": "2026-07-09",
+              "value": "Comprehensive docs covering agents, cloud agent platform, credits/billing, MCP, and team administration"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review across agent, platform, and billing docs",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp open-source announcement",
+              "url": "https://www.warp.dev/newsroom/2026/4/28/warp-open-sources-its-agentic-development-environment",
+              "date": "2026-04-28",
+              "value": "Oz sessions are public on Warp's own repo: session links, reviews, and progress visible to anyone; ADE shows live status of all running agents"
+            }
+          ],
+          "methodology": "Review of Oz session visibility, shareable session links, and agent management UI observability",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp open-source announcement",
+              "url": "https://www.warp.dev/newsroom/2026/4/28/warp-open-sources-its-agentic-development-environment",
+              "date": "2026-04-28",
+              "value": "Oz asks clarifying questions and publishes implementation plans before writing code; PRs document the resulting changes"
+            }
+          ],
+          "methodology": "Assessment of plan publication, clarifying-question loops, and PR-based change justification",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Warp GitHub repository",
+              "url": "https://github.com/warpdotdev/warp",
+              "date": "2026-07-09",
+              "value": "Client fully open (dual MIT/AGPLv3) with contribution guidelines and community Slack; Oz cloud orchestration and hosted services remain closed-source"
+            }
+          ],
+          "methodology": "Open source assessment of client versus cloud components",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 89,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Warp GitHub repository",
+              "url": "https://github.com/warpdotdev/warp",
+              "date": "2026-07-09",
+              "value": "63K GitHub stars and 5.2K forks within ~10 weeks of open-sourcing; OpenAI is founding repository sponsor and Oz-for-OSS extends the model to other projects"
+            },
+            {
+              "source": "Warp is now open-source blog",
+              "url": "https://www.warp.dev/blog/warp-is-now-open-source",
+              "date": "2026-04-28",
+              "value": "Nearly one million active developers; community contribution flywheel where user ideas become agent-shipped improvements"
+            }
+          ],
+          "methodology": "Community engagement analysis via GitHub metrics, sponsorship, and open contribution model",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 78,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Warp product page",
+              "url": "https://www.warp.dev/",
+              "date": "2026-07-09",
+              "value": "Drop-in terminal replacement for existing shells on macOS, Linux, and Windows; hosts external CLI agents and scales from plain terminal UI to full ADE via customizable modes"
+            }
+          ],
+          "methodology": "Setup and adoption-path assessment: incremental adoption from terminal to ADE with no workflow rewrite required",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp cloud agents overview",
+              "url": "https://docs.warp.dev/platform/",
+              "date": "2026-07-09",
+              "value": "Oz cloud agents run in parallel managed sandboxes with lifecycle APIs, integrations, and dashboards; Enterprise offers custom credit pools and self-hosted cloud agents"
+            }
+          ],
+          "methodology": "Assessment of parallel cloud agent fan-out, platform APIs, and enterprise scaling options",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Warp credits and billing docs",
+              "url": "https://docs.warp.dev/support-and-community/plans-and-billing/credits/",
+              "date": "2026-07-09",
+              "value": "Credit metering spans AI, compute, and platform buckets from one pool; cloud agents require at least 20 credits available to start. Build $20/mo = 1,500 credits; Max $200/mo = 18,000; Business $50/user/mo"
+            }
+          ],
+          "methodology": "Pricing model analysis: subscriptions cap spend but three-bucket credit burn on cloud agents is variable and hard to forecast per task",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp pricing",
+              "url": "https://www.warp.dev/pricing",
+              "date": "2026-07-09",
+              "value": "Team usage metrics and admin controls on Business plan; cloud agent platform includes run lifecycle dashboards and observability (metered as platform credits)"
+            }
+          ],
+          "methodology": "Review of usage dashboards, team metrics, and cloud agent observability features",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Warp open-source announcement",
+              "url": "https://www.warp.dev/newsroom/2026/4/28/warp-open-sources-its-agentic-development-environment",
+              "date": "2026-04-28",
+              "value": "Nearly one million developers, deployed at Docker, Ramp, Peloton, and over half the Fortune 500; terminal shipping since 2021, though Oz cloud agents launched broadly only in 2026"
+            }
+          ],
+          "methodology": "Maturity assessment: mature terminal core with large enterprise footprint, balanced against the recency of the Oz agent platform",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 84,
+      "notes": "Strong multi-agent coding in terminal-native workflows; excels when orchestrating several agents (including external CLIs) across repos and infrastructure tasks"
+    },
+    "data-analysis": {
+      "overall": 72,
+      "notes": "Capable for shell-driven data work and scripting; not specialized for notebooks or analytics tooling"
+    },
+    "research-assistant": {
+      "overall": 68,
+      "notes": "Agents can research codebases and docs, but the product is optimized for building and operating software, not general research"
+    },
+    "content-creation": {
+      "overall": 60,
+      "notes": "Limited to technical writing incidental to engineering work; not a content tool"
+    }
+  },
+  "best_for": [
+    "Developers who live in the terminal and want multi-agent orchestration without leaving it",
+    "Teams fanning out parallel local and cloud (Oz) agents across coding and infra tasks",
+    "Open-source-minded organizations wanting an auditable, dual MIT/AGPLv3 client",
+    "Users of external CLI agents (Claude Code, Codex, Gemini CLI) wanting a unified cockpit",
+    "OSS maintainers adopting Oz-for-OSS agentic issue triage and PR workflows"
+  ],
+  "strengths": [
+    "Client open-sourced 2026-04-28 (dual MIT/AGPLv3, 98% Rust) with 63K GitHub stars and OpenAI as founding repository sponsor",
+    "Purpose-built multi-agent orchestration: parallel agents, management UI, and Oz cloud agent platform",
+    "Massive adoption: nearly 1M developers including Docker and over half the Fortune 500",
+    "Zero Data Retention agreements with model providers on all plans; enforced ZDR and SSO on team plans",
+    "Model flexibility: frontier models, open models (Kimi, MiniMax, Qwen), BYOK, and enterprise BYO-LLM",
+    "Radically transparent Oz development: sessions, plans, and reviews public on its own repository",
+    "Free tier keeps the terminal itself free with bring-your-own inference"
+  ],
+  "limitations": [
+    "Oz cloud agent platform is recent (broad launch 2026) and remains proprietary despite the open client",
+    "Three-bucket credit metering (AI, compute, platform) makes per-task costs hard to predict; cloud agents need a 20-credit floor to start",
+    "Local agent commands run in the user's terminal with approval gates, not OS-level sandboxing",
+    "Prompt injection defenses for autonomous issue/PR workflows are not publicly documented; no third-party security research yet",
+    "Code routes to third-party model providers by design (mitigated contractually via ZDR)",
+    "AI features are credit-metered even on paid tiers; heavy multi-agent use burns quota quickly"
+  ],
+  "metadata": {
+    "repository": "https://github.com/warpdotdev/warp",
+    "license": "Dual MIT (warpui UI framework) / AGPLv3 (rest of client); Oz cloud platform proprietary",
+    "supported_models": [
+      "OpenAI GPT models (including GPT-5.5)",
+      "Anthropic Claude models",
+      "Google Gemini models",
+      "Open models: Kimi, MiniMax, Qwen",
+      "BYOK / enterprise BYO-LLM"
+    ],
+    "programming_languages": [
+      "Language-agnostic (terminal-native; any language in the repository)"
+    ],
+    "deployment_type": "Local desktop app (macOS/Linux/Windows) + Oz managed cloud agents; enterprise self-hosted cloud agents",
+    "tool_support": [
+      "Built-in coding agents and terminal tools",
+      "External CLI agents (Claude Code, Codex, Gemini CLI)",
+      "MCP servers",
+      "Oz cloud agent platform (triage, planning, PRs)",
+      "Warp Drive shared workflows"
+    ],
+    "first_release": "Terminal 2021; Warp 2.0 ADE 2025-06-25; open-sourced 2026-04-28",
+    "pricing": "Terminal free; Build $20/mo (1,500 credits); Max $200/mo (18,000 credits); Business $50/user/mo; Enterprise custom. Cloud agents require >=20 credits available",
+    "adoption": "Nearly 1M developers; Docker, Ramp, Peloton, over half the Fortune 500; SOC 2 certified"
+  },
+  "related_entities": [
+    "claude-code",
+    "openai-codex",
+    "gemini-cli",
+    "cursor-agent",
+    "devin"
+  ],
+  "tags": [
+    "agentic-development-environment",
+    "terminal",
+    "multi-agent",
+    "open-source",
+    "cloud-agents"
+  ]
+}

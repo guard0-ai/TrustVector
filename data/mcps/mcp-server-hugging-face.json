@@ -3,8 +3,8 @@
   "type": "mcp",
   "name": "Hugging Face MCP Server",
   "provider": "Hugging Face",
-  "version": "2026.6",
-  "last_evaluated": "2026-06-10",
+  "version": "0.3.28",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Hugging Face's official MCP server connecting AI assistants to the Hub. Ships 7 built-in tools (search for models, datasets, Spaces, and papers, plus documentation search) and can dynamically attach community Gradio Spaces as additional tools. Hosted at huggingface.co/mcp with per-user configuration, or runnable locally; open source under MIT.",
   "website": "https://huggingface.co/mcp",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Endpoint stability analysis of the hosted server and underlying Hub APIs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "search_accuracy": {
           "score": 86,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Relevance assessment of Hub search results for representative ML queries",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_success_rate": {
           "score": 84,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Operation success testing across built-in tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "dynamic_tool_reliability": {
           "score": 66,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Reliability testing of dynamically attached Gradio Space tools across popular Spaces",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 80,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing including dynamic tool set changes mid-session",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Authentication mechanism review for hosted and local deployment modes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 76,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Token storage and exposure-surface analysis across deployment modes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scope_limitation": {
           "score": 74,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Permission scope testing of built-in tools and attached Space tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_tool_supply_chain": {
           "score": 50,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Supply-chain threat modeling of community Space attachment: untrusted code, mutable tool definitions, and unvetted outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "unauthorized_action_risk": {
           "score": 74,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Authorization boundary analysis of built-in versus attached tool capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis of queries and results across the hosted server",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 70,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Assessment of filtering controls on data submitted to attached tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "organization_data_control": {
           "score": 72,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Access control review of Hub permissions as applied through the MCP server",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 60,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Analysis of data sharing with community Space operators and the LLM provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 78,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Logging and configuration-visibility assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 94,
@@ -259,11 +259,11 @@
               "source": "hf-mcp-server Repository",
               "url": "https://github.com/huggingface/hf-mcp-server",
               "date": "2026-06-10",
-              "value": "Server is fully open source under MIT (approximately 247 stars); the same code powers the hosted deployment and can be self-hosted"
+              "value": "Server is fully open source under MIT (approximately 259 stars, latest release v0.3.28 on 2026-07-07); the same code powers the hosted deployment and can be self-hosted"
             }
           ],
           "methodology": "Source code review of the published server implementation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 76,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Comparison of documented tool surface against per-user dynamic configuration",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment for hosted and local modes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 80,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Latency observation across built-in and attached tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 82,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Uptime analysis of Hub infrastructure versus attached tool availability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 85,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Feature completeness assessment including the dynamic tool extension model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 72,
@@ -348,11 +348,11 @@
               "source": "hf-mcp-server Repository",
               "url": "https://github.com/huggingface/hf-mcp-server",
               "date": "2026-06-10",
-              "value": "Approximately 247 GitHub stars with active first-party maintenance; adoption driven mainly by the hosted endpoint within the large HF user base"
+              "value": "Approximately 259 GitHub stars with active first-party maintenance (121 releases; latest v0.3.28 on 2026-07-07); adoption driven mainly by the hosted endpoint within the large HF user base"
             }
           ],
           "methodology": "Community activity and adoption analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -377,12 +377,14 @@
     "repository": "https://github.com/huggingface/hf-mcp-server",
     "license": "MIT",
     "maintained_by": "Hugging Face",
-    "github_stars": 247,
+    "github_stars": 259,
+    "latest_release": "v0.3.28 (2026-07-07)",
     "remote_endpoint": "https://huggingface.co/mcp",
     "configuration_url": "https://huggingface.co/settings/mcp",
     "authentication": "Hugging Face account / access tokens (fine-grained supported)",
     "transport_types": [
       "streamable-http",
+      "streamable-http-json (stateless)",
       "stdio"
     ],
     "installation_methods": [

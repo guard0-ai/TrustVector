@@ -4,9 +4,9 @@
   "name": "Gemini 2.5 Pro",
   "provider": "Google",
   "version": "gemini-2.5-pro-002",
-  "last_evaluated": "2025-11-07",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Google's latest flagship with 2M token context window, Deep Think mode for complex reasoning, and native multimodal capabilities. Best-in-class for long-context applications.",
+  "description": "DEPRECATED: Google has scheduled Gemini 2.5 Pro for shutdown on 2026-10-16; the designated replacement is Gemini 3.1 Pro. Formerly Google's flagship (superseded by the Gemini 3.x line since late 2025), with 1M token context window (2M on select Vertex AI enterprise tiers), Deep Think mode for complex reasoning, and native multimodal capabilities. Do not start new projects on this model.",
   "website": "https://deepmind.google/technologies/gemini/",
 
   "trust_vector": {
@@ -25,7 +25,7 @@
             }
           ],
           "methodology": "Standard coding benchmarks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 94,
@@ -39,7 +39,7 @@
             }
           ],
           "methodology": "PhD-level reasoning benchmarks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 93,
@@ -53,7 +53,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 92,
@@ -67,7 +67,7 @@
             }
           ],
           "methodology": "Internal consistency testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.5s",
@@ -81,7 +81,7 @@
             }
           ],
           "methodology": "API latency measurements",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "3.5s",
@@ -95,21 +95,21 @@
             }
           ],
           "methodology": "95th percentile measurements",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
-          "value": "2,000,000 tokens",
+          "value": "1,000,000 tokens (2M on select Vertex AI enterprise tiers)",
           "confidence": "high",
           "evidence": [
             {
               "source": "Google AI Documentation",
-              "url": "https://ai.google.dev/gemini-api/docs/models/gemini",
-              "date": "2025-02-20",
-              "value": "2M token context window (largest available)"
+              "url": "https://ai.google.dev/gemini-api/docs/long-context",
+              "date": "2026-07-09",
+              "value": "1M token context window on the standard Gemini API; 2M extension limited to select Vertex AI enterprise tiers and never rolled out to the standard API"
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 97,
@@ -123,10 +123,10 @@
             }
           ],
           "methodology": "Historical uptime data",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Exceptional performance with 2M context window enabling unprecedented long-document processing. Deep Think mode enhances complex reasoning."
+      "notes": "Strong performance for its generation with 1M context window and Deep Think mode, but superseded by the Gemini 3.x line. DEPRECATED: shutdown scheduled 2026-10-16."
     },
 
     "security": {
@@ -144,7 +144,7 @@
             }
           ],
           "methodology": "OWASP LLM security testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 87,
@@ -158,7 +158,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 83,
@@ -172,7 +172,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 89,
@@ -186,7 +186,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 87,
@@ -200,7 +200,7 @@
             }
           ],
           "methodology": "API security review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security leveraging Google Cloud infrastructure. Configurable safety filters provide flexibility."
@@ -221,7 +221,7 @@
             }
           ],
           "methodology": "Cloud infrastructure review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 88,
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Terms review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Varies by tier",
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Data retention policy review",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Enterprise options available for zero retention"
         },
         "pii_handling": {
@@ -264,7 +264,7 @@
             }
           ],
           "methodology": "Data protection review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 90,
@@ -278,7 +278,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 83,
@@ -292,7 +292,7 @@
             }
           ],
           "methodology": "Enterprise feature review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good privacy with Google Cloud infrastructure. Enterprise options provide enhanced controls. HIPAA compliance available through Google Cloud."
@@ -313,7 +313,7 @@
             }
           ],
           "methodology": "Reasoning transparency evaluation",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 86,
@@ -327,7 +327,7 @@
             }
           ],
           "methodology": "Factual QA testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 83,
@@ -341,7 +341,7 @@
             }
           ],
           "methodology": "Bias benchmark evaluation",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 85,
@@ -355,7 +355,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 90,
@@ -369,7 +369,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 82,
@@ -383,7 +383,7 @@
             }
           ],
           "methodology": "Public disclosure review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 90,
@@ -397,7 +397,7 @@
             }
           ],
           "methodology": "Safety mechanism review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong transparency with Deep Think mode and comprehensive documentation. Configurable guardrails provide flexibility."
@@ -418,7 +418,7 @@
             }
           ],
           "methodology": "API design review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 93,
@@ -432,10 +432,10 @@
             }
           ],
           "methodology": "SDK quality assessment",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
-          "score": 91,
+          "score": 85,
           "confidence": "high",
           "evidence": [
             {
@@ -443,10 +443,16 @@
               "url": "https://cloud.google.com/apis/design/versioning",
               "date": "2025-01-01",
               "value": "Clear versioning with migration guides"
+            },
+            {
+              "source": "Gemini API Deprecations",
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+              "date": "2026-07-09",
+              "value": "gemini-2.5-pro scheduled for shutdown 2026-10-16 (extended from an original June 2026 date); designated replacement is gemini-3.1-pro"
             }
           ],
           "methodology": "Versioning policy review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 94,
@@ -460,7 +466,7 @@
             }
           ],
           "methodology": "Observability tools review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 92,
@@ -474,7 +480,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 90,
@@ -488,7 +494,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 91,
@@ -502,10 +508,10 @@
             }
           ],
           "methodology": "License review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Excellent operational maturity backed by Google Cloud infrastructure. Best-in-class monitoring and observability."
+      "notes": "Excellent operational maturity backed by Google Cloud infrastructure, but the model is deprecated with a 2026-10-16 shutdown date. Versioning score reduced to reflect the pending retirement; migrate to Gemini 3.1 Pro."
     }
   },
 
@@ -527,12 +533,12 @@
     },
     "data-analysis": {
       "overall": 95,
-      "notes": "Outstanding for data analysis with 2M context enabling analysis of massive datasets.",
+      "notes": "Outstanding for data analysis with 1M context enabling analysis of massive datasets.",
       "alternatives": ["claude-opus-4-1"]
     },
     "research-assistant": {
       "overall": 96,
-      "notes": "Exceptional for research with 2M context. Can process entire books, papers, and repositories.",
+      "notes": "Exceptional for research with 1M context. Can process entire books, papers, and repositories.",
       "alternatives": ["claude-opus-4-1"]
     },
     "legal-compliance": {
@@ -563,7 +569,7 @@
   },
 
   "strengths": [
-    "2M token context window - largest available (10x Claude, 16x GPT-5)",
+    "1M token context window (2M on select Vertex AI enterprise tiers)",
     "Deep Think mode for enhanced reasoning on complex problems",
     "Native multimodal capabilities (text, image, video, audio)",
     "Google Cloud infrastructure with enterprise-grade reliability",
@@ -573,10 +579,11 @@
 
   "limitations": [
     "Slightly behind Claude/GPT on specialized benchmarks",
-    "Newer model with less community testing",
     "Deep Think mode increases latency significantly",
     "Data retention policies less transparent than Anthropic",
-    "Smaller ecosystem than OpenAI"
+    "Smaller ecosystem than OpenAI",
+    "Superseded by the Gemini 3.x line (Gemini 3.1 Pro is the current Pro tier)",
+    "DEPRECATED: shutdown scheduled 2026-10-16; migrate to Gemini 3.1 Pro"
   ],
 
   "best_for": [
@@ -588,6 +595,7 @@
   ],
 
   "not_recommended_for": [
+    "New projects of any kind (model shuts down 2026-10-16; start on Gemini 3.1 Pro instead)",
     "Applications requiring lowest possible latency",
     "Highly regulated industries prioritizing zero-retention (without enterprise setup)",
     "Projects requiring OpenAI-specific ecosystem features"
@@ -597,10 +605,10 @@
     "pricing": {
       "input": "$1.25 per 1M tokens (<200k context), $2.50 per 1M tokens (>200k context)",
       "output": "$10.00 per 1M tokens (<200k context), $15.00 per 1M tokens (>200k context)",
-      "notes": "Tiered pricing based on context length - most cost-effective frontier model for long-context work",
-      "last_verified": "2025-11-09"
+      "notes": "Tiered pricing based on context length. Confirmed unchanged on the official pricing page as of 2026-07-09; billing ends when the model shuts down 2026-10-16.",
+      "last_verified": "2026-07-09"
     },
-    "context_window": 2000000,
+    "context_window": 1000000,
     "languages": [
       "English",
       "100+ languages"
@@ -612,11 +620,12 @@
     "parameters": "Not disclosed"
   },
 
-  "related_entities": ["claude-opus-4-1", "gpt-5", "claude-sonnet-4-5"],
+  "related_entities": ["gemini-3-1-pro", "gemini-3-5-flash", "claude-opus-4-1", "gpt-5", "claude-sonnet-4-5"],
 
   "tags": [
+    "deprecated",
     "long-context",
-    "2m-tokens",
+    "1m-tokens",
     "deep-think",
     "multimodal",
     "cost-effective",

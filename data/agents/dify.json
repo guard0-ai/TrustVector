@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "Dify",
   "provider": "LangGenius",
-  "version": "1.x",
-  "last_evaluated": "2026-06-10",
+  "version": "1.15.0",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Open-source LLM application and agentic workflow platform with a visual canvas, built-in RAG pipeline, agent nodes, and 50+ built-in tools. One of the most-starred LLM app platforms, deployable self-hosted or via Dify Cloud.",
+  "description": "Open-source LLM application and agentic workflow platform with a visual canvas, built-in RAG pipeline, agent nodes, and 50+ tools. One of the most-starred LLM app platforms (148k+ stars), self-hosted or via Dify Cloud. Moderate-severity 2026 advisories (authorization bypass CVE-2026-41949, path traversal CVE-2026-41948, XSS CVE-2026-6619, account enumeration CVE-2026-28288) make staying on current releases (1.15.0+) important; no critical RCE or in-the-wild exploitation reported.",
   "website": "https://dify.ai/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Task completion testing across chatflow, workflow, and agent app types",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 86,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool invocation testing across built-in, custom, and plugin tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 84,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex workflow construction and execution testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 80,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory evaluation across sessions and knowledge bases",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 78,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error injection testing on workflow error branches and retries",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 72,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Multi-agent pattern testing using agent nodes within workflows",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review of code execution sandbox and tool isolation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 78,
@@ -124,10 +124,17 @@
               "url": "https://docs.dify.ai/",
               "date": "2026-04-20",
               "value": "Workspace member roles, app-level API keys, and SSO/access policies in premium/enterprise editions"
+            },
+            {
+              "source": "Dify 2026 security advisories",
+              "url": "https://github.com/langgenius/dify/security",
+              "date": "2026-07-09",
+              "value": "Moderate 2026 advisories: CVE-2026-41949 (authorization bypass in file preview endpoint, <=1.14.1), CVE-2026-41948 (authenticated path traversal to Plugin Daemon API, <=1.14.1), CVE-2026-28288 (account enumeration, fixed in 1.9.0), CVE-2026-6619 (XSS in ImagePreview, <=1.13.3)"
             }
           ],
           "methodology": "Access control assessment of workspace roles and API key scoping",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09",
+          "notes": "Score held at 78: 2026 advisories are moderate severity (no critical RCE, no known in-the-wild exploitation) and addressed in current releases; keep deployments on 1.15.0+"
         },
         "prompt_injection_defense": {
           "score": 70,
@@ -141,7 +148,7 @@
             }
           ],
           "methodology": "Injection testing with moderation toolkits enabled",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 76,
@@ -155,7 +162,7 @@
             }
           ],
           "methodology": "Data isolation architecture review across cloud and self-hosted modes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 84,
@@ -164,12 +171,12 @@
             {
               "source": "Dify GitHub Repository",
               "url": "https://github.com/langgenius/dify",
-              "date": "2026-06-01",
-              "value": "Fully public codebase with 138k+ stars; license is Apache-2.0-based but adds multi-tenant SaaS resale restrictions"
+              "date": "2026-07-09",
+              "value": "Fully public codebase with 148k+ stars; license is Apache-2.0-based but adds multi-tenant SaaS resale restrictions"
             }
           ],
           "methodology": "Source code and license terms review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +195,7 @@
             }
           ],
           "methodology": "Privacy architecture review of self-hosted versus cloud retention",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 81,
@@ -202,7 +209,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment across deployment modes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 74,
@@ -216,7 +223,7 @@
             }
           ],
           "methodology": "Data flow analysis across model providers and tool integrations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 92,
@@ -230,7 +237,7 @@
             }
           ],
           "methodology": "Deployment options assessment including air-gapped configurations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +256,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 84,
@@ -263,7 +270,7 @@
             }
           ],
           "methodology": "Tracing and logging capabilities assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 80,
@@ -277,7 +284,7 @@
             }
           ],
           "methodology": "Explainability assessment of visual runs and RAG citations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 82,
@@ -291,7 +298,7 @@
             }
           ],
           "methodology": "License terms review against OSI-standard licenses",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 92,
@@ -300,12 +307,12 @@
             {
               "source": "Dify GitHub Metrics",
               "url": "https://github.com/langgenius/dify",
-              "date": "2026-04-15",
-              "value": "138k+ GitHub stars and 1M+ deployed apps as of April 2026; very active releases and plugin marketplace"
+              "date": "2026-07-09",
+              "value": "148k+ GitHub stars (July 2026) and 1M+ deployed apps as of April 2026; very active releases (1.15.0 shipped June 25, 2026) and plugin marketplace"
             }
           ],
           "methodology": "Community engagement analysis of stars, deployments, and release cadence",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +331,7 @@
             }
           ],
           "methodology": "Integration complexity assessment for no-code and API usage",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 82,
@@ -338,7 +345,7 @@
             }
           ],
           "methodology": "Scalability assessment of deployment architectures",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 84,
@@ -352,7 +359,7 @@
             }
           ],
           "methodology": "Pricing model analysis across self-hosted and cloud tiers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 84,
@@ -366,7 +373,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 84,
@@ -380,7 +387,7 @@
             }
           ],
           "methodology": "Production readiness assessment of release maturity and adoption",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -423,7 +430,7 @@
   ],
   "strengths": [
     "Visual workflow canvas combining agent nodes, RAG, and 50+ built-in tools",
-    "Massive adoption and community: 138k+ GitHub stars, 1M+ deployed apps",
+    "Massive adoption and community: 148k+ GitHub stars, 1M+ deployed apps",
     "Free self-hosting with Docker/Helm and full data control",
     "Built-in observability: logs, annotations, analytics, and tracing integrations",
     "Dedicated dify-sandbox for code-node execution",
@@ -434,7 +441,8 @@
     "Multi-agent orchestration is shallower than code-first frameworks like LangGraph or CrewAI",
     "Visual abstraction limits fine-grained programmatic control for complex agent logic",
     "Prompt injection defense relies on opt-in moderation rather than dedicated mechanisms",
-    "Self-hosted stack (API, worker, sandbox, vector DB) has nontrivial operational footprint"
+    "Self-hosted stack (API, worker, sandbox, vector DB) has nontrivial operational footprint",
+    "Steady stream of moderate-severity security advisories in 2026 (authorization bypass, path traversal, XSS, account enumeration) requires keeping deployments on current releases (1.15.0+)"
   ],
   "related": [
     "flowise",
@@ -465,8 +473,9 @@
       "Plugin marketplace",
       "MCP tools"
     ],
-    "github_stars": "138000+",
+    "github_stars": "148000+",
     "first_release": "2023",
+    "latest_version": "1.15.0 (June 25, 2026)",
     "pricing": "Free self-hosted; Cloud: Sandbox free, Professional $59/mo, Team $159/mo",
     "python_requirement": "Python >=3.11 (backend, when developing from source)",
     "adoption": "1M+ apps deployed on the platform as of April 2026"

@@ -3,10 +3,10 @@
   "type": "model",
   "name": "Llama 4 Scout",
   "provider": "Meta",
-  "version": "2025-02",
-  "last_evaluated": "2025-11-08",
+  "version": "2025-04",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Meta's efficient Llama 4 model optimized for speed and resource efficiency. Designed for edge deployment and cost-sensitive applications requiring open-source flexibility.",
+  "description": "Meta's efficient Llama 4 model (released April 5, 2025): a natively multimodal mixture-of-experts with 109B total / 17B active parameters (16 experts) and an industry-leading 10M-token context window, deployable on a single H100-class GPU. Optimized for speed and cost-sensitive applications requiring open-weight flexibility. Now a legacy line: Meta has shipped no new open weights since Scout/Maverick and pivoted to closed models with Muse Spark (April 2026).",
   "website": "https://llama.meta.com/llama-4",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 74,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Mathematical reasoning benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 77,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Knowledge testing benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 75,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "0.6s",
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Median latency on recommended hardware",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "1.2s",
@@ -94,21 +94,28 @@
             }
           ],
           "methodology": "95th percentile response time",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
-          "value": "64,000 tokens",
+          "value": "10,000,000 tokens",
           "confidence": "high",
           "evidence": [
             {
-              "source": "Meta Documentation",
-              "url": "https://llama.meta.com/docs/model-cards-and-prompt-formats/llama4-scout",
-              "date": "2025-02-01",
-              "value": "64K token context window"
+              "source": "Meta AI Blog - The Llama 4 herd",
+              "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
+              "date": "2025-04-05",
+              "value": "Industry-leading 10M-token context window"
+            },
+            {
+              "source": "Hugging Face - meta-llama/Llama-4-Scout-17B-16E",
+              "url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E",
+              "date": "2026-07-09",
+              "value": "10M context confirmed on model card; hosted API providers typically expose far less (128K-1M)"
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09",
+          "notes": "10M is the model's native specification; most hosted endpoints cap context much lower"
         },
         "uptime": {
           "score": 95,
@@ -122,7 +129,7 @@
             }
           ],
           "methodology": "User-controlled deployment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Efficient performance optimized for speed and resource usage. Good balance for edge deployment and cost-sensitive applications."
@@ -142,7 +149,7 @@
             }
           ],
           "methodology": "Testing against prompt injection attacks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 79,
@@ -156,7 +163,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompts",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 85,
@@ -170,7 +177,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 80,
@@ -184,7 +191,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 82,
@@ -198,7 +205,7 @@
             }
           ],
           "methodology": "Review of deployment practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good baseline security with self-hosted deployment providing full control. Smaller model may have slightly lower resistance than Behemoth."
@@ -218,7 +225,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 98,
@@ -232,7 +239,7 @@
             }
           ],
           "methodology": "Analysis of data flow",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "User-controlled",
@@ -246,7 +253,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 92,
@@ -260,7 +267,7 @@
             }
           ],
           "methodology": "Review of deployment architecture",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 94,
@@ -274,7 +281,7 @@
             }
           ],
           "methodology": "Review of deployment options",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 98,
@@ -288,7 +295,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional privacy with self-hosted deployment. Full control over all data aspects."
@@ -308,7 +315,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 80,
@@ -322,7 +329,7 @@
             }
           ],
           "methodology": "Community evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 81,
@@ -336,7 +343,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 83,
@@ -350,7 +357,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 90,
@@ -364,7 +371,7 @@
             }
           ],
           "methodology": "Review of documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 87,
@@ -378,7 +385,7 @@
             }
           ],
           "methodology": "Review of technical documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 88,
@@ -392,7 +399,7 @@
             }
           ],
           "methodology": "Review of safety systems",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong transparency as open-source model. Good documentation and customizable guardrails."
@@ -412,7 +419,7 @@
             }
           ],
           "methodology": "Review of API design",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 86,
@@ -426,7 +433,7 @@
             }
           ],
           "methodology": "Review of SDKs",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 88,
@@ -440,7 +447,7 @@
             }
           ],
           "methodology": "Review of versioning",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 80,
@@ -454,7 +461,7 @@
             }
           ],
           "methodology": "Review of monitoring tools",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 84,
@@ -468,7 +475,7 @@
             }
           ],
           "methodology": "Assessment of support",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 89,
@@ -482,7 +489,7 @@
             }
           ],
           "methodology": "Analysis of ecosystem",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -496,7 +503,7 @@
             }
           ],
           "methodology": "Review of license",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good operational maturity with strong ecosystem. Easier to deploy than Behemoth due to smaller size."
@@ -507,7 +514,7 @@
       "overall": 74,
       "notes": "Adequate for basic coding tasks. Fast inference makes it suitable for development tools.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "gpt-4-1-mini"
       ]
     },
@@ -516,7 +523,7 @@
       "notes": "Well-suited for customer support with fast response times and privacy benefits.",
       "alternatives": [
         "gpt-4-1-mini",
-        "claude-3-5-haiku"
+        "claude-haiku-4-5"
       ]
     },
     "content-creation": {
@@ -524,14 +531,14 @@
       "notes": "Good for content creation with balanced quality and speed.",
       "alternatives": [
         "gpt-4-1",
-        "llama-4-behemoth"
+        "llama-4-maverick"
       ]
     },
     "data-analysis": {
       "overall": 76,
       "notes": "Adequate for basic data analysis. Not suitable for complex mathematical tasks.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "gpt-4-1"
       ]
     },
@@ -539,7 +546,7 @@
       "overall": 77,
       "notes": "Good for basic research tasks. 57.2% MMLU shows solid general knowledge.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "gpt-4-1"
       ]
     },
@@ -547,7 +554,7 @@
       "overall": 80,
       "notes": "Good for basic legal tasks with data sovereignty benefits.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "claude-sonnet-4-5"
       ]
     },
@@ -555,7 +562,7 @@
       "overall": 84,
       "notes": "Good for healthcare with self-hosted HIPAA compliance. Basic clinical tasks.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "claude-sonnet-4-5"
       ]
     },
@@ -563,7 +570,7 @@
       "overall": 75,
       "notes": "Adequate for basic financial tasks. Not suitable for complex modeling.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "openai-o3"
       ]
     },
@@ -571,7 +578,7 @@
       "overall": 79,
       "notes": "Good for educational content. Fast inference suitable for interactive learning.",
       "alternatives": [
-        "llama-4-behemoth",
+        "llama-4-maverick",
         "gpt-4-1"
       ]
     },
@@ -580,48 +587,50 @@
       "notes": "Adequate creative writing for typical use cases.",
       "alternatives": [
         "gpt-4-1",
-        "llama-4-behemoth"
+        "llama-4-maverick"
       ]
     }
   },
   "strengths": [
     "Fast inference (~0.6s p50) suitable for real-time applications",
-    "Lower resource requirements enable edge deployment",
-    "Complete data sovereignty with self-hosted deployment",
-    "Open-source with full transparency",
-    "No data retention or sharing concerns",
+    "Fits on a single H100-class GPU (17B active parameters)",
+    "Industry-leading 10M-token native context window",
+    "Natively multimodal (text + image input) via early fusion",
+    "Complete data sovereignty with self-hosted deployment — no data retention or sharing concerns",
+    "Open weights with full transparency",
     "Cost-effective for high-volume workloads"
   ],
   "limitations": [
-    "Moderate accuracy (57.2% MMLU) compared to larger models",
-    "Limited coding capabilities (42% HumanEval estimated)",
-    "Smaller context window (64K tokens)",
+    "Moderate accuracy compared to larger models (Maverick, frontier proprietary)",
+    "Limited coding capabilities relative to coding-specialized models",
+    "Native 10M context rarely exposed by hosted providers (typically capped at 128K-1M)",
     "Requires infrastructure for deployment",
     "Less capable for complex reasoning tasks",
-    "No managed API service from Meta"
+    "No managed API service from Meta",
+    "Legacy status: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models (Muse Spark, April 2026)"
   ],
   "best_for": [
-    "Edge deployment with resource constraints",
-    "High-volume, cost-sensitive applications",
+    "Single-GPU (H100-class) deployment with resource constraints",
+    "High-volume, cost-sensitive applications needing fast inference",
     "Customer support chatbots requiring privacy",
-    "Development teams prioritizing open-source",
-    "Applications requiring fast inference"
+    "Very-long-context document processing when self-hosted (up to 10M tokens)",
+    "Development teams prioritizing open-source"
   ],
   "not_recommended_for": [
     "Complex coding or software engineering",
     "Advanced mathematical or scientific research",
     "Applications requiring highest accuracy",
     "Teams without deployment expertise",
-    "Large document processing (limited context)",
     "Mission-critical applications"
   ],
   "metadata": {
     "pricing": {
       "input": "Self-hosted (infrastructure costs)",
       "output": "Self-hosted (infrastructure costs)",
-      "notes": "Open-source model. Typically $0.10-0.50 per 1M tokens with optimized deployment."
+      "notes": "Open-weight model. Typically $0.10-0.50 per 1M tokens via optimized deployment or third-party hosts as of July 2026.",
+      "last_verified": "2026-07-09"
     },
-    "context_window": 64000,
+    "context_window": 10000000,
     "languages": [
       "English",
       "Spanish",
@@ -635,15 +644,16 @@
       "100+ languages"
     ],
     "modalities": [
-      "text"
+      "text",
+      "image (input)"
     ],
-    "api_endpoint": "Self-hosted",
+    "api_endpoint": "Self-hosted or third-party hosts (Together, Groq, etc.)",
     "open_source": true,
-    "architecture": "Transformer-based, optimized for efficiency",
-    "parameters": "8B (estimated)"
+    "architecture": "Mixture-of-experts (16 experts), natively multimodal via early fusion",
+    "parameters": "109B total / 17B active"
   },
   "related_entities": [
-    "llama-4-behemoth",
+    "llama-4-maverick",
     "llama-3-3-70b",
     "gpt-4-1-mini",
     "claude-haiku-4-5"

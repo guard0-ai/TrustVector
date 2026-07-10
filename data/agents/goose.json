@@ -1,0 +1,474 @@
+{
+  "id": "goose",
+  "type": "agent",
+  "name": "Goose",
+  "provider": "Agentic AI Foundation (Linux Foundation); originally Block",
+  "version": "1.41.0 (2026-07-03)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Open-source, local-first AI agent written in Rust, created by Block and donated to the Linux Foundation's Agentic AI Foundation (repo moved to aaif-goose/goose, April 2026). Ships as a CLI and desktop app, is MCP-native with 70+ extensions, and works with 15+ LLM providers including fully local models via Ollama. Free under Apache-2.0; vendor-neutral foundation governance is its core trust story, with the usual MCP/prompt-injection surface of local agents.",
+  "website": "https://goose-docs.ai/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 77,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Executes coding and workflow tasks end-to-end (editing, running, testing); results depend on the user-selected LLM, from frontier APIs to local Ollama models"
+            }
+          ],
+          "methodology": "Capability review across coding and automation workflows; model-agnostic design means accuracy tracks the configured model",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Goose GitHub repository (aaif-goose/goose)",
+              "url": "https://github.com/aaif-goose/goose",
+              "date": "2026-07-09",
+              "value": "MCP-native from the ground up with 70+ extensions and 15+ LLM providers across macOS, Linux, and Windows"
+            }
+          ],
+          "methodology": "Review of MCP extension system maturity and built-in developer tooling reliability",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Autonomous multi-step execution with recipes for repeatable workflows and lead/worker multi-model configurations for planning versus execution"
+            }
+          ],
+          "methodology": "Evaluation of recipes, lead/worker mode, and long-horizon task behavior",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Session persistence and resume, .goosehints project context files, and an optional memory extension; no managed long-term memory service"
+            }
+          ],
+          "methodology": "Review of session storage, hints files, and memory extension capabilities",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Agent loop retries failed commands and self-corrects from tool errors; a repetition inspector guards against runaway loops"
+            }
+          ],
+          "methodology": "Observed recovery behavior from failing commands and the tool-inspection pipeline design",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Subagents and recipe-driven task delegation supported; lead/worker model splits planning and execution across models"
+            }
+          ],
+          "methodology": "Testing of subagent delegation and multi-model orchestration features",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 69,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose permission modes documentation",
+              "url": "https://goose-docs.ai/docs/guides/managing-tools/goose-permissions/",
+              "date": "2026-05-20",
+              "value": "No OS-level sandbox by default: goose runs shell and file tools with the user's privileges; permission modes (Auto, Approve, Smart Approve, Chat) gate execution rather than isolate it"
+            }
+          ],
+          "methodology": "Execution isolation review; containerized deployment is possible but user-managed, mitigation is approval-based",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Goose extension allowlist documentation",
+              "url": "https://block.github.io/goose/docs/guides/allowlist/",
+              "date": "2026-05-20",
+              "value": "Administrators can enforce an extension allowlist (GOOSE_ALLOWLIST) restricting which MCP servers can be installed; tool calls pass a stacked inspection pipeline (security, egress, adversary, permission, repetition) before execution"
+            }
+          ],
+          "methodology": "Review of permission modes, allowlist enforcement, and the tool inspection pipeline",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Docs warn goose may follow commands embedded in fetched content; inspectors and approval modes reduce blast radius but the MCP/web-content injection surface matches peer local agents"
+            }
+          ],
+          "methodology": "Injection surface review across MCP extensions and web-fetching tools; defenses are procedural (approvals) rather than architectural",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose GitHub repository (aaif-goose/goose)",
+              "url": "https://github.com/aaif-goose/goose",
+              "date": "2026-07-09",
+              "value": "Local-first: sessions, keys, and files stay on the user's machine; isolation between projects or extensions is not enforced beyond OS permissions"
+            }
+          ],
+          "methodology": "Data-flow review of local-first architecture and extension access scope",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Goose GitHub repository (aaif-goose/goose)",
+              "url": "https://github.com/aaif-goose/goose",
+              "date": "2026-07-09",
+              "value": "Apache-2.0, fully open Rust codebase (50.9K stars), now under vendor-neutral Linux Foundation AAIF governance with open security advisories"
+            }
+          ],
+          "methodology": "License, source availability, and governance review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 85,
+      "criteria": {
+        "data_retention": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Goose GitHub repository (aaif-goose/goose)",
+              "url": "https://github.com/aaif-goose/goose",
+              "date": "2026-07-09",
+              "value": "Local-first design: no vendor cloud stores prompts or code; session data lives on the user's machine"
+            }
+          ],
+          "methodology": "Privacy architecture review of the self-hosted, local-first model",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "As self-hosted software, GDPR posture is determined by the deployer and chosen model provider; fully local operation supports strict data-residency requirements"
+            }
+          ],
+          "methodology": "Compliance capabilities assessment across deployment configurations",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Data flows only to the user-configured LLM provider and any installed MCP extensions; telemetry is limited and controllable"
+            }
+          ],
+          "methodology": "Data-flow analysis across model providers and extensions",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Goose GitHub repository (aaif-goose/goose)",
+              "url": "https://github.com/aaif-goose/goose",
+              "date": "2026-07-09",
+              "value": "Runs fully offline with local models via Ollama and other local providers; CLI and desktop are both local applications"
+            }
+          ],
+          "methodology": "Deployment options assessment including air-gapped local-model configurations",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 83,
+      "criteria": {
+        "documentation_quality": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Comprehensive docs covering permissions, allowlists, extensions, recipes, and enterprise guidance, maintained under the AAIF"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Full session transcripts of tool calls and outputs; permission decisions persisted in permission.yaml; observability integrations available but not enterprise-grade by default"
+            }
+          ],
+          "methodology": "Review of session logs, permission records, and observability hooks",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose permission modes documentation",
+              "url": "https://goose-docs.ai/docs/guides/managing-tools/goose-permissions/",
+              "date": "2026-05-20",
+              "value": "Approval modes surface each intended tool call with allow/deny prompts before execution, making agent intent visible step by step"
+            }
+          ],
+          "methodology": "Assessment of pre-execution visibility and reasoning transparency",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 95,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Goose GitHub repository (aaif-goose/goose)",
+              "url": "https://github.com/aaif-goose/goose",
+              "date": "2026-07-09",
+              "value": "Apache-2.0 Rust codebase under Linux Foundation AAIF governance, donated by Block alongside Anthropic's MCP and OpenAI's AGENTS.md at the foundation's launch"
+            },
+            {
+              "source": "Linux Foundation AAIF announcement",
+              "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation",
+              "date": "2025-12-09",
+              "value": "AAIF formed 2025-12-09 with goose as an anchor project; platinum members include AWS, Anthropic, Block, Bloomberg, Cloudflare, Google, Microsoft, and OpenAI"
+            }
+          ],
+          "methodology": "Open source and governance review; repo migration to aaif-goose completed April 2026",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Goose GitHub repository (aaif-goose/goose)",
+              "url": "https://github.com/aaif-goose/goose",
+              "date": "2026-07-09",
+              "value": "50.9K stars, 5.5K forks, active Discord, and steady releases (v1.41.0 on 2026-07-03)"
+            },
+            {
+              "source": "Goose blog - move to AAIF",
+              "url": "https://goose-docs.ai/blog/2026/04/07/goose-moves-to-aaif/",
+              "date": "2026-04-07",
+              "value": "Repository and docs migrated from block/goose to the Agentic AI Foundation on 2026-04-07, broadening the contributor base beyond Block"
+            }
+          ],
+          "methodology": "Community engagement analysis of stars, release cadence, and post-donation governance",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 77,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Single-binary CLI install or desktop app on macOS/Linux/Windows; provider setup is a guided config flow, and MCP extensions install in one step"
+            }
+          ],
+          "methodology": "Setup time and integration surface assessment across CLI and desktop",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose GitHub repository (aaif-goose/goose)",
+              "url": "https://github.com/aaif-goose/goose",
+              "date": "2026-07-09",
+              "value": "Primarily a single-user local agent; headless/API usage and recipes enable automation, but fleet orchestration is left to the deployer"
+            }
+          ],
+          "methodology": "Assessment of headless usage, automation hooks, and organizational deployment patterns",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Goose GitHub repository (aaif-goose/goose)",
+              "url": "https://github.com/aaif-goose/goose",
+              "date": "2026-07-09",
+              "value": "Free Apache-2.0 software; costs limited to the chosen LLM API, and fully local models make zero-marginal-cost operation possible"
+            }
+          ],
+          "methodology": "Pricing model analysis of free software plus BYO model costs",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose documentation",
+              "url": "https://goose-docs.ai/",
+              "date": "2026-06-15",
+              "value": "Session logs and cost/token tracking built in; centralized monitoring, alerting, and audit dashboards require external tooling"
+            }
+          ],
+          "methodology": "Monitoring features assessment for individual and enterprise use",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Goose GitHub repository releases",
+              "url": "https://github.com/aaif-goose/goose/releases",
+              "date": "2026-07-09",
+              "value": "Mature 1.x series (v1.41.0, 2026-07-03) with frequent releases; used internally at Block scale, and foundation governance reduces single-vendor abandonment risk"
+            }
+          ],
+          "methodology": "Maturity assessment from release history, Block production usage, and governance continuity",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 82,
+      "notes": "Strong local coding agent with LSP-free simplicity and MCP extensibility; quality tracks the chosen model"
+    },
+    "data-analysis": {
+      "overall": 78,
+      "notes": "Good for scripted analysis and workflow automation via shell and MCP extensions"
+    },
+    "research-assistant": {
+      "overall": 74,
+      "notes": "Capable with web/MCP extensions; injection caution needed when fetching untrusted content"
+    },
+    "content-creation": {
+      "overall": 70,
+      "notes": "Serviceable for docs and technical writing; not its design center"
+    }
+  },
+  "best_for": [
+    "Developers wanting a free, open, local-first agent that works with any model including local Ollama",
+    "Privacy-sensitive teams needing code and prompts to stay on their own machines",
+    "Organizations that value vendor-neutral foundation governance over single-company tools",
+    "MCP-heavy workflows leveraging its 70+ extension ecosystem"
+  ],
+  "strengths": [
+    "Vendor-neutral governance: donated by Block to the Linux Foundation's Agentic AI Foundation (Dec 2025 announcement; repo moved April 2026)",
+    "Local-first Rust application: fast, no vendor cloud, works fully offline with local models",
+    "MCP-native with 70+ extensions and 15+ LLM providers",
+    "Layered controls: permission modes, extension allowlist, and a stacked tool-inspection pipeline",
+    "Free Apache-2.0 with an active community (50K+ stars) and steady release cadence",
+    "Both CLI and desktop app across macOS, Linux, and Windows"
+  ],
+  "limitations": [
+    "No OS-level sandbox by default; shell and file tools run with full user privileges",
+    "Prompt injection via MCP extensions and fetched web content remains an open risk, mitigated only by approval modes",
+    "Single-user focus: no built-in multi-tenant, fleet management, or enterprise audit dashboards",
+    "Output quality varies widely with the configured model, especially small local ones",
+    "Post-donation transition (repo/docs moves, org rename) creates some ecosystem link rot and tooling churn"
+  ],
+  "metadata": {
+    "license": "Apache-2.0",
+    "repository": "https://github.com/aaif-goose/goose",
+    "supported_models": [
+      "Anthropic Claude",
+      "OpenAI GPT models",
+      "Google Gemini",
+      "Local models via Ollama",
+      "15+ providers total"
+    ],
+    "languages": [
+      "Rust"
+    ],
+    "deployment_type": "Local CLI and desktop app (macOS, Linux, Windows); self-hosted",
+    "architecture": "Local-first Rust agent with MCP-based extension system, permission modes, and recipes",
+    "first_release": "January 2025 (open-sourced by Block)",
+    "governance": "Agentic AI Foundation (AAIF) at the Linux Foundation since April 2026 (announced 2025-12-09); founded alongside MCP and AGENTS.md",
+    "current_version": "1.41.0 (2026-07-03)",
+    "github_stars": "50900+",
+    "pricing": "Free; users pay only their chosen LLM provider (or nothing with local models)"
+  },
+  "related": [
+    "claude-code",
+    "gemini-cli",
+    "cline",
+    "opencode",
+    "smolagents"
+  ],
+  "tags": [
+    "coding-agent",
+    "open-source",
+    "local-first",
+    "mcp",
+    "foundation-governed"
+  ]
+}

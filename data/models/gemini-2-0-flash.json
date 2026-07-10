@@ -4,7 +4,7 @@
   "name": "Gemini 2.0 Flash",
   "provider": "Google",
   "version": "20251101",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "SHUT DOWN: Google shut down the Gemini 2.0 Flash family on 2026-06-01; the model is no longer served via the Gemini API. Historically a fast, efficient multimodal model (53.6% SWE-bench, 62.1% MMLU) optimized for speed and vision. Migrate to Gemini 3.5 Flash for equivalent fast multimodal workloads.",
   "website": "https://deepmind.google/technologies/gemini/",
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 86,
@@ -50,7 +50,7 @@
             }
           ],
           "methodology": "Graduate-level reasoning benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 85,
@@ -64,7 +64,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 87,
@@ -78,7 +78,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "0.8s",
@@ -92,7 +92,7 @@
             }
           ],
           "methodology": "Median latency for API requests",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "1.5s",
@@ -106,7 +106,7 @@
             }
           ],
           "methodology": "95th percentile response time",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,000,000 tokens",
@@ -120,7 +120,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -134,7 +134,7 @@
             }
           ],
           "methodology": "Historical uptime data",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Fast and efficient with excellent multimodal capabilities. 1M token context window is industry-leading. Optimized for speed with 0.8s p50 latency."
@@ -154,7 +154,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 89,
@@ -168,7 +168,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompts",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 84,
@@ -182,7 +182,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 90,
@@ -196,7 +196,7 @@
             }
           ],
           "methodology": "Safety testing across content categories",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 88,
@@ -210,7 +210,7 @@
             }
           ],
           "methodology": "Review of API security features",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security leveraging Google Cloud infrastructure. Comprehensive safety guardrails."
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Review of Google Cloud documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "0 days (ephemeral for API)",
@@ -258,7 +258,7 @@
             }
           ],
           "methodology": "Review of data retention policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 85,
@@ -272,7 +272,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 92,
@@ -286,7 +286,7 @@
             }
           ],
           "methodology": "Verification of certifications",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 93,
@@ -300,7 +300,7 @@
             }
           ],
           "methodology": "Review of data handling",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent privacy leveraging Google Cloud infrastructure. HIPAA eligible with comprehensive certifications."
@@ -320,7 +320,7 @@
             }
           ],
           "methodology": "Evaluation of explanation features",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 83,
@@ -334,7 +334,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 85,
@@ -348,7 +348,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 81,
@@ -362,7 +362,7 @@
             }
           ],
           "methodology": "Assessment of confidence expression",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 88,
@@ -376,7 +376,7 @@
             }
           ],
           "methodology": "Review of documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 77,
@@ -390,7 +390,7 @@
             }
           ],
           "methodology": "Review of public disclosures",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 90,
@@ -404,7 +404,7 @@
             }
           ],
           "methodology": "Analysis of safety mechanisms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good transparency with strong safety guardrails. Standard explainability for a Flash model."
@@ -424,7 +424,7 @@
             }
           ],
           "methodology": "Review of API design",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 94,
@@ -438,7 +438,7 @@
             }
           ],
           "methodology": "Review of SDK quality",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 79,
@@ -455,10 +455,16 @@
               "url": "https://ai.google.dev/gemini-api/docs/changelog",
               "date": "2026-06-10",
               "value": "Gemini 2.0 Flash family shut down 2026-06-01; no longer served"
+            },
+            {
+              "source": "Gemini API Deprecations",
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+              "date": "2026-07-09",
+              "value": "Shutdown confirmed: gemini-2.0-flash, -001, -lite, -lite-001 all retired 2026-06-01; designated replacement is gemini-3.5-flash"
             }
           ],
           "methodology": "Review of versioning practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 92,
@@ -472,7 +478,7 @@
             }
           ],
           "methodology": "Review of monitoring tools",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 91,
@@ -486,7 +492,7 @@
             }
           ],
           "methodology": "Assessment of support options",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 83,
@@ -500,7 +506,7 @@
             }
           ],
           "methodology": "Analysis of ecosystem",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -514,7 +520,7 @@
             }
           ],
           "methodology": "Review of licensing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Model shut down 2026-06-01 and no longer served. Versioning and ecosystem scores reduced to reflect shutdown."
@@ -525,7 +531,7 @@
       "overall": 90,
       "notes": "Strong coding with 53.6% SWE-bench. Fast latency ideal for interactive development.",
       "alternatives": [
-        "claude-4-sonnet",
+        "claude-sonnet-4",
         "openai-o1"
       ]
     },
@@ -533,22 +539,21 @@
       "overall": 92,
       "notes": "Excellent for customer support with fast 0.8s latency. Multimodal capabilities help with image support.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "content-creation": {
       "overall": 86,
       "notes": "Good content generation with fast turnaround. Strong for high-volume content needs.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     },
     "data-analysis": {
       "overall": 88,
       "notes": "Good analytical capabilities with fast processing. 1M context window excellent for large datasets.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -556,7 +561,7 @@
       "overall": 87,
       "notes": "Good research capabilities with massive 1M context for large documents.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -564,21 +569,21 @@
       "overall": 86,
       "notes": "HIPAA eligible with strong Google Cloud compliance. Good for regulated industries.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "healthcare": {
       "overall": 85,
       "notes": "HIPAA eligible with comprehensive compliance certifications.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "financial-analysis": {
       "overall": 87,
       "notes": "Good analytical capabilities with fast processing for real-time analysis.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -586,7 +591,7 @@
       "overall": 89,
       "notes": "Strong for education with fast responses and multimodal capabilities.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "openai-o1"
       ]
     },
@@ -594,8 +599,7 @@
       "overall": 84,
       "notes": "Adequate creative capabilities with fast generation.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     }
   },
@@ -633,8 +637,8 @@
     "pricing": {
       "input": "$0.10 per 1M tokens",
       "output": "$0.40 per 1M tokens",
-      "notes": "Highly competitive Flash tier pricing - exceptional value for speed",
-      "last_verified": "2025-11-09"
+      "notes": "Historical pricing; model shut down 2026-06-01 and is no longer purchasable. Replacements cost more (gemini-3.5-flash is $1.50/$9.00).",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1000000,
     "languages": [

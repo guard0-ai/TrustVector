@@ -2,12 +2,12 @@
   "id": "mcp-server-linear",
   "type": "mcp",
   "name": "MCP Linear Server",
-  "provider": "Community",
-  "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "provider": "Linear (official; community implementations also exist)",
+  "version": "hosted remote",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Community-maintained MCP server for Linear project management integration. Enables AI models to create, read, update issues, manage projects, track cycles, and coordinate teams. Essential for AI-powered software development workflows, sprint planning, and issue tracking automation.",
-  "website": "https://github.com/modelcontextprotocol/servers",
+  "description": "Linear's OFFICIAL MCP server, a hosted remote at https://mcp.linear.app/mcp using OAuth 2.1 with dynamic client registration; Bearer-token/API-key auth is supported for non-interactive or read-only access. Exposes 25+ tools to create, read, update issues, manage projects, track cycles, and coordinate teams. Supersedes earlier community-maintained Linear MCP servers, which remain available as open-source alternatives.",
+  "website": "https://linear.app/docs/mcp",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 86,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Operation success rate testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "search_accuracy": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Search quality testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "real_time_sync": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Sync reliability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_performance": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 85,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -96,10 +96,16 @@
               "url": "https://developers.linear.app/docs/graphql/working-with-the-graphql-api#authentication",
               "date": "2025-11-16",
               "value": "Uses personal or OAuth access tokens"
+            },
+            {
+              "source": "Linear Docs - MCP server",
+              "url": "https://linear.app/docs/mcp",
+              "date": "2026-07-09",
+              "value": "Official hosted server at https://mcp.linear.app/mcp authenticates via OAuth 2.1 with dynamic client registration (browser flow, no stored API key); Authorization: Bearer header with an OAuth token or restricted API key supported for non-interactive/read-only use"
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 68,
@@ -110,10 +116,16 @@
               "url": "https://modelcontextprotocol.io/docs/security",
               "date": "2025-11-16",
               "value": "API token stored locally; AI can perform issue operations"
+            },
+            {
+              "source": "Linear Docs - MCP server",
+              "url": "https://linear.app/docs/mcp",
+              "date": "2026-07-09",
+              "value": "Official hosted server removes local API-key storage for the default OAuth flow; restricted (read-only) API keys can scope access when using header auth"
             }
           ],
           "methodology": "Token security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "issue_modification_risk": {
           "score": 70,
@@ -127,7 +139,7 @@
             }
           ],
           "methodology": "Operation authorization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "team_access_control": {
           "score": 78,
@@ -141,7 +153,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "issue_deletion_risk": {
           "score": 72,
@@ -155,7 +167,7 @@
             }
           ],
           "methodology": "Deletion risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 80,
@@ -169,7 +181,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +200,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "team_member_privacy": {
           "score": 68,
@@ -202,7 +214,7 @@
             }
           ],
           "methodology": "User privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "project_structure_exposure": {
           "score": 72,
@@ -216,7 +228,7 @@
             }
           ],
           "methodology": "Structure privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -230,7 +242,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "attachment_privacy": {
           "score": 70,
@@ -244,7 +256,7 @@
             }
           ],
           "methodology": "Attachment privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +275,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 85,
@@ -277,7 +289,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 88,
@@ -288,10 +300,16 @@
               "url": "https://github.com/modelcontextprotocol/servers",
               "date": "2025-11-16",
               "value": "Open source community implementation"
+            },
+            {
+              "source": "Linear Docs - MCP server",
+              "url": "https://linear.app/docs/mcp",
+              "date": "2026-07-09",
+              "value": "Official Linear MCP server is a closed-source hosted service; open-source community implementations remain available for users who require source transparency"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 73,
@@ -305,7 +323,7 @@
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -321,10 +339,16 @@
               "url": "https://github.com/modelcontextprotocol/servers",
               "date": "2025-11-16",
               "value": "Simple setup requiring Linear API token"
+            },
+            {
+              "source": "Linear Docs - MCP server",
+              "url": "https://linear.app/docs/mcp",
+              "date": "2026-07-09",
+              "value": "Hosted remote requires no install: add https://mcp.linear.app/mcp as an HTTP transport and complete browser OAuth"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 85,
@@ -338,7 +362,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 88,
@@ -352,7 +376,7 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_coverage": {
           "score": 82,
@@ -366,7 +390,7 @@
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 75,
@@ -377,10 +401,16 @@
               "url": "https://github.com/modelcontextprotocol/servers/discussions",
               "date": "2025-11-16",
               "value": "Community-maintained with moderate activity"
+            },
+            {
+              "source": "Linear Docs - MCP server",
+              "url": "https://linear.app/docs/mcp",
+              "date": "2026-07-09",
+              "value": "Now officially maintained by Linear as a first-party hosted product with vendor documentation and support"
             }
           ],
           "methodology": "Community support assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -390,7 +420,8 @@
     "Built on fast and reliable GraphQL API",
     "Excellent for agile development and sprint planning workflows",
     "Comprehensive activity logging and audit trail",
-    "Open source community implementation",
+    "Official Linear-maintained hosted remote (https://mcp.linear.app/mcp) with OAuth 2.1 dynamic client registration; no local API-key storage needed in the default flow, restricted read-only API keys supported",
+    "Open source community implementations available as alternatives",
     "Real-time updates via webhooks and subscriptions"
   ],
   "limitations": [
@@ -399,23 +430,29 @@
     "Team member information and activity data accessible",
     "Project roadmaps and sprint planning data may be revealed",
     "Issue attachments and links accessible",
-    "Requires careful team permission configuration"
+    "Requires careful team permission configuration",
+    "Official hosted server is a closed-source managed service (use community open-source servers if source transparency is required)"
   ],
   "metadata": {
-    "license": "MIT",
+    "license": "Proprietary (hosted service); community implementations MIT",
     "supported_platforms": [
-      "All platforms with Node.js/Python"
+      "Hosted remote (https://mcp.linear.app/mcp)",
+      "Any MCP client with HTTP transport"
     ],
     "programming_languages": [
-      "TypeScript",
-      "Python"
+      "N/A (hosted service)"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/modelcontextprotocol/servers",
+    "docs": "https://linear.app/docs/mcp",
     "api_dependency": "Linear GraphQL API",
-    "authentication": "Linear API Token or OAuth",
-    "first_release": "2024-11",
-    "maintained_by": "Community"
+    "authentication": "OAuth 2.1 with dynamic client registration; Bearer token / API key header supported",
+    "remote_endpoint": "https://mcp.linear.app/mcp",
+    "first_release": "2024-11 (community); 2025-05 (official hosted)",
+    "maintained_by": "Linear",
+    "status": "Active - official Linear hosted server; community servers remain as open-source alternatives",
+    "transport_types": [
+      "streamable-http"
+    ]
   },
   "use_case_ratings": {
     "code-generation": {
@@ -468,6 +505,8 @@
     "project-management",
     "issue-tracking",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "official",
+    "remote-server"
   ]
 }

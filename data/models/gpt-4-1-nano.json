@@ -3,10 +3,10 @@
   "type": "model",
   "name": "GPT-4.1 nano",
   "provider": "OpenAI",
-  "version": "2025-01",
-  "last_evaluated": "2025-11-08",
+  "version": "gpt-4.1-nano-2025-04-14",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's smallest and most efficient GPT-4.1 variant, designed for high-volume, cost-sensitive applications. Optimized for speed and resource efficiency with basic capabilities.",
+  "description": "DEPRECATED: OpenAI announced 2026-04-22 that gpt-4.1-nano's API shuts down 2026-10-23; recommended replacement is gpt-5.4-nano. Historically OpenAI's smallest and most efficient GPT-4.1 variant for high-volume, cost-sensitive applications, with a 1,047,576-token context window.",
   "website": "https://openai.com/gpt-4-1",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks measuring basic programming tasks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 66,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Basic reasoning benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 70,
@@ -58,7 +58,7 @@
             }
           ],
           "methodology": "Crowdsourced comparisons and knowledge testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 72,
@@ -72,7 +72,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "More variance in outputs compared to larger models"
         },
         "latency_p50": {
@@ -87,7 +87,7 @@
             }
           ],
           "methodology": "Median latency for API requests",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "0.8s",
@@ -101,21 +101,21 @@
             }
           ],
           "methodology": "95th percentile response time",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
-          "value": "32,000 tokens",
+          "value": "1,047,576 tokens",
           "confidence": "high",
           "evidence": [
             {
-              "source": "OpenAI API Documentation",
-              "url": "https://platform.openai.com/docs/models/gpt-4-1-nano",
-              "date": "2025-01-15",
-              "value": "32K token context window"
+              "source": "OpenAI Model Page: gpt-4.1-nano",
+              "url": "https://developers.openai.com/api/docs/models/gpt-4.1-nano",
+              "date": "2026-07-09",
+              "value": "1,047,576 token context window; 32,768 max output tokens"
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -129,7 +129,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Basic performance optimized for speed and efficiency. Best for simple tasks where ultra-low latency and cost are priorities."
@@ -149,7 +149,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 80,
@@ -163,7 +163,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 83,
@@ -177,7 +177,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 84,
@@ -191,7 +191,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 85,
@@ -205,7 +205,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good security posture with standard OpenAI safety measures. Smaller model may have slightly lower resistance to adversarial attacks."
@@ -225,7 +225,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation and privacy policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -239,7 +239,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days",
@@ -253,7 +253,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -267,7 +267,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -281,7 +281,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 75,
@@ -295,7 +295,7 @@
             }
           ],
           "methodology": "Review of data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard OpenAI privacy practices. 30-day data retention for abuse monitoring."
@@ -315,7 +315,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 74,
@@ -329,7 +329,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Higher hallucination rate than larger models"
         },
         "bias_fairness": {
@@ -344,7 +344,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 73,
@@ -358,7 +358,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 82,
@@ -372,7 +372,7 @@
             }
           ],
           "methodology": "Review of documentation completeness",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 74,
@@ -386,7 +386,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 80,
@@ -400,7 +400,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Basic transparency features. Smaller model size limits explainability depth. Higher hallucination rate than premium models."
@@ -420,7 +420,7 @@
             }
           ],
           "methodology": "Review of API design and consistency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 93,
@@ -434,10 +434,10 @@
             }
           ],
           "methodology": "Review of SDK quality and maintenance",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
-          "score": 85,
+          "score": 78,
           "confidence": "high",
           "evidence": [
             {
@@ -445,10 +445,16 @@
               "url": "https://platform.openai.com/docs/versioning",
               "date": "2025-01-15",
               "value": "Clear versioning with deprecation notices"
+            },
+            {
+              "source": "OpenAI Deprecations",
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "date": "2026-07-09",
+              "value": "gpt-4.1-nano deprecation announced 2026-04-22; API shutdown 2026-10-23; recommended replacement gpt-5.4-nano"
             }
           ],
           "methodology": "Review of versioning policy",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 84,
@@ -462,7 +468,7 @@
             }
           ],
           "methodology": "Review of monitoring tools",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 87,
@@ -476,7 +482,7 @@
             }
           ],
           "methodology": "Assessment of support channels",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 94,
@@ -490,7 +496,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -504,10 +510,10 @@
             }
           ],
           "methodology": "Review of licensing terms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Excellent operational maturity leveraging OpenAI's established infrastructure. Same high-quality developer experience as larger models."
+      "notes": "Excellent operational maturity leveraging OpenAI's established infrastructure. Versioning score reduced to reflect deprecation: API shutdown 2026-10-23, migrate to gpt-5.4-nano."
     }
   },
   "use_case_ratings": {
@@ -516,7 +522,7 @@
       "notes": "Basic code generation for simple tasks. 29.4% HumanEval indicates limited capability for complex programming.",
       "alternatives": [
         "gpt-4-1",
-        "claude-3-5-haiku"
+        "claude-haiku-4-5"
       ]
     },
     "customer-support": {
@@ -524,7 +530,7 @@
       "notes": "Good for high-volume, simple customer queries. Fast response times make it suitable for basic support automation.",
       "alternatives": [
         "gpt-4-1-mini",
-        "claude-3-5-haiku"
+        "claude-haiku-4-5"
       ]
     },
     "content-creation": {
@@ -593,9 +599,9 @@
   },
   "strengths": [
     "Ultra-low latency (~0.4s p50) ideal for real-time applications",
-    "Most cost-effective option in GPT-4.1 family",
+    "Most cost-effective option in GPT-4.1 family ($0.10/$0.40 per 1M)",
     "Good for high-volume, simple tasks",
-    "Smaller context window reduces processing overhead",
+    "Very large context window (1,047,576 tokens) at nano pricing",
     "Same API and ecosystem as premium OpenAI models",
     "Reliable uptime and infrastructure"
   ],
@@ -605,7 +611,7 @@
     "Higher hallucination rate than larger models",
     "Not suitable for complex or specialized tasks",
     "30-day data retention",
-    "Limited context window (32K tokens)"
+    "DEPRECATED: API shutdown 2026-10-23 (announced 2026-04-22); migrate to gpt-5.4-nano"
   ],
   "best_for": [
     "High-volume, cost-sensitive applications",
@@ -615,20 +621,22 @@
     "Applications where speed is more important than accuracy"
   ],
   "not_recommended_for": [
+    "New projects (API shutdown 2026-10-23; use gpt-5.4-nano instead)",
     "Complex coding or software development",
     "Advanced reasoning or mathematical tasks",
     "Healthcare or legal applications",
     "Tasks requiring deep domain expertise",
-    "Applications where accuracy is critical",
-    "Long document analysis (limited context window)"
+    "Applications where accuracy is critical"
   ],
   "metadata": {
     "pricing": {
-      "input": "$0.15 per 1M tokens",
-      "output": "$0.60 per 1M tokens",
-      "notes": "Most cost-effective option for high-volume applications"
+      "input": "$0.10 per 1M tokens",
+      "output": "$0.40 per 1M tokens",
+      "notes": "Cached input $0.025 per 1M. Confirmed on official model page 2026-07-09; model deprecated with API shutdown 2026-10-23.",
+      "last_verified": "2026-07-09"
     },
-    "context_window": 32000,
+    "context_window": 1047576,
+    "max_output": 32768,
     "languages": [
       "English",
       "Spanish",
@@ -655,6 +663,7 @@
     "gemma-3-27b"
   ],
   "tags": [
+    "deprecated",
     "efficient",
     "low-latency",
     "cost-effective",

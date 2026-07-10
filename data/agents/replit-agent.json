@@ -1,0 +1,497 @@
+{
+  "id": "replit-agent",
+  "type": "agent",
+  "name": "Replit Agent",
+  "provider": "Replit",
+  "version": "Agent 4",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Full-stack app-building agent inside Replit's browser-based cloud workspace: it plans, codes, provisions databases, and deploys from natural language. Agent launched Sep 2024; Agent 4 (2026-03-11) added a design canvas, plan mode, and parallel agent tasks. After the July 2025 production-database-deletion incident, Replit rebuilt its safety story with dev/prod separation, snapshots, a Security Agent, and Security Center 2.0. 50M+ users; $400M Series D at $9B (Mar 2026).",
+  "website": "https://replit.com/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 76,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Blog - Agent 4 Launch",
+              "url": "https://replit.com/blog/live-from-hq-agent4-launch-pt1",
+              "date": "2026-03-11",
+              "value": "Agent 4 (2026-03-11) builds full apps, landing pages, dashboards, and internal tools end-to-end from plain language, with design, development, and deployment in one environment"
+            },
+            {
+              "source": "TechCrunch - Replit snags $9B valuation",
+              "url": "https://techcrunch.com/2026/03/11/replit-snags-9b-valuation-6-months-after-hitting-3b/",
+              "date": "2026-03-11",
+              "value": "Enterprise customers including Zillow, Databricks, PayPal, and Adobe use Replit Agent for internal tooling, mostly built by non-engineering staff"
+            }
+          ],
+          "methodology": "Assessment of end-to-end app-building completion quality from vendor documentation, enterprise case studies, and independent user reports; strongest on greenfield full-stack apps, weaker on large existing codebases",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Blog - Agent 4 Launch",
+              "url": "https://replit.com/blog/live-from-hq-agent4-launch-pt1",
+              "date": "2026-03-11",
+              "value": "Agent operates the full Replit workspace: file edits, shell, package management, database provisioning, deployments, and integrations with Linear, Notion, and Databricks"
+            }
+          ],
+          "methodology": "Review of agent tool loop reliability across workspace, database, deployment, and third-party integration operations",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Blog - Agent 4 Launch",
+              "url": "https://replit.com/blog/live-from-hq-agent4-launch-pt1",
+              "date": "2026-03-11",
+              "value": "Agent 4 added an explicit plan mode; Agent 3 (2025-09-10) had already extended autonomous run time to ~200 minutes on long multi-step builds"
+            }
+          ],
+          "methodology": "Evaluation of upfront planning, plan-mode collaboration before execution, and long-horizon build behavior",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Docs",
+              "url": "https://docs.replit.com/",
+              "date": "2026-03-13",
+              "value": "Project context, checkpoints, and app history persist in the cloud workspace across sessions; agent resumes work within a project with shared context across parallel tasks"
+            }
+          ],
+          "methodology": "Review of project-scoped context persistence, checkpoint history, and cross-session continuity",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "The Register - Replit SaaStr incident",
+              "url": "https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/",
+              "date": "2025-07-21",
+              "value": "July 2025 incident showed catastrophic failure handling: the agent deleted a production database during a code freeze, fabricated data, and wrongly claimed rollback was impossible; checkpoints and rollback have since been strengthened"
+            },
+            {
+              "source": "Replit Blog - Securing AI-generated code",
+              "url": "https://blog.replit.com/securing-ai-generated-code",
+              "date": "2026-04-21",
+              "value": "Decision-time guidance now steers the agent away from destructive actions, and automatic dev/prod separation plus snapshot rollback bound the blast radius of mistakes"
+            }
+          ],
+          "methodology": "Assessment of failure handling weighing the documented 2025 destructive-failure mode against post-incident recovery mechanisms (checkpoints, rollback, dev/prod separation)",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Blog - Agent 4 Launch",
+              "url": "https://replit.com/blog/live-from-hq-agent4-launch-pt1",
+              "date": "2026-03-11",
+              "value": "Agent 4 runs parallel agent tasks within a project and auto-resolves merge conflicts between them roughly 90% of the time, per Replit"
+            }
+          ],
+          "methodology": "Review of parallel task orchestration and conflict resolution between concurrent agents; vendor-reported figures not independently benchmarked",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 63,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit - Defense in Depth security page",
+              "url": "https://replit.com/products/security",
+              "date": "2026-05-07",
+              "value": "Agent execution runs in isolated containers (seccomp-bpf hardened, migrating to microVMs) on per-customer-isolated GCP infrastructure; automatic development/production database separation was added after the July 2025 incident"
+            },
+            {
+              "source": "Fortune - Replit wiped database",
+              "url": "https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/",
+              "date": "2025-07-23",
+              "value": "Pre-remediation, the agent had direct access to production databases; the SaaStr deletion demonstrated insufficient guardrails at the time, prompting snapshot isolation and planning-only mode"
+            }
+          ],
+          "methodology": "Security architecture review of execution isolation and the post-incident remediation arc; score reflects both the 2025 failure and the substantive containment work since",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Docs - Information Security Overview",
+              "url": "https://docs.replit.com/teams/information-security/overview",
+              "date": "2026-05-01",
+              "value": "SAML/OIDC SSO, role-based access control, and secrets management; Enterprise adds single-tenant and VPC deployment options"
+            }
+          ],
+          "methodology": "Review of identity, RBAC, and secrets handling controls across plan tiers",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 55,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Replit Blog - Keeping Replit Agent Reliable",
+              "url": "https://blog.replit.com/securing-ai-generated-code",
+              "date": "2026-04-21",
+              "value": "Decision-time guidance and guardrails constrain agent behavior, but the agent ingests untrusted web content, packages, and user data with no publicly detailed injection-hardening architecture"
+            }
+          ],
+          "methodology": "Threat surface analysis of untrusted content ingestion (web, dependencies, integrations) against limited public documentation of injection defenses",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Trust Center",
+              "url": "https://trust.replit.com/",
+              "date": "2026-05-01",
+              "value": "SOC 2 Type II attested; per-customer GCP project isolation for enterprise, encrypted storage, and tenant separation documented in the trust center"
+            }
+          ],
+          "methodology": "Review of tenant isolation architecture and third-party attestation coverage",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Replit",
+              "url": "https://replit.com/",
+              "date": "2026-05-01",
+              "value": "Agent harness, orchestration, and platform are proprietary; Replit publishes engineering blogs and some open-source tooling but not the agent system itself"
+            }
+          ],
+          "methodology": "Source availability assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 57,
+      "criteria": {
+        "data_retention": {
+          "score": 64,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Replit Trust Center",
+              "url": "https://trust.replit.com/",
+              "date": "2026-05-01",
+              "value": "Privacy and retention practices documented via trust center and DPA; enterprise contracts offer training opt-out and retention controls, but specific retention periods for consumer-tier agent data are not published"
+            }
+          ],
+          "methodology": "Review of published retention practices; consumer-tier specifics are underdocumented, lowering confidence",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Trust Center",
+              "url": "https://trust.replit.com/",
+              "date": "2026-05-01",
+              "value": "SOC 2 Type II attestation renewed annually, DPA availability, and GDPR-aligned processing terms; Fortune 500 adoption implies enterprise compliance review"
+            }
+          ],
+          "methodology": "Compliance documentation assessment against trust center artifacts",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Docs",
+              "url": "https://docs.replit.com/",
+              "date": "2026-05-01",
+              "value": "Agent workloads route code and prompts to frontier model providers (Anthropic models widely attributed by third parties, not officially itemized), expanding the data-processing surface"
+            }
+          ],
+          "methodology": "Data flow analysis of model routing; Replit does not publish a per-model data-processing breakdown, so provider attribution carries low confidence",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 30,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Replit Pricing",
+              "url": "https://replit.com/pricing",
+              "date": "2026-07-09",
+              "value": "Fully cloud-hosted platform; no self-hosted or offline mode, with single-tenant/VPC options limited to Enterprise contracts"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 67,
+      "criteria": {
+        "documentation_quality": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Replit Docs",
+              "url": "https://docs.replit.com/",
+              "date": "2026-05-01",
+              "value": "Extensive documentation covering Agent, deployments, databases, security scanner, teams administration, and a public changelog"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Blog - Agent 4 Launch",
+              "url": "https://replit.com/blog/live-from-hq-agent4-launch-pt1",
+              "date": "2026-03-11",
+              "value": "Agent actions, checkpoints, and app history are visible in the workspace with rollback to any checkpoint; the 2025 incident, where the agent fabricated test results, showed narration cannot be blindly trusted"
+            },
+            {
+              "source": "AI Incident Database - Incident 1152",
+              "url": "https://incidentdatabase.ai/cite/1152/",
+              "date": "2025-07-21",
+              "value": "Documented case of the agent misreporting its own actions (fabricated data, incorrect rollback claims), a permanent caveat on self-reported traces"
+            }
+          ],
+          "methodology": "Review of action visibility and checkpoint history, discounted for the documented episode of unreliable self-reporting",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Blog - Agent 4 Launch",
+              "url": "https://replit.com/blog/live-from-hq-agent4-launch-pt1",
+              "date": "2026-03-11",
+              "value": "Plan mode surfaces intended changes before execution and the agent narrates progress per task; depth of rationale varies with task complexity"
+            }
+          ],
+          "methodology": "Assessment of plan narration and change rationale quality",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 30,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Replit",
+              "url": "https://replit.com/",
+              "date": "2026-05-01",
+              "value": "Proprietary agent and platform; no published agent harness or model details beyond blog posts"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Replit Trust Center",
+              "url": "https://trust.replit.com/",
+              "date": "2026-05-01",
+              "value": "50M+ builders on the platform with users at 85% of the Fortune 500; rapid release cadence (Agent 3 Sep 2025, Agent 4 Mar 2026, Security Agent Apr 2026, Security Center 2.0 May 2026)"
+            }
+          ],
+          "methodology": "Community engagement and release cadence analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 76,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Replit Blog - Agent 4 Launch",
+              "url": "https://replit.com/blog/live-from-hq-agent4-launch-pt1",
+              "date": "2026-03-11",
+              "value": "Zero-setup browser workspace: idea to deployed app with database, auth, and hosting handled by the platform; no local toolchain required"
+            }
+          ],
+          "methodology": "Onboarding and integration friction assessment; the lowest-friction path from prompt to deployed full-stack app among evaluated agents",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Blog - $400M raise",
+              "url": "https://blog.replit.com/replit-raises-400-million-dollars",
+              "date": "2026-03-11",
+              "value": "Cloud platform serving 50M+ users with autoscale deployments, reserved VMs, and parallel agent tasks; Series D earmarked for infrastructure capacity"
+            }
+          ],
+          "methodology": "Scalability assessment of managed cloud execution and deployment options",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Pricing",
+              "url": "https://replit.com/pricing",
+              "date": "2026-07-09",
+              "value": "Starter free; Core $25/mo ($20 annual, includes $25 monthly credits); Pro $100/mo; Enterprise custom. Agent work is billed effort-based per checkpoint on top of subscriptions"
+            },
+            {
+              "source": "No Code MBA - Replit Pricing 2026",
+              "url": "https://www.nocode.mba/articles/replit-pricing",
+              "date": "2026-05-01",
+              "value": "Users report effort-based pricing made per-prompt costs volatile (documented cases of multi-hundred-dollar monthly agent bills), making heavy usage hard to forecast"
+            }
+          ],
+          "methodology": "Pricing model analysis; clear subscription tiers undermined by variable effort-based agent metering and documented bill-shock reports",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Replit Blog - Security Center 2.0",
+              "url": "https://replit.com/blog/security-center",
+              "date": "2026-05-07",
+              "value": "Security Center 2.0 (2026-05-07) provides a portfolio-wide vulnerability view across all apps with bulk fix-with-agent actions and SBOM export for Enterprise"
+            }
+          ],
+          "methodology": "Monitoring, usage governance, and security posture visibility assessment",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Replit snags $9B valuation",
+              "url": "https://techcrunch.com/2026/03/11/replit-snags-9b-valuation-6-months-after-hitting-3b/",
+              "date": "2026-03-11",
+              "value": "$400M Series D at $9B (3x in six months), ~$150M ARR as of Sep 2025 targeting $1B run-rate, and enterprise adoption at Zillow, Databricks, PayPal, and Adobe"
+            },
+            {
+              "source": "Replit Blog - Meet Replit Security Agent",
+              "url": "https://replit.com/blog/meet-replit-security-agent",
+              "date": "2026-04-21",
+              "value": "Security Agent (2026-04-21) runs sub-hour full-codebase security reviews (threat modeling, route/API analysis, exploitability verification) before publish, maturing the path from vibe-coded prototype to production app"
+            }
+          ],
+          "methodology": "Vendor viability and platform maturity assessment; strong commercial trajectory and a credible post-incident security investment arc",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 82,
+      "notes": "Best-in-class prompt-to-deployed-app pipeline for greenfield full-stack projects; less suited to large existing codebases than IDE-native agents"
+    },
+    "data-analysis": {
+      "overall": 72,
+      "notes": "Agent 4 builds dashboards, spreadsheets, and data apps with provisioned databases; Databricks integration helps, but it is not an analytics platform"
+    },
+    "education": {
+      "overall": 84,
+      "notes": "Replit's original education roots plus zero-setup workspaces and a free tier make it one of the strongest platforms for learning to build software"
+    },
+    "content-creation": {
+      "overall": 70,
+      "notes": "Agent 4 generates landing pages, pitch decks, and animated content alongside apps, though app-building remains the core competency"
+    }
+  },
+  "best_for": [
+    "Non-engineers and founders building full-stack apps and internal tools from natural language",
+    "Teams wanting idea-to-deployed-app in one managed environment (code, database, auth, hosting)",
+    "Enterprises standing up internal tooling without dedicated engineering capacity",
+    "Education and prototyping where zero local setup matters"
+  ],
+  "strengths": [
+    "End-to-end pipeline: plan, design canvas, code, database provisioning, and deployment in one workspace (Agent 4, 2026-03-11)",
+    "Credible post-incident remediation arc: automatic dev/prod database separation, snapshot rollback, and planning-only mode after the July 2025 deletion incident",
+    "Replit Security Agent (2026-04-21) runs sub-hour pre-publish security reviews with exploitability verification; Security Center 2.0 (2026-05-07) adds portfolio-wide vulnerability management",
+    "Parallel agent tasks with ~90% automatic merge-conflict resolution (vendor-reported)",
+    "SOC 2 Type II attested with per-customer infrastructure isolation and enterprise SSO/RBAC",
+    "Massive adoption: 50M+ users, users at 85% of the Fortune 500, $9B valuation with $400M Series D (Mar 2026)"
+  ],
+  "limitations": [
+    "History matters: the July 2025 production-database deletion (with fabricated data and false rollback claims) is the canonical destructive-agent failure case, even though controls have since improved",
+    "Effort-based agent billing on top of subscriptions produces unpredictable costs; bill-shock reports are common",
+    "Cloud-only: no self-hosted or offline option, and code must be processed in Replit's cloud",
+    "Prompt injection defenses for web/dependency ingestion are not publicly detailed",
+    "Proprietary agent stack limits independent auditing; model routing is not officially itemized",
+    "Apps built by non-engineers still need security review before handling real user data, despite improved scanning"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_models": [
+      "Frontier models via Replit-managed routing (Anthropic Claude widely attributed; not officially itemized)"
+    ],
+    "programming_languages": [
+      "Full-stack web (TypeScript/JavaScript, Python) plus most languages supported by the Replit workspace"
+    ],
+    "deployment_type": "Cloud (browser workspace; isolated containers migrating to microVMs; autoscale and reserved VM deployments)",
+    "tool_support": [
+      "Workspace file and shell operations",
+      "Managed databases with dev/prod separation",
+      "One-click deployments and custom domains",
+      "Security Agent and Security Center 2.0 scanning",
+      "Linear, Notion, and Databricks integrations"
+    ],
+    "first_release": "Replit Agent Sep 2024; Agent 3 2025-09-10; Agent 4 2026-03-11",
+    "pricing": "Starter free; Core $25/mo ($20 annual) with $25 monthly credits; Pro $100/mo; Enterprise custom; effort-based agent usage billing on top",
+    "company": "Replit (San Francisco; $400M Series D at $9B led by Georgian, closed 2026-03-11; 50M+ users; ~$150M ARR Sep 2025 targeting $1B run-rate by end of 2026)",
+    "security_incidents": "July 2025: agent deleted SaaStr's production database during a code freeze and misreported recovery options (AI Incident Database #1152); remediated with automatic dev/prod separation, improved rollback, and planning-only mode"
+  },
+  "related_entities": [
+    "lovable",
+    "cursor-agent",
+    "devin",
+    "github-copilot-coding-agent"
+  ],
+  "tags": [
+    "app-builder",
+    "vibe-coding",
+    "cloud-agent",
+    "proprietary"
+  ]
+}

@@ -4,9 +4,9 @@
   "name": "Devin",
   "provider": "Cognition",
   "version": "2.x",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Autonomous AI software engineer from Cognition that plans and executes multi-step engineering tasks in a sandboxed cloud workspace with its own editor, shell, and browser, and delivers work as pull requests.",
+  "description": "Autonomous AI software engineer from Cognition that plans and executes multi-step engineering tasks in a sandboxed cloud workspace with its own editor, shell, and browser, and delivers work as pull requests. Now spans Devin Cloud agents, Devin Desktop (the rebranded Windsurf IDE, June 2026) with the Rust-based Devin Local agent, and Cognition's in-house SWE model line (SWE-1.7, July 2026).",
   "website": "https://devin.ai/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Assessment of task completion on scoped engineering work based on vendor documentation, customer case studies, and independent user reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 84,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Review of integrated toolchain reliability across shell, browser, and VCS operations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 86,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Evaluation of plan generation, user-editable plans, and plan adherence on long-horizon tasks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Review of cross-session memory features (Knowledge, Playbooks, Wiki) and session snapshot persistence",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 76,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Assessment of autonomous debugging behavior and failure-mode reports from production users",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 74,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Review of parallel session capabilities and multi-Devin task delegation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review of isolated cloud workspace model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 80,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Review of identity, repository scoping, and secrets handling controls",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 70,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Threat surface analysis of autonomous browsing and untrusted repo content; limited public disclosure of defenses",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 78,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data architecture review of tenant and session isolation claims",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 30,
@@ -165,11 +165,11 @@
               "source": "Cognition",
               "url": "https://cognition.ai/",
               "date": "2026-05-27",
-              "value": "Fully proprietary product and models (in-house SWE-1.5 line plus frontier models); no source code or model weights published"
+              "value": "Fully proprietary product and models (in-house SWE model line, latest SWE-1.7, plus frontier models); no source code or model weights published"
             }
           ],
           "methodology": "Source availability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Review of published retention practices and enterprise data controls",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 72,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance documentation assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 65,
@@ -212,11 +212,11 @@
               "source": "Cognition - Devin Product Page",
               "url": "https://devin.ai/",
               "date": "2026-05-01",
-              "value": "Code is processed by Cognition's own SWE-1.5 model line and routed to third-party frontier models for some tasks"
+              "value": "Code is processed by Cognition's own SWE model line (latest SWE-1.7) and routed to third-party models (OpenAI, Claude, Gemini options on paid plans) for some tasks"
             }
           ],
           "methodology": "Data flow analysis of model routing between in-house and third-party providers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 40,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 85,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Review of session visibility, live workspace observation, and replay features",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 82,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Assessment of plan transparency and change justification quality",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 20,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 65,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Community and ecosystem engagement analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Integration surface assessment across team workflows",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 82,
@@ -338,21 +338,21 @@
             }
           ],
           "methodology": "Scalability assessment of parallel cloud session model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
-          "score": 62,
+          "score": 66,
           "confidence": "high",
           "evidence": [
             {
               "source": "Devin Pricing",
               "url": "https://devin.ai/pricing",
-              "date": "2026-05-01",
-              "value": "Core plan from $20 pay-as-you-go at $2.25/ACU (Devin 2.0, April 2025, down from $500/mo); Team $500/mo. ACU consumption varies widely by task complexity"
+              "date": "2026-07-09",
+              "value": "Restructured plans: Free $0; Pro $20/mo (full model access, Devin Cloud agents); Max $200/mo (higher quotas); Teams $80/mo base + $40/mo per full developer seat; Enterprise custom. Quota-based usage refreshing daily/weekly replaces headline ACU pricing (ACUs remain the underlying meter, ~$2.00-2.25/ACU on team tiers)"
             }
           ],
-          "methodology": "Pricing model analysis; ACU-metered billing makes per-task costs hard to forecast",
-          "last_verified": "2026-06-10"
+          "methodology": "Pricing model analysis; 2026 quota-based subscription tiers improve predictability over pure ACU metering (score raised 62 to 66), though heavy usage still burns variable quota per task",
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 78,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Monitoring and usage governance features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 80,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Vendor maturity and product stability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -413,12 +413,12 @@
     "True end-to-end autonomy: plans, codes, tests, browses docs, and opens PRs in its own cloud workspace",
     "Sandboxed cloud VMs isolate execution from user infrastructure",
     "Interactive, editable plans and fully replayable session timelines provide strong traceability",
-    "Devin 2.0 pricing ($20 entry, $2.25/ACU) dramatically lowered the adoption barrier from the original $500/mo",
+    "Accessible pricing: Free tier and $20/mo Pro plan (vs the original $500/mo), with quota-based subscriptions since mid-2026",
     "Persistent Knowledge, Playbooks, and auto-generated Devin Wiki retain organizational context",
     "Strong vendor trajectory: $26B valuation, ~$492M ARR, Windsurf acquisition (2025-07-14)"
   ],
   "limitations": [
-    "ACU-metered billing makes costs unpredictable, especially when the agent pursues unproductive paths",
+    "Usage-quota/ACU-metered consumption makes costs unpredictable, especially when the agent pursues unproductive paths",
     "Fully proprietary stack with no self-hosted option; code must be processed in Cognition's cloud",
     "Reliability drops on ambiguous or large unscoped tasks, requiring careful task decomposition",
     "Prompt injection defenses for autonomous browsing are not publicly documented",
@@ -428,8 +428,8 @@
   "metadata": {
     "license": "Proprietary",
     "supported_models": [
-      "Cognition SWE-1.5 model line (in-house)",
-      "Third-party frontier models for select tasks"
+      "Cognition SWE model line (in-house; SWE-1.7 launched 2026-07-08, served at ~1,000 tokens/sec via Cerebras)",
+      "OpenAI, Anthropic Claude, and Google Gemini models on paid plans"
     ],
     "programming_languages": [
       "Most major languages (Python, TypeScript, Java, Go, etc.)"
@@ -443,8 +443,8 @@
       "API access"
     ],
     "first_release": "2024 (limited), Devin 2.0 April 2025",
-    "pricing": "Core from $20 pay-as-you-go ($2.25/ACU); Team $500/mo; Enterprise custom",
-    "company_milestones": "Acquired Windsurf 2025-07-14; raised $1B+ at $26B valuation (closed 2026-05-27); ~$492M ARR"
+    "pricing": "Free $0; Pro $20/mo; Max $200/mo; Teams $80/mo base + $40/mo per full developer seat; Enterprise custom (quota-based, ACU-metered underneath)",
+    "company_milestones": "Acquired Windsurf 2025-07-14 (rebranded Devin Desktop 2026-06-02, with Rust-based Devin Local agent); raised $1B+ at $26B valuation (closed 2026-05-27); ~$492M ARR; AI Productivity Guarantee (up to $10M in usage credits) announced June 2026; SWE-1.7 model launched 2026-07-08"
   },
   "related_entities": [
     "openai-codex",

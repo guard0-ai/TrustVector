@@ -4,9 +4,9 @@
   "name": "Microsoft AutoGen",
   "provider": "Microsoft Research",
   "version": "0.4",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "MAINTENANCE MODE: AutoGen now receives bug/security fixes only and is superseded by the Microsoft Agent Framework (1.0 GA on 2026-04-03), the recommended migration path. AutoGen is a multi-agent conversation framework for LLM applications with conversable agents combining LLMs, human input, and tools across complex workflows.",
+  "description": "MAINTENANCE MODE: AutoGen now receives bug/security fixes only, is community-managed going forward, and is superseded by the Microsoft Agent Framework (1.0 GA on 2026-04-03), the recommended migration path. AutoGen is a multi-agent conversation framework for LLM applications with conversable agents combining LLMs, human input, and tools across complex workflows.",
   "website": "https://microsoft.github.io/autogen/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Based on research benchmarks and model performance",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 88,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex task testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory system evaluation",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 85,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "conversation_quality": {
           "score": 89,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Conversation quality assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 78,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 82,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 85,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 93,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 83,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 78,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 92,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 85,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 83,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 93,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "research_foundation": {
           "score": 95,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Academic backing assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 87,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 89,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 82,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 88,
@@ -383,10 +383,16 @@
               "url": "https://devblogs.microsoft.com/semantic-kernel/migrate-your-semantic-kernel-and-autogen-projects-to-microsoft-agent-framework-release-candidate/",
               "date": "2026-06-10",
               "value": "AutoGen is in maintenance mode (bug/security fixes only); Microsoft Agent Framework 1.0 reached GA on 2026-04-03 as the successor"
+            },
+            {
+              "source": "AutoGen GitHub Repository",
+              "url": "https://github.com/microsoft/autogen",
+              "date": "2026-07-09",
+              "value": "Repo confirms maintenance mode: no new features or enhancements, community-managed going forward; ~59,600 stars; last substantive push 2026-04-15"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -474,12 +480,12 @@
       "Function calling",
       "Custom tools"
     ],
-    "github_stars": "50400+",
+    "github_stars": "59600+",
     "first_release": "2023",
     "pricing": "Free (Apache 2.0) - Costs only from LLM API usage",
     "python_requirement": "Python 3.10+",
     "contributors": "559+",
-    "transition_notice": "Microsoft Agent Framework is the recommended path forward; AutoGen receives maintenance and critical patches only"
+    "transition_notice": "Microsoft Agent Framework is the recommended path forward; AutoGen receives maintenance and critical patches only and is community-managed going forward"
   },
   "related_entities": [
     "microsoft-agent-framework"

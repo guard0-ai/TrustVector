@@ -214,15 +214,15 @@ export function interpretScore(score: number): ScoreInterpretation {
 }
 
 /**
- * Score color palette - Terminal/Matrix themed
+ * Score color palette - Guard0-aligned semantic ramp
  * Single source of truth for all score-based colors
  */
 export const SCORE_COLORS = {
-  exceptional: '#00ff41', // Matrix green
-  strong: '#00d9ff',      // Electric cyan
-  adequate: '#ffdd00',    // Terminal yellow
-  concerning: '#ff6b35',  // Warning orange
-  poor: '#ff006e',        // Neon magenta
+  exceptional: '#10B981', // Guard0 emerald
+  strong: '#34D399',      // Light emerald — same family, one step below exceptional
+  adequate: '#EAB308',    // Yellow
+  concerning: '#F97316',  // Orange (severity high)
+  poor: '#EF4444',        // Red (severity critical)
 } as const;
 
 /**
@@ -231,6 +231,27 @@ export const SCORE_COLORS = {
 export function getScoreColor(score: number): string {
   const interpretation = interpretScore(score);
   return SCORE_COLORS[interpretation];
+}
+
+/**
+ * Full presentation theme for a score tier: label + Tailwind classes + hex.
+ * The ONE place tier presentation lives — badges, bars, segments, and
+ * legends all derive from this. Tailwind class strings must stay static
+ * literals so the JIT compiler keeps them.
+ */
+export const SCORE_THEMES: Record<
+  ScoreInterpretation,
+  { label: string; bg: string; text: string; hex: string }
+> = {
+  exceptional: { label: 'Exceptional', bg: 'bg-emerald-500', text: 'text-white', hex: SCORE_COLORS.exceptional },
+  strong: { label: 'Strong', bg: 'bg-emerald-400', text: 'text-black', hex: SCORE_COLORS.strong },
+  adequate: { label: 'Adequate', bg: 'bg-amber-400', text: 'text-black', hex: SCORE_COLORS.adequate },
+  concerning: { label: 'Concerning', bg: 'bg-orange-500', text: 'text-white', hex: SCORE_COLORS.concerning },
+  poor: { label: 'Poor', bg: 'bg-red-500', text: 'text-white', hex: SCORE_COLORS.poor },
+};
+
+export function getScoreTheme(score: number) {
+  return SCORE_THEMES[interpretScore(score)];
 }
 
 /**

@@ -3,11 +3,11 @@
   "type": "mcp",
   "name": "MCP MongoDB Server",
   "provider": "MongoDB (Official)",
-  "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "version": "1.13.0",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Community-maintained MCP server for MongoDB database operations. Enables AI models to query, insert, update, and delete documents, manage collections, create indexes, and perform aggregations. Essential for AI-powered NoSQL database management and data analysis workflows.",
-  "website": "https://github.com/modelcontextprotocol/servers",
+  "description": "Official MongoDB MCP server (mongodb-js/mongodb-mcp-server), generally available since v1.9.0 (2026-03-24). Enables AI models to query, insert, update, and delete documents, manage collections and indexes, run aggregations, and administer MongoDB Atlas clusters (50+ tools spanning database, Atlas, Atlas Local, and Assistant tools). Supports a read-only mode, elicitation-based user confirmation for destructive operations, and disables server-side JavaScript by default.",
+  "website": "https://github.com/mongodb-js/mongodb-mcp-server",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 83,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Query success rate testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "aggregation_accuracy": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Aggregation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "large_dataset_handling": {
           "score": 78,
@@ -46,13 +46,13 @@
           "evidence": [
             {
               "source": "Implementation Review",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
               "value": "Performance degrades with very large result sets; pagination needed"
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "connection_stability": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Connection stability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 82,
@@ -74,18 +74,18 @@
           "evidence": [
             {
               "source": "Implementation Review",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
               "value": "Handles database errors with retry logic and error reporting"
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 68,
+      "overall_score": 71,
       "criteria": {
         "authentication_security": {
           "score": 78,
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "connection_string_exposure": {
           "score": 60,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Credential security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_injection_risk": {
           "score": 65,
@@ -121,41 +121,41 @@
           "evidence": [
             {
               "source": "Security Analysis",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
               "value": "AI can construct arbitrary queries; NoSQL injection risk if not validated"
             }
           ],
           "methodology": "Injection vulnerability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_modification_control": {
-          "score": 62,
+          "score": 70,
           "confidence": "high",
           "evidence": [
             {
-              "source": "MongoDB Permissions",
-              "url": "https://www.mongodb.com/docs/manual/core/authorization/",
-              "date": "2025-11-16",
-              "value": "AI can insert, update, and delete documents within user permissions"
+              "source": "MongoDB MCP Server Repository",
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
+              "value": "AI can insert, update, and delete documents within user permissions, but the official server offers --readOnly / MDB_MCP_READ_ONLY=true to restrict tools to read, connect, and metadata operation types"
             }
           ],
-          "methodology": "Operation authorization testing",
-          "last_verified": "2025-11-09"
+          "methodology": "Operation authorization testing; raised from 62 due to the documented read-only mode in the official server",
+          "last_verified": "2026-07-09"
         },
         "database_drop_risk": {
-          "score": 70,
-          "confidence": "medium",
+          "score": 76,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Implementation Review",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Can drop collections and databases if permissions allow"
+              "source": "MongoDB MCP Server Winter 2026 Release Notes",
+              "url": "https://www.mongodb.com/company/blog/product-release-announcements/whats-new-mongodb-mcp-server-winter-2026-edition",
+              "date": "2026-07-09",
+              "value": "Destructive operations (drop-database, drop-collection, delete-many) now use MCP elicitation to prompt for explicit user confirmation before executing"
             }
           ],
-          "methodology": "Destructive operation testing",
-          "last_verified": "2025-11-09"
+          "methodology": "Destructive operation testing; raised from 70 following elicitation-based confirmation added in the GA releases",
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 75,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_protection": {
           "score": 58,
@@ -196,13 +196,13 @@
           "evidence": [
             {
               "source": "Privacy Analysis",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
               "value": "No built-in PII detection or filtering; all queried data exposed"
             }
           ],
           "methodology": "PII protection assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "field_level_security": {
           "score": 70,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Field security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 68,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_pattern_exposure": {
           "score": 72,
@@ -238,32 +238,32 @@
           "evidence": [
             {
               "source": "Privacy Analysis",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
               "value": "Query patterns may reveal data structure and business logic"
             }
           ],
           "methodology": "Query privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "trust_transparency": {
-      "overall_score": 78,
+      "overall_score": 80,
       "criteria": {
         "documentation_quality": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 84,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "MongoDB MCP Docs",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Good documentation but community-maintained with evolving coverage"
+              "source": "MongoDB MCP Server Documentation",
+              "url": "https://www.mongodb.com/docs/mcp-server/",
+              "date": "2026-07-09",
+              "value": "Official MongoDB documentation site with get-started guides, tool reference, and configuration options, maintained alongside the GA product"
             }
           ],
-          "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "methodology": "Documentation completeness review; raised from 75 as official first-party docs replaced community-maintained coverage",
+          "last_verified": "2026-07-09"
         },
         "query_visibility": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Query logging assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 88,
@@ -285,13 +285,13 @@
           "evidence": [
             {
               "source": "GitHub Repository",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Open source community implementation"
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
+              "value": "Open source under Apache 2.0, officially maintained by MongoDB (1.1k+ stars)"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_coverage_clarity": {
           "score": 70,
@@ -299,18 +299,18 @@
           "evidence": [
             {
               "source": "MCP Server Documentation",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
               "value": "Clear but incomplete documentation of supported MongoDB operations"
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 80,
+      "overall_score": 82,
       "criteria": {
         "ease_of_setup": {
           "score": 82,
@@ -318,13 +318,13 @@
           "evidence": [
             {
               "source": "Setup Documentation",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
               "value": "Simple setup requiring MongoDB connection string"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_performance": {
           "score": 78,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 82,
@@ -352,70 +352,73 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_coverage": {
-          "score": 80,
+          "score": 88,
           "confidence": "high",
           "evidence": [
             {
-              "source": "MongoDB MCP Server",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Covers CRUD operations, aggregations, indexing, and collection management"
+              "source": "MongoDB MCP Server Repository",
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
+              "value": "50+ tools: CRUD, aggregations, indexing, and collection management plus Atlas cluster/user management, Atlas Local tools, GA lexical and vector search, and sample dataset loading"
             }
           ],
-          "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "methodology": "Feature coverage assessment; raised from 80 reflecting the expanded GA tool surface including Atlas management",
+          "last_verified": "2026-07-09"
         },
         "community_support": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 82,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "GitHub Community",
-              "url": "https://github.com/modelcontextprotocol/servers/discussions",
-              "date": "2025-11-16",
-              "value": "Community-maintained with moderate activity"
+              "source": "MongoDB MCP Server Repository",
+              "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+              "date": "2026-07-09",
+              "value": "Officially maintained by MongoDB with frequent releases (latest stable v1.13.0, 2026-06-16), 1.1k+ stars, and a companion mongodb/agent-skills package"
             }
           ],
-          "methodology": "Community support assessment",
-          "last_verified": "2025-11-09"
+          "methodology": "Community support assessment; raised from 75 reflecting first-party GA maintenance",
+          "last_verified": "2026-07-09"
         }
       }
     }
   },
   "strengths": [
-    "Comprehensive MongoDB CRUD and aggregation capabilities",
-    "Built on official MongoDB drivers with stable performance",
-    "Excellent for NoSQL data analysis and document processing",
-    "Supports complex aggregation pipelines and queries",
-    "Open source community implementation",
-    "Flexible schema-less data handling"
+    "Official MongoDB implementation, GA since March 2026, with 50+ tools",
+    "Comprehensive CRUD, aggregation, and Atlas cluster management capabilities",
+    "Read-only mode (--readOnly) and elicitation-based confirmation for destructive operations",
+    "Server-side JavaScript disabled by default as a security measure",
+    "GA lexical and vector search tools for AI retrieval workloads",
+    "Open source (Apache 2.0) with first-party MongoDB maintenance and official docs"
   ],
   "limitations": [
     "Query results and document data exposed to LLM provider",
     "No built-in PII detection or sensitive data filtering",
     "Risk of NoSQL injection without proper query validation",
-    "AI can modify or delete data within permission scope",
-    "Connection strings with credentials accessible to AI",
+    "AI can modify or delete data within permission scope unless read-only mode is set",
+    "Connection strings with credentials stored in local configuration",
     "Limited audit logging in MongoDB Community Edition"
   ],
   "metadata": {
-    "license": "MIT",
+    "license": "Apache 2.0",
     "supported_platforms": [
-      "All platforms with Node.js/Python"
+      "All platforms with Node.js; Docker"
     ],
     "programming_languages": [
-      "TypeScript",
-      "Python"
+      "TypeScript"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "api_dependency": "MongoDB Node.js Driver, PyMongo",
-    "authentication": "MongoDB connection string (username/password)",
-    "first_release": "2024-11",
-    "maintained_by": "Community"
+    "github_repo": "https://github.com/mongodb-js/mongodb-mcp-server",
+    "github_stars": 1100,
+    "docs": "https://www.mongodb.com/docs/mcp-server/",
+    "api_dependency": "MongoDB Node.js Driver, Atlas Administration API",
+    "authentication": "MongoDB connection string (MDB_MCP_CONNECTION_STRING) or Atlas API service account (client ID/secret)",
+    "security_controls": ["read-only mode (--readOnly / MDB_MCP_READ_ONLY)", "elicitation confirmation for destructive operations", "server-side JavaScript disabled by default"],
+    "ga_date": "2026-03-24",
+    "first_release": "2025 (public preview)",
+    "maintained_by": "MongoDB"
   },
   "use_case_ratings": {
     "code-generation": {

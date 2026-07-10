@@ -1,0 +1,640 @@
+{
+  "id": "kimi-k2-7-code",
+  "type": "model",
+  "name": "Kimi K2.7-Code",
+  "provider": "Moonshot AI",
+  "version": "20260612",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Moonshot AI's coding-specialized open-weight MoE (1T total / 32B active, Modified MIT) built on Kimi K2.6, released 2026-06-12. Vendor reports 62.0 on Kimi Code Bench v2 (+21.8% over K2.6) and ~30% lower reasoning-token usage, but all published benchmarks are Moonshot-run with no independent public-suite results yet. 256K context, thinking mode always on, $0.95/$4.00 per 1M tokens.",
+  "website": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 90,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 94,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "MarkTechPost release coverage (vendor-reported)",
+              "url": "https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/",
+              "date": "2026-06-12",
+              "value": "Kimi Code Bench v2: 62.0 vs K2.6's 50.9 (+21.8%); MCP Mark Verified 81.1 vs Claude Opus 4.8's 76.4; trails GPT-5.5 on most vendor-run metrics"
+            },
+            {
+              "source": "DevOps.com analysis",
+              "url": "https://devops.com/moonshot-ais-kimi-k2-7-code-targets-token-efficiency-in-agentic-coding/",
+              "date": "2026-06-13",
+              "value": "Positioning is token efficiency in agentic coding rather than raw benchmark leadership; all published benchmarks are vendor-run, not independent"
+            }
+          ],
+          "methodology": "Vendor-run proprietary benchmarks only (Kimi Code Bench v2, MCP Mark Verified); no public-suite (SWE-bench) results or independent replication yet — scored by anchoring to K2.6's verified base with the specialization claim discounted",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_reasoning": {
+          "score": 88,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Kimi K2.7-Code Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Built on K2.6's base with mandatory thinking mode; coding specialization trades some general reasoning breadth; ~30% lower reasoning-token usage claimed at comparable quality"
+            }
+          ],
+          "methodology": "Inference from K2.6 lineage and vendor claims; no independent reasoning benchmarks published for K2.7-Code",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_general": {
+          "score": 84,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Kimi K2.7-Code Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Coding-focused specialization of K2.6; general-domain performance not a design goal and not benchmarked by the vendor"
+            }
+          ],
+          "methodology": "Review of vendor positioning; general capability anchored slightly below the K2.6 generalist base",
+          "last_verified": "2026-07-09"
+        },
+        "output_consistency": {
+          "score": 84,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Kimi K2.7-Code Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Sampling parameters fixed server-side and thinking mode mandatory, which promotes run-to-run consistency; only weeks of community testing so far"
+            }
+          ],
+          "methodology": "Early community testing of repeated runs and agent trajectories; limited observation window since June launch",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p50": {
+          "value": "2.8s",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "OpenRouter model page",
+              "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code",
+              "date": "2026-06-20",
+              "value": "Comparable per-request latency to K2.6 (32B active); ~30% fewer reasoning tokens shortens end-to-end agentic turns despite mandatory thinking mode"
+            }
+          ],
+          "methodology": "Median latency for API requests with standard prompt sizes; varies widely by host",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p95": {
+          "value": "7.0s",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code",
+              "date": "2026-06-20",
+              "value": "p95 ~7.0s; long agentic coding chains take substantially longer by design"
+            }
+          ],
+          "methodology": "95th percentile response time from early third-party measurements",
+          "last_verified": "2026-07-09"
+        },
+        "context_window": {
+          "value": "262,144 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kimi K2.7-Code Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "256K (262,144) token context window, unchanged from K2.6"
+            }
+          ],
+          "methodology": "Official specification from model card, confirmed by OpenRouter listing (262K)",
+          "last_verified": "2026-07-09"
+        },
+        "uptime": {
+          "score": 93,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Moonshot AI Platform",
+              "url": "https://platform.moonshot.ai/",
+              "date": "2026-07-01",
+              "value": "Served on the same first-party platform as K2.6 (generally stable); open weights allow self-hosted redundancy; no long-run record for this endpoint yet"
+            }
+          ],
+          "methodology": "Review of platform availability and self-hosting fallback options; observation window under one month",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Vendor claims meaningful coding gains over the already-strong K2.6 (62.0 vs 50.9 on Kimi Code Bench v2) plus ~30% lower reasoning-token usage, but every published number is Moonshot-run on proprietary benchmarks — no SWE-bench or other public-suite results exist yet. Scores anchor to K2.6's verified base with the uplift discounted until independent replication."
+    },
+
+    "security": {
+      "overall_score": 78,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 77,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Kimi K2.7-Code Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Inherits K2.6 safety tuning; no published third-party prompt-injection audit; agentic coding use (tool execution, repo access) raises injection stakes"
+            }
+          ],
+          "methodology": "Review of vendor safety documentation and K2.6 precedent against OWASP LLM01 patterns; model too new for mature red-team coverage",
+          "last_verified": "2026-07-09"
+        },
+        "jailbreak_resistance": {
+          "score": 75,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community red-teaming",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-25",
+              "value": "Standard alignment tuning; open weights mean guardrails can be removed in fine-tuned derivatives; limited adversarial testing published since launch"
+            }
+          ],
+          "methodology": "Early testing against adversarial prompt datasets; open-weight deployments inherit deployer responsibility",
+          "last_verified": "2026-07-09"
+        },
+        "data_leakage_prevention": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Privacy Policy",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-06-12",
+              "value": "Standard data handling on first-party API (same platform and policies as K2.6); full control when self-hosted"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and self-hosting data-control options",
+          "last_verified": "2026-07-09"
+        },
+        "output_safety": {
+          "score": 79,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kimi K2.7-Code Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Safety post-training inherited from K2.6; refusal behavior comparable to other open frontier models per early reports"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories per vendor card and K2.6 precedent",
+          "last_verified": "2026-07-09"
+        },
+        "api_security": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI API Documentation",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-06-12",
+              "value": "API key authentication, HTTPS only, rate limiting; OpenAI-compatible endpoints shared with the K2 family"
+            }
+          ],
+          "methodology": "Review of API security features and best practices",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Inherits K2.6's standard open-model posture with no third-party audit. As a coding agent typically wired to tool execution and repositories, deployers should treat prompt-injection hardening as their own responsibility."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 74,
+      "criteria": {
+        "data_residency": {
+          "value": "China (first-party API); any jurisdiction when self-hosted or via Western hosts",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Platform Documentation",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-06-12",
+              "value": "Moonshot AI is a China-based provider; first-party API data processed under Chinese jurisdiction"
+            },
+            {
+              "source": "OpenRouter availability",
+              "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code",
+              "date": "2026-06-20",
+              "value": "Available via OpenRouter and Western inference hosts within days of release, enabling non-China residency"
+            }
+          ],
+          "methodology": "Review of provider jurisdiction and third-party hosting options",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_optout": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Privacy Policy",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-06-12",
+              "value": "API data usage terms standard for the segment (unchanged from K2.6); self-hosting removes the question entirely"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and data usage terms",
+          "last_verified": "2026-07-09"
+        },
+        "data_retention": {
+          "value": "Per Moonshot policy on first-party API (China jurisdiction); zero when self-hosted",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Terms",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-06-12",
+              "value": "First-party retention governed by Chinese data regulations; self-hosted deployments retain nothing externally"
+            }
+          ],
+          "methodology": "Review of terms of service and deployment-dependent retention",
+          "last_verified": "2026-07-09"
+        },
+        "pii_handling": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Documentation",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-06-12",
+              "value": "Customer responsible for PII redaction; no managed PII tooling; source code sent to the API may itself contain secrets and PII"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-07-09"
+        },
+        "compliance_certifications": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI public materials",
+              "url": "https://www.moonshot.ai/",
+              "date": "2026-06-12",
+              "value": "No published SOC 2 / HIPAA / GDPR attestations for the first-party API; Western hosts may carry their own certifications"
+            }
+          ],
+          "methodology": "Verification of compliance certifications and audit reports",
+          "last_verified": "2026-07-09"
+        },
+        "zero_data_retention": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Open weights on Hugging Face",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Self-hosting via vLLM/SGLang (~595 GB on disk) gives complete data control and zero external retention — attractive for keeping proprietary code in-house"
+            }
+          ],
+          "methodology": "Review of self-hosting deployment options enabling zero retention",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Same posture as K2.6: first-party API under Chinese jurisdiction is a material caveat — amplified for this model because coding workloads routinely transmit proprietary source code. Open weights fully mitigate for organizations able to self-host or use Western hosts."
+    },
+
+    "trust_transparency": {
+      "overall_score": 77,
+      "criteria": {
+        "explainability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kimi K2.7-Code Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Thinking mode is mandatory, so reasoning traces are always available; tool-call trajectories inspectable as with K2.6's agentic stack"
+            }
+          ],
+          "methodology": "Evaluation of reasoning and agent-trajectory transparency",
+          "last_verified": "2026-07-09"
+        },
+        "hallucination_rate": {
+          "score": 79,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community testing",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-25",
+              "value": "Early reports mirror K2.6: moderate hallucination, with tool-use grounding improving factuality in agentic coding loops"
+            }
+          ],
+          "methodology": "Early testing on factual QA and tool-augmented coding workflows",
+          "last_verified": "2026-07-09"
+        },
+        "bias_fairness": {
+          "score": 74,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Kimi K2.7-Code Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Limited published bias evaluation; lower salience for a coding-specialized model but unevaluated nonetheless"
+            }
+          ],
+          "methodology": "Review of published bias benchmarks and community evaluations",
+          "last_verified": "2026-07-09"
+        },
+        "uncertainty_quantification": {
+          "score": 77,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Model behavior testing",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-25",
+              "value": "Expresses uncertainty adequately in thinking traces; no calibrated confidence outputs"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-07-09"
+        },
+        "model_card_quality": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face model card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Detailed card: 1T/32B MoE, 61 layers, 384 experts, MLA attention, 400M MoonViT vision encoder, deployment guides; benchmark section limited to Moonshot-proprietary suites"
+            }
+          ],
+          "methodology": "Review of documentation completeness and clarity",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_transparency": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI publications",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Architecture well documented; the coding-specialization training recipe and data composition on top of K2.6 are not disclosed"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data",
+          "last_verified": "2026-07-09"
+        },
+        "guardrails": {
+          "score": 77,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kimi K2.7-Code Model Card",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Built-in safety tuning inherited from K2.6; deployers of open weights must layer their own guardrails, especially around code-execution tools"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Open weights, a detailed architecture card, and always-on thinking traces give decent transparency, but the evaluation story is weaker than K2.6's: all benchmarks are Moonshot-proprietary (Kimi Code Bench v2, MCP Mark Verified) with no public-suite or independent results yet."
+    },
+
+    "operational_excellence": {
+      "overall_score": 81,
+      "criteria": {
+        "api_design_quality": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Moonshot AI API Documentation",
+              "url": "https://platform.moonshot.ai/docs",
+              "date": "2026-06-12",
+              "value": "OpenAI-compatible API with streaming, tool calling, vision input, and prompt caching; constraint: thinking mode is mandatory and sampling parameters are fixed server-side"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness; server-side sampling constraints reduce configurability",
+          "last_verified": "2026-07-09"
+        },
+        "sdk_quality": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI GitHub / Kimi Code",
+              "url": "https://github.com/MoonshotAI",
+              "date": "2026-06-12",
+              "value": "OpenAI-compatible so mainstream SDKs work; first-party Kimi Code CLI ships alongside the model for agentic coding workflows"
+            }
+          ],
+          "methodology": "Review of SDK quality, documentation, and maintenance",
+          "last_verified": "2026-07-09"
+        },
+        "versioning_policy": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kimi release history",
+              "url": "https://huggingface.co/moonshotai",
+              "date": "2026-06-12",
+              "value": "K2.7-Code is a coding-specialized sibling built on K2.6 (released eight weeks prior), not a replacement — K2.6 remains the general-purpose flagship and prior weights stay available; cadence is fast"
+            }
+          ],
+          "methodology": "Review of versioning practices and weight availability",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_observability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI Platform",
+              "url": "https://platform.moonshot.ai/",
+              "date": "2026-06-12",
+              "value": "Basic usage dashboard; self-hosted observability is deployer-built"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-07-09"
+        },
+        "support_quality": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Moonshot AI community channels",
+              "url": "https://github.com/MoonshotAI",
+              "date": "2026-06-12",
+              "value": "GitHub and community support; limited English-language enterprise support"
+            }
+          ],
+          "methodology": "Assessment of documentation, community, and support responsiveness",
+          "last_verified": "2026-07-09"
+        },
+        "ecosystem_maturity": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenRouter and inference ecosystem",
+              "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code",
+              "date": "2026-06-20",
+              "value": "Listed on OpenRouter within days ($0.74/$3.50 via routed providers) with vLLM/SGLang self-hosting support; rides the mature K2-family ecosystem but is itself weeks old"
+            }
+          ],
+          "methodology": "Analysis of third-party hosting, integrations, and tooling; conservative given launch recency",
+          "last_verified": "2026-07-09"
+        },
+        "license_terms": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Modified MIT License",
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+              "date": "2026-06-12",
+              "value": "Same Modified MIT as K2.6: MIT with an attribution-UI requirement for deployments exceeding 100M MAU or $20M/month revenue"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions; attribution clause is trust-relevant for large-scale commercial use",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Inherits the K2 family's strong ecosystem (OpenRouter within days, Kimi Code CLI, vLLM/SGLang). Operational quirks to note: thinking mode cannot be disabled and sampling parameters are fixed server-side, which constrains tuning; the ~30% token-usage reduction partly offsets thinking-mode cost."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 94,
+      "notes": "Purpose-built for agentic coding on the strong K2.6 base with ~30% lower token usage; vendor claims large gains (62.0 Kimi Code Bench v2, 81.1 MCP Mark Verified vs Opus 4.8's 76.4) but all benchmarks are Moonshot-run — verify on your own workloads.",
+      "alternatives": ["kimi-k2-6", "claude-opus-4-8", "glm-5", "gpt-5-3-codex"]
+    },
+    "customer-support": {
+      "overall": 72,
+      "notes": "Coding-specialized with mandatory thinking mode — poorly matched to simple support flows.",
+      "alternatives": ["command-a-plus", "minimax-m2"]
+    },
+    "content-creation": {
+      "overall": 74,
+      "notes": "Not its purpose; the general-purpose K2.6 is the better Moonshot pick for prose.",
+      "alternatives": ["claude-opus-4-8", "kimi-k2-6"]
+    },
+    "data-analysis": {
+      "overall": 85,
+      "notes": "Strong for code-heavy analysis pipelines (notebooks, ETL, tooling); K2.6 better for broad analytical reasoning.",
+      "alternatives": ["glm-5", "kimi-k2-6"]
+    },
+    "research-assistant": {
+      "overall": 80,
+      "notes": "Capable tool-use and 256K context, but reasoning breadth trades toward code; use K2.6 for general research.",
+      "alternatives": ["kimi-k2-6", "glm-5"]
+    },
+    "legal-compliance": {
+      "overall": 62,
+      "notes": "Wrong specialization, China-jurisdiction first-party API, and no Western certifications.",
+      "alternatives": ["command-a-plus", "claude-opus-4-8"]
+    },
+    "healthcare": {
+      "overall": 60,
+      "notes": "Not recommended: coding-specialized and no compliant first-party path; health-software engineering should still self-host.",
+      "alternatives": ["command-a-plus", "claude-opus-4-8"]
+    },
+    "financial-analysis": {
+      "overall": 76,
+      "notes": "Good for quant-developer workflows (code-first); data residency requires self-hosting for regulated firms.",
+      "alternatives": ["glm-5", "command-a-plus"]
+    },
+    "education": {
+      "overall": 82,
+      "notes": "Strong coding tutor with visible thinking traces; less suited to general STEM tutoring than K2.6 or GLM-5.",
+      "alternatives": ["glm-5", "deepseek-v3-2"]
+    },
+    "creative-writing": {
+      "overall": 70,
+      "notes": "Coding specialization comes at the cost of prose quality; pick a generalist.",
+      "alternatives": ["claude-opus-4-8", "minimax-m2"]
+    }
+  },
+
+  "strengths": [
+    "Coding-specialized on the strong K2.6 base: vendor reports 62.0 Kimi Code Bench v2 (+21.8% over K2.6) and 81.1 MCP Mark Verified (vs Claude Opus 4.8's 76.4)",
+    "~30% lower reasoning-token usage than K2.6, cutting cost in agentic loops where thinking bills as output",
+    "Open weights under Modified MIT with full self-hosting (vLLM/SGLang) for keeping proprietary code in-house",
+    "Always-on thinking traces aid debugging and auditability of agent runs",
+    "256K context with text and image input (400M MoonViT encoder) for UI-aware coding",
+    "Broad availability within days: Kimi API, Kimi Code CLI, Hugging Face, OpenRouter ($0.74/$3.50 routed)"
+  ],
+
+  "limitations": [
+    "All published benchmarks are Moonshot-proprietary and vendor-run — no SWE-bench or independent public-suite results yet",
+    "Thinking mode cannot be disabled and sampling parameters are fixed server-side, limiting tuning",
+    "First-party Moonshot API processes data (including submitted source code) under Chinese jurisdiction with limited Western certifications",
+    "Modified MIT license imposes attribution-UI requirement above 100M MAU or $20M/month revenue",
+    "Coding specialization narrows general-purpose capability vs K2.6",
+    "Self-hosting a 1T-parameter MoE (~595 GB on disk) requires substantial GPU infrastructure",
+    "Weeks old: consistency, uptime, and security evidence still immature"
+  ],
+
+  "best_for": [
+    "Long-horizon agentic coding where reasoning-token spend dominates cost",
+    "Teams already on K2.6 or Kimi Code wanting a cheaper-per-task coding specialist",
+    "Self-hosted coding assistants that must keep proprietary source code in-house",
+    "Multi-turn repository engineering within a 256K context"
+  ],
+
+  "not_recommended_for": [
+    "Teams requiring independently verified benchmarks before adoption (vendor-only so far)",
+    "General-purpose or creative workloads — K2.6 or a generalist model fits better",
+    "Regulated Western workloads sending source code to the first-party API",
+    "Deployments needing custom sampling parameters or thinking-mode control",
+    "Hyperscale consumer products unwilling to satisfy the attribution-UI license clause"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "$0.95 per 1M tokens ($0.19 cache hit)",
+      "output": "$4.00 per 1M tokens",
+      "notes": "First-party Moonshot API pricing at launch, same headline rates as K2.6; mandatory thinking mode bills as output, partly offset by ~30% lower token usage. OpenRouter routed pricing ~$0.74/$3.50.",
+      "last_verified": "2026-07-09"
+    },
+    "context_window": 262144,
+    "languages": ["English", "Chinese", "Japanese", "Korean", "Spanish", "French", "German"],
+    "modalities": ["text", "image (input)"],
+    "api_endpoint": "https://api.moonshot.ai/v1/chat/completions",
+    "open_source": true,
+    "license": "Modified MIT (attribution-UI requirement above 100M MAU or $20M/month revenue)",
+    "architecture": "Mixture-of-Experts built on Kimi K2.6: 1T total / 32B active parameters, 61 layers, 384 experts (8 selected + 1 shared), MLA attention, SwiGLU, 400M MoonViT vision encoder; coding-specialized post-training with mandatory thinking mode",
+    "parameters": "1T total / 32B active",
+    "release_date": "2026-06-12"
+  },
+
+  "related_entities": ["kimi-k2-6", "glm-5", "gpt-5-3-codex", "claude-opus-4-8", "minimax-m2"],
+
+  "tags": [
+    "coding",
+    "agentic",
+    "open-source",
+    "mixture-of-experts",
+    "long-context",
+    "token-efficient",
+    "chinese-provider",
+    "self-hostable"
+  ]
+}

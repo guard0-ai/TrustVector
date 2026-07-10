@@ -1,0 +1,477 @@
+{
+  "id": "chatgpt-agent",
+  "type": "agent",
+  "name": "ChatGPT Agent Mode",
+  "provider": "OpenAI",
+  "version": "Agent Mode v2 (2026)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Agent mode in ChatGPT that gives the assistant its own virtual computer, merging Operator's web browsing with deep research's analysis. Launched 2025-07-17; Agent Mode v2 (2026) adds persistent memory, scheduled tasks, and GitHub/Jira connectors. Runs in an isolated cloud VM with watch mode for sensitive sites and confirmations before consequential actions, while OpenAI openly acknowledges prompt injection as a core unsolved risk. Included in Plus, Pro, and Team plans with usage caps.",
+  "website": "https://openai.com/index/introducing-chatgpt-agent/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 75,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI - Introducing ChatGPT agent",
+              "url": "https://openai.com/index/introducing-chatgpt-agent/",
+              "date": "2025-07-17",
+              "value": "Launch model set state-of-the-art results on agentic benchmarks (Humanity's Last Exam, WebArena-class browsing tasks); independent reviews report real-world completion is slower and more variable on complex sites"
+            },
+            {
+              "source": "4sysops - Testing ChatGPT Agent Mode",
+              "url": "https://4sysops.com/archives/testing-chatgpt-agent-mode-a-flawed-concept/",
+              "date": "2025-09-15",
+              "value": "Independent testing found capable research-plus-action workflows but frequent stalls and confirmation friction on multi-site tasks"
+            }
+          ],
+          "methodology": "Benchmark claims weighed against independent hands-on reviews of end-to-end task completion",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT agent",
+              "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent",
+              "date": "2026-06-15",
+              "value": "Integrated toolset: visual browser, text browser, terminal with limited network access for code/data/slides, file handling, and first-party connectors (Google Drive, Gmail, GitHub, Jira)"
+            }
+          ],
+          "methodology": "Review of the integrated browser/terminal/connector stack and its reliability across research-and-action workflows",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI - Introducing ChatGPT agent",
+              "url": "https://openai.com/index/introducing-chatgpt-agent/",
+              "date": "2025-07-17",
+              "value": "Fluidly shifts between reasoning and action to handle complex workflows start to finish — the explicit design goal of merging Operator and deep research"
+            }
+          ],
+          "methodology": "Evaluation of long-horizon research-then-act task execution and interruption/resume behavior",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT release notes",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-06-15",
+              "value": "Agent Mode v2 (2026) adds persistent memory across agent sessions plus rebuilt scheduled tasks (dedicated Scheduled page, connector access from scheduled runs)"
+            }
+          ],
+          "methodology": "Review of v2 persistent memory, ChatGPT memory integration, and scheduled-task state handling",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 72,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "4sysops - Testing ChatGPT Agent Mode",
+              "url": "https://4sysops.com/archives/testing-chatgpt-agent-mode-a-flawed-concept/",
+              "date": "2025-09-15",
+              "value": "Retries and re-plans after failed page interactions, but reviewers report loops on CAPTCHA/anti-bot walls and occasional abandoned tasks"
+            }
+          ],
+          "methodology": "Assessment of retry behavior and failure modes reported in independent testing",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 64,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT agent",
+              "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent",
+              "date": "2026-06-15",
+              "value": "Single-agent design with no user-facing sub-agent composition; delegation exists only via separate scheduled tasks and connectors"
+            }
+          ],
+          "methodology": "Review of multi-agent composition capabilities versus peers with native sub-agents",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 67,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI - Introducing ChatGPT agent",
+              "url": "https://openai.com/index/introducing-chatgpt-agent/",
+              "date": "2025-07-17",
+              "value": "All execution happens on OpenAI's own virtual computer in the cloud — browser, terminal with limited network access, and file tools never touch the user's device"
+            }
+          ],
+          "methodology": "Architecture review of the cloud VM isolation model and restricted terminal network egress",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ChatGPT agent System Card",
+              "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+              "date": "2025-07-17",
+              "value": "Explicit user confirmation required before consequential actions (purchases, sending email, editing files); takeover mode lets users enter credentials themselves without the model seeing or storing them; connectors use scoped OAuth subject to workspace admin enablement"
+            }
+          ],
+          "methodology": "Review of confirmation gates, takeover-mode credential handling, and admin controls on connectors",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "ChatGPT agent System Card",
+              "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+              "date": "2025-07-17",
+              "value": "Layered mitigations: injection-focused fine-tuning, automated monitors that detect and block injection patterns, watch mode requiring active user supervision on sensitive sites (email, banking) that pauses when the user goes inactive, plus internal and external red teaming"
+            },
+            {
+              "source": "OpenAI - Understanding prompt injections",
+              "url": "https://openai.com/index/prompt-injections/",
+              "date": "2025-12-22",
+              "value": "OpenAI publicly frames prompt injection as a frontier security challenge for its agents that may never be fully solved, committing to continuous adversarial training rather than claiming a fix"
+            }
+          ],
+          "methodology": "Review of documented mitigations and OpenAI's own risk framing; credit for layered defenses and candor, discounted for the acknowledged unsolved core risk across an open-web action surface",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT agent",
+              "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent",
+              "date": "2026-06-15",
+              "value": "Per-task virtual computer sessions; takeover-mode inputs (e.g., passwords) are not collected or stored; browsing data deletable by the user"
+            }
+          ],
+          "methodology": "Review of session isolation, takeover-mode data handling, and browsing-data deletion controls",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 45,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "ChatGPT agent System Card",
+              "url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+              "date": "2025-07-17",
+              "value": "Closed-source product; OpenAI published a detailed system card and a dedicated deployment-safety hub documenting watch mode and mitigations"
+            }
+          ],
+          "methodology": "Source availability assessment; credit for the published system card and safety documentation",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 60,
+      "criteria": {
+        "data_retention": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT agent",
+              "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent",
+              "date": "2026-06-15",
+              "value": "Agent sessions follow ChatGPT retention: consumer chats retained unless deleted with training opt-out available; Business/Enterprise excluded from training by default; users can clear agent browsing data"
+            }
+          ],
+          "methodology": "Review of retention and training-use policies across consumer and workspace tiers as applied to agent sessions",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Trust Portal",
+              "url": "https://trust.openai.com/",
+              "date": "2026-03-01",
+              "value": "SOC 2 Type 2 attestation and GDPR-aligned DPA available for Business/Enterprise workspaces; agent mode inherits these commitments"
+            }
+          ],
+          "methodology": "Compliance certification and DPA availability review under the OpenAI umbrella",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT agent",
+              "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent",
+              "date": "2026-06-15",
+              "value": "Connectors (Gmail, Google Drive, GitHub, Jira, Slack) and logged-in browsing move data between the agent VM and third-party services; each is user/admin opt-in but broadens flows well beyond OpenAI"
+            }
+          ],
+          "methodology": "Data flow analysis of connector and authenticated-browsing traffic",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 25,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI - Introducing ChatGPT agent",
+              "url": "https://openai.com/index/introducing-chatgpt-agent/",
+              "date": "2025-07-17",
+              "value": "Cloud-only: the virtual computer runs exclusively in OpenAI's infrastructure with no self-hosted, on-premises, or offline option"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 68,
+      "criteria": {
+        "documentation_quality": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Deployment Safety Hub - ChatGPT agent",
+              "url": "https://deploymentsafety.openai.com/chatgpt-agent/watch-mode",
+              "date": "2025-07-17",
+              "value": "Help center articles, release notes, a full system card, and a deployment-safety hub documenting watch mode, confirmations, and known risks"
+            }
+          ],
+          "methodology": "Documentation completeness review across help center, system card, and safety hub",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI - Introducing ChatGPT agent",
+              "url": "https://openai.com/index/introducing-chatgpt-agent/",
+              "date": "2025-07-17",
+              "value": "Users watch the agent's virtual browser and step narration live, can interrupt or take over at any point; Team plans in v2 add audit log export for scheduled tasks"
+            }
+          ],
+          "methodology": "Review of live session visibility, interruption controls, and workspace audit exports",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT agent",
+              "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent",
+              "date": "2026-06-15",
+              "value": "Narrates plans and progress and asks before consequential actions, though model/tool selection inside the VM is opaque"
+            }
+          ],
+          "methodology": "Assessment of plan narration and pre-action confirmation clarity",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 30,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI - Introducing ChatGPT agent",
+              "url": "https://openai.com/index/introducing-chatgpt-agent/",
+              "date": "2025-07-17",
+              "value": "Fully proprietary agent model and infrastructure; no source availability"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT release notes",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+              "date": "2026-06-15",
+              "value": "Deployed to ChatGPT's massive paid user base with steady feature releases (v2 memory, scheduled tasks, connectors) and extensive third-party coverage and testing"
+            }
+          ],
+          "methodology": "Community engagement analysis via user base scale, release cadence, and public discussion",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 76,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT agent",
+              "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent",
+              "date": "2026-06-15",
+              "value": "Zero setup: select agent mode from the tools dropdown in any ChatGPT conversation; connectors configured with a few clicks"
+            }
+          ],
+          "methodology": "Onboarding friction assessment for existing ChatGPT subscribers",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT agent",
+              "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent",
+              "date": "2026-06-15",
+              "value": "Monthly message caps (roughly 400 for Pro, 40 for Plus/Team at launch, with credit-based top-ups); v2 scheduled tasks capped at 25/month for Plus, unlimited on Team"
+            }
+          ],
+          "methodology": "Assessment of usage caps, credit top-ups, and scheduled-task limits across tiers",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT agent",
+              "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent",
+              "date": "2026-06-15",
+              "value": "Included in Plus ($20/mo), Pro ($200/mo), and Team subscriptions — flat pricing with hard caps; optional credits are the only variable spend"
+            }
+          ],
+          "methodology": "Pricing model analysis of subscription-included usage versus optional credit purchases",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 64,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenAI Help Center - ChatGPT Business release notes",
+              "url": "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes",
+              "date": "2026-06-15",
+              "value": "Workspace admins control connector enablement and get audit log export for scheduled agent tasks; per-session visibility for consumers, but no organization-wide agent observability comparable to enterprise agent platforms"
+            }
+          ],
+          "methodology": "Monitoring and admin tooling review across consumer and workspace tiers",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenAI - Introducing ChatGPT agent",
+              "url": "https://openai.com/index/introducing-chatgpt-agent/",
+              "date": "2025-07-17",
+              "value": "Generally available to paid tiers since 2025-07-17 — nearly a year in production at ChatGPT scale, with a v2 iteration in 2026"
+            }
+          ],
+          "methodology": "Maturity assessment from GA timeline, scale of deployment, and iteration history",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "research-assistant": {
+      "overall": 85,
+      "notes": "Strongest fit: deep research heritage plus the ability to act on findings — logging in, refining results, and producing reports, slides, and spreadsheets"
+    },
+    "data-analysis": {
+      "overall": 76,
+      "notes": "Terminal in the VM runs code for analysis and generates spreadsheets/slides, though without a persistent data environment"
+    },
+    "content-creation": {
+      "overall": 74,
+      "notes": "Produces editable slides and documents from research; formatting fidelity still trails specialist tools"
+    },
+    "code-generation": {
+      "overall": 60,
+      "notes": "Can run code and use the v2 GitHub connector, but lacks repository workflows — OpenAI's Codex is the intended coding agent"
+    }
+  },
+  "best_for": [
+    "ChatGPT subscribers delegating research-then-act tasks: comparison shopping, screening, form filling, report building",
+    "Recurring automated workflows via v2 scheduled tasks with connector access",
+    "Tasks requiring authenticated web access, using takeover mode to keep credentials away from the model",
+    "Users who want supervised autonomy with visible browsing and confirmation gates"
+  ],
+  "not_recommended_for": [
+    "Unsupervised operation on sensitive accounts — watch mode exists precisely because injection risk on email/banking is real",
+    "High-volume automation (monthly message caps of 40 on Plus/Team)",
+    "Organizations needing self-hosting or strict data residency"
+  ],
+  "strengths": [
+    "Clean isolation model: everything executes in OpenAI's cloud virtual computer, never on the user's device",
+    "Layered, honestly-documented safety: confirmations before consequential actions, watch mode on sensitive sites, injection-trained models and monitors",
+    "Takeover mode keeps passwords out of the model entirely",
+    "Merged Operator + deep research design handles research-then-act workflows end to end",
+    "Agent Mode v2 (2026) added persistent memory, rebuilt scheduled tasks, and GitHub/Jira connectors",
+    "Included in existing Plus/Pro/Team subscriptions with flat pricing",
+    "Published system card with internal and external red teaming"
+  ],
+  "limitations": [
+    "OpenAI itself states prompt injection may never be fully solved; the open-web action surface makes this the defining risk",
+    "Consumer-grade governance: no org-wide agent observability, limited admin controls outside Business/Enterprise",
+    "Tight usage caps (roughly 40 messages/month on Plus/Team) constrain real workloads",
+    "Real-world execution is slow and brittle on complex or bot-protected sites",
+    "Cloud-only with no self-hosted option; connectors extend data flows to many third parties",
+    "Single-agent design without sub-agent delegation",
+    "Closed source with opaque internal tool/model routing"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_models": [
+      "Dedicated agentic model (o3 family at launch; updated with GPT-5.x generation in 2026)"
+    ],
+    "deployment_type": "Cloud-only (per-task virtual computer in OpenAI infrastructure)",
+    "tool_support": [
+      "Visual browser (GUI interaction)",
+      "Text browser",
+      "Terminal with limited network access",
+      "File generation (slides, spreadsheets, documents)",
+      "Connectors: Google Drive, Gmail, GitHub, Jira, Slack (v2)",
+      "Scheduled tasks"
+    ],
+    "first_release": "2025-07-17 (merger of Operator and deep research); Agent Mode v2 in 2026",
+    "pricing": "Included in ChatGPT Plus ($20/mo), Pro ($200/mo), and Team; ~400 messages/mo Pro, ~40 Plus/Team, credit top-ups available"
+  },
+  "related_entities": [
+    "openai-codex",
+    "claude-cowork",
+    "microsoft-scout",
+    "manus"
+  ],
+  "tags": [
+    "autonomous",
+    "general-purpose",
+    "cloud-agent",
+    "consumer",
+    "openai"
+  ]
+}

@@ -4,9 +4,9 @@
   "name": "Figma MCP Server",
   "provider": "Figma",
   "version": "2025.6-beta",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Figma's official Dev Mode MCP server connecting AI coding tools to design files. Provides design-context extraction (code from frames, variables, components), screenshots, metadata, Code Connect mapping, FigJam reading, and design generation onto the canvas. Available as a hosted remote server (OAuth) or via the Figma desktop app.",
+  "description": "Figma's official Dev Mode MCP server connecting AI coding tools to design files. Provides design-context extraction (code, variables, components), screenshots, metadata, Code Connect mapping, FigJam reading, and design generation onto the canvas (canvas writes expanded March 2026). Available as a hosted remote server (OAuth, all plans) or via the Figma desktop app (Dev/Full seat on paid plans). Still in beta as of July 2026; free during the beta with per-plan tool-call limits.",
   "website": "https://developers.figma.com/docs/figma-mcp-server/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Assessment of design-to-code output fidelity against source frames, variables, and component structure",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_reliability": {
           "score": 82,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Analysis of endpoint stability and Figma platform uptime during beta period",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "large_file_handling": {
           "score": 72,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Testing context extraction on large, deeply nested design files and component libraries",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 78,
@@ -66,21 +66,21 @@
             }
           ],
           "methodology": "Error handling testing across invalid selections, permissions, and disconnected desktop sessions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 76,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "Figma Developers Platform",
-              "url": "https://developers.figma.com/docs/figma-mcp-server/",
-              "date": "2026-06-10",
-              "value": "Hosted server applies Figma platform rate limits per authenticated user; limits are not fully published during beta and usage-based pricing is planned"
+              "source": "Figma Developers Platform - Rate Limits & Access",
+              "url": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/",
+              "date": "2026-07-09",
+              "value": "Limits are now published per plan/seat: 6 tool calls/month on Starter or View/Collab seats, 200 calls/day on Professional/Organization Full or Dev seats, 600 calls/day on Enterprise; per-minute limits also apply to read tools, while write-to-canvas tools are exempt"
             }
           ],
           "methodology": "Rate limiting behavior observation under sustained tool-call load",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Review of OAuth flow, scope grants, and token lifecycle for the hosted endpoint",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 80,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Token storage and exposure-surface analysis for remote and local transports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scope_limitation": {
           "score": 78,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Permission boundary testing across files the authenticated user can view or edit",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_risk": {
           "score": 58,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Threat modeling of untrusted design-file content flowing into agent context via design-context and FigJam tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "unauthorized_action_risk": {
           "score": 68,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Authorization boundary testing of write-capable tools against editable files",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis from Figma files through MCP tool results to LLM providers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 66,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Assessment of filtering and redaction controls on extracted design content",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "organization_data_control": {
           "score": 78,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Review of organizational access controls applicable to MCP-connected accounts",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 72,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Analysis of downstream data sharing once content leaves the Figma boundary",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 78,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment across client and Figma file history",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 35,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Source availability and independent verifiability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 82,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Comparison of documented tool surface against observed server capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment across supported MCP clients",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 78,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Latency observation across tool types and frame sizes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 76,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Stability assessment over the beta period including breaking-change frequency",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 86,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Feature completeness assessment against design-to-code workflow needs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 84,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Adoption analysis across MCP client ecosystems and developer tooling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -370,13 +370,14 @@
     "Shared design files are third-party-authored input and a prompt injection vector",
     "Design content, including any sensitive text in mockups, is sent to the LLM provider",
     "Large frames can exceed client context limits",
-    "Beta product with evolving tools and planned usage-based pricing not yet finalized",
+    "Still in beta as of July 2026 with evolving tools; planned usage-based pricing not yet finalized",
+    "Tool-call quotas are restrictive on lower tiers (6 calls/month on Starter or View/Collab seats; 200/day on Pro/Org, 600/day on Enterprise)",
     "Write-capable tools can modify editable files without server-side confirmation"
   ],
   "metadata": {
     "license": "Proprietary (closed source)",
     "maintained_by": "Figma",
-    "status": "Beta (launched June 2025)",
+    "status": "Beta (launched June 2025; still beta as of July 2026, canvas write capabilities expanded March 2026)",
     "remote_endpoint": "https://mcp.figma.com/mcp",
     "local_endpoint": "http://127.0.0.1:3845/mcp (Figma desktop app)",
     "authentication": "OAuth (remote, recommended); desktop app session (local)",
@@ -388,7 +389,7 @@
       "Remote MCP endpoint",
       "Figma desktop app toggle"
     ],
-    "pricing": "Free during beta; usage-based pricing planned",
+    "pricing": "Free during beta (verified 2026-07-09); usage-based pricing planned. Remote server available on all plans/seats; desktop server requires a Dev or Full seat on a paid plan. Tool-call limits: 6/month (Starter, View/Collab seats), 200/day (Pro/Org Full or Dev seats), 600/day (Enterprise)",
     "first_release": "2025-06",
     "mcp_version": "1.0"
   },

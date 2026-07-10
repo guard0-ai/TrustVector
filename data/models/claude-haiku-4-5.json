@@ -3,10 +3,10 @@
   "type": "model",
   "name": "Claude Haiku 4.5",
   "provider": "Anthropic",
-  "version": "20251015",
-  "last_evaluated": "2025-11-17",
+  "version": "20251001",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Anthropic's fastest model released October 2025. Best coding performance (73.3% SWE-bench) at 1/3 cost and 2x speed of Sonnet 4. First Haiku with extended thinking.",
+  "description": "Anthropic's fastest model, released October 2025 and still the speed tier of the current lineup (Active as of 2026-07). At launch it beat the since-retired Sonnet 4 on coding (73.3% vs 72.7% SWE-bench) at 1/3 the cost and 2x the speed. First Haiku with extended thinking.",
   "website": "https://www.anthropic.com/claude",
 
   "trust_vector": {
@@ -31,7 +31,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 89,
@@ -45,7 +45,7 @@
             }
           ],
           "methodology": "Reasoning benchmarks",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 90,
@@ -59,7 +59,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge testing",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 88,
@@ -73,7 +73,7 @@
             }
           ],
           "methodology": "Internal testing",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "0.4s",
@@ -87,7 +87,7 @@
             }
           ],
           "methodology": "Median latency",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "0.9s",
@@ -101,7 +101,7 @@
             }
           ],
           "methodology": "95th percentile",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "200,000 tokens",
@@ -115,7 +115,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -123,13 +123,13 @@
           "evidence": [
             {
               "source": "Anthropic Status Page",
-              "url": "https://status.anthropic.com/",
-              "date": "2025-10-20",
-              "value": "99.95% uptime"
+              "url": "https://status.claude.com/",
+              "date": "2026-07-09",
+              "value": "Claude API uptime 99.57% (last 90 days)"
             }
           ],
           "methodology": "Historical uptime data",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Best coding model for the price. 73.3% SWE-bench beats Sonnet 4. 4-5x faster than Sonnet 4.5. Flagship performance at budget pricing."
@@ -150,7 +150,7 @@
             }
           ],
           "methodology": "OWASP LLM01 testing",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 88,
@@ -164,7 +164,7 @@
             }
           ],
           "methodology": "Adversarial testing",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 84,
@@ -178,7 +178,7 @@
             }
           ],
           "methodology": "Privacy policy analysis",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 89,
@@ -192,7 +192,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 86,
@@ -206,7 +206,7 @@
             }
           ],
           "methodology": "Security review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security with ASL-2 standard. Constitutional AI guardrails. Less restrictive than ASL-3 models."
@@ -227,7 +227,7 @@
             }
           ],
           "methodology": "Enterprise docs review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 95,
@@ -241,7 +241,7 @@
             }
           ],
           "methodology": "Policy analysis",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "0 days (ephemeral)",
@@ -255,7 +255,7 @@
             }
           ],
           "methodology": "Terms review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 87,
@@ -269,7 +269,7 @@
             }
           ],
           "methodology": "Data protection review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 92,
@@ -283,7 +283,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 95,
@@ -297,7 +297,7 @@
             }
           ],
           "methodology": "Data handling review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent privacy with ephemeral data. HIPAA eligible at budget pricing. Strong compliance."
@@ -318,7 +318,7 @@
             }
           ],
           "methodology": "Reasoning transparency evaluation",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 83,
@@ -332,7 +332,7 @@
             }
           ],
           "methodology": "QA testing",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 82,
@@ -346,7 +346,7 @@
             }
           ],
           "methodology": "Bias benchmarks",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 84,
@@ -360,7 +360,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 89,
@@ -374,7 +374,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 78,
@@ -388,7 +388,7 @@
             }
           ],
           "methodology": "Public disclosure review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 91,
@@ -402,7 +402,7 @@
             }
           ],
           "methodology": "Safety mechanism analysis",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good transparency with extended thinking (first for Haiku). Strong guardrails. Latest training cutoff (Feb 2025)."
@@ -423,7 +423,7 @@
             }
           ],
           "methodology": "API design review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 92,
@@ -437,7 +437,7 @@
             }
           ],
           "methodology": "SDK review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 89,
@@ -448,10 +448,16 @@
               "url": "https://docs.anthropic.com/en/api/versioning",
               "date": "2025-10-15",
               "value": "6-month deprecation"
+            },
+            {
+              "source": "Anthropic Model Deprecations",
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "date": "2026-07-09",
+              "value": "claude-haiku-4-5-20251001 Active; tentative retirement not sooner than October 15, 2026; listed in the current lineup as the fastest model"
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 88,
@@ -465,7 +471,7 @@
             }
           ],
           "methodology": "Monitoring tools review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 90,
@@ -479,7 +485,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 91,
@@ -493,7 +499,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 92,
@@ -507,7 +513,7 @@
             }
           ],
           "methodology": "License review",
-          "last_verified": "2025-11-17"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent for high-volume production. Budget pricing enables multi-agent architectures. Fast deployment."
@@ -517,53 +523,53 @@
   "use_case_ratings": {
     "code-generation": {
       "overall": 96,
-      "notes": "World's best coding model for the price. 73.3% SWE-bench beats even Sonnet 4. Perfect for high-volume coding.",
-      "alternatives": ["claude-sonnet-4-5", "claude-opus-4"]
+      "notes": "Best coding model for the price at launch: 73.3% SWE-bench beat the since-retired Sonnet 4. Perfect for high-volume coding.",
+      "alternatives": ["claude-sonnet-4-6", "claude-opus-4-8"]
     },
     "customer-support": {
       "overall": 93,
       "notes": "Exceptional for customer support. Flagship performance at $1/$5. 0.4s latency perfect for chat.",
-      "alternatives": ["claude-sonnet-4", "gpt-4o-mini"]
+      "alternatives": ["claude-sonnet-4-6", "gpt-4o-mini"]
     },
     "content-creation": {
       "overall": 87,
       "notes": "Strong content creation at budget pricing. Fast generation (4-5x faster than Sonnet 4.5).",
-      "alternatives": ["claude-opus-4", "claude-sonnet-4-5"]
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
     },
     "data-analysis": {
       "overall": 85,
       "notes": "Good analytical capabilities with extended thinking. Great value for cost.",
-      "alternatives": ["claude-opus-4", "claude-sonnet-4"]
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
     },
     "research-assistant": {
       "overall": 89,
       "notes": "Excellent for research. 200K context, extended thinking, fast, budget pricing.",
-      "alternatives": ["claude-opus-4", "gpt-5"]
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
     },
     "legal-compliance": {
       "overall": 88,
       "notes": "HIPAA eligible with strong privacy at budget pricing. Good for legal document processing.",
-      "alternatives": ["claude-opus-4", "claude-sonnet-4"]
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
     },
     "healthcare": {
       "overall": 87,
       "notes": "HIPAA eligible. Budget pricing enables high-volume clinical documentation.",
-      "alternatives": ["claude-opus-4", "claude-opus-4-1"]
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
     },
     "financial-analysis": {
       "overall": 84,
       "notes": "Good for standard financial analysis. Extended thinking helps with modeling.",
-      "alternatives": ["claude-opus-4", "openai-o3"]
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
     },
     "education": {
       "overall": 90,
       "notes": "Exceptional for education. Fast, affordable, strong explanations. Perfect for high-volume use.",
-      "alternatives": ["gpt-5", "claude-sonnet-4-5"]
+      "alternatives": ["claude-sonnet-4-6", "gpt-5-5"]
     },
     "creative-writing": {
       "overall": 86,
       "notes": "Strong creative writing. Fast generation good for drafting. Budget pricing for iteration.",
-      "alternatives": ["claude-opus-4", "gpt-5"]
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
     }
   },
 
@@ -573,15 +579,16 @@
     "Budget pricing: $1/$5 per 1M tokens (1/3 cost of Sonnet 4)",
     "First Haiku with extended thinking, computer use, context awareness",
     "HIPAA eligible with ephemeral data handling",
-    "200K context, 64K output (more than Opus 4)",
-    "Latest training cutoff: February 2025"
+    "200K context, 64K output",
+    "Still Active in the current lineup as of 2026-07 (tentative retirement not sooner than 2026-10-15)"
   ],
 
   "limitations": [
     "ASL-2 security (less restrictive than ASL-3 Opus/Sonnet models)",
-    "Slightly lower reasoning than Opus 4 for complex tasks",
-    "Training cutoff February 2025",
-    "New model with less battle-testing than predecessors"
+    "Lower reasoning ceiling than Sonnet/Opus tiers for complex tasks",
+    "Reliable knowledge cutoff February 2025 — oldest in the current Claude lineup",
+    "200K context vs 1M on Sonnet 4.6/Sonnet 5 and current Opus models",
+    "No adaptive thinking or effort parameter (extended thinking only)"
   ],
 
   "best_for": [
@@ -593,17 +600,18 @@
   ],
 
   "not_recommended_for": [
-    "Mission-critical tasks requiring absolute maximum reasoning (use Opus 4)",
-    "Tasks requiring latest training data (post-February 2025)",
-    "Scenarios requiring ASL-3 security level"
+    "Mission-critical tasks requiring absolute maximum reasoning (use Opus 4.8 or Claude Fable 5)",
+    "Tasks requiring recent knowledge (reliable cutoff February 2025)",
+    "Scenarios requiring ASL-3 security level",
+    "Contexts beyond 200K tokens"
   ],
 
   "metadata": {
     "pricing": {
       "input": "$1.00 per 1M tokens",
       "output": "$5.00 per 1M tokens",
-      "notes": "Best value in flagship class. Batch API 50% discount ($1/$2.50). Prompt caching up to 90% savings.",
-      "last_verified": "2025-11-17"
+      "notes": "Best value in flagship class. Batch API 50% discount ($1/$2.50). Prompt caching up to 90% savings. Confirmed unchanged at $1/$5 as of 2026-07-09.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 200000,
     "max_output_tokens": 64000,
@@ -627,11 +635,11 @@
     "open_source": false,
     "architecture": "Transformer-based with Constitutional AI and extended thinking",
     "parameters": "Not disclosed",
-    "training_cutoff": "February 2025",
+    "training_cutoff": "July 2025 (reliable knowledge through February 2025)",
     "safety_level": "ASL-2"
   },
 
-  "related_entities": ["claude-sonnet-4-5", "claude-sonnet-4", "claude-opus-4", "gpt-4o-mini"],
+  "related_entities": ["claude-sonnet-4-6", "claude-sonnet-4-5", "claude-opus-4-8", "gpt-4o-mini"],
 
   "tags": [
     "coding",

@@ -4,9 +4,9 @@
   "name": "Grok 4.3",
   "provider": "xAI",
   "version": "4.3",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "xAI's current flagship model released in early May 2026, with a 1M token context window, reasoning, function calling, and structured outputs at aggressive pricing ($1.25/$2.50 per 1M tokens). Strong frontier performance, but a thinner enterprise compliance posture than Anthropic, OpenAI, or Google.",
+  "description": "xAI's workhorse model (released 2026-04-30): 1M context, reasoning, function calling, and structured outputs at $1.25/$2.50 per 1M tokens. Superseded as flagship by Grok 4.5 (2026-07-08, $2/$6, 500K context) but remains served and is the redirect target for retired Grok slugs. Strong frontier performance, but thinner enterprise compliance than Anthropic/OpenAI/Google, and the provider (now SpaceXAI post-SpaceX merger) faces active regulatory investigations over Grok content safety.",
   "website": "https://docs.x.ai/developers/models/grok-4.3",
   "trust_vector": {
     "performance_reliability": {
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Review of provider documentation and third-party benchmark aggregators",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 94,
@@ -44,7 +44,7 @@
             }
           ],
           "methodology": "Review of reasoning benchmark results from provider and aggregators",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 93,
@@ -64,7 +64,7 @@
             }
           ],
           "methodology": "Crowdsourced arena comparisons and aggregator quality metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 90,
@@ -78,7 +78,7 @@
             }
           ],
           "methodology": "Review of structured output features and community reports of repeated-prompt behavior",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "~2.0s",
@@ -92,7 +92,7 @@
             }
           ],
           "methodology": "Median latency from third-party API benchmarking",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "~5.0s",
@@ -106,7 +106,7 @@
             }
           ],
           "methodology": "95th percentile response time from third-party benchmarking; reasoning mode adds variance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,000,000 tokens",
@@ -120,7 +120,7 @@
             }
           ],
           "methodology": "Official specification from provider documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 96,
@@ -134,13 +134,13 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Frontier-class performance with a 1M context window and reasoning, function calling, and structured outputs. Release date sources conflict (2026-04-30 per OpenRouter vs 2026-05-06 per llm-stats); xAI documentation is treated as primary."
+      "notes": "Frontier-class performance with a 1M context window and reasoning, function calling, and structured outputs. Launch date now consistently reported as 2026-04-30 (some aggregators previously listed 2026-05-06). Grok 4.5 (2026-07-08) now leads xAI/SpaceXAI's lineup, but 4.3 remains served and price-advantaged."
     },
     "security": {
-      "overall_score": 83,
+      "overall_score": 82,
       "criteria": {
         "prompt_injection_resistance": {
           "score": 84,
@@ -154,7 +154,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection patterns and review of published safety material",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 85,
@@ -168,7 +168,7 @@
             }
           ],
           "methodology": "Review of adversarial prompt testing results and community jailbreak reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 80,
@@ -182,10 +182,10 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling commitments",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
-          "score": 82,
+          "score": 78,
           "confidence": "medium",
           "evidence": [
             {
@@ -193,10 +193,17 @@
               "url": "https://docs.x.ai/developers/models/grok-4.3",
               "date": "2026-05-06",
               "value": "Content moderation in place; xAI publishes less safety evaluation detail than Anthropic/OpenAI/Google"
+            },
+            {
+              "source": "TechPolicy.Press — Regulators Are Going After Grok and X",
+              "url": "https://www.techpolicy.press/regulators-are-going-after-grok-and-x-just-not-together/",
+              "date": "2026-07-09",
+              "value": "Ofcom and the European Commission opened formal investigations, and Brazil issued a 30-day ultimatum, over Grok's mass generation of sexualized imagery including apparent minors (CCDH: 3M+ sexualized images in under two weeks)"
             }
           ],
-          "methodology": "Safety testing across harmful content categories and review of published evaluations",
-          "last_verified": "2026-06-10"
+          "methodology": "Safety testing across harmful content categories and review of published evaluations; score reduced 2026-07-09 to reflect the ongoing Grok content-safety crisis and regulatory findings against the provider's safety systems",
+          "last_verified": "2026-07-09",
+          "notes": "The incidents center on Grok's consumer image-generation products on X rather than the grok-4.3 text API itself, but they evidence weak provider-level output-safety governance; score lowered from 82 to 78"
         },
         "api_security": {
           "score": 84,
@@ -210,10 +217,10 @@
             }
           ],
           "methodology": "Review of API security features and authentication mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Reasonable baseline security, but xAI publishes substantially less safety and red-team documentation than Anthropic, OpenAI, or Google."
+      "notes": "Reasonable baseline security, but xAI publishes substantially less safety and red-team documentation than Anthropic, OpenAI, or Google. Overall score reduced one point (83 to 82) on 2026-07-09 after the Grok content-safety crisis (Ofcom/European Commission investigations, Brazil ultimatum) exposed weak provider-level output-safety governance."
     },
     "privacy_compliance": {
       "overall_score": 76,
@@ -230,7 +237,7 @@
             }
           ],
           "methodology": "Review of provider documentation and enterprise materials",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 80,
@@ -244,7 +251,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days (standard API)",
@@ -258,7 +265,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 76,
@@ -272,7 +279,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 72,
@@ -286,7 +293,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications against major enterprise provider baselines",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 74,
@@ -300,13 +307,13 @@
             }
           ],
           "methodology": "Review of data handling practices and enterprise contract options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "xAI's enterprise compliance posture remains thinner than Anthropic, OpenAI, or Google: SOC 2 in place but no HIPAA eligibility program and fewer regulated-industry attestations."
     },
     "trust_transparency": {
-      "overall_score": 82,
+      "overall_score": 81,
       "criteria": {
         "explainability": {
           "score": 86,
@@ -320,7 +327,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 85,
@@ -334,7 +341,7 @@
             }
           ],
           "methodology": "Review of provider claims and factual QA testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 76,
@@ -348,7 +355,7 @@
             }
           ],
           "methodology": "Review of bias benchmark disclosures and independent reporting",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 83,
@@ -362,7 +369,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 86,
@@ -376,7 +383,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 78,
@@ -390,10 +397,10 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
-          "score": 82,
+          "score": 78,
           "confidence": "medium",
           "evidence": [
             {
@@ -401,13 +408,20 @@
               "url": "https://docs.x.ai/",
               "date": "2026-05-06",
               "value": "Built-in moderation with developer controls; lighter-touch defaults than peers"
+            },
+            {
+              "source": "The Conversation — Grok sexualized images AI reckoning",
+              "url": "https://theconversation.com/the-furore-over-groks-sexualised-images-has-begun-an-ai-reckoning-275448",
+              "date": "2026-07-01",
+              "value": "2026 Grok controversy showed xAI's guardrails failed at scale on sexualized imagery, including of minors, prompting UK, EU, and Brazilian regulatory action"
             }
           ],
-          "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "methodology": "Analysis of built-in safety mechanisms; score reduced 2026-07-09 given demonstrated large-scale guardrail failures in the provider's deployed Grok products",
+          "last_verified": "2026-07-09",
+          "notes": "Score lowered from 82 to 78: guardrail failures occurred in Grok consumer/image products rather than this text API, but they materially weaken confidence in xAI's safety-engineering culture"
         }
       },
-      "notes": "Good developer-facing documentation and inspectable reasoning, but less published safety/bias evaluation than major competitors."
+      "notes": "Good developer-facing documentation and inspectable reasoning, but less published safety/bias evaluation than major competitors. Overall score reduced one point (82 to 81) on 2026-07-09 to reflect the guardrails downgrade following the Grok content-safety crisis and resulting Ofcom/EC/Brazil regulatory actions."
     },
     "operational_excellence": {
       "overall_score": 82,
@@ -424,7 +438,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 84,
@@ -438,7 +452,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 75,
@@ -452,7 +466,7 @@
             }
           ],
           "methodology": "Review of deprecation/migration practices; silent redirects of retired slugs reduce predictability for pinned workloads",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Silent redirection of retired model slugs to grok-4.3 can change behavior of production systems without explicit failure signals"
         },
         "monitoring_observability": {
@@ -467,7 +481,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 80,
@@ -481,7 +495,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 82,
@@ -495,7 +509,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations and tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 86,
@@ -509,10 +523,10 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Strong API and pricing, but the May 2026 retirement wave (with silent slug redirects to grok-4.3) highlights an aggressive deprecation culture enterprises should plan around."
+      "notes": "Strong API and pricing, but the May 2026 retirement wave (with silent slug redirects to grok-4.3) highlights an aggressive deprecation culture enterprises should plan around. In mid-2026 xAI completed its merger into SpaceX and rebranded as SpaceXAI (new identity announced 2026-07-06); API endpoints and docs remain on x.ai domains as of 2026-07-09."
     }
   },
   "use_case_ratings": {
@@ -581,7 +595,8 @@
     "Higher per-token rate applies above 200K context",
     "Limited published safety, bias, and red-team evaluation detail",
     "Zero-data-retention only via negotiated enterprise terms",
-    "Conflicting release-date records across aggregators reflect lighter release documentation"
+    "Provider turbulence: xAI merged into SpaceX and rebranded SpaceXAI in mid-2026, while under active regulatory investigation (Ofcom, European Commission; Brazil ultimatum) over Grok content-safety failures in 2026",
+    "No longer the flagship: Grok 4.5 (2026-07-08) sits above it in the lineup"
   ],
   "best_for": [
     "Cost-sensitive agentic and coding workloads needing frontier quality",
@@ -599,8 +614,8 @@
     "pricing": {
       "input": "$1.25 per 1M tokens",
       "output": "$2.50 per 1M tokens",
-      "notes": "Cached input $0.20 per 1M tokens. Higher per-token rate applies for requests above 200K context.",
-      "last_verified": "2026-06-10"
+      "notes": "Cached input $0.20 per 1M tokens. Higher per-token rate applies for requests above 200K context. Tool calls billed separately (web/X search and code execution $5 per 1K calls). Re-confirmed against xAI docs July 2026.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1000000,
     "languages": [
@@ -621,11 +636,11 @@
     "open_source": false,
     "architecture": "Transformer-based with native reasoning, function calling, and structured outputs",
     "parameters": "Not disclosed",
-    "release_date": "Early May 2026 (2026-04-30 per OpenRouter; 2026-05-06 per llm-stats)"
+    "release_date": "2026-04-30",
+    "lifecycle_status": "Served and supported; superseded as flagship by Grok 4.5 (2026-07-08). Retired legacy Grok slugs redirect here."
   },
   "related_entities": ["grok-4-1", "grok-3-beta", "gpt-5-5", "claude-opus-4-8", "gemini-3-1-pro"],
   "tags": [
-    "flagship",
     "reasoning",
     "long-context",
     "function-calling",

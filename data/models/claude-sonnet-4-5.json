@@ -4,9 +4,9 @@
   "name": "Claude Sonnet 4.5",
   "provider": "Anthropic",
   "version": "20250929",
-  "last_evaluated": "2025-11-07",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "State-of-the-art AI model with exceptional coding capabilities, extended thinking, and strong safety features. Best-in-class for software development tasks.",
+  "description": "Previous-generation Sonnet released September 2025, since superseded by Sonnet 4.6 (2026) and Claude Sonnet 5 (2026-06-30). Still Active on the API with tentative retirement not sooner than 2026-09-29. Historically the top coding model of its era (77.2% SWE-bench Verified at launch) with extended thinking and strong safety features.",
   "website": "https://www.anthropic.com/claude",
 
   "trust_vector": {
@@ -19,9 +19,9 @@
           "evidence": [
             {
               "source": "SWE-bench Verified",
-              "url": "https://www.anthropic.com/news/claude-3-5-sonnet",
-              "date": "2024-10-22",
-              "value": "49.0% resolution rate (highest on benchmark)"
+              "url": "https://www.anthropic.com/news/claude-sonnet-4-5",
+              "date": "2025-09-29",
+              "value": "77.2% resolution rate (highest of any model at launch); corrected 2026-07-09 from a mislabeled Claude 3.5 Sonnet figure"
             },
             {
               "source": "Anthropic Internal Benchmarks",
@@ -31,7 +31,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks measuring real-world software engineering tasks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 92,
@@ -51,17 +51,17 @@
             }
           ],
           "methodology": "Graduate and PhD-level reasoning benchmarks requiring multi-step problem solving",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 93,
           "confidence": "high",
           "evidence": [
             {
-              "source": "LMSYS Chatbot Arena",
-              "url": "https://lmsys.org/blog/2024-10-17-arena-update/",
-              "date": "2024-10-17",
-              "value": "1324 ELO (Rank #2 overall)"
+              "source": "OSWorld",
+              "url": "https://www.anthropic.com/news/claude-sonnet-4-5",
+              "date": "2025-09-29",
+              "value": "61.4% on real-world computer-use tasks (benchmark leader at launch)"
             },
             {
               "source": "MMLU-Pro",
@@ -71,7 +71,7 @@
             }
           ],
           "methodology": "Crowdsourced blind comparisons and comprehensive knowledge testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 91,
@@ -85,7 +85,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts at various temperature settings",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Extended thinking feature provides more consistent reasoning paths"
         },
         "latency_p50": {
@@ -100,7 +100,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "3.2s",
@@ -114,7 +114,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "200,000 tokens",
@@ -128,7 +128,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -136,13 +136,13 @@
           "evidence": [
             {
               "source": "Anthropic Status Page",
-              "url": "https://status.anthropic.com/",
-              "date": "2025-11-01",
-              "value": "99.95% uptime (last 90 days)"
+              "url": "https://status.claude.com/",
+              "date": "2026-07-09",
+              "value": "Claude API uptime 99.57% (last 90 days)"
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional performance across coding, reasoning, and general tasks. Extended thinking capability enables more reliable outputs for complex problems."
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 92,
@@ -189,7 +189,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 85,
@@ -203,7 +203,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Strong policies, but inherent LLM memorization risks exist"
         },
         "output_safety": {
@@ -218,7 +218,7 @@
             }
           ],
           "methodology": "Comprehensive safety testing across harmful content categories",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 88,
@@ -232,7 +232,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security posture with Constitutional AI providing robust guardrails. Best-in-class prompt injection resistance."
@@ -253,7 +253,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation and privacy policies",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 95,
@@ -267,7 +267,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "0 days (ephemeral)",
@@ -281,7 +281,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 88,
@@ -295,7 +295,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "No built-in PII detection, customers must implement their own controls"
         },
         "compliance_certifications": {
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 95,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Review of data handling practices",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional privacy posture with ephemeral data handling and strong compliance certifications. HIPAA eligible."
@@ -351,7 +351,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 86,
@@ -371,7 +371,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets and real-world usage",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Extended thinking mode reduces hallucinations further"
         },
         "bias_fairness": {
@@ -392,7 +392,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Ongoing work, Constitutional AI helps but not perfect"
         },
         "uncertainty_quantification": {
@@ -407,7 +407,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "No explicit confidence scores, relies on natural language expression"
         },
         "model_card_quality": {
@@ -422,7 +422,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 78,
@@ -436,7 +436,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Limited transparency on specific training data sources (industry standard)"
         },
         "guardrails": {
@@ -451,7 +451,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong explainability with extended thinking feature. Constitutional AI provides transparency in alignment approach. Training data transparency could be improved."
@@ -472,7 +472,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 92,
@@ -486,7 +486,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 88,
@@ -497,10 +497,16 @@
               "url": "https://docs.anthropic.com/en/api/versioning",
               "date": "2025-10-01",
               "value": "Clear versioning with 6-month deprecation notice"
+            },
+            {
+              "source": "Anthropic Model Deprecations",
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "date": "2026-07-09",
+              "value": "claude-sonnet-4-5-20250929 still Active (not deprecated); tentative retirement not sooner than September 29, 2026; listed as a legacy model in the docs"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 87,
@@ -514,7 +520,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Basic metrics available, but no detailed request tracing"
         },
         "support_quality": {
@@ -529,7 +535,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 91,
@@ -543,7 +549,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations and tools",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 92,
@@ -557,7 +563,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent operational maturity with well-designed APIs, strong SDKs, and good documentation. Enterprise-ready."
@@ -567,58 +573,58 @@
   "use_case_ratings": {
     "code-generation": {
       "overall": 96,
-      "notes": "Best-in-class for code generation. Exceptional at Python, TypeScript, and explaining code. Extended thinking helps with complex architectural decisions.",
-      "alternatives": ["gpt-5", "claude-opus-4-1"]
+      "notes": "Top coding model of its era (77.2% SWE-bench Verified at launch). Superseded by Sonnet 4.6 and Sonnet 5 for new builds.",
+      "alternatives": ["claude-sonnet-4-6", "claude-opus-4-8"]
     },
     "customer-support": {
       "overall": 88,
       "notes": "Strong empathy and natural conversation. Slightly higher latency than specialized models, but excellent quality.",
-      "alternatives": ["gpt-5"]
+      "alternatives": ["claude-sonnet-4-6", "claude-haiku-4-5"]
     },
     "content-creation": {
       "overall": 90,
       "notes": "Excellent for long-form content, maintains consistent voice and structure. Natural writing style.",
-      "alternatives": ["gpt-5", "claude-opus-4-1"]
+      "alternatives": ["claude-sonnet-4-6", "claude-opus-4-8"]
     },
     "data-analysis": {
       "overall": 93,
       "notes": "Strong SQL generation and data interpretation. Extended thinking excellent for complex analytical tasks.",
-      "alternatives": ["claude-opus-4-1"]
+      "alternatives": ["claude-sonnet-4-6", "claude-opus-4-8"]
     },
     "research-assistant": {
       "overall": 91,
       "notes": "Excellent summarization and synthesis. Extended thinking mode provides detailed reasoning for complex topics.",
-      "alternatives": ["claude-opus-4-1", "gpt-5"]
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-4-6"]
     },
     "legal-compliance": {
       "overall": 89,
       "notes": "Strong privacy posture and careful reasoning. HIPAA eligible. Extended thinking useful for contract analysis.",
-      "alternatives": ["claude-opus-4-1"]
+      "alternatives": ["claude-sonnet-4-6", "claude-opus-4-8"]
     },
     "healthcare": {
       "overall": 87,
       "notes": "HIPAA eligible with strong privacy controls. Good for clinical documentation but requires human oversight.",
-      "alternatives": ["claude-opus-4-1"]
+      "alternatives": ["claude-sonnet-4-6", "claude-opus-4-8"]
     },
     "financial-analysis": {
       "overall": 90,
       "notes": "Strong analytical capabilities and mathematical reasoning. Good for financial modeling and report generation.",
-      "alternatives": ["claude-opus-4-1", "gpt-5"]
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
     },
     "education": {
       "overall": 92,
       "notes": "Excellent tutoring capabilities with patient explanations. Extended thinking shows work step-by-step.",
-      "alternatives": ["gpt-5", "claude-opus-4-1"]
+      "alternatives": ["claude-sonnet-4-6", "gpt-5-5"]
     },
     "creative-writing": {
       "overall": 88,
       "notes": "Good for creative tasks but can be slightly verbose. Strong dialogue and character development.",
-      "alternatives": ["claude-opus-4-1", "gpt-5"]
+      "alternatives": ["claude-opus-4-8", "gpt-5-5"]
     }
   },
 
   "strengths": [
-    "Best-in-class coding capabilities (SWE-bench leader)",
+    "Top coding model of its era: 77.2% SWE-bench Verified at launch (September 2025)",
     "Extended thinking feature for complex problem-solving",
     "Exceptional privacy posture with ephemeral data handling",
     "Strong safety and jailbreak resistance via Constitutional AI",
@@ -631,7 +637,9 @@
     "Limited vision capabilities compared to multimodal specialists",
     "Training data transparency could be improved",
     "No built-in PII detection (customer responsibility)",
-    "Premium pricing ($3/$15 per 1M tokens)"
+    "Premium pricing ($3/$15 per 1M tokens)",
+    "Superseded by Sonnet 4.6 and Claude Sonnet 5 (2026-06-30) at the same standard price; 200K context vs their 1M",
+    "No adaptive thinking or effort parameter (introduced with Sonnet 4.6)"
   ],
 
   "best_for": [
@@ -643,6 +651,7 @@
   ],
 
   "not_recommended_for": [
+    "New Sonnet-tier deployments — Sonnet 4.6 or Claude Sonnet 5 offer more capability at the same standard price",
     "Real-time applications requiring <500ms latency",
     "Vision-heavy applications (limited multimodal)",
     "Cost-sensitive projects needing high volume inference"
@@ -652,9 +661,11 @@
     "pricing": {
       "input": "$3.00 per 1M tokens",
       "output": "$15.00 per 1M tokens",
-      "notes": "Premium tier pricing, batch discounts available for enterprise"
+      "notes": "Premium tier pricing, batch discounts available for enterprise. Confirmed unchanged at $3/$15 as of 2026-07-09.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 200000,
+    "max_output": 64000,
     "languages": [
       "English",
       "Spanish",
@@ -672,10 +683,11 @@
     "api_endpoint": "https://api.anthropic.com/v1/messages",
     "open_source": false,
     "architecture": "Transformer-based with Constitutional AI alignment",
-    "parameters": "Not disclosed"
+    "parameters": "Not disclosed",
+    "knowledge_cutoff": "January 2025 (reliable); training data through July 2025"
   },
 
-  "related_entities": ["claude-opus-4-1", "gpt-5", "gemini-2-5-pro"],
+  "related_entities": ["claude-sonnet-4-6", "claude-opus-4-8", "claude-haiku-4-5", "gpt-5-5"],
 
   "tags": [
     "coding",
@@ -683,6 +695,7 @@
     "enterprise",
     "hipaa-eligible",
     "safety-focused",
-    "extended-thinking"
+    "extended-thinking",
+    "previous-generation"
   ]
 }

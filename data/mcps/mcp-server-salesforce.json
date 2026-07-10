@@ -1,0 +1,492 @@
+{
+  "id": "mcp-server-salesforce",
+  "type": "mcp",
+  "name": "MCP Salesforce Server",
+  "provider": "Salesforce (Official)",
+  "version": "hosted (GA 2026-04-29); DX @salesforce/mcp 0.30.14",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Salesforce's official MCP offering. Primary path is Hosted MCP Servers (GA 2026-04-29, included for Enterprise Edition+ and Developer Edition orgs): Salesforce-managed endpoints exposing org data, flows, Apex actions, and Named Query APIs via OAuth with PKCE, enforcing CRUD/FLS/sharing as the authenticated user. Variants: local DX MCP server (@salesforce/mcp, v0.30.x, Apache-2.0) for dev workflows, and the Data 360 MCP server in developer preview (May 2026).",
+  "website": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 84,
+      "criteria": {
+        "crm_operation_reliability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Hosted MCP Servers GA",
+              "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+              "date": "2026-04-29",
+              "value": "Salesforce hosts and scales the MCP servers on the same managed infrastructure as its REST APIs; structured tool calls replace unstructured API access"
+            }
+          ],
+          "methodology": "Assessment of hosted-server operation reliability against the underlying Salesforce API platform",
+          "last_verified": "2026-07-09"
+        },
+        "query_and_flow_execution": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Salesforce Hosted MCP Servers - Standard Servers Reference",
+              "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html",
+              "date": "2026-07-09",
+              "value": "Prebuilt standard servers (Agentforce 360 Platform, Tableau Next, Data 360 SQL) plus custom servers exposing flows, Apex actions, and Named Query APIs as defined tool sets"
+            }
+          ],
+          "methodology": "Review of tool execution paths for queries, flows, and Apex actions",
+          "last_verified": "2026-07-09"
+        },
+        "rate_limit_handling": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Salesforce API Request Limits",
+              "url": "https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm",
+              "date": "2026-07-09",
+              "value": "MCP operations consume org API capacity subject to per-org API request limits by edition"
+            }
+          ],
+          "methodology": "Analysis of org API limit consumption by MCP tool calls",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Hosted MCP Servers GA",
+              "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+              "date": "2026-04-29",
+              "value": "Fully managed infrastructure: no servers to provision, no uptime to manage; Salesforce scales the servers as it does its REST APIs"
+            }
+          ],
+          "methodology": "Managed-infrastructure scalability assessment",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Salesforce Hosted MCP Servers Help",
+              "url": "https://help.salesforce.com/s/articleView?id=platform.hosted_mcp_servers.htm&language=en_US&type=5",
+              "date": "2026-07-09",
+              "value": "Tool calls surface standard Salesforce API errors (permission, validation, limits) to the client for recovery"
+            }
+          ],
+          "methodology": "Error propagation and recovery behavior review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 81,
+      "criteria": {
+        "authentication_security": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Hosted MCP Servers GA",
+              "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+              "date": "2026-04-29",
+              "value": "OAuth with PKCE controls access; a new MCP-specific OAuth scope separates MCP access from existing REST API scopes, granted via an External Client App"
+            }
+          ],
+          "methodology": "Authentication mechanism review",
+          "last_verified": "2026-07-09"
+        },
+        "permission_scope_control": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Hosted MCP Servers GA",
+              "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+              "date": "2026-04-29",
+              "value": "Existing org permissions automatically apply - CRUD, field-level security, and sharing rules; every transaction runs as the authenticated user with no anonymous service accounts"
+            }
+          ],
+          "methodology": "Access control model analysis",
+          "last_verified": "2026-07-09"
+        },
+        "data_modification_risk": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Hosted MCP Servers - Standard Servers Reference",
+              "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html",
+              "date": "2026-07-09",
+              "value": "Standard and custom servers can execute writes (record CRUD, flows, Apex actions) with the user's full permissions; a read-only platform/sobject-reads server is available for lower-risk use such as sandboxes"
+            }
+          ],
+          "methodology": "Write-path risk assessment across standard and custom servers",
+          "last_verified": "2026-07-09"
+        },
+        "audit_logging": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Hosted MCP Servers GA",
+              "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+              "date": "2026-04-29",
+              "value": "Full audit trails are included; MCP transactions are attributable to the authenticated user in org auditing"
+            }
+          ],
+          "methodology": "Audit logging review",
+          "last_verified": "2026-07-09"
+        },
+        "secure_default_posture": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Hosted MCP Servers GA",
+              "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+              "date": "2026-04-29",
+              "value": "Secure-by-default: servers are off until an admin explicitly enables them in Setup > API Catalog > MCP Servers and creates an External Client App with appropriate scopes"
+            }
+          ],
+          "methodology": "Default configuration and enablement review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 68,
+      "criteria": {
+        "crm_pii_exposure": {
+          "score": 60,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP Data Flow",
+              "url": "https://modelcontextprotocol.io/docs/architecture",
+              "date": "2026-07-09",
+              "value": "Contact, lead, account, and opportunity records - CRM PII at enterprise scale - are returned to the MCP client and sent to the LLM provider"
+            }
+          ],
+          "methodology": "Data flow analysis of CRM record exposure to the model context",
+          "last_verified": "2026-07-09"
+        },
+        "least_privilege_support": {
+          "score": 76,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Hosted MCP Servers GA",
+              "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+              "date": "2026-04-29",
+              "value": "Exposure can be narrowed with permission sets, FLS, sharing rules, and by choosing which servers/tools to enable (including a read-only server)"
+            }
+          ],
+          "methodology": "Assessment of mechanisms available to minimize data exposed to agents",
+          "last_verified": "2026-07-09"
+        },
+        "data_residency_and_control": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Salesforce Hosted MCP Servers Help",
+              "url": "https://help.salesforce.com/s/articleView?id=platform.hosted_mcp_servers.htm&language=en_US&type=5",
+              "date": "2026-07-09",
+              "value": "MCP endpoints run inside Salesforce-managed infrastructure under existing org trust and compliance boundaries, but responses leave that boundary once delivered to the MCP client"
+            }
+          ],
+          "methodology": "Data residency and control boundary analysis",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 66,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "LLM Provider Policies",
+              "url": "https://modelcontextprotocol.io/docs",
+              "date": "2026-07-09",
+              "value": "CRM data retrieved via MCP is processed by the connected LLM provider (Claude, ChatGPT, Slack AI, etc.) under that provider's privacy policy"
+            }
+          ],
+          "methodology": "Data sharing analysis",
+          "last_verified": "2026-07-09"
+        },
+        "consent_and_regulatory": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Hosted MCP Servers GA",
+              "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+              "date": "2026-04-29",
+              "value": "Customer PII in CRM records may be subject to GDPR/CCPA; routing it through agent contexts requires customer-side controls beyond what the server enforces"
+            }
+          ],
+          "methodology": "Regulatory exposure assessment for CRM data in agent workflows",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 82,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Hosted MCP Servers Documentation",
+              "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html",
+              "date": "2026-07-09",
+              "value": "First-party developer guide with a per-server tool reference, setup guides (Setup > API Catalog > MCP Servers), and client connection walkthroughs including Claude"
+            },
+            {
+              "source": "Salesforce Developers Blog - Connect Claude with Hosted MCP Servers",
+              "url": "https://developer.salesforce.com/blogs/2026/05/connect-claude-with-salesforce-hosted-mcp-servers",
+              "date": "2026-05-15",
+              "value": "Dedicated client integration guides published post-GA"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "operation_visibility": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Hosted MCP Servers GA",
+              "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+              "date": "2026-04-29",
+              "value": "Servers define exactly which operations are available as structured tool calls, with full audit trails attributable to the authenticated user"
+            }
+          ],
+          "methodology": "Logging and traceability assessment",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 74,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "npm - @salesforce/mcp",
+              "url": "https://www.npmjs.com/package/@salesforce/mcp",
+              "date": "2026-06-23",
+              "value": "Hosted servers are closed-source managed services, but the DX MCP server (@salesforce/mcp v0.30.14, Apache-2.0, last published 2026-06-23) and the Data 360 MCP server (forcedotcom/d360-mcp-server) are open source"
+            },
+            {
+              "source": "GitHub - forcedotcom/d360-mcp-server",
+              "url": "https://github.com/forcedotcom/d360-mcp-server",
+              "date": "2026-07-09",
+              "value": "Data 360 MCP server published as an open-source developer preview"
+            }
+          ],
+          "methodology": "Source availability review across the hosted, DX, and Data 360 variants",
+          "last_verified": "2026-07-09"
+        },
+        "api_coverage_clarity": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Data 360 MCP Server (Developer Preview)",
+              "url": "https://developer.salesforce.com/blogs/2026/05/introducing-the-data-360-mcp-server-developer-preview",
+              "date": "2026-05-20",
+              "value": "Coverage is explicitly documented per server; the Data 360 preview consolidates ~200 REST operations behind three facade tools (search, payload_examples, execute) to avoid context-window overload"
+            }
+          ],
+          "methodology": "API coverage documentation review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 81,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 76,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Developers Blog - Hosted MCP Servers GA",
+              "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+              "date": "2026-04-29",
+              "value": "Setup takes under 30 minutes but requires admin work: enable a server in Setup > API Catalog > MCP Servers, create an External Client App with MCP scopes, then connect the client via OAuth"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-07-09"
+        },
+        "api_performance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Salesforce Developer Platform",
+              "url": "https://developer.salesforce.com/",
+              "date": "2026-07-09",
+              "value": "Performance tracks the underlying Salesforce APIs; complex queries and flow executions add latency versus simple record reads"
+            }
+          ],
+          "methodology": "Performance assessment against underlying API behavior",
+          "last_verified": "2026-07-09"
+        },
+        "reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Trust Status",
+              "url": "https://status.salesforce.com/",
+              "date": "2026-07-09",
+              "value": "Runs on Salesforce-managed infrastructure with published trust/status transparency and enterprise SLAs"
+            }
+          ],
+          "methodology": "Reliability analysis",
+          "last_verified": "2026-07-09"
+        },
+        "feature_coverage": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Salesforce Hosted MCP Servers - Standard Servers Reference",
+              "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html",
+              "date": "2026-07-09",
+              "value": "Standard servers for Agentforce 360 Platform, Tableau Next, and Data 360 SQL plus custom servers over flows, Apex actions, and Named Query APIs"
+            }
+          ],
+          "methodology": "Feature coverage assessment",
+          "last_verified": "2026-07-09"
+        },
+        "deployment_flexibility": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "npm - @salesforce/mcp",
+              "url": "https://www.npmjs.com/package/@salesforce/mcp",
+              "date": "2026-06-23",
+              "value": "Three deployment shapes: hosted servers (GA, Enterprise Edition+ and Developer Edition at no extra cost), local DX MCP server on npm for developer workflows, and the Data 360 MCP server in developer preview (stdio, Java 17+) slated to join the hosted lineup at GA"
+            }
+          ],
+          "methodology": "Deployment option and edition availability review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Salesforce-managed hosted endpoints: no infrastructure to run, scales like the REST APIs (GA 2026-04-29)",
+    "Org permission model enforced end-to-end: CRUD, field-level security, and sharing rules apply, with every transaction running as the authenticated user",
+    "OAuth with PKCE plus a dedicated MCP OAuth scope separates agent access from existing API integrations",
+    "Secure by default: servers disabled until explicitly enabled in Setup, with full audit trails",
+    "Included at no additional cost for Enterprise Edition+ orgs and Developer Edition",
+    "Custom servers expose flows, Apex actions, and Named Query APIs as curated tool sets; read-only sobject-reads server available",
+    "Open-source variants: DX MCP server (@salesforce/mcp, Apache-2.0) for dev workflows and Data 360 MCP server in developer preview"
+  ],
+  "limitations": [
+    "CRM PII at scale (contacts, leads, accounts, opportunities) flows into the LLM provider's context",
+    "Write-capable tools (record CRUD, flows, Apex actions) act with the user's full org permissions - over-permissioned users mean over-permissioned agents",
+    "Requires Enterprise Edition or above (or Developer Edition); not available on lower editions",
+    "Admin-driven setup (Setup enablement + External Client App) adds friction versus one-click consumer MCP servers",
+    "MCP tool calls consume org API request limits",
+    "Hosted servers are closed source; open-source DX and Data 360 variants cover different scopes (dev tooling, Data 360 APIs) rather than the hosted CRM servers",
+    "Data 360 MCP server is developer preview only (stdio, Java 17+) and not yet part of the hosted GA lineup"
+  ],
+  "metadata": {
+    "license": "Proprietary (hosted service); DX MCP server Apache-2.0; Data 360 MCP server open source (developer preview)",
+    "supported_platforms": [
+      "Hosted (Salesforce-managed endpoints, Enterprise Edition+ and Developer Edition)",
+      "Local DX server via npm (@salesforce/mcp)",
+      "Data 360 developer preview (Java 17+, stdio)"
+    ],
+    "programming_languages": [
+      "N/A (hosted service)",
+      "TypeScript (DX server)",
+      "Java (Data 360 preview)"
+    ],
+    "mcp_version": "1.0",
+    "docs": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html",
+    "api_dependency": "Salesforce Platform APIs, Named Query APIs, Flows, Apex; Data 360 APIs (preview)",
+    "authentication": "OAuth 2.0 with PKCE via External Client App; dedicated MCP OAuth scope",
+    "package_name": "@salesforce/mcp",
+    "github_repo": "https://github.com/forcedotcom/d360-mcp-server",
+    "first_release": "2025-10 (hosted beta); 2026-04-29 (hosted GA)",
+    "maintained_by": "Salesforce",
+    "status": "Active - hosted servers GA; DX server actively released (v0.30.14, 2026-06-23); Data 360 server developer preview",
+    "transport_types": [
+      "streamable-http (hosted)",
+      "stdio (DX and Data 360 servers)"
+    ]
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 82,
+      "notes": "DX MCP server is purpose-built for Salesforce development workflows (orgs, metadata, testing)"
+    },
+    "customer-support": {
+      "overall": 86,
+      "notes": "Strong fit: case, contact, and account context with org permissions enforced"
+    },
+    "content-creation": {
+      "overall": 68,
+      "notes": "Useful for CRM-grounded outreach drafting; not a content platform"
+    },
+    "data-analysis": {
+      "overall": 85,
+      "notes": "Data 360 SQL and Tableau Next servers plus Named Queries enable governed analytics"
+    },
+    "research-assistant": {
+      "overall": 72,
+      "notes": "Good for account research within the org; limited outside CRM data"
+    },
+    "legal-compliance": {
+      "overall": 62,
+      "notes": "Strong access controls and audit trails, but CRM PII reaches the LLM provider"
+    },
+    "healthcare": {
+      "overall": 58,
+      "notes": "Health Cloud data routed through agent contexts raises PHI exposure concerns"
+    },
+    "financial-analysis": {
+      "overall": 72,
+      "notes": "Governed access to revenue/opportunity data; FLS can shield sensitive fields"
+    },
+    "education": {
+      "overall": 66,
+      "notes": "Applicable for Education Cloud orgs; standard CRM caveats apply"
+    },
+    "creative-writing": {
+      "overall": 40,
+      "notes": "Not a fit beyond CRM-personalized copy"
+    }
+  },
+  "best_for": [
+    "Enterprises wanting AI agents on CRM data without building or hosting integration middleware",
+    "Admin-governed orgs that need CRUD/FLS/sharing enforcement and audit trails on every agent action",
+    "Sales and service teams working from Slack, Claude, or ChatGPT against live Salesforce data",
+    "Salesforce developers using the DX MCP server for org and metadata workflows"
+  ],
+  "related_entities": [
+    "mcp-server-slack",
+    "mcp-server-stripe",
+    "mcp-server-zapier",
+    "mcp-server-atlassian"
+  ],
+  "tags": [
+    "crm",
+    "enterprise",
+    "mcp",
+    "model-context-protocol",
+    "official",
+    "remote-server"
+  ]
+}
