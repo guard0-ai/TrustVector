@@ -4,6 +4,7 @@ import './globals.css';
 import Link from 'next/link';
 import { Github, BarChart3, BookOpen } from 'lucide-react';
 import { Logo } from '@/components/logo';
+import { AnnouncementBanner } from '@/components/announcement-banner';
 
 // Variable fonts vendored locally (app/fonts) so builds work offline and
 // ship one file per family instead of one per weight.
@@ -133,6 +134,11 @@ export default function RootLayout({
       <body className={`${inter.variable} ${jakarta.variable} ${jetbrainsMono.variable} font-sans`}>
         {/* Subtle emerald top accent (replaces old rainbow border) */}
         <div className="min-h-screen flex flex-col accent-top bg-background">
+          <AnnouncementBanner
+            id="gpt-5-6-2026-07"
+            message="GPT-5.6 (Sol / Terra / Luna) is now evaluated on TrustVector — with day-1 independent verification, incl. METR's benchmark-cheating findings."
+            href="/models/gpt-5-6"
+          />
           {/* Header with thin border */}
           <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm">
             <div className="container mx-auto px-4">
