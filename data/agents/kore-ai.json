@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "Kore.ai",
   "provider": "Kore.ai Inc.",
-  "version": "11.0",
-  "last_evaluated": "2025-01-14",
+  "version": "Agent Platform - Artemis edition (2026); XO Platform v11",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Enterprise-grade agentic AI platform for designing, deploying, managing, and scaling AI agents across business operations. Offers no-code builders, pre-built industry solutions, and comprehensive orchestration capabilities for complex enterprise workflows.",
+  "description": "Enterprise agentic AI platform for designing, deploying, managing, and scaling AI agents across business operations. In May 2026 Kore.ai launched the Artemis edition of its Agent Platform, built around the Agent Blueprint Language (ABL), a compiled, declarative YAML-based language for defining, validating, and governing agents and multi-agent systems, initially on Microsoft Azure. Secured a strategic growth investment led by AllianceBernstein in January 2026 (total funding ~$620M).",
   "website": "https://kore.ai/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Enterprise deployment analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "natural_language_understanding": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "NLU capability testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "multi_channel_support": {
           "score": 92,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Channel integration testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "workflow_orchestration": {
           "score": 88,
@@ -63,10 +63,16 @@
               "url": "https://developer.kore.ai/",
               "date": "2025-01-10",
               "value": "Sophisticated workflow orchestration with dialog management"
+            },
+            {
+              "source": "Kore.ai Artemis Agent Platform launch",
+              "url": "https://www.kore.ai/news",
+              "date": "2026-07-09",
+              "value": "Artemis edition of the Kore.ai Agent Platform launched May 2026 with Agent Blueprint Language (ABL) for defining, validating, and governing agents, workflows, and multi-agent systems; initially available on Microsoft Azure"
             }
           ],
           "methodology": "Orchestration capability review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 90,
@@ -80,7 +86,7 @@
             }
           ],
           "methodology": "Scalability assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +105,7 @@
             }
           ],
           "methodology": "Security certification review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_encryption": {
           "score": 90,
@@ -113,7 +119,7 @@
             }
           ],
           "methodology": "Encryption review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 92,
@@ -127,7 +133,7 @@
             }
           ],
           "methodology": "Access control assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 90,
@@ -141,7 +147,7 @@
             }
           ],
           "methodology": "Audit capability review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 88,
@@ -155,7 +161,7 @@
             }
           ],
           "methodology": "PII handling assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +180,7 @@
             }
           ],
           "methodology": "GDPR compliance review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "hipaa_compliance": {
           "score": 88,
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "HIPAA compliance review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_residency": {
           "score": 90,
@@ -202,7 +208,7 @@
             }
           ],
           "methodology": "Data residency review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "score": 85,
@@ -216,7 +222,7 @@
             }
           ],
           "methodology": "Retention policy review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +241,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "conversation_history": {
           "score": 90,
@@ -249,7 +255,7 @@
             }
           ],
           "methodology": "Logging capability assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "model_transparency": {
           "score": 78,
@@ -263,7 +269,7 @@
             }
           ],
           "methodology": "Model transparency review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "performance_metrics": {
           "score": 85,
@@ -277,7 +283,7 @@
             }
           ],
           "methodology": "Analytics review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +302,7 @@
             }
           ],
           "methodology": "Deployment complexity assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "integration_ecosystem": {
           "score": 90,
@@ -310,7 +316,7 @@
             }
           ],
           "methodology": "Integration ecosystem review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 88,
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Support quality assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "customization": {
           "score": 85,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Customization capability review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "industry_solutions": {
           "score": 88,
@@ -352,7 +358,7 @@
             }
           ],
           "methodology": "Industry solution review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -430,7 +436,14 @@
     "certifications": ["SOC 2 Type II", "ISO 27001", "HIPAA", "GDPR"],
     "founded": "2014",
     "headquarters": "Orlando, FL",
-    "customers": "Fortune 500 companies"
+    "customers": "Fortune 500 companies",
+    "funding": "~$620.9M total (as of April 2026), including $150M growth round (2024) and a strategic growth investment led by AllianceBernstein Private Credit Investors (January 2026)",
+    "products": [
+      "Agent Platform (Artemis edition, May 2026)",
+      "XO Platform v11",
+      "AI for Service",
+      "AI for Work"
+    ]
   },
   "tags": ["enterprise", "conversational-ai", "customer-support", "no-code"]
 }

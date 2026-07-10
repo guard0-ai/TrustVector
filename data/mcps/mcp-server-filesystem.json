@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Filesystem Server",
   "provider": "Anthropic",
-  "version": "2025.7.1",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7.4",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official MCP reference server providing AI models with controlled access to the local filesystem (file reading, writing, and directory operations). One of the seven reference servers still actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation (Linux Foundation) on 2025-12-09, latest spec 2025-11-25. Critical for file-based workflows but requires careful security configuration.",
+  "description": "Official MCP reference server providing AI models with controlled access to the local filesystem (file reading, writing, and directory operations). One of seven reference servers still maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation (Linux Foundation) on 2025-12-09, latest stable spec 2025-11-25 (2026-07-28 revision at release-candidate stage). Critical for file-based workflows but requires careful security configuration.",
   "website": "https://modelcontextprotocol.io/docs/servers/filesystem",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "File operation testing across multiple platforms",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "response_time": {
           "score": 95,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Latency benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_handling": {
           "score": 90,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Error scenario testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cross_platform_compatibility": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Multi-platform testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "large_file_handling": {
           "score": 87,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Large file performance testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "path_traversal_protection": {
           "score": 75,
@@ -110,10 +110,16 @@
               "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
               "date": "2025-11-16",
               "value": "Built-in path normalization prevents basic traversal attacks"
+            },
+            {
+              "source": "GitHub Advisory Database / Trend Micro disclosure",
+              "url": "https://github.com/advisories?query=modelcontextprotocol+server-filesystem",
+              "date": "2026-07-09",
+              "value": "CVE-2025-53110 (directory containment bypass, CVSS 7.3) and CVE-2025-53109 (symlink bypass, CVSS 8.4) were disclosed by Trend Micro in 2025 and fixed in release 2025.7.1; no newer advisories against this server found as of 2026-07-09 (current release 2026.7.4)"
             }
           ],
           "methodology": "Path traversal attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "permission_enforcement": {
           "score": 65,
@@ -127,7 +133,7 @@
             }
           ],
           "methodology": "Permission boundary testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 70,
@@ -141,7 +147,7 @@
             }
           ],
           "methodology": "Logging capabilities review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_exfiltration_risk": {
           "score": 60,
@@ -155,7 +161,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +180,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_protection": {
           "score": 65,
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Privacy features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_processing": {
           "score": 85,
@@ -202,7 +208,7 @@
             }
           ],
           "methodology": "Data processing architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 70,
@@ -216,7 +222,7 @@
             }
           ],
           "methodology": "Compliance framework review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +241,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 82,
@@ -249,7 +255,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 95,
@@ -263,7 +269,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "security_guidance": {
           "score": 78,
@@ -277,7 +283,7 @@
             }
           ],
           "methodology": "Security documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +302,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_efficiency": {
           "score": 92,
@@ -310,7 +316,7 @@
             }
           ],
           "methodology": "Resource utilization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "stability": {
           "score": 88,
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Issue tracking analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "maintenance_requirements": {
           "score": 85,
@@ -341,10 +347,16 @@
               "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
               "date": "2025-12-09",
               "value": "filesystem is one of the seven reference servers still actively maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09"
+            },
+            {
+              "source": "npm - @modelcontextprotocol/server-filesystem",
+              "url": "https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem",
+              "date": "2026-07-09",
+              "value": "Latest release 2026.7.4 (published 2026-07-04); still listed among the seven maintained reference servers in modelcontextprotocol/servers README (repo ~88,300 stars, not archived)"
             }
           ],
           "methodology": "Maintenance overhead assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 82,
@@ -358,7 +370,7 @@
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -374,11 +386,11 @@
   "limitations": [
     "Significant security risk if misconfigured - AI can access all allowed files",
     "No built-in PII or sensitive data detection/redaction",
-    "File contents sent to external LLM provider APIs",
+    "File contents sent to external LLM provider APIs, with potential for accidental data exfiltration",
     "Limited granular permission controls beyond directory allowlists",
-    "Potential for accidental data exfiltration to LLM providers",
     "Audit logging requires custom implementation for compliance needs",
-    "STATUS 2026-06-10: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); governance now under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
+    "SECURITY: CVE-2025-53110 (containment bypass) and CVE-2025-53109 (symlink bypass) fixed in 2025.7.1; versions older than 2025.7.1 remain vulnerable - upgrade to current release",
+    "STATUS 2026-07-09: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); latest npm release 2026.7.4 (2026-07-04); governance under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -393,7 +405,7 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "github_stars": 58700,
+    "github_stars": 88259,
     "first_release": "2024-11",
     "maintained_by": "MCP project (Agentic AI Foundation / Linux Foundation since 2025-12-09)",
     "status": "Official - Active",

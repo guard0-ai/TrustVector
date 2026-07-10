@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "n8n AI Agent",
   "provider": "n8n",
-  "version": "1.113.3",
-  "last_evaluated": "2025-11-09",
+  "version": "2.29.9",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Fair-code workflow automation platform with AI agent capabilities. Visual workflow builder integrating AI models, tools, and 400+ app integrations for building intelligent automation and agentic workflows.",
+  "description": "Fair-code workflow automation platform with AI agent capabilities, now on the 2.x major version. Visual builder with AI agent nodes and 400+ integrations. Valued at $5.2B (May 2026) after a $180M Series C (Oct 2025) and a strategic SAP investment. SECURITY: critical CVEs disclosed Jan-Feb 2026 - CVE-2026-21858 'Ni8mare' (unauthenticated RCE), CVE-2026-21877 (CVSS 9.9 RCE), CVE-2026-25049 (authenticated RCE) - all patched; n8n 2.5.2+ is the minimum safe self-hosted version.",
   "website": "https://n8n.io/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Workflow reliability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "ai_agent_nodes": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "AI agent capability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "integration_reliability": {
           "score": 90,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_support": {
           "score": 84,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "LLM integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_handling": {
           "score": 86,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error recovery testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Variable (100ms-10s)",
@@ -94,12 +94,12 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 81,
+      "overall_score": 77,
       "criteria": {
         "credential_management": {
           "score": 88,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Credential security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "self_hosting": {
           "score": 90,
@@ -127,10 +127,10 @@
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "authentication": {
-          "score": 82,
+          "score": 75,
           "confidence": "high",
           "evidence": [
             {
@@ -138,10 +138,17 @@
               "url": "https://docs.n8n.io/user-management/",
               "date": "2024-10-01",
               "value": "User authentication with RBAC in enterprise version"
+            },
+            {
+              "source": "Cyber Centre AL26-001 / Rapid7 - n8n CVE wave",
+              "url": "https://www.cyber.gc.ca/en/alerts-advisories/al26-001-vulnerabilities-affecting-n8n-cve-2026-21858-cve-2026-21877-cve-2025-68613",
+              "date": "2026-07-09",
+              "value": "Jan-Feb 2026 wave of critical vulnerabilities: CVE-2026-21858 'Ni8mare' (unauthenticated RCE, >=1.65.0 <1.121.0), CVE-2026-21877 (CVSS 9.9 RCE via arbitrary file write, 0.123.0-1.121.3), CVE-2026-25049 (authenticated RCE via workflow expressions, fixed in 1.123.17/2.5.2) and eight further CVEs disclosed February 2026; 2.5.2 is the minimum safe version"
             }
           ],
-          "methodology": "Authentication testing",
-          "last_verified": "2025-11-09"
+          "methodology": "Authentication testing and security advisory review",
+          "last_verified": "2026-07-09",
+          "notes": "Score reduced 2026-07-09: Jan-Feb 2026 wave of critical CVEs including an unauthenticated RCE; all patched (2.5.2+ safe, current release 2.29.9) and no confirmed in-the-wild exploitation reported, hence conservative rather than severe reduction"
         },
         "fair_code_license": {
           "score": 85,
@@ -155,7 +162,7 @@
             }
           ],
           "methodology": "License assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "webhook_security": {
           "score": 76,
@@ -169,7 +176,7 @@
             }
           ],
           "methodology": "Webhook security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +195,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 83,
@@ -202,7 +209,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment": {
           "score": 92,
@@ -216,7 +223,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_processing": {
           "score": 80,
@@ -230,7 +237,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_logging": {
           "score": 84,
@@ -244,7 +251,7 @@
             }
           ],
           "methodology": "Logging privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +270,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "visual_workflow_editor": {
           "score": 94,
@@ -277,7 +284,7 @@
             }
           ],
           "methodology": "UI/UX assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "source_available": {
           "score": 88,
@@ -286,12 +293,12 @@
             {
               "source": "GitHub",
               "url": "https://github.com/n8n-io/n8n",
-              "date": "2024-10-20",
-              "value": "Fair-code license, 48k+ stars, source code available"
+              "date": "2026-07-09",
+              "value": "Fair-code license, 195k+ stars, source code available"
             }
           ],
           "methodology": "Source availability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_history": {
           "score": 86,
@@ -305,7 +312,7 @@
             }
           ],
           "methodology": "Traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 84,
@@ -319,7 +326,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -338,7 +345,7 @@
             }
           ],
           "methodology": "Usability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 82,
@@ -352,7 +359,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 88,
@@ -361,12 +368,12 @@
             {
               "source": "Pricing",
               "url": "https://n8n.io/pricing/",
-              "date": "2024-10-01",
-              "value": "Free self-hosted, cloud pricing starts at $20/month"
+              "date": "2026-07-09",
+              "value": "Free self-hosted (fair-code); Cloud Starter from EUR 20/month (annual) or EUR 24/month (monthly) for 2,500 executions; active workflow limits removed across all plans as of April 2026"
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 84,
@@ -380,7 +387,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "integration_ecosystem": {
           "score": 95,
@@ -394,7 +401,7 @@
             }
           ],
           "methodology": "Integration ecosystem assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "template_library": {
           "score": 87,
@@ -408,7 +415,7 @@
             }
           ],
           "methodology": "Template availability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -416,7 +423,7 @@
   "strengths": [
     "Extremely intuitive visual workflow builder for non-developers",
     "400+ pre-built integrations with apps and services",
-    "Fair-code licensed with 48k+ GitHub stars and active community",
+    "Fair-code licensed with 195k+ GitHub stars and active community",
     "Self-hosting option for complete data control",
     "AI agent nodes with LangChain integration for intelligent workflows",
     "1000+ workflow templates and excellent documentation"
@@ -427,7 +434,8 @@
     "Can become expensive at scale with cloud hosting",
     "Learning curve for complex workflow logic",
     "Limited specialized AI/ML features compared to dedicated platforms",
-    "Performance can degrade with very complex workflows"
+    "Performance can degrade with very complex workflows",
+    "Jan-Feb 2026 wave of critical CVEs (incl. unauthenticated RCE CVE-2026-21858 'Ni8mare' and CVSS 9.9 CVE-2026-21877); self-hosted deployments must run 2.5.2 or later"
   ],
   "metadata": {
     "license": "Sustainable Use License (Fair-code)",
@@ -448,11 +456,12 @@
       "LangChain tools",
       "Custom functions"
     ],
-    "pricing_model": "Fair-code license - Free self-hosted for personal/internal use, Cloud with unlimited workflows/steps/users (all plans), no active workflow limits as of Aug 2025",
-    "github_stars": "146956+",
-    "latest_version": "1.113.3 (September 26, 2025)",
-    "valuation": "$2.3B (August 2025)",
-    "annual_revenue": "$40M+",
+    "pricing_model": "Fair-code license - Free self-hosted for personal/internal use, Cloud Starter from EUR 20/month (annual); unlimited users and no active workflow limits on all plans (confirmed April 2026)",
+    "github_stars": "195000+",
+    "latest_version": "2.29.9 (July 9, 2026)",
+    "valuation": "$5.2B (May 2026, after SAP strategic investment; $2.5B at Oct 2025 $180M Series C led by Accel)",
+    "total_funding": "$254M",
+    "annual_revenue": "$40M+ (2025 figure; needs re-verification)",
     "first_release": "2019",
     "workflow_templates": "1000+",
     "ai_features": [

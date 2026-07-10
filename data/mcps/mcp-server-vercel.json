@@ -3,11 +3,11 @@
   "type": "mcp",
   "name": "Vercel MCP Server",
   "provider": "Vercel",
-  "version": "2026.6-beta",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7-beta",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Vercel's official hosted MCP server at mcp.vercel.com. Provides Vercel documentation search and tools to inspect teams, projects, deployments, and deployment logs. Remote-only with OAuth 2.1, a client allowlist, and mandatory consent; deliberately read-only at initial launch. Currently in Public Beta.",
-  "website": "https://vercel.com/docs/mcp/vercel-mcp",
+  "description": "Vercel's official hosted MCP server at mcp.vercel.com. Provides docs search plus tools to inspect teams, projects, deployments, build and runtime logs, and Agent Runs observability. No longer read-only: includes write-capable tools such as buy_domain (domain purchase), toolbar comment replies/edits/resolution, shareable-link creation for protected deployments, and CLI-guided deploys. Remote-only with OAuth 2.1, a client allowlist, and mandatory consent. Still in Beta on all plans.",
+  "website": "https://vercel.com/docs/agent-resources/vercel-mcp",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 83,
@@ -18,13 +18,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Hosted on Vercel's own platform infrastructure with a single managed endpoint at https://mcp.vercel.com"
             }
           ],
           "methodology": "Endpoint stability analysis on Vercel platform infrastructure",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_success_rate": {
           "score": 84,
@@ -32,13 +32,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Read-oriented tools (projects, deployments, logs) are thin wrappers over the stable Vercel REST API and succeed consistently within granted scopes"
             }
           ],
           "methodology": "Operation success testing across documented tools on real projects",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "search_accuracy": {
           "score": 85,
@@ -46,13 +46,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Documentation search returns current Vercel docs, reducing hallucinated configuration answers in coding agents"
             }
           ],
           "methodology": "Relevance assessment of documentation search results for common platform queries",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 80,
@@ -60,13 +60,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Returns structured errors for unauthorized scopes, unknown projects, and expired sessions; OAuth re-consent flow recovers expired grants"
             }
           ],
           "methodology": "Error handling testing across permission, scope, and session-expiry failures",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 78,
@@ -74,18 +74,18 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Inherits Vercel API rate limits per authenticated user; MCP-specific limits are not separately published during Public Beta"
             }
           ],
           "methodology": "Rate limiting behavior observation; limited published detail during beta",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 87,
+      "overall_score": 80,
       "criteria": {
         "authentication_security": {
           "score": 92,
@@ -93,27 +93,27 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "OAuth 2.1 authorization with mandatory user consent on every connection; no static API tokens are placed in client configuration"
             }
           ],
           "methodology": "Review of OAuth 2.1 flow, consent screens, and token lifecycle",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scope_limitation": {
-          "score": 90,
+          "score": 70,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
-              "date": "2026-06-10",
-              "value": "Deliberately read-only at initial launch: tools inspect teams, projects, deployments, and logs but cannot mutate or trigger deployments"
+              "source": "Vercel MCP Tools Reference",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp/tools",
+              "date": "2026-07-09",
+              "value": "The read-only launch posture has ended: current tools include buy_domain (purchases a domain with registrant details), reply_to_toolbar_thread / edit_toolbar_message / change_toolbar_thread_resolve_status, get_access_to_vercel_url (creates shareable links bypassing deployment protection), and deploy_to_vercel CLI guidance"
             }
           ],
-          "methodology": "Permission boundary testing of the shipped tool surface for write capability",
-          "last_verified": "2026-06-10"
+          "methodology": "Permission boundary testing of the shipped tool surface for write capability; lowered from 90 because write-capable tools, including one that spends money and one that mints protection-bypassing links, are now part of the default surface",
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 85,
@@ -121,27 +121,27 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Remote-only design means no locally stored long-lived secrets; OAuth tokens are short-lived and revocable from the Vercel dashboard"
             }
           ],
           "methodology": "Token storage and exposure-surface analysis for the remote-only model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "unauthorized_action_risk": {
-          "score": 88,
+          "score": 74,
           "confidence": "high",
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
-              "date": "2026-06-10",
-              "value": "A client allowlist restricts which MCP clients may connect, and the read-only launch surface means a confused or injected agent cannot modify infrastructure"
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+              "date": "2026-07-09",
+              "value": "Client allowlist and per-connection consent remain, with documented confused-deputy protection; however an injected agent could now purchase domains, create protection-bypassing shareable links, or post toolbar replies. Vercel's own docs recommend enabling human confirmation for tool execution"
             }
           ],
-          "methodology": "Threat modeling of agent misuse against the allowlisted, read-only tool surface",
-          "last_verified": "2026-06-10"
+          "methodology": "Threat modeling of agent misuse against the allowlisted tool surface; lowered from 88 following the addition of write-capable and spend-capable tools",
+          "last_verified": "2026-07-09"
         },
         "action_auditability": {
           "score": 80,
@@ -149,13 +149,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "OAuth grants are visible and revocable per user; access activity is attributable to the granting account, though a dedicated MCP audit log is not yet exposed"
             }
           ],
           "methodology": "Audit logging review of grant management and access attribution",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -168,13 +168,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Project metadata, deployment details, and log contents are returned to the LLM provider as tool results"
             }
           ],
           "methodology": "Data flow analysis of tool results from Vercel to LLM providers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 70,
@@ -182,13 +182,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Deployment logs can contain secrets, tokens, or PII printed by application code; the server does not redact log contents before returning them"
             }
           ],
           "methodology": "Assessment of redaction controls on log-reading tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "organization_data_control": {
           "score": 82,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Access control review against Vercel team RBAC",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 76,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Analysis of downstream data sharing once tool results leave Vercel",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -229,13 +229,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Clear official documentation covering endpoint, OAuth setup, supported clients, tool capabilities, and security model"
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 82,
@@ -243,13 +243,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Tool calls are visible in MCP client logs; connected integrations and grants are visible in the Vercel dashboard"
             }
           ],
           "methodology": "Logging and traceability assessment across client and dashboard",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 45,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Source availability and independent verifiability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 84,
@@ -271,18 +271,18 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
-              "value": "Documented tool surface (docs search; team, project, deployment management views; deployment logs) matches observed behavior, with read-only status stated explicitly"
+              "value": "Tools reference (updated 2026-07-02) documents every tool with parameters, including the write-capable domain, toolbar, and access tools; documented surface matches observed behavior"
             }
           ],
           "methodology": "Comparison of documented tool surface against observed server capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 80,
+      "overall_score": 82,
       "criteria": {
         "ease_of_setup": {
           "score": 90,
@@ -290,13 +290,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Zero installation: add https://mcp.vercel.com in a supported client and complete the OAuth consent flow"
             }
           ],
           "methodology": "Setup complexity assessment across allowlisted MCP clients",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 84,
@@ -304,13 +304,13 @@
           "evidence": [
             {
               "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
               "date": "2026-06-10",
               "value": "Hosted on Vercel's edge-adjacent infrastructure; typical tool responses return quickly, with log retrieval slowest for large deployments"
             }
           ],
           "methodology": "Latency observation across representative tool calls",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 80,
@@ -324,21 +324,21 @@
             }
           ],
           "methodology": "Uptime analysis combined with beta-status risk assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
-          "score": 68,
+          "score": 78,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Vercel MCP Documentation",
-              "url": "https://vercel.com/docs/mcp/vercel-mcp",
-              "date": "2026-06-10",
-              "value": "Read-only launch scope excludes deployment triggering, environment variable management, and domain configuration; coverage is intentionally narrow"
+              "source": "Vercel MCP Tools Reference",
+              "url": "https://vercel.com/docs/agent-resources/vercel-mcp/tools",
+              "date": "2026-07-09",
+              "value": "Coverage now spans docs search, teams/projects/deployments, build and runtime logs (with filtering), eve Agent Runs observability and traces, domain availability checks and purchase, toolbar comment workflows, deployment URL fetching, and CLI-guided deploys; environment variable management is still absent"
             }
           ],
-          "methodology": "Feature completeness assessment against the full Vercel API surface",
-          "last_verified": "2026-06-10"
+          "methodology": "Feature completeness assessment against the full Vercel API surface; raised from 68 after substantial tool surface expansion (runtime logs, Agent Runs, domains, toolbar)",
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 78,
@@ -352,24 +352,25 @@
             }
           ],
           "methodology": "Adoption analysis across the Vercel developer ecosystem and MCP clients",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
   },
   "strengths": [
-    "Notably strong security posture: OAuth 2.1, mandatory consent, client allowlist, and read-only launch scope",
+    "Strong authentication posture: OAuth 2.1, mandatory consent, client allowlist, and documented confused-deputy protection",
     "Remote-only design eliminates locally stored long-lived secrets",
     "Live documentation search reduces hallucinated Vercel configuration answers",
-    "Deployment log access enables fast AI-assisted debugging of failed builds",
-    "Zero-install setup in supported MCP clients",
+    "Build and runtime log access with rich filtering enables fast AI-assisted debugging",
+    "Agent Runs observability tools expose eve agent traces for production debugging",
+    "Zero-install setup in supported MCP clients, including one-command install via npx add-mcp",
     "Backed by Vercel's reliable platform infrastructure"
   ],
   "limitations": [
-    "Read-only at launch: cannot trigger deployments or change configuration",
+    "No longer read-only: buy_domain can spend money, toolbar tools post/edit content, and get_access_to_vercel_url mints links that bypass deployment protection — human confirmation strongly recommended",
     "Closed source; implementation cannot be independently audited",
-    "Deployment logs may contain unredacted secrets or PII that flow to the LLM provider",
-    "Public Beta status means the tool surface and limits may change",
+    "Deployment and runtime logs may contain unredacted secrets or PII that flow to the LLM provider",
+    "Beta status means the tool surface and limits may change",
     "Client allowlist excludes unsupported or custom MCP clients",
     "No dedicated MCP-specific audit log exposed yet"
   ],
@@ -377,16 +378,17 @@
     "repository": "https://github.com/vercel/vercel-mcp-overview",
     "license": "Proprietary (closed source; public overview repo)",
     "maintained_by": "Vercel",
-    "status": "Public Beta",
+    "status": "Beta (all plans)",
     "remote_endpoint": "https://mcp.vercel.com",
     "authentication": "OAuth 2.1 with mandatory consent and client allowlist",
     "transport_types": [
       "streamable-http (remote only)"
     ],
     "installation_methods": [
-      "Remote MCP endpoint"
+      "Remote MCP endpoint",
+      "npx add-mcp https://mcp.vercel.com"
     ],
-    "write_access": "Read-only at initial launch by design",
+    "write_access": "Write-capable tools present since 2026 (domain purchase, toolbar comments, shareable links); no env var management",
     "mcp_version": "1.0"
   },
   "use_case_ratings": {
@@ -407,14 +409,14 @@
       "notes": "Helps internal support diagnose customer-facing deployment issues from logs"
     },
     "education": {
-      "overall": 72,
-      "notes": "Safe read-only surface is well suited to teaching deployment and platform concepts"
+      "overall": 70,
+      "notes": "Well suited to teaching deployment and platform concepts, though the surface is no longer purely read-only"
     }
   },
   "best_for": [
     "Developers debugging Vercel deployments and build failures with AI assistance",
     "Coding agents that need accurate, current Vercel documentation and project context",
-    "Teams that want platform visibility for agents without granting any write access",
+    "Teams that want platform and agent-run visibility for AI assistants with human confirmation enabled on write tools",
     "Security-conscious organizations evaluating remote MCP servers"
   ],
   "related_entities": [

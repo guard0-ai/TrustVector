@@ -3,11 +3,11 @@
   "type": "mcp",
   "name": "shadcn MCP Server",
   "provider": "shadcn",
-  "version": "CLI 3.x",
-  "last_evaluated": "2026-06-10",
+  "version": "CLI 4.x",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "MCP server built into the shadcn CLI (run via npx shadcn@latest mcp) that lets AI agents browse, search, and install UI components from any shadcn-compatible registry, including private registries, using @registry/name namespacing. Shipped with CLI 3.0 in August 2025.",
-  "website": "https://ui.shadcn.com/docs/registry/mcp",
+  "description": "MCP server built into the shadcn CLI (run via npx shadcn@latest mcp) that lets AI agents browse, search, and install UI components from any shadcn-compatible registry, including private registries, using @registry/name namespacing. Shipped with CLI 3.0 in August 2025; CLI v4 (March 2026) added shadcn/skills for coding agents, design-system presets, and --dry-run/--diff/--view flags to inspect registry changes before installation.",
+  "website": "https://ui.shadcn.com/docs/mcp",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 85,
@@ -18,13 +18,13 @@
           "evidence": [
             {
               "source": "shadcn Registry MCP Documentation",
-              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "url": "https://ui.shadcn.com/docs/mcp",
               "date": "2026-06-10",
               "value": "Namespaced @registry/name resolution reliably targets components across configured registries"
             }
           ],
           "methodology": "Registry resolution testing across namespaces",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "installation_success_rate": {
           "score": 87,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Component installation success testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "component_search_quality": {
           "score": 84,
@@ -46,13 +46,13 @@
           "evidence": [
             {
               "source": "shadcn Registry MCP Documentation",
-              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "url": "https://ui.shadcn.com/docs/mcp",
               "date": "2026-06-10",
               "value": "Browse and search tools surface components with metadata from any shadcn-compatible registry"
             }
           ],
           "methodology": "Search relevance assessment over public registries",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 80,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Failure mode and error message testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -85,7 +85,7 @@
             }
           ],
           "methodology": "Supply chain threat modeling of registry-sourced code installation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "code_installation_control": {
           "score": 62,
@@ -93,13 +93,19 @@
           "evidence": [
             {
               "source": "shadcn Registry MCP Documentation",
-              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "url": "https://ui.shadcn.com/docs/mcp",
               "date": "2026-06-10",
               "value": "Agent-initiated installs write component files and add npm dependencies; review depends on the MCP client's approval flow and code review practices"
+            },
+            {
+              "source": "shadcn CLI v4 Changelog",
+              "url": "https://ui.shadcn.com/docs/changelog/2026-03-cli-v4",
+              "date": "2026-07-09",
+              "value": "CLI v4 (March 2026) adds --dry-run, --diff, and --view flags so registry changes can be inspected before installation, improving pre-install review of agent-driven installs"
             }
           ],
           "methodology": "Write-action control and approval flow analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "registry_authentication": {
           "score": 75,
@@ -113,7 +119,7 @@
             }
           ],
           "methodology": "Registry authentication mechanism review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "credential_handling": {
           "score": 78,
@@ -127,7 +133,7 @@
             }
           ],
           "methodology": "Credential storage and flow analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "unauthorized_action_risk": {
           "score": 60,
@@ -141,7 +147,7 @@
             }
           ],
           "methodology": "Blast radius assessment of install actions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -154,13 +160,13 @@
           "evidence": [
             {
               "source": "shadcn Registry MCP Documentation",
-              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "url": "https://ui.shadcn.com/docs/mcp",
               "date": "2026-06-10",
               "value": "Server only fetches public or configured registry metadata and component source; it does not read or transmit project code externally"
             }
           ],
           "methodology": "Data flow analysis of registry requests",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 80,
@@ -174,7 +180,7 @@
             }
           ],
           "methodology": "Sensitive data surface assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 78,
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Outbound request and data sharing review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_execution_privacy": {
           "score": 90,
@@ -196,13 +202,13 @@
           "evidence": [
             {
               "source": "shadcn Registry MCP Documentation",
-              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "url": "https://ui.shadcn.com/docs/mcp",
               "date": "2026-06-10",
               "value": "Runs locally over stdio via npx shadcn@latest mcp with no hosted service or telemetry pipeline collecting project data"
             }
           ],
           "methodology": "Local execution and telemetry review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -215,13 +221,13 @@
           "evidence": [
             {
               "source": "shadcn Registry MCP Documentation",
-              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "url": "https://ui.shadcn.com/docs/mcp",
               "date": "2026-06-10",
               "value": "Clear official docs covering MCP setup per client, registry configuration, and namespacing, plus a detailed CLI 3.0 changelog"
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 80,
@@ -235,7 +241,7 @@
             }
           ],
           "methodology": "Traceability of agent actions assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -249,7 +255,7 @@
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_coverage_clarity": {
           "score": 85,
@@ -257,13 +263,13 @@
           "evidence": [
             {
               "source": "shadcn Registry MCP Documentation",
-              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "url": "https://ui.shadcn.com/docs/mcp",
               "date": "2026-06-10",
               "value": "Tool surface is small and well-defined: browse, search, and install components from configured registries"
             }
           ],
           "methodology": "Tool surface documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -276,13 +282,13 @@
           "evidence": [
             {
               "source": "shadcn Registry MCP Documentation",
-              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "url": "https://ui.shadcn.com/docs/mcp",
               "date": "2026-06-10",
               "value": "One-line stdio config (npx shadcn@latest mcp) with documented one-command setup for major MCP clients"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "performance": {
           "score": 85,
@@ -296,21 +302,21 @@
             }
           ],
           "methodology": "Operation latency characterization",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 86,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "shadcn CLI 3.0 Changelog",
-              "url": "https://ui.shadcn.com/docs/changelog/2025-08-cli-3-mcp",
-              "date": "2026-06-10",
-              "value": "Built on the actively maintained shadcn CLI with frequent releases since the August 2025 3.0 launch"
+              "source": "shadcn CLI v4 Changelog",
+              "url": "https://ui.shadcn.com/docs/changelog/2026-03-cli-v4",
+              "date": "2026-07-09",
+              "value": "Built on the actively maintained shadcn CLI with frequent releases since the August 2025 3.0 launch; CLI v4 shipped March 2026 (npm shadcn at v4.13.0 as of 2026-07-09) with skills, presets, and expanded init templates"
             }
           ],
           "methodology": "Maintenance cadence and stability analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 84,
@@ -318,13 +324,13 @@
           "evidence": [
             {
               "source": "shadcn Registry MCP Documentation",
-              "url": "https://ui.shadcn.com/docs/registry/mcp",
+              "url": "https://ui.shadcn.com/docs/mcp",
               "date": "2026-06-10",
               "value": "Covers discovery and installation across public and private shadcn-compatible registries; scoped to UI components rather than general tooling"
             }
           ],
           "methodology": "Feature completeness assessment within its domain",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 93,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Ecosystem adoption analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -368,6 +374,7 @@
     ],
     "github_repo": "https://github.com/shadcn-ui/ui",
     "package_name": "shadcn",
+    "package_version": "4.13.0",
     "installation": "npx shadcn@latest mcp",
     "authentication": "Optional registry tokens for private registries",
     "first_release": "2025-08",

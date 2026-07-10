@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Everything Server",
   "provider": "Anthropic",
-  "version": "2025.9.25",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7.4",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official MCP reference server demonstrating all protocol features (tools, resources, prompts, sampling) for testing and development. One of the seven reference servers still actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation (Linux Foundation) on 2025-12-09, latest spec 2025-11-25. Not intended for production use but essential for MCP protocol understanding and testing.",
+  "description": "Official MCP reference server demonstrating all protocol features (tools, resources, prompts, sampling) for testing and development. One of seven reference servers still maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation (Linux Foundation) on 2025-12-09, latest stable spec 2025-11-25 (2026-07-28 revision at release-candidate stage). Not for production use but essential for MCP protocol testing.",
   "website": "https://modelcontextprotocol.io/docs/servers/everything",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "protocol_compliance": {
           "score": 92,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Protocol compliance testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "test_reliability": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Testing reliability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "example_accuracy": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Example validation",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 50,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Data security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "capability_exposure": {
           "score": 60,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Capability exposure testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_deployment_risk": {
           "score": 55,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Deployment risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "input_validation": {
           "score": 75,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Input validation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_limits": {
           "score": 65,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Resource limit testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data usage analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "test_data_exposure": {
           "score": 70,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data exposure analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "development_privacy": {
           "score": 78,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Development privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "code_example_quality": {
           "score": 98,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Code quality assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "protocol_feature_documentation": {
           "score": 92,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Feature documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "testing_utility": {
           "score": 95,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Testing utility assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "development_value": {
           "score": 92,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Developer value assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "protocol_education": {
           "score": 90,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Educational value assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 55,
@@ -355,10 +355,16 @@
               "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
               "date": "2025-12-09",
               "value": "everything is one of the seven reference servers still actively maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09"
+            },
+            {
+              "source": "npm - @modelcontextprotocol/server-everything",
+              "url": "https://www.npmjs.com/package/@modelcontextprotocol/server-everything",
+              "date": "2026-07-09",
+              "value": "Latest release 2026.7.4 (published 2026-07-04, built on MCP SDK 1.29.0); still listed among the seven maintained reference servers in modelcontextprotocol/servers README (repo ~88,300 stars, not archived)"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -425,7 +431,7 @@
     "May expose all protocol capabilities without restrictions",
     "Not optimized for performance or scale",
     "Requires careful consideration before any production use",
-    "STATUS 2026-06-10: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); governance now under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
+    "STATUS 2026-07-09: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); latest npm release 2026.7.4 (2026-07-04); governance under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -438,7 +444,7 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "github_stars": 58700,
+    "github_stars": 88259,
     "api_dependency": "None (MCP protocol only)",
     "authentication": "None required",
     "first_release": "2024-11",

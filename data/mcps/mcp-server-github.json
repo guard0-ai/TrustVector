@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP GitHub Server",
   "provider": "GitHub (formerly Anthropic)",
-  "version": "2025.4.6",
-  "last_evaluated": "2026-06-10",
+  "version": "1.5.0",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "GitHub's OFFICIAL MCP server, successor to the archived Anthropic reference server. Open source (Go, MIT, 30,558 stars), distributed as a binary/Docker image or via the hosted remote at https://api.githubcopilot.com/mcp/ (GA 2025-09-04) with OAuth 2.1+PKCE. Exposes 50+ tools in configurable toolsets with read-only mode. Known prompt-injection exfiltration risk (Invariant Labs, May 2025) requires least-privilege tokens and one-repo sessions.",
+  "description": "GitHub's OFFICIAL MCP server, successor to the archived Anthropic reference server. Open source (Go, MIT); binary/Docker or hosted remote at https://api.githubcopilot.com/mcp/ (GA 2025-09-04, OAuth 2.1+PKCE). Since v1.5.0 (2026-06) the local stdio server has built-in OAuth (no PAT needed); releases track the 2026-01-26 MCP spec. 50+ tools in configurable toolsets with read-only mode. Prompt-injection exfiltration risk (Invariant Labs, May 2025) requires least-privilege tokens.",
   "website": "https://github.com/github/github-mcp-server",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "API stability and uptime analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_success_rate": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Operation success testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "search_accuracy": {
           "score": 85,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Search result quality assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 84,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -102,10 +102,16 @@
               "url": "https://github.blog/changelog/2025-09-04-remote-github-mcp-server-is-now-generally-available/",
               "date": "2025-09-04",
               "value": "Hosted remote server (https://api.githubcopilot.com/mcp/) generally available with OAuth 2.1 + PKCE authorization"
+            },
+            {
+              "source": "GitHub MCP Server releases (v1.5.0)",
+              "url": "https://github.com/github/github-mcp-server/releases",
+              "date": "2026-06-27",
+              "value": "v1.5.0 adds built-in OAuth to the local stdio server, so a PAT is no longer required; OAuth is the recommended auth path with the token kept in memory only"
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 70,
@@ -119,7 +125,7 @@
             }
           ],
           "methodology": "Token security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scope_limitation": {
           "score": 82,
@@ -139,7 +145,7 @@
             }
           ],
           "methodology": "Permission scope testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "action_auditability": {
           "score": 82,
@@ -153,7 +159,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "unauthorized_action_risk": {
           "score": 60,
@@ -173,7 +179,7 @@
             }
           ],
           "methodology": "Authorization boundary testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -192,7 +198,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 62,
@@ -212,7 +218,7 @@
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "organization_data_control": {
           "score": 78,
@@ -226,7 +232,7 @@
             }
           ],
           "methodology": "Access control review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 75,
@@ -240,7 +246,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -259,7 +265,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 88,
@@ -273,7 +279,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -282,12 +288,12 @@
             {
               "source": "GitHub MCP Server (official)",
               "url": "https://github.com/github/github-mcp-server",
-              "date": "2026-06-10",
-              "value": "Fully open source Go implementation with MIT license; 30,558 GitHub stars"
+              "date": "2026-07-09",
+              "value": "Fully open source Go implementation with MIT license; ~31,300 GitHub stars"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 85,
@@ -301,7 +307,7 @@
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -326,7 +332,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 82,
@@ -340,7 +346,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 87,
@@ -354,7 +360,7 @@
             }
           ],
           "methodology": "Uptime analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 88,
@@ -363,12 +369,12 @@
             {
               "source": "GitHub MCP Server (official)",
               "url": "https://github.com/github/github-mcp-server",
-              "date": "2026-06-10",
-              "value": "50+ tools in configurable toolsets covering repos, issues, PRs, actions, code security, and search; read-only mode supported"
+              "date": "2026-07-09",
+              "value": "50+ tools in configurable toolsets covering repos, issues, PRs, actions, code security, and search; read-only mode supported; recent releases add MCP Apps, code quality findings, and alignment with the 2026-01-26 MCP spec"
             }
           ],
           "methodology": "Feature completeness assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 88,
@@ -377,12 +383,12 @@
             {
               "source": "GitHub MCP Server (official)",
               "url": "https://github.com/github/github-mcp-server",
-              "date": "2026-06-10",
-              "value": "30,558 GitHub stars; official GitHub maintenance with hosted remote generally available since 2025-09-04"
+              "date": "2026-07-09",
+              "value": "~31,300 GitHub stars; official GitHub maintenance with weekly release cadence (v1.5.0, 2026-06-27) and hosted remote generally available since 2025-09-04"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -392,8 +398,8 @@
     "Built on reliable GitHub infrastructure with high uptime",
     "Excellent for development workflows and code collaboration",
     "Full operation auditability through GitHub's audit logs",
-    "Official GitHub-maintained open source server (Go, MIT, 30,558 stars)",
-    "Hosted remote option (OAuth 2.1+PKCE) generally available since 2025-09-04",
+    "Official GitHub-maintained open source server (Go, MIT, ~31,300 stars)",
+    "Hosted remote (OAuth 2.1+PKCE) GA since 2025-09-04; local stdio server has built-in OAuth since v1.5.0 (2026-06), no PAT required",
     "Configurable toolsets and read-only mode limit the action surface"
   ],
   "limitations": [
@@ -417,10 +423,11 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/github/github-mcp-server",
-    "github_stars": 30558,
+    "github_stars": 31300,
+    "latest_release": "v1.5.0 (2026-06-27)",
     "deprecated_repo": "https://github.com/modelcontextprotocol/servers-archived",
     "api_dependency": "GitHub REST API v3",
-    "authentication": "GitHub PAT (local) or OAuth 2.1 + PKCE (hosted remote)",
+    "authentication": "OAuth (local stdio, built-in since v1.5.0) or GitHub PAT (local); OAuth 2.1 + PKCE (hosted remote)",
     "remote_endpoint": "https://api.githubcopilot.com/mcp/",
     "remote_ga_date": "2025-09-04",
     "first_release": "2024-11",

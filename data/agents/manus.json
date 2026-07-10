@@ -2,11 +2,11 @@
   "id": "manus",
   "type": "agent",
   "name": "Manus",
-  "provider": "Meta (formerly Butterfly Effect)",
+  "provider": "Butterfly Effect / Meta (acquisition being unwound as of June 2026)",
   "version": "1.x",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "General-purpose autonomous agent that executes end-to-end tasks in a cloud VM equipped with a browser, shell, and file tools. Launched virally in March 2025 by Butterfly Effect and acquired by Meta in a deal that closed in late December 2025 for over $2B.",
+  "description": "General-purpose autonomous agent that executes end-to-end tasks in a cloud VM equipped with a browser, shell, and file tools. Launched virally in March 2025 by Butterfly Effect and acquired by Meta for over $2B in late December 2025 — but Chinese regulators ordered the deal reversed in April 2026, and by June 2026 Meta had completed an operational split (halting data sharing) while it dismantles the acquisition; Manus co-founders are reportedly in talks to buy the company back.",
   "website": "https://manus.im/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Assessment of end-to-end task completion based on published benchmark claims and independent user testing reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 80,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Review of integrated tool stack reliability across browsing, shell, and file operations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 84,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Evaluation of autonomous task decomposition and long-horizon asynchronous execution",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 75,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Review of session workspace persistence and cross-task preference memory",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 72,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Assessment of retry behavior and failure modes from independent reviews",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 70,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Review of internal multi-agent architecture versus user-controllable collaboration",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review of cloud VM isolation model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 65,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Review of credential handling and account-level controls",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 58,
@@ -141,21 +141,21 @@
             }
           ],
           "methodology": "Threat surface analysis of autonomous browsing with limited disclosed defenses",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 66,
           "confidence": "low",
           "evidence": [
             {
-              "source": "CNBC - Meta acquires Manus",
-              "url": "https://www.cnbc.com/2025/12/30/meta-acquires-singapore-ai-agent-firm-manus-china-butterfly-effect-monicai.html",
-              "date": "2025-12-30",
-              "value": "Per-session VM isolation exists, but data residency and processing arrangements are in transition following Meta's acquisition of the Singapore-based, China-originated company"
+              "source": "Bloomberg - Meta severs Manus data access",
+              "url": "https://www.bloomberg.com/news/articles/2026-06-11/meta-severs-manus-data-access-after-china-orders-buyout-unwound",
+              "date": "2026-06-11",
+              "value": "Per-session VM isolation exists, but data residency and processing arrangements are in flux again: after Beijing ordered the buyout unwound, Meta completed an operational split from Manus and halted data sharing between the companies in June 2026"
             }
           ],
-          "methodology": "Data architecture review accounting for ownership and jurisdiction transition",
-          "last_verified": "2026-06-10"
+          "methodology": "Data architecture review accounting for ownership and jurisdiction transition, updated for the June 2026 unwind and data-sharing cutoff",
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 28,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source availability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -184,25 +184,25 @@
               "source": "Manus Privacy Policy",
               "url": "https://manus.im/privacy",
               "date": "2026-05-01",
-              "value": "Session data, files, and browsing artifacts retained in Manus cloud; retention terms are consumer-grade and being restated under Meta ownership"
+              "value": "Session data, files, and browsing artifacts retained in Manus cloud; retention terms are consumer-grade and unsettled while the Meta acquisition is unwound"
             }
           ],
           "methodology": "Review of published retention practices during ownership transition",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 62,
           "confidence": "low",
           "evidence": [
             {
-              "source": "CNBC - Meta acquires Manus",
-              "url": "https://www.cnbc.com/2025/12/30/meta-acquires-singapore-ai-agent-firm-manus-china-butterfly-effect-monicai.html",
-              "date": "2025-12-30",
-              "value": "Meta ownership brings established compliance infrastructure, but policies and processing locations for Manus are still being integrated post-acquisition"
+              "source": "CNBC - Meta begins dismantling Manus deal",
+              "url": "https://www.cnbc.com/2026/06/12/meta-reportedly-begins-dismantling-2-billion-manus-deal-on-beijings-orders.html",
+              "date": "2026-06-12",
+              "value": "Compliance ownership is unresolved: Chinese regulators ordered the $2B deal reversed (April 2026) and Meta is dismantling the acquisition, so the Meta compliance umbrella no longer reliably applies to Manus"
             }
           ],
-          "methodology": "Compliance posture assessment during corporate integration",
-          "last_verified": "2026-06-10"
+          "methodology": "Compliance posture assessment during corporate separation",
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 55,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis of third-party model routing before and after acquisition",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 25,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 80,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Review of live session visibility and replay features",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 72,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Assessment of plan visibility and progress narration",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 30,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 72,
@@ -305,12 +305,12 @@
             }
           ],
           "methodology": "Community engagement analysis of user base and public activity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 69,
+      "overall_score": 68,
       "criteria": {
         "ease_of_integration": {
           "score": 78,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Onboarding friction assessment for non-technical users",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 74,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Scalability assessment of concurrent task limits across tiers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 62,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Pricing model analysis; variable credit burn per task reduces predictability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 65,
@@ -366,21 +366,21 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
-          "score": 68,
+          "score": 60,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "CNBC - Meta acquires Manus",
-              "url": "https://www.cnbc.com/2025/12/30/meta-acquires-singapore-ai-agent-firm-manus-china-butterfly-effect-monicai.html",
-              "date": "2025-12-30",
-              "value": "Meta acquisition (>$2B, closed ~2025-12-30) secures resources and continuity, but product, policy, and roadmap are mid-integration"
+              "source": "CNBC - Meta begins dismantling Manus deal",
+              "url": "https://www.cnbc.com/2026/06/12/meta-reportedly-begins-dismantling-2-billion-manus-deal-on-beijings-orders.html",
+              "date": "2026-06-12",
+              "value": "Meta began dismantling the $2B acquisition after Beijing ordered it reversed under China's foreign investment security review; operational split and data-sharing halt completed June 2026; co-founders reportedly seeking ~$1B to buy the company back, leaving ownership, resourcing, and roadmap unresolved"
             }
           ],
-          "methodology": "Vendor stability and product maturity assessment during acquisition integration",
-          "last_verified": "2026-06-10"
+          "methodology": "Vendor stability and product maturity assessment; score lowered 68 to 60 to reflect the forced unwind of the Meta acquisition and unresolved future ownership",
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -418,11 +418,10 @@
     "Transparent 'Manus's Computer' live view and replayable sessions show exactly what the agent did",
     "Asynchronous execution continues in the cloud after the user disconnects",
     "Zero-setup web and mobile experience accessible to non-technical users",
-    "Meta acquisition (closed ~2025-12-30, >$2B) provides long-term resourcing and infrastructure",
     "Free tier with 300 daily credits allows meaningful evaluation before paying"
   ],
   "limitations": [
-    "Governance and jurisdiction transition (Singapore/China origins to Meta ownership) leaves data handling policies in flux",
+    "Ownership crisis: Beijing ordered Meta's $2B acquisition reversed (April 2026); Meta completed an operational split and halted data sharing in June 2026 while co-founders seek a buyback, leaving governance, data handling, and long-term resourcing unresolved",
     "Minimal published security documentation; prompt injection defenses for autonomous browsing are unclear",
     "Credit-based pricing with variable per-task burn makes costs hard to predict",
     "Cloud-only with no self-hosted option; sensitive data must enter Manus's VMs",
@@ -434,7 +433,7 @@
     "supported_models": [
       "Anthropic Claude (historical backend)",
       "Alibaba Qwen (historical backend)",
-      "Meta model integration in progress post-acquisition"
+      "Model routing in flux amid the Meta acquisition unwind"
     ],
     "programming_languages": [
       "Natural language interface; agent writes Python, JavaScript, and shell internally"
@@ -449,7 +448,7 @@
     ],
     "first_release": "2025-03-06 (viral invite launch); open signup May 2025",
     "pricing": "Free (300 daily credits); paid plans ~$20-40/mo up to $200/mo (credit-based)",
-    "company_milestones": "Built by Butterfly Effect (Singapore HQ, Chinese origins); acquired by Meta for >$2B, deal closed ~2025-12-30"
+    "company_milestones": "Built by Butterfly Effect (Singapore HQ, Chinese origins); acquired by Meta for >$2B (closed ~2025-12-30); Chinese regulators ordered the deal unwound April 2026; Meta completed operational split and halted data sharing June 2026; co-founders reportedly raising ~$1B for a buyback"
   },
   "related_entities": [
     "devin",

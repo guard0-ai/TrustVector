@@ -4,7 +4,7 @@
   "name": "Semantic Kernel Agent",
   "provider": "Microsoft",
   "version": "1.x",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "MAINTENANCE MODE: Semantic Kernel now receives bug/security fixes only and is superseded by the Microsoft Agent Framework (1.0 GA on 2026-04-03), the recommended migration path. It remains Microsoft's enterprise SDK for integrating LLMs with conventional languages via plugins, planners, and memory, with .NET, Python, and Java support.",
   "website": "https://learn.microsoft.com/en-us/semantic-kernel/",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Based on enterprise testing and model performance",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 91,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 86,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex task testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 89,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory system evaluation",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 85,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Low (1-5s typical)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 90,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 87,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 92,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "enterprise_security": {
           "score": 93,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Enterprise security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 93,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 88,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 88,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 88,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 85,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 93,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "enterprise_support": {
           "score": 92,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Support options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 93,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 88,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 94,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 92,
@@ -383,10 +383,16 @@
               "url": "https://devblogs.microsoft.com/semantic-kernel/migrate-your-semantic-kernel-and-autogen-projects-to-microsoft-agent-framework-release-candidate/",
               "date": "2026-06-10",
               "value": "Semantic Kernel is in maintenance mode (bug/security fixes only); Microsoft Agent Framework 1.0 reached GA on 2026-04-03 as the successor"
+            },
+            {
+              "source": "Microsoft Agent Framework Overview (Microsoft Learn)",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/overview/",
+              "date": "2026-07-09",
+              "value": "Maintenance-mode status still stands: Microsoft directs new work to Agent Framework with official Semantic Kernel migration guide; SK repo (~28,300 stars) still receives bug/security fixes"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -428,7 +434,7 @@
       "Native functions",
       "Semantic functions"
     ],
-    "github_stars": "25800+",
+    "github_stars": "28200+",
     "first_release": "2023",
     "ga_version": "1.45 (.NET) and 1.27 (Python) - April 2025",
     "transition": "Microsoft Agent Framework is the successor (Semantic Kernel v2.0)"

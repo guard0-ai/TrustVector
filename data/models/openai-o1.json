@@ -4,7 +4,7 @@
   "name": "OpenAI o1",
   "provider": "OpenAI",
   "version": "20250915",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "DEPRECATED: o1 variants and o1-pro shut down in the API on 2026-10-23; already removed from ChatGPT (o1-preview/o1-mini removed in 2025). Migration target is GPT-5.5. Historically an advanced reasoning model (57.1% SWE-bench, 79.2% HumanEval) with extended chain-of-thought reasoning.",
   "website": "https://openai.com/o1/",
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks measuring real-world software engineering tasks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 96,
@@ -50,7 +50,7 @@
             }
           ],
           "methodology": "Competition-level reasoning benchmarks requiring extended chain-of-thought",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 91,
@@ -70,7 +70,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge testing across domains",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 92,
@@ -84,7 +84,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts at various temperature settings",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Extended reasoning provides more consistent problem-solving"
         },
         "latency_p50": {
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "8.2s",
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "128,000 tokens",
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional reasoning capabilities with extended chain-of-thought. Best for complex problem-solving requiring deep thinking. Higher latency due to reasoning overhead."
@@ -161,7 +161,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 90,
@@ -175,7 +175,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 85,
@@ -189,7 +189,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 92,
@@ -203,7 +203,7 @@
             }
           ],
           "methodology": "Comprehensive safety testing across harmful content categories",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 89,
@@ -217,7 +217,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security posture with enhanced reasoning-based safety. Good protection against common attacks."
@@ -237,7 +237,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation and privacy policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 92,
@@ -251,7 +251,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days (minimum for abuse monitoring)",
@@ -265,7 +265,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -279,7 +279,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -293,7 +293,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 82,
@@ -307,7 +307,7 @@
             }
           ],
           "methodology": "Review of data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good privacy posture with SOC 2 certification. 30-day minimum retention for safety monitoring."
@@ -327,7 +327,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 88,
@@ -341,7 +341,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets and real-world usage",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 84,
@@ -355,7 +355,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 89,
@@ -369,7 +369,7 @@
             }
           ],
           "methodology": "Assessment of confidence expression in outputs",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 92,
@@ -383,7 +383,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 80,
@@ -397,7 +397,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 93,
@@ -411,7 +411,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent explainability via chain-of-thought reasoning. Transparent problem-solving process visible to users."
@@ -431,7 +431,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 94,
@@ -445,7 +445,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 78,
@@ -460,12 +460,12 @@
             {
               "source": "OpenAI Deprecations",
               "url": "https://developers.openai.com/api/docs/deprecations",
-              "date": "2026-06-10",
-              "value": "o1 variants and o1-pro API shutdown 2026-10-23; migration target GPT-5.5; removed from ChatGPT"
+              "date": "2026-07-09",
+              "value": "o1 (o1-2024-12-17) API shutdown 2026-10-23, replacement gpt-5.5; o1-pro shutdown 2026-10-23, replacement gpt-5.5-pro; o1-preview shut down 2025-07-28 and o1-mini 2025-10-27"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 89,
@@ -479,7 +479,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 90,
@@ -493,7 +493,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 83,
@@ -507,7 +507,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations and tools",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 91,
@@ -521,7 +521,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Deprecated: API shutdown scheduled 2026-10-23, migration target GPT-5.5. Versioning and ecosystem scores reduced to reflect deprecation."
@@ -532,31 +532,29 @@
       "overall": 93,
       "notes": "Excellent coding with 57.1% SWE-bench and 79.2% HumanEval. Chain-of-thought helps with complex algorithms.",
       "alternatives": [
-        "claude-4-sonnet",
-        "claude-4-opus"
+        "claude-sonnet-4",
+        "claude-opus-4"
       ]
     },
     "customer-support": {
       "overall": 82,
       "notes": "Good capabilities but high latency (4.5s) may impact customer experience. Better for complex issues.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     },
     "content-creation": {
       "overall": 85,
       "notes": "Good content generation but reasoning focus may add unnecessary latency for creative tasks.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     },
     "data-analysis": {
       "overall": 95,
       "notes": "Exceptional analytical capabilities with chain-of-thought reasoning. Best for complex analysis.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "nemotron-ultra-253b"
       ]
     },
@@ -564,29 +562,28 @@
       "overall": 96,
       "notes": "Outstanding research capabilities with transparent reasoning. Excellent for complex research tasks.",
       "alternatives": [
-        "claude-4-opus",
-        "claude-3-7-sonnet-r"
+        "claude-opus-4"
       ]
     },
     "legal-compliance": {
       "overall": 84,
       "notes": "Good reasoning for legal analysis but 30-day retention may be concern for some use cases.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "healthcare": {
       "overall": 83,
       "notes": "Good reasoning but not HIPAA eligible. 30-day retention may be concern for healthcare data.",
       "alternatives": [
-        "claude-4-opus"
+        "claude-opus-4"
       ]
     },
     "financial-analysis": {
       "overall": 94,
       "notes": "Outstanding for complex financial modeling and analysis with transparent reasoning.",
       "alternatives": [
-        "claude-4-opus",
+        "claude-opus-4",
         "nemotron-ultra-253b"
       ]
     },
@@ -594,16 +591,14 @@
       "overall": 96,
       "notes": "Exceptional for education with visible chain-of-thought. Perfect for teaching problem-solving.",
       "alternatives": [
-        "claude-4-opus",
-        "claude-3-7-sonnet-r"
+        "claude-opus-4"
       ]
     },
     "creative-writing": {
       "overall": 81,
       "notes": "Competent but reasoning focus may reduce creative spontaneity. Higher latency for creative tasks.",
       "alternatives": [
-        "claude-4-opus",
-        "gpt-4-5"
+        "claude-opus-4"
       ]
     }
   },
@@ -643,8 +638,8 @@
     "pricing": {
       "input": "$15.00 per 1M tokens",
       "output": "$60.00 per 1M tokens",
-      "notes": "Premium reasoning model pricing, significantly higher than standard models",
-      "last_verified": "2025-11-09"
+      "notes": "Premium reasoning model pricing, significantly higher than standard models. Pricing applies until API shutdown 2026-10-23.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 128000,
     "languages": [

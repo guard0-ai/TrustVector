@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Supabase Server",
   "provider": "Supabase",
-  "version": "2025.1.0",
-  "last_evaluated": "2025-01-14",
+  "version": "0.x (supabase/mcp monorepo, pre-1.0)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "MCP server enabling AI models to interact with Supabase backend services. Provides schema design, database migrations, SQL query execution, TypeScript type generation, and real-time subscription management for building full-stack applications.",
+  "description": "Official Supabase MCP server: SQL execution, schema/migrations, type generation, Edge Function deploys, logs, storage, branching. Primarily a hosted remote at https://mcp.supabase.com/mcp with OAuth 2.1 dynamic client registration (PAT only for CI/CD), plus stdio and self-hosted modes. After 2025 prompt-injection/data-leak research, Supabase added mitigations: read-only mode, project_ref scoping, feature-group tool restrictions, and wrapping SQL results to deter embedded commands.",
   "website": "https://supabase.com/docs/guides/getting-started/mcp",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "API stability and uptime analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "query_execution": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Query execution testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "schema_management": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Schema management testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "type_generation": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Type generation testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "realtime_support": {
           "score": 82,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Real-time functionality testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -92,14 +92,14 @@
           "confidence": "high",
           "evidence": [
             {
-              "source": "Supabase Auth",
-              "url": "https://supabase.com/docs/guides/auth",
-              "date": "2025-01-10",
-              "value": "Service role key with full database access, or anon key with RLS"
+              "source": "Supabase MCP Documentation",
+              "url": "https://supabase.com/docs/guides/getting-started/mcp",
+              "date": "2026-07-09",
+              "value": "Hosted server authenticates via OAuth 2.1 with dynamic client registration (browser consent flow) by default; personal access tokens are reserved for CI/CD and non-interactive use — the earlier service-role-key setup is no longer the documented path"
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "row_level_security": {
           "score": 92,
@@ -113,21 +113,21 @@
             }
           ],
           "methodology": "RLS implementation review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "sql_injection_protection": {
-          "score": 78,
-          "confidence": "medium",
+          "score": 72,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "MCP SQL Execution",
+              "source": "Supabase MCP Security Documentation",
               "url": "https://supabase.com/docs/guides/getting-started/mcp",
-              "date": "2025-01-10",
-              "value": "AI can execute arbitrary SQL; requires careful prompt engineering"
+              "date": "2026-07-09",
+              "value": "2025 security research demonstrated prompt-injection attacks where instructions embedded in database rows caused agents with full SQL access to leak private data. Supabase responded with layered mitigations: SQL results wrapped with instructions discouraging the LLM from obeying embedded commands, read-only mode via a dedicated supabase_read_only_user, project scoping, and feature-group restrictions; manual tool-call approval is strongly recommended"
             }
           ],
-          "methodology": "SQL injection testing",
-          "last_verified": "2025-01-14"
+          "methodology": "Prompt-injection and SQL execution risk assessment; lowered from 78 because the attack class was demonstrated in practice — mitigations reduce but do not eliminate the risk when the agent reads untrusted data with write or broad read access",
+          "last_verified": "2026-07-09"
         },
         "data_encryption": {
           "score": 85,
@@ -141,21 +141,21 @@
             }
           ],
           "methodology": "Encryption review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "key_management": {
-          "score": 75,
+          "score": 80,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "Supabase Keys",
-              "url": "https://supabase.com/docs/guides/api/api-keys",
-              "date": "2025-01-10",
-              "value": "Service role key has full access; key rotation available"
+              "source": "Supabase MCP Documentation",
+              "url": "https://supabase.com/docs/guides/getting-started/mcp",
+              "date": "2026-07-09",
+              "value": "OAuth-based hosted mode avoids long-lived keys in client config; PATs (revocable, org-scoped) are only needed for CI/CD; feature groups and project_ref scoping constrain what an authenticated session can touch"
             }
           ],
-          "methodology": "Key management review",
-          "last_verified": "2025-01-14"
+          "methodology": "Key management review; raised from 75 as the default auth path no longer places a full-access service role key in client configuration",
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data residency review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 85,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "GDPR compliance review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_exposure_to_llm": {
           "score": 70,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "self_hosted_option": {
           "score": 90,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Self-hosting options review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,21 +235,21 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
-          "score": 95,
+          "score": 93,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Supabase GitHub",
-              "url": "https://github.com/supabase/supabase",
-              "date": "2025-01-10",
-              "value": "Fully open source under Apache 2.0 license, 75k+ stars"
+              "source": "supabase/mcp Repository",
+              "url": "https://github.com/supabase/mcp",
+              "date": "2026-07-09",
+              "value": "MCP server itself is fully open source under Apache 2.0 in the supabase/mcp monorepo (2.8k+ stars, 38 releases); the underlying Supabase platform is also open source"
             }
           ],
-          "methodology": "Source code review",
-          "last_verified": "2025-01-14"
+          "methodology": "Source code review; minor adjustment from 95 — previous evidence cited the platform repo rather than the MCP server, which remains pre-1.0",
+          "last_verified": "2026-07-09"
         },
         "query_logging": {
           "score": 85,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 90,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -285,18 +285,18 @@
       "overall_score": 86,
       "criteria": {
         "ease_of_setup": {
-          "score": 90,
+          "score": 92,
           "confidence": "high",
           "evidence": [
             {
               "source": "Supabase MCP Setup",
               "url": "https://supabase.com/docs/guides/getting-started/mcp",
-              "date": "2025-01-10",
-              "value": "Simple setup with project URL and service key"
+              "date": "2026-07-09",
+              "value": "Hosted mode: add https://mcp.supabase.com/mcp?project_ref=<project-ref> (optionally &read_only=true) and complete the browser OAuth flow — no token creation needed; local CLI mode available at http://localhost:54321/mcp"
             }
           ],
-          "methodology": "Setup complexity assessment",
-          "last_verified": "2025-01-14"
+          "methodology": "Setup complexity assessment; small raise from 90 as the hosted OAuth flow removed manual key handling",
+          "last_verified": "2026-07-09"
         },
         "developer_experience": {
           "score": 92,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Developer experience assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 85,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "cost_efficiency": {
           "score": 82,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Cost analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "integration_ecosystem": {
           "score": 88,
@@ -352,40 +352,42 @@
             }
           ],
           "methodology": "Integration ecosystem review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     }
   },
   "strengths": [
-    "Full PostgreSQL power with AI-assisted query building",
-    "Automatic TypeScript type generation from schema",
-    "Excellent row-level security for fine-grained access",
-    "Self-hosted option for complete data sovereignty",
-    "Outstanding developer experience and documentation",
-    "Fully open source with active community"
+    "Full PostgreSQL power with AI-assisted query building, migrations, and type generation",
+    "Hosted remote server with OAuth 2.1 dynamic client registration — no manual key handling",
+    "Layered security controls: read-only mode, project scoping, and feature-group tool restrictions",
+    "Prompt-injection mitigations wrap SQL results to discourage the LLM from obeying embedded commands",
+    "Development-branch workflow lets agents work against non-production data",
+    "Fully open source (Apache 2.0) with outstanding documentation and active community"
   ],
   "limitations": [
-    "Service role key grants full database access",
+    "Demonstrated 2025 prompt-injection/data-leak attack class: instructions hidden in database rows can subvert agents given broad SQL access",
     "Query results and schema exposed to LLM provider",
-    "AI can execute potentially destructive SQL",
-    "Requires careful prompt engineering for safety",
-    "Real-time features add complexity",
-    "Connection pooling limits on free tier"
+    "AI can execute potentially destructive SQL unless read-only mode is enabled",
+    "Supabase recommends avoiding production data: use development branches, project scoping, and manual tool-call approval",
+    "Pre-1.0 server: breaking changes possible between versions",
+    "OAuth hosted mode has limited functionality for CLI/self-hosted environments"
   ],
   "metadata": {
     "license": "Apache 2.0",
-    "supported_platforms": ["All platforms with Node.js"],
+    "supported_platforms": ["Any MCP client (hosted remote); all platforms with Node.js (local)"],
     "programming_languages": ["TypeScript"],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/supabase/supabase",
-    "github_stars": 78000,
-    "api_dependency": "Supabase REST API / PostgreSQL",
-    "authentication": "Service Role Key or Anon Key",
+    "github_repo": "https://github.com/supabase/mcp",
+    "github_stars": 2800,
+    "remote_endpoint": "https://mcp.supabase.com/mcp (supports project_ref, read_only, and feature-group query parameters)",
+    "api_dependency": "Supabase Management API / PostgreSQL",
+    "authentication": "OAuth 2.1 with dynamic client registration (default); Personal Access Token for CI/CD",
+    "security_controls": ["read-only mode", "project scoping", "feature groups", "SQL result wrapping against prompt injection"],
     "first_release": "2025-01",
     "maintained_by": "Supabase",
-    "transport_types": ["stdio"],
-    "installation_methods": ["npm"]
+    "transport_types": ["streamable-http (hosted)", "stdio (local)"],
+    "installation_methods": ["Remote MCP endpoint", "npx @supabase/mcp-server-supabase (local)", "Supabase CLI local endpoint"]
   },
   "use_case_ratings": {
     "code-generation": {

@@ -4,10 +4,10 @@
   "name": "MCP S3 Server",
   "provider": "Community",
   "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Community-maintained MCP server for AWS S3 storage operations. Enables AI models to upload, download, list, and manage objects in S3 buckets. Includes support for multipart uploads, object metadata, and bucket operations. Essential for AI-powered cloud storage management and data pipeline workflows.",
-  "website": "https://github.com/modelcontextprotocol/servers",
+  "description": "MCP servers for AWS S3 storage operations, enabling AI models to upload, download, list, and manage objects in S3 buckets. The landscape has shifted to official AWS options: the managed AWS MCP Server (GA 2026-05) covers all S3 APIs via its call_aws tool, and awslabs ships a dedicated S3 Tables MCP Server (read-only by default, write enabled only with --allow-write). Community S3 servers (e.g. aws-samples/sample-mcp-server-s3) remain available but are no longer the recommended path.",
+  "website": "https://github.com/awslabs/mcp/tree/main/src/s3-tables-mcp-server",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 85,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Upload success rate testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "download_performance": {
           "score": 87,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Download speed testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "large_file_handling": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Large file transfer testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "listing_performance": {
           "score": 80,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Listing performance testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 86,
@@ -80,12 +80,12 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 71,
+      "overall_score": 73,
       "criteria": {
         "authentication_security": {
           "score": 80,
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "credential_exposure_risk": {
           "score": 63,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Credential security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "bucket_policy_enforcement": {
           "score": 78,
@@ -127,21 +127,21 @@
             }
           ],
           "methodology": "Policy enforcement testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "object_deletion_risk": {
-          "score": 62,
+          "score": 66,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Security Analysis",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "AI can delete objects and empty buckets if IAM permits"
+              "source": "AWS S3 Tables MCP Server",
+              "url": "https://awslabs.github.io/mcp/servers/s3-tables-mcp-server",
+              "date": "2026-07-09",
+              "value": "AI can delete objects and empty buckets if IAM permits; the official awslabs S3 Tables server mitigates this by defaulting to read-only and requiring an explicit --allow-write flag plus matching IAM permissions for writes"
             }
           ],
-          "methodology": "Destructive operation testing",
-          "last_verified": "2025-11-09"
+          "methodology": "Destructive operation testing; small raise from 62 reflecting the read-only-by-default posture of the current official server",
+          "last_verified": "2026-07-09"
         },
         "public_access_risk": {
           "score": 68,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 85,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "metadata_privacy": {
           "score": 68,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Metadata privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "bucket_structure_exposure": {
           "score": 72,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Structure privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "encryption_support": {
           "score": 75,
@@ -244,26 +244,26 @@
             }
           ],
           "methodology": "Encryption support assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "trust_transparency": {
-      "overall_score": 80,
+      "overall_score": 81,
       "criteria": {
         "documentation_quality": {
-          "score": 78,
-          "confidence": "medium",
+          "score": 82,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "S3 MCP Docs",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Good documentation but community-maintained with evolving coverage"
+              "source": "AWS S3 Tables MCP Server Documentation",
+              "url": "https://awslabs.github.io/mcp/servers/s3-tables-mcp-server",
+              "date": "2026-07-09",
+              "value": "Official awslabs documentation site covers setup, IAM requirements, and the --allow-write model; community S3 servers retain variable documentation"
             }
           ],
-          "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "methodology": "Documentation completeness review; raised from 78 as first-party AWS documentation now exists",
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 85,
@@ -277,21 +277,21 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 88,
           "confidence": "high",
           "evidence": [
             {
-              "source": "GitHub Repository",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Open source community implementation"
+              "source": "awslabs/mcp Repository",
+              "url": "https://github.com/awslabs/mcp/tree/main/src/s3-tables-mcp-server",
+              "date": "2026-07-09",
+              "value": "Official S3 Tables server is open source (Apache 2.0) in awslabs/mcp; community S3 implementations also open source"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 70,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "transfer_performance": {
           "score": 85,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 88,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_coverage": {
           "score": 80,
@@ -366,21 +366,21 @@
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
-          "score": 75,
+          "score": 80,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "GitHub Community",
-              "url": "https://github.com/modelcontextprotocol/servers/discussions",
-              "date": "2025-11-16",
-              "value": "Community-maintained with moderate activity"
+              "source": "awslabs/mcp Repository",
+              "url": "https://github.com/awslabs/mcp",
+              "date": "2026-07-09",
+              "value": "S3 Tables server is first-party maintained within the active awslabs/mcp suite; generic community S3 servers see moderate activity"
             }
           ],
-          "methodology": "Community support assessment",
-          "last_verified": "2025-11-09"
+          "methodology": "Community support assessment; raised from 75 reflecting first-party AWS maintenance of the recommended server",
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -388,34 +388,38 @@
   "strengths": [
     "Built on highly reliable AWS S3 with 99.999999999% durability",
     "Comprehensive S3 operations (upload, download, list, delete, metadata)",
+    "Official first-party option now available: awslabs S3 Tables MCP Server, read-only by default",
     "Excellent for cloud storage automation and data pipelines",
     "Full operation auditability through CloudTrail",
-    "Open source community implementation",
     "Supports multipart uploads for large files up to 5TB"
   ],
   "limitations": [
     "Downloaded object content and metadata exposed to LLM provider",
-    "AI can delete objects and modify ACLs within IAM permissions",
-    "AWS access keys and credentials accessible to AI",
+    "AI can delete objects and modify ACLs within IAM permissions (official S3 Tables server requires explicit --allow-write)",
+    "AWS access keys and credentials accessible to AI in locally configured community servers",
     "Object metadata and bucket structure may reveal sensitive information",
     "Can make objects public if IAM permissions allow",
-    "Encrypted data decrypted before transmission to LLM provider"
+    "Encrypted data decrypted before transmission to LLM provider",
+    "Generic community S3 servers are unofficial; AWS's recommended paths are the managed AWS MCP Server or the awslabs S3 Tables server"
   ],
   "metadata": {
-    "license": "MIT",
+    "license": "Apache 2.0 (awslabs S3 Tables server); community servers vary (MIT common)",
     "supported_platforms": [
-      "All platforms with Node.js/Python"
+      "All platforms with Python (uvx awslabs.s3-tables-mcp-server) or Node.js (community servers)"
     ],
     "programming_languages": [
-      "TypeScript",
-      "Python"
+      "Python",
+      "TypeScript"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "api_dependency": "AWS SDK for JavaScript/Python",
-    "authentication": "AWS IAM credentials (Access Key ID, Secret Access Key)",
+    "github_repo": "https://github.com/awslabs/mcp/tree/main/src/s3-tables-mcp-server",
+    "alternative_repos": [
+      "https://github.com/aws-samples/sample-mcp-server-s3"
+    ],
+    "api_dependency": "AWS SDK (boto3 / AWS SDK for JavaScript)",
+    "authentication": "AWS IAM credentials (access keys or IAM roles); write access gated behind --allow-write on the S3 Tables server",
     "first_release": "2024-11",
-    "maintained_by": "Community"
+    "maintained_by": "AWS (awslabs) and Community"
   },
   "use_case_ratings": {
     "code-generation": {

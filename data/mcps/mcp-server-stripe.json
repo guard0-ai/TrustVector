@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "Stripe MCP Server",
   "provider": "Stripe",
-  "version": "2026.6",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Stripe's official MCP server from the open-source agent toolkit. Exposes tools for customers, products, prices, payment links, invoices, refunds, balance, disputes, and subscriptions plus Stripe documentation search. Available as the @stripe/mcp stdio package or the hosted remote server at mcp.stripe.com with OAuth.",
+  "description": "Stripe's official MCP server (repo renamed from stripe/agent-toolkit to stripe/ai). The hosted server at mcp.stripe.com (OAuth or restricted-key bearer token) exposes generic API search/read/write tools plus resource search, docs search, an implementation planner, refunds, and account info, spanning payments, subscriptions, invoices, products, disputes, and balance. Treasury/payout tools are in preview by request. Also available as the @stripe/mcp stdio package (v0.3.3).",
   "website": "https://docs.stripe.com/mcp",
   "trust_vector": {
     "performance_reliability": {
@@ -24,21 +24,21 @@
             }
           ],
           "methodology": "API stability and uptime analysis of the underlying Stripe API",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_success_rate": {
           "score": 88,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Stripe Agent Toolkit Repository",
-              "url": "https://github.com/stripe/agent-toolkit",
+              "source": "Stripe AI Repository (formerly agent-toolkit)",
+              "url": "https://github.com/stripe/ai",
               "date": "2026-06-10",
               "value": "Tools are thin, well-tested wrappers over stable Stripe API endpoints (customers, invoices, payment links, refunds, subscriptions)"
             }
           ],
           "methodology": "Operation success testing across the documented tool set in test mode",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 84,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing under sustained tool-call load",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "search_accuracy": {
           "score": 84,
@@ -66,21 +66,21 @@
             }
           ],
           "methodology": "Relevance assessment of documentation search results for common integration queries",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 84,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "Stripe Agent Toolkit Repository",
-              "url": "https://github.com/stripe/agent-toolkit",
+              "source": "Stripe AI Repository (formerly agent-toolkit)",
+              "url": "https://github.com/stripe/ai",
               "date": "2026-06-10",
               "value": "Surfaces Stripe's structured error objects (decline codes, validation errors) to the agent, enabling informed retries"
             }
           ],
           "methodology": "Error handling testing with invalid parameters, missing permissions, and declined operations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -94,12 +94,12 @@
             {
               "source": "Stripe MCP Documentation",
               "url": "https://docs.stripe.com/mcp",
-              "date": "2026-06-10",
-              "value": "Local server authenticates with Stripe API keys (restricted keys supported); hosted server at https://mcp.stripe.com uses OAuth with explicit consent"
+              "date": "2026-07-09",
+              "value": "Local server authenticates with Stripe API keys (restricted keys supported); hosted server at https://mcp.stripe.com uses OAuth (recommended, with sessions viewable/revocable in Dashboard) or bearer tokens with restricted keys; sandbox and live MCP access are separately manageable by admins"
             }
           ],
           "methodology": "Authentication mechanism review for stdio and hosted transports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scope_limitation": {
           "score": 88,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Permission scope testing with restricted keys across read and write tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 75,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Token storage and exposure-surface analysis for local configuration files",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "action_auditability": {
           "score": 88,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Audit logging review of API request logs and event history",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "unauthorized_action_risk": {
           "score": 60,
@@ -150,12 +150,12 @@
             {
               "source": "Stripe MCP Documentation",
               "url": "https://docs.stripe.com/mcp",
-              "date": "2026-06-10",
-              "value": "Tools include money-movement operations (refunds, payment links, invoices, subscription changes); an agent acting on injected or mistaken instructions can cause direct financial impact without human confirmation"
+              "date": "2026-07-09",
+              "value": "Tools include money-movement operations (refunds, generic stripe_api_write across invoices, subscriptions, payment links); Stripe's docs now explicitly recommend enabling client-side human confirmation of tools to mitigate prompt injection, but there is still no server-side confirmation step"
             }
           ],
           "methodology": "Threat modeling of write-capable financial tools; strongest case among evaluated servers for read-only defaults and human-in-the-loop confirmation on writes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis of tool results containing customer and payment data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 80,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Review of Stripe compliance posture and the data classes reachable via the tool surface",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "organization_data_control": {
           "score": 82,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Access control review of key management and OAuth grant administration",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 74,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Analysis of downstream data sharing once tool results leave Stripe",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 88,
@@ -249,21 +249,21 @@
             }
           ],
           "methodology": "Logging and traceability assessment via Dashboard logs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 92,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Stripe Agent Toolkit Repository",
-              "url": "https://github.com/stripe/agent-toolkit",
-              "date": "2026-06-10",
-              "value": "MIT-licensed open source (approximately 1,601 stars); tool implementations are fully auditable in the stripe/agent-toolkit repository (being renamed stripe/ai)"
+              "source": "Stripe AI Repository (formerly agent-toolkit)",
+              "url": "https://github.com/stripe/ai",
+              "date": "2026-07-09",
+              "value": "MIT-licensed open source (1,650 stars); repository rename to stripe/ai is complete and tool implementations remain fully auditable, alongside new @stripe/ai-sdk and @stripe/token-meter packages"
             }
           ],
           "methodology": "Source code review of the published toolkit and MCP package",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 85,
@@ -272,12 +272,12 @@
             {
               "source": "Stripe MCP Documentation",
               "url": "https://docs.stripe.com/mcp",
-              "date": "2026-06-10",
-              "value": "Tool list is explicitly enumerated (customers, products, prices, payment links, invoices, refunds, balance, disputes, subscriptions, doc search) with per-tool enablement flags"
+              "date": "2026-07-09",
+              "value": "Tool list restructured and explicitly enumerated: stripe_api_search/details/read/write meta-tools, search/fetch resources, documentation search, implementation planner, create_refund, and account info, with supported API methods listed (customers, charges, PaymentIntents, Checkout Sessions, invoices, subscriptions, coupons, promotion codes, products, prices, payment links, disputes, portal configurations, balance)"
             }
           ],
           "methodology": "Comparison of documented tool surface against the shipped package",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment for both stdio and hosted transports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 86,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Latency observation across representative tool calls",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 90,
@@ -324,35 +324,35 @@
             }
           ],
           "methodology": "Uptime analysis of Stripe infrastructure",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 84,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Stripe Agent Toolkit Repository",
-              "url": "https://github.com/stripe/agent-toolkit",
-              "date": "2026-06-10",
-              "value": "Covers core billing and payments objects plus doc search; advanced surfaces (Connect, Treasury, Radar) are not fully exposed as tools"
+              "source": "Stripe MCP Documentation",
+              "url": "https://docs.stripe.com/mcp",
+              "date": "2026-07-09",
+              "value": "Coverage expanded to charges, PaymentIntents, Checkout Sessions, coupons, promotion codes, and portal configurations in addition to core billing objects; Treasury/payout tools are in preview by request (mcp@stripe.com), while Connect and Radar remain unexposed"
             }
           ],
           "methodology": "Feature completeness assessment against the full Stripe API surface",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 82,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "Stripe Agent Toolkit Repository",
-              "url": "https://github.com/stripe/agent-toolkit",
-              "date": "2026-06-10",
-              "value": "Approximately 1,601 GitHub stars with active first-party maintenance; widely referenced as the canonical payments MCP server"
+              "source": "Stripe AI Repository (formerly agent-toolkit)",
+              "url": "https://github.com/stripe/ai",
+              "date": "2026-07-09",
+              "value": "1,650 GitHub stars with active first-party maintenance (last push July 2026); widely referenced as the canonical payments MCP server"
             }
           ],
           "methodology": "Community activity and adoption analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -371,15 +371,17 @@
     "No built-in human confirmation step on write operations; must be enforced by the client",
     "Customer PII in tool results is shared with the LLM provider",
     "Unrestricted secret keys in stdio config are a severe single point of failure",
-    "Tool coverage omits advanced surfaces like Connect and Treasury",
+    "Tool coverage omits Connect and Radar; Treasury/payout tools are preview-only by request",
     "Agent errors in live mode can require manual financial remediation"
   ],
   "metadata": {
-    "repository": "https://github.com/stripe/agent-toolkit",
+    "repository": "https://github.com/stripe/ai",
+    "previous_repository": "https://github.com/stripe/agent-toolkit",
     "package_name": "@stripe/mcp",
+    "package_version": "0.3.3",
     "license": "MIT",
     "maintained_by": "Stripe",
-    "github_stars": 1601,
+    "github_stars": 1650,
     "remote_endpoint": "https://mcp.stripe.com",
     "authentication": "Stripe API keys / Restricted API Keys (stdio); OAuth (hosted)",
     "transport_types": [

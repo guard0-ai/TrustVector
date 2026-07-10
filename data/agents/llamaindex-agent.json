@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "LlamaIndex Agent",
   "provider": "LlamaIndex",
-  "version": "0.11.x",
-  "last_evaluated": "2025-11-09",
+  "version": "0.14.x",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Data framework optimized for building LLM applications with advanced RAG (Retrieval-Augmented Generation) capabilities. Agents can reason over complex data sources using sophisticated query engines and retrieval strategies.",
+  "description": "Data framework optimized for building LLM applications with advanced RAG (Retrieval-Augmented Generation) capabilities. Agents can reason over complex data sources using sophisticated query engines and retrieval strategies; the event-driven Workflows engine (llama-index-workflows 2.x) has matured agent orchestration well beyond the earlier ReAct-only story. Managed cloud offerings (LlamaCloud parse/extract/index, LlamaAgents) are available alongside the MIT-licensed framework.",
   "website": "https://docs.llamaindex.ai/en/stable/module_guides/deploying/agents/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Based on RAG performance benchmarks",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 84,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex task testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory system evaluation",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 78,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rag_performance": {
           "score": 92,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "RAG benchmark testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 75,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 78,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 82,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 94,
@@ -166,10 +166,16 @@
               "url": "https://github.com/run-llama/llama_index",
               "date": "2024-10-20",
               "value": "MIT licensed, 35k+ stars, very active development"
+            },
+            {
+              "source": "GitHub Repository",
+              "url": "https://github.com/run-llama/llama_index",
+              "date": "2026-07-09",
+              "value": "Now ~50,700 stars, still very active (pushed 2026-07-08); a series of 2025 CVEs in reader/CLI components (CVE-2025-1753 CLI command injection fixed in 0.12.21, CVE-2025-5302 JSONReader DoS, CVE-2025-7647/CVE-2025-7707 insecure temp/cache file handling) were disclosed and patched via the public advisory process; current 0.14.x releases are past all published fixes"
             }
           ],
-          "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "methodology": "Source code review plus advisory history analysis",
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 80,
@@ -202,7 +208,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 75,
@@ -216,7 +222,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 93,
@@ -230,7 +236,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +255,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 83,
@@ -263,7 +269,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 85,
@@ -277,7 +283,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 94,
@@ -291,7 +297,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 90,
@@ -305,7 +311,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 83,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 88,
@@ -352,7 +358,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 80,
@@ -366,7 +372,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rag_optimization": {
           "score": 91,
@@ -380,7 +386,7 @@
             }
           ],
           "methodology": "RAG capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -394,9 +400,10 @@
     "Excellent for knowledge-intensive applications"
   ],
   "limitations": [
-    "Agent capabilities less mature than core RAG features",
+    "Agent orchestration improved substantially with the Workflows engine, but the framework remains RAG-first compared to dedicated agent frameworks",
     "Requires understanding of RAG concepts for optimal use",
     "Security and sandboxing must be implemented separately",
+    "Repeated 2025 CVEs in reader/CLI components (command injection, DoS, insecure temp files) mean data connectors should be treated as an attack surface and dependencies kept current",
     "Can have high latency with complex retrieval strategies",
     "Embedding costs can accumulate with large datasets",
     "Less suitable for tasks not requiring data retrieval"
@@ -420,8 +427,12 @@
       "Function tools",
       "Custom tools"
     ],
-    "github_stars": "35000+",
-    "first_release": "2022"
+    "github_stars": "50700+",
+    "first_release": "2022",
+    "current_version": "0.14.23 (2026-06-24); llama-index-workflows 2.22.2 (2026-06-30)",
+    "pricing": "Framework free (MIT) - Costs from LLM API and embedding services. LlamaCloud managed platform: credit-based, Free tier 10,000 credits/month, Starter $50/month, Pro $500/month, custom Enterprise",
+    "pricing_last_verified": "2026-07-09",
+    "security_advisories": "2025 CVEs patched: CVE-2025-1753 (CLI command injection, fixed 0.12.21), CVE-2025-1752/CVE-2025-5302 (reader DoS), CVE-2025-7647/CVE-2025-7707 (insecure temp/cache files); current 0.14.x is past all published fixes"
   },
   "use_case_ratings": {
     "customer-support": {

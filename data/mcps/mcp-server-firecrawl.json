@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "Firecrawl MCP Server",
   "provider": "Firecrawl",
-  "version": "2026.6",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official Firecrawl MCP server giving AI models web scraping, crawling, site mapping, web search, and structured extraction capabilities. Available as an npm package (firecrawl-mcp) over stdio or as a hosted remote server authenticated with a firecrawl.dev API key.",
+  "description": "Official Firecrawl MCP server (firecrawl-mcp v3.x) providing web scraping, crawling, site mapping, web search, structured extraction, document parsing, a research agent, interactive browser sessions, and page-change monitors. Runs as an npm package over stdio or as the hosted server at https://mcp.firecrawl.dev/{API_KEY}/v2/mcp; a rate-limited keyless free tier (https://mcp.firecrawl.dev/v2/mcp) covers scrape, search, and interact, and hosted transport accepts OAuth bearer tokens.",
   "website": "https://github.com/firecrawl/firecrawl-mcp-server",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "API stability and service maturity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scrape_success_rate": {
           "score": 84,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Scrape success testing across diverse site types",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "crawl_completeness": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Crawl coverage assessment against known site structures",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 83,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Rate limiting behavior review from source and docs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 80,
@@ -80,26 +80,26 @@
             }
           ],
           "methodology": "Error handling and recovery testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 68,
+      "overall_score": 67,
       "criteria": {
         "authentication_security": {
           "score": 80,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Firecrawl MCP Setup Documentation",
-              "url": "https://docs.firecrawl.dev/mcp-server",
-              "date": "2026-06-10",
-              "value": "Authenticates with a firecrawl.dev API key via environment variable (stdio) or the hosted remote endpoint"
+              "source": "Firecrawl MCP Server Repository",
+              "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+              "date": "2026-07-09",
+              "value": "Authenticates with a firecrawl.dev API key via environment variable (stdio) or embedded in the hosted endpoint path; hosted HTTP transport also accepts OAuth access tokens (fco_ prefix) via Authorization Bearer header; a keyless rate-limited free tier exposes scrape, search, and interact without credentials"
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_exposure": {
           "score": 55,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Threat modeling of untrusted web content returned to the model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ssrf_protection": {
           "score": 58,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "SSRF risk analysis of URL-driven tool inputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "credential_handling": {
           "score": 75,
@@ -141,21 +141,21 @@
             }
           ],
           "methodology": "API key storage and exposure analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "unauthorized_action_risk": {
-          "score": 70,
+          "score": 65,
           "confidence": "medium",
           "evidence": [
             {
               "source": "Firecrawl MCP Server Repository",
               "url": "https://github.com/firecrawl/firecrawl-mcp-server",
-              "date": "2026-06-10",
-              "value": "Tools are read-oriented (scrape, crawl, search, extract) so no destructive write actions exist, but the agent can crawl arbitrary sites and consume account credits"
+              "date": "2026-07-09",
+              "value": "Core tools remain read-oriented, but v3 adds firecrawl_interact browser automation (click, type, navigate on arbitrary sites, enabling form submissions), an autonomous research agent, and monitor tools that create recurring jobs with webhooks; the agent can also crawl arbitrary sites and consume account credits"
             }
           ],
-          "methodology": "Capability and blast radius assessment of exposed tools",
-          "last_verified": "2026-06-10"
+          "methodology": "Capability and blast radius assessment of exposed tools; score lowered from 70 (2026-06-10) because interact browser automation and autonomous agent/monitor tools extend the surface beyond read-only retrieval",
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis of scrape and crawl pipelines",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 65,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy controls assessment of returned content",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 68,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Data sharing and policy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_posture": {
           "score": 73,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 82,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 92,
@@ -258,12 +258,12 @@
             {
               "source": "Firecrawl MCP Server Repository",
               "url": "https://github.com/firecrawl/firecrawl-mcp-server",
-              "date": "2026-06-10",
-              "value": "MIT-licensed open source server with 6,538 GitHub stars; backend scraping service is partially proprietary"
+              "date": "2026-07-09",
+              "value": "MIT-licensed open source server with 6,895 GitHub stars; backend scraping service is partially proprietary"
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 86,
@@ -272,12 +272,12 @@
             {
               "source": "Firecrawl MCP Server Repository",
               "url": "https://github.com/firecrawl/firecrawl-mcp-server",
-              "date": "2026-06-10",
-              "value": "Tool set clearly enumerated: scrape, batch scrape, crawl, map, web search, and structured extract"
+              "date": "2026-07-09",
+              "value": "Tool set clearly enumerated in v3: scrape, map, search, crawl (+status), parse, extract, agent (+status), interact browser sessions (+stop), research (papers/repos), monitor (create/list), and feedback tools"
             }
           ],
           "methodology": "Tool surface documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -291,12 +291,12 @@
             {
               "source": "firecrawl-mcp npm package",
               "url": "https://www.npmjs.com/package/firecrawl-mcp",
-              "date": "2026-06-10",
-              "value": "Single npx command with one API key environment variable, or zero-install hosted remote endpoint"
+              "date": "2026-07-09",
+              "value": "Single npx command with one API key environment variable, zero-install hosted remote endpoint (mcp.firecrawl.dev), or fully keyless rate-limited free tier for scrape/search/interact"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 82,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Latency characterization across tool types",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 84,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Uptime and incident history analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 88,
@@ -333,12 +333,12 @@
             {
               "source": "Firecrawl MCP Server Repository",
               "url": "https://github.com/firecrawl/firecrawl-mcp-server",
-              "date": "2026-06-10",
-              "value": "Covers the full web data lifecycle: discovery (map, search), retrieval (scrape, batch, crawl), and structured extraction"
+              "date": "2026-07-09",
+              "value": "Covers the full web data lifecycle: discovery (map, search), retrieval (scrape, crawl), structured extraction, document parsing, autonomous research agent, interactive browser sessions, recurring page monitors, and academic paper/repo research tools"
             }
           ],
           "methodology": "Feature completeness assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 86,
@@ -347,23 +347,23 @@
             {
               "source": "GitHub Repository Metrics",
               "url": "https://github.com/firecrawl/firecrawl-mcp-server",
-              "date": "2026-06-10",
-              "value": "6,538 GitHub stars and listing in major MCP client directories indicate strong adoption"
+              "date": "2026-07-09",
+              "value": "6,895 GitHub stars, active releases (v3.22.3 published 2026-07-08), and listing in major MCP client directories indicate strong adoption"
             }
           ],
           "methodology": "Community activity and adoption analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
   },
   "strengths": [
-    "Full web data toolkit: scrape, batch scrape, crawl, map, search, and structured extract",
+    "Full web data toolkit: scrape, crawl, map, search, structured extract, document parsing, research agent, browser sessions, and page monitors",
     "Handles JavaScript-heavy sites and returns clean LLM-ready markdown",
     "Automatic retries with exponential backoff and credit usage monitoring",
-    "Simple setup via npx package or hosted remote server",
-    "MIT-licensed open source server with strong community adoption (6,538 stars)",
-    "Read-only tool surface with no destructive write actions"
+    "Simple setup via npx package, hosted remote server, or keyless free tier",
+    "MIT-licensed open source server with strong community adoption (6,895 stars)",
+    "Hosted transport supports OAuth bearer tokens in addition to API keys"
   ],
   "limitations": [
     "All fetched web content is untrusted and can carry indirect prompt injection payloads",
@@ -371,7 +371,8 @@
     "Leaked API key allows arbitrary credit consumption on the account",
     "No built-in PII or secret filtering on scraped content",
     "Scraped data transits Firecrawl's cloud before reaching the model",
-    "Heavily bot-protected sites can still fail or return partial content"
+    "Heavily bot-protected sites can still fail or return partial content",
+    "STATUS 2026-07-09: v3 interact tool adds browser automation (click, type, navigate), so the tool surface is no longer purely read-only — injected instructions could drive form submissions on third-party sites; agent and monitor tools run asynchronously and can consume credits over time"
   ],
   "metadata": {
     "license": "MIT",
@@ -383,14 +384,16 @@
       "TypeScript"
     ],
     "github_repo": "https://github.com/firecrawl/firecrawl-mcp-server",
-    "github_stars": 6538,
+    "github_stars": 6895,
     "package_name": "firecrawl-mcp",
-    "api_dependency": "Firecrawl API (firecrawl.dev)",
-    "authentication": "Firecrawl API key",
+    "package_version": "3.22.3",
+    "api_dependency": "Firecrawl API v2 (firecrawl.dev)",
+    "authentication": "Firecrawl API key (env var or URL path) or OAuth bearer token (hosted); keyless free tier for scrape/search/interact",
+    "remote_endpoint": "https://mcp.firecrawl.dev/{FIRECRAWL_API_KEY}/v2/mcp (keyless: https://mcp.firecrawl.dev/v2/mcp)",
     "maintained_by": "Firecrawl",
     "transport_types": [
       "stdio",
-      "remote (hosted)"
+      "streamable-http (hosted)"
     ],
     "installation_methods": [
       "npm",

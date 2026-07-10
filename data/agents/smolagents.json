@@ -4,7 +4,7 @@
   "name": "smolagents",
   "provider": "Hugging Face",
   "version": "1.x",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Minimalist Python agent library from Hugging Face. Its signature CodeAgent writes actions as executable Python code instead of JSON tool calls, enabling expressive multi-step behavior with a deliberately small core codebase.",
   "website": "https://github.com/huggingface/smolagents",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Review of published benchmark comparisons between code actions and JSON tool calls, plus task completion testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 86,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool invocation testing across CodeAgent and ToolCallingAgent modes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex multi-step task testing using ReAct loop with planning interval enabled",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 65,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory system evaluation across single-run and cross-session scenarios",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 75,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error injection testing observing self-correction behavior across retries",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 74,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Multi-agent coordination testing using managed agents hierarchy",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review of the local Python executor versus opt-in remote sandbox backends",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 60,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control capabilities assessment of library surface",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 58,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection attack surface review; code-action paradigm amplifies impact of successful injection",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 62,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data isolation architecture review across executor backends",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review of self-hosted library model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 80,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment across deployment configurations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 75,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis across model and executor backends",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 92,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment including air-gapped configurations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 82,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Tracing and logging capabilities assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability assessment of agent step outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 95,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment of license, codebase size, and auditability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 88,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Community engagement analysis of commits, issues, and releases",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Integration complexity assessment with minimal-setup testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 72,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Scalability architecture assessment for production workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 88,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 76,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 70,
@@ -377,10 +377,16 @@
               "url": "https://github.com/huggingface/smolagents/releases",
               "date": "2026-05-30",
               "value": "Actively developed with occasional breaking changes; production deployments must add sandboxing, scaling, and guardrails themselves"
+            },
+            {
+              "source": "smolagents GitHub Releases",
+              "url": "https://github.com/huggingface/smolagents/releases",
+              "date": "2026-07-09",
+              "value": "Latest release v1.26.0 (2026-05-29); repo active (last push 2026-06-23) at ~28,300 stars; still on 1.x series, no 2.0 release"
             }
           ],
           "methodology": "Production readiness assessment of API stability and operational gaps",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -461,8 +467,9 @@
       "MCP tools",
       "LangChain tool import"
     ],
-    "github_stars": "20000+",
+    "github_stars": "28200+",
     "first_release": "2024 (Dec 2024/Jan 2025)",
+    "current_version": "1.26.0 (2026-05-29)",
     "pricing": "Free (Apache 2.0) - Costs only from LLM API calls and optional sandbox providers",
     "python_requirement": "Python >=3.10",
     "adoption": "One of the most-starred minimalist agent libraries; widely used for open deep-research agents"

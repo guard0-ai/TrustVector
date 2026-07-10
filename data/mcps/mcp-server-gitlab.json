@@ -4,10 +4,10 @@
   "name": "MCP GitLab Server",
   "provider": "Anthropic (Archived)",
   "version": "2025.3.2",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "ARCHIVED: Former Anthropic reference MCP server for GitLab integration (merge requests, CI/CD pipelines, issues), archived 2025-05-29 to the servers-archived repository and no longer maintained; no security guarantees are provided for archived servers. The GitLab MCP ecosystem has since moved to other actively maintained implementations, which should be preferred.",
-  "website": "https://gitlab.com/gitlab-org/gitlab-mcp-server",
+  "description": "ARCHIVED: Former Anthropic reference MCP server for GitLab (merge requests, CI/CD pipelines, issues), archived 2025-05-29 to servers-archived and no longer maintained; no security guarantees for archived servers. GitLab now ships an OFFICIAL built-in MCP server (experiment in GitLab 18.3, beta since 18.6) at https://<gitlab-instance>/api/v4/mcp with OAuth 2.0 Dynamic Client Registration; it requires GitLab Duo and a Premium/Ultimate tier and should be preferred.",
+  "website": "https://github.com/modelcontextprotocol/servers-archived",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 80,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "API stability and uptime analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "operation_success_rate": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Operation success testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 80,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "ci_cd_integration": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "CI/CD integration testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 60,
@@ -86,7 +86,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -105,7 +105,7 @@
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 72,
@@ -119,7 +119,7 @@
             }
           ],
           "methodology": "Token security analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "scope_limitation": {
           "score": 82,
@@ -133,7 +133,7 @@
             }
           ],
           "methodology": "Permission scope testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "action_auditability": {
           "score": 85,
@@ -147,7 +147,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "self_hosted_option": {
           "score": 90,
@@ -161,7 +161,7 @@
             }
           ],
           "methodology": "Deployment options review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -180,7 +180,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 70,
@@ -194,7 +194,7 @@
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_residency": {
           "score": 85,
@@ -208,7 +208,7 @@
             }
           ],
           "methodology": "Data residency review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 75,
@@ -222,7 +222,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -241,7 +241,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 85,
@@ -255,7 +255,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 92,
@@ -269,7 +269,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 82,
@@ -283,7 +283,7 @@
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -302,7 +302,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 82,
@@ -316,7 +316,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 85,
@@ -330,7 +330,7 @@
             }
           ],
           "methodology": "Uptime analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 60,
@@ -347,10 +347,16 @@
               "url": "https://github.com/modelcontextprotocol/servers-archived",
               "date": "2026-06-10",
               "value": "Archived 2025-05-29; feature set frozen, no updates for GitLab API or MCP specification changes"
+            },
+            {
+              "source": "GitLab Docs - GitLab MCP server",
+              "url": "https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/",
+              "date": "2026-07-09",
+              "value": "GitLab's official built-in MCP server (beta since GitLab 18.6) at https://<gitlab-instance>/api/v4/mcp with OAuth 2.0 Dynamic Client Registration supersedes this archived server; requires GitLab Duo and Premium/Ultimate"
             }
           ],
           "methodology": "Feature completeness assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "enterprise_features": {
           "score": 88,
@@ -364,7 +370,7 @@
             }
           ],
           "methodology": "Enterprise capabilities assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -383,19 +389,22 @@
     "Some features require GitLab Premium/Ultimate",
     "Subject to GitLab API rate limits",
     "No built-in secret detection in code",
-    "ARCHIVED 2025-05-29: reference server unmaintained with no security guarantees; GitLab ecosystem has moved to other implementations"
+    "ARCHIVED 2025-05-29: reference server unmaintained with no security guarantees",
+    "Superseded by GitLab's official built-in MCP server (beta, GitLab 18.6+, /api/v4/mcp with OAuth 2.0 DCR), which requires GitLab Duo and Premium/Ultimate tier"
   ],
   "metadata": {
     "license": "MIT",
     "supported_platforms": ["All platforms with Node.js/Python"],
     "programming_languages": ["TypeScript", "Python"],
     "mcp_version": "1.0",
-    "github_repo": "https://gitlab.com/gitlab-org/gitlab-mcp-server",
+    "github_repo": "https://github.com/modelcontextprotocol/servers-archived",
     "api_dependency": "GitLab REST API v4 / GraphQL",
     "authentication": "GitLab Personal Access Token or OAuth",
     "first_release": "2025-02",
     "maintained_by": "None (Archived 2025-05-29)",
     "repository": "https://github.com/modelcontextprotocol/servers-archived",
+    "official_successor": "GitLab built-in MCP server (beta, GitLab 18.6+): https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/",
+    "successor_endpoint": "https://gitlab.com/api/v4/mcp (GitLab.com) or https://<gitlab-instance>/api/v4/mcp (self-managed)",
     "transport_types": ["stdio"],
     "installation_methods": ["npm", "pip"]
   },

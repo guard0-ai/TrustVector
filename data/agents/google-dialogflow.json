@@ -1,13 +1,13 @@
 {
   "id": "google-dialogflow",
   "type": "agent",
-  "name": "Google Dialogflow CX",
+  "name": "Google Conversational Agents (Dialogflow CX)",
   "provider": "Google Cloud",
-  "version": "CX",
-  "last_evaluated": "2025-11-09",
+  "version": "Conversational Agents (CX)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Google's advanced conversational AI platform for building sophisticated virtual agents with visual flow design, state management, and enterprise features. Successor to Dialogflow ES with enhanced capabilities for complex conversations.",
-  "website": "https://cloud.google.com/dialogflow/cx/docs",
+  "description": "REBRANDED: Dialogflow CX is now sold as Conversational Agents on Google Cloud - the standalone CX console was deprecated October 31, 2025, and users are auto-routed to the Conversational Agents console, where generative playbooks and LLM-driven fulfillment sit alongside classic deterministic flows. Google's advanced conversational AI platform for building virtual agents with visual flow design, state management, and enterprise features. Successor to Dialogflow ES.",
+  "website": "https://cloud.google.com/products/conversational-agents",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 89,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Intent classification benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "conversation_flow": {
           "score": 94,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Complex conversation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "entity_extraction": {
           "score": 91,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Entity extraction testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "state_management": {
           "score": 90,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "State persistence testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_language": {
           "score": 88,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Multi-language testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "200-400ms average",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 91,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "vpc_integration": {
           "score": 89,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Network security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 92,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Audit capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "compliance": {
           "score": 91,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 90,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "hipaa_compliance": {
           "score": 88,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Healthcare compliance review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_redaction": {
           "score": 89,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "PII protection testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_residency": {
           "score": 88,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data residency assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -260,10 +260,16 @@
               "url": "https://cloud.google.com/dialogflow/cx/docs",
               "date": "2024-10-20",
               "value": "Comprehensive documentation with best practices"
+            },
+            {
+              "source": "Dialogflow release notes (Conversational Agents rebrand)",
+              "url": "https://docs.cloud.google.com/dialogflow/docs/release-notes",
+              "date": "2026-07-09",
+              "value": "Dialogflow CX console deprecated October 31, 2025; users automatically routed to the Conversational Agents console; product rebranded Conversational Agents with generative playbooks promoted"
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "visual_design_tools": {
           "score": 90,
@@ -277,7 +283,7 @@
             }
           ],
           "methodology": "Design tools assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "analytics": {
           "score": 86,
@@ -291,7 +297,7 @@
             }
           ],
           "methodology": "Analytics capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "testing_simulator": {
           "score": 84,
@@ -305,7 +311,7 @@
             }
           ],
           "methodology": "Testing features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 93,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 84,
@@ -349,10 +355,16 @@
               "url": "https://cloud.google.com/dialogflow/cx/pricing",
               "date": "2024-10-01",
               "value": "Session-based pricing, $0.007 per session (first 1000 free)"
+            },
+            {
+              "source": "Conversational Agents pricing",
+              "url": "https://cloud.google.com/products/conversational-agents/pricing",
+              "date": "2026-07-09",
+              "value": "Consumption-based pricing under Conversational Agents branding: billed per request for chat agents and per second of audio for voice agents; new customers receive $600 in credits (12 months)"
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 89,
@@ -366,7 +378,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "versioning": {
           "score": 87,
@@ -380,7 +392,7 @@
             }
           ],
           "methodology": "Version control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "integrations": {
           "score": 88,
@@ -394,7 +406,7 @@
             }
           ],
           "methodology": "Integration options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -408,6 +420,7 @@
     "Strong enterprise features (HIPAA, telephony, contact center integration)"
   ],
   "limitations": [
+    "Rebranding to Conversational Agents (CX console deprecated Oct 31, 2025) makes older docs, tutorials, and links stale, though the underlying platform is unchanged",
     "Steep learning curve for complex flow design",
     "Higher cost compared to Dialogflow ES or open-source alternatives",
     "Google Cloud Platform lock-in and dependencies",
@@ -446,7 +459,7 @@
       "Audit logging"
     ],
     "telephony_support": true,
-    "pricing": "Dialogflow ES: $0.0025/text request (7.5M messages/month free); Dialogflow CX: $0.0050-0.0065/query or $20 per 100 sessions. Enterprise support from $10k/month. New customers get $600 credit (12 months)"
+    "pricing": "Now billed as Conversational Agents: consumption-based, per request for chat agents and per second of audio for voice agents (see cloud.google.com/products/conversational-agents/pricing). Legacy references: Dialogflow ES $0.0025/text request; CX $0.0050-0.0065/query or $20 per 100 sessions. New customers get $600 credit (12 months)"
   },
   "use_case_ratings": {
     "customer-support": {
@@ -497,6 +510,7 @@
     "Contact centers implementing intelligent virtual agents"
   ],
   "tags": [
-    "google"
+    "google",
+    "rebranded"
   ]
 }

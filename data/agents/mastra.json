@@ -4,7 +4,7 @@
   "name": "Mastra",
   "provider": "Mastra AI (YC W25)",
   "version": "1.x",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "TypeScript-first AI agent framework from the Gatsby founders, combining agents, durable workflows, RAG, and evals in one toolkit. Provider-agnostic via Vercel AI SDK model routing, with a local dev playground and 1.0 stable release in January 2026.",
   "website": "https://mastra.ai/",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Task completion testing across agent and workflow primitives",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool invocation testing with typed schemas and MCP servers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 86,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex multi-step task testing using workflow engine",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 84,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory system evaluation across threads and semantic recall",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 80,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error injection testing on workflow retry and resume paths",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 82,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Multi-agent coordination testing via sub-agents and networks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review of tool execution model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 70,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control assessment of server auth options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 65,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection testing with and without guardrail processors configured",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 72,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data isolation architecture review of storage and memory scoping",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 90,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source code and license structure review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review of self-hosted deployment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 78,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment of deployment configurations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 76,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis across model provider configurations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 88,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 85,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Tracing and logging capabilities assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 78,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability assessment of run visualization features",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 88,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment of license split and code availability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 88,
@@ -302,10 +302,16 @@
               "url": "https://github.com/mastra-ai/mastra",
               "date": "2026-06-01",
               "value": "22k+ GitHub stars, 300k+ weekly npm downloads, active Discord and rapid release cadence"
+            },
+            {
+              "source": "npm (mastra, @mastra/core)",
+              "url": "https://www.npmjs.com/package/@mastra/core",
+              "date": "2026-07-09",
+              "value": "Release cadence remains rapid post-1.0: mastra 1.15.1 and @mastra/core 1.50.0 published within a day of 2026-07-09; downloads grew to ~1.8M/month by Feb 2026"
             }
           ],
           "methodology": "Community engagement analysis of stars, downloads, and releases",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Integration complexity assessment with scaffolded project testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 80,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Scalability assessment across deployment targets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 85,
@@ -352,7 +358,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 84,
@@ -366,7 +372,7 @@
             }
           ],
           "methodology": "Monitoring and evaluation features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 84,
@@ -380,7 +386,7 @@
             }
           ],
           "methodology": "Production readiness assessment of API stability and release maturity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -461,6 +467,7 @@
     ],
     "github_stars": "22000+",
     "first_release": "2024 (YC W25; 1.0 stable 2026-01-21)",
+    "latest_version": "mastra 1.15.1 / @mastra/core 1.50.0 (July 2026)",
     "pricing": "Free (Apache 2.0 core) - Costs from LLM APIs, hosting, and optional enterprise/cloud offerings",
     "node_requirement": "Node.js >=20",
     "adoption": "300k+ weekly npm downloads; built by the Gatsby founders"

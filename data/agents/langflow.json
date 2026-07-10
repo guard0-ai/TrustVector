@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "Langflow",
   "provider": "IBM (formerly DataStax/Logspace)",
-  "version": "1.5.1+",
-  "last_evaluated": "2026-06-10",
+  "version": "1.10.1",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Visual, drag-and-drop interface for building LangChain-based AI apps and agents; now owned by IBM via the Feb 2025 DataStax acquisition. SECURITY: serious CVE history including CVE-2025-3248 (CVSS 9.8 unauthenticated RCE, fixed in 1.3.0, on CISA KEV, exploited by the Flodrix botnet) and CVE-2025-34291 (account takeover/RCE). Patch promptly and harden deployments.",
+  "description": "Visual builder for LangChain-based AI apps and agents; owned by IBM via the Feb 2025 DataStax acquisition. SECURITY: recurring CVEs - CVE-2025-3248 (CVSS 9.8 unauthenticated RCE, fixed in 1.3.0, CISA KEV, Flodrix botnet), CVE-2025-34291 (account takeover/RCE), CVE-2026-33017 (second 9.8 unauthenticated RCE, exploited in 2026 for cryptomining, fixed in 1.9.0), CVE-2026-55255 (IDOR, fixed in 1.9.2), CVE-2026-5027 (path traversal). Upgrade to 1.10.1+; never expose unauthenticated.",
   "website": "https://www.langflow.org/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Workflow execution testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "langchain_compatibility": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Compatibility testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rapid_prototyping": {
           "score": 90,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Development speed assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_support": {
           "score": 84,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "LLM integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_handling": {
           "score": 72,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error recovery testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Varies by flow (1-10s)",
@@ -94,12 +94,12 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 67,
+      "overall_score": 64,
       "criteria": {
         "api_key_management": {
           "score": 58,
@@ -119,7 +119,7 @@
             }
           ],
           "methodology": "Security configuration review",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Score reduced due to CVE-2025-34291 account takeover/RCE"
         },
         "self_hosting": {
@@ -137,11 +137,17 @@
               "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248",
               "date": "2026-06-10",
               "value": "Internet-exposed self-hosted Langflow instances were actively exploited via CVE-2025-3248 (added to CISA KEV 2025-05-05; exploited by the Flodrix botnet)"
+            },
+            {
+              "source": "Orca Security / Trend Micro - CVE-2026-33017 exploitation",
+              "url": "https://nvd.nist.gov/vuln/detail/cve-2026-33017",
+              "date": "2026-07-09",
+              "value": "CVE-2026-33017 (CVSS 9.8 unauthenticated RCE via /api/v1/build_public_tmp) actively exploited in spring 2026 against exposed instances to deploy XMRig cryptominers; affects <=1.8.2, fixed in 1.9.0"
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2026-06-10",
-          "notes": "Score reduced: active in-the-wild exploitation of exposed self-hosted deployments"
+          "last_verified": "2026-07-09",
+          "notes": "Score reduced: repeated active in-the-wild exploitation of exposed self-hosted deployments (CVE-2025-3248 in 2025, CVE-2026-33017 in 2026)"
         },
         "data_privacy": {
           "score": 78,
@@ -155,7 +161,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 90,
@@ -163,16 +169,16 @@
           "evidence": [
             {
               "source": "GitHub",
-              "url": "https://github.com/logspace-ai/langflow",
-              "date": "2024-10-20",
-              "value": "MIT license, 30k+ stars, open source community"
+              "url": "https://github.com/langflow-ai/langflow",
+              "date": "2026-07-09",
+              "value": "MIT license, 151k+ stars, open source community"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "authentication": {
-          "score": 40,
+          "score": 36,
           "confidence": "high",
           "evidence": [
             {
@@ -186,11 +192,23 @@
               "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248",
               "date": "2026-06-10",
               "value": "CVE-2025-3248: CVSS 9.8 unauthenticated remote code execution via /api/v1/validate/code; fixed in 1.3.0; added to CISA KEV 2025-05-05 and exploited by the Flodrix botnet"
+            },
+            {
+              "source": "CVE-2026-33017",
+              "url": "https://nvd.nist.gov/vuln/detail/cve-2026-33017",
+              "date": "2026-07-09",
+              "value": "CVE-2026-33017: second CVSS 9.8 unauthenticated RCE (public flow-building API endpoint), actively exploited in spring 2026 within 20 hours of advisory publication; fixed in 1.9.0 (1.8.2 widely reported as patched but still vulnerable)"
+            },
+            {
+              "source": "GHSA-qrpv-q767-xqq2 (CVE-2026-55255)",
+              "url": "https://github.com/advisories/GHSA-qrpv-q767-xqq2",
+              "date": "2026-07-09",
+              "value": "CVE-2026-55255: IDOR in /api/v1/responses lets authenticated attackers execute other users' flows; fixed in 1.9.2"
             }
           ],
           "methodology": "Authentication assessment",
-          "last_verified": "2026-06-10",
-          "notes": "Score reduced due to CVE-2025-3248 unauthenticated RCE with confirmed in-the-wild exploitation"
+          "last_verified": "2026-07-09",
+          "notes": "Score reduced further 2026-07-09: recurring pattern of unauthenticated RCEs with confirmed in-the-wild exploitation (CVE-2025-3248, CVE-2026-33017) plus IDOR CVE-2026-55255; all patched as of 1.9.2, current release 1.10.1"
         }
       }
     },
@@ -209,7 +227,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 76,
@@ -223,7 +241,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment": {
           "score": 88,
@@ -237,7 +255,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_data_sharing": {
           "score": 72,
@@ -251,7 +269,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "flow_export": {
           "score": 82,
@@ -265,7 +283,7 @@
             }
           ],
           "methodology": "Data portability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -284,7 +302,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "visual_debugging": {
           "score": 88,
@@ -298,7 +316,7 @@
             }
           ],
           "methodology": "Debugging tools assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 92,
@@ -306,13 +324,13 @@
           "evidence": [
             {
               "source": "GitHub",
-              "url": "https://github.com/logspace-ai/langflow",
-              "date": "2024-10-20",
-              "value": "MIT license, 30k+ stars, very active community"
+              "url": "https://github.com/langflow-ai/langflow",
+              "date": "2026-07-09",
+              "value": "MIT license, 151k+ stars, very active community (repo active as of July 2026)"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 83,
@@ -326,7 +344,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -345,7 +363,7 @@
             }
           ],
           "methodology": "Usability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 70,
@@ -359,7 +377,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 90,
@@ -373,7 +391,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 68,
@@ -387,7 +405,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 72,
@@ -401,7 +419,7 @@
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "template_library": {
           "score": 86,
@@ -415,14 +433,14 @@
             }
           ],
           "methodology": "Template availability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
   },
   "strengths": [
     "Intuitive visual drag-and-drop interface for LLM workflows",
-    "Open source (MIT) with very active community (30k+ stars)",
+    "Open source (MIT) with very active community (151k+ stars)",
     "Built on LangChain ecosystem with access to all components",
     "Excellent for rapid prototyping and experimentation",
     "Low-code approach makes AI accessible to non-developers",
@@ -435,7 +453,7 @@
     "Security features less mature than enterprise platforms",
     "Limited control compared to code-based implementations",
     "Debugging complex flows can be challenging despite visual interface",
-    "Serious CVE history: CVE-2025-3248 (unauthenticated RCE, CISA KEV, Flodrix botnet) and CVE-2025-34291 (account takeover/RCE); upgrade to 1.3.0+ and never expose unauthenticated instances"
+    "Recurring critical CVE pattern: CVE-2025-3248 (unauthenticated RCE, CISA KEV, Flodrix botnet), CVE-2025-34291 (account takeover/RCE), CVE-2026-33017 (second unauthenticated RCE, actively exploited spring 2026 for cryptomining), CVE-2026-55255 (IDOR) and CVE-2026-5027 (path traversal); upgrade to 1.10.1+ and never expose unauthenticated instances"
   ],
   "metadata": {
     "license": "MIT",
@@ -456,12 +474,12 @@
       "LangChain tools",
       "Custom Python components"
     ],
-    "pricing_model": "Free open source (DataStax offers managed enterprise version)",
-    "github_stars": "130000+",
+    "pricing_model": "Free open source (IBM/DataStax offers managed enterprise version)",
+    "github_stars": "151000+",
     "first_release": "2023",
     "ui_framework": "React-based visual interface",
     "langchain_version": "Compatible with LangChain ecosystem",
-    "version": "1.5.1+",
+    "version": "1.10.1 (June 29, 2026)",
     "pricing": "Free (open source), Cloud from $0/hour (usage-based)"
   },
   "use_case_ratings": {

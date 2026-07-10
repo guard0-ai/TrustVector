@@ -4,7 +4,7 @@
   "name": "Mistral Large 3",
   "provider": "Mistral AI",
   "version": "Large 3 (Mistral 3 family)",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Mistral AI's open-weight flagship released December 2025 under Apache 2.0: a sparse MoE (675B total / 41B active) multimodal model with ~256K context and 40+ languages. Debuted #2 among open-source non-reasoning models on LMArena, with a strong EU data-sovereignty story.",
   "website": "https://mistral.ai/news/mistral-3/",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Review of provider benchmarks and community evaluations of open weights",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 86,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Review of reasoning benchmarks; model is non-reasoning class (no extended thinking)",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 88,
@@ -58,7 +58,7 @@
             }
           ],
           "methodology": "Crowdsourced arena comparisons and provider benchmark suite",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 85,
@@ -72,7 +72,7 @@
             }
           ],
           "methodology": "Community repeated-prompt testing on open weights",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "~1.5s (hosted API); deployment-dependent when self-hosted",
@@ -86,7 +86,7 @@
             }
           ],
           "methodology": "Median latency from third-party benchmarking of hosted endpoints",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "~3.5s (hosted API)",
@@ -100,7 +100,7 @@
             }
           ],
           "methodology": "95th percentile estimates across hosting providers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "~256,000 tokens",
@@ -114,7 +114,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 94,
@@ -128,7 +128,7 @@
             }
           ],
           "methodology": "Historical uptime of hosted API; open weights enable customer-controlled availability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Best-in-class open-weight performance for its release window: sparse MoE (675B total / 41B active) delivers near-frontier quality with modest active compute. Non-reasoning class — frontier reasoning models outperform it on hard multi-step problems."
@@ -148,7 +148,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection patterns",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 82,
@@ -162,7 +162,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing on hosted and open-weight deployments",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Open weights mean downstream deployments can weaken or strengthen safety behavior"
         },
         "data_leakage_prevention": {
@@ -177,7 +177,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies plus self-hosting option",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 83,
@@ -191,7 +191,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 85,
@@ -205,7 +205,7 @@
             }
           ],
           "methodology": "Review of API security features across hosting options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Solid security with the open-weights caveat: deployers control (and can remove) guardrails, so deployment-level controls matter more than for closed models."
@@ -225,7 +225,7 @@
             }
           ],
           "methodology": "Review of hosting documentation and deployment options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -239,7 +239,7 @@
             }
           ],
           "methodology": "Analysis of terms of service and data usage policy",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Limited retention on hosted API; zero when self-hosted",
@@ -253,7 +253,7 @@
             }
           ],
           "methodology": "Review of retention policies across deployment modes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -267,7 +267,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -281,7 +281,7 @@
             }
           ],
           "methodology": "Verification of certifications across Mistral and cloud hosting partners",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 88,
@@ -295,7 +295,7 @@
             }
           ],
           "methodology": "Review of self-hosting options enabling complete data control",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standout data-sovereignty story: EU provider under GDPR, plus Apache 2.0 weights allow fully on-premises/air-gapped deployment — the strongest possible residency guarantee."
@@ -315,7 +315,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency; open weights enable interpretability research",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 80,
@@ -329,7 +329,7 @@
             }
           ],
           "methodology": "Factual QA testing by community evaluators",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 78,
@@ -343,7 +343,7 @@
             }
           ],
           "methodology": "Review of bias disclosures and multilingual evaluation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 78,
@@ -357,7 +357,7 @@
             }
           ],
           "methodology": "Qualitative assessment plus open-weight logprob access",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 88,
@@ -371,7 +371,7 @@
             }
           ],
           "methodology": "Review of published model card and architecture disclosure",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 75,
@@ -385,7 +385,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 78,
@@ -399,7 +399,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Open weights provide architectural transparency rare at this scale (675B MoE disclosed), though training data detail and built-in guardrails are lighter than closed frontier models."
@@ -419,7 +419,7 @@
             }
           ],
           "methodology": "Review of API design and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 84,
@@ -433,7 +433,7 @@
             }
           ],
           "methodology": "Review of SDK and inference-stack support",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 84,
@@ -447,7 +447,7 @@
             }
           ],
           "methodology": "Review of versioning policy; open weights eliminate forced-retirement risk",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 80,
@@ -461,7 +461,7 @@
             }
           ],
           "methodology": "Review of monitoring tools across deployment modes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 82,
@@ -475,7 +475,7 @@
             }
           ],
           "methodology": "Assessment of documentation and support channels",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 88,
@@ -489,7 +489,7 @@
             }
           ],
           "methodology": "Analysis of distribution channels and third-party tooling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 96,
@@ -503,7 +503,7 @@
             }
           ],
           "methodology": "Review of license terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Apache 2.0 licensing at frontier scale is the headline: no usage restrictions, no vendor lock-in, and availability across HF, Bedrock, Azure, and La Plateforme."
@@ -572,7 +572,7 @@
   "limitations": [
     "Non-reasoning class — trails frontier reasoning models on hard multi-step problems",
     "Self-hosting 675B weights requires substantial GPU infrastructure despite 41B active",
-    "API pricing from aggregators (~$0.50/$1.50) carries medium confidence",
+    "Hosted API pricing ($2/$6 per 1M on La Plateforme) is several times higher than early aggregator estimates suggested, though output remains cheaper than closed flagships",
     "Open weights let deployers strip guardrails, shifting safety burden downstream",
     "Training data composition only described at a high level"
   ],
@@ -589,10 +589,10 @@
   ],
   "metadata": {
     "pricing": {
-      "input": "$0.50 per 1M tokens (approx.)",
-      "output": "$1.50 per 1M tokens (approx.)",
-      "notes": "Aggregator-reported API pricing, medium confidence; varies by host (La Plateforme, Bedrock, Azure). Self-hosting under Apache 2.0 incurs only infrastructure cost.",
-      "last_verified": "2026-06-10"
+      "input": "$2.00 per 1M tokens",
+      "output": "$6.00 per 1M tokens",
+      "notes": "Official La Plateforme pricing per mistral.ai/pricing (verified 2026-07-09); corrects earlier aggregator-based estimate of ~$0.50/$1.50. Batch processing gets a 50% discount; cloud-host (Bedrock/Azure) rates vary. Self-hosting under Apache 2.0 incurs only infrastructure cost.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 256000,
     "languages": [

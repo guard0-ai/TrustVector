@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Git Server",
   "provider": "Anthropic",
-  "version": "2025.9.25",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.6.16",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official MCP reference server for Git repository operations. Enables AI models to interact with local Git repositories, perform commits, branch management, and version control operations. One of the seven reference servers that remain actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09 (latest spec 2025-11-25).",
+  "description": "Official MCP reference server for local Git operations (commits, branches, version control). One of the seven reference servers still maintained after the 2025-05-29 archival; governance moved to the Agentic AI Foundation (Linux Foundation) on 2025-12-09 (stable spec 2025-11-25; 2026-07-28 revision at RC stage). CVE-2025-68143/68144/68145 (path traversal, argument injection; published 2026-01-20) are fixed in 2025.9.25 and 2025.12.18; current release 2026.6.16 includes all fixes.",
   "website": "https://modelcontextprotocol.io/docs/servers/git",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Operation success testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "repository_parsing_accuracy": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Parsing accuracy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "large_repository_handling": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "merge_conflict_handling": {
           "score": 85,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Conflict handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 89,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -96,10 +96,16 @@
               "url": "https://modelcontextprotocol.io/docs/security",
               "date": "2025-11-16",
               "value": "Respects local file system permissions but AI can access any readable repo"
+            },
+            {
+              "source": "The Hacker News - Three Flaws in Anthropic MCP Git Server",
+              "url": "https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html",
+              "date": "2026-01-20",
+              "value": "CVE-2025-68143 (path traversal in git_init, CVSS 8.8, fixed in 2025.9.25) and CVE-2025-68145 (path traversal bypassing the --repository restriction, CVSS 7.1, fixed in 2025.12.18); both patched in current release 2026.6.16"
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "destructive_operation_risk": {
           "score": 62,
@@ -110,10 +116,16 @@
               "url": "https://modelcontextprotocol.io/docs/security",
               "date": "2025-11-16",
               "value": "AI can perform force pushes, branch deletions, and history rewrites"
+            },
+            {
+              "source": "The Hacker News - Three Flaws in Anthropic MCP Git Server",
+              "url": "https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html",
+              "date": "2026-01-20",
+              "value": "CVE-2025-68144: argument injection via git_diff/git_checkout (CVSS 8.1) enabling arbitrary file overwrite/code execution via prompt injection; fixed in 2025.12.18, patched in current release 2026.6.16. Score unchanged: flaws are patched upstream, but they illustrate the destructive-operation risk surface"
             }
           ],
           "methodology": "Operation authorization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "credential_exposure_risk": {
           "score": 68,
@@ -127,7 +139,7 @@
             }
           ],
           "methodology": "Credential security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "commit_signing_support": {
           "score": 78,
@@ -141,7 +153,7 @@
             }
           ],
           "methodology": "Signing capability review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "branch_protection_respect": {
           "score": 70,
@@ -155,7 +167,7 @@
             }
           ],
           "methodology": "Protection mechanism testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +186,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_detection": {
           "score": 60,
@@ -188,7 +200,7 @@
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "commit_history_privacy": {
           "score": 68,
@@ -202,7 +214,7 @@
             }
           ],
           "methodology": "History privacy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -216,7 +228,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gitignore_respect": {
           "score": 72,
@@ -230,7 +242,7 @@
             }
           ],
           "methodology": "File filtering assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +261,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 92,
@@ -263,7 +275,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -277,7 +289,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "command_coverage_clarity": {
           "score": 82,
@@ -291,7 +303,7 @@
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -310,7 +322,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_performance": {
           "score": 85,
@@ -324,7 +336,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 90,
@@ -338,7 +350,7 @@
             }
           ],
           "methodology": "Stability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 87,
@@ -352,7 +364,7 @@
             }
           ],
           "methodology": "Feature completeness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 85,
@@ -369,10 +381,16 @@
               "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
               "date": "2025-12-09",
               "value": "git is one of the seven reference servers still actively maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09"
+            },
+            {
+              "source": "PyPI - mcp-server-git",
+              "url": "https://pypi.org/project/mcp-server-git/",
+              "date": "2026-07-09",
+              "value": "Latest release 2026.6.16 (published 2026-06-17); still listed among the seven maintained reference servers in modelcontextprotocol/servers README (repo ~88,300 stars, not archived)"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -387,12 +405,12 @@
   ],
   "limitations": [
     "Repository code and history exposed to LLM provider APIs",
-    "Risk of destructive operations (force push, branch deletion, history rewrite)",
+    "Risk of destructive operations (force push, branch deletion, history rewrite); no safeguards against accidental commits or pushes",
     "No built-in secret detection or sensitive data filtering",
     "Can access Git credentials stored on local system",
     "Performance may degrade with very large repositories",
-    "No safeguards against accidental commits or pushes",
-    "STATUS 2026-06-10: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); governance now under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
+    "SECURITY: three CVEs published 2026-01-20 (CVE-2025-68143 path traversal in git_init; CVE-2025-68144 argument injection in git_diff/git_checkout; CVE-2025-68145 path traversal bypassing --repository); fixed in 2025.9.25 and 2025.12.18 - versions older than 2025.12.18 remain vulnerable, upgrade to current release",
+    "STATUS 2026-07-09: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); latest PyPI release 2026.6.16 (2026-06-17) includes all CVE fixes; governance under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -405,7 +423,7 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "github_stars": 58700,
+    "github_stars": 88259,
     "api_dependency": "Git CLI",
     "authentication": "Uses local Git credentials",
     "first_release": "2024-11",
@@ -415,7 +433,7 @@
       "stdio"
     ],
     "installation_methods": [
-      "npm"
+      "pip"
     ]
   },
   "use_case_ratings": {

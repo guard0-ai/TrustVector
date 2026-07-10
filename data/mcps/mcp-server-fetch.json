@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Fetch Server",
   "provider": "Anthropic",
-  "version": "2025.4.6",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.6.4",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official MCP reference server for fetching web content and converting HTML to markdown. Enables AI models to retrieve and process web pages, documentation, and online resources. One of the seven reference servers that remain actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09 (latest spec 2025-11-25).",
+  "description": "Official MCP reference server for fetching web content and converting HTML to markdown. Enables AI models to retrieve and process web pages, documentation, and online resources. One of the seven reference servers that remain actively maintained after the 2025-05-29 archival of non-core servers; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09 (latest stable spec 2025-11-25; 2026-07-28 spec revision at release-candidate stage as of 2026-07).",
   "website": "https://modelcontextprotocol.io/docs/servers/fetch",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Fetch operation success testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "html_to_markdown_accuracy": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Conversion quality assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "timeout_handling": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Timeout behavior testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 80,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Rate limiting behavior analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 83,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "SSRF vulnerability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "url_validation": {
           "score": 75,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Input validation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "ssl_certificate_validation": {
           "score": 85,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "SSL/TLS security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "malicious_content_protection": {
           "score": 68,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Content security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_exposure": {
           "score": 70,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data flow security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "user_agent_disclosure": {
           "score": 72,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy disclosure review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cookie_handling": {
           "score": 70,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Cookie management assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 68,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "paywalled_content_respect": {
           "score": 65,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Content access policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 88,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "security_disclosure": {
           "score": 85,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Security documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "fetch_performance": {
           "score": 83,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 85,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Uptime and stability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "conversion_quality": {
           "score": 87,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Conversion accuracy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 85,
@@ -369,10 +369,16 @@
               "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
               "date": "2025-12-09",
               "value": "fetch is one of the seven reference servers still actively maintained after the 2025-05-29 archival; MCP governance moved to the Agentic AI Foundation under the Linux Foundation on 2025-12-09"
+            },
+            {
+              "source": "PyPI - mcp-server-fetch",
+              "url": "https://pypi.org/project/mcp-server-fetch/",
+              "date": "2026-07-09",
+              "value": "Latest release 2026.6.4 (published 2026-06-04); still listed among the seven maintained reference servers in modelcontextprotocol/servers README (repo ~88,300 stars, not archived)"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -392,7 +398,7 @@
     "No malicious content scanning or sanitization",
     "Performance dependent on target website responsiveness",
     "Basic rate limiting may cause issues with aggressive scraping",
-    "STATUS 2026-06-10: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); governance now under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
+    "STATUS 2026-07-09: actively maintained reference server (one of 7 retained after the 2025-05-29 archival); latest PyPI release 2026.6.4 (2026-06-04); no CVEs against this reference implementation (note: CVE-2025-65513 SSRF affects the unrelated third-party npm package 'mcp-fetch-server', not this Python mcp-server-fetch); governance under the Agentic AI Foundation (Linux Foundation, 2025-12-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -405,7 +411,7 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "github_stars": 58700,
+    "github_stars": 88259,
     "api_dependency": "HTTP/HTTPS, Turndown",
     "authentication": "None required",
     "first_release": "2024-11",
@@ -415,7 +421,7 @@
       "stdio"
     ],
     "installation_methods": [
-      "npm"
+      "pip"
     ]
   },
   "use_case_ratings": {

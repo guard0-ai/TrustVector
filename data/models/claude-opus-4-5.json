@@ -4,7 +4,7 @@
   "name": "Claude Opus 4.5",
   "provider": "Anthropic",
   "version": "20251101",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "SUPERSEDED: no longer Anthropic's most capable model — succeeded by Opus 4.6, 4.7, 4.8 (2026-05-28) and Claude Fable 5 (2026-06-09, new top tier). At launch it scored 80.9% SWE-bench and was the first model to exceed 80% on SWE-bench Verified, with a unique effort parameter for compute control.",
   "website": "https://www.anthropic.com/claude/opus",
@@ -37,7 +37,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks measuring real-world software engineering tasks",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 95,
@@ -57,7 +57,7 @@
             }
           ],
           "methodology": "Graduate and PhD-level reasoning benchmarks requiring multi-step problem solving",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 95,
@@ -77,7 +77,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge and multimodal testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 94,
@@ -91,7 +91,7 @@
             }
           ],
           "methodology": "Internal testing with effort parameter across quality levels",
-          "last_verified": "2026-01-14",
+          "last_verified": "2026-07-09",
           "notes": "Effort parameter allows precise control over output quality and consistency"
         },
         "latency_p50": {
@@ -106,7 +106,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "5.0s",
@@ -120,7 +120,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "200,000 tokens",
@@ -134,7 +134,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -142,13 +142,13 @@
           "evidence": [
             {
               "source": "Anthropic Status Page",
-              "url": "https://status.anthropic.com/",
-              "date": "2026-01-01",
-              "value": "99.95% uptime (last 90 days)"
+              "url": "https://status.claude.com/",
+              "date": "2026-07-09",
+              "value": "Claude API uptime 99.57% (last 90 days)"
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Industry-leading coding capabilities with 80.9% SWE-bench. Unique effort parameter allows compute control. Exceptional abstract reasoning (37.6% ARC-AGI-2)."
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 94,
@@ -183,7 +183,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 87,
@@ -197,7 +197,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 95,
@@ -211,7 +211,7 @@
             }
           ],
           "methodology": "Comprehensive safety testing across harmful content categories",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 88,
@@ -225,7 +225,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strongest safety posture in the Claude family. Enhanced Constitutional AI provides industry-leading jailbreak resistance."
@@ -246,7 +246,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation and privacy policies",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 95,
@@ -260,7 +260,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "0 days (ephemeral)",
@@ -274,7 +274,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 88,
@@ -288,7 +288,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 94,
@@ -302,7 +302,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 95,
@@ -316,7 +316,7 @@
             }
           ],
           "methodology": "Review of data handling practices",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional privacy posture with ephemeral data handling and strong compliance certifications. HIPAA eligible for healthcare."
@@ -337,7 +337,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 88,
@@ -351,7 +351,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets and real-world usage",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 84,
@@ -365,7 +365,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 87,
@@ -379,7 +379,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 92,
@@ -393,7 +393,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 78,
@@ -407,7 +407,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 96,
@@ -421,7 +421,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong explainability with effort parameter control. Enhanced Constitutional AI provides transparency in alignment approach."
@@ -442,7 +442,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 92,
@@ -456,7 +456,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 88,
@@ -473,10 +473,16 @@
               "url": "https://www.anthropic.com/news/claude-opus-4-8",
               "date": "2026-06-10",
               "value": "Opus 4.5 superseded by Opus 4.6 (2026-02-05), 4.7 (2026-04-16), 4.8 (2026-05-28); Claude Fable 5 (2026-06-09) is the new top tier"
+            },
+            {
+              "source": "Anthropic Model Deprecations",
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "date": "2026-07-09",
+              "value": "claude-opus-4-5-20251101 still Active (not deprecated); tentative retirement not sooner than November 24, 2026"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 87,
@@ -490,7 +496,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 91,
@@ -504,7 +510,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 92,
@@ -518,7 +524,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations and tools",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 92,
@@ -532,7 +538,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-01-14"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent operational maturity with multi-cloud availability. Effort parameter adds unique control capability. Enterprise-ready."
@@ -608,7 +614,8 @@
     "Premium pricing ($5/$25 per 1M tokens)",
     "No native audio capabilities",
     "Training data transparency limited (industry standard)",
-    "SUPERSEDED: Opus 4.6/4.7/4.8 and Claude Fable 5 (2026-06-09) are newer; no longer Anthropic's most capable model"
+    "SUPERSEDED: Opus 4.6/4.7/4.8 and Claude Fable 5 (2026-06-09) are newer; no longer Anthropic's most capable model",
+    "Listed as a legacy model in Anthropic's docs; still Active on the API with tentative retirement not sooner than 2026-11-24"
   ],
 
   "best_for": [
@@ -630,8 +637,8 @@
     "pricing": {
       "input": "$5.00 per 1M tokens",
       "output": "$25.00 per 1M tokens",
-      "notes": "67% reduction from Opus 4.1. Batch API 50% discount. Prompt caching up to 90% savings.",
-      "last_verified": "2026-01-14"
+      "notes": "67% reduction from Opus 4.1. Batch API 50% discount. Prompt caching up to 90% savings. Confirmed unchanged at $5/$25 as of 2026-07-09.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 200000,
     "max_output": 64000,

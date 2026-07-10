@@ -3,8 +3,8 @@
   "type": "agent",
   "name": "Google Agent Development Kit (ADK)",
   "provider": "Google",
-  "version": "2.0",
-  "last_evaluated": "2026-06-10",
+  "version": "2.x",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Open-source, code-first framework for building, evaluating, and deploying AI agents. Supports workflow agents, multi-agent hierarchies, built-in evaluation, and deployment to Vertex AI Agent Engine. Underlies Google's broader agent stack and is Gemini-optimized but model-agnostic.",
   "website": "https://google.github.io/adk-docs/",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Review of built-in evaluation tooling and reported agent benchmark workflows",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 86,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing across function, OpenAPI, and MCP tool types",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 88,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Assessment of workflow agent primitives and graph-based orchestration in ADK 2.0",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory and session service architecture evaluation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 78,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling pattern review and community issue analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 90,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Multi-agent hierarchy and delegation capability testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review of tool execution paths",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 78,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control and authentication capability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 74,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Review of documented safety patterns and guardrail mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 80,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data architecture and session isolation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 93,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review across deployment options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 83,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment for framework and managed deployments",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 75,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis of model and tool integrations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 86,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment including local model support",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 84,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Tracing and observability capabilities assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 78,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 93,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 87,
@@ -302,10 +302,16 @@
               "url": "https://github.com/google/adk-python",
               "date": "2026-06-10",
               "value": "Active development with frequent releases, multi-language SDK expansion, and growing contributor base since April 2025 launch"
+            },
+            {
+              "source": "adk-python GitHub Releases",
+              "url": "https://github.com/google/adk-python/releases",
+              "date": "2026-07-09",
+              "value": "Roughly bi-weekly cadence continues: v2.4.0 released 2026-07-07; 1.x maintenance line still receiving patches (v1.36.1 on 2026-07-06)"
             }
           ],
           "methodology": "Community engagement and release cadence analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 86,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Deployment and scaling options assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 85,
@@ -352,7 +358,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 80,
@@ -366,7 +372,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 84,
@@ -380,7 +386,7 @@
             }
           ],
           "methodology": "Production readiness and release maturity assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -460,6 +466,8 @@
       "Third-party library tools"
     ],
     "first_release": "2025 (announced Cloud Next 2025-04-09; Python v1.0 May 2025; ADK 2.0 GA 2026-05-19)",
+    "latest_version": "v2.4.0 (2026-07-07); 1.x maintenance line at v1.36.1 (2026-07-06)",
+    "documentation": "https://google.github.io/adk-docs/ (docs also served at https://adk.dev/)",
     "pricing": "Free framework (Apache 2.0); paid when using Vertex AI Agent Engine or Gemini Enterprise Agent Platform plus model API costs"
   },
   "tags": [

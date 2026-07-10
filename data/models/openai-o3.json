@@ -4,9 +4,9 @@
   "name": "OpenAI o3",
   "provider": "OpenAI",
   "version": "2025-01",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "DEPRECATED: the o3 family is being retired — o3-deep-research shuts down 2026-07-23 and o3-mini's API shuts down 2026-10-23; migration target is GPT-5.5. Historically OpenAI's most advanced reasoning model of its era, with exceptional performance on complex coding and mathematical tasks.",
+  "description": "DEPRECATED: the entire o3 family now has shutdown dates — o3 (o3-2025-04-16) and o3-pro shut down in the API on 2026-12-11 (announced 2026-06-11), o3-deep-research shuts down 2026-07-23, and o3-mini shuts down 2026-10-23. Migration targets are GPT-5.5 (o3, o3-mini) and GPT-5.5-pro (o3-pro, o3-deep-research). Historically OpenAI's most advanced reasoning model of its era, with exceptional performance on complex coding and mathematical tasks.",
   "website": "https://openai.com/o3",
   "trust_vector": {
     "performance_reliability": {
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks measuring real-world programming tasks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 96,
@@ -50,7 +50,7 @@
             }
           ],
           "methodology": "Advanced reasoning benchmarks requiring multi-step problem solving",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 94,
@@ -70,7 +70,7 @@
             }
           ],
           "methodology": "Crowdsourced blind comparisons and comprehensive knowledge testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 93,
@@ -84,7 +84,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts at various temperature settings",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Chain-of-thought reasoning provides consistent problem-solving approaches"
         },
         "latency_p50": {
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "6.5s",
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "128,000 tokens",
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Industry-leading performance on coding and reasoning tasks. Significantly higher latency due to chain-of-thought reasoning process, but delivers exceptional accuracy."
@@ -167,7 +167,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 89,
@@ -187,7 +187,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 83,
@@ -201,7 +201,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Strong policies, but inherent LLM memorization risks exist"
         },
         "output_safety": {
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Comprehensive safety testing across harmful content categories",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 85,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security posture with reasoning-enhanced safety checks. Robust resistance to adversarial attacks."
@@ -250,7 +250,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation and privacy policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -264,7 +264,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days",
@@ -278,7 +278,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -292,7 +292,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "No automatic PII detection, customers must implement their own controls"
         },
         "compliance_certifications": {
@@ -307,7 +307,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 75,
@@ -321,7 +321,7 @@
             }
           ],
           "methodology": "Review of data handling practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good privacy practices with opt-out for training data. 30-day data retention for abuse monitoring is longer than some competitors."
@@ -341,7 +341,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 88,
@@ -361,7 +361,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets and real-world usage",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Chain-of-thought reasoning significantly reduces hallucinations"
         },
         "bias_fairness": {
@@ -382,7 +382,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Ongoing work, but biases still present in some outputs"
         },
         "uncertainty_quantification": {
@@ -397,7 +397,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Reasoning process provides natural uncertainty quantification"
         },
         "model_card_quality": {
@@ -412,7 +412,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 74,
@@ -426,7 +426,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Limited transparency on specific training data sources (industry standard)"
         },
         "guardrails": {
@@ -441,7 +441,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent explainability through chain-of-thought reasoning. Strong hallucination resistance. Training data transparency could be improved."
@@ -461,7 +461,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 93,
@@ -475,7 +475,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 73,
@@ -490,12 +490,12 @@
             {
               "source": "OpenAI Deprecations",
               "url": "https://developers.openai.com/api/docs/deprecations",
-              "date": "2026-06-10",
-              "value": "o3-deep-research shutdown 2026-07-23; o3-mini API shutdown 2026-10-23; migration target GPT-5.5"
+              "date": "2026-07-09",
+              "value": "o3-2025-04-16 and o3-pro-2025-06-10 shutdown 2026-12-11 (announced 2026-06-11), replacements gpt-5.5 / gpt-5.5-pro; o3-deep-research shutdown 2026-07-23 (replacement gpt-5.5-pro); o3-mini shutdown 2026-10-23 (replacement gpt-5.5)"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 84,
@@ -509,7 +509,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Basic metrics available, limited detailed tracing"
         },
         "support_quality": {
@@ -524,7 +524,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 84,
@@ -538,7 +538,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations and tools",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -552,10 +552,10 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Deprecated: o3-deep-research shuts down 2026-07-23 and o3-mini API shuts down 2026-10-23; migration target GPT-5.5. Versioning and ecosystem scores reduced to reflect deprecation."
+      "notes": "Deprecated: o3 and o3-pro API shutdown 2026-12-11 (announced 2026-06-11); o3-deep-research shuts down 2026-07-23 and o3-mini 2026-10-23. Migration targets GPT-5.5 / GPT-5.5-pro. Versioning and ecosystem scores reduced to reflect deprecation."
     }
   },
   "use_case_ratings": {
@@ -572,7 +572,7 @@
       "notes": "Slower response times make it less ideal for real-time support. Better suited for complex troubleshooting requiring deep reasoning.",
       "alternatives": [
         "gpt-4-1",
-        "claude-3-5-haiku"
+        "claude-haiku-4-5"
       ]
     },
     "content-creation": {
@@ -649,11 +649,11 @@
   "limitations": [
     "Higher latency due to reasoning overhead (~3.2s p50, ~6.5s p95)",
     "30-day data retention longer than some competitors",
-    "Premium pricing for reasoning capabilities",
+    "Reasoning tokens billed as output can multiply effective cost despite $2/$8 list pricing",
     "Not HIPAA eligible",
     "Limited regional data residency options",
     "Reasoning overhead unnecessary for simple tasks",
-    "DEPRECATED: o3-deep-research shuts down 2026-07-23; o3 family API shutdown 2026-10-23 — migrate to GPT-5.5"
+    "DEPRECATED: o3 and o3-pro API shutdown 2026-12-11; o3-deep-research shuts down 2026-07-23 and o3-mini 2026-10-23 — migrate to GPT-5.5 / GPT-5.5-pro"
   ],
   "best_for": [
     "Complex coding tasks requiring advanced algorithms",
@@ -671,10 +671,10 @@
   ],
   "metadata": {
     "pricing": {
-      "input": "$15.00 per 1M tokens",
-      "output": "$60.00 per 1M tokens",
-      "notes": "Premium pricing reflecting advanced reasoning capabilities (pricing varies by variant/tier)",
-      "last_verified": "2025-11-09"
+      "input": "$2.00 per 1M tokens",
+      "output": "$8.00 per 1M tokens",
+      "notes": "o3 standard pricing after OpenAI's June 2025 price cut (o3-pro is $20/$80). Reasoning tokens are billed as output. Pricing applies until API shutdown 2026-12-11.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 128000,
     "languages": [

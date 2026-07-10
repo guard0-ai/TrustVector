@@ -1,13 +1,13 @@
 {
   "id": "rasa",
   "type": "agent",
-  "name": "Rasa Open Source",
+  "name": "Rasa (Open Source & Rasa Pro)",
   "provider": "Rasa Technologies",
-  "version": "3.x",
-  "last_evaluated": "2025-11-09",
+  "version": "Rasa Pro 3.16.x; Rasa Open Source 3.x (maintenance mode)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Leading open-source conversational AI framework for building contextual assistants and chatbots. Provides full control over NLU, dialogue management, and deployment with on-premises and cloud options.",
-  "website": "https://rasa.com/docs/rasa/",
+  "description": "Open-source-rooted conversational AI framework for building contextual assistants with full control over NLU, dialogue management, and deployment. NOTE: classic Rasa Open Source (Apache 2.0) is in maintenance mode; Rasa's strategic direction is CALM, its LLM-native dialogue approach, delivered via the commercially licensed Rasa Pro (3.16.x as of mid-2026) and the no-code Rasa Studio. A free Rasa Pro Developer Edition covers 1,000 conversations/month; paid tiers start at ~$35,000/year.",
+  "website": "https://rasa.com/docs/pro/intro/",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 82,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Intent accuracy benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "dialogue_management": {
           "score": 87,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Conversation flow testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "entity_extraction": {
           "score": 83,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Entity extraction testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "custom_actions": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Custom action testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "context_handling": {
           "score": 79,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Context retention testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "100-500ms (self-hosted)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "authentication": {
           "score": 75,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Authentication capabilities review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_privacy": {
           "score": 85,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "encryption": {
           "score": 62,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Security features review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 88,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "on_premise_deployment": {
           "score": 95,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "PII protection assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "no_data_sharing": {
           "score": 95,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 95,
@@ -274,10 +274,16 @@
               "url": "https://github.com/RasaHQ/rasa",
               "date": "2024-10-20",
               "value": "Apache 2.0, 18k+ stars, active community contributions"
+            },
+            {
+              "source": "Rasa documentation (product split)",
+              "url": "https://rasa.com/docs/pro/intro/",
+              "date": "2026-07-09",
+              "value": "Rasa Open Source is in maintenance mode; active development has moved to CALM in the commercially licensed Rasa Pro (3.16.x) and Rasa Studio; legacy OSS remains Apache 2.0"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "conversation_debugging": {
           "score": 82,
@@ -291,7 +297,7 @@
             }
           ],
           "methodology": "Debugging tools assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 85,
@@ -305,7 +311,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "explainability": {
           "score": 78,
@@ -319,7 +325,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 76,
@@ -352,7 +358,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 95,
@@ -363,10 +369,16 @@
               "url": "https://github.com/RasaHQ/rasa",
               "date": "2024-10-01",
               "value": "Free open source, costs only for infrastructure"
+            },
+            {
+              "source": "Rasa Pro licensing",
+              "url": "https://rasa.com/docs/rasa-pro/installation/python/licensing/",
+              "date": "2026-07-09",
+              "value": "Free Rasa Pro Developer Edition (up to 1,000 conversations/month, 100/month for internal employee agents); Growth tier from ~$35,000/year; Enterprise custom; legacy OSS remains free (Apache 2.0) but in maintenance mode"
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 73,
@@ -380,7 +392,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 74,
@@ -394,7 +406,7 @@
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "training_pipeline": {
           "score": 81,
@@ -408,13 +420,13 @@
             }
           ],
           "methodology": "Training capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
   },
   "strengths": [
-    "Open source (Apache 2.0) with complete control over code and data",
+    "Open-source roots (Apache 2.0 legacy) with complete control over code and data; CALM in Rasa Pro adds LLM-native dialogue while keeping business logic deterministic",
     "On-premises deployment option for maximum privacy and compliance",
     "No vendor lock-in or usage-based pricing, only infrastructure costs",
     "Highly customizable NLU pipeline and dialogue policies",
@@ -422,6 +434,7 @@
     "Machine learning-based dialogue management for contextual conversations"
   ],
   "limitations": [
+    "Rasa Open Source is in maintenance mode: new capabilities (CALM, LLM-native dialogue, Rasa Studio) ship only in the commercially licensed Rasa Pro",
     "Requires significant ML and DevOps expertise for deployment",
     "Limited enterprise features out-of-box (auth, monitoring, analytics)",
     "Steeper learning curve compared to managed cloud services",
@@ -430,11 +443,12 @@
     "Training data quality critical for good performance"
   ],
   "metadata": {
-    "license": "Apache 2.0",
+    "license": "Apache 2.0 (legacy Rasa Open Source, maintenance mode); Rasa Pro is commercially licensed",
     "supported_models": [
       "DIET",
       "TED Policy",
-      "Transformer Embedding Dialogue"
+      "Transformer Embedding Dialogue",
+      "CALM with pluggable LLMs (Rasa Pro)"
     ],
     "programming_languages": [
       "Python"
@@ -445,13 +459,13 @@
       "REST API",
       "Webhooks"
     ],
-    "pricing_model": "Free open source (Rasa Pro available for enterprise)",
+    "pricing_model": "Legacy OSS free (maintenance mode); Rasa Pro: free Developer Edition, Growth from ~$35,000/year, Enterprise custom",
     "github_stars": "20700+",
     "first_release": "2016",
     "supported_channels": "Slack, Facebook, Telegram, Web, Custom REST",
-    "enterprise_version": "Rasa Pro (commercial license available)",
-    "pricing": "Free Developer Edition (1,000 conversations/month), Entry-level from $100-500, Rasa Pro from $35,000+",
-    "version": "3.x"
+    "enterprise_version": "Rasa Pro with CALM + Rasa Studio (commercial license)",
+    "pricing": "Free Rasa Pro Developer Edition (1,000 conversations/month; 100/month for internal employee agents), Growth tier from ~$35,000/year, Enterprise custom",
+    "version": "Rasa Pro 3.16.x; Rasa Open Source 3.x (maintenance mode)"
   },
   "use_case_ratings": {
     "customer-support": {

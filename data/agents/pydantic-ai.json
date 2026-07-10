@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "Pydantic AI",
   "provider": "Pydantic",
-  "version": "1.12.0",
-  "last_evaluated": "2026-06-10",
+  "version": "2.7.0",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Type-safe Python agent framework from the creators of Pydantic. Reached v1.0 stable on 2025-09-04 with a formal API stability commitment and has surpassed 15M+ downloads. Provides production-ready agents with strong typing, validation, and structured outputs, designed for reliability and maintainability in production systems.",
+  "description": "Type-safe Python agent framework from the creators of Pydantic. Reached v1.0 stable on 2025-09-04 with a formal API stability commitment, then v2.0 on 2026-06-23 introducing a harness-first design with 'capabilities' (composable bundles of tools, hooks, instructions, and model settings) as a core primitive. Provides production-ready agents with strong typing, validation, and structured outputs, designed for reliability and maintainability in production systems.",
   "website": "https://ai.pydantic.dev/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Type safety testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "structured_outputs": {
           "score": 92,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Output validation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_integration": {
           "score": 88,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "LLM integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "validation_reliability": {
           "score": 90,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Validation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_calling": {
           "score": 84,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Variable (LLM-dependent)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "type_safety_security": {
           "score": 90,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Security testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "self_hosting": {
           "score": 88,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 92,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "dependency_security": {
           "score": 68,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Dependency analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_data_sharing": {
           "score": 75,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment": {
           "score": 90,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 82,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "no_telemetry": {
           "score": 88,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Telemetry assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "type_hints": {
           "score": 95,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Developer experience assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 92,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "validation_errors": {
           "score": 88,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Error messaging assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_trust": {
           "score": 84,
@@ -319,7 +319,7 @@
             }
           ],
           "methodology": "Community trust assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 80,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 90,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 78,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 90,
@@ -397,11 +397,17 @@
               "url": "https://pydantic.dev/articles/pydantic-ai-v1",
               "date": "2026-06-10",
               "value": "v1.0 stable released 2025-09-04 with API stability commitment; 15M+ downloads"
+            },
+            {
+              "source": "Pydantic AI Changelog / Upgrade Guide",
+              "url": "https://pydantic.dev/docs/ai/project/changelog/",
+              "date": "2026-07-09",
+              "value": "v2.0.0 released 2026-06-23 (harness-first design, capabilities primitive, breaking changes from v1); latest release v2.7.0 on 2026-07-09"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2026-06-10",
-          "notes": "Score raised: v1.0 stable release with API stability commitment confirms production maturity"
+          "last_verified": "2026-07-09",
+          "notes": "Score raised: v1.0 stable release with API stability commitment confirms production maturity. v2.0 (2026-06-23) is a major release with breaking changes; teams on v1 need a migration, but release cadence and repo activity remain very high (last push 2026-07-09)"
         },
         "testing_support": {
           "score": 86,
@@ -415,7 +421,7 @@
             }
           ],
           "methodology": "Testing capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -435,7 +441,7 @@
     "Requires Python and Pydantic knowledge",
     "No built-in monitoring or observability tools",
     "Less opinionated than full-featured frameworks",
-    "Status (2026-06): actively developed; v1.0 stable since 2025-09-04 with API stability commitment, so pre-1.0 API churn concerns no longer apply"
+    "Status (2026-07): actively developed; v2.0 major release (2026-06-23) introduced breaking changes (capabilities restructuring, renamed model classes, removed A2A/FastMCP/Outlines integrations), so v1 users face a migration; latest v2.7.0 (2026-07-09)"
   ],
   "metadata": {
     "license": "MIT",
@@ -464,9 +470,10 @@
     ],
     "pricing_model": "Free open source (MIT license)",
     "first_release": "2024",
-    "github_stars": "13236+",
+    "github_stars": "18200+",
     "v1_release": "September 2025 (API stability commitment)",
-    "latest_version": "v1.12.0 (November 7, 2025)",
+    "v2_release": "June 2026 (v2.0.0 on 2026-06-23; harness-first design with capabilities primitive)",
+    "latest_version": "v2.7.0 (July 9, 2026)",
     "parent_project": "Pydantic (70M+ downloads/month)",
     "github_repo": "https://github.com/pydantic/pydantic-ai",
     "key_features": [

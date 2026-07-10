@@ -4,9 +4,9 @@
   "name": "Qwen3.5",
   "provider": "Alibaba",
   "version": "20260216",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Alibaba's Apache-2.0 flagship open model: Qwen3.5-397B-A17B, a hybrid MoE with 512 experts (397B total / 17B active) that is natively multimodal, supports 262K context (1M on hosted Qwen3.5-Plus) and 201 languages, and beats Alibaba's own API-only 1T-parameter Qwen3-Max while decoding up to 19x faster at long context.",
+  "description": "Alibaba's Apache-2.0 flagship open model: Qwen3.5-397B-A17B, a 512-expert hybrid MoE (397B total / 17B active), natively multimodal, 262K context (1M on hosted Qwen3.5-Plus), 201 languages; beats Alibaba's API-only 1T Qwen3-Max with up to 19x faster long-context decode. Still its largest open-weight model as of July 2026, but smaller Apache-2.0 Qwen3.6 models (Apr 2026) surpass it on agentic coding, and the newest frontier (Qwen3.7-Max, May 2026; Qwen3.7-Plus, Jun 2026) is API-only.",
   "website": "https://qwen.ai/blog?id=qwen3.5",
   "trust_vector": {
     "performance_reliability": {
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Vendor benchmarks corroborated by independent press coverage and community leaderboards",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 93,
@@ -50,7 +50,7 @@
             }
           ],
           "methodology": "Mathematical and agentic reasoning benchmarks from the model card and release blog, cross-checked against community evaluations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 92,
@@ -64,7 +64,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge and multimodal benchmark review including multilingual coverage",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 88,
@@ -78,7 +78,7 @@
             }
           ],
           "methodology": "Repeated-prompt testing across temperature settings, supplemented by community reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.5s (hosted); 17B active params enable fast self-hosted decode",
@@ -92,7 +92,7 @@
             }
           ],
           "methodology": "Median latency on hosted endpoints and decode-throughput comparisons from independent reporting",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "3.8s (hosted)",
@@ -106,7 +106,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads from independent benchmarking",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "262,144 tokens (1M on hosted Qwen3.5-Plus)",
@@ -120,7 +120,7 @@
             }
           ],
           "methodology": "Official specification from model card and Alibaba Cloud documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 95,
@@ -134,7 +134,7 @@
             }
           ],
           "methodology": "Hosted-platform availability history plus redundancy across third-party hosts",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Beats Alibaba's own 1T-parameter API-only Qwen3-Max with only 17B active parameters, with up to 19x faster decode at 256K context. Native multimodality and 201-language coverage are unmatched among open models."
@@ -154,7 +154,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection patterns, including image-borne injection for multimodal inputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 84,
@@ -168,7 +168,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing; assessment accounts for open-weight modifiability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 81,
@@ -182,7 +182,7 @@
             }
           ],
           "methodology": "Analysis of hosted-platform policies plus the self-hosting option for full data isolation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 86,
@@ -196,7 +196,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories and multiple languages on default weights",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 86,
@@ -210,7 +210,7 @@
             }
           ],
           "methodology": "Review of API security features on the first-party hosted platform",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Solid default guardrails with notably broad multilingual safety coverage. Multimodal inputs widen the attack surface; open weights shift responsibility to deployers who fine-tune."
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Review of hosting regions and licensing; China-jurisdiction caveat applies to Alibaba's first-party API, not self-hosted or Western-hosted deployments",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 86,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Analysis of hosted-platform data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Per Alibaba Cloud policy (region-dependent); zero when self-hosted",
@@ -258,7 +258,7 @@
             }
           ],
           "methodology": "Review of hosted-platform retention policies; retention is deployment-dependent for open-weight models",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 77,
@@ -272,7 +272,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 74,
@@ -286,7 +286,7 @@
             }
           ],
           "methodology": "Verification of infrastructure certifications versus model-service-level compliance for Western regulated markets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 78,
@@ -300,7 +300,7 @@
             }
           ],
           "methodology": "Review of data handling across first-party API, third-party hosts, and self-hosting",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Alibaba's first-party API is China-jurisdiction (Singapore region available), which concerns Western regulated buyers; Apache-2.0 self-hosting or Western third-party hosting fully avoids that. Alibaba Cloud's infrastructure certifications are stronger than DeepSeek's platform but still lack HIPAA/FedRAMP for the model service."
@@ -320,7 +320,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and trace accessibility",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 82,
@@ -334,7 +334,7 @@
             }
           ],
           "methodology": "Testing on factual QA and multimodal grounding datasets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 78,
@@ -348,7 +348,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks across languages and politically sensitive topic probes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 78,
@@ -362,7 +362,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 90,
@@ -376,7 +376,7 @@
             }
           ],
           "methodology": "Review of model card and technical documentation completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 76,
@@ -390,7 +390,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 82,
@@ -404,7 +404,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms in default weights",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong open documentation and inspectable reasoning. Typical open-model gaps remain: limited training-data detail and topic-avoidance on politically sensitive subjects in default weights."
@@ -424,7 +424,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 87,
@@ -438,7 +438,7 @@
             }
           ],
           "methodology": "Review of SDK and inference-framework support",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 82,
@@ -449,10 +449,22 @@
               "url": "https://qwen.ai/blog?id=qwen3.5",
               "date": "2026-02-16",
               "value": "Fast release cadence (supersedes Qwen3 family and Qwen2.5-VL); open weights remain permanently available, softening deprecation impact"
+            },
+            {
+              "source": "MarkTechPost - Qwen3.6-27B release",
+              "url": "https://www.marktechpost.com/2026/04/22/alibaba-qwen-team-releases-qwen3-6-27b-a-dense-open-weight-model-outperforming-397b-moe-on-agentic-coding-benchmarks/",
+              "date": "2026-04-22",
+              "value": "Qwen3.6 open models shipped Apr 2026 (35B-A3B on 04-16, 27B dense on 04-22, Apache 2.0, 256K context): the 27B dense outperforms the 397B-A17B Qwen3.5 flagship on agentic coding benchmarks"
+            },
+            {
+              "source": "innFactory / EQS News - Qwen3.7 releases",
+              "url": "https://innfactory.ai/en/ai-models/qwen/",
+              "date": "2026-07-09",
+              "value": "Family frontier moved to proprietary API-only models: Qwen3.7-Max (2026-05-20, Apsara Summit) and Qwen3.7-Plus (2026-06-01), 1M context, agentic positioning; Alibaba keeps its newest flagship closed-weight"
             }
           ],
           "methodology": "Review of release cadence and weight-availability guarantees",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 84,
@@ -466,7 +478,7 @@
             }
           ],
           "methodology": "Review of monitoring tools across deployment options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 78,
@@ -480,7 +492,7 @@
             }
           ],
           "methodology": "Assessment of support tiers, documentation, and community responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 92,
@@ -494,7 +506,7 @@
             }
           ],
           "methodology": "Analysis of derivative models, third-party hosting, and tooling integrations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 98,
@@ -508,10 +520,10 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Best-in-class open-model ecosystem: Apache 2.0 with patent grant, day-one inference-framework support, and a complete size ladder (0.8B to 397B-A17B) for matching capability to hardware. Supersedes the Qwen3 family and Qwen2.5-VL."
+      "notes": "Best-in-class open-model ecosystem: Apache 2.0 with patent grant, day-one inference-framework support, and a complete size ladder (0.8B to 397B-A17B) for matching capability to hardware. Supersedes the Qwen3 family and Qwen2.5-VL. Since April-June 2026 the family has continued with the open Qwen3.6 models (Apache 2.0) and the proprietary API-only Qwen3.7-Max/Plus."
     }
   },
   "use_case_ratings": {
@@ -577,6 +589,7 @@
   ],
   "limitations": [
     "First-party Alibaba Cloud hosting is China-jurisdiction (Singapore region available); no HIPAA/FedRAMP path for the model service — self-hosting or Western hosts avoid this",
+    "No longer the family's coding leader: the much smaller Apache-2.0 Qwen3.6-27B (Apr 2026) outperforms it on agentic coding benchmarks, and the newest family frontier (Qwen3.7-Max/Plus) is API-only",
     "1M context requires the hosted Qwen3.5-Plus; open weights cap at 262K",
     "Topic-avoidance on politically sensitive subjects in default weights",
     "Training-data composition disclosed only at a high level",
@@ -601,7 +614,7 @@
       "input": "Free weights (Apache 2.0); hosted from ~$0.40 per 1M tokens on Alibaba Cloud Model Studio",
       "output": "Hosted from ~$1.20 per 1M tokens; third-party hosts vary",
       "notes": "Self-hosting is infrastructure-cost-only; the 17B-active design keeps serving costs low for its capability class. Hosted Qwen3.5-Plus (1M context) priced separately.",
-      "last_verified": "2026-06-10"
+      "last_verified": "2026-07-09"
     },
     "context_window": 262144,
     "max_output": 65536,

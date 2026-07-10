@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "Sierra",
   "provider": "Sierra Technologies Inc.",
-  "version": "2025.1",
-  "last_evaluated": "2025-01-14",
+  "version": "Agent OS 2.0 (2026)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Conversational AI platform specialized in autonomous customer experience agents. Founded by former Salesforce co-CEO Bret Taylor and ex-Google executive Clay Bavor, Sierra focuses on transactional CX workflows with agents that can take real actions on behalf of customers.",
+  "description": "Conversational AI platform for autonomous customer experience agents, built on Sierra's Agent OS 2.0 spanning chat, voice, email, SMS, and WhatsApp. Founded by Bret Taylor (ex-Salesforce co-CEO) and Clay Bavor (ex-Google), Sierra focuses on CX agents that take real actions. One of the most heavily funded AI agent startups: $350M at a $10B valuation (Sep 2025, Greenoaks), then a $950M Series E at $15.8B (May 2026, Tiger Global and GV); 40%+ of the Fortune 50 are customers, ARR $150M+.",
   "website": "https://sierra.ai/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Conversation quality testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "action_execution": {
           "score": 88,
@@ -35,10 +35,16 @@
               "url": "https://sierra.ai/",
               "date": "2025-01-10",
               "value": "Agents can take real actions: process returns, update orders, etc."
+            },
+            {
+              "source": "Sierra Agent OS 2.0",
+              "url": "https://sierra.ai/blog/agent-os-2-0",
+              "date": "2026-07-09",
+              "value": "Agent OS 2.0 adds persistent memory and expanded action execution across chat, voice, email, SMS, and WhatsApp channels"
             }
           ],
           "methodology": "Action capability testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "resolution_rate": {
           "score": 85,
@@ -52,7 +58,7 @@
             }
           ],
           "methodology": "Resolution rate analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "brand_alignment": {
           "score": 88,
@@ -66,7 +72,7 @@
             }
           ],
           "methodology": "Brand alignment testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "escalation_handling": {
           "score": 85,
@@ -80,7 +86,7 @@
             }
           ],
           "methodology": "Escalation flow testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +105,7 @@
             }
           ],
           "methodology": "Security assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "action_guardrails": {
           "score": 85,
@@ -113,7 +119,7 @@
             }
           ],
           "methodology": "Guardrails review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_protection": {
           "score": 85,
@@ -127,7 +133,7 @@
             }
           ],
           "methodology": "Data protection review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 85,
@@ -141,7 +147,7 @@
             }
           ],
           "methodology": "Access control review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -160,7 +166,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "compliance_support": {
           "score": 82,
@@ -174,7 +180,7 @@
             }
           ],
           "methodology": "Compliance review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_minimization": {
           "score": 80,
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Data practices review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -207,7 +213,7 @@
             }
           ],
           "methodology": "Visibility assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "action_transparency": {
           "score": 82,
@@ -221,7 +227,7 @@
             }
           ],
           "methodology": "Action logging review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "model_disclosure": {
           "score": 72,
@@ -235,7 +241,7 @@
             }
           ],
           "methodology": "Technology transparency review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "company_transparency": {
           "score": 82,
@@ -246,10 +252,16 @@
               "url": "https://sierra.ai/",
               "date": "2025-01-10",
               "value": "Well-known founders with public profiles"
+            },
+            {
+              "source": "TechCrunch - Sierra Series E",
+              "url": "https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/",
+              "date": "2026-07-09",
+              "value": "$950M Series E (May 2026) at a $15.8B post-money valuation led by Tiger Global and GV, following $350M at $10B (Sep 2025, Greenoaks); 40%+ of the Fortune 50 are customers with $150M+ reported ARR"
             }
           ],
           "methodology": "Company transparency review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -268,7 +280,7 @@
             }
           ],
           "methodology": "Implementation review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "system_integration": {
           "score": 85,
@@ -282,7 +294,7 @@
             }
           ],
           "methodology": "Integration review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "analytics": {
           "score": 85,
@@ -296,7 +308,7 @@
             }
           ],
           "methodology": "Analytics capability review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "continuous_improvement": {
           "score": 82,
@@ -310,7 +322,7 @@
             }
           ],
           "methodology": "Improvement process review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -374,7 +386,7 @@
   "limitations": [
     "Focused solely on customer service use cases",
     "Enterprise pricing - not for small businesses",
-    "Newer company (founded 2023)",
+    "Young company (founded 2023), though now heavily capitalized ($15.8B valuation, May 2026) with large enterprise traction",
     "Limited public documentation",
     "Proprietary technology with limited disclosure",
     "Requires system integrations for full capability"
@@ -383,12 +395,14 @@
     "license": "Proprietary",
     "supported_platforms": ["Cloud"],
     "deployment_type": "SaaS",
-    "pricing": "Enterprise pricing - contact sales",
+    "pricing": "Enterprise pricing - contact sales (known for outcome-based, pay-per-resolution pricing)",
     "founded": "2023",
     "founders": "Bret Taylor (ex-Salesforce co-CEO), Clay Bavor (ex-Google)",
     "headquarters": "San Francisco, CA",
-    "funding": "$285M Series C at $4.5B valuation (Dec 2024)",
-    "customers": "WeightWatchers, SiriusXM, ADT, OluKai"
+    "funding": "$950M Series E at $15.8B valuation (May 2026, led by Tiger Global and GV); previously $350M at $10B (Sep 2025, Greenoaks) and $285M Series C at $4.5B (Dec 2024)",
+    "customers": "40%+ of the Fortune 50; WeightWatchers, SiriusXM, ADT, OluKai, Minted, plus major banks, fintechs, and healthcare organizations",
+    "channels": ["Chat", "Voice", "Email", "SMS", "WhatsApp"],
+    "arr": "$150M+ reported (2026)"
   },
   "tags": ["customer-support", "conversational-ai", "autonomous-agents", "e-commerce"]
 }

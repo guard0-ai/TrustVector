@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "OpenAI Codex",
   "provider": "OpenAI",
-  "version": "GPT-5.3-Codex era",
-  "last_evaluated": "2026-06-10",
+  "version": "GPT-5.5 era",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's coding agent spanning a cloud agent that runs tasks in isolated containers and an open-source CLI. Delegates parallel software tasks (features, fixes, PRs) powered by GPT-5.3-Codex, with network access disabled by default in the cloud.",
+  "description": "OpenAI's coding agent spanning a cloud agent that runs tasks in isolated containers and an open-source CLI. Delegates parallel software tasks (features, fixes, PRs) powered by GPT-5.5 (recommended model as of mid-2026; GPT-5.3-Codex deprecated), with network access disabled by default in the cloud.",
   "website": "https://openai.com/codex/",
   "trust_vector": {
     "performance_reliability": {
@@ -26,11 +26,11 @@
               "source": "GPT-5-Codex upgrade",
               "url": "https://openai.com/index/introducing-upgrades-to-codex/",
               "date": "2025-09-15",
-              "value": "GPT-5-Codex (now GPT-5.3-Codex) substantially improved long-task completion and code quality"
+              "value": "GPT-5-Codex and successors substantially improved long-task completion and code quality; GPT-5.5 is the recommended Codex model as of mid-2026"
             }
           ],
           "methodology": "Benchmark review and hands-on evaluation of PR-producing cloud tasks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 87,
@@ -44,7 +44,7 @@
             }
           ],
           "methodology": "Testing of in-container command execution, editing, and test running across repositories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 88,
@@ -58,7 +58,7 @@
             }
           ],
           "methodology": "Long-horizon task evaluation from issue description to passing tests and PR",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 78,
@@ -72,7 +72,7 @@
             }
           ],
           "methodology": "Review of AGENTS.md guidance persistence and per-task container statelessness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 83,
@@ -86,7 +86,7 @@
             }
           ],
           "methodology": "Observed recovery behavior from failing tests, build errors, and missing dependencies",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 80,
@@ -100,7 +100,7 @@
             }
           ],
           "methodology": "Assessment of parallel task fan-out and coordination model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -125,7 +125,7 @@
             }
           ],
           "methodology": "Review of container isolation, default-deny network policy, and CLI sandbox mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 84,
@@ -139,7 +139,7 @@
             }
           ],
           "methodology": "Assessment of repository scoping, environment controls, and approval mode granularity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 85,
@@ -153,7 +153,7 @@
             }
           ],
           "methodology": "Review of network-isolation mitigations and model-level injection defenses",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 88,
@@ -167,7 +167,7 @@
             }
           ],
           "methodology": "Architecture review of per-task container isolation and environment scoping",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 70,
@@ -181,7 +181,7 @@
             }
           ],
           "methodology": "License and source availability review of CLI versus cloud service",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -200,7 +200,7 @@
             }
           ],
           "methodology": "Review of OpenAI retention and training policies across ChatGPT plan tiers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 80,
@@ -214,7 +214,7 @@
             }
           ],
           "methodology": "Compliance certification and DPA availability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 76,
@@ -228,7 +228,7 @@
             }
           ],
           "methodology": "Data flow analysis of repository access, GitHub integration, and network policy",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 60,
@@ -242,7 +242,7 @@
             }
           ],
           "methodology": "Deployment options assessment of local CLI versus cloud-only agent and models",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -261,7 +261,7 @@
             }
           ],
           "methodology": "Documentation completeness review across cloud, CLI, and IDE surfaces",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 88,
@@ -275,7 +275,7 @@
             }
           ],
           "methodology": "Review of task logs, test output citations, and diff provenance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 84,
@@ -289,7 +289,7 @@
             }
           ],
           "methodology": "Assessment of task summaries, cited reasoning, and pre-merge review surfaces",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 72,
@@ -303,7 +303,7 @@
             }
           ],
           "methodology": "Open source assessment weighting open CLI against proprietary cloud service",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 88,
@@ -317,7 +317,7 @@
             }
           ],
           "methodology": "Community engagement analysis via GitHub activity and release cadence",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -336,7 +336,7 @@
             }
           ],
           "methodology": "Setup and integration surface assessment across ChatGPT, CLI, IDE, and GitHub",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 90,
@@ -350,7 +350,7 @@
             }
           ],
           "methodology": "Assessment of parallel container execution and plan-tier task throughput",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 75,
@@ -364,7 +364,7 @@
             }
           ],
           "methodology": "Pricing model analysis of plan-based limits, Pro 5x tier, and typical-usage estimates",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 80,
@@ -378,7 +378,7 @@
             }
           ],
           "methodology": "Review of task logs, usage visibility, and admin monitoring features",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 87,
@@ -388,11 +388,17 @@
               "source": "Codex rollout history",
               "url": "https://openai.com/index/introducing-codex/",
               "date": "2025-06-03",
-              "value": "Research preview 2025-05-16, ChatGPT Plus rollout 2025-06-03, GPT-5-Codex upgrades Sept 2025; now mature on GPT-5.3-Codex"
+              "value": "Research preview 2025-05-16, ChatGPT Plus rollout 2025-06-03, GPT-5-Codex upgrades Sept 2025"
+            },
+            {
+              "source": "Codex changelog",
+              "url": "https://developers.openai.com/codex/changelog",
+              "date": "2026-07-09",
+              "value": "Continuous 2026 investment: GPT-5.5 now the recommended Codex model; GPT-5.3-Codex deprecated (no new API requests after 2026-06-30, endpoint shutdown 2026-12-31); June 2026 added Codex Remote GA, Record & Replay skills, and Sites preview"
             }
           ],
           "methodology": "Maturity assessment from rollout timeline, model upgrades, and enterprise availability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -427,7 +433,7 @@
     "Verifiable outputs with terminal logs, test results, and action citations",
     "Open-source Apache-2.0 CLI with local OS-level sandboxing",
     "Deep GitHub integration from task to reviewed pull request",
-    "Continuously upgraded models, currently GPT-5.3-Codex"
+    "Continuously upgraded models, currently GPT-5.5 (with GPT-5.4 / GPT-5.4 mini options)"
   ],
   "limitations": [
     "Default network isolation can block tasks needing external dependencies unless allowlists are configured",
@@ -439,7 +445,9 @@
   "metadata": {
     "license": "Cloud agent proprietary; Codex CLI Apache-2.0 (github.com/openai/codex)",
     "supported_models": [
-      "GPT-5.3-Codex (current)",
+      "GPT-5.5 (recommended, mid-2026)",
+      "GPT-5.4 / GPT-5.4 mini",
+      "GPT-5.3-Codex (deprecated; API sunset 2026-12-31)",
       "GPT-5-Codex (Sept 2025)",
       "codex-1 (launch)"
     ],

@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Tavily Server",
   "provider": "Tavily",
-  "version": "2025.2.0",
-  "last_evaluated": "2025-01-14",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "MCP server enabling AI models to perform real-time web search, content extraction, and web crawling. Designed specifically for AI agents with optimized search results, automatic content summarization, and source verification capabilities.",
+  "description": "Tavily's official MCP server (tavily-ai/tavily-mcp, MIT) enabling AI models to perform real-time web search, content extraction, site mapping, and web crawling. Available as a hosted remote endpoint at https://mcp.tavily.com/mcp/ (API key or OAuth) or locally via npx tavily-mcp. Designed specifically for AI agents with optimized search results and source verification capabilities.",
   "website": "https://tavily.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Search quality testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "response_latency": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Latency benchmarking",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "content_extraction": {
           "score": 88,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Content extraction testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "result_freshness": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Freshness testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 82,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -92,14 +92,14 @@
           "confidence": "high",
           "evidence": [
             {
-              "source": "Tavily Authentication",
-              "url": "https://docs.tavily.com/",
-              "date": "2025-01-10",
-              "value": "API key authentication with standard security practices"
+              "source": "Tavily MCP Documentation",
+              "url": "https://docs.tavily.com/documentation/mcp",
+              "date": "2026-07-09",
+              "value": "API key authentication (env var locally; query parameter or header on the remote endpoint) plus OAuth support on the hosted MCP endpoint, recommended for production"
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_handling": {
           "score": 78,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Data handling review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "content_filtering": {
           "score": 75,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Content filtering assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "source_verification": {
           "score": 80,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Source verification testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -160,7 +160,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "score": 75,
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data retention review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "third_party_sharing": {
           "score": 78,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Third-party sharing review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -207,7 +207,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "result_attribution": {
           "score": 90,
@@ -221,7 +221,7 @@
             }
           ],
           "methodology": "Attribution testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "api_transparency": {
           "score": 82,
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "API transparency review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "pricing_transparency": {
           "score": 85,
@@ -243,13 +243,13 @@
           "evidence": [
             {
               "source": "Tavily Pricing",
-              "url": "https://tavily.com/pricing",
-              "date": "2025-01-10",
-              "value": "Clear pricing tiers with defined quotas"
+              "url": "https://www.tavily.com/pricing",
+              "date": "2026-07-09",
+              "value": "Clear credit-based pricing: 1,000 free API credits/month, paid plans from $30/month (Researcher) and $100/month (Startup), pay-as-you-go overage at $0.008/credit; basic search costs 1 credit, advanced search 2 credits"
             }
           ],
           "methodology": "Pricing review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -261,14 +261,14 @@
           "confidence": "high",
           "evidence": [
             {
-              "source": "Tavily Quickstart",
-              "url": "https://docs.tavily.com/",
-              "date": "2025-01-10",
-              "value": "Simple API key setup with immediate access"
+              "source": "Tavily MCP Documentation",
+              "url": "https://docs.tavily.com/documentation/mcp",
+              "date": "2026-07-09",
+              "value": "Hosted remote endpoint at https://mcp.tavily.com/mcp/ requires only a URL plus API key (or OAuth); local install is a single npx tavily-mcp command"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "api_reliability": {
           "score": 85,
@@ -282,7 +282,7 @@
             }
           ],
           "methodology": "Reliability assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "cost_efficiency": {
           "score": 82,
@@ -290,13 +290,13 @@
           "evidence": [
             {
               "source": "Tavily Pricing",
-              "url": "https://tavily.com/pricing",
-              "date": "2025-01-10",
-              "value": "Free tier available; reasonable pricing for production"
+              "url": "https://www.tavily.com/pricing",
+              "date": "2026-07-09",
+              "value": "Free tier of 1,000 credits/month with no credit card; paid plans from $30/month with $0.008/credit pay-as-you-go overage"
             }
           ],
           "methodology": "Cost analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "ai_optimization": {
           "score": 90,
@@ -310,21 +310,21 @@
             }
           ],
           "methodology": "AI integration testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "sdk_support": {
           "score": 85,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Tavily SDKs",
-              "url": "https://docs.tavily.com/",
-              "date": "2025-01-10",
-              "value": "Python and JavaScript SDKs with MCP integration"
+              "source": "tavily-ai/tavily-mcp repository",
+              "url": "https://github.com/tavily-ai/tavily-mcp",
+              "date": "2026-07-09",
+              "value": "Official MCP server (npm tavily-mcp, v0.2.20) actively maintained alongside Python and JavaScript SDKs; repo tagline: production-ready MCP server with real-time search, extract, map & crawl"
             }
           ],
           "methodology": "SDK quality assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -332,31 +332,35 @@
   "strengths": [
     "Purpose-built for AI agents with optimized responses",
     "Real-time search with configurable time filtering",
-    "Automatic content extraction and summarization",
+    "Content extraction, site mapping, and crawling alongside search",
     "Source URLs provided for all results",
-    "Easy integration with MCP protocol",
-    "Good documentation and SDK support"
+    "Hosted remote MCP endpoint (mcp.tavily.com) with OAuth — no local install needed",
+    "Open-source MIT server (tavily-ai/tavily-mcp) with good documentation and SDK support"
   ],
   "limitations": [
     "Search queries processed through third-party servers",
     "Rate limits based on pricing tier",
     "Web content quality varies by source",
-    "No self-hosted option available",
+    "Underlying search API is hosted-only — no self-hosted backend",
     "Query privacy depends on Tavily's policies",
-    "Costs can increase with heavy usage"
+    "Credit-based costs can increase with heavy usage (advanced search consumes 2 credits per call)"
   ],
   "metadata": {
-    "license": "Proprietary (API Service)",
-    "supported_platforms": ["All platforms with HTTP"],
-    "programming_languages": ["Python", "JavaScript", "TypeScript"],
+    "license": "MIT (MCP server); proprietary hosted API service",
+    "supported_platforms": ["All platforms with Node.js (local server); any MCP client (remote endpoint)"],
+    "programming_languages": ["TypeScript", "Python", "JavaScript"],
     "mcp_version": "1.0",
     "website": "https://tavily.com/",
+    "github_repo": "https://github.com/tavily-ai/tavily-mcp",
+    "package": "tavily-mcp",
+    "package_version": "0.2.20",
+    "remote_endpoint": "https://mcp.tavily.com/mcp/",
     "api_dependency": "Tavily Search API",
-    "authentication": "API Key",
+    "authentication": "API Key (env var or query parameter); OAuth on hosted endpoint",
     "first_release": "2024",
     "maintained_by": "Tavily",
-    "transport_types": ["stdio"],
-    "installation_methods": ["npm", "pip"]
+    "transport_types": ["stdio", "streamable-http"],
+    "installation_methods": ["npm", "npx", "remote-url"]
   },
   "use_case_ratings": {
     "code-generation": {

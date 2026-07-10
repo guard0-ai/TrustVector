@@ -4,9 +4,9 @@
   "name": "MCP PostgreSQL Server",
   "provider": "Anthropic (Archived)",
   "version": "0.6.2",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "ARCHIVED WITH UNPATCHED VULNERABILITY: Former Anthropic reference MCP server for PostgreSQL, archived 2025-05-29. A SQL injection flaw disclosed by Trend Micro (June 2025) remains unpatched because the repo is archived, yet the npm package still saw ~21k weekly downloads. NOT RECOMMENDED for any use; a patched community fork (@zeddotdev/postgres-context-server) exists.",
+  "description": "ARCHIVED WITH UNPATCHED VULNERABILITY: Former Anthropic reference MCP server for PostgreSQL, archived 2025-05-29. A SQL injection flaw disclosed by Trend Micro (June 2025) remains unpatched because the repo is archived; the npm package (v0.6.2) is still published and downloaded. NOT RECOMMENDED for any use; a patched community fork (@zeddotdev/postgres-context-server, fixed in v0.1.4) and maintained alternatives (e.g., Microsoft's MCP server for Azure Database for PostgreSQL) exist.",
   "website": "https://modelcontextprotocol.io/docs/servers/postgres",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Query execution testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "schema_introspection": {
           "score": 92,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Schema discovery testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "connection_stability": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Connection reliability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "large_result_handling": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Large dataset performance testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_handling": {
           "score": 86,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error scenario testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -102,10 +102,16 @@
               "url": "https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/",
               "date": "2025-06-30",
               "value": "Case study confirming SQL injection in the PostgreSQL MCP server allows bypassing the read-only transaction restriction; ~21k weekly npm downloads while vulnerable"
+            },
+            {
+              "source": "npm: @modelcontextprotocol/server-postgres",
+              "url": "https://www.npmjs.com/package/@modelcontextprotocol/server-postgres",
+              "date": "2026-07-09",
+              "value": "v0.6.2 remains the latest published version as of July 2026; SQL injection still unpatched, no CVE identifier assigned. Patched fork @zeddotdev/postgres-context-server fixed the flaw in v0.1.4"
             }
           ],
           "methodology": "Vulnerability disclosure review and exploitability analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 55,
@@ -125,7 +131,7 @@
             }
           ],
           "methodology": "Permission boundary testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_modification_risk": {
           "score": 45,
@@ -145,7 +151,7 @@
             }
           ],
           "methodology": "Write operation risk assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "credential_security": {
           "score": 72,
@@ -159,7 +165,7 @@
             }
           ],
           "methodology": "Credential storage review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 68,
@@ -173,7 +179,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -192,7 +198,7 @@
             }
           ],
           "methodology": "Data flow and exposure analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_protection": {
           "score": 60,
@@ -206,7 +212,7 @@
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_result_filtering": {
           "score": 70,
@@ -220,7 +226,7 @@
             }
           ],
           "methodology": "Data filtering capabilities review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "compliance_readiness": {
           "score": 65,
@@ -234,7 +240,7 @@
             }
           ],
           "methodology": "Compliance framework review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "schema_exposure": {
           "score": 75,
@@ -248,7 +254,7 @@
             }
           ],
           "methodology": "Metadata exposure analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -267,7 +273,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "query_visibility": {
           "score": 90,
@@ -281,7 +287,7 @@
             }
           ],
           "methodology": "Query traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 95,
@@ -295,7 +301,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "security_documentation": {
           "score": 50,
@@ -315,7 +321,7 @@
             }
           ],
           "methodology": "Security documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -334,7 +340,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "performance": {
           "score": 84,
@@ -348,7 +354,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "connection_pooling": {
           "score": 82,
@@ -362,7 +368,7 @@
             }
           ],
           "methodology": "Connection management review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_diagnostics": {
           "score": 80,
@@ -376,7 +382,7 @@
             }
           ],
           "methodology": "Error messaging assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 55,
@@ -390,7 +396,7 @@
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -410,7 +416,7 @@
     "Limited granular access control beyond database user permissions",
     "Query results with sensitive data sent to external APIs",
     "Compliance challenges for regulated industries (HIPAA, PCI-DSS, GDPR)",
-    "ARCHIVED 2025-05-29 with an UNPATCHED SQL injection vulnerability (Trend Micro, June 2025); use the patched fork @zeddotdev/postgres-context-server instead"
+    "ARCHIVED 2025-05-29 with an UNPATCHED SQL injection vulnerability (Trend Micro, June 2025) confirmed still unpatched in npm v0.6.2 as of July 2026; use the patched fork @zeddotdev/postgres-context-server (v0.1.4+) or a maintained alternative instead"
   ],
   "metadata": {
     "license": "MIT",
@@ -428,7 +434,7 @@
     "connection_method": "Connection string with credentials",
     "first_release": "2024-11",
     "maintained_by": "None (Archived 2025-05-29)",
-    "status": "Archived - unpatched SQL injection vulnerability; patched community fork: @zeddotdev/postgres-context-server",
+    "status": "Archived - unpatched SQL injection vulnerability (still unpatched as of 2026-07); patched community fork: @zeddotdev/postgres-context-server (v0.1.4+); maintained alternative: Microsoft MCP server for Azure Database for PostgreSQL",
     "package_name": "@modelcontextprotocol/server-postgres",
     "transport_types": [
       "stdio"

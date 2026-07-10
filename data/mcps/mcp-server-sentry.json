@@ -3,11 +3,11 @@
   "type": "mcp",
   "name": "MCP Sentry Server",
   "provider": "Sentry",
-  "version": "1.0.0",
-  "last_evaluated": "2025-11-08",
+  "version": "hosted remote + stdio",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Official Sentry MCP server for error tracking and monitoring integration. Enables AI models to query errors, analyze stack traces, manage issues, track releases, and access performance data. Essential for AI-powered debugging, incident response, and application monitoring workflows.",
-  "website": "https://github.com/getsentry/sentry-mcp-server",
+  "description": "Official Sentry MCP server (getsentry/sentry-mcp) for error tracking and monitoring integration. Sentry hosts a managed remote at https://mcp.sentry.dev/mcp with OAuth authentication (nothing to install); a stdio mode with an auth token supports self-hosted Sentry. Enables AI models to query errors, analyze stack traces, manage issues, track releases, and access performance data. Also distributed as a Claude Code plugin.",
+  "website": "https://github.com/getsentry/sentry-mcp",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 87,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Query success rate testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "stack_trace_parsing_accuracy": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Parsing accuracy testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "real_time_monitoring": {
           "score": 88,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Real-time monitoring testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 85,
@@ -74,13 +74,13 @@
           "evidence": [
             {
               "source": "Implementation Review",
-              "url": "https://github.com/getsentry/sentry-mcp-server",
+              "url": "https://github.com/getsentry/sentry-mcp",
               "date": "2025-11-16",
               "value": "Handles API errors with retry logic"
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -96,10 +96,16 @@
               "url": "https://docs.sentry.io/api/auth/",
               "date": "2025-11-16",
               "value": "Uses auth tokens or integration tokens with scoped permissions"
+            },
+            {
+              "source": "Sentry MCP (official repo)",
+              "url": "https://github.com/getsentry/sentry-mcp",
+              "date": "2026-07-09",
+              "value": "Hosted remote at https://mcp.sentry.dev/mcp uses a browser OAuth flow with no locally stored token; stdio mode with a Sentry auth token supports self-hosted instances"
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 65,
@@ -113,7 +119,7 @@
             }
           ],
           "methodology": "Token security analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "source_code_exposure_risk": {
           "score": 60,
@@ -121,13 +127,13 @@
           "evidence": [
             {
               "source": "Security Analysis",
-              "url": "https://github.com/getsentry/sentry-mcp-server",
+              "url": "https://github.com/getsentry/sentry-mcp",
               "date": "2025-11-16",
               "value": "Stack traces may contain source code snippets and file paths"
             }
           ],
           "methodology": "Code exposure assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "issue_modification_control": {
           "score": 75,
@@ -141,7 +147,7 @@
             }
           ],
           "methodology": "Modification control testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "organization_access_control": {
           "score": 78,
@@ -155,7 +161,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 85,
@@ -169,7 +175,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "user_data_in_errors": {
           "score": 58,
@@ -196,13 +202,13 @@
           "evidence": [
             {
               "source": "Privacy Analysis",
-              "url": "https://github.com/getsentry/sentry-mcp-server",
+              "url": "https://github.com/getsentry/sentry-mcp",
               "date": "2025-11-16",
               "value": "Error context may include user IDs, emails, and session data"
             }
           ],
           "methodology": "PII exposure assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "source_code_privacy": {
           "score": 65,
@@ -216,7 +222,7 @@
             }
           ],
           "methodology": "Code privacy assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 68,
@@ -230,7 +236,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "breadcrumb_data_privacy": {
           "score": 70,
@@ -244,7 +250,7 @@
             }
           ],
           "methodology": "Breadcrumb privacy assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -257,13 +263,13 @@
           "evidence": [
             {
               "source": "Sentry MCP Docs",
-              "url": "https://github.com/getsentry/sentry-mcp-server",
+              "url": "https://github.com/getsentry/sentry-mcp",
               "date": "2025-11-16",
               "value": "Comprehensive documentation from official Sentry team"
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 85,
@@ -277,7 +283,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 90,
@@ -285,13 +291,19 @@
           "evidence": [
             {
               "source": "GitHub Repository",
-              "url": "https://github.com/getsentry/sentry-mcp-server",
+              "url": "https://github.com/getsentry/sentry-mcp",
               "date": "2025-11-16",
               "value": "Open source implementation from Sentry"
+            },
+            {
+              "source": "Sentry MCP (official repo)",
+              "url": "https://github.com/getsentry/sentry-mcp",
+              "date": "2026-07-09",
+              "value": "Source available under FSL-1.1-Apache-2.0 (Functional Source License, converts to Apache-2.0 after two years), not MIT"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 73,
@@ -299,13 +311,13 @@
           "evidence": [
             {
               "source": "MCP Server Documentation",
-              "url": "https://github.com/getsentry/sentry-mcp-server",
+              "url": "https://github.com/getsentry/sentry-mcp",
               "date": "2025-11-16",
               "value": "Clear documentation of supported Sentry operations"
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -318,13 +330,19 @@
           "evidence": [
             {
               "source": "Setup Documentation",
-              "url": "https://github.com/getsentry/sentry-mcp-server",
+              "url": "https://github.com/getsentry/sentry-mcp",
               "date": "2025-11-16",
               "value": "Simple setup requiring Sentry auth token"
+            },
+            {
+              "source": "Sentry MCP hosted service",
+              "url": "https://mcp.sentry.dev/",
+              "date": "2026-07-09",
+              "value": "Hosted remote requires no install: add https://mcp.sentry.dev/mcp and complete OAuth; also installable as a Claude Code plugin (sentry-mcp)"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 85,
@@ -338,7 +356,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 90,
@@ -352,7 +370,7 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "operation_coverage": {
           "score": 82,
@@ -360,13 +378,13 @@
           "evidence": [
             {
               "source": "Sentry MCP Server",
-              "url": "https://github.com/getsentry/sentry-mcp-server",
+              "url": "https://github.com/getsentry/sentry-mcp",
               "date": "2025-11-16",
               "value": "Covers errors, issues, releases, performance, and projects"
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "official_support": {
           "score": 88,
@@ -374,13 +392,13 @@
           "evidence": [
             {
               "source": "Sentry Team",
-              "url": "https://github.com/getsentry/sentry-mcp-server",
+              "url": "https://github.com/getsentry/sentry-mcp",
               "date": "2025-11-16",
               "value": "Officially maintained by Sentry with active support"
             }
           ],
           "methodology": "Maintainer support assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -388,6 +406,7 @@
   "strengths": [
     "Comprehensive error tracking and monitoring capabilities",
     "Official Sentry implementation with active support",
+    "Managed hosted remote (https://mcp.sentry.dev/mcp) with OAuth; no token storage or install required",
     "Accurate stack trace parsing and symbolication",
     "Real-time error notifications via webhooks",
     "Excellent for AI-powered debugging and incident response",
@@ -402,20 +421,31 @@
     "Requires careful data scrubbing configuration to avoid PII exposure"
   ],
   "metadata": {
-    "license": "MIT",
+    "license": "FSL-1.1-Apache-2.0",
     "supported_platforms": [
-      "All platforms with Node.js/Python"
+      "Hosted remote (https://mcp.sentry.dev/mcp)",
+      "All platforms with Node.js (stdio)"
     ],
     "programming_languages": [
-      "TypeScript",
-      "Python"
+      "TypeScript"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/getsentry/sentry-mcp-server",
+    "github_repo": "https://github.com/getsentry/sentry-mcp",
     "api_dependency": "Sentry REST API",
-    "authentication": "Sentry Auth Token or Integration Token",
+    "authentication": "OAuth (hosted remote) or Sentry Auth Token (stdio / self-hosted Sentry)",
+    "remote_endpoint": "https://mcp.sentry.dev/mcp",
     "first_release": "2024-11",
-    "maintained_by": "Sentry"
+    "maintained_by": "Sentry",
+    "status": "Active - official Sentry server with managed hosted remote",
+    "transport_types": [
+      "streamable-http (hosted remote)",
+      "stdio"
+    ],
+    "installation_methods": [
+      "Hosted remote (no install)",
+      "npm (stdio)",
+      "Claude Code plugin (sentry-mcp)"
+    ]
   },
   "use_case_ratings": {
     "code-generation": {
@@ -468,6 +498,8 @@
     "error-tracking",
     "monitoring",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "official",
+    "remote-server"
   ]
 }

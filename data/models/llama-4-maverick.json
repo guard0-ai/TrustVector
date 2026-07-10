@@ -4,9 +4,9 @@
   "name": "Llama 4 Maverick",
   "provider": "Meta",
   "version": "400B",
-  "last_evaluated": "2025-11-07",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Meta's flagship open-source model with 400B parameters, native multimodal capabilities, and state-of-the-art performance. Best-in-class open-source option for on-premises deployment.",
+  "description": "Meta's flagship open-weight model (released April 5, 2025): a mixture-of-experts with 400B total / 17B active parameters (128 experts), natively multimodal (text + image), with a 1M-token context window. Meta's last open-weight release: the company has since pivoted to closed models with Muse Spark (April 2026), and newer open models from DeepSeek, Qwen, and Moonshot have surpassed it on most benchmarks.",
   "website": "https://llama.meta.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Standard coding benchmarks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "PhD-level reasoning benchmarks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 92,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 89,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Community evaluation",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "Depends on hardware",
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Community deployment reports",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Self-hosted so latency depends entirely on hardware and optimization"
         },
         "latency_p95": {
@@ -95,21 +95,27 @@
             }
           ],
           "methodology": "Community reports",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
-          "value": "128,000 tokens",
+          "value": "1,000,000 tokens",
           "confidence": "high",
           "evidence": [
             {
-              "source": "Llama 4 Documentation",
-              "url": "https://llama.meta.com/docs/",
-              "date": "2025-07-15",
-              "value": "128K token context window"
+              "source": "Meta AI Blog - The Llama 4 herd",
+              "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/",
+              "date": "2025-04-05",
+              "value": "1M-token context window for Maverick (Instruct)"
+            },
+            {
+              "source": "Hugging Face - Welcome Llama 4 Maverick & Scout",
+              "url": "https://huggingface.co/blog/llama4-release",
+              "date": "2026-07-09",
+              "value": "1M context confirmed; hosted providers often expose less"
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "value": "Self-hosted",
@@ -123,7 +129,7 @@
             }
           ],
           "methodology": "Deployment model analysis",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Uptime is under customer control"
         }
       },
@@ -144,7 +150,7 @@
             }
           ],
           "methodology": "Community security testing",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Open-source nature enables security hardening but requires customer implementation"
         },
         "jailbreak_resistance": {
@@ -159,7 +165,7 @@
             }
           ],
           "methodology": "Safety evaluation",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 95,
@@ -173,7 +179,7 @@
             }
           ],
           "methodology": "Deployment model analysis",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Self-hosting eliminates external data leakage risk"
         },
         "output_safety": {
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "value": "Customer controlled",
@@ -202,7 +208,7 @@
             }
           ],
           "methodology": "Architecture analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Security is customer-controlled with self-hosting. Excellent for data sovereignty but requires in-house security expertise."
@@ -222,7 +228,7 @@
             }
           ],
           "methodology": "Deployment model analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 100,
@@ -236,7 +242,7 @@
             }
           ],
           "methodology": "Deployment architecture",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Customer controlled",
@@ -250,7 +256,7 @@
             }
           ],
           "methodology": "Architecture analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 95,
@@ -264,7 +270,7 @@
             }
           ],
           "methodology": "Deployment model analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 90,
@@ -278,7 +284,7 @@
             }
           ],
           "methodology": "Deployment model analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 100,
@@ -292,7 +298,7 @@
             }
           ],
           "methodology": "Architecture analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional privacy - best-in-class. Self-hosting provides complete data control, enabling any compliance framework."
@@ -312,7 +318,7 @@
             }
           ],
           "methodology": "Capability evaluation",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 84,
@@ -326,7 +332,7 @@
             }
           ],
           "methodology": "Community evaluation",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 82,
@@ -340,7 +346,7 @@
             }
           ],
           "methodology": "Bias benchmark evaluation",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 85,
@@ -354,7 +360,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 95,
@@ -368,7 +374,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 92,
@@ -382,7 +388,7 @@
             }
           ],
           "methodology": "Research paper review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 78,
@@ -396,7 +402,7 @@
             }
           ],
           "methodology": "Safety mechanism review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent transparency as open-source model. Full access to weights and detailed documentation."
@@ -416,7 +422,7 @@
             }
           ],
           "methodology": "Tooling review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 88,
@@ -430,7 +436,7 @@
             }
           ],
           "methodology": "SDK ecosystem review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 90,
@@ -444,7 +450,7 @@
             }
           ],
           "methodology": "Release policy review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 80,
@@ -458,7 +464,7 @@
             }
           ],
           "methodology": "Tooling analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 82,
@@ -472,7 +478,7 @@
             }
           ],
           "methodology": "Support channel assessment",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 92,
@@ -486,7 +492,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 95,
@@ -500,7 +506,7 @@
             }
           ],
           "methodology": "License review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong operational maturity with massive open-source ecosystem. Requires in-house ML ops expertise."
@@ -598,10 +604,11 @@
   "limitations": [
     "Requires significant ML ops expertise and infrastructure",
     "Performance and latency depend on hardware investment",
-    "Slightly behind frontier proprietary models on benchmarks",
+    "Behind frontier proprietary models and newer open models (DeepSeek V4, Qwen3.5, Kimi K2.6) on benchmarks",
     "No managed service or enterprise support from Meta",
     "Requires customer implementation of safety guardrails",
-    "High upfront hardware costs (8x A100/H100 GPUs minimum)"
+    "High upfront hardware costs (8x A100/H100 GPUs minimum)",
+    "Legacy status: Meta's last open-weight release; Meta pivoted to closed models (Muse Spark, April 2026), so no successor open weights are expected"
   ],
   "best_for": [
     "Highly regulated industries requiring on-premises deployment",
@@ -620,9 +627,10 @@
     "pricing": {
       "input": "$0 (self-hosted)",
       "output": "$0 (self-hosted)",
-      "notes": "Free model, infrastructure costs only (8x H100 GPUs ~$200K+). No API fees."
+      "notes": "Free open weights, infrastructure costs only (8x H100 GPUs ~$200K+) for self-hosting. Also served by third-party APIs at low per-token rates as of July 2026.",
+      "last_verified": "2026-07-09"
     },
-    "context_window": 128000,
+    "context_window": 1000000,
     "languages": [
       "English",
       "Spanish",
@@ -639,13 +647,12 @@
     ],
     "modalities": [
       "text",
-      "vision",
-      "audio"
+      "image (input)"
     ],
-    "api_endpoint": "Self-hosted",
+    "api_endpoint": "Self-hosted or third-party hosts (Together, etc.)",
     "open_source": true,
-    "architecture": "Transformer-based, 400B parameters, mixture-of-experts",
-    "parameters": "400B total, ~60B active"
+    "architecture": "Mixture-of-experts (128 routed experts + shared expert), natively multimodal via early fusion",
+    "parameters": "400B total / 17B active"
   },
   "related_entities": [
     "claude-opus-4-1",

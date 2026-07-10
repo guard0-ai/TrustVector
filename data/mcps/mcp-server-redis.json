@@ -4,10 +4,10 @@
   "name": "MCP Redis Server",
   "provider": "Anthropic (Archived)",
   "version": "2025.4.24",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Community-maintained MCP server for Redis cache and data structure operations. Enables AI models to interact with Redis for key-value operations, pub/sub messaging, lists, sets, sorted sets, and hashes. Essential for AI-powered caching strategies, session management, and real-time data workflows.",
-  "website": "https://github.com/modelcontextprotocol/servers",
+  "description": "ARCHIVED: Former Anthropic reference MCP server for Redis cache and data structure operations, archived 2025-05-29 to the servers-archived repository and no longer maintained (the archive README provides no security guarantees). Enabled AI models to interact with Redis for key-value operations, pub/sub messaging, lists, sets, sorted sets, and hashes. Redis now ships an official Redis MCP server (redis/mcp-redis, with redis/mcp-redis-cloud for Redis Cloud), which is the recommended replacement.",
+  "website": "https://github.com/modelcontextprotocol/servers-archived/tree/main/src/redis",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 88,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "command_reliability": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Command execution testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_structure_accuracy": {
           "score": 92,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Data structure testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "connection_stability": {
           "score": 85,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Connection stability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pubsub_reliability": {
           "score": 82,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Pub/sub testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "connection_string_exposure": {
           "score": 62,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Credential security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "command_injection_risk": {
           "score": 68,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Command injection testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_deletion_risk": {
           "score": 65,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Destructive operation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "acl_enforcement": {
           "score": 78,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "ACL enforcement testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 72,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "session_data_privacy": {
           "score": 60,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Session privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "key_pattern_exposure": {
           "score": 72,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Key privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 68,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "ttl_data_persistence": {
           "score": 70,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data persistence assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "command_visibility": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Command logging assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 88,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "command_coverage_clarity": {
           "score": 68,
@@ -305,12 +305,12 @@
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 85,
+      "overall_score": 80,
       "criteria": {
         "ease_of_setup": {
           "score": 88,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "command_performance": {
           "score": 95,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 85,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "command_coverage": {
           "score": 78,
@@ -366,21 +366,27 @@
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 55,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "GitHub Community",
-              "url": "https://github.com/modelcontextprotocol/servers/discussions",
-              "date": "2025-11-16",
-              "value": "Community-maintained with moderate activity"
+              "source": "MCP servers-archived repository",
+              "url": "https://github.com/modelcontextprotocol/servers-archived",
+              "date": "2026-07-09",
+              "value": "Reference Redis server archived 2025-05-29; repository read-only, no issues or PRs accepted, README states no security guarantees are provided for archived servers. Score lowered from 75 to align with other archived reference servers"
+            },
+            {
+              "source": "Redis official MCP server",
+              "url": "https://github.com/redis/mcp-redis",
+              "date": "2026-07-09",
+              "value": "Redis maintains an official Redis MCP Server (redis/mcp-redis, PyPI package) as the actively maintained successor, covering hashes, lists, sets, sorted sets, streams, and vector search"
             }
           ],
           "methodology": "Community support assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -399,7 +405,8 @@
     "Redis connection strings with passwords accessible to AI",
     "Session data and user tokens commonly stored in Redis may be exposed",
     "Limited built-in audit logging capabilities",
-    "Key naming patterns may reveal application architecture"
+    "Key naming patterns may reveal application architecture",
+    "ARCHIVED 2025-05-29: reference server unmaintained with no security guarantees; use the official Redis MCP server (redis/mcp-redis) instead"
   ],
   "metadata": {
     "license": "MIT",
@@ -411,11 +418,12 @@
       "Python"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/modelcontextprotocol/servers",
+    "github_repo": "https://github.com/modelcontextprotocol/servers-archived",
     "api_dependency": "Redis client libraries (ioredis, redis-py)",
     "authentication": "Redis password, ACLs (Redis 6+)",
     "first_release": "2024-11",
-    "maintained_by": "Community"
+    "maintained_by": "None (Archived 2025-05-29)",
+    "replacement": "Official Redis MCP server (https://github.com/redis/mcp-redis); redis/mcp-redis-cloud for Redis Cloud"
   },
   "use_case_ratings": {
     "code-generation": {
@@ -468,6 +476,8 @@
     "cache",
     "database",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "archived",
+    "unmaintained"
   ]
 }

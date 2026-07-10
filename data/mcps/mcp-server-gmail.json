@@ -4,9 +4,9 @@
   "name": "MCP Gmail Server",
   "provider": "Community",
   "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Community-maintained MCP server for Gmail email operations. Enables AI models to read, send, search, label, and manage emails through the Gmail API. Includes support for attachments, threading, and advanced search. Essential for AI-powered email automation and communication workflows.",
+  "description": "Community-maintained MCP server for Gmail email operations. Enables AI models to read, send, search, label, and manage emails through the Gmail API. Includes support for attachments, threading, and advanced search. NOTE: Google now offers an official hosted Gmail MCP server (gmailmcp.googleapis.com) via the Workspace Developer Preview Program, announced May 2026; it supersedes community Gmail MCP servers for most new deployments and is the recommended option where available.",
   "website": "https://github.com/modelcontextprotocol/servers",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Search accuracy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "send_reliability": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Send success rate testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 78,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "attachment_handling": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Attachment processing testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 80,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 65,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Token security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "email_send_risk": {
           "score": 60,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Operation authorization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "email_deletion_risk": {
           "score": 68,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Destructive operation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scope_limitation": {
           "score": 75,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Permission scope testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 78,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "contact_information_exposure": {
           "score": 62,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "PII exposure assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "attachment_privacy": {
           "score": 60,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Attachment privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 68,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "conversation_history_privacy": {
           "score": 70,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "History privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 88,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "privacy_risk_disclosure": {
           "score": 70,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Privacy disclosure review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 82,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 85,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_coverage": {
           "score": 80,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 75,
@@ -377,10 +377,16 @@
               "url": "https://github.com/modelcontextprotocol/servers/discussions",
               "date": "2025-11-16",
               "value": "Community-maintained with moderate activity"
+            },
+            {
+              "source": "Google Workspace MCP servers documentation",
+              "url": "https://developers.google.com/workspace/guides/configure-mcp-servers",
+              "date": "2026-07-09",
+              "value": "Google launched an official Gmail MCP server (https://gmailmcp.googleapis.com/mcp/v1) with OAuth 2.0 in the Workspace Developer Preview Program (announced May 2026); community Gmail MCP servers are superseded for most uses"
             }
           ],
           "methodology": "Community support assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -399,7 +405,8 @@
     "Email addresses and contact information exposed",
     "Can delete or trash emails if permissions granted",
     "Subject to Gmail API rate limits (250 quota units/user/second)",
-    "Complex OAuth setup requiring Google Cloud project configuration"
+    "Complex OAuth setup requiring Google Cloud project configuration",
+    "Community implementations vary in quality and maintenance; Google's official Gmail MCP server (Workspace Developer Preview, May 2026) is the recommended option going forward"
   ],
   "metadata": {
     "license": "MIT",
@@ -415,7 +422,8 @@
     "api_dependency": "Gmail API, Google APIs Client Library",
     "authentication": "OAuth 2.0 with Google",
     "first_release": "2024-11",
-    "maintained_by": "Community"
+    "maintained_by": "Community",
+    "official_alternative": "Google official Gmail MCP server (https://gmailmcp.googleapis.com/mcp/v1, Workspace Developer Preview Program, announced May 2026)"
   },
   "use_case_ratings": {
     "code-generation": {

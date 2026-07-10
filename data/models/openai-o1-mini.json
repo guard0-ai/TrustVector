@@ -4,9 +4,9 @@
   "name": "OpenAI o1-mini",
   "provider": "OpenAI",
   "version": "2024-12",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "DEPRECATED: o1-mini (with o1-preview) was removed from the OpenAI API in 2025 and from ChatGPT; remaining o1 variants shut down 2026-10-23. Migration target is GPT-5.5. Historically an efficient reasoning model with chain-of-thought capabilities at lower cost than o1.",
+  "description": "RETIRED: o1-mini was shut down in the OpenAI API on 2025-10-27 (o1-preview on 2025-07-28) and removed from ChatGPT; it is no longer available anywhere. OpenAI's stated replacement was o4-mini, itself now scheduled for shutdown 2026-10-23 — migrate new work to the GPT-5.x family (gpt-5.5 / gpt-5.4-mini). Historically an efficient reasoning model with chain-of-thought capabilities at lower cost than o1.",
   "website": "https://openai.com/o1",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 81,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Mathematical reasoning benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 81,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Knowledge testing benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 83,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Internal testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.8s",
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Median latency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "3.6s",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "95th percentile",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "128,000 tokens",
@@ -108,7 +108,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -122,7 +122,7 @@
             }
           ],
           "methodology": "Historical uptime",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good reasoning performance with faster inference than o3. Balanced for cost-sensitive reasoning tasks."
@@ -142,7 +142,7 @@
             }
           ],
           "methodology": "OWASP LLM01 testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 87,
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Adversarial testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 83,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Policy analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 86,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Safety benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 85,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "API review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security with reasoning-enhanced safety."
@@ -218,7 +218,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -232,7 +232,7 @@
             }
           ],
           "methodology": "Policy analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days",
@@ -246,7 +246,7 @@
             }
           ],
           "methodology": "Terms review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -260,7 +260,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -274,7 +274,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 75,
@@ -288,7 +288,7 @@
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard OpenAI privacy with 30-day retention."
@@ -308,7 +308,7 @@
             }
           ],
           "methodology": "Reasoning transparency evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 85,
@@ -322,7 +322,7 @@
             }
           ],
           "methodology": "Factual QA testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 80,
@@ -336,7 +336,7 @@
             }
           ],
           "methodology": "Bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 84,
@@ -350,7 +350,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 86,
@@ -364,7 +364,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 74,
@@ -378,7 +378,7 @@
             }
           ],
           "methodology": "Public disclosure review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 87,
@@ -392,7 +392,7 @@
             }
           ],
           "methodology": "Safety system analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent explainability via chain-of-thought. Good transparency."
@@ -412,7 +412,7 @@
             }
           ],
           "methodology": "API review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 93,
@@ -426,7 +426,7 @@
             }
           ],
           "methodology": "SDK review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 73,
@@ -441,12 +441,12 @@
             {
               "source": "OpenAI Deprecations",
               "url": "https://developers.openai.com/api/docs/deprecations",
-              "date": "2026-06-10",
-              "value": "o1-preview/o1-mini removed in 2025; remaining o1 variants API shutdown 2026-10-23; migration target GPT-5.5"
+              "date": "2026-07-09",
+              "value": "o1-mini shutdown date 2025-10-27 (recommended replacement o4-mini); o1-preview shutdown 2025-07-28 (replacement o3); remaining o1/o1-pro variants shut down 2026-10-23 with GPT-5.5 as migration target"
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 84,
@@ -460,7 +460,7 @@
             }
           ],
           "methodology": "Tool review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 87,
@@ -474,7 +474,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 84,
@@ -488,7 +488,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -502,10 +502,10 @@
             }
           ],
           "methodology": "Terms review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Deprecated: o1-mini removed from API in 2025; migration target GPT-5.5. Versioning and ecosystem scores reduced to reflect deprecation."
+      "notes": "Retired: o1-mini API shut down 2025-10-27 (per OpenAI deprecations page, verified 2026-07-09). Model is no longer accessible; entry retained for historical reference. Versioning and ecosystem scores reduced to reflect retirement."
     }
   },
   "use_case_ratings": {
@@ -522,7 +522,7 @@
       "notes": "Reasoning overhead may be unnecessary for basic support.",
       "alternatives": [
         "gpt-4-1",
-        "claude-3-5-haiku"
+        "claude-haiku-4-5"
       ]
     },
     "content-creation": {
@@ -599,7 +599,7 @@
     "Reasoning overhead unnecessary for simple tasks",
     "Lower performance than o3 on complex tasks",
     "Premium pricing for reasoning capabilities",
-    "DEPRECATED: removed from the API in 2025 and from ChatGPT — migrate to GPT-5.5"
+    "RETIRED: API shut down 2025-10-27; removed from ChatGPT — no longer available, migrate to GPT-5.x (gpt-5.5 / gpt-5.4-mini)"
   ],
   "best_for": [
     "Reasoning tasks requiring transparency",
@@ -620,8 +620,8 @@
     "pricing": {
       "input": "$3.00 per 1M tokens",
       "output": "$12.00 per 1M tokens",
-      "notes": "Mid-tier reasoning model pricing (pricing varies by tier and usage)",
-      "last_verified": "2025-11-09"
+      "notes": "Historical pricing only — model retired 2025-10-27 and can no longer be purchased",
+      "last_verified": "2026-07-09"
     },
     "context_window": 128000,
     "languages": [
@@ -650,7 +650,7 @@
     "claude-sonnet-4-5"
   ],
   "tags": [
-    "deprecated",
+    "retired",
     "reasoning",
     "chain-of-thought",
     "coding",

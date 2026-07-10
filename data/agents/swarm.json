@@ -4,9 +4,9 @@
   "name": "OpenAI Swarm",
   "provider": "OpenAI",
   "version": "Experimental (Deprecated)",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "DEPRECATED: archived since 2025-03-11; the README redirects users to the OpenAI Agents SDK as the production successor. Swarm was an experimental educational framework from OpenAI for multi-agent orchestration, demonstrating agent coordination and handoff patterns with simple Python primitives. Not maintained; do not use for new projects.",
+  "description": "DEPRECATED: marked deprecated since 2025-03-11; the README redirects users to the OpenAI Agents SDK as the production successor (repo remains public and unmaintained, not GitHub-archived). Swarm was an experimental educational framework from OpenAI for multi-agent orchestration, demonstrating agent coordination and handoff patterns with simple Python primitives. Not maintained; do not use for new projects.",
   "website": "https://github.com/openai/swarm",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Orchestration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "agent_handoffs": {
           "score": 80,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Handoff testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "simplicity": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Code complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "context_management": {
           "score": 72,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Context handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "experimental_status": {
           "score": 60,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Status assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Variable (OpenAI API dependent)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Dependency analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "openai_trust": {
           "score": 88,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Source trust assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "experimental_risks": {
           "score": 55,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Security maturity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 90,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 68,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "API security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "openai_data_sharing": {
           "score": 70,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "no_telemetry": {
           "score": 85,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Telemetry assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_considerations": {
           "score": 72,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Compliance assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_control": {
           "score": 68,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "code_clarity": {
           "score": 90,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Code quality assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "openai_backing": {
           "score": 88,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Source trust assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 90,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "educational_purpose": {
           "score": 75,
@@ -319,7 +319,7 @@
             }
           ],
           "methodology": "Purpose assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Usability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 25,
@@ -353,13 +353,13 @@
             {
               "source": "GitHub Repository Status",
               "url": "https://github.com/openai/swarm",
-              "date": "2026-06-10",
-              "value": "Repository deprecated/archived since 2025-03-11; README redirects to the OpenAI Agents SDK as the production successor"
+              "date": "2026-07-09",
+              "value": "Repository deprecated since 2025-03-11; README redirects to the OpenAI Agents SDK as the production successor; repo public but unmaintained (not GitHub-archived), ~21,800 stars"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2026-06-10",
-          "notes": "Score reduced: project archived since 2025-03-11 with no further maintenance"
+          "last_verified": "2026-07-09",
+          "notes": "Score reduced: project deprecated since 2025-03-11 with no further maintenance"
         },
         "scalability": {
           "score": 65,
@@ -373,7 +373,7 @@
             }
           ],
           "methodology": "Scalability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 88,
@@ -387,7 +387,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 58,
@@ -401,7 +401,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "learning_value": {
           "score": 92,
@@ -415,7 +415,7 @@
             }
           ],
           "methodology": "Educational value assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -426,7 +426,7 @@
     "Clean code that demonstrates best practices",
     "MIT licensed with minimal dependencies",
     "Excellent for learning agent orchestration concepts",
-    "13k+ GitHub stars showing community interest"
+    "21k+ GitHub stars showing lasting educational interest"
   ],
   "limitations": [
     "Explicitly experimental, not for production use",
@@ -435,7 +435,7 @@
     "No built-in monitoring, error handling, or scaling features",
     "Minimal documentation beyond examples",
     "Not actively maintained for production use cases",
-    "Deprecated/archived since 2025-03-11; README directs users to the OpenAI Agents SDK"
+    "Deprecated since 2025-03-11; README directs users to the OpenAI Agents SDK"
   ],
   "metadata": {
     "license": "MIT",
@@ -452,7 +452,7 @@
       "Agent handoffs"
     ],
     "pricing_model": "Free open source (OpenAI API costs apply)",
-    "github_stars": "13000+",
+    "github_stars": "21700+",
     "first_release": "2024",
     "status": "Experimental / Educational - Replaced by OpenAI Agents SDK",
     "deprecation_notice": "OpenAI recommends migrating to the Agents SDK for production use. Swarm was experimental only and is not officially supported.",

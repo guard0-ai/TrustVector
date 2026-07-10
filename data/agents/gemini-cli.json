@@ -3,10 +3,10 @@
   "type": "agent",
   "name": "Gemini CLI",
   "provider": "Google",
-  "version": "0.x (rolling release)",
-  "last_evaluated": "2026-06-10",
+  "version": "0.x (enterprise/API-key access only since 2026-06-18)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Open-source terminal AI agent from Google that brings Gemini into the command line. Uses a ReAct loop with built-in tools, MCP server support, and Google Search grounding for coding, content generation, and task automation directly in the shell.",
+  "description": "Open-source terminal AI agent from Google that brings Gemini into the command line. Uses a ReAct loop with built-in tools, MCP server support, and Google Search grounding. Consumer/individual access (free tier and Google AI Pro/Ultra) ended 2026-06-18 as Google transitioned individuals to the closed-source Antigravity CLI ('agy'); Gemini CLI remains available to Gemini Code Assist Standard/Enterprise organizations and paid Gemini API key users.",
   "website": "https://github.com/google-gemini/gemini-cli",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Coding and shell task completion testing with large-context workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 84,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing across built-in and MCP tools",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 83,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Multi-step task decomposition testing via ReAct loop",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 74,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Session and context persistence evaluation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 75,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling and retry behavior testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 65,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Multi-agent and scripting capability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Sandboxing options review and testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 76,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control configuration assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 75,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection surface review focusing on confirmation gates and web content handling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 72,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data handling terms review across auth tiers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 92,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy policy and terms review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 76,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance posture assessment per access tier",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 68,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 60,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 78,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging and telemetry capabilities assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 76,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 93,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 90,
@@ -305,15 +305,15 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 74,
+      "overall_score": 70,
       "criteria": {
         "ease_of_integration": {
-          "score": 88,
+          "score": 80,
           "confidence": "high",
           "evidence": [
             {
@@ -321,10 +321,16 @@
               "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-cli-open-source-ai-agent/",
               "date": "2025-06-25",
               "value": "Single npm install and Google account login; free tier with 60 requests/min and 1,000 requests/day"
+            },
+            {
+              "source": "Google Developers Blog - Transitioning Gemini CLI to Antigravity CLI",
+              "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+              "date": "2026-06-18",
+              "value": "Simple Google-account onboarding no longer available: since 2026-06-18 access requires a Gemini Code Assist Standard/Enterprise license or a paid Gemini API key (score reduced 88 to 80)"
             }
           ],
-          "methodology": "Setup and onboarding complexity assessment",
-          "last_verified": "2026-06-10"
+          "methodology": "Setup and onboarding complexity assessment, updated for the post-2026-06-18 access model",
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 72,
@@ -338,21 +344,21 @@
             }
           ],
           "methodology": "Automation and rate-limit assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
-          "score": 78,
+          "score": 72,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "Gemini CLI GitHub",
-              "url": "https://github.com/google-gemini/gemini-cli",
-              "date": "2026-06-01",
-              "value": "Generous free tier (1,000 requests/day); paid usage via metered Gemini API keys or Gemini Code Assist subscriptions"
+              "source": "Google Developers Blog - Transitioning Gemini CLI to Antigravity CLI",
+              "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+              "date": "2026-06-18",
+              "value": "Free consumer tier (1,000 requests/day) discontinued 2026-06-18; remaining usage is via metered Gemini API keys or flat Gemini Code Assist Standard/Enterprise subscriptions (score reduced 78 to 72)"
             }
           ],
-          "methodology": "Pricing model analysis",
-          "last_verified": "2026-06-10"
+          "methodology": "Pricing model analysis updated for removal of the free consumer tier",
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 70,
@@ -366,21 +372,21 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
-          "score": 62,
-          "confidence": "medium",
+          "score": 58,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Digital Applied - Gemini CLI to Antigravity CLI Migration Guide",
-              "url": "https://www.digitalapplied.com/blog/gemini-cli-to-antigravity-cli-migration-june-18-2026-guide",
-              "date": "2026-06-05",
-              "value": "Third-party reporting indicates consumer access to Gemini CLI ends 2026-06-18 as Google migrates individual users to Antigravity CLI; enterprise Gemini Code Assist users retain access"
+              "source": "Google Developers Blog - Transitioning Gemini CLI to Antigravity CLI",
+              "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+              "date": "2026-06-18",
+              "value": "Officially confirmed and executed: on 2026-06-18 Gemini CLI (and Gemini Code Assist IDE extensions) stopped serving Google AI Pro/Ultra and free individual users; individuals are directed to the closed-source Go-based Antigravity CLI ('agy'), which lacks 1:1 feature parity and uses weekly compute caps. Organizations on Gemini Code Assist Standard/Enterprise and paid Gemini API key users retain access"
             }
           ],
-          "methodology": "Product continuity assessment based on third-party migration reporting; not yet confirmed in official Google release notes",
-          "last_verified": "2026-06-10"
+          "methodology": "Product continuity assessment; the consumer shutdown is now confirmed by Google's official announcement, so score lowered 62 to 58 and confidence raised to high — the product continues but only for enterprise/API-key audiences",
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -403,26 +409,25 @@
       "notes": "Useful for drafting docs and content in the terminal with multimodal generation via extensions"
     },
     "education": {
-      "overall": 75,
-      "notes": "Free tier makes it accessible for learning, but consumer access continuity is uncertain"
+      "overall": 60,
+      "notes": "No longer accessible to individual learners since the 2026-06-18 consumer shutdown; requires an enterprise Code Assist license or paid API key"
     }
   },
   "best_for": [
-    "Developers wanting a free, open-source AI agent in the terminal",
-    "Teams already on Google's Gemini ecosystem and Gemini Code Assist",
+    "Organizations on Gemini Code Assist Standard/Enterprise wanting an open-source terminal agent",
+    "Teams already on Google's Gemini ecosystem with paid Gemini API keys",
     "Scripted automation via non-interactive mode and MCP servers",
     "Quick coding, debugging, and research tasks with Search grounding"
   ],
   "strengths": [
-    "Open source (Apache 2.0) with very large and active community",
-    "Generous free tier: 60 requests/min and 1,000 requests/day",
+    "Open source (Apache 2.0) with a very large community (6,000+ merged community PRs)",
     "Strong safety options: Docker/Seatbelt sandboxing and per-tool confirmation prompts",
     "ReAct loop with built-in tools, MCP support, and Google Search grounding",
-    "1M token context window via Gemini 2.5 Pro for large codebases"
+    "1M token context window via Gemini Pro models for large codebases"
   ],
   "limitations": [
-    "Third-party reports indicate consumer access ends 2026-06-18 with migration to Antigravity CLI; only enterprise Gemini Code Assist retains access (unconfirmed officially, medium confidence)",
-    "Free personal tier may use prompts and code for Google product improvement",
+    "Consumer/individual access ended 2026-06-18 (officially confirmed): free tier and Google AI Pro/Ultra users were cut off and directed to the closed-source Antigravity CLI, which lacks full feature parity and uses weekly compute caps; only Gemini Code Assist Standard/Enterprise orgs and paid API key users retain Gemini CLI access",
+    "Historical free personal tier could use prompts and code for Google product improvement",
     "No local model backend; inference requires Google's cloud Gemini API",
     "Single-agent design with no native multi-agent orchestration",
     "Rate limits and model fallback (Pro to Flash) can degrade quality under load"
@@ -446,8 +451,8 @@
       "Extensions"
     ],
     "first_release": "2025-06-25",
-    "pricing": "Free tier (60 req/min, 1,000 req/day with personal Google account); paid via Gemini API keys or Gemini Code Assist Standard/Enterprise",
-    "product_status_note": "Consumer access reportedly ending 2026-06-18 in favor of Antigravity CLI per third-party reporting; enterprise access continues via Gemini Code Assist"
+    "pricing": "Free consumer tier discontinued 2026-06-18; access via metered Gemini API keys or Gemini Code Assist Standard/Enterprise subscriptions",
+    "product_status_note": "Officially confirmed by Google (developers.googleblog.com): consumer/individual access ended 2026-06-18 in favor of the closed-source Antigravity CLI ('agy'); enterprise access continues via Gemini Code Assist Standard/Enterprise and paid Gemini API keys"
   },
   "tags": [
     "cli",

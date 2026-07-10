@@ -4,9 +4,9 @@
   "name": "Azure Bot Service",
   "provider": "Microsoft",
   "version": "v4",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Microsoft's enterprise bot development platform integrated with Azure AI services. Provides comprehensive tools for building, testing, deploying, and managing intelligent bots across multiple channels with advanced AI capabilities.",
+  "description": "LEGACY/RETIRING: the underlying Bot Framework SDK is retired — final long-term support ended December 31, 2025 (no further updates; Azure portal support tickets no longer serviced), and new multi-tenant bot creation was deprecated after July 31, 2025. Microsoft directs new projects to Copilot Studio or the Microsoft 365 Agents SDK (GA; C#, JavaScript, Python). Existing bots continue to function, and Azure Bot Service channels remain in use (including by Copilot Studio).",
   "website": "https://azure.microsoft.com/en-us/services/bot-services/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Based on enterprise deployment metrics",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "language_understanding": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "NLU testing and benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_turn_conversations": {
           "score": 89,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex conversation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "adaptive_cards_support": {
           "score": 92,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "UI capability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "state_management": {
           "score": 85,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "State persistence testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "300-800ms average",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Authentication testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_encryption": {
           "score": 93,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 92,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Access control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "network_security": {
           "score": 90,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Network security testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 93,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 92,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "hipaa_compliance": {
           "score": 91,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Healthcare compliance review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "conversation_logging": {
           "score": 87,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Privacy features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_residency": {
           "score": 91,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data residency assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "testing_tools": {
           "score": 88,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Testing capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "analytics_insights": {
           "score": 84,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Analytics features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_sdk": {
           "score": 80,
@@ -302,10 +302,17 @@
               "url": "https://github.com/Microsoft/botframework-sdk",
               "date": "2024-10-15",
               "value": "Open source SDK available on GitHub"
+            },
+            {
+              "source": "Bot Framework SDK retirement notice",
+              "url": "https://github.com/microsoft/botframework-sdk",
+              "date": "2026-07-09",
+              "value": "Bot Framework SDK retired; final long-term support ended December 31, 2025; no further updates and no Azure portal support tickets; Microsoft directs developers to the Microsoft 365 Agents SDK and Copilot Studio"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09",
+          "notes": "SDK repository remains public but is retired; no further maintenance"
         }
       }
     },
@@ -321,10 +328,16 @@
               "url": "https://docs.microsoft.com/en-us/azure/bot-service/bot-service-overview",
               "date": "2024-10-01",
               "value": "SDKs for C#, JavaScript, Python, Java with rich tooling"
+            },
+            {
+              "source": "Microsoft 365 Agents SDK migration guidance",
+              "url": "https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/bf-migration-guidance",
+              "date": "2026-07-09",
+              "value": "Microsoft 365 Agents SDK (GA; C#, JavaScript, Python) is the evolution of the Bot Framework SDK; official migration guidance published for existing bots"
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 93,
@@ -338,7 +351,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 85,
@@ -352,7 +365,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 90,
@@ -366,7 +379,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "channel_support": {
           "score": 94,
@@ -380,7 +393,7 @@
             }
           ],
           "methodology": "Channel integration assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "development_tools": {
           "score": 87,
@@ -394,7 +407,7 @@
             }
           ],
           "methodology": "Development tooling assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -403,11 +416,12 @@
     "Deep integration with Microsoft ecosystem (Teams, Office 365, Dynamics)",
     "Comprehensive channel support (15+ platforms) with adaptive cards",
     "Enterprise-grade security and compliance (HIPAA, SOC 2, FedRAMP)",
-    "Visual development tools (Bot Framework Composer) for low-code scenarios",
-    "Open-source SDK with strong community and extensive documentation",
-    "Azure AI Services integration (LUIS, QnA Maker, Azure OpenAI)"
+    "Visual development tools (Bot Framework Composer, now legacy) for low-code scenarios",
+    "Open-source SDK with strong community and extensive documentation (SDK now retired)",
+    "Azure AI Services integration (CLU, Azure OpenAI; legacy LUIS and QnA Maker have been retired)"
   ],
   "limitations": [
+    "Bot Framework SDK retired: final long-term support ended December 31, 2025 (no product/feature updates, no Azure portal support tickets); new multi-tenant bot creation deprecated after July 31, 2025; new bot projects should start on Microsoft Copilot Studio or the Microsoft 365 Agents SDK, not Azure Bot Service/Bot Framework",
     "Can be complex to set up compared to simpler chatbot platforms",
     "Costs can escalate with Azure AI service usage",
     "Microsoft ecosystem lock-in and dependency",
@@ -417,12 +431,13 @@
   ],
   "metadata": {
     "license": "Proprietary (SDK is MIT open source)",
+    "status": "Legacy - Bot Framework SDK retired (final LTS ended 2025-12-31); superseded by Microsoft Copilot Studio and the Microsoft 365 Agents SDK",
     "supported_models": [
-      "LUIS",
       "CLU",
       "Azure OpenAI",
-      "QnA Maker",
-      "Custom models"
+      "Custom models",
+      "LUIS (retired October 2025)",
+      "QnA Maker (retired March 2025)"
     ],
     "programming_languages": [
       "C#",
@@ -446,9 +461,13 @@
       "Private endpoints"
     ],
     "development_tools": [
-      "Bot Framework Composer",
-      "Bot Framework Emulator",
+      "Bot Framework Composer (legacy, no longer updated)",
+      "Bot Framework Emulator (legacy)",
       "VS Code extensions"
+    ],
+    "successor_products": [
+      "Microsoft Copilot Studio",
+      "Microsoft 365 Agents SDK"
     ],
     "pricing": "Standard channels free, Premium channels charged per message. Bot Framework Composer included at no cost. Actual costs depend on Azure App Service and other Azure services used"
   },
@@ -495,13 +514,14 @@
     }
   },
   "best_for": [
-    "Microsoft customers needing enterprise chatbot solutions",
-    "Teams building multi-channel conversational interfaces",
+    "Organizations maintaining existing Bot Framework bots while planning migration",
+    "Teams building multi-channel conversational interfaces (via Copilot Studio channel connectivity)",
     "Organizations requiring Azure ecosystem integration",
-    "Enterprises needing LUIS natural language understanding"
+    "New projects should evaluate Microsoft Copilot Studio or the Microsoft 365 Agents SDK instead"
   ],
   "tags": [
     "microsoft",
-    "azure"
+    "azure",
+    "legacy"
   ]
 }

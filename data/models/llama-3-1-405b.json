@@ -4,9 +4,9 @@
   "name": "Llama 3.1 405B",
   "provider": "Meta",
   "version": "llama-3.1-405b",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Meta's largest open-source model with 405 billion parameters, offering complete transparency, self-hosting capabilities, and competitive performance with proprietary models. Remains one of Meta's legacy open models: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models in 2026.",
+  "description": "Meta's largest open-source model with 405 billion parameters, offering complete transparency, self-hosting capabilities, and competitive performance with proprietary models. Remains one of Meta's legacy open models: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models with Muse Spark (April 2026). Weights remain broadly available on Hugging Face and via many API hosts as of July 2026.",
   "website": "https://llama.meta.com",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 83,
@@ -44,7 +44,7 @@
             }
           ],
           "methodology": "Mathematical and scientific reasoning benchmarks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 87,
@@ -58,7 +58,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 85,
@@ -72,7 +72,7 @@
             }
           ],
           "methodology": "Community evaluation and testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "Varies by deployment",
@@ -86,7 +86,7 @@
             }
           ],
           "methodology": "Third-party hosting performance",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Self-hosted performance varies significantly based on infrastructure"
         },
         "latency_p95": {
@@ -101,7 +101,7 @@
             }
           ],
           "methodology": "Third-party hosting performance",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "uptime_sla": {
           "value": "Deployment dependent",
@@ -115,7 +115,7 @@
             }
           ],
           "methodology": "Deployment model analysis",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Self-hosting offers complete control over uptime"
         },
         "context_window": {
@@ -130,7 +130,7 @@
             }
           ],
           "methodology": "Official model specifications",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "multimodal_support": {
           "value": "Text-only",
@@ -144,7 +144,7 @@
             }
           ],
           "methodology": "Official model capabilities",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -163,7 +163,7 @@
             }
           ],
           "methodology": "Safety testing and red teaming",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Open weights mean users can modify safety guardrails"
         },
         "prompt_injection_defense": {
@@ -178,7 +178,7 @@
             }
           ],
           "methodology": "Community security testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 80,
@@ -192,7 +192,7 @@
             }
           ],
           "methodology": "Architecture review",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Self-hosting provides complete control over data"
         },
         "adversarial_robustness": {
@@ -207,7 +207,7 @@
             }
           ],
           "methodology": "Adversarial testing by Meta",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "content_filtering": {
           "score": 82,
@@ -221,7 +221,7 @@
             }
           ],
           "methodology": "Safety tooling review",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Requires separate Llama Guard deployment"
         }
       }
@@ -241,7 +241,7 @@
             }
           ],
           "methodology": "Deployment model analysis",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Zero external data transmission in self-hosted deployments"
         },
         "gdpr_compliance": {
@@ -256,7 +256,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "hipaa_eligible": {
           "score": 95,
@@ -270,7 +270,7 @@
             }
           ],
           "methodology": "Healthcare compliance assessment",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "soc2_certified": {
           "score": 90,
@@ -284,7 +284,7 @@
             }
           ],
           "methodology": "Deployment architecture review",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Users responsible for their own SOC 2 compliance"
         },
         "data_sovereignty": {
@@ -299,7 +299,7 @@
             }
           ],
           "methodology": "Deployment model analysis",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Best-in-class data sovereignty"
         },
         "encryption_at_rest": {
@@ -314,7 +314,7 @@
             }
           ],
           "methodology": "Deployment architecture review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "encryption_in_transit": {
           "score": 95,
@@ -328,7 +328,7 @@
             }
           ],
           "methodology": "Deployment architecture review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -347,7 +347,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 85,
@@ -361,7 +361,7 @@
             }
           ],
           "methodology": "Public documentation review",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Good transparency on data size and composition"
         },
         "safety_testing_transparency": {
@@ -376,7 +376,7 @@
             }
           ],
           "methodology": "Safety documentation review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "bias_evaluation": {
           "score": 90,
@@ -390,7 +390,7 @@
             }
           ],
           "methodology": "Bias benchmarks review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 100,
@@ -404,7 +404,7 @@
             }
           ],
           "methodology": "Model accessibility assessment",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Full model inspection possible"
         },
         "versioning_changelog": {
@@ -419,7 +419,7 @@
             }
           ],
           "methodology": "Version management review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -438,7 +438,7 @@
             }
           ],
           "methodology": "Deployment options review",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Maximum deployment flexibility"
         },
         "api_reliability": {
@@ -453,7 +453,7 @@
             }
           ],
           "methodology": "Third-party API monitoring",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Varies by API provider"
         },
         "rate_limits": {
@@ -468,7 +468,7 @@
             }
           ],
           "methodology": "Deployment model analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "cost_efficiency": {
           "score": 75,
@@ -479,10 +479,16 @@
               "url": "https://www.together.ai/pricing",
               "date": "2024-10-01",
               "value": "$3.00 per 1M input tokens via API, infrastructure costs for self-hosting"
+            },
+            {
+              "source": "Price Per Token (multi-provider comparison)",
+              "url": "https://pricepertoken.com/pricing-page/model/meta-llama-llama-3.1-405b",
+              "date": "2026-07-09",
+              "value": "Still hosted by multiple providers; pricing ranges roughly $0.80-$9.50 per 1M tokens across hosts (DeepInfra cheapest)"
             }
           ],
           "methodology": "Cost analysis",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Free to use, but requires significant infrastructure for self-hosting (8x H100 GPUs minimum)"
         },
         "monitoring_observability": {
@@ -497,7 +503,7 @@
             }
           ],
           "methodology": "Tooling availability assessment",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Requires custom monitoring implementation"
         },
         "support_quality": {
@@ -512,7 +518,7 @@
             }
           ],
           "methodology": "Support channels review",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Relies on community support"
         }
       }
@@ -534,7 +540,7 @@
     "Safety guardrails can be modified (security consideration)",
     "Higher latency compared to smaller models",
     "Complex deployment and maintenance",
-    "Legacy status: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models in 2026, so future open updates are unlikely"
+    "Legacy status: Meta has shipped no new open weights since Llama 4 Scout/Maverick (April 2025) and pivoted to closed models (Muse Spark, April 2026), so future open updates are unlikely"
   ],
   "metadata": {
     "license": "Llama 3.1 Community License (open for commercial use)",

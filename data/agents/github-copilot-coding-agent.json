@@ -4,7 +4,7 @@
   "name": "GitHub Copilot Coding Agent",
   "provider": "GitHub (Microsoft)",
   "version": "GA (2025-09)",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Autonomous background coding agent built into GitHub. Assign it a GitHub issue or prompt and it works in an ephemeral GitHub Actions sandbox, then opens a draft pull request for human review. Distinct from Copilot's interactive IDE agent mode.",
   "website": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Task scope analysis and PR outcome review on representative issues",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 83,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tooling and environment reliability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 80,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Multi-step task execution and iteration testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 72,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Cross-session context persistence evaluation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 75,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Failure iteration and review-feedback loop testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 64,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Concurrency and orchestration capability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Sandbox and network isolation architecture review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 86,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Permission boundary and branch protection review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 78,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection mitigation review against documented threat model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 82,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Session and tenant isolation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 35,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source availability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data handling and retention terms review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 84,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance program and DPA assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 74,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis across model backends",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 25,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 86,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Session log and commit trail assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 30,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 78,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Onboarding and integration assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 84,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Parallelism and quota analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 68,
@@ -349,10 +349,16 @@
               "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
               "date": "2026-06-01",
               "value": "Premium-request billing since 2025-06-18; from 2026-06-01 GitHub is transitioning to token-based 'GitHub AI Credits', making per-task costs harder to forecast during the changeover"
+            },
+            {
+              "source": "GitHub Docs - Usage-based billing",
+              "url": "https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-organizations-and-enterprises",
+              "date": "2026-07-09",
+              "value": "AI Credits billing is now live (since 2026-06-01): 1 credit = $0.01, metered on token consumption at listed model rates. Pro includes $10/mo and Pro+ $39/mo in credits; monthly plans auto-migrated while annual plans keep premium requests until expiry; Business/Enterprise get boosted included credits Jun-Sep 2026 plus budget controls at enterprise, cost-center, and user levels"
             }
           ],
-          "methodology": "Pricing model analysis including billing model transition",
-          "last_verified": "2026-06-10"
+          "methodology": "Pricing model analysis including the completed billing model transition",
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 82,
@@ -366,7 +372,7 @@
             }
           ],
           "methodology": "Monitoring and audit features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 86,
@@ -380,7 +386,7 @@
             }
           ],
           "methodology": "Product maturity and availability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -419,7 +425,7 @@
   ],
   "limitations": [
     "Proprietary and cloud-only; no self-hosted runner support for the agent",
-    "Billing complexity: premium requests since 2025-06-18 and a transition to token-based GitHub AI Credits beginning 2026-06-01 make costs harder to predict",
+    "Billing complexity: token-based GitHub AI Credits (live since 2026-06-01, 1 credit = $0.01) replaced premium requests for monthly plans, while annual plans stay on legacy premium requests until expiry, making per-task costs harder to predict during the mixed-model period",
     "Requires a paid Copilot plan (Pro, Pro+, Business, or Enterprise); not in Copilot Free",
     "Best on well-scoped tasks; struggles with large cross-repo or ambiguous refactors",
     "Consumes GitHub Actions minutes in addition to premium requests/credits",
@@ -444,7 +450,7 @@
       "Draft PR creation"
     ],
     "first_release": "Preview May 2025; GA September 2025",
-    "pricing": "Copilot Pro $10/mo, Pro+ $39/mo, Business/Enterprise per-seat; agent usage billed via premium requests (since 2025-06-18), transitioning to token-based GitHub AI Credits from 2026-06-01"
+    "pricing": "Copilot Pro $10/mo (includes $10 AI Credits), Pro+ $39/mo (includes $39 AI Credits), Business/Enterprise per-seat with pooled credits; token-based GitHub AI Credits billing live since 2026-06-01 (1 credit = $0.01); annual plans remain on legacy premium requests until renewal"
   },
   "tags": [
     "coding-agent",

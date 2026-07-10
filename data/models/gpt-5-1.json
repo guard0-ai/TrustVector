@@ -3,10 +3,10 @@
   "type": "model",
   "name": "GPT-5.1",
   "provider": "OpenAI",
-  "version": "gpt-5-1-1113",
-  "last_evaluated": "2026-06-10",
+  "version": "gpt-5.1-2025-11-13",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "SUPERSEDED by GPT-5.2/5.4/5.5 (GPT-5.5 is the current flagship); gpt-5.1-chat-latest and gpt-5.1-codex variants shut down in the API 2026-07-23. Released Nov 2025 with adaptive reasoning (2-3x faster on simple tasks), 76.3% SWE-bench, developer tools (apply_patch, shell), warmer tone.",
+  "description": "SUPERSEDED by GPT-5.2/5.4/5.5 and the GPT-5.6 family (released 2026-07-09); retired from ChatGPT 2026-03-11. gpt-5.1-chat-latest, gpt-5.1-codex, gpt-5.1-codex-max, and gpt-5.1-codex-mini shut down in the API 2026-07-23 (migrate to gpt-5.5 / gpt-5.4-mini); the base gpt-5.1 snapshot remains served with no announced shutdown. Released Nov 2025 with adaptive reasoning (2-3x faster on simple tasks), 76.3% SWE-bench, developer tools (apply_patch, shell), warmer tone.",
   "website": "https://openai.com/index/gpt-5-1/",
 
   "trust_vector": {
@@ -25,7 +25,7 @@
             }
           ],
           "methodology": "Standard coding benchmarks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 96,
@@ -45,7 +45,7 @@
             }
           ],
           "methodology": "Graduate and PhD-level reasoning benchmarks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 96,
@@ -59,7 +59,7 @@
             }
           ],
           "methodology": "Crowdsourced blind comparisons",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 94,
@@ -73,7 +73,7 @@
             }
           ],
           "methodology": "Internal testing across temperature settings",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "0.6s",
@@ -87,7 +87,7 @@
             }
           ],
           "methodology": "Platform-wide performance metrics",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "2.8s",
@@ -101,21 +101,21 @@
             }
           ],
           "methodology": "95th percentile response time",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
-          "value": "128,000 tokens",
+          "value": "400,000 tokens",
           "confidence": "high",
           "evidence": [
             {
-              "source": "OpenAI Documentation",
-              "url": "https://platform.openai.com/docs/models/gpt-5",
-              "date": "2025-01-01",
-              "value": "128K token context window"
+              "source": "OpenAI Model Page: gpt-5.1",
+              "url": "https://developers.openai.com/api/docs/models/gpt-5.1",
+              "date": "2026-07-09",
+              "value": "400K token context window; 128K max output tokens"
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -129,7 +129,7 @@
             }
           ],
           "methodology": "Historical uptime data",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "76.3% SWE-bench (best). Adaptive reasoning: 2-3x faster on simple tasks. New developer tools (apply_patch, shell). Warmer conversational tone."
@@ -150,7 +150,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 attacks",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 88,
@@ -164,7 +164,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 82,
@@ -178,7 +178,7 @@
             }
           ],
           "methodology": "Policy review and data handling practices",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 90,
@@ -192,7 +192,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 85,
@@ -206,7 +206,7 @@
             }
           ],
           "methodology": "Review of API security features",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong security with improved jailbreak resistance. Multi-layered safety systems provide robust output filtering."
@@ -227,7 +227,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -241,7 +241,7 @@
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days",
@@ -255,7 +255,7 @@
             }
           ],
           "methodology": "Terms of service review",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Zero retention available for enterprise customers"
         },
         "pii_handling": {
@@ -270,7 +270,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -284,7 +284,7 @@
             }
           ],
           "methodology": "Verification of certifications",
-          "last_verified": "2025-11-07",
+          "last_verified": "2026-07-09",
           "notes": "Not HIPAA eligible currently"
         },
         "zero_data_retention": {
@@ -299,7 +299,7 @@
             }
           ],
           "methodology": "Enterprise feature review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good privacy posture with strong enterprise controls. 30-day default retention (vs Anthropic's 0-day). Not HIPAA eligible."
@@ -320,7 +320,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 88,
@@ -334,7 +334,7 @@
             }
           ],
           "methodology": "Factual accuracy testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 84,
@@ -348,7 +348,7 @@
             }
           ],
           "methodology": "Bias benchmarks and demographic testing",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 87,
@@ -362,7 +362,7 @@
             }
           ],
           "methodology": "Qualitative confidence expression",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 92,
@@ -376,7 +376,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 80,
@@ -390,7 +390,7 @@
             }
           ],
           "methodology": "Public disclosure review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 91,
@@ -404,7 +404,7 @@
             }
           ],
           "methodology": "Safety mechanism analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent transparency with unified thinking feature and comprehensive system card. Industry-leading hallucination prevention."
@@ -425,7 +425,7 @@
             }
           ],
           "methodology": "API design and feature review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 94,
@@ -439,7 +439,7 @@
             }
           ],
           "methodology": "SDK quality and maintenance review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 90,
@@ -454,12 +454,18 @@
             {
               "source": "OpenAI Deprecations",
               "url": "https://developers.openai.com/api/docs/deprecations",
-              "date": "2026-06-10",
-              "value": "gpt-5.1-chat-latest and gpt-5.1-codex variants API shutdown 2026-07-23; superseded by GPT-5.4/5.5"
+              "date": "2026-07-09",
+              "value": "gpt-5.1-chat-latest, gpt-5.1-codex, gpt-5.1-codex-max, gpt-5.1-codex-mini API shutdown 2026-07-23 (replacements gpt-5.5 / gpt-5.4-mini); base gpt-5.1 snapshot not on the deprecations list"
+            },
+            {
+              "source": "OpenAI Help Center: Model Release Notes",
+              "url": "https://help.openai.com/en/articles/9624314-model-release-notes",
+              "date": "2026-07-09",
+              "value": "GPT-5.1 models retired from ChatGPT 2026-03-11 (chats and GPTs); still available via the API"
             }
           ],
           "methodology": "Versioning policy review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 92,
@@ -473,7 +479,7 @@
             }
           ],
           "methodology": "Observability tools review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 93,
@@ -487,7 +493,7 @@
             }
           ],
           "methodology": "Support and documentation assessment",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 96,
@@ -501,7 +507,7 @@
             }
           ],
           "methodology": "Ecosystem breadth and depth analysis",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -515,7 +521,7 @@
             }
           ],
           "methodology": "License terms review",
-          "last_verified": "2025-11-07"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Industry-leading operational maturity with the most mature ecosystem. Excellent APIs, SDKs, and tooling."
@@ -587,10 +593,9 @@
   "limitations": [
     "Not HIPAA eligible (unlike Claude models)",
     "30-day data retention vs Anthropic's 0-day default",
-    "Smaller context window (128K vs Claude's 200K)",
     "Premium pricing comparable to Claude",
     "Slightly behind Claude on specialized coding benchmarks",
-    "SUPERSEDED by GPT-5.4/5.5; gpt-5.1-chat-latest and gpt-5.1-codex variants API shutdown 2026-07-23"
+    "SUPERSEDED by GPT-5.4/5.5/5.6; retired from ChatGPT 2026-03-11; gpt-5.1-chat-latest and all gpt-5.1-codex variants API shutdown 2026-07-23"
   ],
 
   "best_for": [
@@ -610,12 +615,13 @@
 
   "metadata": {
     "pricing": {
-      "input": "$2.50 per 1M tokens",
-      "output": "$20.00 per 1M tokens",
-      "notes": "Same as GPT-5. Batch API offers 50% discount. Faster = better value.",
-      "last_verified": "2025-11-17"
+      "input": "$1.25 per 1M tokens",
+      "output": "$10.00 per 1M tokens",
+      "notes": "Same as GPT-5; cached input $0.125 per 1M. Confirmed on official model page 2026-07-09; chat/codex variants shut down 2026-07-23.",
+      "last_verified": "2026-07-09"
     },
-    "context_window": 128000,
+    "context_window": 400000,
+    "max_output": 128000,
     "languages": [
       "English",
       "Spanish",

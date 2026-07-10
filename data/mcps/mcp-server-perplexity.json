@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Perplexity Server",
   "provider": "Perplexity AI",
-  "version": "2025.1.0",
-  "last_evaluated": "2025-01-14",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "MCP server enabling AI models to leverage Perplexity's advanced search capabilities. Provides multi-source research with automatic citations, recency filtering, and domain-specific search modes for comprehensive information retrieval.",
+  "description": "Perplexity's official MCP server (perplexityai/modelcontextprotocol, npm @perplexity-ai/mcp-server) for the Perplexity API Platform. Exposes four tools — perplexity_search (Search API), perplexity_ask (sonar-pro), perplexity_research (sonar-deep-research), and perplexity_reason (sonar-reasoning-pro) — providing multi-source research with automatic citations and recency filtering for comprehensive information retrieval.",
   "website": "https://www.perplexity.ai/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Search quality testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "citation_quality": {
           "score": 95,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Citation accuracy testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "response_quality": {
           "score": 90,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Response quality assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "recency_filtering": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Recency testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "api_reliability": {
           "score": 85,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Reliability testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Authentication review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_handling": {
           "score": 78,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Data handling review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "content_safety": {
           "score": 82,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Content safety assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "enterprise_security": {
           "score": 85,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Enterprise security review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -160,7 +160,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "enterprise_privacy": {
           "score": 85,
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Enterprise privacy review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "score": 78,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Retention policy review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -207,7 +207,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "source_attribution": {
           "score": 95,
@@ -221,7 +221,7 @@
             }
           ],
           "methodology": "Attribution testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "model_transparency": {
           "score": 82,
@@ -235,21 +235,21 @@
             }
           ],
           "methodology": "Model transparency review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "pricing_clarity": {
           "score": 88,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Perplexity Pricing",
-              "url": "https://www.perplexity.ai/pricing",
-              "date": "2025-01-10",
-              "value": "Clear pricing with defined API quotas"
+              "source": "Perplexity API Pricing",
+              "url": "https://docs.perplexity.ai/getting-started/pricing",
+              "date": "2026-07-09",
+              "value": "Published per-token pricing for all Sonar models: sonar $1/$1 per 1M tokens (in/out), sonar-pro $3/$15, sonar-reasoning-pro $2/$8, sonar-deep-research $2/$8 plus citation ($2/1M), reasoning ($3/1M), and search-query ($5/1K) fees; per-request search fees scale with context size ($5-$12 per 1K requests for sonar, $6-$14 for sonar-pro)"
             }
           ],
           "methodology": "Pricing review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -268,7 +268,7 @@
             }
           ],
           "methodology": "Setup assessment",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "response_speed": {
           "score": 85,
@@ -282,49 +282,49 @@
             }
           ],
           "methodology": "Performance testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "model_selection": {
           "score": 88,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Perplexity Models",
+              "source": "Perplexity API Platform docs",
               "url": "https://docs.perplexity.ai/",
-              "date": "2025-01-10",
-              "value": "Multiple model tiers for different use cases"
+              "date": "2026-07-09",
+              "value": "Current Sonar model lineup spans sonar, sonar-pro, sonar-reasoning-pro, and sonar-deep-research, each mapped to a dedicated MCP tool for search, ask, reason, and research workflows"
             }
           ],
           "methodology": "Model options review",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "cost_efficiency": {
           "score": 82,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "Perplexity Pricing",
-              "url": "https://www.perplexity.ai/pricing",
-              "date": "2025-01-10",
-              "value": "Competitive pricing; can be cost-effective vs. multiple API calls"
+              "source": "Perplexity API Pricing",
+              "url": "https://docs.perplexity.ai/getting-started/pricing",
+              "date": "2026-07-09",
+              "value": "Base sonar at $1/$1 per 1M tokens is competitive, but per-request search fees ($5-$14 per 1K requests depending on model and context size) add up for high-volume agents; deep-research calls carry additional citation/reasoning/search-query fees"
             }
           ],
           "methodology": "Cost analysis",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         },
         "integration_quality": {
           "score": 88,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Perplexity SDK",
-              "url": "https://docs.perplexity.ai/",
-              "date": "2025-01-10",
-              "value": "Good SDK support with MCP integration"
+              "source": "Perplexity MCP Server guide",
+              "url": "https://docs.perplexity.ai/guides/mcp-server",
+              "date": "2026-07-09",
+              "value": "Official MCP server (@perplexity-ai/mcp-server v0.9.0) installed via npx with one-click installers for Cursor and VS Code; stdio transport with PERPLEXITY_API_KEY env var"
             }
           ],
           "methodology": "Integration testing",
-          "last_verified": "2025-01-14"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -340,23 +340,26 @@
   "limitations": [
     "Queries processed through Perplexity servers",
     "Consumer tier data may be used for training",
-    "No self-hosted option available",
-    "Costs can accumulate with heavy usage",
+    "No self-hosted option for the underlying API",
+    "Costs can accumulate with heavy usage — per-request search fees stack on top of token pricing",
     "Rate limits based on pricing tier",
-    "Dependent on Perplexity's infrastructure"
+    "Local stdio server only — no hosted remote MCP endpoint documented"
   ],
   "metadata": {
-    "license": "Proprietary (API Service)",
-    "supported_platforms": ["All platforms with HTTP"],
-    "programming_languages": ["Python", "JavaScript", "TypeScript"],
+    "license": "MIT (MCP server); proprietary hosted API service",
+    "supported_platforms": ["All platforms with Node.js"],
+    "programming_languages": ["TypeScript"],
     "mcp_version": "1.0",
     "website": "https://www.perplexity.ai/",
-    "api_dependency": "Perplexity API",
-    "authentication": "Bearer Token",
+    "github_repo": "https://github.com/perplexityai/modelcontextprotocol",
+    "package": "@perplexity-ai/mcp-server",
+    "package_version": "0.9.0",
+    "api_dependency": "Perplexity API Platform (Sonar models + Search API)",
+    "authentication": "Bearer Token (PERPLEXITY_API_KEY)",
     "first_release": "2024",
     "maintained_by": "Perplexity AI",
     "transport_types": ["stdio"],
-    "installation_methods": ["npm", "pip"]
+    "installation_methods": ["npm", "npx"]
   },
   "use_case_ratings": {
     "code-generation": {

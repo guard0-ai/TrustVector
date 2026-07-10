@@ -4,9 +4,9 @@
   "name": "Amazon Lex",
   "provider": "Amazon Web Services",
   "version": "V2",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "AWS managed conversational AI service for building chatbots and voice assistants with automatic speech recognition (ASR) and natural language understanding (NLU). Integrates natively with AWS services and enterprise systems.",
+  "description": "AWS managed conversational AI service for building chatbots and voice assistants with automatic speech recognition (ASR) and natural language understanding (NLU). Integrates natively with AWS services and enterprise systems. Lex V2 remains an active service (V1 was discontinued September 15, 2025), but AWS's strategic direction for generative/LLM-based agents is Amazon Bedrock Agents and Bedrock AgentCore; Lex is positioned for intent-based bots and Amazon Connect contact-center flows.",
   "website": "https://aws.amazon.com/lex/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Based on enterprise deployment metrics",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "intent_recognition": {
           "score": 91,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Intent classification testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_language_support": {
           "score": 87,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Multi-language testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "voice_recognition": {
           "score": 92,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Voice accuracy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "context_retention": {
           "score": 85,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Conversation state testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "200-500ms average",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 94,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "vpc_isolation": {
           "score": 93,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Network isolation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 90,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Audit capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 95,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 93,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "hipaa_compliance": {
           "score": 94,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Healthcare compliance assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 88,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "PII protection testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_residency": {
           "score": 92,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data residency assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "conversation_analytics": {
           "score": 88,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Analytics capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "testing_tools": {
           "score": 85,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Testing features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "version_control": {
           "score": 82,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Version management assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 94,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 87,
@@ -349,10 +349,16 @@
               "url": "https://aws.amazon.com/lex/pricing/",
               "date": "2024-10-01",
               "value": "Pay per request pricing, $0.00075 per text, $0.004 per voice"
+            },
+            {
+              "source": "Amazon Lex pricing page (re-verified)",
+              "url": "https://aws.amazon.com/lex/pricing/",
+              "date": "2026-07-09",
+              "value": "Confirmed current: $0.00075 per text request, $0.004 per speech request; Automated Chatbot Designer $0.50/minute of training; new AWS customers get up to $200 Free Tier credits (from July 15, 2025; valid 6 months, credits expire within 12 months)"
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 91,
@@ -366,7 +372,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "channel_integrations": {
           "score": 89,
@@ -380,7 +386,7 @@
             }
           ],
           "methodology": "Integration options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "sla_guarantee": {
           "score": 95,
@@ -394,7 +400,7 @@
             }
           ],
           "methodology": "SLA review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -446,7 +452,7 @@
       "KMS encryption",
       "CloudTrail logging"
     ],
-    "pricing": "Pay-per-request: Free tier (first year: 10k text + 5k speech/month), then $0.00075-0.004 per request. $200 free tier credits for 6 months (starting July 2025)",
+    "pricing": "Pay-per-request: $0.00075 per text request, $0.004 per speech request (re-verified 2026-07-09). New AWS customers receive up to $200 Free Tier credits (from July 15, 2025; 6-month tier, credits expire within 12 months). Automated Chatbot Designer: $0.50 per minute of training",
     "version": "V2",
     "deprecation": "V1 discontinued September 15, 2025"
   },

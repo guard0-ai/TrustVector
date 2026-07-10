@@ -2,12 +2,12 @@
   "id": "mcp-server-aws",
   "type": "mcp",
   "name": "MCP AWS Server",
-  "provider": "Community",
-  "version": "1.0.0",
-  "last_evaluated": "2025-11-08",
+  "provider": "AWS",
+  "version": "2026.5 (managed server GA)",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "MCP server enabling AI models to interact with AWS cloud services including S3, EC2, Lambda, and more. Supports infrastructure management, resource provisioning, and cloud automation through the Model Context Protocol. Extremely powerful but poses critical security risks requiring strict controls.",
-  "website": "https://aws.amazon.com/sdk-for-javascript/",
+  "description": "AWS's official MCP offering for AWS cloud services. Two forms: the managed AWS MCP Server (GA 2026-05-06), a fully managed remote exposing 15,000+ AWS API operations plus documentation search and a sandboxed run_script tool, accessed through the open-source MCP Proxy for AWS which bridges IAM SigV4 credentials to MCP's OAuth model; and the awslabs/mcp suite of open-source, service-scoped servers (DynamoDB, CDK, pricing, etc.). Powerful but requires strict IAM controls.",
+  "website": "https://github.com/awslabs/mcp",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 85,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "API uptime and reliability analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "operation_success_rate": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Operation success testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "multi_service_integration": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Service integration testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "response_time": {
           "score": 80,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "API latency testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "error_handling": {
           "score": 84,
@@ -80,40 +80,40 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 64,
+      "overall_score": 67,
       "criteria": {
         "iam_security": {
-          "score": 78,
+          "score": 82,
           "confidence": "high",
           "evidence": [
             {
-              "source": "AWS IAM",
-              "url": "https://aws.amazon.com/iam/",
-              "date": "2025-11-16",
-              "value": "Granular IAM permissions available but AI can use all granted permissions"
+              "source": "AWS MCP Server GA Announcement",
+              "url": "https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/",
+              "date": "2026-07-09",
+              "value": "Managed server authenticates with IAM credentials via SigV4; supports read-only restriction through IAM policies or Service Control Policies and separation between human and agent permissions"
             }
           ],
-          "methodology": "IAM security review",
-          "last_verified": "2025-11-08"
+          "methodology": "IAM security review; score raised from 78 as the GA managed server adds documented agent-specific IAM guidance, read-only policy patterns, and SCP-based governance",
+          "last_verified": "2026-07-09"
         },
         "credential_exposure_risk": {
-          "score": 60,
+          "score": 68,
           "confidence": "high",
           "evidence": [
             {
-              "source": "AWS Credentials",
-              "url": "https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/setting-credentials.html",
-              "date": "2025-11-16",
-              "value": "Access keys stored locally but AI can perform any action within permissions"
+              "source": "AWS MCP Server GA Announcement",
+              "url": "https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/",
+              "date": "2026-07-09",
+              "value": "The open-source MCP Proxy for AWS bridges IAM (SigV4) to MCP's OAuth model, so short-lived IAM role credentials can be used instead of static access keys; self-hosted awslabs servers still commonly rely on locally configured credentials"
             }
           ],
-          "methodology": "Credential security analysis",
-          "last_verified": "2025-11-08"
+          "methodology": "Credential security analysis; modest raise from 60 since the managed server supports role-based short-lived credentials rather than requiring static keys",
+          "last_verified": "2026-07-09"
         },
         "resource_modification_risk": {
           "score": 52,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Resource control risk assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "cost_control_risk": {
           "score": 55,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Cost control assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 85,
@@ -152,10 +152,16 @@
               "url": "https://aws.amazon.com/cloudtrail/",
               "date": "2025-11-16",
               "value": "Comprehensive audit logging via CloudTrail for all API actions"
+            },
+            {
+              "source": "AWS MCP Server GA Announcement",
+              "url": "https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/",
+              "date": "2026-07-09",
+              "value": "Managed server additionally publishes CloudWatch metrics under the AWS-MCP namespace and logs agent actions in CloudTrail for compliance"
             }
           ],
           "methodology": "Audit capabilities review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_exfiltration_risk": {
           "score": 58,
@@ -169,7 +175,7 @@
             }
           ],
           "methodology": "Data exposure analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Data exposure analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_protection": {
           "score": 60,
@@ -202,7 +208,7 @@
             }
           ],
           "methodology": "Privacy controls assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "vpc_isolation": {
           "score": 75,
@@ -216,7 +222,7 @@
             }
           ],
           "methodology": "Network isolation assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_readiness": {
           "score": 68,
@@ -230,7 +236,7 @@
             }
           ],
           "methodology": "Compliance framework review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "encryption_support": {
           "score": 72,
@@ -244,12 +250,12 @@
             }
           ],
           "methodology": "Encryption capabilities review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "trust_transparency": {
-      "overall_score": 80,
+      "overall_score": 85,
       "criteria": {
         "documentation_quality": {
           "score": 88,
@@ -263,7 +269,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "action_visibility": {
           "score": 85,
@@ -277,68 +283,68 @@
             }
           ],
           "methodology": "Action traceability assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "mcp_implementation": {
-          "score": 72,
-          "confidence": "medium",
+          "score": 84,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Community Implementation",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Community-maintained with variable documentation"
+              "source": "awslabs/mcp Repository",
+              "url": "https://github.com/awslabs/mcp",
+              "date": "2026-07-09",
+              "value": "First-party AWS implementation: open-source awslabs/mcp suite plus the managed AWS MCP Server (GA 2026-05-06) with published documentation site at awslabs.github.io/mcp"
             }
           ],
-          "methodology": "Implementation documentation review",
-          "last_verified": "2025-11-08"
+          "methodology": "Implementation documentation review; raised from 72 as the implementation is now officially maintained by AWS with a dedicated docs site, replacing the previous community-maintained status",
+          "last_verified": "2026-07-09"
         },
         "security_guidance": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 82,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "AWS Security Best Practices",
-              "url": "https://aws.amazon.com/security/",
-              "date": "2025-11-16",
-              "value": "AWS provides security guidance but specific MCP guidance limited"
+              "source": "AWS MCP Server GA Announcement",
+              "url": "https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/",
+              "date": "2026-07-09",
+              "value": "AWS now publishes MCP-specific security guidance: IAM/SCP read-only patterns, separation of human vs agent permissions, and per-server security documentation in awslabs/mcp"
             }
           ],
-          "methodology": "Security documentation review",
-          "last_verified": "2025-11-08"
+          "methodology": "Security documentation review; raised from 75 due to official MCP-specific IAM governance guidance shipped with GA",
+          "last_verified": "2026-07-09"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 77,
+      "overall_score": 79,
       "criteria": {
         "ease_of_setup": {
-          "score": 70,
+          "score": 74,
           "confidence": "medium",
           "evidence": [
             {
-              "source": "AWS SDK Setup",
-              "url": "https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/getting-started.html",
-              "date": "2025-11-16",
-              "value": "Requires AWS account, IAM configuration, and credential management"
+              "source": "AWS MCP Server GA Announcement",
+              "url": "https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/",
+              "date": "2026-07-09",
+              "value": "Managed server requires installing the local MCP Proxy for AWS plus IAM configuration; awslabs servers install via uvx/pip; still requires AWS account and credential management"
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_coverage": {
-          "score": 85,
+          "score": 92,
           "confidence": "high",
           "evidence": [
             {
-              "source": "AWS Services",
-              "url": "https://aws.amazon.com/products/",
-              "date": "2025-11-16",
-              "value": "Supports major AWS services (S3, EC2, Lambda, RDS, etc.)"
+              "source": "AWS MCP Server GA Announcement",
+              "url": "https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/",
+              "date": "2026-07-09",
+              "value": "Managed server's call_aws tool executes any of 15,000+ AWS API operations across all services, plus documentation search/read and sandboxed server-side Python via run_script"
             }
           ],
-          "methodology": "API coverage assessment",
-          "last_verified": "2025-11-08"
+          "methodology": "API coverage assessment; raised from 85 as the GA managed server covers essentially the full AWS API surface",
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 82,
@@ -352,7 +358,7 @@
             }
           ],
           "methodology": "Uptime analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 65,
@@ -366,21 +372,21 @@
             }
           ],
           "methodology": "Cost predictability analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 82,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Community",
-              "url": "https://github.com/modelcontextprotocol/servers",
-              "date": "2025-11-16",
-              "value": "Growing community for MCP AWS integration"
+              "source": "awslabs/mcp Repository",
+              "url": "https://github.com/awslabs/mcp",
+              "date": "2026-07-09",
+              "value": "Actively maintained first-party open-source suite with a large contributor base; managed server backed by AWS support channels"
             }
           ],
-          "methodology": "Community activity analysis",
-          "last_verified": "2025-11-08"
+          "methodology": "Community activity analysis; raised from 75 reflecting first-party AWS maintenance",
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -433,45 +439,42 @@
     "Cloud architects generating infrastructure-as-code templates"
   ],
   "strengths": [
-    "Comprehensive access to AWS cloud services and infrastructure",
-    "Built on highly reliable AWS infrastructure (99.99% uptime)",
-    "Powerful automation capabilities for cloud operations",
-    "Excellent audit logging through CloudTrail",
-    "Granular IAM permissions for access control",
-    "Supports major AWS services (S3, EC2, Lambda, RDS, DynamoDB)"
+    "Official first-party AWS offering: managed AWS MCP Server (GA 2026-05) plus the open-source awslabs/mcp suite",
+    "Managed server exposes 15,000+ AWS API operations through a small fixed tool set (call_aws, documentation search/read, sandboxed run_script)",
+    "IAM SigV4 authentication with support for read-only restriction via IAM policies or Service Control Policies",
+    "Excellent audit logging through CloudTrail plus CloudWatch metrics in the AWS-MCP namespace",
+    "Documented separation of human vs agent permissions for governance",
+    "No charge for the managed server itself; pay only for resources created"
   ],
   "limitations": [
-    "CRITICAL SECURITY RISK: AI can create, modify, delete infrastructure",
+    "CRITICAL SECURITY RISK: with write-capable IAM permissions the AI can create, modify, delete infrastructure",
     "Cost control risk - AI can provision expensive resources",
     "Data in S3, RDS, and other services exposed to LLM provider",
     "No built-in PII detection or sensitive data filtering",
-    "Complex IAM setup required for secure operation",
-    "Potential for catastrophic infrastructure changes if misconfigured"
+    "Managed server requires the local MCP Proxy for AWS since MCP clients speak OAuth 2.1, not SigV4",
+    "Managed endpoint regions limited (US East N. Virginia, Europe Frankfurt), though API calls can target any region",
+    "Potential for catastrophic infrastructure changes if IAM is misconfigured"
   ],
   "metadata": {
-    "license": "Varies (AWS SDK Apache 2.0, MCP implementation varies)",
+    "license": "Apache 2.0 (awslabs/mcp suite and MCP Proxy for AWS); managed server is a hosted AWS service",
     "supported_platforms": [
-      "All platforms with Node.js/Python"
+      "All platforms with Python/uvx (awslabs servers); any MCP client via MCP Proxy for AWS (managed server)"
     ],
     "programming_languages": [
-      "TypeScript",
-      "JavaScript",
-      "Python"
+      "Python",
+      "TypeScript"
     ],
     "mcp_version": "1.0",
-    "aws_sdk_version": "v3",
+    "remote_endpoint": "https://aws-mcp.us-east-1.api.aws/mcp (via local MCP Proxy for AWS)",
+    "github_repo": "https://github.com/awslabs/mcp",
     "supported_services": [
-      "S3",
-      "EC2",
-      "Lambda",
-      "RDS",
-      "DynamoDB",
-      "CloudWatch",
-      "IAM"
+      "15,000+ AWS API operations via managed server (call_aws)",
+      "Service-scoped awslabs servers (DynamoDB, CDK, pricing, Step Functions, S3 Tables, etc.)"
     ],
-    "authentication": "AWS Access Keys or IAM Roles",
+    "authentication": "AWS IAM credentials (SigV4) bridged to OAuth via MCP Proxy for AWS; IAM roles or access keys for self-hosted servers",
+    "ga_date": "2026-05-06",
     "first_release": "2024-11",
-    "maintained_by": "Community"
+    "maintained_by": "AWS"
   },
   "tags": [
     "aws",

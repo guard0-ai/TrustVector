@@ -4,7 +4,7 @@
   "name": "Gemma 4",
   "provider": "Google",
   "version": "4.0",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Google's open-weight family released April 2026 under Apache 2.0 (a shift from the custom Gemma license). Spans E2B/E4B edge models with 128K context and native audio up to a 31B dense model with 256K context. The 31B scores ~1452 on LMArena, No. 3 among open models.",
   "website": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Vendor-reported coding benchmarks compared against open-weight peer class",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 80,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Reasoning benchmark review from launch materials and open-model leaderboards",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 86,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Crowdsourced human preference rankings on LMArena",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 80,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Community reports across deployment stacks; high variance by quantization level",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "Deployment-dependent",
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Self-hosted model; latency is a function of deployer infrastructure",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "256K tokens (31B/26B); 128K (E2B/E4B)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Official specification from launch announcement",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "value": "Self-hosted (deployer-controlled)",
@@ -108,7 +108,7 @@
             }
           ],
           "methodology": "No single provider SLA; assessed as deployment-dependent",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strongest open-weight showing from Google to date: 31B at ~1452 LMArena (No. 3 open). MoE 26B-A4B offers near-dense quality at 4B active params. Performance below proprietary frontier but excellent per-parameter efficiency."
@@ -128,7 +128,7 @@
             }
           ],
           "methodology": "OWASP LLM01 assessment relative to model class; deployer must add input filtering",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 74,
@@ -142,7 +142,7 @@
             }
           ],
           "methodology": "Adversarial testing of instruction-tuned checkpoints; open weights inherently allow guardrail removal",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 88,
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Architectural assessment: no third-party data flow when self-hosted",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 80,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Safety testing of released checkpoints and available companion classifiers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 75,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Assessment of typical self-hosted serving stacks vs managed alternatives",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Security profile is deployment-dependent: excellent data isolation when self-hosted, but guardrails are removable and there is no managed abuse filtering unless the deployer adds it (e.g., ShieldGemma, Vertex AI)."
@@ -204,7 +204,7 @@
             }
           ],
           "methodology": "Architectural assessment of self-hosted deployment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 95,
@@ -218,7 +218,7 @@
             }
           ],
           "methodology": "Architectural assessment: inference data never leaves deployer",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Deployer-controlled (zero by default)",
@@ -232,7 +232,7 @@
             }
           ],
           "methodology": "Architectural assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 85,
@@ -246,7 +246,7 @@
             }
           ],
           "methodology": "Data flow analysis for self-hosted inference",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 60,
@@ -260,7 +260,7 @@
             }
           ],
           "methodology": "Review of certification inheritance paths for open-weight deployments",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 95,
@@ -274,7 +274,7 @@
             }
           ],
           "methodology": "Architectural assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Best-in-class data sovereignty: nothing leaves deployer infrastructure. The trade-off is that compliance certifications are not inherited from the model and must be built or bought by the deployer."
@@ -294,7 +294,7 @@
             }
           ],
           "methodology": "Assessment of inspection capabilities afforded by open weights",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 75,
@@ -308,7 +308,7 @@
             }
           ],
           "methodology": "Factual QA testing relative to model size class",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 78,
@@ -322,7 +322,7 @@
             }
           ],
           "methodology": "Model card review and independent audit availability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 76,
@@ -336,7 +336,7 @@
             }
           ],
           "methodology": "Calibration assessment; logprob access partially offsets weaker verbal uncertainty",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 92,
@@ -350,7 +350,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 80,
@@ -364,7 +364,7 @@
             }
           ],
           "methodology": "Public disclosure review against open-model norms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 78,
@@ -378,7 +378,7 @@
             }
           ],
           "methodology": "Analysis of built-in and companion safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "High transparency by open-model standards: published technical report, architecture disclosure (including MoE active-parameter counts), and fully auditable weights. Apache 2.0 relicensing further reduces legal opacity."
@@ -398,7 +398,7 @@
             }
           ],
           "methodology": "Review of available serving interfaces and their consistency",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 82,
@@ -412,7 +412,7 @@
             }
           ],
           "methodology": "Ecosystem tooling support assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 80,
@@ -426,7 +426,7 @@
             }
           ],
           "methodology": "Release cadence and immutability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 65,
@@ -440,7 +440,7 @@
             }
           ],
           "methodology": "Assessment of out-of-box observability versus managed APIs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 70,
@@ -454,7 +454,7 @@
             }
           ],
           "methodology": "Support channel assessment for open-weight distribution",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 88,
@@ -468,7 +468,7 @@
             }
           ],
           "methodology": "Third-party integration and adoption analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 97,
@@ -482,7 +482,7 @@
             }
           ],
           "methodology": "License analysis; Apache 2.0 is OSI-approved with no usage restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Apache 2.0 relicensing is the headline trust improvement: prior Gemma generations carried custom-license use restrictions. Operational burden (monitoring, scaling, support) falls on the deployer, as with any open-weight model."
@@ -572,7 +572,7 @@
       "input": "Free (open weights; compute costs only)",
       "output": "Free (open weights; compute costs only)",
       "notes": "Apache 2.0. Self-hosting compute is the only cost; managed hosting available via Vertex AI and third-party providers.",
-      "last_verified": "2026-06-10"
+      "last_verified": "2026-07-09"
     },
     "context_window": 262144,
     "max_output": 32768,

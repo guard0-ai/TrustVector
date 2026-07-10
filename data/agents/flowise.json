@@ -2,11 +2,11 @@
   "id": "flowise",
   "type": "agent",
   "name": "Flowise",
-  "provider": "FlowiseAI",
-  "version": "2.x",
-  "last_evaluated": "2025-11-09",
+  "provider": "FlowiseAI (Workday since Aug 2025)",
+  "version": "3.1.3",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Open-source low-code platform for building customized LLM orchestration flows and AI agents. Visual node-based editor for creating RAG pipelines, chatbots, and autonomous agents without extensive coding.",
+  "description": "Open-source low-code platform for LLM orchestration flows and AI agents, acquired by Workday August 2025. Visual node editor for RAG pipelines, chatbots, agents. SECURITY: three CVEs with confirmed in-the-wild exploitation - CVE-2025-59528 (CVSS 10.0 RCE via CustomMCP node, fixed in 3.0.6, exploited from April 2026, 12,000+ instances exposed), CVE-2025-8943 (CVSS 9.8 OS command RCE), CVE-2025-26319 (arbitrary file upload). Upgrade to 3.1.x; do not expose unauthenticated instances.",
   "website": "https://flowiseai.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Flow execution testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_chain_support": {
           "score": 85,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "LLM chain testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "chatflow_management": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Chatflow capability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "vector_store_support": {
           "score": 86,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Vector store integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_handling": {
           "score": 71,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error recovery testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "500ms-8s (varies)",
@@ -94,15 +94,15 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 73,
+      "overall_score": 68,
       "criteria": {
         "api_authentication": {
-          "score": 76,
+          "score": 70,
           "confidence": "medium",
           "evidence": [
             {
@@ -110,10 +110,23 @@
               "url": "https://docs.flowiseai.com/configuration/authorization",
               "date": "2024-10-01",
               "value": "API key authentication for chatflows and predictions"
+            },
+            {
+              "source": "GHSA-3gcm-f6qx-ff7p (CVE-2025-59528)",
+              "url": "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-3gcm-f6qx-ff7p",
+              "date": "2026-07-09",
+              "value": "CVE-2025-59528: CVSS 10.0 code injection RCE via CustomMCP node config (fixed in 3.0.6, Sept 2025); first confirmed in-the-wild exploitation April 2026 with an estimated 12,000-15,000 internet-exposed instances"
+            },
+            {
+              "source": "The Hacker News - Flowise exploitation",
+              "url": "https://thehackernews.com/2026/04/flowise-ai-agent-builder-under-active.html",
+              "date": "2026-07-09",
+              "value": "Third Flowise flaw with in-the-wild exploitation after CVE-2025-8943 (CVSS 9.8 OS command RCE) and CVE-2025-26319 (CVSS 8.9 arbitrary file upload)"
             }
           ],
           "methodology": "Authentication testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09",
+          "notes": "Score reduced 2026-07-09: three CVEs with confirmed in-the-wild exploitation (CVE-2025-59528, CVE-2025-8943, CVE-2025-26319); all patched in current 3.1.x releases but many exposed instances remain unpatched"
         },
         "self_hosting": {
           "score": 88,
@@ -127,7 +140,7 @@
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "credential_management": {
           "score": 74,
@@ -141,7 +154,7 @@
             }
           ],
           "methodology": "Credential security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 90,
@@ -150,12 +163,12 @@
             {
               "source": "GitHub",
               "url": "https://github.com/FlowiseAI/Flowise",
-              "date": "2024-10-20",
-              "value": "Apache 2.0 license, 32k+ stars, active development"
+              "date": "2026-07-09",
+              "value": "Apache 2.0 license, 54k+ stars, active development (now under Workday ownership)"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 68,
@@ -169,7 +182,7 @@
             }
           ],
           "methodology": "Data isolation assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +201,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 78,
@@ -202,7 +215,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment": {
           "score": 90,
@@ -216,7 +229,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_data_sharing": {
           "score": 73,
@@ -230,7 +243,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "embedding_storage": {
           "score": 76,
@@ -244,7 +257,7 @@
             }
           ],
           "methodology": "Data storage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +276,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "visual_interface": {
           "score": 90,
@@ -277,7 +290,7 @@
             }
           ],
           "methodology": "UI/UX assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 92,
@@ -286,12 +299,12 @@
             {
               "source": "GitHub",
               "url": "https://github.com/FlowiseAI/Flowise",
-              "date": "2024-10-20",
-              "value": "Apache 2.0, 32k+ stars, very active community"
+              "date": "2026-07-09",
+              "value": "Apache 2.0, 54k+ stars, very active community"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 82,
@@ -305,7 +318,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "chatflow_export": {
           "score": 76,
@@ -319,7 +332,7 @@
             }
           ],
           "methodology": "Portability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -338,7 +351,7 @@
             }
           ],
           "methodology": "Usability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 68,
@@ -352,7 +365,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 92,
@@ -366,7 +379,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 65,
@@ -380,7 +393,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_deployment": {
           "score": 80,
@@ -394,7 +407,7 @@
             }
           ],
           "methodology": "API capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "marketplace": {
           "score": 78,
@@ -408,14 +421,15 @@
             }
           ],
           "methodology": "Template ecosystem assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
   },
   "strengths": [
     "Extremely user-friendly visual interface for building AI agents",
-    "Open source (Apache 2.0) with very active community (32k+ stars)",
+    "Open source (Apache 2.0) with very active community (54k+ stars)",
+    "Backed by Workday since August 2025 acquisition",
     "Easy deployment with Docker, npm, or cloud platforms",
     "Built-in support for multiple vector stores and LLM providers",
     "Auto-generates API endpoints for chatflows",
@@ -427,7 +441,8 @@
     "Performance optimization requires technical knowledge",
     "Security features less mature than enterprise platforms",
     "Scaling to high-volume production requires additional infrastructure",
-    "Limited debugging capabilities for complex flows"
+    "Limited debugging capabilities for complex flows",
+    "Serious CVE history with confirmed in-the-wild exploitation: CVE-2025-59528 (CVSS 10.0 RCE, exploited April 2026), CVE-2025-8943 (CVSS 9.8 RCE) and CVE-2025-26319 (arbitrary file upload); upgrade to 3.0.6+/3.1.x and harden exposed deployments"
   ],
   "metadata": {
     "license": "Apache 2.0",
@@ -450,12 +465,12 @@
       "API integrations"
     ],
     "pricing_model": "Free open source (FlowiseAI Cloud managed service available)",
-    "github_stars": "42000+",
+    "github_stars": "54000+",
     "first_release": "2023",
     "vector_stores": "Pinecone, Weaviate, Qdrant, Chroma, Supabase, Postgres",
     "ui_technology": "React-based visual node editor",
     "acquisition": "Acquired by Workday in August 2025",
-    "version": "3.0.1+"
+    "version": "3.1.3 (June 25, 2026)"
   },
   "use_case_ratings": {
     "customer-support": {
@@ -508,6 +523,7 @@
   "tags": [
     "visual",
     "low-code",
-    "open-source"
+    "open-source",
+    "security-incidents"
   ]
 }

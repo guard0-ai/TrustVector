@@ -4,9 +4,9 @@
   "name": "Haystack",
   "provider": "deepset",
   "version": "2.x",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Open-source NLP framework for building production-ready LLM applications, RAG pipelines, and semantic search systems. Modular architecture with pre-built components for document processing, retrieval, and generation.",
+  "description": "Open-source AI orchestration framework from deepset for building production-ready LLM applications, RAG pipelines, agent workflows, and semantic search systems. Modular architecture with pre-built components for document processing, retrieval, and generation, plus Agent components added in the 2.x line. Actively maintained (2.31.0 released July 2026) with commercial support via Haystack Enterprise and the deepset AI Platform.",
   "website": "https://haystack.deepset.ai/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "RAG pipeline benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "document_retrieval": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Retrieval accuracy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pipeline_flexibility": {
           "score": 92,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Architecture assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_integration": {
           "score": 86,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "LLM integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "document_processing": {
           "score": 82,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Document processing testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Varies by pipeline (500ms-5s)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 72,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "API security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_privacy": {
           "score": 85,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 94,
@@ -152,10 +152,16 @@
               "url": "https://github.com/deepset-ai/haystack",
               "date": "2024-10-20",
               "value": "Apache 2.0 license, 17k+ stars, active development"
+            },
+            {
+              "source": "GitHub",
+              "url": "https://github.com/deepset-ai/haystack",
+              "date": "2026-07-09",
+              "value": "Apache 2.0 license, 25.9k stars, active development; latest release v2.31.0 (2026-07-08)"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "document_storage_security": {
           "score": 68,
@@ -169,7 +175,7 @@
             }
           ],
           "methodology": "Storage security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 84,
@@ -202,7 +208,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment": {
           "score": 92,
@@ -216,7 +222,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_data_sharing": {
           "score": 75,
@@ -230,7 +236,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "no_telemetry": {
           "score": 90,
@@ -244,7 +250,7 @@
             }
           ],
           "methodology": "Telemetry assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +269,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 95,
@@ -272,12 +278,12 @@
             {
               "source": "GitHub",
               "url": "https://github.com/deepset-ai/haystack",
-              "date": "2024-10-20",
-              "value": "Apache 2.0, 17k+ stars, transparent development"
+              "date": "2026-07-09",
+              "value": "Apache 2.0, 25.9k stars, transparent development with frequent releases (v2.31.0, 2026-07-08)"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pipeline_traceability": {
           "score": 84,
@@ -291,7 +297,7 @@
             }
           ],
           "methodology": "Traceability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 87,
@@ -305,7 +311,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 78,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 92,
@@ -352,7 +358,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 75,
@@ -366,7 +372,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 79,
@@ -380,7 +386,7 @@
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "modular_architecture": {
           "score": 91,
@@ -394,7 +400,7 @@
             }
           ],
           "methodology": "Architecture assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -402,7 +408,7 @@
   "strengths": [
     "Open-source (Apache 2.0) specialized for RAG and semantic search",
     "Modular architecture with 100+ pre-built integrations",
-    "Excellent documentation and active community (17k+ stars)",
+    "Excellent documentation and active community (25k+ stars)",
     "Supports multiple LLM providers and local models",
     "Production-ready with REST API and container deployment",
     "Strong document retrieval and processing capabilities"
@@ -412,7 +418,7 @@
     "Limited built-in monitoring and observability features",
     "Setup complexity higher than managed services",
     "Performance tuning requires deep understanding",
-    "Limited agent-like autonomous behavior capabilities",
+    "Agent components arrived later in the 2.x line; agent tooling younger than dedicated agent frameworks",
     "Document store choice affects performance and cost significantly"
   ],
   "metadata": {
@@ -427,16 +433,17 @@
     "programming_languages": [
       "Python"
     ],
-    "deployment_type": "Self-hosted (Docker, Kubernetes) or deepset Cloud",
+    "deployment_type": "Self-hosted (Docker, Kubernetes) or managed via Haystack Enterprise Platform / deepset AI Platform",
     "tool_support": [
       "Document stores",
       "Vector DBs",
       "Embedding models",
       "LLMs"
     ],
-    "pricing_model": "Free open source (deepset Cloud managed service available)",
-    "github_stars": "21400+",
+    "pricing_model": "Free open source (paid Haystack Enterprise Starter support and Haystack Enterprise Platform managed/self-hosted offerings from deepset)",
+    "github_stars": "25900+",
     "first_release": "2019",
+    "latest_version": "2.31.0 (July 8, 2026)",
     "supported_document_stores": "Elasticsearch, OpenSearch, Weaviate, Pinecone, Qdrant, Milvus",
     "use_case_focus": "RAG, semantic search, question answering",
     "version": "2.x",

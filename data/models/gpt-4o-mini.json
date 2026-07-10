@@ -4,9 +4,9 @@
   "name": "GPT-4o mini",
   "provider": "OpenAI",
   "version": "2024-07",
-  "last_evaluated": "2025-11-08",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's efficient multimodal model combining text and vision capabilities at competitive pricing. Designed for cost-sensitive applications requiring basic multimodal understanding.",
+  "description": "OpenAI's efficient multimodal model combining text and vision capabilities at competitive pricing. Designed for cost-sensitive applications requiring basic multimodal understanding. Legacy model: remains available in the API with no announced shutdown as of 2026-07-09 (unaffected by the GPT-4o retirement), but OpenAI recommends newer GPT-5.x mini/nano tiers for new work.",
   "website": "https://openai.com/gpt-4o",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 70,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Mathematical benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 72,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Knowledge testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 73,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Internal testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "0.7s",
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Median latency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "1.4s",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "95th percentile",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "128,000 tokens",
@@ -108,7 +108,7 @@
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -122,7 +122,7 @@
             }
           ],
           "methodology": "Historical uptime",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Basic multimodal performance with fast inference. Good for simple vision + text tasks."
@@ -142,7 +142,7 @@
             }
           ],
           "methodology": "Adversarial testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 83,
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 83,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Policy analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 84,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Safety benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 85,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "Security review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good security with multimodal safety considerations."
@@ -218,7 +218,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -232,7 +232,7 @@
             }
           ],
           "methodology": "Policy analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "30 days",
@@ -246,7 +246,7 @@
             }
           ],
           "methodology": "Terms review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 82,
@@ -260,7 +260,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -274,7 +274,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 75,
@@ -288,7 +288,7 @@
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard OpenAI privacy with 30-day retention."
@@ -308,7 +308,7 @@
             }
           ],
           "methodology": "Reasoning evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 78,
@@ -322,7 +322,7 @@
             }
           ],
           "methodology": "Factual QA testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 79,
@@ -336,7 +336,7 @@
             }
           ],
           "methodology": "Bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 80,
@@ -350,7 +350,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 85,
@@ -364,7 +364,7 @@
             }
           ],
           "methodology": "Documentation review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 74,
@@ -378,7 +378,7 @@
             }
           ],
           "methodology": "Public disclosure",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 84,
@@ -392,7 +392,7 @@
             }
           ],
           "methodology": "Safety system analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good transparency with multimodal safety considerations."
@@ -412,7 +412,7 @@
             }
           ],
           "methodology": "API review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 93,
@@ -426,7 +426,7 @@
             }
           ],
           "methodology": "SDK review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 85,
@@ -437,10 +437,16 @@
               "url": "https://platform.openai.com/docs/versioning",
               "date": "2024-07-15",
               "value": "Clear versioning"
+            },
+            {
+              "source": "OpenAI Model Page: gpt-4o-mini",
+              "url": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+              "date": "2026-07-09",
+              "value": "Model remains active in the API with no deprecation or shutdown date announced; not included in the 2026-02-13 ChatGPT retirements or the API deprecations list"
             }
           ],
           "methodology": "Policy review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 84,
@@ -454,7 +460,7 @@
             }
           ],
           "methodology": "Tool review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 87,
@@ -468,7 +474,7 @@
             }
           ],
           "methodology": "Support assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 94,
@@ -482,7 +488,7 @@
             }
           ],
           "methodology": "Ecosystem analysis",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -496,7 +502,7 @@
             }
           ],
           "methodology": "Terms review",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent operational maturity with multimodal capabilities."
@@ -515,7 +521,7 @@
       "notes": "Good for support with vision (image understanding).",
       "alternatives": [
         "gpt-4-1-mini",
-        "claude-3-5-haiku"
+        "claude-haiku-4-5"
       ]
     },
     "content-creation": {
@@ -610,10 +616,11 @@
     "pricing": {
       "input": "$0.15 per 1M tokens",
       "output": "$0.60 per 1M tokens",
-      "notes": "Cost-effective multimodal pricing",
-      "last_verified": "2025-11-09"
+      "notes": "Cost-effective multimodal pricing. Confirmed unchanged on official model page 2026-07-09; no longer listed on OpenAI's main pricing page.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 128000,
+    "max_output": 16384,
     "languages": [
       "English",
       "Spanish",

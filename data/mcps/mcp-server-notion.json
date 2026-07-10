@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "MCP Notion Server",
   "provider": "Notion (Official)",
-  "version": "1.0.0",
-  "last_evaluated": "2026-06-10",
+  "version": "2.4.1",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Notion's official MCP integration. Primary offering is the hosted MCP server at https://mcp.notion.com/mcp (Streamable HTTP and SSE transports, one-click OAuth), positioned as the successor to the open-source local @notionhq/notion-mcp-server (MIT, 4,407 stars), which remains available. Enables AI models to create, read, update pages and databases, manage blocks, and search workspace content.",
+  "description": "Notion's official MCP integration. Primary offering is the hosted server at https://mcp.notion.com/mcp (Streamable HTTP and SSE, one-click OAuth), the only actively supported path. The open-source local @notionhq/notion-mcp-server (MIT, v2.4.1) is in maintenance mode: issues/PRs not actively monitored and Notion may sunset the repo. Enables creating, reading, updating pages and databases, managing blocks, and searching workspaces; recent releases track Notion API version 2026-03-11.",
   "website": "https://mcp.notion.com/mcp",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Operation success rate testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "search_accuracy": {
           "score": 82,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Search quality testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 75,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Rate limiting behavior testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "block_rendering_accuracy": {
           "score": 80,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Content rendering testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 82,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -105,7 +105,7 @@
             }
           ],
           "methodology": "Authentication mechanism review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "token_exposure_risk": {
           "score": 65,
@@ -119,7 +119,7 @@
             }
           ],
           "methodology": "Token security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "page_modification_risk": {
           "score": 68,
@@ -133,7 +133,7 @@
             }
           ],
           "methodology": "Operation authorization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "workspace_access_control": {
           "score": 75,
@@ -147,7 +147,7 @@
             }
           ],
           "methodology": "Access control testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "content_deletion_risk": {
           "score": 70,
@@ -161,7 +161,7 @@
             }
           ],
           "methodology": "Deletion risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 78,
@@ -175,7 +175,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -194,7 +194,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "database_structure_exposure": {
           "score": 65,
@@ -208,7 +208,7 @@
             }
           ],
           "methodology": "Database privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "workspace_metadata_privacy": {
           "score": 70,
@@ -222,7 +222,7 @@
             }
           ],
           "methodology": "Metadata privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 68,
@@ -236,7 +236,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "collaborator_information": {
           "score": 70,
@@ -250,7 +250,7 @@
             }
           ],
           "methodology": "Collaborator privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -269,7 +269,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 82,
@@ -283,7 +283,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 88,
@@ -292,12 +292,12 @@
             {
               "source": "Notion MCP Server GitHub Repository",
               "url": "https://github.com/makenotion/notion-mcp-server",
-              "date": "2026-06-10",
-              "value": "Local server (@notionhq/notion-mcp-server) is open source under MIT with 4,407 GitHub stars; hosted server internals documented in Notion's engineering blog"
+              "date": "2026-07-09",
+              "value": "Local server (@notionhq/notion-mcp-server, v2.4.1) is open source under MIT with 4,501 GitHub stars, but the README states it is no longer actively maintained (issues/PRs not monitored, possible future sunset); hosted server internals documented in Notion's engineering blog"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_coverage_clarity": {
           "score": 70,
@@ -311,7 +311,7 @@
             }
           ],
           "methodology": "API documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -336,7 +336,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 78,
@@ -350,7 +350,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 85,
@@ -364,7 +364,7 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_coverage": {
           "score": 82,
@@ -378,7 +378,7 @@
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 80,
@@ -387,12 +387,12 @@
             {
               "source": "Notion MCP Server GitHub Repository",
               "url": "https://github.com/makenotion/notion-mcp-server",
-              "date": "2026-06-10",
-              "value": "Officially maintained by Notion; open-source local server has 4,407 GitHub stars, and the hosted server is operated by Notion as the primary offering"
+              "date": "2026-07-09",
+              "value": "Hosted server is operated by Notion as the only actively supported offering; open-source local server (4,501 GitHub stars, last release v2.4.1 on 2026-06-22) is in maintenance mode with issues/PRs not actively monitored"
             }
           ],
           "methodology": "Community support assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -402,17 +402,17 @@
     "Built on reliable Notion API with good uptime",
     "Excellent for knowledge management and documentation workflows",
     "Integration permissions provide page-level access control",
-    "Official hosted server (mcp.notion.com/mcp) with one-click OAuth; open-source local server (MIT, 4,407 stars) still available",
+    "Official hosted server (mcp.notion.com/mcp) with one-click OAuth; open-source local server (MIT, 4,501 stars) still installable",
     "Archived pages are recoverable (not permanently deleted)"
   ],
   "limitations": [
-    "Page content and database data exposed to LLM provider",
+    "Page content, database data, schemas, and property values exposed to LLM provider",
     "AI can modify and archive pages within integration permissions",
     "Workspace structure and page hierarchy may be revealed",
     "Subject to strict rate limits (3 requests/second average)",
-    "Database schemas and property values exposed",
     "User and collaborator information accessible",
-    "STATUS 2026-06-10: Notion's hosted server (mcp.notion.com/mcp) is now the primary, recommended offering; the local @notionhq/notion-mcp-server remains available but workspace traffic on the hosted path routes through Notion's infrastructure"
+    "STATUS 2026-07-09: Notion's hosted server (mcp.notion.com/mcp) is the only actively supported offering; the local @notionhq/notion-mcp-server repo is no longer actively maintained (issues/PRs unmonitored, sunset possible), and workspace traffic on the hosted path routes through Notion's infrastructure",
+    "Notion API version 2026-03-11 introduced breaking changes (after→position, archived→in_trash, transcription→meeting_notes) that older local-server versions do not handle"
   ],
   "metadata": {
     "license": "MIT",
@@ -425,7 +425,8 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/makenotion/notion-mcp-server",
-    "github_stars": 4407,
+    "github_stars": 4501,
+    "local_server_status": "Maintenance mode since 2026: no longer actively maintained, may be sunset",
     "api_dependency": "Notion API, Notion Client SDK",
     "authentication": "OAuth (hosted at mcp.notion.com/mcp) or Notion Integration Token (local server)",
     "remote_endpoint": "https://mcp.notion.com/mcp",

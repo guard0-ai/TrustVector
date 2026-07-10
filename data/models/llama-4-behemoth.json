@@ -4,9 +4,9 @@
   "name": "Llama 4 Behemoth",
   "provider": "Meta",
   "version": "2025-02",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Meta's announced 2T-total/288B-active parameter Llama 4 teacher model that was NEVER RELEASED. It remains 'announced, not released' as of June 2026: Meta gave no update when asked in January 2026 and has effectively exited open-weight frontier releases, shipping the proprietary closed-weight 'Muse Spark' (April 2026) instead. Scores reflect unverifiable preview-era claims; the model is not available for any deployment.",
+  "description": "Meta's announced 2T-total/288B-active parameter Llama 4 teacher model that was NEVER RELEASED. It remains 'announced, not released' as of July 2026 — effectively shelved (never formally cancelled): Meta gave no update when asked in January 2026 and has effectively exited open-weight frontier releases, shipping the proprietary closed-weight 'Muse Spark' (April 8, 2026) instead. Scores reflect unverifiable preview-era claims; the model is not available for any deployment.",
   "website": "https://llama.meta.com/llama-4",
   "trust_vector": {
     "performance_reliability": {
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 95,
@@ -50,7 +50,7 @@
             }
           ],
           "methodology": "Advanced mathematical and scientific reasoning benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 90,
@@ -70,7 +70,7 @@
             }
           ],
           "methodology": "Crowdsourced comparisons and knowledge testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 89,
@@ -84,7 +84,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "2.8s",
@@ -98,7 +98,7 @@
             }
           ],
           "methodology": "Median latency on recommended hardware",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "5.2s",
@@ -112,7 +112,7 @@
             }
           ],
           "methodology": "95th percentile response time",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "128,000 tokens",
@@ -126,7 +126,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 60,
@@ -146,7 +146,7 @@
             }
           ],
           "methodology": "User-controlled deployment",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Model never released; no deployment is possible"
         }
       },
@@ -167,7 +167,7 @@
             }
           ],
           "methodology": "Testing against prompt injection attacks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 81,
@@ -181,7 +181,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompts",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 85,
@@ -195,7 +195,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 82,
@@ -209,7 +209,7 @@
             }
           ],
           "methodology": "Safety testing across harmful content categories",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 84,
@@ -223,7 +223,7 @@
             }
           ],
           "methodology": "Review of deployment best practices",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Security controlled by deployment team"
         }
       },
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 98,
@@ -258,7 +258,7 @@
             }
           ],
           "methodology": "Analysis of data flow",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "User-controlled",
@@ -272,7 +272,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 92,
@@ -286,7 +286,7 @@
             }
           ],
           "methodology": "Review of deployment architecture",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 94,
@@ -300,7 +300,7 @@
             }
           ],
           "methodology": "Review of deployment options",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Can achieve any compliance requirement with proper deployment"
         },
         "zero_data_retention": {
@@ -315,7 +315,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Exceptional privacy with self-hosted deployment. Full control over data residency, retention, and compliance. No data shared with Meta."
@@ -335,7 +335,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 84,
@@ -349,7 +349,7 @@
             }
           ],
           "methodology": "Community evaluation and testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 83,
@@ -363,7 +363,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 85,
@@ -377,7 +377,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 92,
@@ -391,7 +391,7 @@
             }
           ],
           "methodology": "Review of documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 87,
@@ -405,7 +405,7 @@
             }
           ],
           "methodology": "Review of technical documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 90,
@@ -419,7 +419,7 @@
             }
           ],
           "methodology": "Review of open-source safety systems",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong transparency as open-source model. Good training data disclosure. Customizable guardrails for specific use cases."
@@ -439,7 +439,7 @@
             }
           ],
           "methodology": "Review of API design",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 86,
@@ -453,7 +453,7 @@
             }
           ],
           "methodology": "Review of official and community SDKs",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 88,
@@ -467,7 +467,7 @@
             }
           ],
           "methodology": "Review of versioning approach",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 78,
@@ -481,7 +481,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools",
-          "last_verified": "2025-11-08",
+          "last_verified": "2026-07-09",
           "notes": "Requires custom monitoring implementation"
         },
         "support_quality": {
@@ -502,7 +502,7 @@
             }
           ],
           "methodology": "Assessment of support channels",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "No model-specific support exists since the model never shipped"
         },
         "ecosystem_maturity": {
@@ -520,10 +520,16 @@
               "url": "https://en.wikipedia.org/wiki/Llama_(language_model)",
               "date": "2026-06-10",
               "value": "No ecosystem exists for Behemoth itself; the model was never released and Meta has pivoted to closed-weight models (Muse Spark, April 2026)"
+            },
+            {
+              "source": "AI CERTs News - Meta Behemoth Cancel Claim",
+              "url": "https://www.aicerts.ai/news/meta-behemoth-cancel-claim-inside-llama-4s-uncertain-future/",
+              "date": "2026-07-09",
+              "value": "Re-verified July 2026: Behemoth remains unreleased and effectively shelved (never formally cancelled); reported root causes were mid-training MoE-routing changes and chunked-attention issues at 2T scale"
             }
           ],
           "methodology": "Analysis of ecosystem",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 90,
@@ -537,7 +543,7 @@
             }
           ],
           "methodology": "Review of license terms",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Operational scores are largely theoretical: the model was never released, so no deployment, support, or ecosystem exists for it. Meta shipped the closed-weight Muse Spark (April 2026) instead."
@@ -637,7 +643,7 @@
     "Requires expertise to deploy and maintain",
     "No managed API service from Meta",
     "Large model size requires substantial compute resources",
-    "Never released: still announced-only as of June 2026; Meta gave no update in January 2026 and pivoted to the closed-weight Muse Spark (April 2026), so weights are unavailable"
+    "Never released: still announced-only as of July 2026; Meta gave no update in January 2026 and pivoted to the closed-weight Muse Spark (April 8, 2026), so weights are unavailable"
   ],
   "best_for": [
     "Enterprises requiring data sovereignty and on-premise deployment",

@@ -4,9 +4,9 @@
   "name": "Amazon Bedrock Agents",
   "provider": "Amazon Web Services",
   "version": "2024",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Fully managed AWS service for building and deploying generative AI agents with orchestration, memory, knowledge bases, and action groups. Note: AWS's strategic agent runtime is now Bedrock AgentCore (GA 2025-10-13; framework-agnostic, 8-hour sessions, session isolation) paired with the open-source Strands Agents SDK; evaluate AgentCore for new builds.",
+  "description": "Fully managed AWS service for building and deploying generative AI agents with orchestration, memory, knowledge bases, and action groups. Note: AWS's strategic agent runtime is now Bedrock AgentCore (GA 2025-10-13; framework-agnostic and model-agnostic - works with models in or outside Bedrock including OpenAI and Gemini; 8-hour sessions, session isolation; expanded at re:Invent 2025) paired with the open-source Strands Agents SDK; evaluate AgentCore for new builds.",
   "website": "https://aws.amazon.com/bedrock/agents/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Based on managed service SLA and model performance",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 90,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 86,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex task testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 92,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory system evaluation",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 89,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Medium (2-6s typical)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 96,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 88,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection attack testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 95,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "enterprise_security": {
           "score": 98,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Enterprise security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy policy review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 95,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 92,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "regional_deployment": {
           "score": 93,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 87,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "managed_service_sla": {
           "score": 92,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "SLA review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "proprietary_service": {
           "score": 65,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Transparency assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 96,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 85,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09",
+          "last_verified": "2026-07-09",
           "notes": "Costs can accumulate with heavy use"
         },
         "monitoring_capabilities": {
@@ -367,7 +367,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 96,
@@ -384,10 +384,16 @@
               "url": "https://aws.amazon.com/about-aws/whats-new/2025/10/amazon-bedrock-agentcore-available/",
               "date": "2026-06-10",
               "value": "AWS's strategic agent runtime is now Bedrock AgentCore (GA 2025-10-13): framework-agnostic, 8-hour sessions, session isolation; complemented by the open-source Strands Agents SDK"
+            },
+            {
+              "source": "Amazon Bedrock AgentCore",
+              "url": "https://aws.amazon.com/bedrock/agentcore/",
+              "date": "2026-07-09",
+              "value": "AgentCore expanded at re:Invent 2025 (agent registry, managed multi-agent orchestration, operational tooling) and is model-agnostic, working with any foundation model in or outside Bedrock"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -451,7 +457,7 @@
   "limitations": [
     "AWS vendor lock-in with proprietary service",
     "Higher costs compared to self-hosted solutions",
-    "Limited to AWS Bedrock foundation models",
+    "Classic Bedrock Agents limited to Bedrock foundation models (AgentCore, by contrast, is model-agnostic)",
     "Less flexibility than code-based frameworks",
     "Requires AWS expertise for optimal configuration",
     "Not open source, limited customization of core orchestration",
@@ -461,9 +467,15 @@
     "license": "Proprietary (AWS)",
     "supported_models": [
       "Claude (Anthropic)",
-      "Titan (Amazon)",
+      "Nova and Titan (Amazon)",
       "Llama (Meta)",
-      "Command (Cohere)"
+      "Mistral",
+      "Command (Cohere)",
+      "AI21",
+      "DeepSeek",
+      "Gemma (Google)",
+      "OpenAI open-weight models",
+      "Qwen"
     ],
     "programming_languages": [
       "AWS SDK (Python, JavaScript, Java, .NET, etc.)",

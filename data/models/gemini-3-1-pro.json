@@ -3,10 +3,10 @@
   "type": "model",
   "name": "Gemini 3.1 Pro",
   "provider": "Google",
-  "version": "gemini-3.1-pro",
-  "last_evaluated": "2026-06-10",
+  "version": "gemini-3.1-pro-preview",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Google's GA flagship reasoning model with 77.1% ARC-AGI-2 (2.5x Gemini 3 Pro), 94.3% GPQA Diamond, 2887 Elo on LiveCodeBench Pro, and 1M token context. Supersedes Gemini 3 Pro Preview as the production-ready frontier tier.",
+  "description": "Google's current flagship reasoning model with 77.1% ARC-AGI-2 (2.5x Gemini 3 Pro), 94.3% GPQA Diamond, 2887 Elo on LiveCodeBench Pro, and 1M token context. Supersedes the retired Gemini 3 Pro Preview (shut down 2026-03-09; the gemini-pro-latest alias now points here). Note: still served under the preview model ID gemini-3.1-pro-preview — official docs do not list it as GA, contrary to earlier reports. Gemini 3.5 Pro (announced I/O May 2026) has not shipped as of 2026-07-09.",
   "website": "https://ai.google.dev/gemini-api/docs/changelog",
 
   "trust_vector": {
@@ -31,7 +31,7 @@
             }
           ],
           "methodology": "Competitive programming and agentic tool-use benchmarks from official launch materials",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 98,
@@ -50,8 +50,8 @@
               "value": "94.3% on PhD-level science questions"
             }
           ],
-          "methodology": "Abstract reasoning and PhD-level science benchmarks reported at GA launch",
-          "last_verified": "2026-06-10"
+          "methodology": "Abstract reasoning and PhD-level science benchmarks reported at launch",
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 96,
@@ -61,11 +61,11 @@
               "source": "Google DeepMind Models Page",
               "url": "https://deepmind.google/models/gemini/",
               "date": "2026-02-19",
-              "value": "Positioned as GA flagship, superseding Gemini 3 Pro Preview across general benchmarks"
+              "value": "Positioned as flagship Pro tier, superseding Gemini 3 Pro Preview across general benchmarks"
             }
           ],
           "methodology": "Cross-benchmark comparison against predecessor Gemini 3 Pro Preview",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 94,
@@ -75,11 +75,11 @@
               "source": "Google AI Documentation",
               "url": "https://ai.google.dev/gemini-api/docs",
               "date": "2026-02-19",
-              "value": "GA stability commitments versus preview-tier predecessor"
+              "value": "Stable flagship serving since 2026-02-19, though the model ID remains gemini-3.1-pro-preview"
             }
           ],
-          "methodology": "Consistency assessment based on GA status and documented model behavior",
-          "last_verified": "2026-06-10"
+          "methodology": "Consistency assessment based on serving track record and documented model behavior",
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "~1.8s",
@@ -93,7 +93,7 @@
             }
           ],
           "methodology": "Median latency from third-party aggregator measurements",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,000,000 tokens",
@@ -103,11 +103,11 @@
               "source": "Gemini API Changelog",
               "url": "https://ai.google.dev/gemini-api/docs/changelog",
               "date": "2026-02-19",
-              "value": "1M token context window at GA"
+              "value": "1M token context window at launch"
             }
           ],
           "methodology": "Official specification from provider documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -121,10 +121,10 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Massive reasoning jump: 77.1% ARC-AGI-2 vs 31.1% for Gemini 3 Pro. GA status removes preview-tier risk. Note: Gemini 3.5 Pro was announced at I/O May 2026 but is not yet GA."
+      "notes": "Massive reasoning jump: 77.1% ARC-AGI-2 vs 31.1% for Gemini 3 Pro. Correction 2026-07-09: official docs list the model as gemini-3.1-pro-preview (preview, not GA), contrary to the earlier GA characterization; it is nonetheless Google's designated migration target for retired/deprecated Pro models. Gemini 3.5 Pro (announced I/O May 2026, June GA target slipped) has still not shipped as of 2026-07-09."
     },
 
     "security": {
@@ -142,7 +142,7 @@
             }
           ],
           "methodology": "OWASP LLM01 prompt injection testing and vendor safety documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 88,
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Adversarial prompt dataset testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 85,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Privacy policy and API terms review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 90,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Safety filter testing across harmful content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 89,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "Review of API security features and infrastructure",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Inherits Google Cloud security posture. Configurable safety filters and Vertex AI IAM controls for enterprise deployment."
@@ -219,7 +219,7 @@
             }
           ],
           "methodology": "Cloud infrastructure and data residency documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -233,7 +233,7 @@
             }
           ],
           "methodology": "Terms of service review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Varies by tier; zero retention available on Vertex AI enterprise",
@@ -247,7 +247,7 @@
             }
           ],
           "methodology": "Data retention policy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 84,
@@ -261,7 +261,7 @@
             }
           ],
           "methodology": "Data protection capability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 92,
@@ -275,7 +275,7 @@
             }
           ],
           "methodology": "Certification verification through Google Cloud compliance center",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 86,
@@ -289,7 +289,7 @@
             }
           ],
           "methodology": "Enterprise feature review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong enterprise posture via Vertex AI data governance, SOC/ISO certifications, and EU data residency options."
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Reasoning transparency evaluation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 88,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Factual QA testing and vendor claims review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 85,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Bias benchmark evaluation and policy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 87,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 92,
@@ -362,11 +362,11 @@
               "source": "Gemini Documentation",
               "url": "https://ai.google.dev/gemini-api/docs/changelog",
               "date": "2026-02-19",
-              "value": "Comprehensive GA documentation with benchmarks and limitations"
+              "value": "Comprehensive launch documentation with benchmarks and limitations"
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 82,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Public disclosure review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 91,
@@ -394,10 +394,10 @@
             }
           ],
           "methodology": "Safety mechanism analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Strong transparency via exposed thinking traces and comprehensive GA documentation. Training data details remain limited (industry standard)."
+      "notes": "Strong transparency via exposed thinking traces and comprehensive documentation. Training data details remain limited (industry standard)."
     },
 
     "operational_excellence": {
@@ -415,7 +415,7 @@
             }
           ],
           "methodology": "API design and feature completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 94,
@@ -429,7 +429,7 @@
             }
           ],
           "methodology": "SDK quality and maintenance assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 92,
@@ -439,11 +439,17 @@
               "source": "Gemini API Changelog",
               "url": "https://ai.google.dev/gemini-api/docs/changelog",
               "date": "2026-02-19",
-              "value": "GA release 2026-02-19 with documented deprecation timeline for 3 Pro Preview"
+              "value": "Released 2026-02-19 with documented deprecation timeline for 3 Pro Preview"
+            },
+            {
+              "source": "Gemini API Deprecations",
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+              "date": "2026-07-09",
+              "value": "gemini-3.1-pro-preview active with no shutdown date; designated replacement for gemini-3-pro-preview (shut down 2026-03-09) and gemini-2.5-pro (shutdown 2026-10-16); gemini-pro-latest alias points here since 2026-03-06"
             }
           ],
           "methodology": "Versioning policy and changelog review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 95,
@@ -457,7 +463,7 @@
             }
           ],
           "methodology": "Observability tooling review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 93,
@@ -471,7 +477,7 @@
             }
           ],
           "methodology": "Support channel assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 93,
@@ -485,7 +491,7 @@
             }
           ],
           "methodology": "Ecosystem and integration analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 91,
@@ -499,24 +505,24 @@
             }
           ],
           "methodology": "License terms review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pricing_transparency": {
-          "value": "~$2/$12 per 1M tokens (<=200K context), $4/$18 above 200K",
-          "confidence": "medium",
+          "value": "$2/$12 per 1M tokens (<=200K context), $4/$18 above 200K",
+          "confidence": "high",
           "evidence": [
             {
-              "source": "Pricing aggregators",
-              "url": "https://artificialanalysis.ai/",
-              "date": "2026-06-01",
-              "value": "Aggregator-sourced: ~$2 input / $12 output per 1M tokens at <=200K context; $4/$18 above"
+              "source": "Gemini API Pricing",
+              "url": "https://ai.google.dev/gemini-api/docs/pricing",
+              "date": "2026-07-09",
+              "value": "Official: $2.00 input / $12.00 output per 1M tokens at <=200K context; $4.00/$18.00 above 200K; context caching $0.20-$0.40 plus $4.50/hour storage; paid tier only (no free tier)"
             }
           ],
-          "methodology": "Cross-referenced third-party pricing aggregators; official pricing page recommended for confirmation",
-          "last_verified": "2026-06-10"
+          "methodology": "Verified against the official Gemini API pricing page",
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Mature GA operational posture across all Google AI surfaces. Pricing figures are aggregator-sourced (medium confidence)."
+      "notes": "Mature operational posture across all Google AI surfaces since 2026-02-19 launch. Pricing confirmed on the official pricing page (2026-07-09). Model ID remains gemini-3.1-pro-preview despite flagship positioning."
     }
   },
 
@@ -567,16 +573,17 @@
     "Exceptional abstract reasoning: 77.1% ARC-AGI-2 (~2.5x Gemini 3 Pro's 31.1%)",
     "94.3% GPQA Diamond, near-saturation PhD-level science",
     "Frontier coding: 2887 Elo LiveCodeBench Pro, 78.2% MCP Atlas",
-    "1M token context window with GA stability",
+    "1M token context window; Google's designated migration target for the retired 3 Pro Preview and deprecated 2.5 Pro",
     "Enterprise posture: Vertex AI data governance, SOC/ISO certs, EU residency",
     "Day-one availability across AI Studio, Vertex AI, and Gemini app"
   ],
 
   "limitations": [
-    "Pricing confidence medium: figures aggregator-sourced (~$2/$12, $4/$18 above 200K)",
+    "Still served under a preview model ID (gemini-3.1-pro-preview); not listed as GA in official docs",
+    "Paid tier only — no free tier access (unique among current Gemini API models)",
     "Extended reasoning modes add significant latency",
     "Training data transparency limited (industry standard)",
-    "Gemini 3.5 Pro announced at I/O May 2026 may supersede it soon (not yet GA)",
+    "Gemini 3.5 Pro (announced I/O May 2026, GA target slipped past June) may supersede it soon",
     "Long-context (>200K) pricing roughly doubles per-token cost"
   ],
 
@@ -590,15 +597,15 @@
   "not_recommended_for": [
     "Latency-sensitive applications (consider Gemini 3.5 Flash)",
     "High-volume cost-sensitive inference",
-    "Teams needing fully confirmed first-party pricing before procurement"
+    "Free-tier prototyping (model is paid-only)"
   ],
 
   "metadata": {
     "pricing": {
-      "input": "~$2.00 per 1M tokens (<=200K), ~$4.00 per 1M tokens (>200K)",
-      "output": "~$12.00 per 1M tokens (<=200K), ~$18.00 per 1M tokens (>200K)",
-      "notes": "Aggregator-sourced (medium confidence). Tiered by context length; verify against official pricing page.",
-      "last_verified": "2026-06-10"
+      "input": "$2.00 per 1M tokens (<=200K), $4.00 per 1M tokens (>200K)",
+      "output": "$12.00 per 1M tokens (<=200K), $18.00 per 1M tokens (>200K)",
+      "notes": "Confirmed on the official Gemini API pricing page 2026-07-09. Context caching $0.20-$0.40 per 1M plus $4.50/hour storage. Paid tier only (no free tier). Same pricing as the retired Gemini 3 Pro.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1000000,
     "max_output": 64000,
@@ -616,7 +623,7 @@
 
   "tags": [
     "flagship",
-    "ga",
+    "preview",
     "reasoning",
     "long-context",
     "1m-tokens",

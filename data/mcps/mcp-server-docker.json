@@ -4,10 +4,10 @@
   "name": "MCP Docker Server",
   "provider": "Community",
   "version": "1.0.0",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Community-maintained MCP server for Docker container management. Enables AI models to interact with Docker Engine for container lifecycle management, image operations, volume management, and network configuration. Essential for AI-powered containerized application deployment and DevOps automation.",
-  "website": "https://github.com/modelcontextprotocol/servers",
+  "description": "Community-maintained MCP server for Docker container management; the leading implementation is ckreiling/mcp-server-docker (Python, GPL-3.0, ~728 stars), which manages containers via the Docker SDK and deliberately blocks sensitive options like --privileged and --cap-add. Covers containers, images, volumes, and networks. Note: Docker Inc. has NOT shipped an official engine-management MCP server; its official MCP Catalog, Toolkit, and Gateway distribute containerized MCP servers.",
+  "website": "https://github.com/ckreiling/mcp-server-docker",
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 85,
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "API stability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "container_operation_success": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Operation success testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_monitoring_accuracy": {
           "score": 85,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Monitoring accuracy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "image_pull_reliability": {
           "score": 82,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Image operation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 83,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Access control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "container_escape_risk": {
           "score": 60,
@@ -110,10 +110,16 @@
               "url": "https://github.com/modelcontextprotocol/servers",
               "date": "2025-11-16",
               "value": "AI can create privileged containers with host access"
+            },
+            {
+              "source": "ckreiling/mcp-server-docker README",
+              "url": "https://github.com/ckreiling/mcp-server-docker",
+              "date": "2026-07-09",
+              "value": "Leading community implementation deliberately does not support --privileged or --cap-add/--cap-drop; README still warns Docker is not a secure sandbox and the server can impact the host through the Docker socket"
             }
           ],
           "methodology": "Privilege escalation testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "image_security_scanning": {
           "score": 70,
@@ -127,7 +133,7 @@
             }
           ],
           "methodology": "Security scanning assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "network_isolation_control": {
           "score": 68,
@@ -141,7 +147,7 @@
             }
           ],
           "methodology": "Network security testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "secret_exposure_risk": {
           "score": 62,
@@ -155,7 +161,7 @@
             }
           ],
           "methodology": "Secrets management assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "audit_logging": {
           "score": 75,
@@ -169,7 +175,7 @@
             }
           ],
           "methodology": "Audit logging review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +194,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "log_privacy": {
           "score": 62,
@@ -202,7 +208,7 @@
             }
           ],
           "methodology": "Log privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "environment_variable_protection": {
           "score": 68,
@@ -216,7 +222,7 @@
             }
           ],
           "methodology": "Environment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -230,7 +236,7 @@
             }
           ],
           "methodology": "Data sharing analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "volume_data_access": {
           "score": 72,
@@ -244,7 +250,7 @@
             }
           ],
           "methodology": "Storage privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +269,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 82,
@@ -277,7 +283,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 88,
@@ -288,10 +294,16 @@
               "url": "https://github.com/modelcontextprotocol/servers",
               "date": "2025-11-16",
               "value": "Open source community implementation"
+            },
+            {
+              "source": "ckreiling/mcp-server-docker",
+              "url": "https://github.com/ckreiling/mcp-server-docker",
+              "date": "2026-07-09",
+              "value": "Leading community implementation is open source (Python, GPL-3.0) with ~728 stars; supports local socket and remote Docker daemons over SSH"
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "security_warning_disclosure": {
           "score": 72,
@@ -302,10 +314,16 @@
               "url": "https://github.com/modelcontextprotocol/servers",
               "date": "2025-11-16",
               "value": "Some security warnings but could be more prominent"
+            },
+            {
+              "source": "ckreiling/mcp-server-docker README",
+              "url": "https://github.com/ckreiling/mcp-server-docker",
+              "date": "2026-07-09",
+              "value": "README carries explicit, prominent warnings: 'DO NOT CONFIGURE CONTAINERS WITH SENSITIVE DATA' and cautions to review LLM-created containers because Docker is not a secure sandbox"
             }
           ],
           "methodology": "Security disclosure review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +342,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "operation_performance": {
           "score": 83,
@@ -338,7 +356,7 @@
             }
           ],
           "methodology": "Performance benchmarking",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 85,
@@ -352,7 +370,7 @@
             }
           ],
           "methodology": "Reliability analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 80,
@@ -366,7 +384,7 @@
             }
           ],
           "methodology": "Feature coverage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 75,
@@ -380,7 +398,7 @@
             }
           ],
           "methodology": "Community support assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -442,29 +460,31 @@
   ],
   "limitations": [
     "Requires Docker socket access equivalent to root privileges",
-    "AI can create privileged containers with host system access",
+    "AI can start containers with host access via the socket (leading implementation blocks --privileged/--cap-add, but the socket itself remains root-equivalent)",
     "Container logs and environment variables exposed to LLM provider",
     "No built-in image vulnerability scanning",
     "Can access and expose Docker secrets and sensitive configurations",
-    "Community-maintained with variable support quality"
+    "Community-maintained with variable support quality",
+    "No official Docker Inc. engine-management MCP server exists; Docker's official MCP products (MCP Catalog, Toolkit, Gateway) address server distribution/orchestration instead"
   ],
   "metadata": {
-    "license": "MIT",
+    "license": "GPL-3.0 (ckreiling/mcp-server-docker)",
     "supported_platforms": [
       "Linux",
       "macOS",
       "Windows (with Docker Desktop)"
     ],
     "programming_languages": [
-      "TypeScript",
       "Python"
     ],
     "mcp_version": "1.0",
-    "github_repo": "https://github.com/modelcontextprotocol/servers",
-    "api_dependency": "Docker Engine API",
-    "authentication": "Docker socket access",
-    "first_release": "2024-11",
-    "maintained_by": "Community"
+    "github_repo": "https://github.com/ckreiling/mcp-server-docker",
+    "github_stars": 728,
+    "api_dependency": "Docker Engine API (Docker SDK for Python)",
+    "authentication": "Docker socket access (local) or Docker daemon over SSH (remote)",
+    "first_release": "2024-12",
+    "maintained_by": "Community",
+    "official_vendor_alternative": "Docker MCP Catalog and Toolkit / MCP Gateway (server distribution and orchestration, not engine management): https://docs.docker.com/ai/mcp-catalog-and-toolkit/"
   },
   "tags": [
     "containers",

@@ -4,7 +4,7 @@
   "name": "Claude Opus 4.7",
   "provider": "Anthropic",
   "version": "20260416",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Previous-generation Opus flagship, superseded by Opus 4.8. 64.3% SWE-Bench Pro and 94.2% GPQA Diamond at launch. First Claude with high-resolution vision (2576px long edge, pixel-accurate coordinates), task budgets (beta), and the xhigh effort level.",
   "website": "https://www.anthropic.com/news/claude-opus-4-7",
@@ -30,7 +30,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks measuring real-world software engineering tasks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 96,
@@ -44,7 +44,7 @@
             }
           ],
           "methodology": "Graduate and PhD-level reasoning benchmarks evaluated with adaptive thinking at high effort",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 94,
@@ -58,7 +58,7 @@
             }
           ],
           "methodology": "Comprehensive knowledge and multimodal testing, including high-resolution screenshot and document understanding",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 93,
@@ -72,7 +72,7 @@
             }
           ],
           "methodology": "Repeated-run consistency testing across effort levels; structured extraction pipelines",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Adaptive thinking only; thinking content omitted by default; sampling parameters removed"
         },
         "latency_p50": {
@@ -87,7 +87,7 @@
             }
           ],
           "methodology": "Median latency for API requests with standard prompt sizes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "6.5s",
@@ -101,7 +101,7 @@
             }
           ],
           "methodology": "95th percentile response time across diverse workloads",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,000,000 tokens",
@@ -115,7 +115,7 @@
             }
           ],
           "methodology": "Official specification from provider",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 99,
@@ -123,13 +123,13 @@
           "evidence": [
             {
               "source": "Anthropic Status Page",
-              "url": "https://status.anthropic.com/",
-              "date": "2026-06-10",
-              "value": "99.9%+ uptime (last 90 days)"
+              "url": "https://status.claude.com/",
+              "date": "2026-07-09",
+              "value": "Claude API uptime 99.57% (last 90 days)"
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Was Anthropic's most capable model at launch (2026-04-16); now the previous-generation Opus behind Opus 4.8. Remains a strong, fully supported flagship-class choice, especially for vision-heavy workloads."
@@ -149,7 +149,7 @@
             }
           ],
           "methodology": "Testing against OWASP LLM01 prompt injection attacks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 93,
@@ -163,7 +163,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompt datasets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 88,
@@ -177,7 +177,7 @@
             }
           ],
           "methodology": "Analysis of privacy policies and data handling practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 94,
@@ -191,7 +191,7 @@
             }
           ],
           "methodology": "Comprehensive safety testing across harmful content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 89,
@@ -205,7 +205,7 @@
             }
           ],
           "methodology": "Review of API security features and best practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Introduced real-time cybersecurity safeguards to the Opus line. Strong overall posture carried forward into Opus 4.8."
@@ -225,7 +225,7 @@
             }
           ],
           "methodology": "Review of enterprise documentation and privacy policies",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 95,
@@ -239,7 +239,7 @@
             }
           ],
           "methodology": "Analysis of privacy policy and data usage terms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Configurable; zero-retention available",
@@ -253,7 +253,7 @@
             }
           ],
           "methodology": "Review of terms of service and data retention policies",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 88,
@@ -267,7 +267,7 @@
             }
           ],
           "methodology": "Review of data protection capabilities and customer responsibilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 94,
@@ -281,7 +281,7 @@
             }
           ],
           "methodology": "Verification of compliance certifications and audit reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 95,
@@ -295,7 +295,7 @@
             }
           ],
           "methodology": "Review of data handling practices and trust center documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard Anthropic enterprise compliance posture: SOC 2 Type II, GDPR, HIPAA-eligible, training opt-out by default for API traffic."
@@ -315,7 +315,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency and explanation capabilities",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "First Opus where thinking text defaults to omitted \u2014 a transparency regression vs Opus 4.6 defaults, recoverable via display: summarized"
         },
         "hallucination_rate": {
@@ -330,7 +330,7 @@
             }
           ],
           "methodology": "Testing on factual QA datasets and document-fidelity evaluations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 85,
@@ -344,7 +344,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks and diverse demographic testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 87,
@@ -358,7 +358,7 @@
             }
           ],
           "methodology": "Qualitative assessment of confidence expression in outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 92,
@@ -372,7 +372,7 @@
             }
           ],
           "methodology": "Review of documentation completeness and clarity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 78,
@@ -386,7 +386,7 @@
             }
           ],
           "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 95,
@@ -400,7 +400,7 @@
             }
           ],
           "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Strong documentation and guardrails. Thinking content omitted by default reduces out-of-the-box reasoning visibility; opt in to summarized display if reasoning is surfaced to users."
@@ -420,7 +420,7 @@
             }
           ],
           "methodology": "Review of API design, consistency, and feature completeness",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Breaking changes vs Opus 4.6 (sampling params and manual thinking budgets return 400); Opus 4.8 keeps this same surface"
         },
         "sdk_quality": {
@@ -435,7 +435,7 @@
             }
           ],
           "methodology": "Review of SDK quality, documentation, and maintenance",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 88,
@@ -446,10 +446,16 @@
               "url": "https://platform.claude.com/docs/en/api/versioning",
               "date": "2026-04-16",
               "value": "Clear versioning with advance deprecation notice; claude-opus-4-7 alias remains active after Opus 4.8 launch"
+            },
+            {
+              "source": "Anthropic Model Deprecations",
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "date": "2026-07-09",
+              "value": "Active; tentative retirement not sooner than April 16, 2027"
             }
           ],
           "methodology": "Review of versioning policy and historical practices",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 87,
@@ -463,7 +469,7 @@
             }
           ],
           "methodology": "Review of available monitoring tools and metrics",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 91,
@@ -477,7 +483,7 @@
             }
           ],
           "methodology": "Assessment of documentation, community, and support responsiveness",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 92,
@@ -491,7 +497,7 @@
             }
           ],
           "methodology": "Analysis of third-party integrations and availability surfaces",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 92,
@@ -505,7 +511,7 @@
             }
           ],
           "methodology": "Review of licensing terms and restrictions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Mature operational profile. Superseded by Opus 4.8 as the flagship Opus, but remains fully supported at the same $5/$25 price; upgrade to 4.8 is a drop-in model-ID swap."
@@ -624,8 +630,8 @@
     "pricing": {
       "input": "$5.00 per 1M tokens",
       "output": "$25.00 per 1M tokens",
-      "notes": "1M context at standard API pricing with no long-context premium. Batch API 50% discount, prompt caching savings apply. No fast-mode variant.",
-      "last_verified": "2026-06-10"
+      "notes": "1M context at standard API pricing with no long-context premium. Batch API 50% discount, prompt caching savings apply. No fast-mode variant. Confirmed unchanged at $5/$25 as of 2026-07-09.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1000000,
     "max_output": 128000,
@@ -653,7 +659,7 @@
     "open_source": false,
     "architecture": "Transformer-based with Constitutional AI alignment; adaptive thinking only with effort parameter introducing xhigh; high-resolution vision",
     "parameters": "Not disclosed",
-    "knowledge_cutoff": "Not disclosed",
+    "knowledge_cutoff": "January 2026 (reliable knowledge and training data cutoff)",
     "release_date": "2026-04-16"
   },
   "related_entities": [

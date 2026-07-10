@@ -4,9 +4,9 @@
   "name": "Strands Agents",
   "provider": "Amazon Web Services",
   "version": "1.x",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Open-source, model-driven AI agent SDK from AWS, used internally by Amazon Q Developer. Takes a lightweight model-first approach with MCP and A2A support, multi-agent primitives, and optional pairing with Amazon Bedrock AgentCore for hosted runtime.",
+  "description": "Open-source, model-driven AI agent SDK from AWS, used internally by Amazon Q Developer. Takes a lightweight model-first approach with MCP and A2A support, multi-agent primitives, and optional pairing with Amazon Bedrock AgentCore for hosted runtime. In June 2026 the core repo was consolidated into the strands-agents/harness-sdk monorepo (Python + TypeScript), repositioned around AWS's 'agent harness' framing; package names (strands-agents on PyPI) are unchanged.",
   "website": "https://strandsagents.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Task completion testing plus review of documented internal AWS production usage",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Tool invocation testing across native tools and MCP servers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 84,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Complex multi-step task testing with agent loop and graph patterns",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 80,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Memory system evaluation across sessions and AgentCore Memory integration",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 79,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error injection testing observing model-driven recovery",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 86,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Multi-agent coordination testing across swarm, graph, and A2A patterns",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review of SDK plus AgentCore runtime isolation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 78,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Access control assessment of IAM and identity integrations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 72,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection testing with and without Bedrock Guardrails enabled",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 78,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data isolation architecture review across deployment targets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 92,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source code and governance review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review of SDK and managed runtime options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 84,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment leveraging AWS compliance posture",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 78,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis across supported model providers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 88,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment including local model configurations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 88,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Tracing and telemetry capabilities assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability assessment of loop transparency and hook system",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 92,
@@ -288,10 +288,16 @@
               "url": "https://github.com/strands-agents",
               "date": "2026-06-01",
               "value": "Apache 2.0 SDK, tools, and samples; Python SDK 1.0 released 2026-05-21, TypeScript 1.0 released 2026-04-30"
+            },
+            {
+              "source": "strands-agents/harness-sdk GitHub",
+              "url": "https://github.com/strands-agents/harness-sdk",
+              "date": "2026-07-09",
+              "value": "Core repo renamed from sdk-python to harness-sdk (June 2026) as an Apache 2.0 monorepo shipping Python and TypeScript SDKs, CLI, and docs; old sdk-python URLs redirect"
             }
           ],
           "methodology": "Open source assessment of license and release maturity",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 85,
@@ -305,7 +311,7 @@
             }
           ],
           "methodology": "Community engagement analysis of downloads, releases, and contributors",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +330,7 @@
             }
           ],
           "methodology": "Integration complexity assessment with minimal-setup testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 86,
@@ -338,7 +344,7 @@
             }
           ],
           "methodology": "Scalability assessment across managed and self-managed deployment targets",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 84,
@@ -352,7 +358,7 @@
             }
           ],
           "methodology": "Pricing model analysis of SDK and optional managed services",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 86,
@@ -366,7 +372,7 @@
             }
           ],
           "methodology": "Monitoring features assessment across SDK and AWS integrations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 87,
@@ -374,13 +380,19 @@
           "evidence": [
             {
               "source": "Strands 1.0 Releases / AWS Internal Usage",
-              "url": "https://github.com/strands-agents/sdk-python/releases",
+              "url": "https://github.com/strands-agents/harness-sdk/releases",
               "date": "2026-05-21",
               "value": "Python 1.0 (2026-05-21) and TypeScript 1.0 (2026-04-30) with semver stability; battle-tested in Amazon Q Developer"
+            },
+            {
+              "source": "PyPI strands-agents / harness-sdk releases",
+              "url": "https://pypi.org/project/strands-agents/",
+              "date": "2026-07-09",
+              "value": "Rapid post-1.0 cadence continues: Python SDK 1.46.0 (2026-07-08) and TypeScript 1.8.0 (2026-07-08)"
             }
           ],
           "methodology": "Production readiness assessment of API stability and documented production usage",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -463,8 +475,10 @@
       "strands-agents-tools library",
       "A2A agent interoperability"
     ],
-    "github_stars": "10000+",
+    "github_stars": "6500+ (harness-sdk monorepo, July 2026)",
+    "github_repo": "https://github.com/strands-agents/harness-sdk (renamed from sdk-python, June 2026)",
     "first_release": "2025 (open-sourced May 2025)",
+    "latest_version": "Python SDK 1.46.0 / TypeScript SDK 1.8.0 (2026-07-08)",
     "pricing": "Free (Apache 2.0) - Costs only from LLM usage and optional AWS services",
     "python_requirement": "Python >=3.10",
     "adoption": "14M+ downloads by Feb 2026; used internally by Amazon Q Developer and multiple AWS teams"

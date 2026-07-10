@@ -2,11 +2,11 @@
   "id": "cursor-agent",
   "type": "agent",
   "name": "Cursor Agent",
-  "provider": "Anysphere",
+  "provider": "Anysphere (SpaceX acquisition announced 2026-06-16, expected to close Q3 2026)",
   "version": "3.x",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Agent mode of Cursor, Anysphere's AI-native IDE. The product's primary surface is now agentic: parallel local agents, cloud/background agents running in isolated VMs, and the in-house Composer model line alongside Claude, GPT, and Gemini.",
+  "description": "Agent mode of Cursor, Anysphere's AI-native IDE. The product's primary surface is now agentic: parallel local agents, cloud/background agents running in isolated VMs, and the in-house Composer model line (Composer 2.5) alongside Claude, GPT, and Gemini. Anysphere IPO'd on Nasdaq in June 2026 and days later agreed to a $60B all-stock acquisition by SpaceX (announced 2026-06-16, expected to close Q3 2026 under its xAI subsidiary).",
   "website": "https://cursor.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Assessment of agentic edit and task completion quality across Composer and frontier model options, drawing on vendor benchmarks and user reports",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 86,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Review of agent tool loop reliability across edit, search, terminal, and MCP integrations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 84,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Evaluation of plan construction and multi-file refactoring on complex tasks in the agent-first interface",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 78,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Review of rules, memories, and codebase indexing persistence",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 81,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Assessment of automatic iteration on lints, build errors, and failing tests",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 82,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Review of parallel and background agent orchestration capabilities",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security review of cloud VM isolation versus local execution approval model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 76,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Review of org-level controls, SSO, and repository scoping",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 68,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Threat surface analysis of untrusted content ingestion against documented mitigations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 74,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Review of privacy mode guarantees and tenant isolation for cloud agents",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 32,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source availability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Review of privacy mode retention guarantees and default settings",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 78,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance documentation assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 66,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis across multi-provider model routing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 35,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 80,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Review of action visibility, diff review workflow, and agent logs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 76,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Assessment of plan narration and change rationale quality",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 25,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 80,
@@ -301,11 +301,11 @@
               "source": "Cursor Community Forum",
               "url": "https://forum.cursor.com/",
               "date": "2026-06-01",
-              "value": "Very large active user community, busy forum, and rapid release cadence (Cursor 2.0 Oct 2025, Composer 2 Mar 2026, Cursor 3 Apr 2026)"
+              "value": "Very large active user community, busy forum, and rapid release cadence (Cursor 2.0 Oct 2025, Composer 2 Mar 2026, Cursor 3 Apr 2026, Composer 2.5 mid-2026)"
             }
           ],
           "methodology": "Community engagement and release cadence analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Onboarding and integration friction assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 80,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Scalability assessment of parallel and cloud agent execution",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 70,
@@ -349,10 +349,16 @@
               "url": "https://cursor.com/pricing",
               "date": "2026-04-15",
               "value": "Free / Pro $20 / Pro+ $60 / Ultra $200 per month; Teams $40 per seat. Tiers include usage allowances with overage billing for heavy frontier-model use"
+            },
+            {
+              "source": "Cursor Blog - Improvements to Teams Pricing",
+              "url": "https://cursor.com/blog/teams-pricing-june-2026",
+              "date": "2026-06-30",
+              "value": "June 2026 Teams overhaul (effective 2026-07-01 for renewals): Standard seat $40/mo ($32 annual) with split usage pools for Composer/Auto vs third-party API models; new Premium seat at $120/mo ($96 annual) with 5x usage; Cursor estimates lower costs for ~90% of teams"
             }
           ],
-          "methodology": "Pricing model analysis; flat tiers are clear but usage-based overages reduce predictability for heavy agent users",
-          "last_verified": "2026-06-10"
+          "methodology": "Pricing model analysis including the June 2026 Teams restructure; flat tiers are clear but usage-based overages reduce predictability for heavy agent users",
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 72,
@@ -366,7 +372,7 @@
             }
           ],
           "methodology": "Monitoring and admin analytics features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 85,
@@ -377,10 +383,16 @@
               "url": "https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/",
               "date": "2026-04-20",
               "value": "Mature, widely adopted product with massive enterprise and individual user base and sustained rapid iteration through Cursor 3"
+            },
+            {
+              "source": "TechCrunch - SpaceX to acquire Cursor for $60B",
+              "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/",
+              "date": "2026-06-16",
+              "value": "Annualized revenue reached ~$4B by early June 2026; Nasdaq IPO June 2026 followed by $60B all-stock SpaceX acquisition agreement (close expected Q3 2026), introducing ownership-transition uncertainty alongside strong commercial traction"
             }
           ],
-          "methodology": "Product maturity and adoption assessment",
-          "last_verified": "2026-06-10"
+          "methodology": "Product maturity and adoption assessment; score held at 85 as strong adoption and revenue are offset by pending ownership change",
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -411,7 +423,7 @@
   ],
   "strengths": [
     "Agent-first IDE redesign (Cursor 3, April 2026) makes agent orchestration the primary workflow",
-    "In-house Composer model line (Composer 2, 2026-03-19) delivers very fast agentic edits alongside Claude/GPT/Gemini choice",
+    "In-house Composer model line (latest Composer 2.5) delivers very fast agentic edits alongside Claude/GPT/Gemini choice",
     "Parallel agents and cloud background agents in isolated VMs scale work beyond one task at a time",
     "Human-in-the-loop by design: reviewable diffs, command approvals, and visible terminal output",
     "Seamless VS Code compatibility for extensions, themes, and keybindings",
@@ -423,12 +435,13 @@
     "Usage-based overages above tier allowances make heavy agent usage costs less predictable",
     "Local agent terminal execution depends on user-configured approvals; misconfiguration widens risk",
     "Multi-provider model routing complicates data governance reviews",
-    "Rapid release cadence occasionally introduces regressions and workflow changes"
+    "Rapid release cadence occasionally introduces regressions and workflow changes",
+    "Pending SpaceX/xAI acquisition (announced 2026-06-16, closing Q3 2026) creates governance, roadmap, and data-stewardship uncertainty for enterprise buyers"
   ],
   "metadata": {
     "license": "Proprietary",
     "supported_models": [
-      "Composer 1/2 (Anysphere in-house)",
+      "Composer 1/2/2.5 (Anysphere in-house)",
       "Anthropic Claude",
       "OpenAI GPT",
       "Google Gemini"
@@ -445,8 +458,8 @@
       "GitHub integration for cloud agents"
     ],
     "first_release": "2023 (IDE); Cursor 2.0 with Composer Oct 2025; Cursor 3 April 2026",
-    "pricing": "Free / Pro $20 / Pro+ $60 / Ultra $200 per month; Teams $40 per seat",
-    "company": "Anysphere"
+    "pricing": "Free / Pro $20 / Pro+ $60 / Ultra $200 per month; Teams (June 2026): Standard $40/mo ($32 annual), Premium $120/mo ($96 annual) per seat",
+    "company": "Anysphere (Nasdaq IPO June 2026; ~$4B ARR; $60B all-stock SpaceX acquisition announced 2026-06-16, expected close Q3 2026 under xAI subsidiary)"
   },
   "related_entities": [
     "claude-code",

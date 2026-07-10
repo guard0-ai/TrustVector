@@ -3,8 +3,8 @@
   "type": "mcp",
   "name": "Playwright MCP",
   "provider": "Microsoft",
-  "version": "2026.6",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Microsoft's official MCP server for browser automation via Playwright. Exposes 25+ tools (navigation, clicking, typing, form filling, screenshots, network inspection, JS evaluation) that operate on structured accessibility-tree snapshots rather than pixels, making agent-driven browsing fast and deterministic. Supersedes the archived Puppeteer reference server.",
   "website": "https://github.com/microsoft/playwright-mcp",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Review of snapshot mechanism (browser_snapshot) and element-reference stability across page interactions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_success_rate": {
           "score": 88,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Hands-on testing of navigation, clicking, typing, and form-fill tools against common web applications",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "browser_compatibility": {
           "score": 90,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Cross-browser capability review based on underlying Playwright engine support",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 84,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Error-path testing including timeouts, missing elements, modal dialogs, and navigation failures",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "automation_stability": {
           "score": 86,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Multi-step workflow stability testing across tabs, dialogs, and dynamic pages",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -99,7 +99,7 @@
             }
           ],
           "methodology": "Threat modeling of untrusted web content entering the agent context via snapshots and screenshots",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "arbitrary_code_execution_risk": {
           "score": 50,
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Capability analysis of the browser_evaluate tool and its abuse potential under prompt injection",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sandboxing_isolation": {
           "score": 75,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Review of --isolated, headless, and origin-filtering configuration flags as mitigations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "credential_exposure_risk": {
           "score": 62,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Analysis of session/cookie access in persistent vs isolated profile modes",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "unauthorized_action_risk": {
           "score": 60,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Authorization boundary analysis of write-capable browsing actions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis of snapshot, screenshot, and network tool outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 62,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy controls assessment of snapshot and screenshot content handling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_data_control": {
           "score": 80,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Review of local execution model and data residency",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data sharing pathway analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness and accuracy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 88,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "vendor_credibility": {
           "score": 94,
@@ -272,12 +272,12 @@
             {
               "source": "GitHub API",
               "url": "https://api.github.com/repos/microsoft/playwright-mcp",
-              "date": "2026-06-10",
-              "value": "Maintained by Microsoft's Playwright team; 33,734 GitHub stars as of 2026-06-10, one of the most adopted MCP servers"
+              "date": "2026-07-09",
+              "value": "Maintained by Microsoft's Playwright team; 34,870 GitHub stars as of 2026-07-09, one of the most adopted MCP servers"
             }
           ],
           "methodology": "Maintainer reputation and project health analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment across MCP hosts",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "performance": {
           "score": 85,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Latency and token-efficiency comparison against pixel-based browser automation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 90,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Feature completeness assessment against common browser-automation needs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 92,
@@ -333,12 +333,12 @@
             {
               "source": "GitHub API",
               "url": "https://api.github.com/repos/microsoft/playwright-mcp",
-              "date": "2026-06-10",
-              "value": "33,734 stars; bundled or recommended by major MCP hosts and widely used as the default browser-automation server, replacing the archived Puppeteer reference server"
+              "date": "2026-07-09",
+              "value": "34,870 stars as of 2026-07-09; bundled or recommended by major MCP hosts and widely used as the default browser-automation server, replacing the archived Puppeteer reference server"
             }
           ],
           "methodology": "Adoption metrics and ecosystem-integration analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "maintenance_activity": {
           "score": 93,
@@ -347,12 +347,12 @@
             {
               "source": "GitHub repository activity",
               "url": "https://github.com/microsoft/playwright-mcp/commits/main",
-              "date": "2026-06-10",
-              "value": "Frequent releases tracking Playwright versions, active issue triage by the Microsoft Playwright team"
+              "date": "2026-07-09",
+              "value": "Frequent releases tracking Playwright versions (@playwright/mcp at v0.0.77 on npm, repo active through late June 2026), active issue triage by the Microsoft Playwright team"
             }
           ],
           "methodology": "Commit frequency and release-cadence analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -360,7 +360,7 @@
   "strengths": [
     "Accessibility-tree snapshots give fast, deterministic, token-efficient page interaction without vision models",
     "Comprehensive tool set: navigation, forms, screenshots, network inspection, tabs, dialogs, file upload",
-    "Backed and actively maintained by Microsoft's Playwright team (33.7k stars)",
+    "Backed and actively maintained by Microsoft's Playwright team (34.9k stars)",
     "Cross-browser support (Chromium, Firefox, WebKit) with Playwright's auto-waiting reliability",
     "Strong mitigation options: isolated profiles, headless mode, origin allow/block lists",
     "Flexible transports: stdio by default plus standalone HTTP/SSE server mode"
@@ -383,8 +383,9 @@
     ],
     "mcp_version": "1.0",
     "github_repo": "https://github.com/microsoft/playwright-mcp",
-    "github_stars": 33734,
+    "github_stars": 34870,
     "package": "@playwright/mcp",
+    "package_version": "0.0.77",
     "api_dependency": "Playwright (Chromium/Firefox/WebKit)",
     "authentication": "None required (local browser control)",
     "first_release": "2025-03",

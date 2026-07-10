@@ -3,10 +3,10 @@
   "type": "mcp",
   "name": "Zapier MCP Server",
   "provider": "Zapier",
-  "version": "2026.6",
-  "last_evaluated": "2026-06-10",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Zapier's hosted, proprietary MCP server that gives AI agents access to user-selected actions from 9,000+ connected apps (Gmail, Slack, Salesforce, and more, spanning tens of thousands of actions). Each user generates a personal remote server endpoint at mcp.zapier.com with per-app and per-action permissioning.",
+  "description": "Zapier's hosted, proprietary MCP server giving AI agents access to user-selected actions from 9,000+ connected apps (40,000+ actions). Users create servers at mcp.zapier.com with per-app and per-action permissioning; listed clients connect via OAuth, unlisted clients use a rotatable connection token sent as an Authorization Bearer header (recommended) or embedded in the server URL. Transport is Streamable HTTP; each tool call consumes two Zapier tasks from the plan quota.",
   "website": "https://zapier.com/mcp",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Platform stability and maturity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "action_execution_success": {
           "score": 84,
@@ -38,21 +38,21 @@
             }
           ],
           "methodology": "Action execution success testing across common apps",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "app_integration_breadth": {
           "score": 95,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Zapier MCP",
-              "url": "https://zapier.com/mcp",
-              "date": "2026-06-10",
-              "value": "9,000+ apps and roughly 30,000-40,000 actions available, the broadest integration catalog of any MCP server"
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-07-09",
+              "value": "9,000+ app connections and 40,000+ actions available, the broadest integration catalog of any MCP server"
             }
           ],
           "methodology": "Integration catalog assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "rate_limit_handling": {
           "score": 80,
@@ -61,12 +61,12 @@
             {
               "source": "Zapier MCP Documentation",
               "url": "https://docs.zapier.com/mcp/home",
-              "date": "2026-06-10",
-              "value": "Plan-based usage limits on MCP tool calls; downstream app rate limits surface as action errors"
+              "date": "2026-07-09",
+              "value": "MCP is available on all Zapier plans with each tool call consuming two tasks from the plan quota; downstream app rate limits surface as action errors"
             }
           ],
           "methodology": "Rate and usage limit behavior review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 78,
@@ -80,40 +80,40 @@
             }
           ],
           "methodology": "Failure mode and recovery testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "security": {
-      "overall_score": 71,
+      "overall_score": 73,
       "criteria": {
         "authentication_security": {
-          "score": 70,
+          "score": 75,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Zapier MCP Documentation",
-              "url": "https://docs.zapier.com/mcp/home",
-              "date": "2026-06-10",
-              "value": "A user-specific server is generated at mcp.zapier.com; access is tied to that personal endpoint rather than a separately rotated credential in legacy URL-auth mode"
+              "source": "Zapier Help - Use Zapier MCP with your client",
+              "url": "https://help.zapier.com/hc/en-us/articles/36265392843917-Use-Zapier-MCP-with-your-client",
+              "date": "2026-07-09",
+              "value": "Listed clients authenticate via OAuth; unlisted clients use a connection token (shown once, rotatable, immediately invalidating the old token) sent as an Authorization Bearer header to https://mcp.zapier.com/api/v1/connect, with URL-embedded token retained as a fallback"
             }
           ],
-          "methodology": "Authentication mechanism review",
-          "last_verified": "2026-06-10"
+          "methodology": "Authentication mechanism review; score raised from 70 (2026-06-10) to reflect OAuth for listed clients and rotatable header-based bearer tokens replacing static URL-only auth",
+          "last_verified": "2026-07-09"
         },
         "url_credential_exposure": {
-          "score": 58,
+          "score": 62,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Zapier MCP Documentation",
-              "url": "https://docs.zapier.com/mcp/home",
-              "date": "2026-06-10",
-              "value": "The per-user endpoint URL acts as a bearer credential: anyone who obtains it can invoke the user's enabled actions, so it must be treated as a secret and rotated if leaked"
+              "source": "Zapier Help - Use Zapier MCP with your client",
+              "url": "https://help.zapier.com/hc/en-us/articles/36265392843917-Use-Zapier-MCP-with-your-client",
+              "date": "2026-07-09",
+              "value": "Connection tokens still act as bearer credentials (anyone holding one can invoke the user's enabled actions), but Zapier now recommends header-based auth over URL-embedded tokens, shows tokens only once, and supports one-click rotation that immediately invalidates the old token"
             }
           ],
-          "methodology": "Credential exposure threat modeling of the endpoint URL",
-          "last_verified": "2026-06-10"
+          "methodology": "Credential exposure threat modeling; score raised from 58 (2026-06-10) for header-based auth guidance and immediate token rotation",
+          "last_verified": "2026-07-09"
         },
         "blast_radius_control": {
           "score": 60,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Blast radius assessment across connected app categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "permission_granularity": {
           "score": 82,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Per-app and per-action permission model review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "credential_handling": {
           "score": 85,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Credential storage and isolation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -174,7 +174,7 @@
             }
           ],
           "methodology": "Data flow analysis of action inputs and outputs",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sensitive_data_protection": {
           "score": 75,
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data protection controls assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 70,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Multi-party data sharing review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 88,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Compliance certification review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -235,7 +235,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "operation_visibility": {
           "score": 86,
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Logging and traceability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 35,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Source availability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_coverage_clarity": {
           "score": 83,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Tool surface documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -296,7 +296,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_performance": {
           "score": 80,
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Action latency characterization",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "reliability": {
           "score": 86,
@@ -324,21 +324,21 @@
             }
           ],
           "methodology": "Uptime and incident history analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "feature_coverage": {
           "score": 95,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Zapier MCP",
-              "url": "https://zapier.com/mcp",
-              "date": "2026-06-10",
-              "value": "Tens of thousands of actions across 9,000+ apps including Gmail, Slack, Salesforce, HubSpot, and Google Workspace"
+              "source": "Zapier MCP Documentation",
+              "url": "https://docs.zapier.com/mcp/home",
+              "date": "2026-07-09",
+              "value": "40,000+ actions across 9,000+ apps including Gmail, Slack, Salesforce, HubSpot, and Google Workspace"
             }
           ],
           "methodology": "Capability breadth assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_adoption": {
           "score": 84,
@@ -352,13 +352,14 @@
             }
           ],
           "methodology": "Adoption and ecosystem support analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
   },
   "strengths": [
-    "Broadest action catalog of any MCP server: 9,000+ apps and tens of thousands of actions",
+    "Broadest action catalog of any MCP server: 9,000+ apps and 40,000+ actions",
+    "OAuth for listed clients and rotatable header-based connection tokens for unlisted clients",
     "Per-app and per-action permissioning enables least-privilege agent configuration",
     "Zero-install hosted setup with a personal endpoint generated at mcp.zapier.com",
     "Downstream app credentials held by Zapier under SOC 2 Type II audited controls, never exposed to the agent",
@@ -367,10 +368,10 @@
   ],
   "limitations": [
     "Extremely broad blast radius by design: a prompt-injected agent can act across email, CRM, chat, and finance apps",
-    "The per-user endpoint URL acts as a bearer credential and must be treated as a secret",
+    "Connection tokens (and URL-embedded fallback) act as bearer credentials and must be treated as secrets, though rotation is one click",
     "Fully proprietary and hosted-only; no source inspection or self-hosting",
     "Business data from connected apps flows through Zapier's cloud and the LLM provider",
-    "Subject to plan-based usage limits and pricing",
+    "Each MCP tool call consumes two Zapier tasks, so costs scale with agent activity under plan-based quotas",
     "Expired downstream app connections require manual reauthorization"
   ],
   "metadata": {
@@ -379,12 +380,13 @@
       "Hosted remote server (any MCP client with remote support)"
     ],
     "api_dependency": "Zapier platform and 9,000+ downstream app APIs",
-    "authentication": "User-specific endpoint at mcp.zapier.com (URL acts as bearer credential)",
+    "authentication": "OAuth (listed clients); rotatable connection token via Authorization Bearer header or URL-embedded token (unlisted clients) at mcp.zapier.com",
+    "pricing": "Available on all Zapier plans; each MCP tool call consumes two Zapier tasks (last_verified 2026-07-09)",
     "compliance": "SOC 2 Type II",
     "maintained_by": "Zapier",
     "documentation": "https://docs.zapier.com/mcp/home",
     "transport_types": [
-      "remote (hosted)"
+      "streamable-http (hosted)"
     ],
     "installation_methods": [
       "hosted endpoint"

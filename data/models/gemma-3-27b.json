@@ -4,7 +4,7 @@
   "name": "Gemma 3 27B",
   "provider": "Google",
   "version": "2025-01",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Google's open-source Gemma 3 model with 27 billion parameters, now superseded by Gemma 4 (released 2026-04-02 under Apache 2.0, a license improvement over the custom Gemma license). Was designed for developers seeking Google's research quality with open-source flexibility; new deployments should evaluate Gemma 4 instead.",
   "website": "https://ai.google.dev/gemma",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Industry-standard coding benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 69,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Mathematical reasoning benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 72,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Knowledge testing benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 71,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Internal testing with repeated prompts",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "1.0s",
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Median latency on recommended hardware",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "latency_p95": {
           "value": "2.0s",
@@ -94,21 +94,21 @@
             }
           ],
           "methodology": "95th percentile response time",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
-          "value": "8,192 tokens",
+          "value": "128,000 tokens",
           "confidence": "high",
           "evidence": [
             {
-              "source": "Google Documentation",
-              "url": "https://ai.google.dev/gemma/docs/model_card_3",
-              "date": "2025-01-10",
-              "value": "8K token context window"
+              "source": "Gemma 3 Model Card",
+              "url": "https://ai.google.dev/gemma/docs/core/model_card_3",
+              "date": "2026-07-09",
+              "value": "128K token context window (all Gemma 3 sizes except 1B); prior 8K figure was a carryover from Gemma 2"
             }
           ],
           "methodology": "Official specification",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 95,
@@ -122,10 +122,10 @@
             }
           ],
           "methodology": "User-controlled deployment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Moderate performance suitable for basic tasks. Limited by smaller context window (8K tokens). Open-source flexibility."
+      "notes": "Moderate performance suitable for basic tasks. Context window corrected 2026-07-09 to 128K per the official Gemma 3 model card (the 8K figure previously listed was a Gemma 2 carryover). Open-source flexibility."
     },
     "security": {
       "overall_score": 78,
@@ -142,7 +142,7 @@
             }
           ],
           "methodology": "Testing against prompt injection attacks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 77,
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Testing against adversarial prompts",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 85,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 78,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Safety testing",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 80,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "Review of deployment practices",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Basic security with self-hosted deployment control. Additional safety layers recommended for production."
@@ -218,7 +218,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 98,
@@ -232,7 +232,7 @@
             }
           ],
           "methodology": "Analysis of data flow",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "User-controlled",
@@ -246,7 +246,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 92,
@@ -260,7 +260,7 @@
             }
           ],
           "methodology": "Review of deployment architecture",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 92,
@@ -274,7 +274,7 @@
             }
           ],
           "methodology": "Review of deployment options",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 98,
@@ -288,7 +288,7 @@
             }
           ],
           "methodology": "Analysis of deployment model",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Excellent privacy with self-hosted deployment. Full control over all data aspects."
@@ -308,7 +308,7 @@
             }
           ],
           "methodology": "Evaluation of reasoning transparency",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 78,
@@ -322,7 +322,7 @@
             }
           ],
           "methodology": "Community evaluation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 82,
@@ -336,7 +336,7 @@
             }
           ],
           "methodology": "Evaluation on bias benchmarks",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 81,
@@ -350,7 +350,7 @@
             }
           ],
           "methodology": "Qualitative assessment",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 90,
@@ -364,7 +364,7 @@
             }
           ],
           "methodology": "Review of documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 88,
@@ -378,7 +378,7 @@
             }
           ],
           "methodology": "Review of technical documentation",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 86,
@@ -392,7 +392,7 @@
             }
           ],
           "methodology": "Review of safety systems",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good transparency as open-source model from Google. Comprehensive documentation."
@@ -412,7 +412,7 @@
             }
           ],
           "methodology": "Review of API design",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 85,
@@ -426,7 +426,7 @@
             }
           ],
           "methodology": "Review of SDKs",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 78,
@@ -446,7 +446,7 @@
             }
           ],
           "methodology": "Review of versioning",
-          "last_verified": "2026-06-10",
+          "last_verified": "2026-07-09",
           "notes": "Self-hosted weights remain usable, but the line has moved to Gemma 4"
         },
         "monitoring_observability": {
@@ -461,7 +461,7 @@
             }
           ],
           "methodology": "Review of monitoring tools",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 82,
@@ -475,7 +475,7 @@
             }
           ],
           "methodology": "Assessment of support",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 84,
@@ -489,7 +489,7 @@
             }
           ],
           "methodology": "Analysis of ecosystem",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 92,
@@ -503,7 +503,7 @@
             }
           ],
           "methodology": "Review of license",
-          "last_verified": "2025-11-08"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Good operational maturity with Google's backing. Easier deployment than larger models."
@@ -512,7 +512,7 @@
   "use_case_ratings": {
     "code-generation": {
       "overall": 68,
-      "notes": "Basic coding capabilities. Limited context window (8K) restricts complex projects.",
+      "notes": "Basic coding capabilities. 128K context handles mid-size codebases, but accuracy limits complex projects.",
       "alternatives": [
         "llama-4-scout",
         "gpt-4-1-mini"
@@ -523,12 +523,12 @@
       "notes": "Adequate for basic customer support with privacy benefits.",
       "alternatives": [
         "gpt-4-1-mini",
-        "claude-3-5-haiku"
+        "claude-haiku-4-5"
       ]
     },
     "content-creation": {
       "overall": 74,
-      "notes": "Good for short-form content. Limited by 8K context window.",
+      "notes": "Good for short-form content; 128K context also permits long-form drafting.",
       "alternatives": [
         "gpt-4-1",
         "llama-4-scout"
@@ -584,7 +584,7 @@
     },
     "creative-writing": {
       "overall": 73,
-      "notes": "Adequate for short creative writing. Context limit restricts long-form content.",
+      "notes": "Adequate for creative writing; 128K context supports long-form, though quality trails frontier models.",
       "alternatives": [
         "gpt-4-1",
         "llama-4-behemoth"
@@ -600,8 +600,7 @@
     "Cost-effective for basic tasks"
   ],
   "limitations": [
-    "Limited accuracy (42.4% MMLU) compared to larger models",
-    "Small context window (8K tokens)",
+    "Limited accuracy compared to larger models",
     "Moderate coding capabilities",
     "Requires infrastructure for deployment",
     "Not suitable for complex or specialized tasks",
@@ -617,7 +616,6 @@
   ],
   "not_recommended_for": [
     "Complex coding or software engineering",
-    "Long document processing (limited context)",
     "Advanced reasoning or mathematical tasks",
     "Production applications requiring highest accuracy",
     "Large-scale enterprise deployments",
@@ -627,22 +625,17 @@
     "pricing": {
       "input": "Self-hosted (infrastructure costs)",
       "output": "Self-hosted (infrastructure costs)",
-      "notes": "Open-source model. Typically $0.20-0.60 per 1M tokens with optimized deployment."
+      "notes": "Open-source model. Typically $0.20-0.60 per 1M tokens with optimized deployment.",
+      "last_verified": "2026-07-09"
     },
-    "context_window": 8192,
+    "context_window": 128000,
     "languages": [
       "English",
-      "Spanish",
-      "French",
-      "German",
-      "Italian",
-      "Portuguese",
-      "Japanese",
-      "Korean",
-      "Chinese"
+      "140+ languages"
     ],
     "modalities": [
-      "text"
+      "text",
+      "image (input)"
     ],
     "api_endpoint": "Self-hosted",
     "open_source": true,

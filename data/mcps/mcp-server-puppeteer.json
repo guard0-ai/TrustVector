@@ -4,9 +4,9 @@
   "name": "MCP Puppeteer Server",
   "provider": "Anthropic (Archived)",
   "version": "2025.4.6",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "ARCHIVED: Former Anthropic reference MCP server for Puppeteer browser automation, archived 2025-05-29 to the servers-archived repository and no longer maintained. The archived repo explicitly provides no security guarantees. For browser automation, Microsoft's Playwright MCP server is the recommended successor.",
+  "description": "ARCHIVED: Former Anthropic reference MCP server for Puppeteer browser automation, archived 2025-05-29 to the servers-archived repository and no longer maintained. The archived repo explicitly provides no security guarantees. For browser automation, Microsoft's Playwright MCP server (microsoft/playwright-mcp) is the recommended successor and remains actively maintained as of July 2026.",
   "website": "https://pptr.dev/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Automation task success testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "page_load_reliability": {
           "score": 82,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Page load success rate testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "element_interaction": {
           "score": 80,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Element interaction testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "screenshot_quality": {
           "score": 88,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Screenshot quality assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 75,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Error handling testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_usage": {
           "score": 72,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Resource utilization monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Sandbox security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "arbitrary_code_execution_risk": {
           "score": 55,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Code execution risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "network_access_control": {
           "score": 60,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Network boundary testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "credential_exposure_risk": {
           "score": 58,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Credential security analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "malicious_site_protection": {
           "score": 68,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Malicious content protection testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Data exposure analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "pii_scraping_risk": {
           "score": 58,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Privacy risk assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cookie_and_session_handling": {
           "score": 65,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Session security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "legal_compliance": {
           "score": 70,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Legal compliance assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tracking_prevention": {
           "score": 75,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Privacy protection assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "action_visibility": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Action traceability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 90,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Source code review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "security_guidance": {
           "score": 65,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Security documentation review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "resource_efficiency": {
           "score": 65,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Resource utilization testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "stability": {
           "score": 60,
@@ -358,7 +358,7 @@
             }
           ],
           "methodology": "Stability testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "browser_compatibility": {
           "score": 82,
@@ -372,7 +372,7 @@
             }
           ],
           "methodology": "Browser compatibility testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 58,
@@ -389,10 +389,16 @@
               "url": "https://github.com/modelcontextprotocol/servers-archived",
               "date": "2026-06-10",
               "value": "MCP server archived 2025-05-29; repository is read-only, issues and PRs are no longer accepted"
+            },
+            {
+              "source": "Microsoft Playwright MCP releases",
+              "url": "https://github.com/microsoft/playwright-mcp/releases",
+              "date": "2026-07-09",
+              "value": "Recommended successor microsoft/playwright-mcp remains actively maintained with frequent releases (33k+ GitHub stars, releases through June 2026)"
             }
           ],
           "methodology": "Community activity analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }

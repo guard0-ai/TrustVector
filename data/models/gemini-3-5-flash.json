@@ -4,7 +4,7 @@
   "name": "Gemini 3.5 Flash",
   "provider": "Google",
   "version": "gemini-3.5-flash",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Google's GA 'frontier workhorse' launched at I/O 2026. Beats Gemini 3.1 Pro on agentic and coding suites (76.2% Terminal-Bench 2.1, 83.6% MCP Atlas) at roughly 4x the speed, with 1M token context. Pricier than past Flash tiers at $1.50/$9.00 per 1M.",
   "website": "https://deepmind.google/models/gemini/",
@@ -31,7 +31,7 @@
             }
           ],
           "methodology": "Official launch benchmarks for agentic coding; vendor-reported, pending broad third-party replication",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_reasoning": {
           "score": 89,
@@ -51,7 +51,7 @@
             }
           ],
           "methodology": "Official agentic and multimodal reasoning benchmarks from launch materials",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "task_accuracy_general": {
           "score": 91,
@@ -65,7 +65,7 @@
             }
           ],
           "methodology": "Cross-benchmark comparison against Gemini 3.1 Pro from official launch claims",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_consistency": {
           "score": 92,
@@ -79,7 +79,7 @@
             }
           ],
           "methodology": "Consistency assessment based on GA status and vendor throughput claims",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "latency_p50": {
           "value": "<1s",
@@ -93,7 +93,7 @@
             }
           ],
           "methodology": "Relative speed claims from official materials; absolute latency varies by workload",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "context_window": {
           "value": "1,048,576 tokens input / 65,536 output",
@@ -107,7 +107,7 @@
             }
           ],
           "methodology": "Official specification from provider documentation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uptime": {
           "score": 98,
@@ -121,7 +121,7 @@
             }
           ],
           "methodology": "Historical uptime data from official status page",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Unusual positioning: a Flash-tier model that beats the flagship 3.1 Pro on agentic/coding suites at ~4x speed. Benchmark figures are official claims from launch (2026-05-19); third-party replication still maturing."
@@ -142,7 +142,7 @@
             }
           ],
           "methodology": "OWASP LLM01 testing and vendor documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "jailbreak_resistance": {
           "score": 86,
@@ -156,7 +156,7 @@
             }
           ],
           "methodology": "Adversarial prompt testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_leakage_prevention": {
           "score": 85,
@@ -170,7 +170,7 @@
             }
           ],
           "methodology": "Privacy policy and API terms review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "output_safety": {
           "score": 89,
@@ -184,7 +184,7 @@
             }
           ],
           "methodology": "Safety filter testing across content categories",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 89,
@@ -198,7 +198,7 @@
             }
           ],
           "methodology": "API security feature review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Standard Gemini 3.x-family security posture on Google Cloud infrastructure. High-speed agentic use increases the importance of downstream tool sandboxing."
@@ -219,7 +219,7 @@
             }
           ],
           "methodology": "Cloud infrastructure documentation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_optout": {
           "score": 90,
@@ -233,7 +233,7 @@
             }
           ],
           "methodology": "Terms of service review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_retention": {
           "value": "Varies by tier; zero retention available on Vertex AI enterprise",
@@ -247,7 +247,7 @@
             }
           ],
           "methodology": "Data retention policy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "pii_handling": {
           "score": 84,
@@ -261,7 +261,7 @@
             }
           ],
           "methodology": "Data protection capability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "compliance_certifications": {
           "score": 92,
@@ -275,7 +275,7 @@
             }
           ],
           "methodology": "Certification verification",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "zero_data_retention": {
           "score": 86,
@@ -289,7 +289,7 @@
             }
           ],
           "methodology": "Enterprise feature review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Same Google Cloud compliance envelope as the Pro tier: SOC/ISO certifications, GDPR, HIPAA via Google Cloud, EU residency options."
@@ -310,7 +310,7 @@
             }
           ],
           "methodology": "Reasoning transparency evaluation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "hallucination_rate": {
           "score": 84,
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Benchmark-derived grounding assessment; vendor claims pending independent replication",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "bias_fairness": {
           "score": 84,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Bias benchmark evaluation and policy review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "uncertainty_quantification": {
           "score": 84,
@@ -351,8 +351,8 @@
               "value": "Limited independent assessment so far; recent GA release"
             }
           ],
-          "methodology": "Qualitative assessment; limited data given three weeks since GA",
-          "last_verified": "2026-06-10"
+          "methodology": "Qualitative assessment; limited data given ~7 weeks since GA",
+          "last_verified": "2026-07-09"
         },
         "model_card_quality": {
           "score": 90,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "training_data_transparency": {
           "score": 81,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Public disclosure review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "guardrails": {
           "score": 90,
@@ -394,10 +394,10 @@
             }
           ],
           "methodology": "Safety mechanism analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
-      "notes": "Solid documentation at launch, but the model is only ~3 weeks GA; most benchmark figures remain vendor-reported and independent verification is still accumulating."
+      "notes": "Solid documentation at launch; ~7 weeks GA as of 2026-07-09. Most benchmark figures remain vendor-reported and independent verification is still accumulating."
     },
 
     "operational_excellence": {
@@ -415,7 +415,7 @@
             }
           ],
           "methodology": "API design and feature completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "sdk_quality": {
           "score": 94,
@@ -429,7 +429,7 @@
             }
           ],
           "methodology": "SDK quality and maintenance assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "versioning_policy": {
           "score": 92,
@@ -440,10 +440,16 @@
               "url": "https://ai.google.dev/gemini-api/docs/changelog",
               "date": "2026-05-19",
               "value": "GA at I/O 2026 with documented model lifecycle"
+            },
+            {
+              "source": "Gemini API Deprecations",
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+              "date": "2026-07-09",
+              "value": "gemini-3.5-flash active with no shutdown date; named designated replacement for gemini-2.0-flash (retired 2026-06-01), gemini-2.5-flash (shutdown 2026-10-16), and gemini-3-flash-preview"
             }
           ],
           "methodology": "Versioning and changelog review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_observability": {
           "score": 95,
@@ -457,7 +463,7 @@
             }
           ],
           "methodology": "Observability tooling review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "support_quality": {
           "score": 93,
@@ -471,7 +477,7 @@
             }
           ],
           "methodology": "Support channel assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "ecosystem_maturity": {
           "score": 93,
@@ -485,7 +491,7 @@
             }
           ],
           "methodology": "Ecosystem and integration analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "license_terms": {
           "score": 91,
@@ -499,7 +505,7 @@
             }
           ],
           "methodology": "License terms review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       },
       "notes": "Full Google Cloud operational stack from day one. Pricing ($1.50/$9.00, cached input $0.15) is notably higher than past Flash tiers, narrowing the cost gap to Pro models."
@@ -555,9 +561,9 @@
 
   "limitations": [
     "Pricier than past Flash tiers ($1.50/$9.00 vs historical sub-dollar Flash pricing)",
-    "Benchmark figures are official claims; independent replication still accumulating (~3 weeks since GA)",
+    "Benchmark figures are official claims; independent replication still accumulating (~7 weeks since GA)",
     "Deepest reasoning tasks still favor Pro-tier models",
-    "Only ~3 weeks of production track record",
+    "Under two months of production track record",
     "Training data transparency limited (industry standard)"
   ],
 
@@ -578,8 +584,8 @@
     "pricing": {
       "input": "$1.50 per 1M tokens",
       "output": "$9.00 per 1M tokens",
-      "notes": "Cached input $0.15 per 1M. Pricier than past Flash tiers, reflecting 'frontier workhorse' positioning.",
-      "last_verified": "2026-06-10"
+      "notes": "Confirmed on the official Gemini API pricing page 2026-07-09. Cached input $0.15 per 1M; batch API 50% discount ($0.75/$4.50). Pricier than past Flash tiers, reflecting 'frontier workhorse' positioning.",
+      "last_verified": "2026-07-09"
     },
     "context_window": 1048576,
     "max_output": 65536,

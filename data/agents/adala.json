@@ -4,7 +4,7 @@
   "name": "Adala",
   "provider": "HumanSignal",
   "version": "0.x",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Autonomous data labeling agent framework for creating self-improving AI systems. Combines LLMs with ground truth learning to automate and improve data annotation tasks, enabling continuous learning loops.",
   "website": "https://github.com/HumanSignal/Adala",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Labeling accuracy testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "self_improvement": {
           "score": 80,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Learning capability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "skill_acquisition": {
           "score": 78,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Skill capability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "batch_processing": {
           "score": 76,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Batch processing testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "ground_truth_learning": {
           "score": 84,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Learning effectiveness testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "Variable (batch processing)",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Data security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "self_hosting": {
           "score": 85,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 88,
@@ -136,12 +136,12 @@
             {
               "source": "GitHub",
               "url": "https://github.com/HumanSignal/Adala",
-              "date": "2024-10-20",
-              "value": "Apache 2.0 license, 1k+ stars, transparent code"
+              "date": "2026-07-09",
+              "value": "Apache 2.0 license, 1,610 stars, transparent code; repo last pushed June 19, 2026"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_security": {
           "score": 68,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "LLM security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 65,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Access control assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 75,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment": {
           "score": 88,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "training_data_privacy": {
           "score": 72,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Training data privacy assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_data_sharing": {
           "score": 70,
@@ -244,7 +244,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "learning_transparency": {
           "score": 82,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Transparency assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 88,
@@ -286,12 +286,12 @@
             {
               "source": "GitHub",
               "url": "https://github.com/HumanSignal/Adala",
-              "date": "2024-10-20",
-              "value": "Apache 2.0, developed by HumanSignal (Label Studio team)"
+              "date": "2026-07-09",
+              "value": "Apache 2.0, developed by HumanSignal (Label Studio team); recent commit history (June 2026) is dominated by periodic maintenance and dependency updates rather than feature development"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "skill_visibility": {
           "score": 76,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Explainability assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
           "score": 72,
@@ -319,7 +319,7 @@
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Integration complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "label_studio_integration": {
           "score": 85,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Integration assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 72,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 88,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 70,
@@ -394,7 +394,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 70,
@@ -403,12 +403,12 @@
             {
               "source": "Maturity",
               "url": "https://github.com/HumanSignal/Adala",
-              "date": "2024-10-01",
-              "value": "Active development, production use requires careful setup"
+              "date": "2026-07-09",
+              "value": "Repo not archived and receives periodic maintenance commits (last push June 19, 2026), but activity clusters suggest automated dependency updates; 168 open issues and still 0.x - production use requires careful setup"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -475,7 +475,8 @@
     "Smaller community and ecosystem than general frameworks",
     "Limited production features and documentation",
     "Best suited for batch processing, not real-time inference",
-    "Requires expertise in data labeling workflows"
+    "Requires expertise in data labeling workflows",
+    "Development pace has slowed to periodic maintenance (mostly dependency updates as of mid-2026); still pre-1.0 with a large open-issue backlog"
   ],
   "metadata": {
     "license": "Apache 2.0",
@@ -495,12 +496,12 @@
       "Custom skills"
     ],
     "pricing_model": "Free open source",
-    "github_stars": "1289+",
+    "github_stars": "1610+",
     "first_release": "2024",
     "parent_project": "HumanSignal (Label Studio)",
     "use_case_focus": "Autonomous data labeling and annotation",
     "pricing": "Free (Apache-2.0 license)",
-    "updated": "November 6, 2025"
+    "updated": "June 19, 2026 (last repository push; verified 2026-07-09)"
   },
   "tags": [
     "data-labeling",

@@ -4,9 +4,9 @@
   "name": "SuperAGI",
   "provider": "Community",
   "version": "0.x",
-  "last_evaluated": "2025-11-09",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Open-source autonomous AI agent framework for running and managing multiple AI agents concurrently. Features GUI-based management, tool marketplace, and agent templates for building production-ready autonomous agents.",
+  "description": "UNMAINTAINED: the SuperAGI repository is dormant — the last commit was January 2025 (an IDOR security fix) and the last release was v0.0.14 in January 2024; it is not recommended for new deployments. Formerly an open-source autonomous AI agent framework for running and managing multiple AI agents concurrently, with GUI-based management, a tool marketplace, and agent templates.",
   "website": "https://superagi.com/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Autonomous task testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "multi_agent_orchestration": {
           "score": 78,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Multi-agent coordination testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_integration": {
           "score": 82,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Tool integration testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "planning_capability": {
           "score": 74,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Planning effectiveness testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "memory_management": {
           "score": 72,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Memory system evaluation",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "latency": {
           "value": "2-15s per iteration",
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Performance monitoring",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "self_hosting": {
           "score": 85,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Deployment security assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "authentication": {
           "score": 72,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Authentication assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 88,
@@ -150,12 +150,12 @@
             {
               "source": "GitHub",
               "url": "https://github.com/TransformerOptimus/SuperAGI",
-              "date": "2024-10-20",
-              "value": "MIT license, 15k+ stars, open source community"
+              "date": "2026-07-09",
+              "value": "MIT license, 17.6k stars, source remains fully available but development is dormant"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "api_security": {
           "score": 68,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "API security review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 77,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capabilities assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "local_deployment": {
           "score": 88,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "llm_data_sharing": {
           "score": 72,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "agent_logs": {
           "score": 76,
@@ -244,12 +244,12 @@
             }
           ],
           "methodology": "Data storage assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         }
       }
     },
     "trust_transparency": {
-      "overall_score": 80,
+      "overall_score": 74,
       "criteria": {
         "documentation_quality": {
           "score": 78,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "gui_interface": {
           "score": 85,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "UI/UX assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "open_source": {
           "score": 90,
@@ -286,12 +286,12 @@
             {
               "source": "GitHub",
               "url": "https://github.com/TransformerOptimus/SuperAGI",
-              "date": "2024-10-20",
-              "value": "MIT license, 15k+ stars, active community"
+              "date": "2026-07-09",
+              "value": "MIT license, 17.6k stars; code transparent but no active development since January 2025"
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "agent_traceability": {
           "score": 76,
@@ -305,26 +305,33 @@
             }
           ],
           "methodology": "Traceability features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "community_support": {
-          "score": 75,
-          "confidence": "medium",
+          "score": 45,
+          "confidence": "high",
           "evidence": [
             {
               "source": "Community",
               "url": "https://github.com/TransformerOptimus/SuperAGI/discussions",
               "date": "2024-10-15",
               "value": "Growing community, Discord support"
+            },
+            {
+              "source": "GitHub Activity",
+              "url": "https://github.com/TransformerOptimus/SuperAGI/issues/1431",
+              "date": "2026-07-09",
+              "value": "Maintainer activity has ceased (no commits since 2025-01-22); community itself flagged the project as inactive (issue #1431) and open issues go unanswered"
             }
           ],
           "methodology": "Community engagement analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09",
+          "notes": "Score reduced from 75: maintainers unresponsive and development dormant since January 2025"
         }
       }
     },
     "operational_excellence": {
-      "overall_score": 72,
+      "overall_score": 67,
       "criteria": {
         "ease_of_setup": {
           "score": 75,
@@ -338,7 +345,7 @@
             }
           ],
           "methodology": "Setup complexity assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 68,
@@ -352,7 +359,7 @@
             }
           ],
           "methodology": "Scalability testing",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 90,
@@ -366,7 +373,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "monitoring": {
           "score": 70,
@@ -380,7 +387,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "tool_marketplace": {
           "score": 82,
@@ -394,28 +401,35 @@
             }
           ],
           "methodology": "Tool ecosystem assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
-          "score": 67,
-          "confidence": "medium",
+          "score": 35,
+          "confidence": "high",
           "evidence": [
             {
               "source": "Maturity",
               "url": "https://github.com/TransformerOptimus/SuperAGI",
               "date": "2024-10-01",
               "value": "Early stage project, production use requires hardening"
+            },
+            {
+              "source": "GitHub Repository Status",
+              "url": "https://github.com/TransformerOptimus/SuperAGI/commits",
+              "date": "2026-07-09",
+              "value": "Repository dormant: last commit 2025-01-22 (IDOR security fix), last release v0.0.14 (2024-01-16); no maintenance for ~18 months, unresolved issue backlog"
             }
           ],
           "methodology": "Production readiness assessment",
-          "last_verified": "2025-11-09"
+          "last_verified": "2026-07-09",
+          "notes": "Score reduced from 67: project is effectively unmaintained (no commits since January 2025, no releases since January 2024), so unpatched dependencies and abandoned issue backlog make production use inadvisable"
         }
       }
     }
   },
   "strengths": [
     "GUI-based agent management for easy monitoring and control",
-    "Open source (MIT) with growing community (15k+ stars)",
+    "Open source (MIT) with historically large community (17k+ stars)",
     "Tool marketplace with 40+ pre-built tools and extensibility",
     "Multi-agent orchestration for concurrent autonomous tasks",
     "Self-hosted deployment for data privacy and control",
@@ -427,7 +441,8 @@
     "Can be expensive due to multiple LLM calls in autonomous loops",
     "Autonomous agent reliability can be unpredictable",
     "Requires technical knowledge for setup and customization",
-    "Limited documentation compared to more mature frameworks"
+    "Limited documentation compared to more mature frameworks",
+    "Unmaintained (2026-07): no commits since January 2025 and no releases since v0.0.14 (January 2024); security patches and dependency updates are not being shipped"
   ],
   "metadata": {
     "license": "MIT",
@@ -447,8 +462,9 @@
       "API integrations"
     ],
     "pricing_model": "Free open source",
-    "github_stars": "16600+",
+    "github_stars": "17600+",
     "first_release": "2023",
+    "status": "Dormant/unmaintained: last commit 2025-01-22, last release v0.0.14 (2024-01-16); repo not archived but inactive",
     "database": "PostgreSQL",
     "agent_features": [
       "Goal-oriented",
@@ -508,6 +524,7 @@
   "tags": [
     "autonomous",
     "self-hosted",
-    "open-source"
+    "open-source",
+    "unmaintained"
   ]
 }

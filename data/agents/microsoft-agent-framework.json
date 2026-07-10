@@ -3,8 +3,8 @@
   "type": "agent",
   "name": "Microsoft Agent Framework",
   "provider": "Microsoft",
-  "version": "1.0",
-  "last_evaluated": "2026-06-10",
+  "version": "1.x",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
   "description": "Open-source SDK and runtime for building AI agents and graph-based multi-agent workflows in .NET and Python. Merges AutoGen and Semantic Kernel into a single framework with checkpointing, middleware, and OpenTelemetry-based observability.",
   "website": "https://github.com/microsoft/agent-framework",
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Assessment of agent execution quality based on framework capabilities, AutoGen/Semantic Kernel lineage, and community-reported results since public preview",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 86,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "Review of tool abstraction design, type safety, MCP integration, and middleware-based tool call validation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 87,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Evaluation of graph-based workflow engine for complex task decomposition and deterministic orchestration",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 84,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Review of thread persistence, checkpointing, and memory provider abstractions",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 83,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Assessment of checkpoint/resume semantics and middleware-based error handling under failure injection scenarios",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 88,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Multi-agent orchestration pattern review covering group chat, handoff, and concurrent workflows",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Security architecture review of tool execution boundaries in self-hosted and Azure-hosted configurations",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 80,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Review of identity integration, RBAC support, and middleware-based authorization hooks",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 74,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Assessment of available guardrail integration points versus out-of-the-box injection protections",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 80,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Data architecture review of thread isolation and state storage control",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 95,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source code and license review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy architecture review of framework data handling",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 84,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance capability assessment for self-hosted and Azure-backed deployments",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 78,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis of model provider connectors and telemetry defaults",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 88,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment including local model support",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review including migration guides",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 90,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Observability review of built-in OTel spans for agent and workflow execution",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 80,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Assessment of workflow visualizability and reasoning trace availability",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 94,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment of license and development model",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 87,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Community engagement analysis of GitHub activity, discussions, and migration momentum",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Integration complexity assessment for .NET and Python developers",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 85,
@@ -338,7 +338,7 @@
             }
           ],
           "methodology": "Scalability assessment of runtime design and hosting options",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 87,
@@ -352,7 +352,7 @@
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 90,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Monitoring features assessment of built-in telemetry",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 85,
@@ -377,10 +377,16 @@
               "url": "https://github.com/microsoft/agent-framework/releases",
               "date": "2026-04-03",
               "value": "1.0 GA released 2026-04-03 with stable API surface; designated successor to Semantic Kernel and AutoGen, which are now in maintenance mode"
+            },
+            {
+              "source": "Microsoft Agent Framework at BUILD 2026",
+              "url": "https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/",
+              "date": "2026-07-09",
+              "value": "Active post-GA cadence: .NET 1.13.0 shipped July 2026 (expanded skills APIs, file editing tools, approval/caching options); Build 2026 announced Agent Harness, Hosted Agents in Foundry Agent Service (GA early July 2026), and CodeAct"
             }
           ],
           "methodology": "Production readiness assessment of GA status, API stability, and Microsoft support commitment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -452,6 +458,8 @@
       "Hosted code interpreter (Azure)"
     ],
     "first_release": "2025-10-01 (public preview), 1.0 GA 2026-04-03",
+    "current_version": ".NET 1.13.0 (July 2026); Python on post-GA 1.x cadence",
+    "github_stars": "11900+",
     "pricing": "Free (MIT license) - Costs only from model provider and hosting",
     "predecessors": "Official successor to AutoGen and Semantic Kernel (both maintenance mode)"
   },

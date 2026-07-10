@@ -4,9 +4,9 @@
   "name": "Google Jules",
   "provider": "Google",
   "version": "GA (2025-08-06)",
-  "last_evaluated": "2026-06-10",
+  "last_evaluated": "2026-07-09",
   "evaluated_by": "TrustVector Team",
-  "description": "Asynchronous autonomous coding agent from Google. Jules clones a repository into an isolated Google Cloud VM, plans and writes code in the background, runs tests, and opens pull requests for human review. Powered by Gemini 2.5/3 models.",
+  "description": "Asynchronous autonomous coding agent from Google. Jules clones a repository into an isolated Google Cloud VM, plans and writes code in the background, runs tests, and opens pull requests for human review. Powered by Gemini 2.5 Pro on the free tier and Gemini 3 Pro on paid Google AI Pro/Ultra tiers.",
   "website": "https://jules.google/",
   "trust_vector": {
     "performance_reliability": {
@@ -24,7 +24,7 @@
             }
           ],
           "methodology": "Assessment of reported task outcomes and hands-on PR quality review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "tool_use_reliability": {
           "score": 79,
@@ -38,7 +38,7 @@
             }
           ],
           "methodology": "VM tooling and environment setup reliability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "multi_step_planning": {
           "score": 84,
@@ -52,7 +52,7 @@
             }
           ],
           "methodology": "Plan generation and decomposition quality review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "memory_persistence": {
           "score": 76,
@@ -66,7 +66,7 @@
             }
           ],
           "methodology": "Cross-task context persistence evaluation",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "error_recovery": {
           "score": 75,
@@ -80,7 +80,7 @@
             }
           ],
           "methodology": "Failure handling and iteration behavior testing",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "agent_collaboration": {
           "score": 62,
@@ -94,7 +94,7 @@
             }
           ],
           "methodology": "Concurrency and orchestration capability assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -113,7 +113,7 @@
             }
           ],
           "methodology": "Execution isolation architecture review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "access_control": {
           "score": 78,
@@ -127,7 +127,7 @@
             }
           ],
           "methodology": "Repository permission model assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "prompt_injection_defense": {
           "score": 72,
@@ -141,7 +141,7 @@
             }
           ],
           "methodology": "Injection surface review focusing on autonomy boundaries and human gates",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "data_isolation": {
           "score": 80,
@@ -155,7 +155,7 @@
             }
           ],
           "methodology": "Tenant and task isolation review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_transparency": {
           "score": 35,
@@ -169,7 +169,7 @@
             }
           ],
           "methodology": "Source availability review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -188,7 +188,7 @@
             }
           ],
           "methodology": "Privacy terms and data handling review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "gdpr_compliance": {
           "score": 74,
@@ -202,7 +202,7 @@
             }
           ],
           "methodology": "Compliance posture assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "third_party_data_sharing": {
           "score": 65,
@@ -216,7 +216,7 @@
             }
           ],
           "methodology": "Data flow analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "local_deployment_option": {
           "score": 25,
@@ -230,7 +230,7 @@
             }
           ],
           "methodology": "Deployment options assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -249,7 +249,7 @@
             }
           ],
           "methodology": "Documentation completeness review",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "execution_traceability": {
           "score": 84,
@@ -263,7 +263,7 @@
             }
           ],
           "methodology": "Execution visibility assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "decision_explainability": {
           "score": 82,
@@ -277,7 +277,7 @@
             }
           ],
           "methodology": "Explainability features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "open_source_code": {
           "score": 30,
@@ -291,7 +291,7 @@
             }
           ],
           "methodology": "Open source assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "community_activity": {
           "score": 70,
@@ -305,7 +305,7 @@
             }
           ],
           "methodology": "Release cadence and community engagement analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     },
@@ -324,7 +324,7 @@
             }
           ],
           "methodology": "Onboarding and integration assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "scalability": {
           "score": 75,
@@ -338,21 +338,21 @@
             }
           ],
           "methodology": "Concurrency and quota analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "cost_predictability": {
           "score": 84,
           "confidence": "high",
           "evidence": [
             {
-              "source": "Jules Pricing",
-              "url": "https://jules.google/",
-              "date": "2026-06-01",
-              "value": "Flat subscription tiers: Free (15 tasks/day, 3 concurrent), Google AI Pro $19.99/mo (~100 tasks/day), AI Ultra (~300 tasks/day)"
+              "source": "Jules usage limits documentation",
+              "url": "https://jules.google/docs/usage-limits/",
+              "date": "2026-07-09",
+              "value": "Flat subscription tiers confirmed: Free (15 tasks/day, 3 concurrent, Gemini 2.5 Pro), Google AI Pro $19.99/mo (100 tasks/day, 15 concurrent, Gemini 3 Pro), AI Ultra (300 tasks/day, 60 concurrent); Ultra entry price cut to $99.99/mo (5x Pro) at Google I/O 2026, with a $200/mo top tier (20x)"
             }
           ],
           "methodology": "Pricing model analysis",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "monitoring_capabilities": {
           "score": 72,
@@ -366,7 +366,7 @@
             }
           ],
           "methodology": "Monitoring features assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         },
         "production_readiness": {
           "score": 80,
@@ -380,7 +380,7 @@
             }
           ],
           "methodology": "Product maturity assessment",
-          "last_verified": "2026-06-10"
+          "last_verified": "2026-07-09"
         }
       }
     }
@@ -423,13 +423,14 @@
     "Daily task limits even on paid tiers (~100/day Pro, ~300/day Ultra)",
     "Locked to Gemini models with no model choice",
     "GitHub-focused; weaker support for other source forges",
-    "Lacks enterprise compliance attestations and audit tooling of Google Cloud products"
+    "Lacks enterprise compliance attestations and audit tooling of Google Cloud products",
+    "Paid Jules tiers are currently restricted to individual Google Accounts (@gmail.com); no workspace/organizational upgrade path yet"
   ],
   "metadata": {
     "license": "Proprietary",
     "supported_models": [
-      "Gemini 2.5 Pro",
-      "Gemini 3 (per Google updates)"
+      "Gemini 2.5 Pro (free tier)",
+      "Gemini 3 Pro (Google AI Pro/Ultra tiers)"
     ],
     "programming_languages": [
       "Most major languages (Python, JavaScript/TypeScript, Java, Go, Rust, and more)"
@@ -443,7 +444,7 @@
       "Jules API and Jules Tools CLI"
     ],
     "first_release": "Public beta May 2025 (Google I/O); GA 2025-08-06",
-    "pricing": "Free: 15 tasks/day, 3 concurrent; Google AI Pro $19.99/mo (~100 tasks/day, 15 concurrent); Google AI Ultra (~300 tasks/day, 60 concurrent)"
+    "pricing": "Free: 15 tasks/day, 3 concurrent; Google AI Pro $19.99/mo (100 tasks/day, 15 concurrent); Google AI Ultra $99.99/mo entry or $200/mo top tier (300 tasks/day, 60 concurrent); paid tiers limited to individual @gmail accounts"
   },
   "tags": [
     "coding-agent",
