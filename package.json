@@ -40,7 +40,12 @@
     "lint": "next lint",
     "validate": "tsx scripts/validate-data.ts",
     "test": "vitest",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "generate:data-index": "tsx scripts/generate-data-index.ts",
+    "predev": "tsx scripts/generate-data-index.ts",
+    "prebuild": "tsx scripts/generate-data-index.ts",
+    "pretype-check": "tsx scripts/generate-data-index.ts",
+    "prevalidate": "tsx scripts/generate-data-index.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",

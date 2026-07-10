@@ -10,10 +10,13 @@ export function cn(...inputs: ClassValue[]) {
  */
 export function formatDate(dateString: string): string {
   const date = new Date(dateString);
+  // Date-only strings parse as UTC midnight; format in UTC so
+  // '2026-07-09' never renders as July 8 in western timezones.
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   });
 }
 
