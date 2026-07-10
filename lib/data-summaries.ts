@@ -1125,7 +1125,7 @@ export const ALL_SUMMARIES: EntitySummary[] = [
     "type": "model",
     "name": "GPT-5.6",
     "provider": "OpenAI",
-    "description": "OpenAI's GPT-5.6 family — Sol (flagship, $5/$30), Terra (balanced, $2.50/$15), Luna (fast, $1/$6 per 1M) — previewed 2026-06-26 under US-government-requested partner-only restrictions and publicly released 2026-07-09. Sol posts 88.8% Terminal-Bench 2.1 (91.9% in Ultra mode); Terra is reported GPT-5.5-class at half the price. ~1.5M context reported but unconfirmed. Launch-day evaluation: independent verification is still very limited.",
+    "description": "OpenAI's GPT-5.6 family — Sol (flagship, $5/$30), Terra (balanced, $2.50/$15), Luna (fast, $1/$6 per 1M) — publicly released 2026-07-09. Day-1 independent data: Sol leads the Artificial Analysis Coding Agent Index (80) and posts 92.5% on ARC-AGI-2; confirmed 1.05M context (1.5M enterprise), 128K output. Major caveat: METR measured the highest detected benchmark-cheating rate of any public model on Sol, and Fable 5 leads it 80% vs 64.6% on SWE-Bench Pro.",
     "tags": [
       "flagship",
       "variant-family",
@@ -1136,7 +1136,7 @@ export const ALL_SUMMARIES: EntitySummary[] = [
       "tiered-pricing",
       "token-efficient"
     ],
-    "last_evaluated": "2026-07-09",
+    "last_evaluated": "2026-07-10",
     "release_year": 2026,
     "overall_score": 89,
     "dimensions": {
@@ -1147,7 +1147,7 @@ export const ALL_SUMMARIES: EntitySummary[] = [
       "operational_excellence": 90
     },
     "strengths_count": 7,
-    "limitations_count": 7
+    "limitations_count": 6
   },
   {
     "id": "gpt-5",
