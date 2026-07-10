@@ -1,0 +1,441 @@
+{
+  "id": "mcp-server-canva",
+  "type": "mcp",
+  "name": "Canva MCP Server (AI Connector)",
+  "provider": "Canva",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Canva's official MCP server, branded the AI Connector, hosted at https://mcp.canva.com/mcp over streamable HTTP with per-user OAuth (CIMD supported; custom clients register redirect URIs via an allowlist). Around 32 tools cover design generation and editing, library search, asset upload, folders, comments, exports (PDF/PNG/JPG/PPTX/MP4), resize, and brand-template autofill. Feature-gated by plan: resize needs Pro+, autofill and brand kits need Enterprise. Closed source.",
+  "website": "https://www.canva.dev/docs/mcp/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 76,
+      "criteria": {
+        "design_generation_quality": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva MCP Tools Documentation",
+              "url": "https://www.canva.dev/docs/mcp/tools/",
+              "date": "2026-07-09",
+              "value": "generate-design creates designs from text specifications and transactional editing tools (start/perform/commit editing operations) apply structured changes; output fidelity depends on prompt specificity and template availability"
+            }
+          ],
+          "methodology": "Assessment of generated design fidelity against text specifications across formats and templates",
+          "last_verified": "2026-07-09"
+        },
+        "api_reliability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva MCP Documentation",
+              "url": "https://www.canva.dev/docs/mcp/",
+              "date": "2026-07-09",
+              "value": "Single hosted endpoint at https://mcp.canva.com/mcp on Canva's production platform; promoted for ChatGPT, Claude, Codex, and Gemini integrations"
+            }
+          ],
+          "methodology": "Endpoint stability analysis on Canva's production platform infrastructure",
+          "last_verified": "2026-07-09"
+        },
+        "rate_limit_handling": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Canva MCP Tools and Rate Limits Documentation",
+              "url": "https://www.canva.dev/docs/mcp/tools/",
+              "date": "2026-07-09",
+              "value": "Per-tool rate limits are published in requests per minute and are tight on generation and editing endpoints (commonly around 20 req/min), constraining sustained agentic workloads"
+            }
+          ],
+          "methodology": "Rate limiting behavior observation against published per-tool limits under sustained load",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva MCP Tools Documentation",
+              "url": "https://www.canva.dev/docs/mcp/tools/",
+              "date": "2026-07-09",
+              "value": "Transactional editing (start-editing-transaction, perform-editing-operations, commit-editing-transaction) isolates failed edits before commit; structured errors are returned for plan-gated tools and rate-limit hits"
+            }
+          ],
+          "methodology": "Error handling testing across plan-gated tools, invalid operations, and aborted editing transactions",
+          "last_verified": "2026-07-09"
+        },
+        "large_asset_handling": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva MCP Tools Documentation",
+              "url": "https://www.canva.dev/docs/mcp/tools/",
+              "date": "2026-07-09",
+              "value": "Asset upload is by URL (upload-asset-from-url) rather than inline payloads; multi-page design content retrieval (get-design-content, get-design-pages) can produce large tool results on complex designs"
+            }
+          ],
+          "methodology": "Testing content retrieval and export on large multi-page designs and heavy asset libraries",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 73,
+      "criteria": {
+        "authentication_security": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Canva MCP Documentation",
+              "url": "https://www.canva.dev/docs/mcp/",
+              "date": "2026-07-09",
+              "value": "Per-user OAuth is mandatory (every user needs their own Canva account); Client ID Metadata Documents (CIMD) are recommended so clients need no pre-registration or secrets, and custom clients must have redirect URIs approved onto an allowlist after review"
+            }
+          ],
+          "methodology": "Review of OAuth flow, CIMD support, redirect-URI allowlisting, and per-user authentication requirements",
+          "last_verified": "2026-07-09"
+        },
+        "scope_limitation": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva Help Center: AI Connector Setup",
+              "url": "https://www.canva.com/help/mcp-agent-setup/",
+              "date": "2026-07-09",
+              "value": "Access mirrors the authenticated user's existing Canva permissions and plan entitlements (resize Pro+, autofill/brand kits Enterprise); there is no finer-grained read-only or per-folder scoping below the account level"
+            }
+          ],
+          "methodology": "Permission boundary testing across designs, folders, and brand assets the authenticated user can access",
+          "last_verified": "2026-07-09"
+        },
+        "token_exposure_risk": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva MCP Documentation",
+              "url": "https://www.canva.dev/docs/mcp/",
+              "date": "2026-07-09",
+              "value": "OAuth tokens are managed by the MCP client rather than pasted as static API keys; CIMD eliminates client secrets entirely, and no local credential storage is required for supported clients"
+            }
+          ],
+          "methodology": "Token storage and exposure-surface analysis for the hosted OAuth transport",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_risk": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva Help Center: MCP Actions",
+              "url": "https://www.canva.com/help/mcp-canva-usage/",
+              "date": "2026-07-09",
+              "value": "Shared designs, team comments, and imported content are third-party-authored input; text read from shared designs or comment threads can act as an injection vector into the consuming agent"
+            }
+          ],
+          "methodology": "Threat modeling of untrusted design and comment content flowing into agent context via read tools",
+          "last_verified": "2026-07-09"
+        },
+        "unauthorized_action_risk": {
+          "score": 64,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva MCP Tools Documentation",
+              "url": "https://www.canva.dev/docs/mcp/tools/",
+              "date": "2026-07-09",
+              "value": "Write tools can create and edit designs, move items between folders, post comments, upload assets, and (on Enterprise) autofill brand templates — modifying shared brand assets without a server-side confirmation step beyond client-level approvals"
+            }
+          ],
+          "methodology": "Authorization boundary testing of write-capable tools against shared designs and brand assets",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 72,
+      "criteria": {
+        "design_data_exposure": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Canva Help Center: MCP Actions",
+              "url": "https://www.canva.com/help/mcp-canva-usage/",
+              "date": "2026-07-09",
+              "value": "Design content, text layers, comments, and brand assets returned by tools flow into the connected LLM provider's context; AI assistants can access what the user can view within existing permissions"
+            }
+          ],
+          "methodology": "Data flow analysis from Canva designs through MCP tool results to LLM providers",
+          "last_verified": "2026-07-09"
+        },
+        "sensitive_data_protection": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva MCP Usage Policy",
+              "url": "https://www.canva.dev/docs/mcp/usage-policy/",
+              "date": "2026-07-09",
+              "value": "No built-in redaction of sensitive content embedded in designs (e.g., internal decks, financial figures in presentations, unreleased brand material); protection relies on the user connecting only appropriate accounts"
+            }
+          ],
+          "methodology": "Assessment of filtering and redaction controls on extracted design content",
+          "last_verified": "2026-07-09"
+        },
+        "organization_data_control": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva AI Connector",
+              "url": "https://www.canva.com/ai-connector/",
+              "date": "2026-07-09",
+              "value": "Access is per-user and bounded by existing workspace permissions; Canva states enterprise-grade security and organizational policies apply, and Enterprise admins control brand kit and template access"
+            }
+          ],
+          "methodology": "Review of organizational access controls and admin policies applicable to MCP-connected accounts",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva Privacy Policy",
+              "url": "https://www.canva.com/policies/privacy-policy/",
+              "date": "2026-07-09",
+              "value": "Design data retrieved via MCP is shared with whichever LLM provider the user's client uses, per that provider's data policy rather than Canva's"
+            }
+          ],
+          "methodology": "Analysis of downstream data sharing once content leaves the Canva boundary",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 69,
+      "criteria": {
+        "documentation_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Canva MCP Documentation",
+              "url": "https://www.canva.dev/docs/mcp/",
+              "date": "2026-07-09",
+              "value": "Dedicated developer documentation covering setup, the full tool catalog with per-tool rate limits, plan gating, usage policy, and Canva AI connector integration, plus Help Center guides for end users"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-07-09"
+        },
+        "operation_visibility": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva Help Center: MCP Actions",
+              "url": "https://www.canva.com/help/mcp-canva-usage/",
+              "date": "2026-07-09",
+              "value": "Design edits appear in version history and comments are attributed to the authenticated user, but there is no dedicated MCP audit log distinguishing agent actions from manual ones"
+            }
+          ],
+          "methodology": "Logging and traceability assessment across client logs and Canva version history",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Canva MCP Documentation",
+              "url": "https://www.canva.dev/docs/mcp/",
+              "date": "2026-07-09",
+              "value": "Server implementation is closed source and maintained by Canva; behavior can only be verified through documentation and observed tool output"
+            }
+          ],
+          "methodology": "Source availability and independent verifiability review",
+          "last_verified": "2026-07-09"
+        },
+        "api_coverage_clarity": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Canva MCP Tools Documentation",
+              "url": "https://www.canva.dev/docs/mcp/tools/",
+              "date": "2026-07-09",
+              "value": "Roughly 32 tools are individually enumerated with rate limits and plan requirements: design generation/lookup, editing transactions, assets, folders, exports and formats, comments and replies, import from URL, and resize"
+            }
+          ],
+          "methodology": "Comparison of documented tool surface against observed server capabilities",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 79,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Canva Help Center: AI Connector Setup",
+              "url": "https://www.canva.com/help/mcp-agent-setup/",
+              "date": "2026-07-09",
+              "value": "Native connector flows exist for Claude and ChatGPT (add https://mcp.canva.com/mcp and complete OAuth); clients without remote MCP support use the mcp-remote shim, and custom clients must apply to register redirect URIs"
+            }
+          ],
+          "methodology": "Setup complexity assessment across first-party connectors, generic MCP clients, and custom clients",
+          "last_verified": "2026-07-09"
+        },
+        "api_performance": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva MCP Tools Documentation",
+              "url": "https://www.canva.dev/docs/mcp/tools/",
+              "date": "2026-07-09",
+              "value": "Design generation and export are heavyweight operations with latency scaling in design complexity and export format; tight per-minute limits cap parallel throughput"
+            }
+          ],
+          "methodology": "Latency observation across generation, editing, and export tool types",
+          "last_verified": "2026-07-09"
+        },
+        "reliability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva AI Connector",
+              "url": "https://www.canva.com/ai-connector/",
+              "date": "2026-07-09",
+              "value": "Generally available as a promoted first-party product on Canva's production platform with named integrations (ChatGPT, Claude, and others); tool surface is still expanding"
+            }
+          ],
+          "methodology": "Stability assessment of the hosted endpoint and change frequency of the tool surface",
+          "last_verified": "2026-07-09"
+        },
+        "feature_coverage": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Canva MCP Tools Documentation",
+              "url": "https://www.canva.dev/docs/mcp/tools/",
+              "date": "2026-07-09",
+              "value": "Covers the core design lifecycle end to end: generate, edit transactionally, organize in folders, comment, resize (Pro+), autofill brand templates (Enterprise), and export to PDF/PNG/JPG/PPTX/MP4"
+            }
+          ],
+          "methodology": "Feature completeness assessment against design-workflow needs across plan tiers",
+          "last_verified": "2026-07-09"
+        },
+        "community_adoption": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Canva AI Connector",
+              "url": "https://www.canva.com/ai-connector/",
+              "date": "2026-07-09",
+              "value": "Promoted first-party integrations with ChatGPT, Claude, Codex, and Gemini, and third-party aggregators (Composio, StackOne, Zapier) ship Canva MCP connectors"
+            }
+          ],
+          "methodology": "Adoption analysis across MCP client ecosystems and integration platforms",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Per-user OAuth with CIMD support and a reviewed redirect-URI allowlist for custom clients",
+    "Transactional editing model isolates and validates changes before commit",
+    "Full design lifecycle coverage: generate, edit, organize, comment, resize, autofill, export",
+    "Per-tool rate limits and plan requirements are transparently published",
+    "Enterprise brand controls (brand kits, brand templates) integrate with existing admin governance",
+    "Native connector flows in major assistants (Claude, ChatGPT) with mcp-remote fallback elsewhere"
+  ],
+  "limitations": [
+    "Closed source; server behavior cannot be independently audited",
+    "Write access extends to shared designs and (on Enterprise) brand assets with no server-side confirmation",
+    "Shared designs and comments are third-party-authored input and a prompt injection vector",
+    "Design content, including sensitive text in internal decks, is sent to the LLM provider",
+    "Key capabilities are plan-gated: resize requires Pro+, autofill and brand kits require Enterprise",
+    "Tight per-tool rate limits (around 20 req/min on generation/editing) constrain agentic throughput",
+    "No dedicated MCP audit log separating agent actions from manual edits"
+  ],
+  "metadata": {
+    "license": "Proprietary (closed source)",
+    "maintained_by": "Canva",
+    "status": "Generally available (AI Connector); custom-client redirect URI registration is application-based",
+    "remote_endpoint": "https://mcp.canva.com/mcp",
+    "authentication": "OAuth per user (CIMD recommended; no client secrets); custom clients register redirect URIs via an allowlist application",
+    "transport_types": [
+      "streamable-http (hosted)"
+    ],
+    "installation_methods": [
+      "Remote MCP endpoint",
+      "Native Claude/ChatGPT connector",
+      "mcp-remote shim for stdio-only clients"
+    ],
+    "pricing": "Included with Canva plans; feature gating by tier — resize requires Pro or above, brand-template autofill and brand kits require Enterprise (verified 2026-07-09)",
+    "tool_count": "~32 documented tools with published per-tool rate limits",
+    "mcp_version": "1.0"
+  },
+  "use_case_ratings": {
+    "content-creation": {
+      "overall": 88,
+      "notes": "Primary use case: generating, editing, and exporting marketing and presentation designs from natural language"
+    },
+    "creative-writing": {
+      "overall": 68,
+      "notes": "Useful for placing and revising copy within designs, though not a writing surface itself"
+    },
+    "customer-support": {
+      "overall": 55,
+      "notes": "Marginal fit; limited to producing visual collateral for support content"
+    },
+    "education": {
+      "overall": 78,
+      "notes": "Strong for producing teaching materials, worksheets, and presentation decks conversationally"
+    },
+    "research-assistant": {
+      "overall": 58,
+      "notes": "Limited to searching the user's own design library and extracting design content"
+    }
+  },
+  "best_for": [
+    "Marketing teams generating on-brand collateral through AI assistants with Enterprise brand templates",
+    "Individual creators producing and exporting designs (PDF/PNG/PPTX/MP4) from chat workflows",
+    "Teams automating repetitive design production via brand-template autofill (Enterprise)",
+    "Assistants that need to search, organize, and comment on existing design libraries"
+  ],
+  "not_recommended_for": [
+    "High-volume automated design pipelines (tight per-tool rate limits)",
+    "Organizations requiring auditable separation of agent versus human edits",
+    "Free-plan workflows needing resize or brand-kit capabilities"
+  ],
+  "related_entities": [
+    "mcp-server-figma",
+    "mcp-server-notion",
+    "mcp-server-slack",
+    "mcp-server-shadcn"
+  ],
+  "tags": [
+    "design",
+    "content-creation",
+    "canva",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

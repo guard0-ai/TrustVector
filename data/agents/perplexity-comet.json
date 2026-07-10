@@ -1,0 +1,472 @@
+{
+  "id": "perplexity-comet",
+  "type": "agent",
+  "name": "Comet",
+  "provider": "Perplexity AI",
+  "version": "1.x",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Perplexity's Chromium-based agentic browser. Comet Assistant runs in a sidebar with full context of open tabs and can fill forms, book travel, buy products, and manage email and calendars on the user's behalf. Launched on desktop 2025-07-09, Android 2025-11-20, and iOS 2026-03-18, with Comet Enterprise arriving March 2026. Comet is the canonical browser-agent risk surface: the 'CometJacking' prompt-injection class (2025) was demonstrated against it.",
+  "website": "https://www.perplexity.ai/comet",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 73,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Wikipedia - Comet (browser)",
+              "url": "https://en.wikipedia.org/wiki/Comet_(browser)",
+              "date": "2026-06-15",
+              "value": "Assistant handles summarization, email drafting, and product purchases directly from the browsing context; agentic completion degrades on complex multi-page checkout and booking flows"
+            }
+          ],
+          "methodology": "Assessment of assistant task completion across summarization, form-filling, booking, and purchase flows from vendor documentation and independent reviews",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Seraphic Security - Perplexity Comet Browser Key Features",
+              "url": "https://seraphicsecurity.com/learn/ai-browser/perplexity-comet-browser-key-features-reviews-and-security-tips/",
+              "date": "2026-01-20",
+              "value": "Comet Assistant reliably interacts with web content, tabs, email, and calendars as its native tool surface inside the Chromium engine"
+            }
+          ],
+          "methodology": "Review of the assistant's reliability operating browser-native tools: tab context, DOM interaction, email and calendar connectors",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Perplexity Blog - Comet Enterprise is here",
+              "url": "https://www.perplexity.ai/hub/blog/comet-enterprise-is-here",
+              "date": "2026-03-17",
+              "value": "Comet Assistant performs autonomous multi-step tasks like booking flights, managing email, and filling forms for enterprise users"
+            }
+          ],
+          "methodology": "Evaluation of multi-step agentic task orchestration across pages and services",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Comet Data Privacy & Security FAQs",
+              "url": "https://www.perplexity.ai/comet/resources/articles/comet-data-privacy-security-faq-s",
+              "date": "2026-04-01",
+              "value": "Browsing data, history, and assistant memory are stored on-device by default and persist across sessions; personal context is sent to Perplexity only when a personal search requires it"
+            }
+          ],
+          "methodology": "Review of local memory, history-aware assistance, and cross-session personalization",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 68,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Wikipedia - Comet (browser)",
+              "url": "https://en.wikipedia.org/wiki/Comet_(browser)",
+              "date": "2026-06-15",
+              "value": "Assistant retries and asks the user for guidance when page automation fails, but independent reviews report stalls and abandoned tasks on dynamic or login-gated sites"
+            }
+          ],
+          "methodology": "Assessment of failure handling on dynamic sites from independent reviews; no vendor-published recovery metrics",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 62,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Perplexity Changelog - Comet iOS Launch and Computer Updates",
+              "url": "https://www.perplexity.ai/changelog/what-we-shipped--march-27-2026",
+              "date": "2026-03-27",
+              "value": "Single sidebar assistant per browsing context; background task execution exists but there is no user-facing multi-agent composition or delegation"
+            }
+          ],
+          "methodology": "Review of concurrent/background task support versus true multi-agent orchestration",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 49,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Help Net Security - Comet browser exposed users to system-level attacks",
+              "url": "https://www.helpnetsecurity.com/2025/11/20/perplexity-comet-browser-security-mcp-api/",
+              "date": "2025-11-20",
+              "value": "SquareX found Comet's embedded MCP API could allow perplexity.ai-privileged code to execute commands on the user's device; the agent itself operates inside the user's fully authenticated browser session rather than an isolated sandbox"
+            }
+          ],
+          "methodology": "Security architecture review: the assistant acts with the privileges of the logged-in browser session; Chromium process sandboxing does not contain agent actions",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Perplexity Blog - Comet Enterprise is here",
+              "url": "https://www.perplexity.ai/hub/blog/comet-enterprise-is-here",
+              "date": "2026-03-17",
+              "value": "Comet Enterprise (March 2026) adds central admin dashboard, 500+ Chromium policies, MDM deployment, and CrowdStrike Falcon integration; consumer Comet has per-connector permissions but the assistant otherwise inherits full session access"
+            }
+          ],
+          "methodology": "Review of enterprise admin controls against the consumer default of full-session agent privileges",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "LayerX - CometJacking: How One Click Can Turn Perplexity's Comet AI Browser Against You",
+              "url": "https://layerxsecurity.com/blog/cometjacking-how-one-click-can-turn-perplexitys-comet-ai-browser-against-you/",
+              "date": "2025-10-02",
+              "value": "CometJacking: malicious instructions in a URL's collection parameter steer the assistant to read connected Gmail/Calendar data and exfiltrate it base64-encoded; Perplexity initially rejected the August 2025 reports as having no security impact"
+            },
+            {
+              "source": "Brave - Agentic Browser Security: Indirect Prompt Injection in Perplexity Comet",
+              "url": "https://brave.com/blog/comet-prompt-injection/",
+              "date": "2025-08-20",
+              "value": "Brave showed Comet fed webpage content to its LLM without distinguishing user instructions from untrusted page content, allowing indirect prompt injection (e.g., hidden Reddit comment instructions) to drive cross-site actions on the user's accounts"
+            }
+          ],
+          "methodology": "Analysis of published prompt-injection research (Brave August 2025, LayerX CometJacking October 2025) and vendor response; patches shipped but the agentic-browser injection class remains structurally unsolved",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Comet Browser Help Center - Browsing Privacy & Safety",
+              "url": "https://comet-help.perplexity.ai/en/articles/12867356-browsing-privacy-safety",
+              "date": "2026-04-01",
+              "value": "Browsing data stored on-device by default; personal data is sent to Perplexity servers only when the user initiates an assistant task that requires page or account context"
+            }
+          ],
+          "methodology": "Review of local-first storage claims against the reality that assistant tasks ship page content and connected-account data to Perplexity's cloud",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Wikipedia - Comet (browser)",
+              "url": "https://en.wikipedia.org/wiki/Comet_(browser)",
+              "date": "2026-06-15",
+              "value": "Built on open-source Chromium/Blink, but the Comet assistant layer, agent harness, and Perplexity backend are proprietary and unauditable"
+            }
+          ],
+          "methodology": "Source availability assessment: open engine, closed agent stack",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 55,
+      "criteria": {
+        "data_retention": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Comet Data Privacy & Security FAQs",
+              "url": "https://www.perplexity.ai/comet/resources/articles/comet-data-privacy-security-faq-s",
+              "date": "2026-04-01",
+              "value": "Local-first storage with user-controllable history; assistant queries and page context sent to Perplexity are governed by its consumer privacy policy, with opt-out of training retention"
+            }
+          ],
+          "methodology": "Review of on-device defaults versus cloud retention of assistant interactions",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 62,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Perplexity Blog - Comet Enterprise is here",
+              "url": "https://www.perplexity.ai/hub/blog/comet-enterprise-is-here",
+              "date": "2026-03-17",
+              "value": "Enterprise tier ships with admin governance, SSO, and enterprise data-handling terms building on Perplexity Enterprise's SOC 2 posture; consumer tier relies on standard privacy policy with fewer guarantees"
+            }
+          ],
+          "methodology": "Compliance documentation assessment across consumer and enterprise tiers",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Seraphic Security - Perplexity Comet Browser Key Features",
+              "url": "https://seraphicsecurity.com/learn/ai-browser/perplexity-comet-browser-key-features-reviews-and-security-tips/",
+              "date": "2026-01-20",
+              "value": "Assistant tasks route page content and connected Gmail/Calendar data through Perplexity, which itself orchestrates multiple frontier model backends, widening the data-processing surface"
+            }
+          ],
+          "methodology": "Data flow analysis of connected-account context routed through Perplexity's multi-model backend",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 40,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Comet Browser Help Center - Browsing Privacy & Safety",
+              "url": "https://comet-help.perplexity.ai/en/articles/12867356-browsing-privacy-safety",
+              "date": "2026-04-01",
+              "value": "Browser and its data live locally, but every assistant/agentic feature requires Perplexity cloud inference; there is no offline or self-hosted assistant mode"
+            }
+          ],
+          "methodology": "Deployment options assessment: local client, cloud-only agent",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 62,
+      "criteria": {
+        "documentation_quality": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Comet Browser Help Center",
+              "url": "https://comet-help.perplexity.ai/",
+              "date": "2026-04-01",
+              "value": "Help center, privacy/security FAQs, and changelog cover features and data handling; threat-model and injection-hardening documentation is thin relative to the attack surface"
+            }
+          ],
+          "methodology": "Documentation completeness review against the product's risk surface",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Perplexity Changelog - Comet iOS Launch and Computer Updates",
+              "url": "https://www.perplexity.ai/changelog/what-we-shipped--march-27-2026",
+              "date": "2026-03-27",
+              "value": "Assistant narrates steps in the sidebar and shows page actions as they happen; there is no exportable audit log of agent actions for consumers"
+            }
+          ],
+          "methodology": "Review of visible step narration versus durable audit trails",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 62,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Seraphic Security - Perplexity Comet Browser Key Features",
+              "url": "https://seraphicsecurity.com/learn/ai-browser/perplexity-comet-browser-key-features-reviews-and-security-tips/",
+              "date": "2026-01-20",
+              "value": "Assistant explains intended actions conversationally with citations for research answers, but model routing and action-selection internals are opaque"
+            }
+          ],
+          "methodology": "Assessment of action explanation and citation quality",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 35,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Wikipedia - Comet (browser)",
+              "url": "https://en.wikipedia.org/wiki/Comet_(browser)",
+              "date": "2026-06-15",
+              "value": "Chromium base is open source; the Comet assistant, agent harness, and connectors are closed"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "TechTimes - Perplexity Raises $200 Million for Comet",
+              "url": "https://www.techtimes.com/articles/318028/20260608/perplexity-raises-200-million-comet-ai-browser-agent-economy-front-door.htm",
+              "date": "2026-06-08",
+              "value": "~3 million monthly active users by Q1 2026, top-3 iOS App Store ranking at the March 2026 launch, and rapid release cadence across four platforms"
+            }
+          ],
+          "methodology": "Adoption, release cadence, and public engagement analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 75,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Wikipedia - Comet (browser)",
+              "url": "https://en.wikipedia.org/wiki/Comet_(browser)",
+              "date": "2026-06-15",
+              "value": "Standard Chromium browser: imports bookmarks, passwords, and extensions; free download since October 2025 on Windows, macOS, Android (2025-11-20), and iOS (2026-03-18)"
+            }
+          ],
+          "methodology": "Onboarding friction assessment for consumers switching browsers",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Perplexity Blog - Comet Enterprise is here",
+              "url": "https://www.perplexity.ai/hub/blog/comet-enterprise-is-here",
+              "date": "2026-03-17",
+              "value": "Silent MDM installers deploy Comet across thousands of managed macOS/Windows devices; assistant throughput is bounded by per-user Perplexity plan limits"
+            }
+          ],
+          "methodology": "Scalability assessment of fleet deployment and per-user agent limits",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "TechTimes - Perplexity Raises $200 Million for Comet",
+              "url": "https://www.techtimes.com/articles/318028/20260608/perplexity-raises-200-million-comet-ai-browser-agent-economy-front-door.htm",
+              "date": "2026-06-08",
+              "value": "Comet free worldwide since 2025-10-02; Comet Plus $5/mo (80% publisher revenue share), Perplexity Pro $20/mo and Max $200/mo unlock heavier assistant usage — flat tiers with no usage metering"
+            }
+          ],
+          "methodology": "Pricing model analysis; flat subscription tiers are highly predictable",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Perplexity Blog - Comet Enterprise is here",
+              "url": "https://www.perplexity.ai/hub/blog/comet-enterprise-is-here",
+              "date": "2026-03-17",
+              "value": "Enterprise dashboard provides rollout and policy management plus CrowdStrike Falcon telemetry; consumer edition has no agent-action monitoring or audit tooling"
+            }
+          ],
+          "methodology": "Monitoring and administration features assessment across tiers",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechTimes - Perplexity Raises $200 Million for Comet",
+              "url": "https://www.techtimes.com/articles/318028/20260608/perplexity-raises-200-million-comet-ai-browser-agent-economy-front-door.htm",
+              "date": "2026-06-08",
+              "value": "Perplexity raised ~$200M at a ~$20B valuation (finalized June 2026) largely to scale Comet; all-platform availability and enterprise tier signal maturity, while the 2025 injection research record signals an evolving security posture"
+            }
+          ],
+          "methodology": "Maturity assessment weighing funding, platform coverage, and enterprise adoption against a young and actively exploited agent security surface",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "research-assistant": {
+      "overall": 84,
+      "notes": "Strongest use case: Perplexity search plus tab-aware summarization, comparison, and cited answers directly in the browsing flow"
+    },
+    "content-creation": {
+      "overall": 68,
+      "notes": "Drafts emails and posts from page context well; long-form authoring is better served by dedicated tools"
+    },
+    "data-analysis": {
+      "overall": 60,
+      "notes": "Can extract and compare data across open tabs, but has no code execution or spreadsheet-grade analysis environment"
+    },
+    "education": {
+      "overall": 72,
+      "notes": "Cited, in-page explanations make it a capable study companion; free tier keeps it accessible"
+    }
+  },
+  "best_for": [
+    "Individuals who want research, summarization, and drafting embedded in everyday browsing",
+    "Users delegating low-stakes web chores: form filling, comparison shopping, tab triage, email drafting",
+    "Perplexity Pro/Max subscribers who want their subscription to extend into an agentic browser",
+    "Enterprises piloting agentic browsing under MDM policies and CrowdStrike-integrated controls (March 2026 tier)"
+  ],
+  "not_recommended_for": [
+    "Autonomous operation while logged into banking, healthcare, or other high-value accounts",
+    "Users who click untrusted links: CometJacking-class URL payloads have weaponized the assistant against connected accounts",
+    "Organizations that cannot tolerate page content and connected-account data flowing to Perplexity's cloud",
+    "Workflows requiring durable audit logs of every agent action"
+  ],
+  "strengths": [
+    "First-mover agentic browser with full platform coverage: desktop 2025-07-09, Android 2025-11-20, iOS 2026-03-18",
+    "Sidebar assistant with whole-tab context handles forms, bookings, purchases, email, and calendar tasks in place",
+    "Free since October 2025, with flat $5/$20/$200 tiers — no usage metering",
+    "Local-first data storage; personal context leaves the device only when an assistant task needs it",
+    "Comet Enterprise (March 2026): MDM deployment, 500+ Chromium policies, CrowdStrike Falcon integration",
+    "Well-funded roadmap: ~$200M raise at ~$20B valuation (June 2026) explicitly aimed at scaling Comet"
+  ],
+  "limitations": [
+    "Canonical prompt-injection target: Brave's indirect-injection findings (Aug 2025) and LayerX's CometJacking (Oct 2025) showed one click could exfiltrate connected Gmail/Calendar data",
+    "Perplexity initially dismissed the CometJacking reports as having no security impact before hardening",
+    "Assistant acts with the privileges of the user's fully authenticated browser session — no privilege separation",
+    "SquareX research (Nov 2025) showed the embedded MCP API could enable device-level command execution",
+    "Closed-source assistant layer prevents independent audit of injection defenses",
+    "All agentic features require Perplexity cloud inference; no offline or self-hosted mode",
+    "No consumer-facing audit trail of actions the agent has taken"
+  ],
+  "metadata": {
+    "license": "Proprietary (Chromium base is open source)",
+    "supported_models": [
+      "Perplexity Sonar",
+      "Frontier models via Perplexity backend (GPT, Claude, Gemini routing)"
+    ],
+    "architecture": "Chromium/Blink browser with cloud-backed sidebar agent (Comet Assistant) holding tab context and account connectors",
+    "deployment_type": "Local browser (Windows, macOS, Android, iOS) with cloud agent inference; enterprise MDM deployment",
+    "tool_support": [
+      "Tab and page context",
+      "Form filling and web actions",
+      "Email and calendar connectors (Gmail/Google Calendar)",
+      "Shopping and booking flows",
+      "Background tasks"
+    ],
+    "first_release": "2025-07-09 (Windows/macOS, Max subscribers); free 2025-10-02; Android 2025-11-20; iOS 2026-03-18; Enterprise 2026-03-17",
+    "pricing": "Free; Comet Plus $5/mo; Perplexity Pro $20/mo; Max $200/mo; Enterprise per-seat",
+    "company": "Perplexity AI (~$200M raised at ~$20B valuation, finalized June 2026; ~3M Comet MAU by Q1 2026)"
+  },
+  "related_entities": [
+    "manus",
+    "glean-ai",
+    "mcp-server-perplexity",
+    "mcp-server-brave-search"
+  ],
+  "tags": [
+    "agentic-browser",
+    "consumer",
+    "prompt-injection-risk",
+    "proprietary"
+  ]
+}

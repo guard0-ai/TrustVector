@@ -1,0 +1,461 @@
+{
+  "id": "mcp-server-box",
+  "type": "mcp",
+  "name": "MCP Box Server",
+  "provider": "Box (Official)",
+  "version": "hosted remote",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Box's official MCP server, a hosted remote at https://mcp.box.com using OAuth 2.0 with admin-managed enablement (Admin Console > Integrations) - the only supported path, as the self-hosted community Python server is deprecated. Tools cover user info, file/folder operations (read, list, search), and Box AI (Q&A across files, metadata extraction) over enterprise content. Mostly read plus AI extraction; permission-scoped to the authorizing user.",
+  "website": "https://developer.box.com/guides/box-mcp/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 80,
+      "criteria": {
+        "file_operation_reliability": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Box Developer Docs - Box MCP server",
+              "url": "https://developer.box.com/guides/box-mcp/",
+              "date": "2026-07-09",
+              "value": "File and folder read, list, and content operations run on Box's mature content API platform"
+            }
+          ],
+          "methodology": "Operation success rate assessment against the Box Platform API",
+          "last_verified": "2026-07-09"
+        },
+        "search_accuracy": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Box Search API",
+              "url": "https://developer.box.com/reference/get-search/",
+              "date": "2026-07-09",
+              "value": "Search tools build on Box's full-text and metadata search across the user's accessible content"
+            }
+          ],
+          "methodology": "Search quality testing",
+          "last_verified": "2026-07-09"
+        },
+        "box_ai_extraction_quality": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub - box/mcp-server-box-remote",
+              "url": "https://github.com/box/mcp-server-box-remote",
+              "date": "2026-07-09",
+              "value": "Box AI tools provide Q&A across files and structured metadata extraction; quality depends on document type and the underlying Box AI models"
+            }
+          ],
+          "methodology": "AI tool output quality review",
+          "last_verified": "2026-07-09"
+        },
+        "rate_limit_handling": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Box API Rate Limits",
+              "url": "https://developer.box.com/guides/api-calls/permissions-and-errors/rate-limits/",
+              "date": "2026-07-09",
+              "value": "Subject to Box per-user API rate limits; Box AI operations have separate capacity constraints"
+            }
+          ],
+          "methodology": "Rate limiting behavior analysis",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Box Developer Docs - Box MCP server",
+              "url": "https://developer.box.com/guides/box-mcp/",
+              "date": "2026-07-09",
+              "value": "Standard Box API errors (permission, not-found, rate limit) are surfaced to the MCP client"
+            }
+          ],
+          "methodology": "Error handling testing",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 75,
+      "criteria": {
+        "authentication_security": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub - box/mcp-server-box-remote",
+              "url": "https://github.com/box/mcp-server-box-remote",
+              "date": "2026-07-09",
+              "value": "OAuth 2.0 with Bearer tokens; client credentials are issued through Box's Admin Console or Developer Console and each user authorizes access individually"
+            }
+          ],
+          "methodology": "Authentication mechanism review",
+          "last_verified": "2026-07-09"
+        },
+        "admin_access_control": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Box Support - Managing Box MCP Servers",
+              "url": "https://support.box.com/hc/en-us/articles/43847256139923-Managing-Box-MCP-Servers",
+              "date": "2026-07-09",
+              "value": "MCP access is admin-managed: enterprise admins enable/configure the MCP server from Admin Console > Integrations, create Integration Credentials, and configure scopes such as Content Actions"
+            }
+          ],
+          "methodology": "Admin governance and enablement review",
+          "last_verified": "2026-07-09"
+        },
+        "content_prompt_injection_resistance": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Box Developer Docs - Box MCP server",
+              "url": "https://developer.box.com/guides/box-mcp/",
+              "date": "2026-07-09",
+              "value": "The server's core function is feeding enterprise document content and Box AI answers over that content into agent contexts; any file a user can access (including externally shared or collaborator-uploaded documents) is an untrusted-content channel that can carry injected instructions"
+            }
+          ],
+          "methodology": "Analysis of document content as a prompt-injection vector into multi-tool agent contexts",
+          "last_verified": "2026-07-09"
+        },
+        "data_modification_risk": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub - box/mcp-server-box-remote",
+              "url": "https://github.com/box/mcp-server-box-remote",
+              "date": "2026-07-09",
+              "value": "Documented tool categories are user info, file/folder read-list-search operations, and Box AI Q&A/extraction - a mostly read-plus-AI surface with limited destructive write capability"
+            }
+          ],
+          "methodology": "Write-path and blast-radius assessment of the documented tool set",
+          "last_verified": "2026-07-09"
+        },
+        "audit_logging": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Box Events API",
+              "url": "https://developer.box.com/guides/events/",
+              "date": "2026-07-09",
+              "value": "Content access via MCP is attributable to the authorizing user in Box enterprise event streams and admin reports"
+            }
+          ],
+          "methodology": "Audit logging review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 68,
+      "criteria": {
+        "file_content_exposure": {
+          "score": 60,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP Data Flow",
+              "url": "https://modelcontextprotocol.io/docs/architecture",
+              "date": "2026-07-09",
+              "value": "Enterprise document content - contracts, financials, HR files - retrieved or summarized via MCP tools enters the connected LLM provider's context"
+            }
+          ],
+          "methodology": "Data flow analysis of content exposure to the model context",
+          "last_verified": "2026-07-09"
+        },
+        "metadata_extraction_privacy": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub - box/mcp-server-box-remote",
+              "url": "https://github.com/box/mcp-server-box-remote",
+              "date": "2026-07-09",
+              "value": "Box AI metadata extraction pulls structured fields (names, dates, amounts) out of documents at scale, concentrating sensitive values into agent-readable form"
+            }
+          ],
+          "methodology": "Assessment of structured extraction over sensitive documents",
+          "last_verified": "2026-07-09"
+        },
+        "enterprise_data_governance": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Box Support - Managing Box MCP Servers",
+              "url": "https://support.box.com/hc/en-us/articles/43847256139923-Managing-Box-MCP-Servers",
+              "date": "2026-07-09",
+              "value": "Access is permission-scoped to the authorizing user and governed by admin-configured scopes; Box's existing enterprise governance (permissions, classifications) applies to what MCP can reach"
+            }
+          ],
+          "methodology": "Governance control review",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 66,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "LLM Provider Policies",
+              "url": "https://modelcontextprotocol.io/docs",
+              "date": "2026-07-09",
+              "value": "Content retrieved via MCP is processed by the connected LLM provider (Claude, Copilot Studio, ChatGPT, Le Chat) under that provider's privacy policy"
+            }
+          ],
+          "methodology": "Data sharing analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 78,
+      "criteria": {
+        "documentation_quality": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Box Developer Docs - Box MCP server",
+              "url": "https://developer.box.com/guides/box-mcp/",
+              "date": "2026-07-09",
+              "value": "First-party developer guide plus a public GitHub README covering OAuth setup, Admin Console configuration, and per-platform connection examples (Claude, Copilot Studio, Cursor, GitHub Copilot)"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub - box/mcp-server-box-remote",
+              "url": "https://github.com/box/mcp-server-box-remote",
+              "date": "2026-07-09",
+              "value": "The hosted service itself is closed source; the MIT-licensed repo documents it, and the open-source self-hosted alternative (box-community/mcp-server-box) is deprecated for new work"
+            }
+          ],
+          "methodology": "Source availability review",
+          "last_verified": "2026-07-09"
+        },
+        "operation_visibility": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Box Events API",
+              "url": "https://developer.box.com/guides/events/",
+              "date": "2026-07-09",
+              "value": "Admins can observe MCP-driven content access through Box's enterprise event and reporting surfaces"
+            }
+          ],
+          "methodology": "Logging and traceability assessment",
+          "last_verified": "2026-07-09"
+        },
+        "api_coverage_clarity": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "GitHub - box/mcp-server-box-remote",
+              "url": "https://github.com/box/mcp-server-box-remote",
+              "date": "2026-07-09",
+              "value": "Tools are enumerated by functional category (user info, file/folder operations, Box AI), making the capability surface explicit"
+            }
+          ],
+          "methodology": "API documentation review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 77,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Box Support - Managing Box MCP Servers",
+              "url": "https://support.box.com/hc/en-us/articles/43847256139923-Managing-Box-MCP-Servers",
+              "date": "2026-07-09",
+              "value": "End users cannot simply connect: an enterprise admin must first enable MCP in Admin Console > Integrations and issue Integration Credentials (client ID/secret) before OAuth connection to https://mcp.box.com"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-07-09"
+        },
+        "api_performance": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Box Developer Platform",
+              "url": "https://developer.box.com/",
+              "date": "2026-07-09",
+              "value": "File operations track Box API latency; Box AI Q&A and extraction calls add model-inference latency"
+            }
+          ],
+          "methodology": "Performance assessment",
+          "last_verified": "2026-07-09"
+        },
+        "reliability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Box Status",
+              "url": "https://status.box.com/",
+              "date": "2026-07-09",
+              "value": "Hosted on Box's production infrastructure with public status transparency and enterprise uptime track record"
+            }
+          ],
+          "methodology": "Reliability analysis",
+          "last_verified": "2026-07-09"
+        },
+        "feature_coverage": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "GitHub - box/mcp-server-box-remote",
+              "url": "https://github.com/box/mcp-server-box-remote",
+              "date": "2026-07-09",
+              "value": "Covers content read/list/search and Box AI; deliberately narrower than the full Box API (limited write, no admin operations)"
+            }
+          ],
+          "methodology": "Feature coverage assessment",
+          "last_verified": "2026-07-09"
+        },
+        "platform_support": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Box Developer Docs - Box MCP server",
+              "url": "https://developer.box.com/guides/box-mcp/",
+              "date": "2026-07-09",
+              "value": "Documented integrations across Copilot Studio, Claude/Claude Code, Mistral Le Chat, ChatGPT, Cursor, GitHub Copilot, and other MCP clients; also listed as a Microsoft connector and on AWS Marketplace"
+            }
+          ],
+          "methodology": "Client platform support review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Official Box-hosted remote at https://mcp.box.com with OAuth 2.0 - the single supported path, replacing the deprecated self-hosted Python server",
+    "Admin-managed enablement: enterprise admins control activation, credentials, and scopes from Admin Console > Integrations",
+    "Mostly read-plus-AI tool surface (user info, file/folder read/list/search, Box AI Q&A and metadata extraction) - limited destructive blast radius",
+    "Access is permission-scoped to the authorizing user under Box's existing enterprise governance",
+    "Broad documented client support: Copilot Studio, Claude, ChatGPT, Mistral Le Chat, Cursor, GitHub Copilot",
+    "MCP-driven access attributable to the user in Box enterprise event streams"
+  ],
+  "limitations": [
+    "Prompt-injection-via-content territory: enterprise documents (including externally shared files) flow into agent contexts, so hostile content in any accessible file can carry instructions to a multi-tool agent",
+    "Enterprise file content and Box AI extractions are processed by the connected LLM provider",
+    "Admin enablement is a prerequisite - individual users cannot self-serve, and setup requires Integration Credentials plus scope configuration",
+    "Closed-source hosted service; the deprecated open-source self-hosted server is the only auditable variant",
+    "Narrower than the full Box API: limited write operations and no admin/governance tooling",
+    "Box AI extraction concentrates sensitive structured values (names, amounts, dates) into agent-readable output",
+    "Box AI and per-user API rate limits constrain heavy workloads"
+  ],
+  "metadata": {
+    "license": "Proprietary (hosted service); documentation repo MIT; deprecated self-hosted server open source",
+    "supported_platforms": [
+      "Hosted remote (https://mcp.box.com)",
+      "Any MCP client with HTTP transport and OAuth support"
+    ],
+    "programming_languages": [
+      "N/A (hosted service)"
+    ],
+    "mcp_version": "1.0",
+    "docs": "https://developer.box.com/guides/box-mcp/",
+    "github_repo": "https://github.com/box/mcp-server-box-remote",
+    "api_dependency": "Box Platform API, Box AI",
+    "authentication": "OAuth 2.0 with admin-issued Integration Credentials (client ID/secret); per-user authorization",
+    "remote_endpoint": "https://mcp.box.com",
+    "self_hosted_status": "Deprecated - box-community/mcp-server-box (Python) no longer recommended for new work",
+    "maintained_by": "Box",
+    "status": "Active - hosted remote is the supported path",
+    "transport_types": [
+      "streamable-http"
+    ]
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 58,
+      "notes": "Marginal fit; useful mainly for pulling specs and docs stored in Box into coding agents"
+    },
+    "customer-support": {
+      "overall": 74,
+      "notes": "Good for grounding answers in policy and product documents stored in Box"
+    },
+    "content-creation": {
+      "overall": 78,
+      "notes": "Strong for drafting from existing enterprise documents and asset libraries"
+    },
+    "data-analysis": {
+      "overall": 76,
+      "notes": "Box AI metadata extraction turns document sets into structured data for analysis"
+    },
+    "research-assistant": {
+      "overall": 84,
+      "notes": "Excellent for Q&A and synthesis across large enterprise document repositories"
+    },
+    "legal-compliance": {
+      "overall": 62,
+      "notes": "Strong admin governance, but contract content reaching the LLM provider needs review against matter confidentiality"
+    },
+    "healthcare": {
+      "overall": 55,
+      "notes": "PHI in stored documents routed through agent contexts is high risk despite permission scoping"
+    },
+    "financial-analysis": {
+      "overall": 70,
+      "notes": "Good for extracting figures from financial documents; exposure of sensitive numbers to the LLM applies"
+    },
+    "education": {
+      "overall": 78,
+      "notes": "Good for course material Q&A and document-based learning workflows"
+    },
+    "creative-writing": {
+      "overall": 55,
+      "notes": "Limited fit beyond referencing source material stored in Box"
+    }
+  },
+  "best_for": [
+    "Enterprises wanting governed AI access to Box content without exporting files",
+    "Document Q&A and synthesis across large repositories via Box AI",
+    "Metadata extraction workflows turning contracts and forms into structured data",
+    "Admin-controlled rollouts where IT must gate which users and scopes agents get"
+  ],
+  "related_entities": [
+    "mcp-server-google-drive",
+    "mcp-server-notion",
+    "mcp-server-s3"
+  ],
+  "tags": [
+    "file-storage",
+    "enterprise-content",
+    "document-ai",
+    "mcp",
+    "model-context-protocol",
+    "official",
+    "remote-server"
+  ]
+}

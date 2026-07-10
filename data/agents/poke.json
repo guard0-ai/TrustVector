@@ -1,0 +1,466 @@
+{
+  "id": "poke",
+  "type": "agent",
+  "name": "Poke",
+  "provider": "The Interaction Company of California",
+  "version": "1.x",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Consumer AI agent living entirely in messaging — iMessage/SMS, Telegram, WhatsApp — with no app to install. Routes each task to the best-fit model across providers; handles calendar, email, smart home, health, and purchases via recipes spanning 40+ integrations. Publicly launched March 2026; became the first third-party AI agent approved on Apple's Messages for Business (2026-06-04). Standing email/calendar access through a channel with no OS permission model is a novel risk surface.",
+  "website": "https://poke.com/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 71,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Handles daily planning, calendar management, health tracking, smart home control, and photo edits over text; conversational disambiguation compensates for the low-bandwidth channel"
+            }
+          ],
+          "methodology": "Assessment of task completion across the recipe catalog from launch coverage and user reports; no public benchmarks exist",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Recipes integrate Gmail, Google Calendar, Outlook, Notion, Linear, Strava, Oura, Fitbit, Philips Hue, Sonos, GitHub, and 40+ other services"
+            }
+          ],
+          "methodology": "Review of integration breadth and reliability of server-side tool execution",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Standing automations run on triggers such as every incoming email or real-time flight status, chaining multi-step actions without user prompting"
+            }
+          ],
+          "methodology": "Evaluation of trigger-based automations and proactive multi-step task chains",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Poke",
+              "url": "https://poke.com/",
+              "date": "2026-07-01",
+              "value": "Poke is a persistent, always-on agent: one continuous conversation thread retains preferences, context, and connected-account state indefinitely"
+            }
+          ],
+          "methodology": "Review of long-lived conversational memory, the product's core design premise",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 62,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Failures surface as chat messages and the agent asks for clarification, but users cannot inspect or resume failed server-side automations"
+            }
+          ],
+          "methodology": "Assessment of failure visibility and recovery paths for background automations",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 66,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Internally dispatches subtasks to the best-fit model per task across major providers and open-source options; no user-facing multi-agent composition"
+            }
+          ],
+          "methodology": "Review of internal model/agent routing versus user-controllable collaboration",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 46,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 55,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Poke",
+              "url": "https://poke.com/",
+              "date": "2026-07-01",
+              "value": "All execution happens in Interaction's cloud rather than on the user's device; sandbox architecture and isolation between users' automations are not publicly documented"
+            }
+          ],
+          "methodology": "Architecture review; cloud-side execution keeps the device safe but internal isolation is undisclosed",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 52,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Apple approves Poke as the first AI agent on its Messages for Business platform",
+              "url": "https://techcrunch.com/2026/06/04/apple-approves-poke-as-the-first-ai-agent-on-its-messages-for-business-platform/",
+              "date": "2026-06-04",
+              "value": "Apple's Messages for Business approval (2026-06-04) adds verified-sender identity and platform review on iMessage; per-service OAuth scopes exist, but SMS/Telegram channels carry no OS-level permission model and grants are standing rather than per-task"
+            }
+          ],
+          "methodology": "Review of channel identity guarantees and OAuth grant model; the messaging channel bypasses OS permission prompts entirely",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 40,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Automations that run on every incoming email make untrusted third-party content a standing trigger for an agent holding email, calendar, and purchase authority; no injection-hardening documentation is published"
+            }
+          ],
+          "methodology": "Threat-surface analysis: email-triggered automations are a textbook indirect prompt-injection vector with no disclosed mitigations",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 58,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Company states a multi-layered security model with regular penetration testing, that it cannot access integration token contents by default, and that log/analytics sharing is opt-in; TechCrunch notes no independent audit has verified these claims"
+            }
+          ],
+          "methodology": "Review of vendor security claims; positive design statements without independent verification",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 25,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Composio - OpenPoke: an open-source alternative to poke.com",
+              "url": "https://composio.dev/content/open-poke",
+              "date": "2026-05-15",
+              "value": "Poke's agent stack is fully closed; the community reverse-engineered an open-source clone (OpenPoke) precisely because internals are unpublished"
+            }
+          ],
+          "methodology": "Source availability assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 44,
+      "criteria": {
+        "data_retention": {
+          "score": 55,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Poke",
+              "url": "https://poke.com/",
+              "date": "2026-07-01",
+              "value": "The always-on conversation model retains message history, email/calendar context, and automation state server-side indefinitely by design; consumer privacy policy offers deletion on request but no enterprise-grade retention controls"
+            }
+          ],
+          "methodology": "Review of retention implications of a persistent standing agent against published policy",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 50,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "10-person Palo Alto startup with no published certifications (SOC 2, ISO 27001) or DPA; WhatsApp availability in the EU was still pending regulatory/platform constraints at launch"
+            }
+          ],
+          "methodology": "Compliance posture assessment for a young consumer startup; no formal attestations found",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 48,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Best-fit model routing sends user content to multiple third-party model providers per task; messaging delivery relies on Linq's platform, and carrier SMS adds another processing party"
+            }
+          ],
+          "methodology": "Data flow analysis across model providers, messaging infrastructure, and carriers",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 22,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Poke",
+              "url": "https://poke.com/",
+              "date": "2026-07-01",
+              "value": "Cloud-only service reachable exclusively through third-party messaging channels; no self-hosted, on-premises, or offline option"
+            }
+          ],
+          "methodology": "Deployment options assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 51,
+      "criteria": {
+        "documentation_quality": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Poke",
+              "url": "https://poke.com/",
+              "date": "2026-07-01",
+              "value": "Consumer-grade site with recipe gallery and FAQs; no technical documentation of architecture, security model, or automation limits"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 50,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Actions execute server-side and are reported back as chat messages; there is no action log, diff, or review step before the agent sends emails or makes purchases"
+            }
+          ],
+          "methodology": "Review of action visibility; conversational reporting is not an audit trail",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 60,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Agent narrates what it is doing and asks before consequential steps in normal use, but model-routing choices and automation internals are opaque"
+            }
+          ],
+          "methodology": "Assessment of conversational narration versus underlying decision opacity",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 22,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Composio - OpenPoke: an open-source alternative to poke.com",
+              "url": "https://composio.dev/content/open-poke",
+              "date": "2026-05-15",
+              "value": "Entirely closed source; no published components, model cards, or security whitepapers"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Community members have built thousands of custom automations with a creator payout program ($0.10-$1.00 per recipe signup); user base reportedly 10x'ed in the months after public launch"
+            }
+          ],
+          "methodology": "Community engagement analysis of recipe ecosystem and growth signals",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 61,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "9to5Mac - Apple's Messages app on iPhone now has a third-party AI agent",
+              "url": "https://9to5mac.com/2026/06/04/apples-messages-app-on-iphone-now-has-a-third-party-ai-agent/",
+              "date": "2026-06-04",
+              "value": "Zero-install onboarding: text Poke like a contact in Messages, Telegram, or WhatsApp; since 2026-06-04 it appears natively in Apple Messages for Business for iMessage's ~1B users"
+            }
+          ],
+          "methodology": "Onboarding friction assessment; messaging-native is the lowest-friction agent interface shipped to date",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 60,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "TechCrunch - Apple approves Poke as the first AI agent on its Messages for Business platform",
+              "url": "https://techcrunch.com/2026/06/04/apple-approves-poke-as-the-first-ai-agent-on-its-messages-for-business-platform/",
+              "date": "2026-06-04",
+              "value": "10-person team scaling to rapid consumer growth plus per-user Apple platform billing; real-time inference costs are acknowledged as the main constraint"
+            }
+          ],
+          "methodology": "Assessment of team size, infrastructure signals, and stated cost constraints against growth",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Poke makes using AI agents as easy as sending a text",
+              "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+              "date": "2026-04-08",
+              "value": "Free for non-real-time use; paid pricing is flexible and usage-based, with beta users negotiating roughly $10-$30/mo (~$20 typical) via Poke's conversational pricing"
+            }
+          ],
+          "methodology": "Pricing model analysis; negotiated, usage-shaped pricing is affordable but unusually unpredictable",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 40,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Poke",
+              "url": "https://poke.com/",
+              "date": "2026-07-01",
+              "value": "No dashboard, usage analytics, or audit tooling; the chat thread is the only window into what the agent has done"
+            }
+          ],
+          "methodology": "Monitoring features assessment",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechCrunch - Apple approves Poke as the first AI agent on its Messages for Business platform",
+              "url": "https://techcrunch.com/2026/06/04/apple-approves-poke-as-the-first-ai-agent-on-its-messages-for-business-platform/",
+              "date": "2026-06-04",
+              "value": "Apple's first-ever AI-agent approval on Messages for Business validates the product, and $25M raised at a $300M valuation (Spark Capital, General Catalyst) funds it, but it remains a 10-person startup prioritizing growth over profitability"
+            }
+          ],
+          "methodology": "Vendor stability and maturity assessment: strong platform validation, very young company",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "research-assistant": {
+      "overall": 58,
+      "notes": "Handles quick lookups and standing news/price watches over text, but has no browsing transcript or citation depth"
+    },
+    "content-creation": {
+      "overall": 55,
+      "notes": "Drafts emails and short messages well; the texting interface is unsuited to long-form work"
+    },
+    "data-analysis": {
+      "overall": 40,
+      "notes": "No analysis environment; limited to summarizing data its integrations expose"
+    },
+    "education": {
+      "overall": 60,
+      "notes": "Conversational tutoring and reminders over text suit casual learning; no structured curriculum tools"
+    }
+  },
+  "best_for": [
+    "Consumers who want a personal assistant with zero app installs, usable from any phone that can text",
+    "Everyday delegation: calendar, email triage, reminders, smart home, travel check-ins, and health tracking",
+    "Standing automations triggered by incoming email or real-time events (flights, deliveries, prices)",
+    "iPhone users who want a verified agent inside Apple Messages for Business"
+  ],
+  "not_recommended_for": [
+    "Anyone unwilling to grant a startup standing OAuth access to their email, calendar, and messages",
+    "Regulated or enterprise contexts requiring audit trails, DPAs, or compliance certifications",
+    "High-stakes autonomous purchases or account changes without a review step",
+    "Users needing verifiable channel security over plain SMS"
+  ],
+  "strengths": [
+    "Lowest-friction agent interface shipped: lives entirely in iMessage/SMS, Telegram, and WhatsApp with no app",
+    "First third-party AI agent approved on Apple Messages for Business (2026-06-04), adding verified identity on iMessage",
+    "Best-fit model routing across providers and open-source models instead of single-vendor lock-in",
+    "Persistent memory and proactive trigger-based automations across 40+ integrations (Gmail, Calendar, Notion, Hue, Oura, GitHub)",
+    "Thousands of community-built recipes with creator payouts",
+    "Affordable: free tier plus flexible negotiated pricing around $10-$30/mo"
+  ],
+  "limitations": [
+    "Novel risk surface: standing access to email, calendar, and purchases through a channel with no OS-level permission model or revocation UI",
+    "Email-triggered automations expose the agent to indirect prompt injection from any sender, with no published hardening",
+    "Security claims (token isolation, pen testing) are vendor statements without independent audit",
+    "No action log or review step; the chat thread is the only record of what the agent did",
+    "Closed source, no compliance certifications, consumer-grade privacy policy",
+    "10-person company: continuity, support, and incident-response capacity are unproven",
+    "Negotiated usage-based pricing makes long-term costs hard to predict"
+  ],
+  "metadata": {
+    "license": "Proprietary",
+    "supported_models": [
+      "Multi-provider best-fit routing (major frontier providers and open-source models; internals undisclosed)"
+    ],
+    "architecture": "Cloud-hosted persistent agent reached via messaging channels (Linq-powered delivery); server-side automations with per-service OAuth connectors",
+    "deployment_type": "Cloud-only; interface via iMessage/SMS, Telegram, WhatsApp (EU/Brazil availability constrained), and Apple Messages for Business",
+    "tool_support": [
+      "Email (Gmail, Outlook)",
+      "Calendar",
+      "Smart home (Philips Hue, Sonos)",
+      "Health (Strava, Oura, Fitbit, Withings)",
+      "Productivity and dev tools (Notion, Linear, GitHub, PostHog)"
+    ],
+    "first_release": "Beta late 2025; public launch March 2026; Apple Messages for Business approval 2026-06-04",
+    "pricing": "Free tier; flexible negotiated/usage-based paid plans (~$10-$30/mo, ~$20 typical)",
+    "company": "The Interaction Company of California, Palo Alto; founders Marvin von Hagen and Felix Schlegel; $15M seed (2024) + $10M (April 2026) at $300M post-money; backers include Spark Capital, General Catalyst, the Collison brothers, Guillermo Rauch"
+  },
+  "related_entities": [
+    "manus",
+    "zapier-ai",
+    "sierra-ai",
+    "mcp-server-gmail",
+    "mcp-server-calendar"
+  ],
+  "tags": [
+    "consumer",
+    "messaging-native",
+    "personal-assistant",
+    "proprietary"
+  ]
+}

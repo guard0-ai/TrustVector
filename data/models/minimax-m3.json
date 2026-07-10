@@ -1,0 +1,659 @@
+{
+  "id": "minimax-m3",
+  "type": "model",
+  "name": "MiniMax-M3",
+  "provider": "MiniMax",
+  "version": "20260601",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "MiniMax's natively multimodal 428B MoE (23B active) with a 1M-token context via MiniMax Sparse Attention, launched June 2026 with weights on Hugging Face by 2026-06-07. Vendor reports 80.5% SWE-bench Verified; Artificial Analysis scores it 44 on Intelligence Index v4.1. Unlike MIT-licensed M2, M3 ships under a MiniMax Community License, and training code and some inference operators are withheld.",
+  "website": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 88,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 89,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax-M3 Model Card (vendor-reported)",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "SWE-bench Verified 80.5%, SWE-bench Pro 59.0%, Terminal-Bench 2.1 66%, SWE-fficiency 34.8, KernelBench Hard 28.8"
+            },
+            {
+              "source": "TechTimes launch analysis",
+              "url": "https://www.techtimes.com/articles/317532/20260601/minimax-m3-open-weight-coding-model-frontier-claims-unverified-benchmarks.htm",
+              "date": "2026-06-01",
+              "value": "Frontier claims flagged as vendor-run on MiniMax's own infrastructure with vendor-selected baselines"
+            }
+          ],
+          "methodology": "Vendor benchmarks with independent scrutiny noting all launch figures were vendor-run; partial independent corroboration via Artificial Analysis",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_reasoning": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax-M3 Model Card",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "Reasoning modes (enabled/adaptive/disabled) via API; competitive reasoning for a 23B-active footprint"
+            }
+          ],
+          "methodology": "Vendor-reported reasoning benchmarks and early community evaluation",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_general": {
+          "score": 87,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Artificial Analysis",
+              "url": "https://artificialanalysis.ai/models/minimax-m3",
+              "date": "2026-06-20",
+              "value": "Intelligence Index v4.1 score of 44 — well above the open-weight median (25), tied with DeepSeek V4 Pro, behind GLM-5.2 (51); roughly level with Claude Sonnet 4.6 on GDPval-AA agentic benchmark"
+            },
+            {
+              "source": "MiniMax-M3 Model Card (multimodal)",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "MMMU Pro 78.1, Video-MME v2 85.4 — strong native multimodal understanding"
+            }
+          ],
+          "methodology": "Independent composite benchmarking (Artificial Analysis) plus vendor multimodal benchmarks",
+          "last_verified": "2026-07-09"
+        },
+        "output_consistency": {
+          "score": 83,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community evaluation",
+              "url": "https://medium.com/@cognidownunder/i-evaluated-minimax-m3-for-agentic-workflows-the-results-are-complicated-518b60d5e6a9",
+              "date": "2026-06-25",
+              "value": "Early agentic evaluations report capable but mixed consistency across long workflows; limited observation window since June launch"
+            }
+          ],
+          "methodology": "Early community testing of repeated runs and agentic trajectories",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p50": {
+          "value": "1.9s",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax-M3 Model Card (MSA)",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "MiniMax Sparse Attention delivers 9x prefill and 15x decode speedups vs M2 at 1M context, cutting per-token compute to 1/20; 23B active keeps generation fast"
+            }
+          ],
+          "methodology": "Median latency for API requests with standard prompt sizes; architecture-level efficiency verified in vendor technical report (arXiv:2606.13392)",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p95": {
+          "value": "4.5s",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community benchmarking",
+              "url": "https://artificialanalysis.ai/models/minimax-m3",
+              "date": "2026-06-20",
+              "value": "p95 ~4.5s; very long multimodal or 1M-context requests run longer"
+            }
+          ],
+          "methodology": "95th percentile response time from early third-party measurements",
+          "last_verified": "2026-07-09"
+        },
+        "context_window": {
+          "value": "1,000,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MiniMax-M3 Model Card",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "1M-token context window enabled by MiniMax Sparse Attention"
+            }
+          ],
+          "methodology": "Official specification from model card",
+          "last_verified": "2026-07-09"
+        },
+        "uptime": {
+          "score": 92,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "MiniMax Platform",
+              "url": "https://platform.minimax.io/",
+              "date": "2026-07-01",
+              "value": "First-party API stable in first weeks, with a paid Priority tier (1.5x) for admission and latency guarantees; no long-run availability record yet"
+            }
+          ],
+          "methodology": "Review of platform availability since launch; observation window under six weeks",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Meaningful step over M2: 1M context, native multimodality, and independently confirmed intelligence gains (Artificial Analysis 44 vs open-weight median 25). Headline coding figures (80.5% SWE-bench Verified) are vendor-run on vendor infrastructure and drew explicit independent skepticism at launch; GLM-5.2 leads it on independent indices."
+    },
+
+    "security": {
+      "overall_score": 76,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 75,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "MiniMax-M3 Model Card",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "Safety tuning described; no published third-party prompt-injection audit; multimodal inputs (image/video) widen the injection surface"
+            }
+          ],
+          "methodology": "Review of vendor documentation against OWASP LLM01 patterns; model too new for mature red-team coverage",
+          "last_verified": "2026-07-09"
+        },
+        "jailbreak_resistance": {
+          "score": 74,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community red-teaming",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-20",
+              "value": "Standard alignment tuning; open weights allow guardrail removal in derivatives; limited adversarial testing published since launch"
+            }
+          ],
+          "methodology": "Early testing against adversarial prompt datasets; deployer-dependent for self-hosted use",
+          "last_verified": "2026-07-09"
+        },
+        "data_leakage_prevention": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax Privacy Policy",
+              "url": "https://www.minimax.io/",
+              "date": "2026-06-01",
+              "value": "Standard data handling on first-party API; full control when self-hosted"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and self-hosting data-control options",
+          "last_verified": "2026-07-09"
+        },
+        "output_safety": {
+          "score": 77,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax-M3 Model Card",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "Safety post-training applied; refusal behavior in line with peer open models per early reports"
+            }
+          ],
+          "methodology": "Safety testing across harmful content categories per vendor card and early community reports",
+          "last_verified": "2026-07-09"
+        },
+        "api_security": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax API Documentation",
+              "url": "https://platform.minimax.io/docs",
+              "date": "2026-06-01",
+              "value": "API key authentication, HTTPS only, rate limiting; OpenAI- and Anthropic-compatible endpoints carried over from M2"
+            }
+          ],
+          "methodology": "Review of API security features and best practices",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Standard open-model posture without third-party audits, scored slightly below M2 for launch recency and the wider multimodal attack surface. Self-hosting shifts security responsibility to the deployer."
+    },
+
+    "privacy_compliance": {
+      "overall_score": 73,
+      "criteria": {
+        "data_residency": {
+          "value": "China (first-party MiniMax API); any jurisdiction when self-hosted or via Western hosts",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax Platform Documentation",
+              "url": "https://platform.minimax.io/docs",
+              "date": "2026-06-01",
+              "value": "MiniMax is a China-based provider; first-party API data processed under Chinese jurisdiction"
+            },
+            {
+              "source": "OpenRouter availability",
+              "url": "https://openrouter.ai/minimax/minimax-m3",
+              "date": "2026-06-20",
+              "value": "Open weights served by Western inference providers, enabling non-China residency (subject to Community License terms)"
+            }
+          ],
+          "methodology": "Review of provider jurisdiction and third-party hosting options",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_optout": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax Privacy Policy",
+              "url": "https://www.minimax.io/",
+              "date": "2026-06-01",
+              "value": "Standard API data terms; self-hosting removes the concern entirely"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and data usage terms",
+          "last_verified": "2026-07-09"
+        },
+        "data_retention": {
+          "value": "Per MiniMax policy on first-party API (China jurisdiction); zero when self-hosted",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax Terms of Service",
+              "url": "https://www.minimax.io/",
+              "date": "2026-06-01",
+              "value": "First-party retention governed by Chinese data regulations; self-hosted deployments retain nothing externally"
+            }
+          ],
+          "methodology": "Review of terms of service and deployment-dependent retention",
+          "last_verified": "2026-07-09"
+        },
+        "pii_handling": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax Documentation",
+              "url": "https://platform.minimax.io/docs",
+              "date": "2026-06-01",
+              "value": "Customer responsible for PII redaction; no managed PII tooling; multimodal inputs (images/video) add PII-handling complexity"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-07-09"
+        },
+        "compliance_certifications": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax public materials",
+              "url": "https://www.minimax.io/",
+              "date": "2026-06-01",
+              "value": "No published SOC 2 / HIPAA / GDPR attestations for the first-party API"
+            }
+          ],
+          "methodology": "Verification of compliance certifications and audit reports",
+          "last_verified": "2026-07-09"
+        },
+        "zero_data_retention": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Open weights on Hugging Face",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "Self-hosting (vLLM/SGLang/Transformers/KTransformers) gives complete data control and zero external retention; Community License conditions apply to commercial deployments"
+            }
+          ],
+          "methodology": "Review of self-hosting deployment options enabling zero retention",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "First-party MiniMax API operates under Chinese jurisdiction — a material caveat for Western regulated industries. Self-hosting mitigates residency, but unlike MIT-licensed M2, M3's Community License attaches attribution and revenue-threshold conditions to commercial self-hosted use."
+    },
+
+    "trust_transparency": {
+      "overall_score": 75,
+      "criteria": {
+        "explainability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax-M3 documentation",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "Reasoning modes (enabled/adaptive/disabled) expose or suppress thinking traces per request, aiding agent-loop auditability"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency and trajectory inspectability",
+          "last_verified": "2026-07-09"
+        },
+        "hallucination_rate": {
+          "score": 76,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Community testing",
+              "url": "https://medium.com/@cognidownunder/i-evaluated-minimax-m3-for-agentic-workflows-the-results-are-complicated-518b60d5e6a9",
+              "date": "2026-06-25",
+              "value": "Early agentic evaluations report moderate hallucination; tool-grounded workflows perform better than closed-book QA"
+            }
+          ],
+          "methodology": "Early testing on factual QA and tool-augmented workflows",
+          "last_verified": "2026-07-09"
+        },
+        "bias_fairness": {
+          "score": 72,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "MiniMax-M3 Model Card",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "Limited published bias evaluation, including for multimodal inputs"
+            }
+          ],
+          "methodology": "Review of published bias benchmarks and community evaluations",
+          "last_verified": "2026-07-09"
+        },
+        "uncertainty_quantification": {
+          "score": 74,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Model behavior testing",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-20",
+              "value": "Basic uncertainty expression; no calibrated confidence outputs; limited testing since launch"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-07-09"
+        },
+        "model_card_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Hugging Face model card and MSA technical report",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "Clear documentation of 428B/23B MoE, MSA architecture (arXiv:2606.13392), benchmark tables, recommended inference parameters, and deployment guidance"
+            }
+          ],
+          "methodology": "Review of documentation completeness and clarity",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_transparency": {
+          "score": 64,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Independent launch analysis",
+              "url": "https://codersera.com/blog/minimax-m3-release-date-whats-new-2026/",
+              "date": "2026-06-10",
+              "value": "Training code, data pipelines, and specific inference operators withheld; data mixture not published — a step back from full open-source transparency"
+            },
+            {
+              "source": "Kili Technology data story",
+              "url": "https://kili-technology.com/blog/data-story-minimax-m3",
+              "date": "2026-06-15",
+              "value": "Analysis of what MiniMax disclosed vs withheld about M3's training data and pipeline"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data and released artifacts",
+          "last_verified": "2026-07-09"
+        },
+        "guardrails": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax-M3 Model Card",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+              "date": "2026-06-07",
+              "value": "Built-in safety tuning; deployers of open weights must layer their own guardrails, including for image/video inputs"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Good architectural documentation (MSA technical report) but reduced openness vs M2: training code, data pipelines, and some inference operators are withheld, and all launch benchmarks were vendor-run — independent reviewers explicitly flagged the verification gap."
+    },
+
+    "operational_excellence": {
+      "overall_score": 77,
+      "criteria": {
+        "api_design_quality": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MiniMax API Documentation",
+              "url": "https://platform.minimax.io/docs/guides/pricing-paygo",
+              "date": "2026-06-01",
+              "value": "OpenAI- and Anthropic-compatible endpoints with streaming, tool calling, reasoning modes, prompt caching, and a Priority service tier"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-07-09"
+        },
+        "sdk_quality": {
+          "score": 79,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax GitHub",
+              "url": "https://github.com/MiniMax-AI",
+              "date": "2026-06-07",
+              "value": "Compatibility with mainstream OpenAI/Anthropic SDKs; first-party tooling adequate but M3-specific tooling still young"
+            }
+          ],
+          "methodology": "Review of SDK quality, documentation, and maintenance",
+          "last_verified": "2026-07-09"
+        },
+        "versioning_policy": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax release history",
+              "url": "https://huggingface.co/MiniMaxAI",
+              "date": "2026-06-07",
+              "value": "M3 announced 2026-06-01 with weights on Hugging Face by 2026-06-07; M2 weights remain available; license changed from MIT (M2) to MiniMax Community License (M3) between generations"
+            }
+          ],
+          "methodology": "Review of versioning practices, weight availability, and license continuity across releases",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_observability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax Platform",
+              "url": "https://platform.minimax.io/",
+              "date": "2026-06-01",
+              "value": "Basic usage dashboard; self-hosted observability is deployer-built"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-07-09"
+        },
+        "support_quality": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MiniMax community channels",
+              "url": "https://github.com/MiniMax-AI",
+              "date": "2026-06-01",
+              "value": "GitHub and community support; limited English-language enterprise support"
+            }
+          ],
+          "methodology": "Assessment of documentation, community, and support responsiveness",
+          "last_verified": "2026-07-09"
+        },
+        "ecosystem_maturity": {
+          "score": 79,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Inference ecosystem",
+              "url": "https://openrouter.ai/minimax/minimax-m3",
+              "date": "2026-06-20",
+              "value": "Day-one vLLM/SGLang/Transformers/KTransformers/unsloth support with community quantizations and OpenRouter availability; ~259K Hugging Face downloads in the first month, though the M3-specific ecosystem is only weeks old"
+            }
+          ],
+          "methodology": "Analysis of third-party hosting, integrations, and tooling; conservative given launch recency",
+          "last_verified": "2026-07-09"
+        },
+        "license_terms": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MiniMax Community License",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3/blob/main/LICENSE",
+              "date": "2026-06-07",
+              "value": "Not MIT/Apache: commercial use requires a visible 'Built with MiniMax M3' notice, and products exceeding the license's yearly revenue threshold need separate authorization"
+            },
+            {
+              "source": "Independent license analysis",
+              "url": "https://www.verdent.ai/guides/how-to-use-minimax-m3",
+              "date": "2026-06-15",
+              "value": "'Available to download' does not mean 'free for any commercial use' — reviewers advise reading the license before building commercial products on M3"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions; regression from M2's clean MIT license is trust-relevant",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Dual OpenAI/Anthropic compatibility and broad day-one inference support carry over from M2, but the license regression (MIT to MiniMax Community License with attribution and revenue-threshold clauses) and withheld training/inference code lower the operational score. Commercial deployers need legal review."
+    }
+  },
+
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 88,
+      "notes": "Vendor-reported 80.5% SWE-bench Verified and 59.0% SWE-bench Pro at very low cost, but figures are vendor-run and GLM-5.2 leads on independent indices.",
+      "alternatives": ["glm-5", "kimi-k2-6"]
+    },
+    "customer-support": {
+      "overall": 85,
+      "notes": "Fast (23B active), very cheap, and multimodal — can handle screenshot- and image-based support tickets natively.",
+      "alternatives": ["command-a-plus", "minimax-m2"]
+    },
+    "content-creation": {
+      "overall": 82,
+      "notes": "Good generation quality at minimal cost; image/video understanding aids content workflows.",
+      "alternatives": ["glm-5", "claude-opus-4-8"]
+    },
+    "data-analysis": {
+      "overall": 85,
+      "notes": "Good tool calling plus native chart/image understanding; weaker raw reasoning than GLM-5.2 or Kimi K2.6.",
+      "alternatives": ["glm-5", "kimi-k2-6"]
+    },
+    "research-assistant": {
+      "overall": 87,
+      "notes": "1M context and native multimodality (text/image/video) suit long-document and mixed-media research at low cost.",
+      "alternatives": ["glm-5", "kimi-k2-6"]
+    },
+    "legal-compliance": {
+      "overall": 66,
+      "notes": "China-jurisdiction first-party API, no Western certifications, and Community License conditions make this a poor fit without careful mitigation.",
+      "alternatives": ["command-a-plus", "claude-opus-4-8"]
+    },
+    "healthcare": {
+      "overall": 65,
+      "notes": "Not recommended via first-party API; self-hosted deployment in a compliant environment is the only viable path, with license review.",
+      "alternatives": ["command-a-plus", "claude-opus-4-8"]
+    },
+    "financial-analysis": {
+      "overall": 80,
+      "notes": "Capable and cheap with chart/document understanding; data residency requires self-hosting for regulated firms.",
+      "alternatives": ["command-a-plus", "glm-5"]
+    },
+    "education": {
+      "overall": 83,
+      "notes": "Multimodal tutoring (diagrams, video) at very low cost suits high-volume educational platforms.",
+      "alternatives": ["glm-5", "deepseek-v3-2"]
+    },
+    "creative-writing": {
+      "overall": 78,
+      "notes": "Serviceable creative output; not its design focus.",
+      "alternatives": ["claude-opus-4-8", "glm-5"]
+    }
+  },
+
+  "strengths": [
+    "Native multimodality: mixed-modality training from step one across text, image, and video (78.1 MMMU Pro, 85.4 Video-MME v2)",
+    "1M-token context with MiniMax Sparse Attention: 9x prefill / 15x decode speedups vs M2 at 1M context",
+    "Efficient 23B-active footprint keeps inference fast and self-hosting relatively affordable",
+    "Aggressive pricing: $0.30/$1.20 per 1M tokens (promotional 50% off list) with $0.06 cache reads",
+    "Independently confirmed intelligence gain: Artificial Analysis 44, well above the open-weight median",
+    "Day-one vLLM/SGLang/Transformers/KTransformers/unsloth support with community quantizations"
+  ],
+
+  "limitations": [
+    "License regression from M2: MiniMax Community License requires 'Built with MiniMax M3' attribution and separate authorization above a revenue threshold",
+    "Training code, data pipelines, and some inference operators withheld despite the 'open-weight' label",
+    "All launch benchmarks vendor-run on vendor infrastructure; independent reviewers flagged the verification gap",
+    "First-party API processes data under Chinese jurisdiction with no published Western compliance certifications",
+    "Behind GLM-5.2 on independent intelligence and agentic indices",
+    "Long-context pricing doubles above 512K input tokens",
+    "Launched June 2026 — consistency, uptime, and security evidence still immature"
+  ],
+
+  "best_for": [
+    "Multimodal agentic workloads mixing text, screenshots, documents, and video at low cost",
+    "1M-context document and codebase analysis on a budget",
+    "High-volume workloads where the 23B-active footprint's speed and price dominate",
+    "Teams already on M2 wanting multimodality and longer context with API compatibility"
+  ],
+
+  "not_recommended_for": [
+    "Regulated Western workloads (healthcare, legal, finance) on the first-party API",
+    "Commercial products unwilling to carry 'Built with MiniMax M3' attribution or negotiate above the revenue threshold",
+    "Teams requiring vendor-independent benchmark verification before adoption",
+    "Workloads needing the strongest open-weight coding performance (GLM-5.2 leads independently)"
+  ],
+
+  "metadata": {
+    "pricing": {
+      "input": "$0.30 per 1M tokens (≤512K input; $0.06 cache hit)",
+      "output": "$1.20 per 1M tokens",
+      "notes": "Promotional 'permanent 50% off' from list $0.60/$2.40. Rates double above 512K input tokens; Priority tier is 1.5x for admission/latency guarantees. Third-party host pricing varies.",
+      "last_verified": "2026-07-09"
+    },
+    "context_window": 1000000,
+    "languages": ["English", "Chinese", "Japanese", "Korean", "Spanish", "French", "German"],
+    "modalities": ["text", "image (input)", "video (input)"],
+    "api_endpoint": "https://api.minimax.io/v1/chat/completions",
+    "open_source": true,
+    "license": "MiniMax Community License (attribution notice required for commercial use; separate authorization above yearly revenue threshold)",
+    "architecture": "Mixture-of-Experts: ~428B total / ~23B active parameters, MiniMax Sparse Attention (MSA), native mixed-modality training (arXiv:2606.13392)",
+    "parameters": "428B total / 23B active",
+    "release_date": "2026-06-01"
+  },
+
+  "related_entities": ["minimax-m2", "glm-5", "kimi-k2-6", "deepseek-v4", "qwen3-5"],
+
+  "tags": [
+    "agentic",
+    "multimodal",
+    "tool-calling",
+    "open-weight",
+    "mixture-of-experts",
+    "long-context",
+    "cost-effective",
+    "fast-inference",
+    "chinese-provider",
+    "self-hostable"
+  ]
+}

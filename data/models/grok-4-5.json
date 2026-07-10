@@ -1,0 +1,661 @@
+{
+  "id": "grok-4-5",
+  "type": "model",
+  "name": "Grok 4.5",
+  "provider": "SpaceXAI (formerly xAI)",
+  "version": "4.5",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "SpaceXAI's flagship (released 2026-07-08, days after the xAI-to-SpaceXAI rebrand): an 'Opus-class' model tuned for token efficiency at $2/$6 per 1M ($0.50 cached), 500K context, reasoning effort low/medium/high. Strong day-one results (83.3% Terminal-Bench 2.1, #4 on Artificial Analysis Intelligence Index) but no EU availability at launch, thin enterprise compliance, and a provider under active regulatory investigation over Grok content-safety failures.",
+  "website": "https://docs.x.ai/developers/models/grok-4.5",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 93,
+      "criteria": {
+        "task_accuracy_code": {
+          "score": 95,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kingy.ai Grok 4.5 benchmark analysis",
+              "url": "https://kingy.ai/blog/grok-4-5-benchmarks-pricing-context-window/",
+              "date": "2026-07-08",
+              "value": "83.3% Terminal-Bench 2.1 (vs Opus 4.8's 78.9%, Fable 5's 84.3%); 64.7% SWE-Bench Pro (vs Opus 4.8's 69.2%); DeepSWE results split by harness (62.0% provider harness vs 53% neutral harness)"
+            },
+            {
+              "source": "xAI/SpaceXAI Release Notes",
+              "url": "https://docs.x.ai/developers/release-notes",
+              "date": "2026-07-08",
+              "value": "Positioned as SpaceXAI's smartest model for coding, agentic tasks, and knowledge work"
+            }
+          ],
+          "methodology": "Provider benchmarks cross-checked against third-party analysis; harness-dependent DeepSWE split means no universal supremacy claim holds",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_reasoning": {
+          "score": 93,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Artificial Analysis (via Kingy.ai)",
+              "url": "https://kingy.ai/blog/grok-4-5-benchmarks-pricing-context-window/",
+              "date": "2026-07-08",
+              "value": "Artificial Analysis Intelligence Index 54, ranked #4 overall behind Fable 5 (60), Opus 4.8 (56), and GPT-5.5 (55)"
+            }
+          ],
+          "methodology": "Independent aggregator index placement on launch day; Musk's internal characterization ('roughly comparable to Opus 4.7, but much faster') treated as marketing",
+          "last_verified": "2026-07-09"
+        },
+        "task_accuracy_general": {
+          "score": 93,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Axios",
+              "url": "https://www.axios.com/2026/07/08/spacexai-grok-new-model",
+              "date": "2026-07-08",
+              "value": "Launched 2026-07-08 after a private beta with SpaceX and Tesla teams; billed as an Opus-class model that is faster, more token-efficient, and lower cost"
+            },
+            {
+              "source": "OpenRouter Model Listing",
+              "url": "https://openrouter.ai/x-ai/grok-4.5",
+              "date": "2026-07-09",
+              "value": "Listed day-one with competitive quality ratings; Coding Agent Index 76 per Artificial Analysis"
+            }
+          ],
+          "methodology": "Launch coverage and aggregator listings; broad task coverage not yet independently characterized",
+          "last_verified": "2026-07-09"
+        },
+        "output_consistency": {
+          "score": 91,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kingy.ai Grok 4.5 benchmark analysis",
+              "url": "https://kingy.ai/blog/grok-4-5-benchmarks-pricing-context-window/",
+              "date": "2026-07-08",
+              "value": "Exceptional token efficiency: ~15,954 average output tokens per SWE-Bench Pro task vs 67,020 for Opus 4.8 max (~4.2x); structured outputs and function calling supported"
+            }
+          ],
+          "methodology": "Review of structured-output features and provider token-efficiency reports; repeated-run data pending",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p50": {
+          "value": "~80-91 output tokens/s; full-response times competitive at default high effort",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Kingy.ai Grok 4.5 benchmark analysis",
+              "url": "https://kingy.ai/blog/grok-4-5-benchmarks-pricing-context-window/",
+              "date": "2026-07-08",
+              "value": "Official output speed 80 tokens/s; independently measured 91.3 tokens/s on launch day"
+            }
+          ],
+          "methodology": "Day-one throughput measurements; percentile latency distributions not yet available",
+          "last_verified": "2026-07-09"
+        },
+        "latency_p95": {
+          "value": "Unknown — reasoning cannot be disabled, so tail latency will track effort setting",
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "xAI/SpaceXAI Release Notes",
+              "url": "https://docs.x.ai/developers/release-notes",
+              "date": "2026-07-08",
+              "value": "Configurable reasoning effort (low/medium/high, default high); no p95 data exists one day post-launch"
+            }
+          ],
+          "methodology": "95th percentile latency requires post-launch measurement",
+          "last_verified": "2026-07-09"
+        },
+        "context_window": {
+          "value": "500,000 tokens",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "SpaceXAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.5",
+              "date": "2026-07-09",
+              "value": "500K token context window (down from Grok 4.3's 1M); higher-context rates apply above 200K-token requests"
+            }
+          ],
+          "methodology": "Official specification from provider documentation",
+          "last_verified": "2026-07-09"
+        },
+        "uptime": {
+          "score": 92,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "xAI Status Page",
+              "url": "https://status.x.ai/",
+              "date": "2026-07-09",
+              "value": "Platform generally stable; Grok 4.5 endpoints (us-east-1, us-west-2) live since 2026-07-08 with no model-specific track record, and no EU serving at launch"
+            }
+          ],
+          "methodology": "Platform status baseline; model is one day old and rate-limited at 150 req/s and 50M tokens/min",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Genuinely strong day-one showing — beats Opus 4.8 on Terminal-Bench 2.1 and delivers ~4.2x better token efficiency — but it is not the benchmark leader (Fable 5 and Opus 4.8 rank above it on the Artificial Analysis Intelligence Index), and the DeepSWE provider-vs-neutral harness split (62.0% vs 53%) warrants caution about provider-reported numbers. Context window halved vs Grok 4.3 (500K vs 1M)."
+    },
+    "security": {
+      "overall_score": 82,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 84,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "SpaceXAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.5",
+              "date": "2026-07-09",
+              "value": "Hardened system-prompt handling carried over from the Grok 4.x line; no Grok 4.5-specific red-team data published"
+            }
+          ],
+          "methodology": "Inherited-lineage review against OWASP LLM01 patterns; provider publishes little red-team detail",
+          "last_verified": "2026-07-09"
+        },
+        "jailbreak_resistance": {
+          "score": 84,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "xAI/SpaceXAI News",
+              "url": "https://x.ai/news",
+              "date": "2026-07-08",
+              "value": "Safety improvements cited at launch; substantially less published adversarial testing than Anthropic/OpenAI/Google"
+            }
+          ],
+          "methodology": "Review of provider claims and community jailbreak reports; day-one data is minimal",
+          "last_verified": "2026-07-09"
+        },
+        "data_leakage_prevention": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Privacy Policy",
+              "url": "https://x.ai/legal/privacy-policy",
+              "date": "2026-07-08",
+              "value": "API data handling documented; fewer contractual controls than major enterprise providers"
+            }
+          ],
+          "methodology": "Analysis of privacy policies and data handling commitments",
+          "last_verified": "2026-07-09"
+        },
+        "output_safety": {
+          "score": 77,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "TechPolicy.Press — Regulators Are Going After Grok and X",
+              "url": "https://www.techpolicy.press/regulators-are-going-after-grok-and-x-just-not-together/",
+              "date": "2026-07-09",
+              "value": "Ofcom and the European Commission have open formal investigations, and Brazil issued a 30-day ultimatum, over Grok's mass generation of sexualized imagery including apparent minors (CCDH: 3M+ sexualized images in under two weeks)"
+            },
+            {
+              "source": "SpaceXAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.5",
+              "date": "2026-07-09",
+              "value": "Content moderation in place for the text API; SpaceXAI publishes far less safety-evaluation detail than peers"
+            }
+          ],
+          "methodology": "Safety review inheriting the active Grok content-safety crisis context (see grok-4-3): the failures center on Grok consumer image products rather than this text API, but Grok 4.5 launched while those investigations remain open and evidences the same provider-level output-safety governance",
+          "last_verified": "2026-07-09",
+          "notes": "Scored one point below grok-4-3's post-crisis 78: same provider governance concerns, plus zero model-specific safety documentation for a day-old flagship"
+        },
+        "api_security": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "SpaceXAI API Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-07-09",
+              "value": "API key authentication, HTTPS only, rate limiting (150 req/s, 50M tokens/min), team management in console"
+            }
+          ],
+          "methodology": "Review of API security features and authentication mechanisms",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Baseline security is reasonable, but Grok 4.5 launched into the middle of the provider's content-safety crisis (Ofcom and European Commission investigations open, Brazil ultimatum) with no model-specific safety card. The regulatory findings concern Grok consumer image products, not this text API, yet they weigh on confidence in SpaceXAI's safety governance."
+    },
+    "privacy_compliance": {
+      "overall_score": 75,
+      "criteria": {
+        "data_residency": {
+          "value": "US only at launch (us-east-1, us-west-2); no EU availability",
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "SpaceXAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.5",
+              "date": "2026-07-09",
+              "value": "Deployed in us-east-1 and us-west-2 only"
+            },
+            {
+              "source": "Kingy.ai Grok 4.5 benchmark analysis",
+              "url": "https://kingy.ai/blog/grok-4-5-benchmarks-pricing-context-window/",
+              "date": "2026-07-08",
+              "value": "Not available in the EU at launch; EU availability expected mid-July per launch coverage"
+            }
+          ],
+          "methodology": "Review of provider documentation and launch coverage; EU absence is notable given the provider's open European Commission investigation",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_optout": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Privacy Policy",
+              "url": "https://x.ai/legal/privacy-policy",
+              "date": "2026-07-08",
+              "value": "API customer data not used for training by default per policy"
+            }
+          ],
+          "methodology": "Analysis of privacy policy and data usage terms",
+          "last_verified": "2026-07-09"
+        },
+        "data_retention": {
+          "value": "30 days (standard API)",
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Privacy Policy",
+              "url": "https://x.ai/legal/privacy-policy",
+              "date": "2026-07-08",
+              "value": "Limited retention for abuse monitoring; zero-retention requires enterprise agreement"
+            }
+          ],
+          "methodology": "Review of terms of service and data retention policies",
+          "last_verified": "2026-07-09"
+        },
+        "pii_handling": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "SpaceXAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-07-09",
+              "value": "Customer responsible for PII redaction; no built-in PII tooling"
+            }
+          ],
+          "methodology": "Review of data protection capabilities and customer responsibilities",
+          "last_verified": "2026-07-09"
+        },
+        "compliance_certifications": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Trust Center",
+              "url": "https://trust.x.ai/",
+              "date": "2026-07-09",
+              "value": "SOC 2 Type II; thinner certification portfolio (no HIPAA BAA program, limited GDPR tooling) vs Anthropic/OpenAI/Google — unchanged through the SpaceXAI rebrand"
+            }
+          ],
+          "methodology": "Verification of compliance certifications against major enterprise provider baselines",
+          "last_verified": "2026-07-09"
+        },
+        "zero_data_retention": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Trust Center",
+              "url": "https://trust.x.ai/",
+              "date": "2026-07-09",
+              "value": "Zero-data-retention available only via negotiated enterprise terms"
+            }
+          ],
+          "methodology": "Review of data handling practices and enterprise contract options",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Scored one point below grok-4-3 (76 to 75): the compliance portfolio is unchanged, but Grok 4.5 additionally launched US-only with no EU availability — a material constraint for GDPR-scoped workloads, and conspicuous while the European Commission's Grok investigation is open. Corporate-entity churn (xAI absorbed into SpaceX, rebranded SpaceXAI) adds contractual diligence overhead."
+    },
+    "trust_transparency": {
+      "overall_score": 80,
+      "criteria": {
+        "explainability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI/SpaceXAI Release Notes",
+              "url": "https://docs.x.ai/developers/release-notes",
+              "date": "2026-07-08",
+              "value": "Configurable reasoning effort (low/medium/high, default high) with inspectable reasoning"
+            }
+          ],
+          "methodology": "Evaluation of reasoning transparency and explanation capabilities",
+          "last_verified": "2026-07-09"
+        },
+        "hallucination_rate": {
+          "score": 84,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "xAI/SpaceXAI News",
+              "url": "https://x.ai/news",
+              "date": "2026-07-08",
+              "value": "Continued quality improvements claimed at launch; no independent factual-QA measurement exists yet"
+            }
+          ],
+          "methodology": "Review of provider claims; day-one confidence necessarily low",
+          "last_verified": "2026-07-09"
+        },
+        "bias_fairness": {
+          "score": 75,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "xAI Public Statements",
+              "url": "https://x.ai/news",
+              "date": "2026-07-08",
+              "value": "Limited published bias evaluation; past Grok versions drew scrutiny over politically tuned behavior"
+            }
+          ],
+          "methodology": "Review of bias benchmark disclosures and independent reporting",
+          "last_verified": "2026-07-09"
+        },
+        "uncertainty_quantification": {
+          "score": 82,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "SpaceXAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.5",
+              "date": "2026-07-09",
+              "value": "Reasoning mode expresses uncertainty reasonably per Grok 4.x lineage; 4.5-specific calibration not yet assessed"
+            }
+          ],
+          "methodology": "Qualitative assessment of confidence expression in outputs",
+          "last_verified": "2026-07-09"
+        },
+        "model_card_quality": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "SpaceXAI Model Documentation",
+              "url": "https://docs.x.ai/developers/models/grok-4.5",
+              "date": "2026-07-09",
+              "value": "Solid developer model page (pricing, limits, features, aliases grok-4.5 / grok-4.5-latest / grok-build-latest), but no safety card; knowledge cutoff and max output not published"
+            }
+          ],
+          "methodology": "Review of documentation completeness and clarity",
+          "last_verified": "2026-07-09"
+        },
+        "training_data_transparency": {
+          "score": 74,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Kingy.ai Grok 4.5 benchmark analysis",
+              "url": "https://kingy.ai/blog/grok-4-5-benchmarks-pricing-context-window/",
+              "date": "2026-07-08",
+              "value": "Trained on tens of thousands of NVIDIA GB300 GPUs with RL over hundreds of thousands of tasks; Musk self-reported ~1.5T parameters (V9) but SpaceXAI has not confirmed — sources undisclosed"
+            }
+          ],
+          "methodology": "Review of public disclosures; key claims come from executive posts rather than documentation",
+          "last_verified": "2026-07-09"
+        },
+        "guardrails": {
+          "score": 77,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "SpaceXAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-07-09",
+              "value": "Built-in moderation with developer controls; lighter-touch defaults than peers"
+            },
+            {
+              "source": "The Conversation — Grok sexualized images AI reckoning",
+              "url": "https://theconversation.com/the-furore-over-groks-sexualised-images-has-begun-an-ai-reckoning-275448",
+              "date": "2026-07-01",
+              "value": "The 2026 Grok controversy showed xAI's guardrails failed at scale on sexualized imagery, including of minors, prompting UK, EU, and Brazilian regulatory action"
+            }
+          ],
+          "methodology": "Analysis of built-in safety mechanisms, inheriting the provider-level guardrail-failure context applied to grok-4-3; no Grok 4.5-specific safety evaluation has been published to offset it",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Good developer-facing documentation, but transparency gaps are wider than peers at this tier: no safety card, no knowledge cutoff, and headline training claims (1.5T parameters) sourced from executive posts. Inherits the guardrails downgrade applied to grok-4-3 after the Grok content-safety crisis."
+    },
+    "operational_excellence": {
+      "overall_score": 82,
+      "criteria": {
+        "api_design_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "SpaceXAI API Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-07-09",
+              "value": "OpenAI-compatible API with reasoning effort control, function calling, structured outputs, and prompt caching ($0.50 cached input)"
+            }
+          ],
+          "methodology": "Review of API design, consistency, and feature completeness",
+          "last_verified": "2026-07-09"
+        },
+        "sdk_quality": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI SDKs",
+              "url": "https://github.com/xai-org",
+              "date": "2026-07-09",
+              "value": "Official SDKs plus broad compatibility with OpenAI client libraries; day-one grok-4.5 support"
+            }
+          ],
+          "methodology": "Review of SDK quality, documentation, and maintenance",
+          "last_verified": "2026-07-09"
+        },
+        "versioning_policy": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Migration Guide (May 15 Retirement)",
+              "url": "https://docs.x.ai/developers/migration/may-15-retirement",
+              "date": "2026-07-09",
+              "value": "Provider history of aggressive retirements with silent slug redirects (retired slugs redirect to grok-4.3); Grok 4.5 supersedes the flagship barely two months after Grok 4.3 shipped, and halves the context window (1M to 500K)"
+            }
+          ],
+          "methodology": "Review of deprecation/migration practices; fast flagship churn plus spec regressions (context) reduce planning predictability",
+          "last_verified": "2026-07-09",
+          "notes": "grok-4.5-latest and grok-build-latest aliases repeat the mutable-alias pattern that made prior retirements silent"
+        },
+        "monitoring_observability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "SpaceXAI Console",
+              "url": "https://console.x.ai/",
+              "date": "2026-07-09",
+              "value": "Usage dashboard with spend and rate-limit visibility (150 req/s, 50M tokens/min for grok-4.5)"
+            }
+          ],
+          "methodology": "Review of available monitoring tools and metrics",
+          "last_verified": "2026-07-09"
+        },
+        "support_quality": {
+          "score": 79,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "SpaceXAI Documentation",
+              "url": "https://docs.x.ai/",
+              "date": "2026-07-09",
+              "value": "Improving documentation, but support channels remain lighter than major cloud providers, and the corporate transition (xAI to SpaceXAI, completed with the 2026-07-06/07 rebrand) is still settling"
+            }
+          ],
+          "methodology": "Assessment of documentation, community, and support responsiveness amid the merger transition",
+          "last_verified": "2026-07-09"
+        },
+        "ecosystem_maturity": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kingy.ai Grok 4.5 benchmark analysis",
+              "url": "https://kingy.ai/blog/grok-4-5-benchmarks-pricing-context-window/",
+              "date": "2026-07-08",
+              "value": "Day-one availability across Grok Build, Cursor, the xAI API console, Microsoft Office add-ins, OpenRouter, Vercel, Cloudflare, Snowflake, and Databricks Mosaic — but not in the EU"
+            }
+          ],
+          "methodology": "Analysis of third-party integrations; unusually broad launch surface, offset by the EU gap",
+          "last_verified": "2026-07-09"
+        },
+        "license_terms": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "xAI Terms of Service",
+              "url": "https://x.ai/legal/terms-of-service",
+              "date": "2026-07-09",
+              "value": "Clear commercial API terms; enterprise agreements available. Contracting entity is transitioning to SpaceXAI following the merger (rebrand announced 2026-07-06, completed 2026-07-07)"
+            }
+          ],
+          "methodology": "Review of licensing terms and restrictions; entity-change diligence recommended for existing contracts",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Impressively broad day-one distribution (Cursor, OpenRouter, Vercel, Cloudflare, Snowflake, Databricks, Office add-ins) and a clean OpenAI-compatible API. Counterweights: no EU serving at launch, flagship churn (two flagships in ~10 weeks), a halved context window vs Grok 4.3, and a mid-merger provider — xAI is now SpaceXAI under SpaceX after the February 2026 acquisition, with the rebrand completed 2026-07-07. API endpoints and docs remain on x.ai domains."
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 93,
+      "notes": "Beats Opus 4.8 on Terminal-Bench 2.1 (83.3% vs 78.9%) with ~4.2x better token efficiency at a fraction of the price; Fable 5 and Opus 4.8 still lead on the hardest work, and neutral-harness results are less flattering.",
+      "alternatives": ["claude-sonnet-5", "claude-opus-4-8"]
+    },
+    "customer-support": {
+      "overall": 86,
+      "notes": "Cheap, fast, and token-efficient for support; compliance posture and no EU serving limit regulated or European deployments.",
+      "alternatives": ["claude-sonnet-5", "gemini-3-5-flash"]
+    },
+    "content-creation": {
+      "overall": 88,
+      "notes": "Strong generation with current-events awareness from the X ecosystem; brand-safety review advisable given the provider's ongoing content-safety controversy.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    },
+    "data-analysis": {
+      "overall": 89,
+      "notes": "Strong reasoning per dollar ($0.31 per Artificial Analysis Intelligence Index task); 500K context is half of Grok 4.3's 1M, with higher rates above 200K.",
+      "alternatives": ["gemini-3-1-pro", "grok-4-3"]
+    },
+    "research-assistant": {
+      "overall": 89,
+      "notes": "Excellent cost-efficiency for synthesis; for literature-scale corpora above 500K tokens, Grok 4.3's 1M window or Gemini remain better fits.",
+      "alternatives": ["gemini-3-1-pro", "grok-4-3"]
+    },
+    "legal-compliance": {
+      "overall": 74,
+      "notes": "Thin certifications, no EU availability, and an actively investigated provider make this a poor fit for compliance-sensitive legal work.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-5"]
+    },
+    "healthcare": {
+      "overall": 70,
+      "notes": "No HIPAA eligibility program; not recommended for PHI workloads.",
+      "alternatives": ["claude-opus-4-8", "claude-sonnet-5"]
+    },
+    "financial-analysis": {
+      "overall": 88,
+      "notes": "Strong quantitative reasoning and token efficiency at $2/$6; verify compliance requirements and day-one stability first.",
+      "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
+    },
+    "education": {
+      "overall": 88,
+      "notes": "Strong explanations at low cost; content controls are lighter-touch than peers, which matters for minor-facing deployments given the provider's 2026 safety record.",
+      "alternatives": ["claude-sonnet-5", "gemini-3-5-flash"]
+    },
+    "creative-writing": {
+      "overall": 88,
+      "notes": "Distinctive voice and fewer content restrictions than competitors; day-one creative evaluations are anecdotal.",
+      "alternatives": ["gpt-5-5", "claude-opus-4-8"]
+    }
+  },
+  "strengths": [
+    "Standout intelligence-per-dollar: $2/$6 per 1M with $0.50 cached input and ~$0.31 per Artificial Analysis Intelligence Index task",
+    "Exceptional token efficiency: ~15,954 output tokens per SWE-Bench Pro task vs 67,020 for Opus 4.8 max (~4.2x)",
+    "Beats Opus 4.8 on Terminal-Bench 2.1 (83.3% vs 78.9%); #4 on the Artificial Analysis Intelligence Index at launch",
+    "Full agentic feature set: reasoning effort control, function calling, structured outputs, prompt caching",
+    "Unusually broad day-one distribution: Cursor, OpenRouter, Vercel, Cloudflare, Snowflake, Databricks, Office add-ins",
+    "OpenAI-compatible API simplifies migration"
+  ],
+  "limitations": [
+    "No EU availability at launch (US-only serving in us-east-1/us-west-2; EU expected mid-July per launch coverage)",
+    "Provider under active regulatory investigation (Ofcom, European Commission; Brazil ultimatum) over Grok content-safety failures; no Grok 4.5 safety card published",
+    "Context window halved vs Grok 4.3 (500K vs 1M), with higher per-token rates above 200K",
+    "Released 2026-07-08 — benchmarks are largely provider-reported, and the DeepSWE provider-vs-neutral harness gap (62.0% vs 53%) urges caution",
+    "Thin enterprise compliance: SOC 2 only, no HIPAA program, zero-retention only via negotiated terms",
+    "Provider turbulence: xAI merged into SpaceX and completed the SpaceXAI rebrand 2026-07-07, one day before launch; reasoning cannot be fully disabled",
+    "Flagship churn: second flagship in ~10 weeks, with a history of silent slug redirects on retirement"
+  ],
+  "best_for": [
+    "Cost-sensitive agentic coding needing near-frontier quality with minimal token spend",
+    "High-volume agent fleets where the ~4.2x token-efficiency advantage compounds",
+    "US-based teams on OpenAI-compatible tooling seeking cheaper frontier capacity",
+    "Applications wanting real-time/current-events awareness from the X ecosystem"
+  ],
+  "not_recommended_for": [
+    "EU-based or GDPR-scoped workloads (no EU serving at launch)",
+    "Healthcare workloads involving PHI (no HIPAA eligibility)",
+    "Regulated industries requiring deep compliance attestations or a stable contracting entity",
+    "Workloads needing more than 500K context (use Grok 4.3 or Gemini)",
+    "Risk-averse teams unwilling to bet on a day-old model from a provider under active safety investigations"
+  ],
+  "metadata": {
+    "pricing": {
+      "input": "$2.00 per 1M tokens",
+      "output": "$6.00 per 1M tokens",
+      "notes": "Cached input $0.50 per 1M tokens. Higher per-token rates apply for requests above 200K context. Verified against docs.x.ai model page 2026-07-09. Roughly 1.6x Grok 4.3's input price but with much stronger per-task economics via token efficiency.",
+      "last_verified": "2026-07-09"
+    },
+    "context_window": 500000,
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Italian",
+      "Portuguese",
+      "Japanese",
+      "Korean",
+      "Chinese",
+      "Arabic",
+      "Hindi"
+    ],
+    "modalities": ["text", "image (input)"],
+    "api_endpoint": "https://api.x.ai/v1/chat/completions",
+    "api_model_id": "grok-4.5 (aliases: grok-4.5-latest, grok-build-latest)",
+    "open_source": false,
+    "architecture": "Transformer-based with always-on configurable reasoning (low/medium/high, default high), function calling, and structured outputs; Musk self-reported ~1.5T parameters (unconfirmed)",
+    "parameters": "~1.5T claimed by Musk; not officially confirmed",
+    "release_date": "2026-07-08",
+    "lifecycle_status": "Current SpaceXAI flagship; Grok 4.3 remains served below it. US-only serving at launch (us-east-1, us-west-2)."
+  },
+  "related_entities": ["grok-4-3", "grok-4-1", "claude-sonnet-5", "gpt-5-6", "claude-opus-4-8"],
+  "tags": [
+    "reasoning",
+    "token-efficient",
+    "cost-effective",
+    "function-calling",
+    "structured-outputs",
+    "real-time",
+    "new-release",
+    "regulatory-scrutiny",
+    "no-eu-availability"
+  ]
+}

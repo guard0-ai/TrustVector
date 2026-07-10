@@ -1,0 +1,479 @@
+{
+  "id": "cline",
+  "type": "agent",
+  "name": "Cline",
+  "provider": "Cline Bot Inc.",
+  "version": "3.x (CLI v3.0.39, 2026-07-09)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "The most-adopted open-source coding agent (5M+ installs by Feb 2026), formerly 'Claude Dev'. Apache-2.0, runs in VS Code, JetBrains, terminal CLI, and via an SDK. Client-side BYOK architecture keeps code local while routing to any model provider; Plan/Act modes with human approval gate edits and commands. Security researchers demonstrated prompt-injection paths that bypassed command approval (mitigated in v3.35.0), and Anthropic's 2026 OAuth crackdown cut off Claude subscription use.",
+  "website": "https://cline.bot/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 79,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline GitHub repository",
+              "url": "https://github.com/cline/cline",
+              "date": "2026-07-09",
+              "value": "Edits code across projects, runs commands, and uses a browser; 5M+ installs and 64.5K stars indicate sustained real-world task success across model backends"
+            }
+          ],
+          "methodology": "Adoption-signal and hands-on assessment of multi-file coding task completion; accuracy tracks the BYOK model chosen",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline GitHub repository",
+              "url": "https://github.com/cline/cline",
+              "date": "2026-07-09",
+              "value": "Mature file-edit, terminal, and browser tools plus MCP server integration and an MCP marketplace; supports Anthropic, OpenAI, Gemini, OpenRouter (200+ models), Bedrock, Vertex, Ollama, and LM Studio"
+            }
+          ],
+          "methodology": "Tool invocation testing across editors, terminal execution, and MCP integrations",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline documentation",
+              "url": "https://docs.cline.bot/",
+              "date": "2026-06-15",
+              "value": "Signature Plan/Act mode separates strategy from execution: the agent drafts and discusses a plan in read-only mode before switching to approved execution"
+            }
+          ],
+          "methodology": "Evaluation of Plan/Act workflow on long-horizon multi-file changes",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline documentation",
+              "url": "https://docs.cline.bot/",
+              "date": "2026-06-15",
+              "value": ".clinerules project files, workspace checkpoints, and the community memory-bank pattern provide cross-session context; no managed memory service"
+            }
+          ],
+          "methodology": "Review of rules files, checkpoints, and task-history persistence",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline documentation",
+              "url": "https://docs.cline.bot/",
+              "date": "2026-06-15",
+              "value": "Monitors terminal output and linter/compiler errors to self-correct; checkpoints let users roll back the workspace to any step"
+            }
+          ],
+          "methodology": "Observed recovery from failing builds and tests plus checkpoint restore testing",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline GitHub repository",
+              "url": "https://github.com/cline/cline",
+              "date": "2026-07-09",
+              "value": "Multi-agent team coordination, scheduled agents, and a headless CLI/SDK for CI pipelines shipped across the 3.x line"
+            }
+          ],
+          "methodology": "Review of multi-agent orchestration features and headless automation support",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 68,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 52,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline documentation",
+              "url": "https://docs.cline.bot/",
+              "date": "2026-06-15",
+              "value": "No OS-level sandbox: commands run in the user's real shell and edits hit the real workspace; safety relies on per-action human approval and configurable auto-approve settings"
+            }
+          ],
+          "methodology": "Execution isolation review; approval gates substitute for sandboxing, and auto-approve weakens them",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline documentation",
+              "url": "https://docs.cline.bot/",
+              "date": "2026-06-15",
+              "value": "Human-in-the-loop approval for every file edit and terminal command by default, with granular auto-approve controls, .clinerules policies, and enterprise controls on team plans"
+            }
+          ],
+          "methodology": "Assessment of the approval model, auto-approve granularity, and enterprise policy features",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Mindgard - Cline coding agent vulnerabilities",
+              "url": "https://mindgard.ai/blog/cline-coding-agent-vulnerabilities",
+              "date": "2026-03-25",
+              "value": "Researchers embedded instructions in Python docstrings, Markdown, and .clinerules to override the requires_approval flag, achieving code execution and data exfiltration from a cloned repo; mitigations including injection detection shipped in v3.35.0"
+            },
+            {
+              "source": "Adnan Khan - Clinejection",
+              "url": "https://adnanthekhan.com/posts/clinejection/",
+              "date": "2026-02-10",
+              "value": "Prompt injection against Cline's own AI issue-triage workflow could compromise its production release pipeline, demonstrating second-order supply-chain risk"
+            }
+          ],
+          "methodology": "Review of published injection research (approval bypass, TOCTOU payload assembly, supply-chain triager attack) and vendor mitigations",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline security documentation",
+              "url": "https://cline.bot/",
+              "date": "2026-06-15",
+              "value": "Client-side architecture: code goes directly from the user's machine to the chosen model provider; Cline's servers do not store or proxy source code in BYOK mode"
+            }
+          ],
+          "methodology": "Data-flow review of the BYOK client-side design and optional Cline-provided inference",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline GitHub repository",
+              "url": "https://github.com/cline/cline",
+              "date": "2026-07-09",
+              "value": "Apache-2.0, fully open extension/CLI/SDK codebase with public issues and rapid security patching (e.g., v3.35.0 injection mitigations)"
+            }
+          ],
+          "methodology": "License and source availability review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 83,
+      "criteria": {
+        "data_retention": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline website",
+              "url": "https://cline.bot/",
+              "date": "2026-06-15",
+              "value": "Zero code retention by design in BYOK mode: prompts and code flow only to the user's own model provider; telemetry is opt-out"
+            }
+          ],
+          "methodology": "Privacy architecture review of client-side BYOK data flows",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline website",
+              "url": "https://cline.bot/",
+              "date": "2026-06-15",
+              "value": "Compliance posture largely inherits from the chosen model provider; team/enterprise plans add organizational controls, but Cline Bot Inc. itself publishes a lighter compliance program than enterprise vendors"
+            }
+          ],
+          "methodology": "Compliance review across BYOK and team-plan configurations",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline documentation",
+              "url": "https://docs.cline.bot/",
+              "date": "2026-06-15",
+              "value": "Code is shared only with the user-selected provider (Anthropic, OpenAI, OpenRouter, local Ollama, etc.); MCP servers the user installs may add further flows"
+            }
+          ],
+          "methodology": "Data-flow analysis across configured providers and user-installed MCP servers",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline GitHub repository",
+              "url": "https://github.com/cline/cline",
+              "date": "2026-07-09",
+              "value": "Supports fully local inference via Ollama and LM Studio and any OpenAI-compatible endpoint, enabling on-prem operation"
+            }
+          ],
+          "methodology": "Deployment options assessment including local-model configurations",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 85,
+      "criteria": {
+        "documentation_quality": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline documentation",
+              "url": "https://docs.cline.bot/",
+              "date": "2026-06-15",
+              "value": "Thorough docs for providers, MCP, rules, auto-approve, CLI/SDK, and enterprise deployment"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline documentation",
+              "url": "https://docs.cline.bot/",
+              "date": "2026-06-15",
+              "value": "Every proposed edit is shown as a diff and every command surfaced before execution; task history and checkpoints record the full session"
+            }
+          ],
+          "methodology": "Review of diff previews, task transcripts, and checkpoint history",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline documentation",
+              "url": "https://docs.cline.bot/",
+              "date": "2026-06-15",
+              "value": "Plan mode externalizes the agent's strategy for discussion before any change; per-action approval keeps intent visible throughout"
+            }
+          ],
+          "methodology": "Assessment of plan previews and pre-execution reasoning visibility",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline GitHub repository",
+              "url": "https://github.com/cline/cline",
+              "date": "2026-07-09",
+              "value": "Apache-2.0 with the full extension, CLI, and SDK source public; large fork ecosystem (Roo Code, Kilo Code) built on it"
+            }
+          ],
+          "methodology": "Open source assessment of license and codebase completeness",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline GitHub repository",
+              "url": "https://github.com/cline/cline",
+              "date": "2026-07-09",
+              "value": "64.5K stars, 6.9K forks, near-daily releases (CLI v3.0.39 on 2026-07-09), active Discord, and 5M+ installs across VS Code, JetBrains, and CLI"
+            },
+            {
+              "source": "JetBrains Marketplace - Cline plugin",
+              "url": "https://plugins.jetbrains.com/plugin/28247-cline",
+              "date": "2026-07-09",
+              "value": "Native JetBrains plugin extends the ecosystem beyond VS Code"
+            }
+          ],
+          "methodology": "Community engagement analysis via installs, stars, release cadence, and ecosystem forks",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 76,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline GitHub repository",
+              "url": "https://github.com/cline/cline",
+              "date": "2026-07-09",
+              "value": "One-click marketplace installs for VS Code and JetBrains, npm-installed CLI and SDK; works immediately with any pasted API key"
+            }
+          ],
+          "methodology": "Setup time and integration surface assessment across IDEs, CLI, and SDK",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline GitHub repository",
+              "url": "https://github.com/cline/cline",
+              "date": "2026-07-09",
+              "value": "Headless CLI, SDK, and scheduled agents support CI/CD-scale automation; throughput is bounded by the user's provider rate limits"
+            }
+          ],
+          "methodology": "Assessment of headless/CI usage and multi-instance operation",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline website",
+              "url": "https://cline.bot/",
+              "date": "2026-06-15",
+              "value": "Free extension with pay-as-you-go BYOK tokens; heavy full-context usage is a known cost complaint, and Anthropic's OAuth ban removed the cheaper Claude-subscription path in early 2026"
+            },
+            {
+              "source": "The Register - Anthropic clarifies third-party access ban",
+              "url": "https://www.theregister.com/2026/02/20/anthropic_clarifies_ban_third_party_claude_access/",
+              "date": "2026-02-20",
+              "value": "Anthropic's February 2026 ToS update barred Claude Pro/Max OAuth tokens from third-party tools including Cline; API keys remain the supported route"
+            }
+          ],
+          "methodology": "Pricing analysis of BYOK token costs and the impact of the consumer-OAuth policy change",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Cline documentation",
+              "url": "https://docs.cline.bot/",
+              "date": "2026-06-15",
+              "value": "Per-task token and cost tracking in the UI; team plans add centralized usage visibility, but deep audit/telemetry pipelines require external tooling"
+            }
+          ],
+          "methodology": "Monitoring features assessment for individual and team usage",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Cline GitHub repository",
+              "url": "https://github.com/cline/cline",
+              "date": "2026-07-09",
+              "value": "Mature 3.x line with 5M+ installs (reported Feb 2026), rapid patching of disclosed vulnerabilities, and a stable Plan/Act core that large fork ecosystems depend on"
+            }
+          ],
+          "methodology": "Maturity assessment from adoption scale, release stability, and security response history",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 86,
+      "notes": "Flagship use case: Plan/Act workflow with diff-gated edits across VS Code, JetBrains, and CLI"
+    },
+    "data-analysis": {
+      "overall": 76,
+      "notes": "Handles scripted analysis and notebooks through terminal and file tools"
+    },
+    "research-assistant": {
+      "overall": 72,
+      "notes": "Codebase exploration and web research via browser tool and MCP servers"
+    },
+    "content-creation": {
+      "overall": 66,
+      "notes": "Fine for technical docs; not built for general content work"
+    }
+  },
+  "best_for": [
+    "Developers wanting a free, open, model-agnostic agent inside their existing IDE",
+    "Privacy-conscious teams that need code to stay client-side with BYOK routing",
+    "Users who want explicit human approval of every edit and command (Plan/Act)",
+    "Teams standardizing agent workflows via .clinerules and the CLI/SDK in CI"
+  ],
+  "strengths": [
+    "Most-adopted open-source coding agent: 5M+ installs (Feb 2026), 64.5K GitHub stars",
+    "Client-side BYOK: code never touches Cline servers in default configuration",
+    "Plan/Act separation with diff previews and per-command approval",
+    "Very broad provider support: Anthropic, OpenAI, Gemini, OpenRouter (200+ models), Bedrock, Vertex, Ollama, LM Studio",
+    "Apache-2.0 across extension, CLI, and SDK; spawned a large fork ecosystem",
+    "MCP marketplace and .clinerules for extensibility and team policy"
+  ],
+  "limitations": [
+    "No sandbox: approval prompts are the only barrier between the model and the real shell/workspace",
+    "Demonstrated prompt-injection attacks bypassed command approval via .clinerules/docstrings before v3.35.0 mitigations; auto-approve settings re-open that risk",
+    "Anthropic ToS change (Jan-Apr 2026) blocked Claude Pro/Max OAuth use, forcing API-key costs on Claude users",
+    "Full-context prompting makes token costs high on large tasks",
+    "Compliance program is lighter than enterprise vendors; largely inherited from the chosen provider",
+    "User-installed MCP servers are an unvetted supply-chain surface"
+  ],
+  "metadata": {
+    "license": "Apache-2.0",
+    "repository": "https://github.com/cline/cline",
+    "package_name": "cline (npm CLI); saoudrizwan.claude-dev (VS Code)",
+    "supported_models": [
+      "Anthropic Claude (API key)",
+      "OpenAI GPT models",
+      "Google Gemini",
+      "OpenRouter (200+ models)",
+      "AWS Bedrock / Azure / GCP Vertex",
+      "Local via Ollama and LM Studio"
+    ],
+    "deployment_type": "Client-side IDE extension (VS Code, JetBrains), terminal CLI, and SDK; BYOK",
+    "architecture": "Client-side agent with Plan/Act modes, human-in-the-loop approvals, checkpoints, and MCP integration",
+    "first_release": "July 2024 (as Claude Dev); renamed Cline early 2025",
+    "adoption": "5M+ installs across VS Code, JetBrains, and CLI (reported February 2026)",
+    "pricing": "Free extension + BYOK provider costs; paid team/enterprise plans with centralized billing and controls",
+    "github_stars": "64500+"
+  },
+  "related": [
+    "claude-code",
+    "cursor-agent",
+    "opencode",
+    "github-copilot-coding-agent",
+    "openai-codex"
+  ],
+  "tags": [
+    "coding-agent",
+    "open-source",
+    "byok",
+    "ide-extension",
+    "mcp"
+  ]
+}

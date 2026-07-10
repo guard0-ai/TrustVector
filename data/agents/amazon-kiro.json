@@ -1,0 +1,490 @@
+{
+  "id": "amazon-kiro",
+  "type": "agent",
+  "name": "Kiro",
+  "provider": "Amazon Web Services (AWS)",
+  "version": "GA (IDE + CLI)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "AWS's spec-driven agentic IDE and CLI: it turns prompts into structured specs (requirements.md in EARS notation, design.md, tasks.md) before implementing, alongside a freeform vibe mode, agent hooks, and steering files. Preview 2025-07-14, GA 2025-11-17; official successor to Amazon Q Developer. Available in AWS GovCloud (US) with IAM Identity Center integration, signaling a regulated-workload posture (FedRAMP High authorization in progress, not yet granted).",
+  "website": "https://kiro.dev/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 75,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Blog - General Availability",
+              "url": "https://kiro.dev/blog/general-availability/",
+              "date": "2025-11-17",
+              "value": "GA (2025-11-17) added property-based testing that validates implementations against spec correctness, checkpoints, and a terminal CLI; spec grounding measurably reduces off-target implementations versus pure prompting"
+            }
+          ],
+          "methodology": "Assessment of implementation accuracy on spec-driven workflows from vendor documentation and independent reviews; vibe mode performs comparably to peer agents",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Documentation",
+              "url": "https://kiro.dev/docs/",
+              "date": "2026-06-01",
+              "value": "Agent reliably drives file edits, shell execution, MCP tools, and agent hooks (event-triggered automations on file save/create) across IDE and CLI"
+            }
+          ],
+          "methodology": "Review of agent tool loop reliability across editor, terminal, hooks, and MCP integrations",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro Documentation - Specs",
+              "url": "https://kiro.dev/docs/specs/",
+              "date": "2026-06-01",
+              "value": "Spec-driven development is the product's core: requirements.md (EARS notation), design.md, and tasks.md decompose work into reviewable, sequenced implementation tasks before any code is written"
+            }
+          ],
+          "methodology": "Evaluation of structured planning artifacts and task sequencing; the strongest explicit-planning model among evaluated coding agents",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Documentation - Steering",
+              "url": "https://kiro.dev/docs/steering/",
+              "date": "2026-06-01",
+              "value": "Steering files persist project conventions and context across sessions; specs themselves are durable artifacts that carry design intent between tasks and contributors"
+            }
+          ],
+          "methodology": "Review of steering files, spec persistence, and cross-session context retention",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Blog - General Availability",
+              "url": "https://kiro.dev/blog/general-availability/",
+              "date": "2025-11-17",
+              "value": "Iterates on failing tests and task-level errors; GA checkpoints allow rolling back agent work. Autopilot mode can pursue unproductive paths, consuming credits until interrupted"
+            }
+          ],
+          "methodology": "Assessment of autonomous iteration, checkpoint rollback, and documented failure modes",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Documentation - CLI",
+              "url": "https://kiro.dev/docs/cli/",
+              "date": "2026-06-01",
+              "value": "Custom agents with scoped permissions, context, and prompts run specialized tasks in the CLI; orchestration is task-parallel rather than a coordinated multi-agent manager"
+            }
+          ],
+          "methodology": "Review of custom agent profiles and parallel execution capabilities",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 63,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "AWS Security Bulletin AWS-2025-019",
+              "url": "https://aws.amazon.com/security/security-bulletins/AWS-2025-019/",
+              "date": "2025-10-07",
+              "value": "Prompt-injection paths could execute code without human-in-the-loop confirmation in Autopilot and Supervised modes; fixed in Kiro 0.1.42 (2025-08-01) by requiring HITL confirmation in Supervised mode"
+            },
+            {
+              "source": "Kiro Documentation - CLI Security",
+              "url": "https://kiro.dev/docs/cli/chat/security/",
+              "date": "2026-06-01",
+              "value": "Supervised mode requires approval for file changes and commands with a trusted-commands allowlist; Autopilot executes without per-step approval and runs directly on the user's machine (no VM/container isolation)"
+            }
+          ],
+          "methodology": "Security review of the approval model; supervised defaults and allowlists are sound, but local execution without OS-level sandboxing and an opt-in full-autonomy mode limit the score",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro Documentation - IAM",
+              "url": "https://kiro.dev/docs/enterprise/iam/",
+              "date": "2026-06-01",
+              "value": "Enterprise sign-in via AWS IAM Identity Center with subscriptions (Pro/Pro+/Power) assigned and managed centrally from the AWS Management Console; individuals use AWS Builder ID or social login"
+            },
+            {
+              "source": "AWS - Kiro now available in AWS GovCloud (US)",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/02/kiro-launch-aws-govcloud-us/",
+              "date": "2026-02-16",
+              "value": "GovCloud (US-East/US-West) availability since 2026-02-16 mandates IAM Identity Center authentication, bringing Kiro inside government compliance boundaries"
+            }
+          ],
+          "methodology": "Review of identity integration and centralized administration; inheriting AWS IAM Identity Center is best-in-class among coding agents",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Embrace The Red - AWS Kiro: Arbitrary Code Execution via Indirect Prompt Injection",
+              "url": "https://embracethered.com/blog/posts/2025/aws-kiro-aribtrary-command-execution-with-indirect-prompt-injection/",
+              "date": "2025-09-15",
+              "value": "Demonstrated indirect prompt injection to arbitrary command execution (since fixed); AWS-2025-019 formalized the fixes with HITL requirements and invisible-control-character handling"
+            },
+            {
+              "source": "NVD - CVE-2026-0830",
+              "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0830",
+              "date": "2026-01-20",
+              "value": "CVE-2026-0830: command injection via crafted workspace folder names in the GitLab helper enabled RCE; fixed in Kiro 0.6.18"
+            }
+          ],
+          "methodology": "Assessment of demonstrated injection paths against AWS's remediation record; multiple real flaws, but consistently patched with published security bulletins and researcher credit",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Documentation - Data Protection",
+              "url": "https://kiro.dev/docs/privacy-and-security/data-protection/",
+              "date": "2026-06-01",
+              "value": "TLS 1.2+ in transit, AWS KMS encryption at rest, AWS shared-responsibility model; GovCloud regions keep traffic and data within the government boundary"
+            }
+          ],
+          "methodology": "Data architecture review of encryption, regional isolation, and AWS infrastructure inheritance",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 40,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro FAQ",
+              "url": "https://kiro.dev/faq/",
+              "date": "2026-06-01",
+              "value": "Built on Code OSS with Open VSX extension compatibility, but the agent, orchestration, and service are proprietary; AWS publishes security bulletins (AWS-2025-019) and a public GitHub issue tracker"
+            }
+          ],
+          "methodology": "Source availability assessment crediting the OSS base, public issue tracker, and formal security-bulletin practice",
+          "last_verified": "2026-07-09"
+        }
+      },
+      "notes": "Kiro has had real vulnerabilities (AWS-2025-019 prompt injection, CVE-2026-0830 RCE), but AWS's disclosure discipline — numbered security bulletins, prompt fixes, researcher credit — plus GovCloud/IAM controls give it a stronger institutional security posture than most agent-IDE peers."
+    },
+    "privacy_compliance": {
+      "overall_score": 62,
+      "criteria": {
+        "data_retention": {
+          "score": 62,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro Documentation - Data Protection",
+              "url": "https://kiro.dev/docs/privacy-and-security/data-protection/",
+              "date": "2026-06-01",
+              "value": "Free-tier and social-login users have telemetry AND content collection (prompts, code snippets) enabled by default for service improvement, with opt-out toggles; paid users via IAM Identity Center or external IdP are automatically excluded from content collection"
+            }
+          ],
+          "methodology": "Review of default collection settings by tier; enterprise defaults are strong, consumer opt-out-required defaults cost points",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Blog - Kiro loves regulated workloads",
+              "url": "https://kiro.dev/blog/introducing-govcloud/",
+              "date": "2026-02-18",
+              "value": "GovCloud (US) availability targets FedRAMP High and DoD CC SRG alignment (authorization in progress, not yet granted); Kiro inherits AWS's compliance program breadth (SOC, ISO, GDPR DPA) as an AWS service"
+            }
+          ],
+          "methodology": "Compliance posture assessment; AWS program inheritance and the GovCloud boundary are credited, pending product-specific FedRAMP authorization",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Documentation - Models",
+              "url": "https://kiro.dev/docs/models/",
+              "date": "2026-06-01",
+              "value": "Prompts and code are processed by Anthropic Claude models (Sonnet 4.5/4.6, Haiku 4.5, Opus 4.6+) and the Auto router within AWS-managed infrastructure; Bedrock routing is press-reported rather than officially documented"
+            }
+          ],
+          "methodology": "Data flow analysis of model routing; AWS-managed processing narrows the third-party surface versus multi-vendor routing",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 42,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro Documentation",
+              "url": "https://kiro.dev/docs/",
+              "date": "2026-06-01",
+              "value": "IDE and CLI run locally but all model inference is cloud-based; no offline mode. GovCloud regions offer a compliance-boundary alternative rather than self-hosting"
+            }
+          ],
+          "methodology": "Deployment options assessment with partial credit for the GovCloud regional option",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 67,
+      "criteria": {
+        "documentation_quality": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro Documentation",
+              "url": "https://kiro.dev/docs/",
+              "date": "2026-06-01",
+              "value": "Comprehensive docs across IDE, CLI, web, and autonomous agent surfaces, including dedicated privacy/security and data-protection sections per surface, billing docs, and a public changelog"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Blog - General Availability",
+              "url": "https://kiro.dev/blog/general-availability/",
+              "date": "2025-11-17",
+              "value": "Task-by-task execution against tasks.md with diffs, checkpoints for rollback, and hunk-level approval in Supervised mode make agent work reviewable step by step"
+            }
+          ],
+          "methodology": "Review of task-level visibility, diff review workflow, and checkpoint history",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro Documentation - Specs",
+              "url": "https://kiro.dev/docs/specs/",
+              "date": "2026-06-01",
+              "value": "Requirements in EARS notation, an explicit design document, and a sequenced task list mean the agent's intent is written down and human-editable before execution — the most explainable workflow in the category"
+            }
+          ],
+          "methodology": "Assessment of upfront rationale artifacts; spec-driven development is inherently an explainability mechanism",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 30,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro FAQ",
+              "url": "https://kiro.dev/faq/",
+              "date": "2026-06-01",
+              "value": "Proprietary agent and service on a Code OSS base; no published agent internals or model details beyond the models list"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 64,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Blog - The wait(list) is over",
+              "url": "https://kiro.dev/blog/waitlist-is-over/",
+              "date": "2025-10-01",
+              "value": "Hundreds of thousands joined the preview waitlist within 90 days of the July 2025 launch; active public GitHub issue tracker and Discord, though community trust took a hit in the August 2025 pricing episode"
+            }
+          ],
+          "methodology": "Community engagement analysis across waitlist demand, issue tracker, and Discord activity",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 72,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 76,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro Documentation",
+              "url": "https://kiro.dev/docs/",
+              "date": "2026-06-01",
+              "value": "VS Code settings and Open VSX extension compatibility ease migration; sign-in supports social login, AWS Builder ID, or IAM Identity Center. Spec-first workflow has a learning curve versus chat-first tools"
+            }
+          ],
+          "methodology": "Onboarding and integration friction assessment",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Blog - General Availability",
+              "url": "https://kiro.dev/blog/general-availability/",
+              "date": "2025-11-17",
+              "value": "Team plans with centralized management, a CLI for automation, and AWS-scale service infrastructure; execution remains local-machine-bound rather than cloud-parallel"
+            }
+          ],
+          "methodology": "Scalability assessment of team administration and AWS service backing",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 58,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro Pricing",
+              "url": "https://kiro.dev/pricing/",
+              "date": "2026-07-07",
+              "value": "Free 50 credits/mo; Pro $20 (1,000 credits); Pro+ $40 (2,000); Pro Max $100 (5,000); Power $200 (10,000); overage $0.04/credit; model choice changes credit burn (Sonnet 4.6 ~1.3x Auto). GovCloud pricing ~20% higher with no free tier"
+            },
+            {
+              "source": "The Register - AWS pricing for Kiro dev tool 'a wallet-wrecking tragedy'",
+              "url": "https://www.theregister.com/2025/08/18/aws_updated_kiro_pricing/",
+              "date": "2025-08-18",
+              "value": "August 2025 pricing rollout drew heavy backlash amid a metering bug consuming 4-6x expected requests; AWS waived and refunded August charges and later restructured to the current credit tiers"
+            }
+          ],
+          "methodology": "Pricing model analysis; current tiers are clearer, but variable per-task credit burn, model multipliers, and the 2025 metering episode temper predictability",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Kiro Documentation - IAM",
+              "url": "https://kiro.dev/docs/enterprise/iam/",
+              "date": "2026-06-01",
+              "value": "Admins assign and monitor subscriptions from the AWS Management Console; per-user credit usage dashboards and centralized billing through AWS accounts"
+            }
+          ],
+          "methodology": "Monitoring and usage governance assessment leveraging AWS console integration",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Kiro Blog - General Availability",
+              "url": "https://kiro.dev/blog/general-availability/",
+              "date": "2025-11-17",
+              "value": "GA since 2025-11-17 with AWS backing as the official successor to Amazon Q Developer (Q signups closed 2026-05-15, end-of-support 2027-04-30; newest Claude models Kiro-exclusive from 2026-05-29); GovCloud availability signals long-term enterprise commitment"
+            }
+          ],
+          "methodology": "Product maturity and vendor commitment assessment; GA status, succession positioning, and regulated-market investment all indicate durability",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 80,
+      "notes": "Spec-driven workflow excels on well-defined features and team codebases where design intent must be documented; vibe mode covers quick tasks"
+    },
+    "data-analysis": {
+      "overall": 66,
+      "notes": "Solid for building analysis pipelines with AWS service integration, though not an analytics tool itself"
+    },
+    "education": {
+      "overall": 72,
+      "notes": "Specs teach requirements thinking and the free tier lowers the barrier, making it unusually good at showing how professional software gets planned"
+    },
+    "research-assistant": {
+      "overall": 58,
+      "notes": "MCP tools and steering help with technical research inside projects, but general research is outside its design focus"
+    }
+  },
+  "best_for": [
+    "Teams that want documented, reviewable design intent (requirements/design/tasks) before agent execution",
+    "AWS-centric enterprises managing agent access through IAM Identity Center and the AWS console",
+    "Government agencies and contractors needing an agentic IDE inside AWS GovCloud (US) compliance boundaries",
+    "Organizations migrating from Amazon Q Developer to its designated successor"
+  ],
+  "strengths": [
+    "Spec-driven development (EARS requirements, design docs, task lists) is the most explainable and auditable agent workflow in the category",
+    "Best-in-class enterprise identity: IAM Identity Center integration with centralized AWS console administration",
+    "AWS GovCloud (US) availability (since 2026-02-16) with FedRAMP High/DoD CC SRG alignment in progress — unique among agentic IDEs",
+    "Disciplined security response: numbered AWS security bulletins (AWS-2025-019), prompt fixes (0.1.42, 0.6.18), researcher credit",
+    "Enterprise/IdP users are automatically excluded from telemetry and content collection",
+    "Strong vendor commitment as the official Amazon Q Developer successor, with GA team plans, CLI, and property-based spec testing"
+  ],
+  "limitations": [
+    "Real vulnerability history: AWS-2025-019 prompt-injection code execution and CVE-2026-0830 workspace-name RCE (both patched)",
+    "Autopilot mode executes commands without per-step approval on the local machine, with no OS-level sandbox",
+    "Free-tier/social-login defaults collect prompts and code content for service improvement unless opted out",
+    "Credit consumption varies by task complexity and model choice; the August 2025 metering bug and pricing backlash damaged cost trust",
+    "Cloud-only inference with no self-hosted option; Claude-only model lineup",
+    "Spec-first workflow adds overhead for small tasks, and date reporting on its GA has been muddied by conflicting secondary sources (GA verified as 2025-11-17; a May 2026 GA date circulating in SEO articles conflates later Q Developer retirement milestones)"
+  ],
+  "metadata": {
+    "license": "Proprietary (built on Code OSS; Open VSX extension ecosystem)",
+    "supported_models": [
+      "Auto (default router)",
+      "Anthropic Claude Sonnet 4.5/4.6",
+      "Anthropic Claude Haiku 4.5",
+      "Anthropic Claude Opus 4.5/4.6/4.7 (newest Claude models Kiro-exclusive within AWS tooling from 2026-05-29)"
+    ],
+    "programming_languages": [
+      "All languages supported by the VS Code ecosystem"
+    ],
+    "deployment_type": "Local IDE (Code OSS fork) + CLI with cloud model inference; commercial AWS regions and AWS GovCloud (US-East/US-West)",
+    "tool_support": [
+      "Specs (requirements/design/tasks)",
+      "Agent hooks (event-triggered automations)",
+      "Steering files",
+      "MCP servers",
+      "Terminal CLI with custom agents",
+      "Checkpoints and property-based spec testing"
+    ],
+    "first_release": "Public preview 2025-07-14 (waitlisted within a week due to demand, lifted Oct 2025); GA 2025-11-17. Note: some secondary sources claim a March 2026 startup beta or May 2026 GA — primary sources (kiro.dev, AWS) date GA to 2025-11-17",
+    "pricing": "Free 50 credits/mo; Pro $20/mo (1,000 credits); Pro+ $40/mo (2,000); Pro Max $100/mo (5,000); Power $200/mo (10,000); overage $0.04/credit; GovCloud ~20% premium, no free tier, IAM Identity Center required",
+    "company": "Amazon Web Services; Kiro is the designated successor to Amazon Q Developer (Q signups blocked 2026-05-15, end-of-support 2027-04-30)",
+    "security_incidents": "AWS-2025-019 (2025-10-07): prompt-injection code execution without HITL confirmation, fixed in Kiro 0.1.42; CVE-2026-0830: command injection via workspace folder names in GitLab helper (RCE), fixed in 0.6.18; included in the Dec 2025 'IDEsaster' multi-vendor AI-IDE vulnerability research"
+  },
+  "related_entities": [
+    "amazon-bedrock-agents",
+    "claude-code",
+    "cursor-agent",
+    "github-copilot-coding-agent"
+  ],
+  "tags": [
+    "ide",
+    "spec-driven",
+    "aws",
+    "proprietary"
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "id": "mcp-server-hubspot",
+  "type": "mcp",
+  "name": "MCP HubSpot Server",
+  "provider": "HubSpot (Official)",
+  "version": "hosted remote (GA 2026-04-13)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "HubSpot's official hosted MCP server at https://mcp.hubspot.com, authenticated via OAuth 2.1 with PKCE and available to all HubSpot accounts and tiers. Launched as a read-only public beta in September 2025; GA on 2026-04-13 added write capabilities (CRM records and activities), activity history, marketing content objects, and organizational context - a material expansion of the risk surface. Actions inherit the connecting user's HubSpot permissions.",
+  "website": "https://developers.hubspot.com/ai-tools/mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 81,
+      "criteria": {
+        "crm_operation_reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot MCP Server Documentation",
+              "url": "https://developers.hubspot.com/ai-tools/mcp",
+              "date": "2026-07-09",
+              "value": "Hosted by HubSpot on the same platform as its public CRM APIs; reliable record operations across contacts, companies, deals, tickets, line items, and products"
+            }
+          ],
+          "methodology": "Operation reliability assessment against the underlying HubSpot CRM API",
+          "last_verified": "2026-07-09"
+        },
+        "search_accuracy": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "HubSpot CRM Search API",
+              "url": "https://developers.hubspot.com/docs/api/crm/search",
+              "date": "2026-07-09",
+              "value": "Record retrieval builds on the CRM search API with filtering across object types"
+            }
+          ],
+          "methodology": "Search quality testing",
+          "last_verified": "2026-07-09"
+        },
+        "write_operation_reliability": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot Changelog - Remote MCP Server GA",
+              "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available",
+              "date": "2026-04-13",
+              "value": "GA added write access for CRM records (contacts, companies, deals, tickets, line items, products) and activities (calls, emails, meetings, notes, tasks) with validation via the CRM APIs"
+            }
+          ],
+          "methodology": "Write-path reliability review",
+          "last_verified": "2026-07-09"
+        },
+        "rate_limit_handling": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "HubSpot API Usage Guidelines",
+              "url": "https://developers.hubspot.com/docs/api/usage-details",
+              "date": "2026-07-09",
+              "value": "Subject to HubSpot API rate limits, which vary by subscription tier"
+            }
+          ],
+          "methodology": "Rate limiting behavior analysis",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "HubSpot MCP Server Documentation",
+              "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+              "date": "2026-07-09",
+              "value": "Standard API errors (permissions, validation, sensitive-data blocks) are surfaced to the MCP client; get_user_details tool lets agents discover available objects before acting"
+            }
+          ],
+          "methodology": "Error handling and discovery testing",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 73,
+      "criteria": {
+        "authentication_security": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot Changelog - Remote MCP Server GA",
+              "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available",
+              "date": "2026-04-13",
+              "value": "OAuth 2.1 with PKCE is required for all connections; credentials generated via an MCP auth app in the account's Development section - no static API keys"
+            }
+          ],
+          "methodology": "Authentication mechanism review",
+          "last_verified": "2026-07-09"
+        },
+        "scope_limitation": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot Changelog - Remote MCP Server GA",
+              "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available",
+              "date": "2026-04-13",
+              "value": "Actions respect existing HubSpot user permissions - the connection inherits the full scope of the authorizing user rather than offering per-connection narrowing (e.g. a read-only grant)"
+            }
+          ],
+          "methodology": "Analysis of available mechanisms to scope agent access below the user's permission level",
+          "last_verified": "2026-07-09"
+        },
+        "write_action_risk": {
+          "score": 62,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot Changelog - Remote MCP Server GA",
+              "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available",
+              "date": "2026-04-13",
+              "value": "GA on 2026-04-13 changed the server from read-only (beta since Sept 2025) to read/write: agents can now create and update contacts, companies, deals, tickets, line items, products, and log calls, emails, meetings, notes, and tasks - a materially larger risk surface than the beta"
+            }
+          ],
+          "methodology": "Assessment of the GA capability change from read-only to write-enabled and its blast radius",
+          "last_verified": "2026-07-09"
+        },
+        "sensitive_data_controls": {
+          "score": 76,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot Changelog - Remote MCP Server GA",
+              "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available",
+              "date": "2026-04-13",
+              "value": "Accounts with the sensitive-data setting enabled have Activity objects (calls, emails, meetings, notes, tasks) blocked from MCP access entirely"
+            }
+          ],
+          "methodology": "Review of built-in sensitive data safeguards",
+          "last_verified": "2026-07-09"
+        },
+        "audit_logging": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "HubSpot Account Activity Logging",
+              "url": "https://knowledge.hubspot.com/account-management/view-account-activity-history",
+              "date": "2026-07-09",
+              "value": "Record changes appear in HubSpot property/activity history attributed to the authorizing user; no dedicated MCP-level audit log distinguishing agent actions from user actions"
+            }
+          ],
+          "methodology": "Audit logging review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 66,
+      "criteria": {
+        "crm_pii_exposure": {
+          "score": 58,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP Data Flow",
+              "url": "https://modelcontextprotocol.io/docs/architecture",
+              "date": "2026-07-09",
+              "value": "Contact and company records - names, emails, phone numbers, deal values - are returned into the agent context and sent to the LLM provider"
+            }
+          ],
+          "methodology": "Data flow analysis of CRM PII exposure",
+          "last_verified": "2026-07-09"
+        },
+        "activity_and_communication_exposure": {
+          "score": 62,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot Changelog - Remote MCP Server GA",
+              "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available",
+              "date": "2026-04-13",
+              "value": "GA added activity history access: logged calls, emails, meetings, notes, and tasks - customer communication content - become readable by connected agents unless the sensitive-data block applies"
+            }
+          ],
+          "methodology": "Communication content exposure assessment",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 66,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "LLM Provider Policies",
+              "url": "https://modelcontextprotocol.io/docs",
+              "date": "2026-07-09",
+              "value": "CRM and marketing data retrieved via MCP is processed by the connected LLM provider under that provider's privacy policy"
+            }
+          ],
+          "methodology": "Data sharing analysis",
+          "last_verified": "2026-07-09"
+        },
+        "tenant_scoping": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "HubSpot MCP Server Documentation",
+              "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+              "date": "2026-07-09",
+              "value": "Each OAuth connection is bound to a specific HubSpot account and user; access is confined to records that user can view or edit"
+            }
+          ],
+          "methodology": "Tenant and account isolation review",
+          "last_verified": "2026-07-09"
+        },
+        "compliance_readiness": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "HubSpot Changelog - Remote MCP Server GA",
+              "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available",
+              "date": "2026-04-13",
+              "value": "Sensitive-data accounts get automatic activity blocking, and permissions are enforced, but GDPR/CCPA obligations for routing customer PII through third-party LLMs remain the customer's responsibility"
+            }
+          ],
+          "methodology": "Regulatory readiness assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 78,
+      "criteria": {
+        "documentation_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot MCP Server Documentation",
+              "url": "https://developers.hubspot.com/ai-tools/mcp",
+              "date": "2026-07-09",
+              "value": "First-party docs cover setup, OAuth app creation, supported objects for read vs write, and client integration guides"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "changelog_and_disclosure": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot Changelog - Remote MCP Server GA",
+              "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available",
+              "date": "2026-04-13",
+              "value": "The read-only-to-read/write capability change at GA was clearly announced in the developer changelog with an effective date and object-by-object scope"
+            }
+          ],
+          "methodology": "Review of capability-change communication",
+          "last_verified": "2026-07-09"
+        },
+        "operation_visibility": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "HubSpot MCP Server Documentation",
+              "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+              "date": "2026-07-09",
+              "value": "Changes are visible in record property history, but agent-initiated actions are not separately labeled from the authorizing user's own actions"
+            }
+          ],
+          "methodology": "Logging and traceability assessment",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 70,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot MCP Server Documentation",
+              "url": "https://developers.hubspot.com/ai-tools/mcp",
+              "date": "2026-07-09",
+              "value": "The remote server is a closed-source hosted service; behavior is documented but the implementation is not auditable"
+            }
+          ],
+          "methodology": "Source availability review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 82,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot MCP Server Documentation",
+              "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+              "date": "2026-07-09",
+              "value": "No install: create an MCP auth app in the account's Development section, add https://mcp.hubspot.com to the client, complete browser OAuth"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-07-09"
+        },
+        "api_performance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "HubSpot Developer Platform",
+              "url": "https://developers.hubspot.com/",
+              "date": "2026-07-09",
+              "value": "Performance tracks the underlying HubSpot CRM APIs; typical record operations complete quickly, large list operations are paginated"
+            }
+          ],
+          "methodology": "Performance assessment",
+          "last_verified": "2026-07-09"
+        },
+        "reliability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot Status",
+              "url": "https://status.hubspot.com/",
+              "date": "2026-07-09",
+              "value": "Runs on HubSpot's production platform with public status transparency and strong uptime history"
+            }
+          ],
+          "methodology": "Reliability analysis",
+          "last_verified": "2026-07-09"
+        },
+        "feature_coverage": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot Changelog - Remote MCP Server GA",
+              "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available",
+              "date": "2026-04-13",
+              "value": "Reads span CRM records, marketing content (campaigns, landing pages, blog posts, site pages, marketing events), and activities; writes cover core CRM records and activities - but custom objects are not supported"
+            }
+          ],
+          "methodology": "Feature coverage assessment",
+          "last_verified": "2026-07-09"
+        },
+        "availability_across_tiers": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "HubSpot Changelog - Remote MCP Server GA",
+              "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available",
+              "date": "2026-04-13",
+              "value": "GA to all HubSpot accounts - every hub and tier - at no additional cost"
+            }
+          ],
+          "methodology": "Tier and hub availability review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Official HubSpot-hosted remote at https://mcp.hubspot.com - no install, OAuth 2.1 with PKCE required, no static API keys",
+    "Available to all HubSpot accounts, hubs, and tiers at no additional cost",
+    "Broad coverage: CRM records, activity history, and marketing content objects, with read/write on core objects since GA",
+    "Inherits and enforces existing HubSpot user permissions on every action",
+    "Built-in safeguard: sensitive-data accounts have Activity objects blocked from MCP access automatically",
+    "Capability changes clearly communicated via the developer changelog (GA write expansion announced with scope and date)"
+  ],
+  "limitations": [
+    "RISK-SURFACE CHANGE 2026-04-13: GA added write capabilities - agents can now create/update CRM records and log activities, where the Sept 2025 beta was read-only; connections authorized pre-GA gained write reach with the platform change",
+    "No per-connection scope narrowing: the agent gets the authorizing user's full permission set (no read-only grant option)",
+    "Contact/company PII and customer communication content (calls, emails, notes) flow into the LLM provider's context",
+    "Custom objects are not supported",
+    "No dedicated MCP audit log; agent actions are attributed to the authorizing user in record history",
+    "Closed-source hosted service; implementation not auditable",
+    "Subject to HubSpot API rate limits that vary by subscription tier"
+  ],
+  "metadata": {
+    "license": "Proprietary (hosted service)",
+    "supported_platforms": [
+      "Hosted remote (https://mcp.hubspot.com)",
+      "Any MCP client with HTTP transport and OAuth 2.1 support"
+    ],
+    "programming_languages": [
+      "N/A (hosted service)"
+    ],
+    "mcp_version": "1.0",
+    "docs": "https://developers.hubspot.com/ai-tools/mcp",
+    "api_dependency": "HubSpot CRM and Marketing APIs",
+    "authentication": "OAuth 2.1 with PKCE (required); MCP auth app created in the account's Development section",
+    "remote_endpoint": "https://mcp.hubspot.com",
+    "first_release": "2025-09 (public beta, read-only); 2026-04-13 (GA with write)",
+    "maintained_by": "HubSpot",
+    "status": "Active - generally available to all accounts",
+    "transport_types": [
+      "streamable-http"
+    ]
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 60,
+      "notes": "Limited relevance; useful for generating CRM integration code against live schemas"
+    },
+    "customer-support": {
+      "overall": 86,
+      "notes": "Strong fit: ticket, contact, and activity context with write-back for notes and tasks"
+    },
+    "content-creation": {
+      "overall": 80,
+      "notes": "Marketing content objects (campaigns, landing pages, blogs) enable CRM-grounded content workflows"
+    },
+    "data-analysis": {
+      "overall": 78,
+      "notes": "Good for pipeline and deal analysis; rate limits constrain large extractions"
+    },
+    "research-assistant": {
+      "overall": 70,
+      "notes": "Useful for account and prospect research within the CRM"
+    },
+    "legal-compliance": {
+      "overall": 56,
+      "notes": "Customer PII and communication content reach the LLM provider; sensitive-data block helps but is coarse"
+    },
+    "healthcare": {
+      "overall": 52,
+      "notes": "Patient contact data in CRM routed through agent contexts is high risk"
+    },
+    "financial-analysis": {
+      "overall": 66,
+      "notes": "Deal and revenue data accessible; moderate exposure risk"
+    },
+    "education": {
+      "overall": 68,
+      "notes": "Workable for admissions/CRM use with standard PII caveats"
+    },
+    "creative-writing": {
+      "overall": 45,
+      "notes": "Marginal fit beyond marketing copy grounded in CRM data"
+    }
+  },
+  "best_for": [
+    "Sales and marketing teams driving CRM updates from AI assistants",
+    "Support workflows that read ticket/contact context and write back notes and tasks",
+    "RevOps teams analyzing pipelines conversationally across all HubSpot tiers"
+  ],
+  "related_entities": [
+    "mcp-server-stripe",
+    "mcp-server-zapier",
+    "mcp-server-slack"
+  ],
+  "tags": [
+    "crm",
+    "marketing",
+    "mcp",
+    "model-context-protocol",
+    "official",
+    "remote-server"
+  ]
+}

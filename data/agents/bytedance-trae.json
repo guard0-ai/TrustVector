@@ -1,0 +1,482 @@
+{
+  "id": "bytedance-trae",
+  "type": "agent",
+  "name": "Trae",
+  "provider": "ByteDance",
+  "version": "2.x (SOLO)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "ByteDance's free AI IDE (VS Code fork) with Builder agent mode and the autonomous SOLO agent (standalone app since March 2026). Aggressive free access to frontier models (Claude, GPT, DeepSeek) drove rapid adoption after its early-2025 launch. Its trust record is the story: 2025 analyses found telemetry continuing after opt-out (~500 network calls in ~7 minutes), persistent hardware-derived device IDs, 5-year post-account data retention, and ByteDance jurisdiction concerns.",
+  "website": "https://www.trae.ai/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 69,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "InfoQ - ByteDance Launches Trae with DeepSeek R1 and Claude 3.7 Sonnet Free",
+              "url": "https://www.infoq.com/news/2025/03/trae-bytedance-claude-37-free/",
+              "date": "2025-03-15",
+              "value": "Builder mode decomposes prompts into project-level code generation using frontier models (Claude, later GPT and DeepSeek R1) offered free, delivering completion quality comparable to paid competitors"
+            }
+          ],
+          "methodology": "Assessment of Builder/agent output quality given frontier-model backends, from press coverage and user reviews",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 75,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Trae",
+              "url": "https://www.trae.ai/",
+              "date": "2026-06-01",
+              "value": "Agent loop uses file edits, terminal commands, web search, and MCP servers inside the VS Code-derived IDE; SOLO adds browser and deployment tooling"
+            }
+          ],
+          "methodology": "Review of agent tool loop coverage across editor, terminal, and MCP integrations",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "VibeCoding - Trae Review (2026)",
+              "url": "https://vibecoding.app/blog/trae-review",
+              "date": "2026-04-15",
+              "value": "SOLO mode (launched 2025, standalone desktop/web app 2026-03-31) plans and executes full features end-to-end: requirements, code, test, deploy"
+            }
+          ],
+          "methodology": "Evaluation of SOLO's autonomous plan-build-verify workflow on project-scale tasks",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 65,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Trae",
+              "url": "https://www.trae.ai/",
+              "date": "2026-06-01",
+              "value": "Project rules and #Context references persist conventions; long-term cross-session memory is thinner than Cursor's rules/memories system"
+            }
+          ],
+          "methodology": "Review of context and rules persistence features",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 66,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "VibeCoding - Trae Review (2026)",
+              "url": "https://vibecoding.app/blog/trae-review",
+              "date": "2026-04-15",
+              "value": "Agent iterates on build and lint errors; reviewers report occasional loops and quota-related stalls on free-tier model queues"
+            }
+          ],
+          "methodology": "Assessment of automatic iteration and reported failure modes",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 62,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Trae",
+              "url": "https://www.trae.ai/",
+              "date": "2026-06-01",
+              "value": "Custom agents with scoped toolsets can be defined, but there is no parallel or background multi-agent orchestration comparable to Cursor 3"
+            }
+          ],
+          "methodology": "Review of custom-agent support versus parallel orchestration capabilities",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 39,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 55,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Trae",
+              "url": "https://www.trae.ai/",
+              "date": "2026-06-01",
+              "value": "Local agent executes terminal commands on the developer machine with approval prompts, in line with IDE-agent norms; SOLO's autonomous mode widens unattended execution"
+            }
+          ],
+          "methodology": "Review of local execution approval model; no isolated-VM option",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 45,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Trae",
+              "url": "https://www.trae.ai/",
+              "date": "2026-06-01",
+              "value": "Consumer account model with no SSO, org policy enforcement, or centrally managed privacy controls comparable to enterprise IDE competitors"
+            }
+          ],
+          "methodology": "Review of organizational access governance features",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 45,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Trae",
+              "url": "https://www.trae.ai/",
+              "date": "2026-06-01",
+              "value": "Agent ingests untrusted repo content, web search results, and MCP outputs; no published injection-hardening documentation or threat model"
+            }
+          ],
+          "methodology": "Threat surface analysis of untrusted content ingestion against undisclosed mitigations",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 20,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Unit 221B - Unveiling Trae: ByteDance's AI IDE and Its Extensive Data Collection System",
+              "url": "https://blog.unit221b.com/dont-read-this-blog/unveiling-trae-bytedances-ai-ide-and-its-extensive-data-collection-system",
+              "date": "2025-03-31",
+              "value": "Continuous transmission to multiple ByteDance servers (mon-va.byteoversea.com, maliva-mcs.byteoversea.com) about every 30 seconds regardless of activity, with complete file contents observed flowing through local WebSocket channels during editing; remote feature-gate system can enable/disable functionality without updates"
+            },
+            {
+              "source": "The Register - ByteDance AI IDE Trae telemetry continues even after opt-out",
+              "url": "https://www.theregister.com/2025/07/28/bytedance_trae_telemetry/",
+              "date": "2025-07-28",
+              "value": "~500 network calls in ~7 minutes transferring up to 26 MB during active use, continuing after telemetry was disabled; captures machine identifiers, user ID, and project information"
+            }
+          ],
+          "methodology": "Independent network-traffic and binary analyses (Unit 221B March 2025; The Register-covered findings July 2025) of data flows to ByteDance infrastructure",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 30,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "The Register - ByteDance AI IDE Trae telemetry continues even after opt-out",
+              "url": "https://www.theregister.com/2025/07/28/bytedance_trae_telemetry/",
+              "date": "2025-07-28",
+              "value": "Closed-source VS Code fork; telemetry behavior had to be reverse-engineered by third parties, and the researcher who reported it was temporarily blocked from Trae's Discord"
+            }
+          ],
+          "methodology": "Source availability and disclosure-culture assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 24,
+      "criteria": {
+        "data_retention": {
+          "score": 15,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Trae Privacy Policy",
+              "url": "https://www.trae.ai/privacy-policy",
+              "date": "2026-06-01",
+              "value": "Personal data is retained for five years after the user stops using the service, including post-account closure"
+            },
+            {
+              "source": "TechRadar - ByteDance AI tool caught collecting user data",
+              "url": "https://www.techradar.com/pro/security/bytedance-ai-tool-caught-spying-on-users",
+              "date": "2025-07-30",
+              "value": "ByteDance confirmed the telemetry toggle only controls VS Code-framework telemetry; collection from other Trae components is unaffected by the opt-out"
+            }
+          ],
+          "methodology": "Privacy policy review: 5-year post-use retention combined with an opt-out that does not stop collection",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 30,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Trae Privacy Policy",
+              "url": "https://www.trae.ai/privacy-policy",
+              "date": "2026-06-01",
+              "value": "Data is shared with ByteDance affiliates and service providers with no clear restrictions on cross-border transfer; access/deletion requests are honored on contact, but demonstrated collection despite opt-out undermines consent validity"
+            }
+          ],
+          "methodology": "Assessment of policy terms and observed behavior against GDPR consent and minimization principles",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 20,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Unit 221B - Unveiling Trae: ByteDance's AI IDE and Its Extensive Data Collection System",
+              "url": "https://blog.unit221b.com/dont-read-this-blog/unveiling-trae-bytedances-ai-ide-and-its-extensive-data-collection-system",
+              "date": "2025-03-31",
+              "value": "Telemetry flows to at least five ByteDance domains across Singapore and US endpoints; a hardware-derived SHA-256 machine ID survives reinstallation, enabling long-term cross-session device tracking by the parent company"
+            }
+          ],
+          "methodology": "Network-flow analysis of data destinations and persistent identifiers; ByteDance affiliate sharing is policy-sanctioned",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 30,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "The Register - ByteDance AI IDE Trae telemetry continues even after opt-out",
+              "url": "https://www.theregister.com/2025/07/28/bytedance_trae_telemetry/",
+              "date": "2025-07-28",
+              "value": "IDE runs locally but requires cloud model inference and phones home continuously; there is no offline mode, self-hosted option, or effective network-quiet configuration short of DNS-blocking ByteDance domains"
+            }
+          ],
+          "methodology": "Deployment options assessment including feasibility of network isolation",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 53,
+      "criteria": {
+        "documentation_quality": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Trae Documentation",
+              "url": "https://docs.trae.ai/",
+              "date": "2026-06-01",
+              "value": "Reasonable product docs for Builder, SOLO, custom agents, rules, and MCP; security and data-flow documentation is minimal and lagged behind third-party findings"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Trae",
+              "url": "https://www.trae.ai/",
+              "date": "2026-06-01",
+              "value": "Builder shows step lists, reviewable diffs, and terminal output before applying changes; SOLO streams its plan and actions live"
+            }
+          ],
+          "methodology": "Review of agent action visibility and diff review workflow",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 58,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "VibeCoding - Trae Review (2026)",
+              "url": "https://vibecoding.app/blog/trae-review",
+              "date": "2026-04-15",
+              "value": "Agent narrates plans and rationale at a level typical of AI IDEs; model routing and quota/queue decisions are not explained"
+            }
+          ],
+          "methodology": "Assessment of plan narration and rationale quality",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 28,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Unit 221B - Unveiling Trae: ByteDance's AI IDE and Its Extensive Data Collection System",
+              "url": "https://blog.unit221b.com/dont-read-this-blog/unveiling-trae-bytedances-ai-ide-and-its-extensive-data-collection-system",
+              "date": "2025-03-31",
+              "value": "Closed-source client on an open VS Code base; telemetry framework, feature gates, and agent harness required binary analysis to characterize"
+            }
+          ],
+          "methodology": "Open source assessment",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "The Register - ByteDance AI IDE Trae telemetry continues even after opt-out",
+              "url": "https://www.theregister.com/2025/07/28/bytedance_trae_telemetry/",
+              "date": "2025-07-28",
+              "value": "Large, fast-growing user community drawn by free frontier models, but Trae's Discord temporarily blocked the developer who published the telemetry findings — a negative transparency signal"
+            }
+          ],
+          "methodology": "Community size and engagement weighed against vendor handling of critical researchers",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 65,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "InfoQ - ByteDance Launches Trae with DeepSeek R1 and Claude 3.7 Sonnet Free",
+              "url": "https://www.infoq.com/news/2025/03/trae-bytedance-claude-37-free/",
+              "date": "2025-03-15",
+              "value": "Familiar VS Code fork importing existing extensions and keybindings, with free frontier-model access from day one — near-zero adoption friction"
+            }
+          ],
+          "methodology": "Onboarding and integration friction assessment",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 62,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "VibeCoding - Trae Review (2026)",
+              "url": "https://vibecoding.app/blog/trae-review",
+              "date": "2026-04-15",
+              "value": "Free-tier model access is queue- and quota-limited at peak times; no cloud/background agent fleet for parallel task scaling"
+            }
+          ],
+          "methodology": "Scalability assessment of model quotas and single-agent workflow",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "VibeCoding - Trae Review (2026)",
+              "url": "https://vibecoding.app/blog/trae-review",
+              "date": "2026-04-15",
+              "value": "Generous free tier (premium model access, 5,000 autocompletions/month) with Pro at $10/mo — the cheapest flat pricing among frontier-model AI IDEs"
+            }
+          ],
+          "methodology": "Pricing model analysis; flat low-cost tiers are highly predictable",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 40,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Trae",
+              "url": "https://www.trae.ai/",
+              "date": "2026-06-01",
+              "value": "Per-user quota tracking only; no team dashboards, usage analytics, or audit tooling for organizations"
+            }
+          ],
+          "methodology": "Monitoring and admin features assessment",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "The Register - ByteDance AI IDE Trae telemetry continues even after opt-out",
+              "url": "https://www.theregister.com/2025/07/28/bytedance_trae_telemetry/",
+              "date": "2025-07-28",
+              "value": "ByteDance-scale backing and rapid iteration (SOLO standalone March 2026), but documented telemetry behavior, jurisdiction exposure, and absent enterprise controls make it unsuitable for regulated or sensitive codebases"
+            }
+          ],
+          "methodology": "Maturity assessment weighing vendor scale and cadence against documented trust deficits for professional use",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 74,
+      "notes": "Capable Builder/SOLO agent with free frontier models; strong value for hobby and non-sensitive projects"
+    },
+    "education": {
+      "overall": 78,
+      "notes": "Free access to top models in a familiar IDE is excellent for learners — provided the code and data are not sensitive"
+    },
+    "data-analysis": {
+      "overall": 58,
+      "notes": "Fine for writing analysis code, but routing datasets through an IDE with documented exfiltration-pattern telemetry is ill-advised"
+    },
+    "research-assistant": {
+      "overall": 52,
+      "notes": "Built-in web search and chat help with technical lookups; not a research product"
+    }
+  },
+  "best_for": [
+    "Hobbyists and students who want free frontier-model agentic coding on non-sensitive projects",
+    "Budget-constrained developers evaluating AI IDE workflows before paying for alternatives",
+    "Prototyping and throwaway projects where code confidentiality does not matter"
+  ],
+  "not_recommended_for": [
+    "Regulated industries (healthcare, finance, government) or any compliance-scoped development",
+    "Proprietary, sensitive, or client-owned codebases — full file contents were observed in telemetry channels",
+    "Organizations with data-sovereignty policies restricting ByteDance/PRC-affiliated processors",
+    "Anyone requiring an effective telemetry opt-out or network-quiet operation",
+    "Enterprise teams needing SSO, policy enforcement, or audit trails"
+  ],
+  "strengths": [
+    "Unmatched price-to-capability: free access to Claude, GPT, and DeepSeek R1 class models, Pro at only $10/mo",
+    "Builder and SOLO agent modes cover the full spectrum from assisted edits to autonomous end-to-end feature delivery",
+    "Familiar VS Code fork with extension and keybinding compatibility",
+    "ByteDance-scale infrastructure and rapid release cadence (SOLO standalone app March 2026)",
+    "Reviewable diffs and step-by-step agent visibility inside the IDE"
+  ],
+  "limitations": [
+    "Telemetry continued after opt-out: ~500 network calls in ~7 minutes (up to 26 MB) documented in July 2025; ByteDance confirmed the toggle only governs VS Code-framework telemetry",
+    "Persistent hardware-derived device identifier survives reinstallation, enabling long-term tracking",
+    "Privacy policy retains personal data for 5 years after use ends and permits sharing with ByteDance affiliates without clear cross-border limits",
+    "Unit 221B observed complete file contents in local WebSocket telemetry channels and a remote feature-gate system controllable by ByteDance",
+    "Jurisdiction risk: data flows to ByteDance infrastructure (Singapore/US endpoints) under PRC-affiliated corporate control",
+    "No enterprise controls (SSO, org policies, audit logs) and no offline/self-hosted mode",
+    "Vendor transparency record is poor: findings were reverse-engineered by third parties and an early reporter was blocked from the community Discord"
+  ],
+  "metadata": {
+    "license": "Proprietary (VS Code fork)",
+    "supported_models": [
+      "Anthropic Claude",
+      "OpenAI GPT",
+      "DeepSeek R1/V3",
+      "Doubao (ByteDance)"
+    ],
+    "languages": [
+      "All languages supported by the VS Code ecosystem"
+    ],
+    "architecture": "Local VS Code-fork IDE with cloud model inference; Builder agent mode plus autonomous SOLO agent (standalone desktop/web app since 2026-03-31)",
+    "deployment_type": "Local IDE, cloud inference; no offline or self-hosted option",
+    "tool_support": [
+      "File edits and reviewable diffs",
+      "Terminal execution",
+      "Web search",
+      "MCP servers",
+      "Custom agents"
+    ],
+    "first_release": "January 2025 (international); SOLO mode 2025; SOLO standalone app 2026-03-31",
+    "pricing": "Free (premium models, 5,000 autocompletions/mo); Pro $10/mo",
+    "company": "ByteDance (Singapore/US endpoints via byteoversea.com infrastructure; PRC-affiliated parent)"
+  },
+  "related_entities": [
+    "cursor-agent",
+    "github-copilot-coding-agent",
+    "claude-code",
+    "openai-codex"
+  ],
+  "tags": [
+    "ide",
+    "agentic-coding",
+    "privacy-risk",
+    "proprietary"
+  ]
+}

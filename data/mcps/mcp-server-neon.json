@@ -1,0 +1,445 @@
+{
+  "id": "mcp-server-neon",
+  "type": "mcp",
+  "name": "MCP Neon Server",
+  "provider": "Neon (Databricks)",
+  "version": "hosted remote (mcp.neon.tech); npm 0.6.5 deprecated",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Official Neon MCP server for managing serverless Postgres via natural language: projects, branches, SQL execution, and branch-based safe migrations (20+ tools). Remote-only since Feb 2026 at https://mcp.neon.tech/mcp with OAuth (or API-key header); the local stdio CLI was removed and npm @neondatabase/mcp-server-neon (0.6.5) is deprecated. Full DDL/DML capability means Neon (Databricks-owned since May 2025) recommends development/testing use, not production databases.",
+  "website": "https://neon.com/docs/ai/neon-mcp-server",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 87,
+      "criteria": {
+        "api_reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neon MCP Server docs",
+              "url": "https://neon.com/docs/ai/neon-mcp-server",
+              "date": "2026-07-09",
+              "value": "Hosted server fronts the Neon Management API and Postgres; managed by Neon with automatic updates, removing local-version drift"
+            }
+          ],
+          "methodology": "API stability review of the hosted endpoint and underlying Neon platform",
+          "last_verified": "2026-07-09"
+        },
+        "sql_execution": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neon MCP Server docs - tools",
+              "url": "https://neon.com/docs/ai/neon-mcp-server",
+              "date": "2026-07-09",
+              "value": "run_sql and transaction tools execute full Postgres queries and DDL/DML against any project branch, with schema-inspection tools for tables and columns"
+            }
+          ],
+          "methodology": "SQL execution capability review",
+          "last_verified": "2026-07-09"
+        },
+        "branching_operations": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks-Neon acquisition announcement",
+              "url": "https://www.databricks.com/blog/databricks-neon",
+              "date": "2025-05-14",
+              "value": "Neon's copy-on-write architecture spins up Postgres branches in under half a second; MCP tools create branches, compare schemas, and reset to parent state"
+            }
+          ],
+          "methodology": "Branch tool review against Neon's instant-branching architecture",
+          "last_verified": "2026-07-09"
+        },
+        "migration_safety": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neon MCP Server docs - migrations",
+              "url": "https://neon.com/docs/ai/neon-mcp-server",
+              "date": "2026-07-09",
+              "value": "Schema changes use a safe temporary-branch workflow: migrations are prepared and tested on a throwaway branch before being applied to the target, reducing the chance of destructive mistakes"
+            }
+          ],
+          "methodology": "Review of the prepare/complete migration workflow design",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 77,
+      "criteria": {
+        "authentication_security": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neon blog - Bringing MCP to the Cloud",
+              "url": "https://neon.com/blog/bringing-mcp-to-the-cloud",
+              "date": "2025-04-11",
+              "value": "Remote server acts as an OAuth client to Neon and OAuth server to MCP clients: users authorize via their Neon account instead of placing long-lived API keys in plaintext config files; API-key Authorization header remains available for non-interactive use"
+            }
+          ],
+          "methodology": "Authentication mechanism review of the OAuth flow and API-key fallback",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_sql_risk": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neon MCP Server docs - security guidance",
+              "url": "https://neon.com/docs/ai/neon-mcp-server",
+              "date": "2026-07-09",
+              "value": "Docs instruct: 'Always review and authorize LLM-requested actions before execution. Restrict MCP access to trusted users and regularly audit access.' An agent reading untrusted rows while holding full SQL access remains exposed to the prompt-injection/data-leak class demonstrated against database MCPs in 2025; no result-wrapping mitigation is documented"
+            }
+          ],
+          "methodology": "Prompt-injection and SQL execution risk assessment relative to database MCP attack research",
+          "last_verified": "2026-07-09"
+        },
+        "destructive_operation_control": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neon MCP Server docs - tools",
+              "url": "https://neon.com/docs/ai/neon-mcp-server",
+              "date": "2026-07-09",
+              "value": "Tools include project deletion, branch deletion, and unrestricted DDL/DML; branch-based migration flow adds a safety layer for schema changes, but destructive actions are otherwise gated only by client-side tool approval and URL-parameter access controls"
+            }
+          ],
+          "methodology": "Capability analysis of destructive tools and available guardrails",
+          "last_verified": "2026-07-09"
+        },
+        "key_management": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neon blog - Bringing MCP to the Cloud",
+              "url": "https://neon.com/blog/bringing-mcp-to-the-cloud",
+              "date": "2025-04-11",
+              "value": "Motivation for the remote model explicitly cited eliminating plaintext API keys in configuration files; OAuth grants are revocable from the Neon account, and hosted operation removes stale-version credential handling"
+            }
+          ],
+          "methodology": "Key management review of OAuth-first credential model",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 68,
+      "criteria": {
+        "data_exposure_to_llm": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP data flow architecture",
+              "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+              "date": "2026-07-09",
+              "value": "SQL result sets, schema definitions, and connection metadata returned by tools are sent to the LLM provider as tool results"
+            }
+          ],
+          "methodology": "Data flow analysis of query and schema tool outputs",
+          "last_verified": "2026-07-09"
+        },
+        "data_residency": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neon MCP Server docs",
+              "url": "https://neon.com/docs/ai/neon-mcp-server",
+              "date": "2026-07-09",
+              "value": "All MCP traffic now transits Neon's hosted server at mcp.neon.tech regardless of client; database regions are selectable in Neon, but there is no self-hosted MCP path since the stdio removal"
+            }
+          ],
+          "methodology": "Data residency review of the remote-only architecture",
+          "last_verified": "2026-07-09"
+        },
+        "platform_compliance": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neon privacy and compliance",
+              "url": "https://neon.com/privacy-policy",
+              "date": "2026-07-09",
+              "value": "Neon platform (now part of Databricks) maintains SOC 2 and GDPR-aligned data processing commitments; MCP access inherits the platform's compliance posture"
+            }
+          ],
+          "methodology": "Platform compliance documentation review",
+          "last_verified": "2026-07-09"
+        },
+        "self_hosted_option": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "neondatabase/mcp-server-neon issue #214",
+              "url": "https://github.com/neondatabase/mcp-server-neon/issues/214",
+              "date": "2026-07-09",
+              "value": "Local stdio CLI removed (Feb 2026, PR #198) and npm package @neondatabase/mcp-server-neon (0.6.5) deprecated; users report headless/gateway deployments broken with no self-hosted migration path"
+            }
+          ],
+          "methodology": "Self-hosting options review after the remote-only transition",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 82,
+      "criteria": {
+        "documentation_quality": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neon docs - AI section",
+              "url": "https://neon.com/docs/ai/neon-mcp-server",
+              "date": "2026-07-09",
+              "value": "Clear official documentation covering setup, OAuth and API-key auth, full tool reference by category, safety guidance, and explicit development-only recommendation"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "neondatabase/mcp-server-neon repository",
+              "url": "https://github.com/neondatabase/mcp-server-neon",
+              "date": "2026-07-09",
+              "value": "Server source is MIT-licensed and public (617 stars, 115 forks), so the remote server's tool logic remains inspectable even though only Neon operates it"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-07-09"
+        },
+        "deprecation_communication": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "neondatabase/mcp-server-neon issue #214",
+              "url": "https://github.com/neondatabase/mcp-server-neon/issues/214",
+              "date": "2026-07-09",
+              "value": "The forced local-to-remote shift deprecated the npm package and removed stdio with limited notice; CI/CD and gateway users were left without a supported migration path, an open trust concern for teams that depended on the local server"
+            }
+          ],
+          "methodology": "Change management and deprecation communication assessment",
+          "last_verified": "2026-07-09"
+        },
+        "vendor_credibility": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks press release",
+              "url": "https://www.databricks.com/company/newsroom/press-releases/databricks-agrees-acquire-neon-help-developers-deliver-ai-systems",
+              "date": "2025-05-14",
+              "value": "Neon acquired by Databricks for ~$1B (announced 2025-05-14); the platform is officially maintained with strong backing and an AI-agent-first roadmap (80%+ of Neon databases were created by agents)"
+            }
+          ],
+          "methodology": "Maintainer reputation and corporate backing analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 81,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neon MCP Server docs - setup",
+              "url": "https://neon.com/docs/ai/neon-mcp-server",
+              "date": "2026-07-09",
+              "value": "Add https://mcp.neon.tech/mcp and complete the browser OAuth flow — no installation, no API key handling, automatic updates"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-07-09"
+        },
+        "operation_coverage": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neon MCP Server docs - tool reference",
+              "url": "https://neon.com/docs/ai/neon-mcp-server",
+              "date": "2026-07-09",
+              "value": "20+ tools across projects/organizations, branches (create, compare schemas, reset), SQL execution and transactions, safe migrations, query optimization, Neon Auth provisioning, Data API setup, and documentation search"
+            }
+          ],
+          "methodology": "Feature coverage assessment against database management workflows",
+          "last_verified": "2026-07-09"
+        },
+        "reliability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neon status and platform",
+              "url": "https://neonstatus.com/",
+              "date": "2026-07-09",
+              "value": "Hosted MCP rides Neon's managed platform; single hosted endpoint is a shared dependency but removes local-version breakage"
+            }
+          ],
+          "methodology": "Reliability analysis of the hosted deployment model",
+          "last_verified": "2026-07-09"
+        },
+        "ci_cd_compatibility": {
+          "score": 62,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "neondatabase/mcp-server-neon issue #214",
+              "url": "https://github.com/neondatabase/mcp-server-neon/issues/214",
+              "date": "2026-07-09",
+              "value": "OAuth-first remote server complicates headless, gateway, and CI/CD deployments; users report the stdio deprecation broke automated pipelines, with API-key header auth the remaining workaround"
+            }
+          ],
+          "methodology": "Non-interactive deployment compatibility assessment",
+          "last_verified": "2026-07-09"
+        },
+        "maintenance_activity": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "neondatabase/mcp-server-neon repository",
+              "url": "https://github.com/neondatabase/mcp-server-neon",
+              "date": "2026-07-09",
+              "value": "Active development on the remote server with hosted auto-updates; local npm package frozen at deprecated 0.6.5"
+            }
+          ],
+          "methodology": "Repository activity and release model review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 90,
+      "notes": "Excellent for scaffolding schemas, migrations, and app databases during development"
+    },
+    "customer-support": {
+      "overall": 70,
+      "notes": "Can inspect data for support workflows, but production access is discouraged"
+    },
+    "content-creation": {
+      "overall": 72,
+      "notes": "Useful for spinning up content backends and prototypes quickly"
+    },
+    "data-analysis": {
+      "overall": 85,
+      "notes": "Full SQL over Postgres branches; branch snapshots enable safe analysis copies"
+    },
+    "research-assistant": {
+      "overall": 78,
+      "notes": "Good for building research datasets on disposable branches"
+    },
+    "legal-compliance": {
+      "overall": 62,
+      "notes": "Remote-only MCP path and LLM data exposure complicate strict compliance regimes"
+    },
+    "healthcare": {
+      "overall": 58,
+      "notes": "Not recommended: PHI would transit Neon's MCP endpoint and the LLM provider"
+    },
+    "financial-analysis": {
+      "overall": 70,
+      "notes": "Usable on non-production branches; avoid live financial data"
+    },
+    "education": {
+      "overall": 88,
+      "notes": "Great for learning Postgres — instant free branches make experimentation safe"
+    },
+    "creative-writing": {
+      "overall": 55,
+      "notes": "Limited relevance beyond storing creative project data"
+    }
+  },
+  "best_for": [
+    "Developers building and iterating on Postgres schemas with AI assistance",
+    "Agentic workflows that provision databases and branches on demand",
+    "Teams using branch-based development to keep AI changes off production",
+    "Rapid prototyping where OAuth setup and zero install matter"
+  ],
+  "not_recommended_for": [
+    "Production database administration (explicitly discouraged by Neon)",
+    "Headless CI/CD or MCP-gateway deployments that need a local stdio server",
+    "Workloads with regulated data that cannot transit Neon's hosted MCP endpoint"
+  ],
+  "strengths": [
+    "OAuth-based remote server: no API keys in config files, revocable grants, automatic updates",
+    "Branch-based safe migration workflow tests schema changes on throwaway branches first",
+    "Sub-second copy-on-write branching makes disposable AI sandboxes practical",
+    "20+ tools covering projects, branches, SQL, migrations, query optimization, and Neon Auth",
+    "Backed by Databricks (acquired ~$1B, May 2025) with an AI-agent-first roadmap",
+    "MIT-licensed source remains public and inspectable"
+  ],
+  "limitations": [
+    "Remote-only since Feb 2026: stdio removed, npm package deprecated, no self-hosted option",
+    "Forced local-to-remote migration broke headless/gateway/CI-CD deployments (issue #214)",
+    "Full DDL/DML on any connected database — destructive actions gated mainly by client approval",
+    "No documented prompt-injection mitigations (e.g., result wrapping or read-only mode) unlike some database MCP peers",
+    "Query results and schemas exposed to the LLM provider",
+    "Neon explicitly recommends development/testing use only, not production",
+    "All MCP traffic transits Neon's hosted endpoint — a shared availability and trust dependency"
+  ],
+  "metadata": {
+    "license": "MIT (source); hosted service operated by Neon",
+    "supported_platforms": [
+      "Any MCP client supporting streamable HTTP (remote)"
+    ],
+    "programming_languages": [
+      "TypeScript"
+    ],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/neondatabase/mcp-server-neon",
+    "github_stars": 617,
+    "remote_endpoint": "https://mcp.neon.tech/mcp",
+    "deprecated_package": "@neondatabase/mcp-server-neon (0.6.5, deprecated; stdio CLI removed Feb 2026)",
+    "api_dependency": "Neon Management API / Postgres",
+    "authentication": "OAuth (browser flow, default); Neon API key via Authorization header for non-interactive use",
+    "first_release": "2024-12",
+    "remote_launch": "2025-04-11",
+    "remote_only_since": "2026-02",
+    "maintained_by": "Neon (Databricks)",
+    "status": "Active - remote-only hosted server",
+    "transport_types": [
+      "streamable-http (hosted)"
+    ],
+    "installation_methods": [
+      "Remote MCP endpoint (OAuth)",
+      "Remote MCP endpoint (API-key header)"
+    ]
+  },
+  "related_entities": [
+    "mcp-server-supabase",
+    "mcp-server-postgres",
+    "mcp-server-mongodb"
+  ],
+  "tags": [
+    "database",
+    "postgresql",
+    "serverless",
+    "neon",
+    "mcp",
+    "model-context-protocol",
+    "official",
+    "remote-server"
+  ]
+}

@@ -1,0 +1,477 @@
+{
+  "id": "mcp-server-browserbase",
+  "type": "mcp",
+  "name": "Browserbase MCP Server",
+  "provider": "Browserbase",
+  "version": "hosted (mcp.browserbase.com) / @browserbasehq/mcp",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Official Browserbase MCP server for cloud browser automation, powered by Stagehand v3: navigate, act, observe, extract (including iframes and shadow DOM), screenshots, and multi-session management. Hosted at https://mcp.browserbase.com/mcp with Browserbase covering Gemini costs, or local via @browserbasehq/mcp (API key + project ID). Stagehand v3 adds 20-40% faster automation via caching. Agent-driven browsing of arbitrary sites carries prompt-injection and credential-handling risk.",
+  "website": "https://www.browserbase.com/mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 85,
+      "criteria": {
+        "automation_accuracy": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Browserbase MCP changelog",
+              "url": "https://www.browserbase.com/changelog/browserbase-mcp",
+              "date": "2026-07-09",
+              "value": "Stagehand translates natural-language act/observe/extract instructions into resilient browser actions, with improved schemas in v3 for more intuitive data extraction"
+            }
+          ],
+          "methodology": "Review of Stagehand's natural-language action model and v3 accuracy improvements",
+          "last_verified": "2026-07-09"
+        },
+        "operation_success_rate": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "browserbase/mcp-server-browserbase repository",
+              "url": "https://github.com/browserbase/mcp-server-browserbase",
+              "date": "2026-07-09",
+              "value": "Core tools (navigate, act, observe, extract, session start/end) build on Stagehand's self-correcting action layer; observe lets the agent find actionable elements before acting, improving success rates on dynamic pages"
+            }
+          ],
+          "methodology": "Tool design review and hands-on interaction testing on common web flows",
+          "last_verified": "2026-07-09"
+        },
+        "complex_page_handling": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Stagehand v3 / Browserbase MCP setup docs",
+              "url": "https://docs.stagehand.dev/v3/integrations/mcp/setup",
+              "date": "2026-07-09",
+              "value": "Stagehand v3 brings enhanced extraction across iframes and shadow roots plus 20-40% faster performance through automatic caching — handling page structures that break selector-based automation"
+            }
+          ],
+          "methodology": "Capability review of iframe/shadow-DOM extraction in Stagehand v3",
+          "last_verified": "2026-07-09"
+        },
+        "session_stability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Browserbase platform documentation",
+              "url": "https://docs.browserbase.com/",
+              "date": "2026-07-09",
+              "value": "Cloud-managed browser sessions with keep-alive, proxies, stealth options, and configurable viewports; sessions survive client restarts and support parallel multi-session workflows"
+            }
+          ],
+          "methodology": "Session lifecycle and multi-session capability review",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "browserbase/mcp-server-browserbase repository",
+              "url": "https://github.com/browserbase/mcp-server-browserbase",
+              "date": "2026-07-09",
+              "value": "Failed actions return structured errors and the agent can re-observe the page; Stagehand's LLM-driven action resolution retries with fresh page state, though outcomes depend on the underlying model"
+            }
+          ],
+          "methodology": "Error-path testing of failed actions and re-observation flows",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 65,
+      "criteria": {
+        "prompt_injection_resistance": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Agentic browsing threat analysis",
+              "url": "https://github.com/browserbase/mcp-server-browserbase",
+              "date": "2026-07-09",
+              "value": "Extracted page content and observation results from arbitrary websites flow into the LLM context; in hosted mode page content is additionally processed by the Gemini model driving Stagehand. Malicious pages can embed instructions that hijack agent actions; no built-in content sanitization"
+            }
+          ],
+          "methodology": "Threat modeling of untrusted web content entering both the client LLM and the Stagehand automation LLM",
+          "last_verified": "2026-07-09"
+        },
+        "unauthorized_action_risk": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MCP security guidance",
+              "url": "https://modelcontextprotocol.io/docs/concepts/security",
+              "date": "2026-07-09",
+              "value": "act can perform any web action a browser allows (purchases, posts, form submissions); natural-language actions make precise pre-approval harder than explicit per-element tools, so host-level tool approval is the primary guardrail"
+            }
+          ],
+          "methodology": "Authorization boundary analysis of natural-language write actions",
+          "last_verified": "2026-07-09"
+        },
+        "credential_exposure_risk": {
+          "score": 58,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Browserbase platform documentation",
+              "url": "https://docs.browserbase.com/",
+              "date": "2026-07-09",
+              "value": "Credentials typed during agent flows pass through cloud browsers and appear in session recordings/replays retained by Browserbase; injected cookies and persisted contexts extend logged-in session exposure beyond the local machine"
+            }
+          ],
+          "methodology": "Analysis of credential and session handling in cloud-hosted browsers with recording enabled",
+          "last_verified": "2026-07-09"
+        },
+        "sandboxing_isolation": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Browserbase platform documentation",
+              "url": "https://docs.browserbase.com/",
+              "date": "2026-07-09",
+              "value": "Each session runs in an isolated cloud browser instance separated from the user's machine and profile — a materially better isolation story than driving a local browser with personal logins; SOC-2 Type 1 certified platform"
+            }
+          ],
+          "methodology": "Isolation review of per-session cloud browser architecture",
+          "last_verified": "2026-07-09"
+        },
+        "api_key_security": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "browserbase/mcp-server-browserbase README",
+              "url": "https://github.com/browserbase/mcp-server-browserbase",
+              "date": "2026-07-09",
+              "value": "Hosted endpoint authenticates via Authorization: Bearer BROWSERBASE_API_KEY header; local mode uses BROWSERBASE_API_KEY and BROWSERBASE_PROJECT_ID env vars. Keys are project-scoped but long-lived; no OAuth flow"
+            }
+          ],
+          "methodology": "Credential mechanism review across hosted and local modes",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 57,
+      "criteria": {
+        "browsing_data_exposure": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP data flow architecture",
+              "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+              "date": "2026-07-09",
+              "value": "Extracted content, observations, and screenshots of every visited page (including authenticated content) are sent to the client's LLM provider as tool results"
+            }
+          ],
+          "methodology": "Data flow analysis of extract/observe/screenshot outputs",
+          "last_verified": "2026-07-09"
+        },
+        "session_recording_privacy": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Browserbase platform documentation",
+              "url": "https://docs.browserbase.com/",
+              "date": "2026-07-09",
+              "value": "Browserbase records sessions for replay/debugging by default; everything the agent sees or types in the cloud browser — including sensitive form data — is captured in vendor-side session artifacts"
+            }
+          ],
+          "methodology": "Privacy assessment of vendor-side session recording and retention",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_llm_processing": {
+          "score": 58,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Browserbase MCP page",
+              "url": "https://www.browserbase.com/mcp",
+              "date": "2026-07-09",
+              "value": "Hosted server runs Stagehand on Gemini (default google/gemini-2.5-flash-lite) with Browserbase covering the LLM costs — page content is processed by Google's model in addition to the user's own LLM provider; local mode allows custom model selection"
+            }
+          ],
+          "methodology": "Data sharing pathway analysis including the embedded automation LLM",
+          "last_verified": "2026-07-09"
+        },
+        "data_residency_control": {
+          "score": 60,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "browserbase/mcp-server-browserbase repository",
+              "url": "https://github.com/browserbase/mcp-server-browserbase",
+              "date": "2026-07-09",
+              "value": "All browsing executes in Browserbase's cloud even with the local @browserbasehq/mcp package (which only relocates the MCP layer); no self-hosted browser-infrastructure option, so browsing data always transits vendor infrastructure"
+            }
+          ],
+          "methodology": "Data residency review of the cloud-only browser execution model",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 85,
+      "criteria": {
+        "documentation_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Stagehand MCP setup docs",
+              "url": "https://docs.stagehand.dev/v3/integrations/mcp/setup",
+              "date": "2026-07-09",
+              "value": "Clear documentation across browserbase.com/mcp, the GitHub README, and Stagehand docs covering hosted setup, local flags (proxies, stealth, keep-alive, viewport, model selection), and both transports"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "browserbase/mcp-server-browserbase repository",
+              "url": "https://github.com/browserbase/mcp-server-browserbase",
+              "date": "2026-07-09",
+              "value": "Server open source under Apache-2.0 (~3.4k stars, 359 forks); Stagehand itself is also open source, though the browser infrastructure is a proprietary hosted service"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-07-09"
+        },
+        "operation_visibility": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Browserbase platform documentation",
+              "url": "https://docs.browserbase.com/",
+              "date": "2026-07-09",
+              "value": "Session replays, live session view, and logs in the Browserbase dashboard provide unusually strong post-hoc visibility into exactly what the agent did in the browser"
+            }
+          ],
+          "methodology": "Logging and traceability assessment (the same recordings that raise privacy concerns aid auditability)",
+          "last_verified": "2026-07-09"
+        },
+        "vendor_credibility": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Browserbase",
+              "url": "https://www.browserbase.com/",
+              "date": "2026-07-09",
+              "value": "Well-funded, widely adopted browser-infrastructure startup; maintainer of Stagehand and an official MCP partner-ecosystem participant, though a younger vendor than Microsoft or Google"
+            }
+          ],
+          "methodology": "Maintainer reputation and project health analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 85,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Browserbase MCP page",
+              "url": "https://www.browserbase.com/mcp",
+              "date": "2026-07-09",
+              "value": "Hosted setup is a single URL (https://mcp.browserbase.com/mcp) plus an Authorization Bearer API key — Browserbase covers Gemini LLM costs on the hosted server; local mode is npx @browserbasehq/mcp with API key and project ID env vars"
+            }
+          ],
+          "methodology": "Setup complexity assessment across hosted and local modes",
+          "last_verified": "2026-07-09"
+        },
+        "feature_coverage": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "browserbase/mcp-server-browserbase README",
+              "url": "https://github.com/browserbase/mcp-server-browserbase",
+              "date": "2026-07-09",
+              "value": "Deliberately compact tool set (session start/end, navigate, act, observe, extract, screenshots, multi-session) — natural-language actions cover most flows but offer fewer explicit primitives than Playwright MCP's 25+ tools (no raw JS evaluation or network inspection)"
+            }
+          ],
+          "methodology": "Feature completeness assessment against browser-automation needs",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Browserbase platform",
+              "url": "https://www.browserbase.com/",
+              "date": "2026-07-09",
+              "value": "Cloud browser fleet supports parallel multi-session automation, proxies, and stealth at scales impossible with a single local browser"
+            }
+          ],
+          "methodology": "Scalability review of cloud browser infrastructure",
+          "last_verified": "2026-07-09"
+        },
+        "maintenance_activity": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "browserbase/mcp-server-browserbase repository",
+              "url": "https://github.com/browserbase/mcp-server-browserbase",
+              "date": "2026-07-09",
+              "value": "Actively maintained (~3.4k stars); tracks Stagehand releases, with the v3-powered hosted server and 20-40% performance gains shipped in 2026"
+            }
+          ],
+          "methodology": "Repository activity and release-cadence analysis",
+          "last_verified": "2026-07-09"
+        },
+        "cost_model": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Browserbase pricing",
+              "url": "https://www.browserbase.com/pricing",
+              "date": "2026-07-09",
+              "value": "Free hosted-MCP Gemini inference lowers entry cost, but browser-session minutes are metered on Browserbase plans (free tier limited), unlike fully free local Playwright automation"
+            }
+          ],
+          "methodology": "Cost analysis versus local browser automation alternatives",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 80,
+      "notes": "Good for E2E testing and UI verification in clean cloud browsers, without local browser setup"
+    },
+    "research-assistant": {
+      "overall": 84,
+      "notes": "Strong for interactive web research at scale; exposed to prompt injection from untrusted pages"
+    },
+    "data-analysis": {
+      "overall": 82,
+      "notes": "Excellent structured extraction (schemas, iframes, shadow DOM) for scraping workflows"
+    },
+    "customer-support": {
+      "overall": 72,
+      "notes": "Can reproduce user-reported web issues with session replays as evidence"
+    },
+    "content-creation": {
+      "overall": 70,
+      "notes": "Useful for previewing and screenshotting published content"
+    },
+    "legal-compliance": {
+      "overall": 55,
+      "notes": "Vendor-side session recordings and multi-LLM data flow complicate confidentiality requirements"
+    },
+    "financial-analysis": {
+      "overall": 65,
+      "notes": "Capable scraper for public data; avoid authenticated financial workflows"
+    },
+    "education": {
+      "overall": 80,
+      "notes": "Session replays make agent browsing behavior easy to demonstrate and teach"
+    }
+  },
+  "best_for": [
+    "Teams running agentic web automation at scale without managing browser infrastructure",
+    "Scraping and extraction on complex pages (iframes, shadow DOM) via natural-language tools",
+    "Parallel multi-session workflows needing proxies, stealth, or keep-alive cloud browsers",
+    "Users wanting zero-LLM-cost hosted browser automation (Gemini covered by Browserbase)"
+  ],
+  "not_recommended_for": [
+    "Workflows involving credentials or sensitive data that must not transit vendor cloud browsers and session recordings",
+    "Air-gapped or data-residency-constrained environments (browsing always executes in Browserbase's cloud)",
+    "Unattended agent browsing of untrusted sites without host-level action approval"
+  ],
+  "strengths": [
+    "Stagehand v3 natural-language automation: act, observe, and schema-based extract including iframes and shadow DOM",
+    "Hosted endpoint (mcp.browserbase.com) with Browserbase covering Gemini LLM costs — minimal setup",
+    "Isolated per-session cloud browsers keep agent browsing off the user's machine and personal profile",
+    "Scales to parallel multi-session automation with proxies, stealth, and keep-alive options",
+    "Session replays and live view give strong auditability of agent actions",
+    "Apache-2.0 open-source server (~3.4k stars) on the open-source Stagehand framework",
+    "20-40% faster than prior versions via automatic caching"
+  ],
+  "limitations": [
+    "Page content flows to both the client LLM and the hosted Gemini automation model — a dual prompt-injection and data-exposure surface",
+    "Session recordings capture everything the agent sees and types, including credentials, on vendor infrastructure",
+    "Browsing always executes in Browserbase's cloud; the local package only relocates the MCP layer",
+    "Natural-language act tool makes destructive web actions harder to precisely pre-approve",
+    "Long-lived API keys with no OAuth flow",
+    "Fewer explicit primitives than Playwright MCP (no raw JS evaluation or network inspection)",
+    "Metered browser-session minutes beyond the free tier"
+  ],
+  "metadata": {
+    "license": "Apache-2.0",
+    "supported_platforms": [
+      "Any MCP client (hosted endpoint)",
+      "All platforms with Node.js (local @browserbasehq/mcp)"
+    ],
+    "programming_languages": [
+      "TypeScript"
+    ],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/browserbase/mcp-server-browserbase",
+    "github_stars": 3400,
+    "package": "@browserbasehq/mcp",
+    "remote_endpoint": "https://mcp.browserbase.com/mcp",
+    "api_dependency": "Browserbase cloud browsers + Stagehand v3",
+    "authentication": "Browserbase API key (Bearer header on hosted; BROWSERBASE_API_KEY + BROWSERBASE_PROJECT_ID env vars locally); optional model API key for custom LLMs",
+    "automation_llm": "google/gemini-2.5-flash-lite by default (costs covered by Browserbase on hosted server); custom models supported locally",
+    "configuration_flags": [
+      "proxies",
+      "advancedStealth",
+      "keepAlive",
+      "viewport dimensions",
+      "context/cookie persistence",
+      "model selection"
+    ],
+    "first_release": "2025",
+    "maintained_by": "Browserbase",
+    "status": "Active - Stagehand v3-powered hosted server",
+    "transport_types": [
+      "streamable-http (hosted)",
+      "stdio (local)"
+    ],
+    "installation_methods": [
+      "remote-url",
+      "npx",
+      "npm"
+    ]
+  },
+  "related_entities": [
+    "mcp-server-playwright",
+    "mcp-server-puppeteer",
+    "mcp-server-chrome-devtools",
+    "mcp-server-apify"
+  ],
+  "tags": [
+    "browser-automation",
+    "cloud-browsers",
+    "stagehand",
+    "web-scraping",
+    "browserbase",
+    "mcp",
+    "model-context-protocol",
+    "official"
+  ]
+}

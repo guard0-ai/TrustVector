@@ -1,0 +1,520 @@
+{
+  "id": "mcp-server-asana",
+  "type": "mcp",
+  "name": "MCP Asana Server",
+  "provider": "Asana (Official)",
+  "version": "v2 (hosted remote)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Asana's official hosted MCP server, now V2 at https://mcp.asana.com/v2/mcp (GA 2026-02-04, Streamable HTTP, OAuth with pre-registered apps, workspace-scoped authorization); the v1/beta SSE server was shut down 2026-05-11. Exposes task, project, and status tools. Carries a notable security history: in June 2025 a flawed tenant-isolation check in the beta server exposed data of ~1,000 organizations to other tenants (Jun 5-17), prompting a two-week outage and a rearchitected V2.",
+  "website": "https://developers.asana.com/docs/using-asanas-mcp-server",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 82,
+      "criteria": {
+        "task_operation_reliability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Asana Developers - Using Asana's MCP Server",
+              "url": "https://developers.asana.com/docs/using-asanas-mcp-server",
+              "date": "2026-07-09",
+              "value": "Reliable task creation, assignment, and querying built on the Asana REST API; documented flows include finding incomplete tasks by due date and retrieving project status"
+            }
+          ],
+          "methodology": "Operation success rate testing",
+          "last_verified": "2026-07-09"
+        },
+        "tool_set_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Asana Forum Changelog - V2 MCP server GA",
+              "url": "https://forum.asana.com/t/new-v2-mcp-server-now-generally-available/1122647",
+              "date": "2026-02-04",
+              "value": "V2 GA introduced an optimized tool set, Streamable HTTP support, a new client registration model, and workspace-scoped authorizations"
+            }
+          ],
+          "methodology": "Tool design and coverage review of the V2 release",
+          "last_verified": "2026-07-09"
+        },
+        "search_accuracy": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Asana API - Search Tasks",
+              "url": "https://developers.asana.com/reference/searchtasksforworkspace",
+              "date": "2026-07-09",
+              "value": "Task search builds on the workspace search API with typeahead and filter support"
+            }
+          ],
+          "methodology": "Search quality testing",
+          "last_verified": "2026-07-09"
+        },
+        "rate_limit_handling": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Asana API Rate Limits",
+              "url": "https://developers.asana.com/docs/rate-limits",
+              "date": "2026-07-09",
+              "value": "Subject to Asana API rate limits (per-minute quotas varying by plan)"
+            }
+          ],
+          "methodology": "Rate limiting behavior analysis",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Asana Developers - Integrating with Asana's MCP Server",
+              "url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+              "date": "2026-07-09",
+              "value": "Standard API errors propagate to the client; tools/list discovery lets agents adapt to the available tool set"
+            }
+          ],
+          "methodology": "Error handling testing",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 61,
+      "criteria": {
+        "tenant_isolation": {
+          "score": 45,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "BleepingComputer - Asana warns MCP AI feature exposed customer data to other orgs",
+              "url": "https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/",
+              "date": "2025-06-18",
+              "value": "A logic flaw in the MCP server's tenant-isolation check (discovered 2025-06-04, exposure window Jun 5-17, 2025) let users access other organizations' tasks, project metadata, team details, comments, and uploaded files; ~1,000 customers including Fortune 500 companies were potentially affected. Not an external hack - an implementation flaw"
+            },
+            {
+              "source": "Asana Forum Changelog - V2 MCP server GA",
+              "url": "https://forum.asana.com/t/new-v2-mcp-server-now-generally-available/1122647",
+              "date": "2026-02-04",
+              "value": "The rearchitected V2 (GA 2026-02-04) added workspace-scoped authorizations and a new client registration model; the flawed beta architecture was fully retired when v1 shut down on 2026-05-11"
+            }
+          ],
+          "methodology": "Review of the June 2025 cross-tenant exposure incident, its root cause, and the V2 rearchitecture; no cross-tenant incidents reported on V2 as of 2026-07-09",
+          "last_verified": "2026-07-09"
+        },
+        "incident_history_and_response": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Nudge Security - Asana MCP server data exposure incident",
+              "url": "https://www.nudgesecurity.com/post/asana-mcp-server-data-exposure-incident",
+              "date": "2025-06-18",
+              "value": "Asana took the MCP server offline immediately upon discovery (2025-06-04 discovery, service restored 2025-06-17) and notified affected organizations - but the flaw had been live since the feature launched 2025-05-01 and was found by Asana, not caught pre-release"
+            }
+          ],
+          "methodology": "Assessment of detection, containment, and remediation of the June 2025 incident",
+          "last_verified": "2026-07-09"
+        },
+        "authentication_security": {
+          "score": 74,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Asana Developers - Integrating with Asana's MCP Server",
+              "url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+              "date": "2026-07-09",
+              "value": "V2 uses OAuth with apps pre-registered in the Asana developer console (client ID/secret); Dynamic Client Registration is deliberately not supported, tightening who can connect"
+            }
+          ],
+          "methodology": "Authentication mechanism review",
+          "last_verified": "2026-07-09"
+        },
+        "workspace_access_control": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Asana Forum Changelog - V2 MCP server GA",
+              "url": "https://forum.asana.com/t/new-v2-mcp-server-now-generally-available/1122647",
+              "date": "2026-02-04",
+              "value": "V2 authorizations are workspace-scoped; admin app-management controls to govern MCP access are available only on Enterprise+ and Legacy Enterprise tiers - other tiers must contact support to block the MCP app"
+            }
+          ],
+          "methodology": "Access control and admin governance review",
+          "last_verified": "2026-07-09"
+        },
+        "data_modification_risk": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Asana Developers - Using Asana's MCP Server",
+              "url": "https://developers.asana.com/docs/using-asanas-mcp-server",
+              "date": "2026-07-09",
+              "value": "Agents can create and assign tasks and modify work items within the authorizing user's permissions"
+            }
+          ],
+          "methodology": "Write-path risk assessment",
+          "last_verified": "2026-07-09"
+        },
+        "audit_logging": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Asana Audit Log API",
+              "url": "https://developers.asana.com/docs/audit-log-events",
+              "date": "2026-07-09",
+              "value": "Audit log API exists but is Enterprise-tier; during the 2025 incident, affected customers were advised to review logs for MCP access themselves - MCP-specific audit visibility remains limited on lower tiers"
+            }
+          ],
+          "methodology": "Audit logging review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 62,
+      "criteria": {
+        "cross_tenant_exposure_history": {
+          "score": 50,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "BleepingComputer - Asana warns MCP AI feature exposed customer data to other orgs",
+              "url": "https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/",
+              "date": "2025-06-18",
+              "value": "The June 2025 incident was itself a privacy breach: task data, project metadata, team details, comments/discussions, and uploaded files from ~1,000 organizations were exposed to other tenants' MCP sessions and AI-generated summaries"
+            }
+          ],
+          "methodology": "Assessment of realized (not just theoretical) cross-tenant privacy impact; V2 rearchitecture credited but history weighted",
+          "last_verified": "2026-07-09"
+        },
+        "work_data_exposure": {
+          "score": 64,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP Data Flow",
+              "url": "https://modelcontextprotocol.io/docs/architecture",
+              "date": "2026-07-09",
+              "value": "Task titles, descriptions, comments, and project plans are sent to the LLM provider as part of normal operation"
+            }
+          ],
+          "methodology": "Data flow analysis",
+          "last_verified": "2026-07-09"
+        },
+        "team_member_privacy": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Asana API - Users",
+              "url": "https://developers.asana.com/reference/users",
+              "date": "2026-07-09",
+              "value": "Assignee names, emails, and workload/activity signals are accessible within the authorized workspace"
+            }
+          ],
+          "methodology": "User privacy assessment",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "LLM Provider Policies",
+              "url": "https://modelcontextprotocol.io/docs",
+              "date": "2026-07-09",
+              "value": "Work management data retrieved via MCP is processed by the connected LLM provider under that provider's privacy policy"
+            }
+          ],
+          "methodology": "Data sharing analysis",
+          "last_verified": "2026-07-09"
+        },
+        "admin_privacy_controls": {
+          "score": 64,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Asana Developers - Using Asana's MCP Server",
+              "url": "https://developers.asana.com/docs/using-asanas-mcp-server",
+              "date": "2026-07-09",
+              "value": "Only Enterprise+ / Legacy Enterprise admins can manage MCP access via app management; super admins on other tiers must go through support to block the app"
+            }
+          ],
+          "methodology": "Admin control availability review across tiers",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 70,
+      "criteria": {
+        "documentation_quality": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Asana Developers - Using Asana's MCP Server",
+              "url": "https://developers.asana.com/docs/using-asanas-mcp-server",
+              "date": "2026-07-09",
+              "value": "First-party docs cover the V2 endpoint, OAuth setup, supported clients (Claude, ChatGPT, Cursor, VS Code, Claude Code, Codex), and v1-to-v2 migration"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "incident_disclosure": {
+          "score": 55,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "BleepingComputer - Asana warns MCP AI feature exposed customer data to other orgs",
+              "url": "https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/",
+              "date": "2025-06-18",
+              "value": "Asana notified affected organizations privately with communication forms but issued no public statement; the incident became public through press reporting and third-party security analyses"
+            },
+            {
+              "source": "Nudge Security - Asana MCP server data exposure incident",
+              "url": "https://www.nudgesecurity.com/post/asana-mcp-server-data-exposure-incident",
+              "date": "2025-06-18",
+              "value": "Third-party researchers, not Asana, provided the most detailed public guidance for affected customers (log review, checking AI summaries for cross-org data)"
+            }
+          ],
+          "methodology": "Assessment of incident disclosure practices versus public-disclosure norms",
+          "last_verified": "2026-07-09"
+        },
+        "operation_visibility": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Asana Audit Log API",
+              "url": "https://developers.asana.com/docs/audit-log-events",
+              "date": "2026-07-09",
+              "value": "Task changes appear in Asana activity; deeper audit visibility requires Enterprise audit log access"
+            }
+          ],
+          "methodology": "Logging and traceability assessment",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 66,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Asana Developers - MCP Server",
+              "url": "https://developers.asana.com/docs/mcp-server",
+              "date": "2026-07-09",
+              "value": "Closed-source hosted service; the tenant-isolation flaw class that caused the 2025 incident is not externally auditable"
+            }
+          ],
+          "methodology": "Source availability review",
+          "last_verified": "2026-07-09"
+        },
+        "versioning_and_deprecation_communication": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Asana Forum Changelog - V2 MCP server GA",
+              "url": "https://forum.asana.com/t/new-v2-mcp-server-now-generally-available/1122647",
+              "date": "2026-02-04",
+              "value": "V2 GA announced 2026-02-04 with a clear migration path and an explicit v1/beta shutdown date (2026-05-11), communicated via changelog and developer docs"
+            }
+          ],
+          "methodology": "Review of version lifecycle communication",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 80,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Asana Developers - Using Asana's MCP Server",
+              "url": "https://developers.asana.com/docs/using-asanas-mcp-server",
+              "date": "2026-07-09",
+              "value": "Hosted endpoint with browser OAuth for supported clients; custom clients must pre-register an app in the developer console since DCR is not supported"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-07-09"
+        },
+        "reliability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Nudge Security - Asana MCP server data exposure incident",
+              "url": "https://www.nudgesecurity.com/post/asana-mcp-server-data-exposure-incident",
+              "date": "2025-06-18",
+              "value": "Stable on Asana's production API, but the service has taken one full ~2-week outage (Jun 5-17, 2025) when pulled offline for the incident"
+            }
+          ],
+          "methodology": "Reliability analysis including incident-driven downtime",
+          "last_verified": "2026-07-09"
+        },
+        "api_performance": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Asana Developer Platform",
+              "url": "https://developers.asana.com/",
+              "date": "2026-07-09",
+              "value": "Performance tracks the Asana REST API; V2's Streamable HTTP transport is the current remote-server standard"
+            }
+          ],
+          "methodology": "Performance assessment",
+          "last_verified": "2026-07-09"
+        },
+        "feature_coverage": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Asana Developers - Using Asana's MCP Server",
+              "url": "https://developers.asana.com/docs/using-asanas-mcp-server",
+              "date": "2026-07-09",
+              "value": "Covers tasks, projects, sections, and status reporting; an optimized (deliberately curated) tool set rather than full API surface"
+            }
+          ],
+          "methodology": "Feature coverage assessment",
+          "last_verified": "2026-07-09"
+        },
+        "maintenance_activity": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Asana Forum Changelog - V2 MCP server GA",
+              "url": "https://forum.asana.com/t/new-v2-mcp-server-now-generally-available/1122647",
+              "date": "2026-02-04",
+              "value": "Active first-party investment: beta May 2025, post-incident rearchitecture, V2 GA Feb 2026, managed v1 sunset May 2026, native integrations in Claude and ChatGPT"
+            }
+          ],
+          "methodology": "Maintenance and release cadence review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Official Asana-hosted V2 remote (https://mcp.asana.com/v2/mcp) with Streamable HTTP and OAuth; GA since 2026-02-04",
+    "Post-incident rearchitecture: workspace-scoped authorizations, pre-registered OAuth apps (no DCR), and an optimized tool set replaced the flawed beta architecture",
+    "Broad client support including native Claude and ChatGPT integrations plus Cursor, VS Code, Claude Code, and Codex",
+    "Clear version lifecycle management: documented migration and explicit v1 shutdown date (2026-05-11)",
+    "Solid task/project operation reliability on the mature Asana REST API"
+  ],
+  "limitations": [
+    "SECURITY HISTORY: June 2025 cross-tenant incident - a flawed tenant-isolation check exposed tasks, project metadata, comments, and files of ~1,000 organizations to other tenants (Jun 5-17, 2025); the server was offline ~2 weeks and subsequently rearchitected as V2",
+    "Incident disclosure was private-notification only; no public statement - details reached the public via press and third-party researchers",
+    "Closed-source hosted multi-tenant service: the isolation logic that failed in 2025 remains externally unauditable",
+    "Admin app-management controls for MCP are limited to Enterprise+ / Legacy Enterprise; other tiers must contact support to block access",
+    "Task content, comments, attachments, and team member data flow to the LLM provider",
+    "V2 does not support OAuth Dynamic Client Registration - custom clients must pre-register in the developer console",
+    "MCP-specific audit visibility is limited outside Enterprise audit-log tiers"
+  ],
+  "metadata": {
+    "license": "Proprietary (hosted service)",
+    "supported_platforms": [
+      "Hosted remote (https://mcp.asana.com/v2/mcp)",
+      "Any MCP client with Streamable HTTP and OAuth support"
+    ],
+    "programming_languages": [
+      "N/A (hosted service)"
+    ],
+    "mcp_version": "1.0",
+    "docs": "https://developers.asana.com/docs/using-asanas-mcp-server",
+    "api_dependency": "Asana REST API",
+    "authentication": "OAuth with pre-registered apps (Dynamic Client Registration not supported in V2)",
+    "remote_endpoint": "https://mcp.asana.com/v2/mcp",
+    "first_release": "2025-05-01 (beta); 2026-02-04 (V2 GA); v1 shut down 2026-05-11",
+    "maintained_by": "Asana",
+    "status": "Active - V2 GA; v1/beta SSE server shut down 2026-05-11",
+    "security_incidents": [
+      {
+        "name": "MCP cross-tenant data exposure",
+        "date": "2025-06",
+        "summary": "Flawed tenant-isolation check exposed data of ~1,000 organizations to other tenants between 2025-06-05 and 2025-06-17; server taken offline and rearchitected"
+      }
+    ],
+    "transport_types": [
+      "streamable-http (v2)",
+      "sse (v1, shut down 2026-05-11)"
+    ]
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 74,
+      "notes": "Useful for issue-driven development when engineering work is tracked in Asana"
+    },
+    "customer-support": {
+      "overall": 72,
+      "notes": "Workable for support task tracking; incident history warrants caution with customer data in tasks"
+    },
+    "content-creation": {
+      "overall": 74,
+      "notes": "Good for editorial calendars and content production tracking"
+    },
+    "data-analysis": {
+      "overall": 76,
+      "notes": "Good for project status, workload, and portfolio reporting"
+    },
+    "research-assistant": {
+      "overall": 72,
+      "notes": "Useful for research project organization and task management"
+    },
+    "legal-compliance": {
+      "overall": 45,
+      "notes": "The 2025 cross-tenant exposure history makes this a hard sell for privileged matter tracking"
+    },
+    "healthcare": {
+      "overall": 42,
+      "notes": "Prior multi-tenant isolation failure argues against PHI-adjacent project data"
+    },
+    "financial-analysis": {
+      "overall": 55,
+      "notes": "Sensitive deal/finance project data carries elevated risk given incident history"
+    },
+    "education": {
+      "overall": 78,
+      "notes": "Good for coursework planning and group project coordination"
+    },
+    "creative-writing": {
+      "overall": 70,
+      "notes": "Useful for tracking writing pipelines and editorial tasks"
+    }
+  },
+  "best_for": [
+    "Teams managing day-to-day work in Asana who want conversational task and project operations",
+    "Enterprise+ orgs that can govern MCP access through Asana app management",
+    "Project status reporting and workload summarization via Claude or ChatGPT native integrations"
+  ],
+  "related_entities": [
+    "mcp-server-linear",
+    "mcp-server-atlassian",
+    "mcp-server-notion"
+  ],
+  "tags": [
+    "project-management",
+    "task-tracking",
+    "mcp",
+    "model-context-protocol",
+    "official",
+    "remote-server",
+    "security-incident-history"
+  ]
+}

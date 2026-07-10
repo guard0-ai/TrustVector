@@ -1,0 +1,441 @@
+{
+  "id": "mcp-server-databricks",
+  "type": "mcp",
+  "name": "MCP Databricks Managed Servers",
+  "provider": "Databricks (Official)",
+  "version": "Managed MCP servers (Genie Agent, AI Search, SQL, UC Functions GA; Genie One Beta)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Databricks managed MCP servers: workspace-hosted endpoints under https://<workspace>/api/2.0/mcp/ for Genie natural-language data queries, AI Search (formerly vector-search; the legacy /api/2.0/mcp/vector-search prefix still works), Databricks SQL execution, and Unity Catalog functions as tools. OAuth with per-server scopes; Unity Catalog enforces permissions on every tool call and traffic is monitorable via the AI Gateway. Zero infrastructure — Databricks hosts and manages auth.",
+  "website": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 82,
+      "criteria": {
+        "api_reliability": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "Workspace-hosted endpoints operated by Databricks; Genie Agent, AI Search, Databricks SQL, and Unity Catalog Functions servers are GA, with Genie One in Beta"
+            }
+          ],
+          "methodology": "Endpoint availability and GA-status review",
+          "last_verified": "2026-07-09"
+        },
+        "genie_nl_accuracy": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "Genie Agent server answers natural-language questions over curated Genie spaces (read-only, asynchronous); accuracy depends on how well the Genie space is curated with instructions and trusted assets"
+            }
+          ],
+          "methodology": "NL-to-data capability review; Genie space curation is the dominant accuracy factor",
+          "last_verified": "2026-07-09"
+        },
+        "retrieval_quality": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Databricks unstructured retrieval tools documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/agent-framework/unstructured-retrieval-tools",
+              "date": "2026-07-09",
+              "value": "AI Search server (GA) queries AI Search indexes (formerly Vector Search) for relevant documents; requires Databricks-managed embeddings for MCP use"
+            }
+          ],
+          "methodology": "Retrieval capability assessment",
+          "last_verified": "2026-07-09"
+        },
+        "sql_execution": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "Databricks SQL server (GA) executes AI-generated SQL asynchronously with read and write capability at https://<workspace>/api/2.0/mcp/sql; UC Functions server runs predefined SQL tools"
+            }
+          ],
+          "methodology": "SQL tool feature review",
+          "last_verified": "2026-07-09"
+        },
+        "error_handling": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP meta parameters documentation",
+              "url": "https://docs.databricks.com/aws/en/agents/mcp/managed-mcp-meta-param",
+              "date": "2026-07-09",
+              "value": "Meta parameters allow tuning of managed server behavior; asynchronous Genie and SQL operations require clients to handle polling and long-running call semantics"
+            }
+          ],
+          "methodology": "Failure-mode and async-behavior review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 82,
+      "criteria": {
+        "authentication_security": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "OAuth-based authentication managed by Databricks with per-server scopes (genie, ai-search, sql, unity-catalog); no static credentials in MCP client configuration"
+            }
+          ],
+          "methodology": "Authentication mechanism review",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "Unity Catalog enforces permissions on every tool call across all managed servers — agents can only reach data and functions the authenticated principal is granted"
+            }
+          ],
+          "methodology": "Access control model review; per-call Unity Catalog enforcement is among the strongest governance models of evaluated MCP servers",
+          "last_verified": "2026-07-09"
+        },
+        "data_modification_control": {
+          "score": 74,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "Genie servers are read-only, but the Databricks SQL server has read and write capability and UC Functions can execute arbitrary predefined logic — writes are bounded only by Unity Catalog grants, with no separate MCP-level read-only switch documented for the SQL server"
+            }
+          ],
+          "methodology": "Write-surface assessment; scored below read-only-by-default peers because SQL write capability rides on catalog grants rather than an explicit MCP opt-in",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_resilience": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model Context Protocol security best practices",
+              "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices",
+              "date": "2026-07-09",
+              "value": "Unity Catalog scoping limits what an injected instruction can touch, but retrieved documents and query results still reach the LLM unfiltered; no Databricks-specific result-sanitization countermeasure is documented"
+            }
+          ],
+          "methodology": "Prompt-injection exposure analysis",
+          "last_verified": "2026-07-09"
+        },
+        "credential_management": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "Databricks hosts the servers and manages authentication; OAuth tokens are scoped per server type, avoiding long-lived PATs or connection strings in client config"
+            }
+          ],
+          "methodology": "Credential handling review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 81,
+      "criteria": {
+        "data_residency": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "MCP endpoints are hosted on the customer's own workspace hostname in the workspace's cloud region (AWS, Azure, GCP variants documented); tool execution stays within the workspace"
+            }
+          ],
+          "methodology": "Data residency review",
+          "last_verified": "2026-07-09"
+        },
+        "compliance_certifications": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks Trust Center",
+              "url": "https://www.databricks.com/trust",
+              "date": "2026-07-09",
+              "value": "Underlying platform holds SOC 2 Type II, ISO 27001, HIPAA, PCI DSS, and FedRAMP authorizations that apply to workspace-hosted MCP execution"
+            }
+          ],
+          "methodology": "Platform certification review",
+          "last_verified": "2026-07-09"
+        },
+        "data_exposure_to_llm": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP Architecture",
+              "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+              "date": "2026-07-09",
+              "value": "Genie answers, retrieved documents, and SQL results returned by tools are sent to the connected LLM provider per its data terms"
+            }
+          ],
+          "methodology": "Data flow analysis",
+          "last_verified": "2026-07-09"
+        },
+        "governance_policy_enforcement": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks Unity Catalog documentation",
+              "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/",
+              "date": "2026-07-09",
+              "value": "Unity Catalog row filters, column masks, and grants apply to agent tool calls the same as any other access path, with centralized monitoring via the AI Gateway"
+            }
+          ],
+          "methodology": "Governance enforcement review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 75,
+      "criteria": {
+        "documentation_quality": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "First-party docs across AWS/Azure/GCP cover endpoints, OAuth scopes, GA/Beta status per server, meta parameters, and client setup examples"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 58,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Announcing managed MCP servers blog",
+              "url": "https://www.databricks.com/blog/announcing-managed-mcp-servers-unity-catalog-and-mosaic-ai-integration",
+              "date": "2025-06-18",
+              "value": "Managed MCP servers are a proprietary hosted service; server implementation is not open source, though the MCP protocol itself is open"
+            }
+          ],
+          "methodology": "Source availability review; scored down for closed implementation despite open protocol",
+          "last_verified": "2026-07-09"
+        },
+        "audit_logging": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "Agent traffic is centrally monitorable via the Unity/AI Gateway, and SQL and Genie activity appears in standard workspace audit logs and query history"
+            }
+          ],
+          "methodology": "Audit trail assessment",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Databricks Community — Managed MCP Servers",
+              "url": "https://community.databricks.com/t5/community-articles/databricks-mcp-servers-on-databricks/td-p/153690",
+              "date": "2026-07-09",
+              "value": "Active first-party engagement through Databricks community articles, blog posts, and the databricks-mcp library examples; no public issue tracker for the managed servers themselves"
+            }
+          ],
+          "methodology": "Community engagement analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 84,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks managed MCP servers documentation",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+              "date": "2026-07-09",
+              "value": "Zero setup: Databricks hosts the servers and manages authentication — clients add the workspace URL for the desired server (e.g. /api/2.0/mcp/genie/{space_id}) and complete the OAuth flow"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks SQL warehouses documentation",
+              "url": "https://docs.databricks.com/aws/en/compute/sql-warehouse/",
+              "date": "2026-07-09",
+              "value": "SQL and Genie tool calls execute on serverless/SQL warehouse compute that scales elastically; asynchronous execution decouples MCP calls from long-running queries"
+            }
+          ],
+          "methodology": "Scalability review",
+          "last_verified": "2026-07-09"
+        },
+        "cost_efficiency": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Databricks pricing",
+              "url": "https://www.databricks.com/product/pricing",
+              "date": "2026-07-09",
+              "value": "No separate charge for the MCP endpoints, but agent-driven Genie, AI Search, and SQL calls consume DBUs; unbounded exploratory agent traffic can accumulate compute cost"
+            }
+          ],
+          "methodology": "Cost analysis for agent-driven workloads",
+          "last_verified": "2026-07-09"
+        },
+        "integration_ecosystem": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Databricks MCP overview",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/mcp/",
+              "date": "2026-07-09",
+              "value": "Works with Claude, Cursor, and any MCP client; integrates with Mosaic AI Agent Framework, Agent Bricks, and supports custom MCP servers on Databricks Apps alongside the managed ones"
+            }
+          ],
+          "methodology": "Ecosystem integration review",
+          "last_verified": "2026-07-09"
+        },
+        "managed_operations": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Announcing managed MCP servers blog",
+              "url": "https://www.databricks.com/blog/announcing-managed-mcp-servers-unity-catalog-and-mosaic-ai-integration",
+              "date": "2025-06-18",
+              "value": "Databricks operates, patches, and secures the MCP endpoints; customers manage only Unity Catalog grants and Genie space curation"
+            }
+          ],
+          "methodology": "Operational burden assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Unity Catalog permission enforcement on every tool call — governance identical to any other access path",
+    "Zero infrastructure: Databricks hosts the endpoints and manages OAuth with per-server scopes",
+    "Full data-agent surface: Genie NL queries, AI Search retrieval, SQL execution, and UC function tools",
+    "Genie Agent, AI Search, SQL, and UC Functions servers are GA with multi-cloud docs (AWS, Azure, GCP)",
+    "Centralized agent-traffic monitoring via the AI Gateway plus standard workspace audit logs",
+    "Backward-compatible endpoint evolution (legacy vector-search prefix still works after AI Search rename)"
+  ],
+  "limitations": [
+    "Databricks SQL server has read and write capability bounded only by Unity Catalog grants — no MCP-level read-only switch documented",
+    "Tool results (documents, Genie answers, SQL output) are exposed to the connected LLM provider",
+    "Closed-source managed implementation; behavior cannot be independently audited",
+    "Genie One server is still Beta; Genie answer quality depends heavily on space curation",
+    "AI Search via MCP requires Databricks-managed embeddings",
+    "Asynchronous Genie/SQL semantics add client-side complexity for long-running calls",
+    "Agent-driven compute (DBUs) can accumulate cost without warehouse guardrails"
+  ],
+  "metadata": {
+    "license": "Proprietary (managed service)",
+    "supported_platforms": ["Any MCP client (remote streamable HTTP); Databricks on AWS, Azure, GCP"],
+    "programming_languages": ["N/A (managed service)"],
+    "mcp_version": "1.0",
+    "docs": "https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp",
+    "remote_endpoint": "https://<workspace-hostname>/api/2.0/mcp/{genie|genie/{space_id}|ai-search/{catalog}/{schema}/{index}|sql|functions/{catalog}/{schema}/{function}} (legacy vector-search prefix still supported)",
+    "api_dependency": "Genie, AI Search (formerly Vector Search), Databricks SQL, Unity Catalog Functions",
+    "authentication": "OAuth managed by Databricks with per-server scopes (genie, ai-search, sql, unity-catalog)",
+    "security_controls": ["Unity Catalog per-call permission enforcement", "row filters and column masks", "AI Gateway monitoring", "read-only Genie servers"],
+    "server_status": "Genie Agent, AI Search, Databricks SQL, UC Functions: GA; Genie One: Beta",
+    "first_release": "2025-06-18 (announcement); GA rollout through late 2025/early 2026",
+    "maintained_by": "Databricks"
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 76,
+      "notes": "Useful for generating SQL and UC function calls against governed schemas"
+    },
+    "customer-support": {
+      "overall": 74,
+      "notes": "AI Search retrieval over support corpora with catalog-scoped access works well"
+    },
+    "content-creation": {
+      "overall": 66,
+      "notes": "Indirect fit; retrieval-augmented drafting from governed document indexes"
+    },
+    "data-analysis": {
+      "overall": 92,
+      "notes": "Core use case: Genie NL queries and SQL execution over lakehouse data"
+    },
+    "research-assistant": {
+      "overall": 84,
+      "notes": "Strong document retrieval plus structured query access in one governed surface"
+    },
+    "legal-compliance": {
+      "overall": 75,
+      "notes": "Unity Catalog lineage, grants, and audit logs support compliance review workflows"
+    },
+    "healthcare": {
+      "overall": 70,
+      "notes": "HIPAA-capable platform, but tool results still flow to the LLM provider"
+    },
+    "financial-analysis": {
+      "overall": 86,
+      "notes": "Governed lakehouse analytics with column masking and per-call enforcement"
+    },
+    "education": {
+      "overall": 72,
+      "notes": "Good for teaching governed analytics; workspace prerequisites raise the entry bar"
+    },
+    "creative-writing": {
+      "overall": 48,
+      "notes": "Minimal applicability beyond data-grounded reference lookups"
+    }
+  },
+  "best_for": [
+    "Lakehouse teams exposing Genie spaces and vector indexes to AI agents with zero new infrastructure",
+    "Enterprises requiring per-call Unity Catalog governance over every agent data access",
+    "Agent builders combining structured (SQL/Genie) and unstructured (AI Search) retrieval in one platform",
+    "Organizations standardizing agent traffic monitoring through an AI gateway"
+  ],
+  "related_entities": ["mcp-server-snowflake", "mcp-server-postgres", "mcp-server-elasticsearch", "mcp-server-mongodb"],
+  "tags": ["database", "lakehouse", "data-warehouse", "vector-search", "nl-to-sql", "mcp", "model-context-protocol", "databricks", "managed"]
+}

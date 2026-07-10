@@ -1,0 +1,445 @@
+{
+  "id": "mcp-server-neo4j",
+  "type": "mcp",
+  "name": "MCP Neo4j Server",
+  "provider": "Neo4j (Official)",
+  "version": "1.5.3 (2026-06-11)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Official Neo4j MCP server (neo4j/mcp; neo4j-mcp-server on PyPI, v1.5.3 released 2026-06-11): schema introspection, read-cypher (read-only enforced via EXPLAIN query classification), write-cypher, and GDS procedure listing over stdio. Arbitrary Cypher means read+write access to the graph unless NEO4J_READ_ONLY=true is set. Distinct from the experimental Neo4j Labs servers (mcp-neo4j-cypher, mcp-neo4j-memory), which carry no product support or compatibility guarantees.",
+  "website": "https://neo4j.com/docs/mcp/current/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 80,
+      "criteria": {
+        "cypher_execution": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neo4j MCP repository",
+              "url": "https://github.com/neo4j/mcp",
+              "date": "2026-07-09",
+              "value": "read-cypher and write-cypher tools execute arbitrary Cypher through the official driver; read queries are validated via Neo4j's EXPLAIN-based query-type classification before execution"
+            }
+          ],
+          "methodology": "Cypher execution capability review",
+          "last_verified": "2026-07-09"
+        },
+        "schema_introspection": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neo4j MCP repository",
+              "url": "https://github.com/neo4j/mcp",
+              "date": "2026-07-09",
+              "value": "get-schema retrieves node labels, relationship types, and property keys (APOC plugin required), with configurable schema sampling via NEO4J_SCHEMA_SAMPLE_SIZE"
+            }
+          ],
+          "methodology": "Schema introspection review",
+          "last_verified": "2026-07-09"
+        },
+        "connection_stability": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neo4j MCP documentation",
+              "url": "https://neo4j.com/docs/mcp/current/",
+              "date": "2026-07-09",
+              "value": "Connects to Aura, Neo4j Desktop, and self-managed instances via the official driver (NEO4J_URI); optional dependencies like GDS trigger adaptive mode where unsupported features disable gracefully"
+            }
+          ],
+          "methodology": "Connection stability and compatibility assessment",
+          "last_verified": "2026-07-09"
+        },
+        "error_handling": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neo4j MCP repository",
+              "url": "https://github.com/neo4j/mcp",
+              "date": "2026-07-09",
+              "value": "Write attempts through read-cypher are rejected by query classification and write-cypher is disabled under NEO4J_READ_ONLY=true; configurable logging (NEO4J_LOG_LEVEL, NEO4J_LOG_FORMAT) aids diagnosis"
+            }
+          ],
+          "methodology": "Error handling review",
+          "last_verified": "2026-07-09"
+        },
+        "large_graph_handling": {
+          "score": 74,
+          "confidence": "low",
+          "evidence": [
+            {
+              "source": "Neo4j MCP repository",
+              "url": "https://github.com/neo4j/mcp",
+              "date": "2026-07-09",
+              "value": "Schema sampling size is configurable for large graphs, but unbounded Cypher reads can return result sets that overwhelm model context; no automatic pagination documented"
+            }
+          ],
+          "methodology": "Large graph handling assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 68,
+      "criteria": {
+        "authentication_security": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "neo4j-mcp-server on PyPI",
+              "url": "https://pypi.org/project/neo4j-mcp-server/",
+              "date": "2026-07-09",
+              "value": "Authenticates with database credentials via NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD, NEO4J_DATABASE environment variables; no OAuth or token-based flow for the MCP layer itself"
+            }
+          ],
+          "methodology": "Authentication mechanism review",
+          "last_verified": "2026-07-09"
+        },
+        "credential_exposure": {
+          "score": 60,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neo4j MCP repository",
+              "url": "https://github.com/neo4j/mcp",
+              "date": "2026-07-09",
+              "value": "Database username and password live in environment variables or MCP client config files on the local machine, following the same pattern as other stdio database servers"
+            }
+          ],
+          "methodology": "Credential security analysis",
+          "last_verified": "2026-07-09"
+        },
+        "cypher_injection_risk": {
+          "score": 64,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model Context Protocol security best practices",
+              "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices",
+              "date": "2026-07-09",
+              "value": "The AI composes arbitrary Cypher; untrusted content stored in graph properties can carry injected instructions back to the model, and write-capable sessions let those instructions mutate the graph"
+            }
+          ],
+          "methodology": "Injection and prompt-injection exposure analysis",
+          "last_verified": "2026-07-09"
+        },
+        "data_modification_control": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "neo4j-mcp-server on PyPI",
+              "url": "https://pypi.org/project/neo4j-mcp-server/",
+              "date": "2026-07-09",
+              "value": "write-cypher permits full create/update/delete by default; NEO4J_READ_ONLY=true disables it entirely, and read-cypher enforces read-only semantics via EXPLAIN validation — but there is no graduated gate separating writes from destructive deletes"
+            }
+          ],
+          "methodology": "Write-surface assessment; read-only mode is a clean kill-switch but write mode is all-or-nothing, unlike graduated designs such as ClickHouse's two-flag gate",
+          "last_verified": "2026-07-09"
+        },
+        "audit_logging": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neo4j query logging documentation",
+              "url": "https://neo4j.com/docs/operations-manual/current/monitoring/logging/",
+              "date": "2026-07-09",
+              "value": "Query logging is available in Neo4j Enterprise/Aura for agent-issued Cypher; the MCP server adds configurable structured logging but no dedicated audit trail of tool invocations"
+            }
+          ],
+          "methodology": "Audit logging review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 68,
+      "criteria": {
+        "graph_data_exposure": {
+          "score": 64,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP Architecture",
+              "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+              "date": "2026-07-09",
+              "value": "Query results, schema, and sampled property values are sent to the connected LLM provider; graph schemas often encode business-sensitive relationship structures"
+            }
+          ],
+          "methodology": "Data flow analysis",
+          "last_verified": "2026-07-09"
+        },
+        "pii_protection": {
+          "score": 58,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neo4j MCP repository",
+              "url": "https://github.com/neo4j/mcp",
+              "date": "2026-07-09",
+              "value": "No built-in PII detection or property-level filtering; anything readable by the configured database user can reach the model, and person-centric graphs frequently concentrate PII"
+            }
+          ],
+          "methodology": "PII protection assessment",
+          "last_verified": "2026-07-09"
+        },
+        "self_hosted_option": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neo4j MCP documentation",
+              "url": "https://neo4j.com/docs/mcp/current/",
+              "date": "2026-07-09",
+              "value": "Runs entirely locally over stdio against self-managed Neo4j or Desktop; telemetry is controllable via NEO4J_TELEMETRY"
+            }
+          ],
+          "methodology": "Self-hosting options review",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Model Context Protocol documentation",
+              "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+              "date": "2026-07-09",
+              "value": "Graph content shared with the LLM provider is governed by that provider's data terms; the server itself sends optional telemetry to Neo4j unless disabled"
+            }
+          ],
+          "methodology": "Data sharing analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 78,
+      "criteria": {
+        "documentation_quality": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neo4j MCP documentation",
+              "url": "https://neo4j.com/docs/mcp/current/",
+              "date": "2026-07-09",
+              "value": "Dedicated official docs site covering prerequisites (APOC), configuration env vars, adaptive mode for optional dependencies, and client setup"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neo4j MCP repository",
+              "url": "https://github.com/neo4j/mcp",
+              "date": "2026-07-09",
+              "value": "Source available under the official neo4j org (268 stars, written in Go, distributed via PyPI); repo carries Apache 2.0 terms while PyPI metadata lists GPL-3.0-only — an unresolved licensing inconsistency"
+            }
+          ],
+          "methodology": "Source code review; scored down slightly for the conflicting license metadata between the repository and the PyPI package",
+          "last_verified": "2026-07-09"
+        },
+        "official_vs_labs_clarity": {
+          "score": 76,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neo4j MCP developer guide",
+              "url": "https://neo4j.com/developer/genai-ecosystem/model-context-protocol-mcp/",
+              "date": "2026-07-09",
+              "value": "Neo4j documents the split explicitly: neo4j/mcp is the supported product server, while neo4j-contrib/mcp-neo4j (mcp-neo4j-cypher, mcp-neo4j-memory, aura-manager, GDS agent) are Labs projects — actively developed but experimental, with no SLAs or backwards-compatibility guarantees"
+            }
+          ],
+          "methodology": "Product-boundary clarity review; the split is documented but the coexisting Labs servers with overlapping names still cause user confusion",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neo4j MCP repository",
+              "url": "https://github.com/neo4j/mcp",
+              "date": "2026-07-09",
+              "value": "268 stars, 54 forks; regular releases culminating in v1.5.3 (2026-06-11), maintained by the Neo4j product team with an active Labs ecosystem alongside"
+            }
+          ],
+          "methodology": "Community engagement analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 78,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "neo4j-mcp-server on PyPI",
+              "url": "https://pypi.org/project/neo4j-mcp-server/",
+              "date": "2026-07-09",
+              "value": "pip install neo4j-mcp-server plus four connection env vars; runs as a Python-launched subprocess over stdio against Aura, Desktop, or self-managed Neo4j (APOC required)"
+            }
+          ],
+          "methodology": "Setup complexity assessment",
+          "last_verified": "2026-07-09"
+        },
+        "query_performance": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neo4j performance documentation",
+              "url": "https://neo4j.com/docs/operations-manual/current/performance/",
+              "date": "2026-07-09",
+              "value": "Performance follows the underlying Neo4j instance: fast index-backed traversals, but unindexed agent-composed pattern matches on large graphs can be slow"
+            }
+          ],
+          "methodology": "Performance review of the underlying engine for agent workloads",
+          "last_verified": "2026-07-09"
+        },
+        "feature_coverage": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Neo4j MCP repository",
+              "url": "https://github.com/neo4j/mcp",
+              "date": "2026-07-09",
+              "value": "Focused tool set: get-schema, read-cypher, write-cypher, list-gds-procedures; Aura management, agent memory, and GDS execution live in separate Labs servers rather than the product server"
+            }
+          ],
+          "methodology": "Feature coverage assessment; deliberately narrow product surface with breadth delegated to experimental Labs servers",
+          "last_verified": "2026-07-09"
+        },
+        "reliability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neo4j MCP repository",
+              "url": "https://github.com/neo4j/mcp",
+              "date": "2026-07-09",
+              "value": "Product-team maintained with steady releases (v1.5.3, 2026-06-11) built on the official Go driver; adaptive mode degrades gracefully when optional dependencies are missing"
+            }
+          ],
+          "methodology": "Reliability analysis",
+          "last_verified": "2026-07-09"
+        },
+        "community_support": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Neo4j MCP developer guide",
+              "url": "https://neo4j.com/developer/genai-ecosystem/model-context-protocol-mcp/",
+              "date": "2026-07-09",
+              "value": "Supported by the Neo4j product team, with the Field GenAI team maintaining the complementary Labs servers and active developer-relations content"
+            }
+          ],
+          "methodology": "Community support assessment",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Official product server maintained by the Neo4j product team (v1.5.3, 2026-06-11), clearly separated from experimental Labs servers",
+    "read-cypher enforces read-only semantics via EXPLAIN-based query classification rather than string heuristics",
+    "Global kill-switch: NEO4J_READ_ONLY=true fully disables write-cypher",
+    "First-class graph schema introspection gives agents accurate label/relationship/property context",
+    "Works across Aura, Neo4j Desktop, and self-managed instances with graceful adaptive mode",
+    "GDS procedure discovery enables graph-algorithm-aware agents"
+  ],
+  "limitations": [
+    "Arbitrary Cypher means full read+write to the graph by default — write-cypher is enabled unless NEO4J_READ_ONLY=true is set",
+    "No graduated write gate: enabling writes also enables destructive deletes (DETACH DELETE, index/constraint drops) within the DB user's privileges",
+    "Database credentials stored in environment variables or client config; no OAuth flow at the MCP layer",
+    "Query results and graph structure exposed to the LLM provider with no PII filtering",
+    "License metadata inconsistent: repo indicates Apache 2.0 while PyPI declares GPL-3.0-only",
+    "Requires the APOC plugin; overlapping Labs servers (mcp-neo4j-cypher/memory) with similar names invite confusion",
+    "stdio-only product server; no managed remote endpoint from Neo4j yet"
+  ],
+  "metadata": {
+    "license": "Apache 2.0 per repository LICENSE; PyPI metadata lists GPL-3.0-only (inconsistency noted)",
+    "supported_platforms": ["All platforms with Python 3.10+ (Go binary distributed via PyPI)"],
+    "programming_languages": ["Go"],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/neo4j/mcp",
+    "github_stars": 268,
+    "package_name": "neo4j-mcp-server (PyPI)",
+    "latest_version": "1.5.3 (2026-06-11)",
+    "docs": "https://neo4j.com/docs/mcp/current/",
+    "api_dependency": "Neo4j Go driver; APOC plugin required; optional Graph Data Science library",
+    "authentication": "Database credentials via NEO4J_URI / NEO4J_USERNAME / NEO4J_PASSWORD / NEO4J_DATABASE env vars",
+    "security_controls": ["NEO4J_READ_ONLY=true disables write-cypher", "EXPLAIN-based read-only validation for read-cypher", "configurable telemetry (NEO4J_TELEMETRY)"],
+    "labs_counterparts": "neo4j-contrib/mcp-neo4j: mcp-neo4j-cypher, mcp-neo4j-memory, mcp-neo4j-aura-manager, GDS agent (experimental, no SLAs)",
+    "first_release": "2025 (Labs servers); product server GA line through 2026, v1.5.3 on 2026-06-11",
+    "transport_types": ["stdio"],
+    "maintained_by": "Neo4j product team"
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 78,
+      "notes": "Good for generating Cypher and graph data models from live schemas"
+    },
+    "customer-support": {
+      "overall": 68,
+      "notes": "Useful over customer-360 graphs, but such graphs concentrate PII"
+    },
+    "content-creation": {
+      "overall": 62,
+      "notes": "Knowledge-graph-backed content research is a reasonable secondary fit"
+    },
+    "data-analysis": {
+      "overall": 86,
+      "notes": "Strong for relationship-centric analysis, fraud rings, and network exploration"
+    },
+    "research-assistant": {
+      "overall": 84,
+      "notes": "Knowledge graphs plus GDS discovery suit multi-hop research questions well"
+    },
+    "legal-compliance": {
+      "overall": 58,
+      "notes": "Entity-relationship discovery helps investigations; PII exposure needs strict scoping"
+    },
+    "healthcare": {
+      "overall": 50,
+      "notes": "Patient/provider graphs are PII-dense; not advised without read-only mode and scoped users"
+    },
+    "financial-analysis": {
+      "overall": 74,
+      "notes": "Well suited to fraud and exposure network analysis with read-only credentials"
+    },
+    "education": {
+      "overall": 84,
+      "notes": "Excellent for teaching graph modeling and Cypher interactively"
+    },
+    "creative-writing": {
+      "overall": 66,
+      "notes": "Character/world relationship graphs are a genuinely good niche fit"
+    }
+  },
+  "best_for": [
+    "Teams building agents over knowledge graphs, fraud networks, and recommendation graphs",
+    "Developers wanting official, product-supported Neo4j access instead of experimental Labs servers",
+    "Read-heavy graph exploration with NEO4J_READ_ONLY=true and a least-privilege database user",
+    "GraphRAG and multi-hop reasoning workloads grounded in explicit schema"
+  ],
+  "related_entities": ["mcp-server-memory", "mcp-server-postgres", "mcp-server-mongodb", "mcp-server-clickhouse"],
+  "tags": ["database", "graph", "cypher", "knowledge-graph", "mcp", "model-context-protocol", "neo4j"]
+}

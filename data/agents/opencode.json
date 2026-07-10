@@ -1,0 +1,484 @@
+{
+  "id": "opencode",
+  "type": "agent",
+  "name": "OpenCode",
+  "provider": "SST / Anomaly Innovations",
+  "version": "1.x (v1.17.17, 2026-07-09)",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "MIT-licensed open-source terminal AI coding agent from the SST team (Anomaly Innovations). TUI-first with a client/server architecture, 75+ model providers, an optional curated Zen gateway, and millions of monthly developers. GitHub made Copilot subscriptions work with it (Jan 2026), while Anthropic blocked its consumer-OAuth access the same month, forcing removal of Claude Pro/Max support - a live case study in agent supply-chain and ToS risk.",
+  "website": "https://opencode.ai/",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 78,
+      "criteria": {
+        "task_completion_accuracy": {
+          "score": 83,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode GitHub repository",
+              "url": "https://github.com/sst/opencode",
+              "date": "2026-07-09",
+              "value": "Completes end-to-end coding tasks in the terminal; adoption at 184K stars and millions of monthly developers signals sustained real-world effectiveness"
+            }
+          ],
+          "methodology": "Adoption-signal and hands-on assessment of terminal coding workflows; accuracy tracks the configured model",
+          "last_verified": "2026-07-09"
+        },
+        "tool_use_reliability": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Built-in edit, bash, and search tools with LSP integration for language-aware edits; MCP support extends the toolset"
+            }
+          ],
+          "methodology": "Tool invocation testing across file edits, shell execution, LSP-assisted changes, and MCP servers",
+          "last_verified": "2026-07-09"
+        },
+        "multi_step_planning": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode GitHub repository",
+              "url": "https://github.com/sst/opencode",
+              "date": "2026-07-09",
+              "value": "Ships a read-only 'plan' agent that requests permission before bash execution and a full-access 'build' agent, separating strategy from execution"
+            }
+          ],
+          "methodology": "Evaluation of plan/build agent separation on multi-file tasks",
+          "last_verified": "2026-07-09"
+        },
+        "memory_persistence": {
+          "score": 70,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Persistent sessions with resume and share, AGENTS.md project context files, and per-project config; no managed long-term memory"
+            }
+          ],
+          "methodology": "Review of session persistence, AGENTS.md context, and cross-session continuity",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Agent loop iterates on compiler, test, and LSP diagnostics to self-correct; session history allows reverting"
+            }
+          ],
+          "methodology": "Observed recovery behavior from failing builds and diagnostics during evaluation",
+          "last_verified": "2026-07-09"
+        },
+        "agent_collaboration": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Configurable custom agents and subagent delegation; client/server design lets multiple clients drive the same server"
+            }
+          ],
+          "methodology": "Review of custom agent configuration and delegation features",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 67,
+      "criteria": {
+        "tool_sandboxing": {
+          "score": 52,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "No OS-level sandbox: bash and edit tools operate directly on the host; permission rules (ask/allow/deny per tool and command pattern) gate execution rather than isolate it"
+            }
+          ],
+          "methodology": "Execution isolation review; containerization is left to the user",
+          "last_verified": "2026-07-09"
+        },
+        "access_control": {
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Granular permission config per agent (edit/bash/webfetch ask-allow-deny with glob patterns) and a read-only plan agent; no enterprise policy or SSO layer in the open-source core"
+            }
+          ],
+          "methodology": "Assessment of the permission rule system and agent-level restrictions",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_defense": {
+          "score": 55,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "No dedicated injection detection: untrusted repo content and fetched web pages enter the context, with permission prompts as the main backstop - the standard exposure for terminal coding agents"
+            }
+          ],
+          "methodology": "Injection surface review across webfetch, repository content, and MCP servers",
+          "last_verified": "2026-07-09"
+        },
+        "data_isolation": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Local-first: code and prompts flow only to the configured provider; the optional share feature uploads session transcripts to opencode.ai and is disabled by config for sensitive environments"
+            }
+          ],
+          "methodology": "Data-flow review of local operation, share-link uploads, and Zen gateway routing",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenCode GitHub repository",
+              "url": "https://github.com/sst/opencode",
+              "date": "2026-07-09",
+              "value": "MIT license, fully open TypeScript codebase with public issue tracker and very high release velocity"
+            }
+          ],
+          "methodology": "License and source availability review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 80,
+      "criteria": {
+        "data_retention": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "No vendor retention in default BYOK operation; only opt-in share links and optional Zen usage send data to OpenCode-operated services"
+            }
+          ],
+          "methodology": "Privacy architecture review of default local operation versus opt-in cloud features",
+          "last_verified": "2026-07-09"
+        },
+        "gdpr_compliance": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode website",
+              "url": "https://opencode.ai/",
+              "date": "2026-06-15",
+              "value": "Compliance posture inherits from the chosen provider; Anomaly publishes standard policies but no formal certification program for the open-source tool"
+            }
+          ],
+          "methodology": "Compliance capabilities assessment across BYOK and Zen configurations",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode Zen documentation",
+              "url": "https://opencode.ai/docs/zen/",
+              "date": "2026-06-15",
+              "value": "Data goes to the user-selected provider among 75+; the optional Zen gateway routes through curated hosted models on pay-per-use terms"
+            }
+          ],
+          "methodology": "Data-flow analysis across direct provider connections, Zen routing, and share links",
+          "last_verified": "2026-07-09"
+        },
+        "local_deployment_option": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Runs locally with local models (Ollama and OpenAI-compatible endpoints) among its 75+ providers; share and Zen are optional"
+            }
+          ],
+          "methodology": "Deployment options assessment including fully local model configurations",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 85,
+      "criteria": {
+        "documentation_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Clear docs for config, agents, permissions, providers, MCP, Zen, and the SDK/server API"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review",
+          "last_verified": "2026-07-09"
+        },
+        "execution_traceability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Full session transcripts of tool calls in the TUI, shareable session links for review, and a server API exposing session state"
+            }
+          ],
+          "methodology": "Review of transcripts, share links, and server-API introspection",
+          "last_verified": "2026-07-09"
+        },
+        "decision_explainability": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode GitHub repository",
+              "url": "https://github.com/sst/opencode",
+              "date": "2026-07-09",
+              "value": "Plan agent externalizes intended changes read-only before execution; permission prompts surface each sensitive action"
+            }
+          ],
+          "methodology": "Assessment of plan-mode previews and pre-execution visibility",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_code": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenCode GitHub repository",
+              "url": "https://github.com/sst/opencode",
+              "date": "2026-07-09",
+              "value": "MIT-licensed, fully open codebase maintained in public by the SST/Anomaly team"
+            }
+          ],
+          "methodology": "Open source assessment of license and codebase completeness",
+          "last_verified": "2026-07-09"
+        },
+        "community_activity": {
+          "score": 93,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenCode GitHub repository",
+              "url": "https://github.com/sst/opencode",
+              "date": "2026-07-09",
+              "value": "184K stars and 22.9K forks observed 2026-07-09 (secondary write-ups from earlier in 2026 cite 150-172K - the figure moved fast); releases land near-daily (v1.17.17 on 2026-07-09)"
+            },
+            {
+              "source": "Tech Funding News - OpenCode background story",
+              "url": "https://techfundingnews.com/opencode-the-background-story-on-the-most-popular-open-source-coding-agent-in-the-world/",
+              "date": "2026-05-20",
+              "value": "Reported ~7.5M monthly active developers by May 2026 (other 2026 write-ups cite ~6.5M; estimates vary by methodology)"
+            }
+          ],
+          "methodology": "Community engagement analysis; star and MAU figures conflict across 2026 sources, so ranges are cited with the GitHub-observed value as primary",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 76,
+      "criteria": {
+        "ease_of_integration": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "One-line install script or npm/brew; runs in any terminal over SSH, with a beta desktop app and GitHub Copilot subscription auth since January 2026"
+            },
+            {
+              "source": "GitHub Changelog - Copilot supports OpenCode",
+              "url": "https://github.blog/changelog/2026-01-16-github-copilot-now-supports-opencode/",
+              "date": "2026-01-16",
+              "value": "GitHub officially enabled Copilot Pro/Pro+/Business/Enterprise subscriptions as an auth/model path for OpenCode"
+            }
+          ],
+          "methodology": "Setup time and integration surface assessment across terminal, SSH, and subscription auth paths",
+          "last_verified": "2026-07-09"
+        },
+        "scalability": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Client/server architecture supports remote servers, multiple concurrent sessions, and headless/scripted use for CI"
+            }
+          ],
+          "methodology": "Assessment of the server API, headless operation, and parallel session support",
+          "last_verified": "2026-07-09"
+        },
+        "cost_predictability": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode Zen",
+              "url": "https://opencode.ai/zen",
+              "date": "2026-06-15",
+              "value": "Free MIT tool; BYOK tokens are pay-as-you-go, Zen is pay-per-use, and Copilot subscriptions offer a capped-cost path since January 2026"
+            }
+          ],
+          "methodology": "Pricing analysis across BYOK, Zen, and subscription auth options",
+          "last_verified": "2026-07-09"
+        },
+        "monitoring_capabilities": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode documentation",
+              "url": "https://opencode.ai/docs/",
+              "date": "2026-06-15",
+              "value": "Per-session cost/token display and share links for review; no built-in fleet dashboards, audit exports, or alerting"
+            }
+          ],
+          "methodology": "Monitoring features assessment for individual and team usage",
+          "last_verified": "2026-07-09"
+        },
+        "production_readiness": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "OpenCode GitHub repository",
+              "url": "https://github.com/sst/opencode",
+              "date": "2026-07-09",
+              "value": "Stable 1.x with near-daily releases and massive adoption, but very fast churn; several-million-dollar Zen revenue funds maintenance"
+            },
+            {
+              "source": "Hacker News - Anthropic blocks third-party subscription access",
+              "url": "https://news.ycombinator.com/item?id=46549823",
+              "date": "2026-01-09",
+              "value": "On 2026-01-09 Anthropic's server-side checks cut OpenCode users off from Claude Pro/Max OAuth overnight without warning; the ToS ban was formalized 2026-02-19 and fully enforced 2026-04-04, forcing OpenCode to drop consumer Claude login"
+            },
+            {
+              "source": "The Register - Anthropic clarifies third-party access ban",
+              "url": "https://www.theregister.com/2026/02/20/anthropic_clarifies_ban_third_party_claude_access/",
+              "date": "2026-02-20",
+              "value": "Anthropic's clarified terms bar Free/Pro/Max OAuth tokens in third-party tools, a standing upstream-dependency risk for BYOK agents like OpenCode"
+            }
+          ],
+          "methodology": "Maturity assessment from release history and the demonstrated upstream provider-access risk (Anthropic OAuth removal)",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 85,
+      "notes": "Excellent terminal-native coding agent with LSP-aware edits and plan/build agent separation"
+    },
+    "data-analysis": {
+      "overall": 75,
+      "notes": "Solid for scripted analysis through shell tooling; not a notebook environment"
+    },
+    "research-assistant": {
+      "overall": 70,
+      "notes": "Capable codebase and web research; webfetch content should be treated as untrusted"
+    },
+    "content-creation": {
+      "overall": 64,
+      "notes": "Usable for technical docs; terminal workflow is not aimed at content work"
+    }
+  },
+  "best_for": [
+    "Terminal-first developers who want an open, provider-neutral alternative to Claude Code",
+    "GitHub Copilot subscribers wanting agentic coding outside VS Code/JetBrains (official since Jan 2026)",
+    "Remote/SSH development thanks to the client/server TUI architecture",
+    "Teams avoiding single-vendor lock-in with 75+ model providers including local models"
+  ],
+  "strengths": [
+    "One of the most popular open-source coding agents: 184K GitHub stars observed July 2026 (150-172K cited in earlier 2026 write-ups) and millions of monthly developers (~6.5-7.5M reported)",
+    "MIT-licensed, fully open, with near-daily releases",
+    "Provider-neutral: 75+ providers plus the optional curated Zen gateway",
+    "Official GitHub Copilot subscription support (January 2026)",
+    "Client/server TUI works over SSH; plan agent and granular permission rules gate risky actions",
+    "Local-first BYOK: code goes only to the provider the user chooses"
+  ],
+  "limitations": [
+    "Anthropic blocked its consumer OAuth access (Jan 2026; ToS formalized Feb, enforced Apr 2026), removing Claude Pro/Max support overnight - proof that upstream providers can cut off access without notice",
+    "No sandboxing: permission rules are the only barrier to host shell and filesystem",
+    "No dedicated prompt-injection defenses beyond permission prompts",
+    "Opt-in share links upload session transcripts to opencode.ai and need disabling in sensitive environments",
+    "Very fast release churn can break configs and integrations",
+    "No enterprise governance layer (SSO, audit, policy) in the open-source core"
+  ],
+  "metadata": {
+    "license": "MIT",
+    "repository": "https://github.com/sst/opencode",
+    "package_name": "opencode-ai (npm)",
+    "supported_models": [
+      "75+ providers (Anthropic API, OpenAI, Google, GitHub Copilot, OpenRouter, local Ollama, etc.)",
+      "OpenCode Zen curated gateway (optional, pay-per-use)"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "deployment_type": "Local terminal TUI with client/server architecture; beta desktop app; self-hosted",
+    "architecture": "TUI client + local server with built-in edit/bash/webfetch tools, LSP integration, MCP support, and configurable agents/permissions",
+    "first_release": "2024 (SST team); rose to prominence 2025-2026",
+    "adoption": "184K stars / 22.9K forks (2026-07-09); ~6.5-7.5M monthly developers reported in 2026 (estimates vary)",
+    "pricing": "Free (MIT) + BYOK provider costs; optional pay-per-use Zen models; works with GitHub Copilot subscriptions",
+    "github_stars": "184000 (2026-07-09); earlier 2026 sources cite 150-172K"
+  },
+  "related": [
+    "claude-code",
+    "cline",
+    "gemini-cli",
+    "github-copilot-coding-agent",
+    "openai-codex"
+  ],
+  "tags": [
+    "coding-agent",
+    "terminal",
+    "open-source",
+    "byok",
+    "multi-provider"
+  ]
+}

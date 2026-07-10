@@ -1,0 +1,447 @@
+{
+  "id": "mcp-server-paypal",
+  "type": "mcp",
+  "name": "PayPal MCP Server",
+  "provider": "PayPal",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "PayPal's official MCP server (Agent Toolkit), hosted at https://mcp.paypal.com with SSE (/sse) and streamable HTTP (/http) transports plus a sandbox at mcp.sandbox.paypal.com; also installable locally as @paypal/mcp. OAuth login or client-credential access tokens gate access, with restricted tool visibility so the LLM only sees tools its token permits. Tools cover invoices, orders, captures, refunds, disputes, subscriptions, catalog, shipment tracking, and transaction reporting.",
+  "website": "https://docs.paypal.ai/developer/tools/ai/mcp-quickstart",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 84,
+      "criteria": {
+        "api_reliability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal Status",
+              "url": "https://www.paypal-status.com/product/production",
+              "date": "2026-07-09",
+              "value": "Built directly on PayPal's production REST APIs, which serve global payment volume with historically high availability and a public status page"
+            }
+          ],
+          "methodology": "API stability and uptime analysis of the underlying PayPal REST APIs",
+          "last_verified": "2026-07-09"
+        },
+        "operation_success_rate": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal MCP Server Repository",
+              "url": "https://github.com/paypal/paypal-mcp-server",
+              "date": "2026-07-09",
+              "value": "Tools are wrappers over stable PayPal API endpoints across invoicing (create, list, send, remind, cancel, QR codes), orders/captures/refunds, disputes, subscriptions, catalog, tracking, and transaction reporting"
+            }
+          ],
+          "methodology": "Operation success testing across the documented tool set in sandbox mode",
+          "last_verified": "2026-07-09"
+        },
+        "rate_limit_handling": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal REST API Rate Limiting Guidance",
+              "url": "https://developer.paypal.com/reference/guidelines/rate-limiting/",
+              "date": "2026-07-09",
+              "value": "Inherits PayPal REST API rate limiting with standard 429 responses; limits are adequate for typical agent workloads though not published as fixed quotas"
+            }
+          ],
+          "methodology": "Rate limiting behavior testing under sustained tool-call load",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal MCP Server Repository",
+              "url": "https://github.com/paypal/paypal-mcp-server",
+              "date": "2026-07-09",
+              "value": "Surfaces PayPal's structured error objects (validation errors, authorization failures) to the agent; strict schema validation rejects malformed tool requests before they reach the API"
+            }
+          ],
+          "methodology": "Error handling testing with invalid parameters, insufficient permissions, and declined operations",
+          "last_verified": "2026-07-09"
+        },
+        "sandbox_environment_fidelity": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal MCP Quickstart",
+              "url": "https://docs.paypal.ai/developer/tools/ai/mcp-quickstart",
+              "date": "2026-07-09",
+              "value": "A full parallel sandbox server at https://mcp.sandbox.paypal.com mirrors the production tool surface, enabling safe end-to-end agent evaluation before any live money movement"
+            }
+          ],
+          "methodology": "Parity comparison of sandbox and production tool surfaces and behaviors",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 78,
+      "criteria": {
+        "authentication_security": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal MCP Quickstart",
+              "url": "https://docs.paypal.ai/developer/tools/ai/mcp-quickstart",
+              "date": "2026-07-09",
+              "value": "Remote server supports OAuth (user logs into PayPal and grants consent) or access tokens minted from Developer Dashboard client credentials; sandbox and production are fully separated hosts with separate credentials"
+            }
+          ],
+          "methodology": "Authentication mechanism review for OAuth and access-token flows on the hosted endpoints",
+          "last_verified": "2026-07-09"
+        },
+        "scope_limitation": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal Community Blog: Expanding PayPal's Remote MCP Server Tools",
+              "url": "https://developer.paypal.com/community/blog/mcp-server-toolexpansion/",
+              "date": "2026-07-09",
+              "value": "Restricted tool visibility ensures only authorized users and models can access specific tools: the tool list itself is filtered server-side by token permissions, so the LLM never even sees tools its token does not permit — a stronger design than post-hoc authorization checks"
+            }
+          ],
+          "methodology": "Permission scope testing across tokens with differing grants; verification that unpermitted tools are absent from tools/list responses",
+          "last_verified": "2026-07-09"
+        },
+        "token_exposure_risk": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal MCP Quickstart",
+              "url": "https://docs.paypal.ai/developer/tools/ai/mcp-quickstart",
+              "date": "2026-07-09",
+              "value": "Local @paypal/mcp mode requires client ID and secret in client configuration; a leaked live credential grants API access at the credential's full permission level, making OAuth on the remote server the safer default"
+            }
+          ],
+          "methodology": "Token storage and exposure-surface analysis for local configuration versus hosted OAuth",
+          "last_verified": "2026-07-09"
+        },
+        "action_auditability": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal Developer Dashboard",
+              "url": "https://developer.paypal.com/dashboard/",
+              "date": "2026-07-09",
+              "value": "Tool calls are API requests attributable to the app credential or OAuth grant, visible in Developer Dashboard event logs and account transaction/activity history, though less granular than a dedicated per-tool-call audit log"
+            }
+          ],
+          "methodology": "Audit logging review of API event logs and account activity attribution",
+          "last_verified": "2026-07-09"
+        },
+        "unauthorized_action_risk": {
+          "score": 58,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal MCP Quickstart",
+              "url": "https://docs.paypal.ai/developer/tools/ai/mcp-quickstart",
+              "date": "2026-07-09",
+              "value": "Tool surface includes direct money movement (refunds, order capture, invoicing, subscription changes) with no server-side human confirmation step; restricted tool visibility narrows the blast radius but a prompt-injected agent holding a write-permitted token can still move real funds"
+            }
+          ],
+          "methodology": "Threat modeling of write-capable financial tools under prompt injection; calibrated against other payment-domain MCP servers",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 75,
+      "criteria": {
+        "payment_data_exposure": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal MCP Server Repository",
+              "url": "https://github.com/paypal/paypal-mcp-server",
+              "date": "2026-07-09",
+              "value": "Invoice recipients, order payer details, dispute records, and transaction reports returned by tools flow into the LLM provider's context; raw card credentials are never exposed by PayPal's REST APIs"
+            }
+          ],
+          "methodology": "Data flow analysis of tool results containing payer and transaction data",
+          "last_verified": "2026-07-09"
+        },
+        "sensitive_data_protection": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal Security Center",
+              "url": "https://www.paypal.com/us/security",
+              "date": "2026-07-09",
+              "value": "PayPal operates PCI-DSS compliant payment infrastructure; card and bank credentials are tokenized server-side and are not retrievable through any MCP tool"
+            }
+          ],
+          "methodology": "Review of PayPal compliance posture and the data classes reachable via the tool surface",
+          "last_verified": "2026-07-09"
+        },
+        "organization_data_control": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal MCP Quickstart",
+              "url": "https://docs.paypal.ai/developer/tools/ai/mcp-quickstart",
+              "date": "2026-07-09",
+              "value": "Account owners control exposure through app credential permissions (which drive restricted tool visibility), sandbox/production separation, and revocation of OAuth consents and app credentials in the Developer Dashboard"
+            }
+          ],
+          "methodology": "Access control review of credential permissioning and consent revocation",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal Privacy Statement",
+              "url": "https://www.paypal.com/us/legalhub/privacy-full",
+              "date": "2026-07-09",
+              "value": "Payer PII retrieved via tools is shared with the user's LLM provider under that provider's data policy, outside PayPal's compliance boundary"
+            }
+          ],
+          "methodology": "Analysis of downstream data sharing once tool results leave PayPal",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 80,
+      "criteria": {
+        "documentation_quality": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal MCP Quickstart",
+              "url": "https://docs.paypal.ai/developer/tools/ai/mcp-quickstart",
+              "date": "2026-07-09",
+              "value": "Dedicated quickstart covering remote (SSE and streamable HTTP) and local setup, both auth flows, and client configuration for Claude, Cursor, and Cline; tool catalog lives in a separate agent-tools reference, and material is split across docs.paypal.ai and developer.paypal.com"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review across the developer portals",
+          "last_verified": "2026-07-09"
+        },
+        "operation_visibility": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal Developer Dashboard",
+              "url": "https://developer.paypal.com/dashboard/",
+              "date": "2026-07-09",
+              "value": "Operations surface in Developer Dashboard event logs and account activity; financial writes (invoices, refunds, captures) additionally appear in the account's transaction history"
+            }
+          ],
+          "methodology": "Logging and traceability assessment via dashboard logs and transaction records",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal MCP Server Repository",
+              "url": "https://github.com/paypal/paypal-mcp-server",
+              "date": "2026-07-09",
+              "value": "Apache-2.0 licensed server source (@paypal/mcp v1.8.1 on npm) is published and auditable, though community traction is thin (11 stars) and the hosted remote server's exact deployment cannot be independently verified against the repo"
+            }
+          ],
+          "methodology": "Source code review of the published package and comparison against observed hosted behavior",
+          "last_verified": "2026-07-09"
+        },
+        "api_coverage_clarity": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal Community Blog: Expanding PayPal's Remote MCP Server Tools",
+              "url": "https://developer.paypal.com/community/blog/mcp-server-toolexpansion/",
+              "date": "2026-07-09",
+              "value": "Remote server expanded from invoicing-only at launch (April 2025) to the full agent toolkit (June 2025): invoices, orders, captures, refunds, disputes, subscriptions and plans, catalog, shipment tracking, and transaction reporting"
+            }
+          ],
+          "methodology": "Comparison of documented tool surface against the shipped package and hosted tools/list output",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 80,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal MCP Quickstart",
+              "url": "https://docs.paypal.ai/developer/tools/ai/mcp-quickstart",
+              "date": "2026-07-09",
+              "value": "Remote endpoints connect via OAuth with a simple PayPal login (some clients require the mcp-remote shim); local mode is an npm install of @paypal/mcp with Node.js 18+ and dashboard credentials"
+            }
+          ],
+          "methodology": "Setup complexity assessment for hosted and local transports across major MCP clients",
+          "last_verified": "2026-07-09"
+        },
+        "api_performance": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal MCP Quickstart",
+              "url": "https://docs.paypal.ai/developer/tools/ai/mcp-quickstart",
+              "date": "2026-07-09",
+              "value": "Streamable HTTP transport (/http) delivers chunked responses for immediate display; underlying REST API latency is typical of production payment APIs with thin wrapper overhead"
+            }
+          ],
+          "methodology": "Latency observation across representative tool calls on both transports",
+          "last_verified": "2026-07-09"
+        },
+        "reliability": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal Status",
+              "url": "https://www.paypal-status.com/product/production",
+              "date": "2026-07-09",
+              "value": "Hosted MCP and underlying APIs ride PayPal's production payments infrastructure with strong historical availability"
+            }
+          ],
+          "methodology": "Uptime analysis of PayPal infrastructure hosting the MCP endpoints",
+          "last_verified": "2026-07-09"
+        },
+        "feature_coverage": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "PayPal MCP Server Repository",
+              "url": "https://github.com/paypal/paypal-mcp-server",
+              "date": "2026-07-09",
+              "value": "Covers the core merchant surface (invoicing, orders, refunds, disputes, subscriptions, catalog, tracking, reporting); payouts, Braintree, and marketplace/platform features are not exposed"
+            }
+          ],
+          "methodology": "Feature completeness assessment against the full PayPal API surface",
+          "last_verified": "2026-07-09"
+        },
+        "community_adoption": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "PayPal MCP Server Repository",
+              "url": "https://github.com/paypal/paypal-mcp-server",
+              "date": "2026-07-09",
+              "value": "First-party maintained, but community traction is modest: 11 GitHub stars, last repository push October 2025, and @paypal/mcp last published to npm October 2025; most usage flows through the hosted remote server"
+            }
+          ],
+          "methodology": "Community activity and adoption analysis across GitHub, npm, and MCP client ecosystems",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Restricted tool visibility: the LLM only sees tools its token permits, filtered server-side — a best-in-class scoping design",
+    "Hosted remote server with OAuth avoids placing client secrets in local config",
+    "Full parallel sandbox environment (mcp.sandbox.paypal.com) for safe end-to-end agent testing",
+    "Broad merchant tool surface: invoices, orders, refunds, disputes, subscriptions, catalog, tracking, reporting",
+    "Apache-2.0 open-source server implementation published as @paypal/mcp",
+    "Both SSE and streamable HTTP transports on the hosted endpoint",
+    "Backed by PCI-DSS compliant production payments infrastructure"
+  ],
+  "limitations": [
+    "Money-movement tools (refunds, captures, invoicing, subscription changes) make misuse directly costly",
+    "No server-side human confirmation step on write operations; must be enforced by the client",
+    "Payer PII in tool results is shared with the LLM provider",
+    "Client ID/secret in local stdio config is a high-value leak target",
+    "No dedicated per-tool-call audit log beyond standard API event logs",
+    "Local package and repository updates have lagged the hosted server (last npm publish October 2025)",
+    "Payouts, Braintree, and marketplace features are not exposed"
+  ],
+  "metadata": {
+    "repository": "https://github.com/paypal/paypal-mcp-server",
+    "package_name": "@paypal/mcp",
+    "package_version": "1.8.1",
+    "license": "Apache-2.0",
+    "maintained_by": "PayPal",
+    "github_stars": 11,
+    "remote_endpoint": "https://mcp.paypal.com/sse (SSE); https://mcp.paypal.com/http (streamable HTTP); sandbox at https://mcp.sandbox.paypal.com",
+    "authentication": "OAuth (hosted, recommended) or access tokens from Developer Dashboard client credentials; restricted tool visibility filters the tool list by token permissions",
+    "transport_types": [
+      "sse (hosted)",
+      "streamable-http (hosted)",
+      "stdio (@paypal/mcp, local)"
+    ],
+    "installation_methods": [
+      "Remote MCP endpoint (OAuth or bearer token, mcp-remote shim where needed)",
+      "npm @paypal/mcp (Node.js 18+)"
+    ],
+    "compliance": [
+      "PCI-DSS"
+    ],
+    "mcp_version": "1.0"
+  },
+  "use_case_ratings": {
+    "financial-analysis": {
+      "overall": 78,
+      "notes": "Transaction reporting and dispute/subscription queries directly from the source of truth; weaker than dedicated analytics for bulk work"
+    },
+    "customer-support": {
+      "overall": 84,
+      "notes": "Strong for support agents managing invoices, order lookups, refunds, and dispute status with permission-scoped tokens"
+    },
+    "code-generation": {
+      "overall": 74,
+      "notes": "Sandbox parity makes integration development safe, though there is no built-in docs-search tool"
+    },
+    "data-analysis": {
+      "overall": 70,
+      "notes": "Good for ad-hoc transaction and subscription queries; bulk analytics is better served by reporting exports"
+    },
+    "legal-compliance": {
+      "overall": 62,
+      "notes": "Dispute records are accessible, but payer PII flowing to LLM providers requires careful review"
+    }
+  },
+  "best_for": [
+    "Merchant support and operations teams automating invoicing, refund, and dispute workflows with permission-scoped tokens",
+    "Developers building and testing PayPal integrations against the sandbox MCP before going live",
+    "Finance teams querying transactions, subscriptions, and disputes conversationally",
+    "Agent builders who want server-side tool scoping rather than client-side-only guardrails"
+  ],
+  "not_recommended_for": [
+    "Fully autonomous agents holding write-permitted live tokens without human confirmation",
+    "Payout, marketplace, or Braintree workflows (not exposed via MCP)",
+    "Environments requiring granular per-tool-call audit trails"
+  ],
+  "related_entities": [
+    "mcp-server-stripe",
+    "mcp-server-zapier",
+    "mcp-server-slack",
+    "mcp-server-github"
+  ],
+  "tags": [
+    "payments",
+    "invoicing",
+    "fintech",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

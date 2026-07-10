@@ -1,0 +1,444 @@
+{
+  "id": "mcp-server-exa",
+  "type": "mcp",
+  "name": "MCP Exa Server",
+  "provider": "Exa Labs",
+  "version": "3.2.1",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Exa's official MCP server (exa-labs/exa-mcp-server v3.2.1, MIT) exposing neural/semantic web search, code search, crawling/content fetch, company and people research, and deep research tools. Hosted at https://mcp.exa.ai/mcp with an unauthenticated free tier (3 QPS, 150 calls/day) or an Exa API key for full access; also runs locally via npx exa-mcp-server. Read-only, agent-optimized results with source URLs; Instant Search (Feb 2026) delivers sub-150ms latency.",
+  "website": "https://exa.ai/mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 86,
+      "criteria": {
+        "search_accuracy": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Exa - The World's Fastest Search API",
+              "url": "https://exa.ai/blog/fastest-search-api",
+              "date": "2026-07-09",
+              "value": "Proprietary end-to-end neural search stack using embeddings and transformers to understand query meaning, purpose-built for AI agents rather than repackaged keyword search"
+            }
+          ],
+          "methodology": "Search quality review of Exa's neural/semantic retrieval approach",
+          "last_verified": "2026-07-09"
+        },
+        "response_latency": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Exa changelog - Introducing Exa Instant Search",
+              "url": "https://exa.ai/docs/changelog/instant-search-launch",
+              "date": "2026-02-05",
+              "value": "Instant Search (type=instant) launched 2026-02-05 delivering sub-150ms neural search latency for real-time agent workflows, voice AI, and coding agents"
+            }
+          ],
+          "methodology": "Latency review based on the Instant Search launch and published benchmarks",
+          "last_verified": "2026-07-09"
+        },
+        "content_extraction": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "exa-mcp-server repository",
+              "url": "https://github.com/exa-labs/exa-mcp-server",
+              "date": "2026-07-09",
+              "value": "web_fetch_exa retrieves full page content; crawling and advanced-search variants provide filtered extraction for agents"
+            }
+          ],
+          "methodology": "Content extraction tool review",
+          "last_verified": "2026-07-09"
+        },
+        "result_freshness": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Exa documentation",
+              "url": "https://docs.exa.ai/",
+              "date": "2026-07-09",
+              "value": "Continuously refreshed index with date filtering; live crawling options fetch current page content when the index is stale"
+            }
+          ],
+          "methodology": "Freshness assessment of index plus live-crawl fallback",
+          "last_verified": "2026-07-09"
+        },
+        "rate_limit_handling": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Exa changelog",
+              "url": "https://exa.ai/docs/changelog",
+              "date": "2026-07-09",
+              "value": "Unauthenticated hosted tier enforces 3 QPS and 150 calls/day with clear limit errors; adding an API key lifts limits to plan quotas"
+            }
+          ],
+          "methodology": "Rate limiting behavior review across anonymous and keyed tiers",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 76,
+      "criteria": {
+        "api_key_security": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "exa-mcp-server repository",
+              "url": "https://github.com/exa-labs/exa-mcp-server",
+              "date": "2026-07-09",
+              "value": "Local server takes EXA_API_KEY as an environment variable; hosted endpoint accepts the key via URL parameter or header — URL-embedded keys risk leaking through logs and client config sharing. Unauthenticated mode requires no credential at all"
+            }
+          ],
+          "methodology": "Credential handling review across local, hosted-keyed, and anonymous modes",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_exposure": {
+          "score": 68,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "exa-mcp-server repository",
+              "url": "https://github.com/exa-labs/exa-mcp-server",
+              "date": "2026-07-09",
+              "value": "Search snippets and fetched page content from arbitrary websites flow directly into the LLM context, creating an indirect prompt-injection vector; no content sanitization is documented. Blast radius is limited because all tools are read-only"
+            }
+          ],
+          "methodology": "Threat modeling of untrusted web content ingestion via search and fetch tools",
+          "last_verified": "2026-07-09"
+        },
+        "data_handling": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Exa privacy policy",
+              "url": "https://exa.ai/privacy",
+              "date": "2026-07-09",
+              "value": "Search queries are processed on Exa's servers; hosted MCP usage is subject to Exa's privacy policy, with anonymous free-tier calls not tied to an account"
+            }
+          ],
+          "methodology": "Data handling review of query processing paths",
+          "last_verified": "2026-07-09"
+        },
+        "source_verification": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Exa documentation",
+              "url": "https://docs.exa.ai/",
+              "date": "2026-07-09",
+              "value": "All results carry source URLs; content is retrieved from real indexed pages rather than generated, enabling downstream verification"
+            }
+          ],
+          "methodology": "Source attribution and verifiability testing",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 74,
+      "criteria": {
+        "query_privacy": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Exa privacy policy",
+              "url": "https://exa.ai/privacy",
+              "date": "2026-07-09",
+              "value": "Queries transit and may be retained by Exa for service operation and improvement; agent queries can embed sensitive project context"
+            }
+          ],
+          "methodology": "Privacy policy review",
+          "last_verified": "2026-07-09"
+        },
+        "data_retention": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Exa privacy policy",
+              "url": "https://exa.ai/privacy",
+              "date": "2026-07-09",
+              "value": "Standard API-service retention terms; no zero-retention mode documented for MCP traffic"
+            }
+          ],
+          "methodology": "Data retention terms review",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_sharing": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Exa terms of service",
+              "url": "https://exa.ai/terms",
+              "date": "2026-07-09",
+              "value": "Query data is used for service operation; results additionally flow to the connected LLM provider per that provider's policy"
+            }
+          ],
+          "methodology": "Third-party sharing pathway analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 86,
+      "criteria": {
+        "documentation_quality": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Exa MCP documentation",
+              "url": "https://docs.exa.ai/",
+              "date": "2026-07-09",
+              "value": "Clear docs for hosted and local setup, tool selection via ?tools= query parameters, per-client configuration guides, and bundled Claude Skills for research workflows"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "result_attribution": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Exa documentation",
+              "url": "https://docs.exa.ai/",
+              "date": "2026-07-09",
+              "value": "Every search and research result includes source URLs for verification"
+            }
+          ],
+          "methodology": "Attribution testing of result payloads",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "exa-labs/exa-mcp-server repository",
+              "url": "https://github.com/exa-labs/exa-mcp-server",
+              "date": "2026-07-09",
+              "value": "MIT-licensed server with ~4.7k stars and 409 commits; package.json at v3.2.1 — the MCP layer is fully inspectable while the search backend remains a proprietary hosted API"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-07-09"
+        },
+        "pricing_transparency": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Exa pricing",
+              "url": "https://exa.ai/pricing",
+              "date": "2026-07-09",
+              "value": "Published per-request API pricing plus a documented free MCP tier (3 QPS / 150 calls/day unauthenticated; 1,000 requests/month with a free API key)"
+            }
+          ],
+          "methodology": "Pricing documentation review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 88,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Exa MCP page",
+              "url": "https://exa.ai/mcp",
+              "date": "2026-07-09",
+              "value": "Hosted endpoint https://mcp.exa.ai/mcp works with zero credentials on the free tier — arguably the lowest-friction MCP onboarding among search servers; local install is one npx exa-mcp-server command"
+            }
+          ],
+          "methodology": "Setup complexity assessment across hosted and local modes",
+          "last_verified": "2026-07-09"
+        },
+        "api_reliability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Exa status page",
+              "url": "https://status.exa.ai/",
+              "date": "2026-07-09",
+              "value": "Hosted API with public status page and high-availability infrastructure serving production agent workloads"
+            }
+          ],
+          "methodology": "Reliability assessment of the hosted service",
+          "last_verified": "2026-07-09"
+        },
+        "cost_efficiency": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Exa changelog - MCP free tier",
+              "url": "https://exa.ai/docs/changelog",
+              "date": "2026-07-09",
+              "value": "Free unauthenticated tier (150 calls/day) plus free-plan API credits make evaluation costless; paid usage is metered per request"
+            }
+          ],
+          "methodology": "Cost analysis of free and paid tiers",
+          "last_verified": "2026-07-09"
+        },
+        "ai_optimization": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "exa-labs/exa-mcp-server repository",
+              "url": "https://github.com/exa-labs/exa-mcp-server",
+              "date": "2026-07-09",
+              "value": "Purpose-built for agents: semantic search tuned to LLM queries, configurable tool subsets to save context, deep-research tools, and Instant Search for latency-sensitive agent loops"
+            }
+          ],
+          "methodology": "AI integration and agent-fit assessment",
+          "last_verified": "2026-07-09"
+        },
+        "maintenance_activity": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "exa-labs/exa-mcp-server repository",
+              "url": "https://github.com/exa-labs/exa-mcp-server",
+              "date": "2026-07-09",
+              "value": "Actively maintained by Exa Labs (409 commits, v3.2.1) alongside rapid platform iteration (Exa 2.0, Instant Search in Feb 2026)"
+            }
+          ],
+          "methodology": "Repository activity and release-cadence analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 85,
+      "notes": "Code search and doc lookup tools are strong for finding APIs, examples, and repos"
+    },
+    "customer-support": {
+      "overall": 75,
+      "notes": "Good for locating product docs and third-party resources"
+    },
+    "content-creation": {
+      "overall": 87,
+      "notes": "Excellent semantic research and fact-gathering with cited sources"
+    },
+    "data-analysis": {
+      "overall": 76,
+      "notes": "Useful for external data gathering, company and market research"
+    },
+    "research-assistant": {
+      "overall": 94,
+      "notes": "Outstanding: neural search, crawling, and deep-research tools built for agents"
+    },
+    "legal-compliance": {
+      "overall": 70,
+      "notes": "Useful for regulatory research; verify findings against primary sources"
+    },
+    "healthcare": {
+      "overall": 66,
+      "notes": "Can surface medical literature; not suitable for clinical decisions"
+    },
+    "financial-analysis": {
+      "overall": 78,
+      "notes": "Strong company research tools; confirm figures from primary sources"
+    },
+    "education": {
+      "overall": 88,
+      "notes": "Great for learning and semantic exploration of topics"
+    },
+    "creative-writing": {
+      "overall": 82,
+      "notes": "Semantic search surfaces inspiration and niche references well"
+    }
+  },
+  "best_for": [
+    "AI agents needing fast, meaning-aware web search (sub-150ms Instant Search)",
+    "Deep research and RAG pipelines requiring cited, extractable web content",
+    "Developers searching code, repos, and technical documentation",
+    "Zero-friction evaluation via the unauthenticated hosted free tier"
+  ],
+  "strengths": [
+    "Neural/semantic search purpose-built for AI agents, not repackaged keyword search",
+    "Instant Search (launched 2026-02-05) delivers sub-150ms latency for real-time agent loops",
+    "Unauthenticated hosted free tier (3 QPS / 150 calls/day) — lowest-friction onboarding in its class",
+    "Broad tool set: web search, fetch/crawl, code search, company and people research, deep research",
+    "Read-only surface keeps worst-case blast radius low",
+    "MIT open-source server (~4.7k stars, v3.2.1) with configurable tool subsets to save context",
+    "All results carry source URLs for verification"
+  ],
+  "limitations": [
+    "Fetched web content flows into the LLM context — indirect prompt-injection vector with no documented sanitization",
+    "Hosted endpoint accepts API keys via URL parameter, which can leak through logs and shared configs",
+    "Queries processed and retained by Exa's servers per its privacy policy; no self-hosted backend",
+    "Anonymous tier is tightly rate-limited (150 calls/day), requiring a key for real workloads",
+    "Search backend is proprietary despite the open-source MCP layer",
+    "Result quality varies with source websites, as with any web search"
+  ],
+  "metadata": {
+    "license": "MIT (MCP server); proprietary hosted search API",
+    "supported_platforms": [
+      "Any MCP client (hosted endpoint)",
+      "All platforms with Node.js (local server)"
+    ],
+    "programming_languages": [
+      "TypeScript"
+    ],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/exa-labs/exa-mcp-server",
+    "github_stars": 4700,
+    "package": "exa-mcp-server",
+    "package_version": "3.2.1",
+    "remote_endpoint": "https://mcp.exa.ai/mcp (tool selection via ?tools= query parameter)",
+    "api_dependency": "Exa Search API",
+    "authentication": "None required (free tier: 3 QPS / 150 calls/day); Exa API key (URL parameter or header) for full access",
+    "free_tier": "Unauthenticated: 3 QPS, 150 calls/day; free API key: 1,000 requests/month",
+    "first_release": "2024",
+    "maintained_by": "Exa Labs",
+    "status": "Active",
+    "transport_types": [
+      "streamable-http (hosted)",
+      "stdio (local)"
+    ],
+    "installation_methods": [
+      "remote-url",
+      "npx",
+      "npm"
+    ]
+  },
+  "related_entities": [
+    "mcp-server-tavily",
+    "mcp-server-brave-search",
+    "mcp-server-perplexity",
+    "mcp-server-firecrawl"
+  ],
+  "tags": [
+    "search",
+    "web",
+    "semantic-search",
+    "research",
+    "exa",
+    "mcp",
+    "model-context-protocol",
+    "official"
+  ]
+}

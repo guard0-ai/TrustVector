@@ -1,0 +1,452 @@
+{
+  "id": "mcp-server-shopify",
+  "type": "mcp",
+  "name": "Shopify MCP Servers",
+  "provider": "Shopify",
+  "version": "2026.7",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Shopify's official MCP surface spans three layers: the Storefront MCP, live by default on every eligible store at {shop}.myshopify.com/api/mcp (public, no auth; catalog, cart, and policy tools), the local @shopify/dev-mcp stdio server (v1.14.x) for docs search and GraphQL schema work, and the open-source Shopify AI Toolkit (April 2026) adding authenticated admin operations via the Shopify CLI. Default-on endpoints across millions of stores form a huge aggregate agent surface.",
+  "website": "https://shopify.dev/docs/apps/build/storefront-mcp",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 82,
+      "criteria": {
+        "api_reliability": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "Storefront MCP is served from Shopify's production storefront infrastructure at https://{shop}.myshopify.com/api/mcp (JSON-RPC 2.0 over HTTP POST), the same platform that serves live storefront traffic"
+            }
+          ],
+          "methodology": "API stability analysis of the hosted endpoint riding on Shopify's storefront-serving infrastructure",
+          "last_verified": "2026-07-09"
+        },
+        "operation_success_rate": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "Six documented tools (search_catalog, lookup_catalog, get_product on the UCP endpoint; get_cart, update_cart, search_shop_policies_and_faqs) map to stable storefront primitives; lookup accepts up to 10 IDs per call"
+            }
+          ],
+          "methodology": "Operation success testing across the documented storefront tool set against live stores",
+          "last_verified": "2026-07-09"
+        },
+        "search_accuracy": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Dev MCP / AI Toolkit Documentation",
+              "url": "https://shopify.dev/docs/apps/build/devmcp",
+              "date": "2026-07-09",
+              "value": "Dev MCP bundles Shopify documentation search, GraphQL schema introspection (introspect_graphql_schema across Admin, Storefront, Partner, Customer, and Function APIs), and code validation; storefront catalog search returns relevance-ranked product results"
+            }
+          ],
+          "methodology": "Relevance assessment of catalog search and docs/schema search results for representative queries",
+          "last_verified": "2026-07-09"
+        },
+        "rate_limit_handling": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "Storefront MCP inherits storefront-tier rate limiting; limits vary by plan (Plus stores receive higher limits and earlier access to advanced UCP capabilities) and some stores may restrict agent access entirely"
+            }
+          ],
+          "methodology": "Rate limiting behavior observation under sustained anonymous tool-call load across plan tiers",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "JSON-RPC 2.0 structured errors for malformed requests and restricted stores; Dev MCP validate tools return per-code-block validation results explaining why GraphQL was valid or invalid"
+            }
+          ],
+          "methodology": "Error handling testing with invalid product IDs, restricted stores, and malformed cart operations",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 66,
+      "criteria": {
+        "authentication_security": {
+          "score": 62,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "Storefront MCP servers don't require authentication: requests need only a Content-Type header and the store domain; any client on the internet can call the endpoint. Admin operations via the AI Toolkit use the authenticated Shopify CLI session instead"
+            }
+          ],
+          "methodology": "Authentication mechanism review across the anonymous storefront endpoint, local Dev MCP, and CLI-authenticated admin path",
+          "last_verified": "2026-07-09"
+        },
+        "scope_limitation": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "About Storefront MCP",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp",
+              "date": "2026-07-09",
+              "value": "The public endpoint is scoped to already-public storefront data (catalog, policies, FAQs) plus cart state; admin mutations are fully separated behind the Shopify CLI authenticated path and are never reachable through /api/mcp"
+            }
+          ],
+          "methodology": "Permission boundary testing between the anonymous storefront surface and authenticated admin operations",
+          "last_verified": "2026-07-09"
+        },
+        "prompt_injection_risk": {
+          "score": 48,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "CodeIntegrity: Shopify MCP Prompt Injection Exploit",
+              "url": "https://www.codeintegrity.ai/blog/shopify",
+              "date": "2026-07-09",
+              "value": "Documented indirect prompt injection: a malicious prompt hidden in a product description forced an unauthorized search_shop_catalog call and made the consuming LLM present attacker-chosen products with fabricated positive bias; merchant-authored content is untrusted input to every connected agent"
+            },
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "Because the endpoint is default-on across millions of stores, any store's product descriptions, policies, and FAQ text flow into agent context at ecosystem scale with no server-side sanitization guarantees"
+            }
+          ],
+          "methodology": "Threat modeling of merchant-authored content as an injection vector, including a publicly documented exploit against the storefront tool chain",
+          "last_verified": "2026-07-09"
+        },
+        "token_exposure_risk": {
+          "score": 80,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Dev MCP / AI Toolkit Documentation",
+              "url": "https://shopify.dev/docs/apps/build/devmcp",
+              "date": "2026-07-09",
+              "value": "Storefront MCP needs no credentials at all; the local Dev MCP server runs over stdio without authentication; admin operations reuse the Shopify CLI's existing local session rather than static API keys pasted into client config"
+            }
+          ],
+          "methodology": "Token storage and exposure-surface analysis across the three access paths",
+          "last_verified": "2026-07-09"
+        },
+        "unauthorized_action_risk": {
+          "score": 62,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify AI Toolkit Repository",
+              "url": "https://github.com/Shopify/shopify-ai-toolkit",
+              "date": "2026-07-09",
+              "value": "The AI Toolkit lets agents execute real store operations (products, inventory, store management) through the authenticated CLI path with no server-side confirmation step; on the storefront side, anonymous update_cart writes are possible but individually low-consequence"
+            }
+          ],
+          "methodology": "Authorization boundary testing of cart writes and CLI-authenticated admin mutations",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 73,
+      "criteria": {
+        "customer_data_exposure": {
+          "score": 78,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "About Storefront MCP",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp",
+              "date": "2026-07-09",
+              "value": "The storefront surface exposes only already-public catalog, policy, and FAQ data plus session cart contents; customer PII and order history are not reachable through the anonymous endpoint"
+            }
+          ],
+          "methodology": "Data classification of every field reachable through the anonymous storefront tool set",
+          "last_verified": "2026-07-09"
+        },
+        "sensitive_data_protection": {
+          "score": 74,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Dev MCP npm package",
+              "url": "https://www.npmjs.com/package/@shopify/dev-mcp",
+              "date": "2026-07-09",
+              "value": "Dev MCP makes instrumentation calls back to Shopify by default; disabling requires setting OPT_OUT_INSTRUMENTATION=true in the client env. Admin-path results (inventory, unpublished products) flow into the connected LLM's context"
+            }
+          ],
+          "methodology": "Review of telemetry defaults and of sensitive data classes reachable via the authenticated admin path",
+          "last_verified": "2026-07-09"
+        },
+        "organization_data_control": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "The endpoint is on by default for eligible stores (default-on for eligible US merchants since March 24, 2026); merchants can restrict agent access, but exposure is opt-out rather than opt-in and many merchants receive agent traffic without having configured anything"
+            }
+          ],
+          "methodology": "Review of merchant-side controls over default-on agent exposure and opt-out mechanics",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Privacy Policy",
+              "url": "https://www.shopify.com/legal/privacy",
+              "date": "2026-07-09",
+              "value": "Store content retrieved via MCP flows to whichever LLM provider the consuming agent uses (ChatGPT, Copilot, Gemini, and others surface Shopify stores by default), governed by those providers' data policies rather than Shopify's"
+            }
+          ],
+          "methodology": "Analysis of downstream data sharing once storefront and admin content leaves the Shopify boundary",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 77,
+      "criteria": {
+        "documentation_quality": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Shopify Agentic Commerce Documentation",
+              "url": "https://shopify.dev/docs/agents",
+              "date": "2026-07-09",
+              "value": "Dedicated documentation hub covering Storefront MCP, catalog/UCP tools, Dev MCP, and the AI Toolkit, with per-tool references, request schemas, and client setup guides"
+            }
+          ],
+          "methodology": "Documentation completeness and accuracy review across the three server surfaces",
+          "last_verified": "2026-07-09"
+        },
+        "operation_visibility": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "Anonymous storefront MCP calls are not attributable to an identity and merchants get no dedicated MCP audit log; admin-path operations are visible as normal API activity, and Dev MCP calls appear only in client logs"
+            }
+          ],
+          "methodology": "Logging and traceability assessment across anonymous, local, and CLI-authenticated paths",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 72,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Shopify AI Toolkit Repository",
+              "url": "https://github.com/Shopify/shopify-ai-toolkit",
+              "date": "2026-07-09",
+              "value": "AI Toolkit open-sourced under MIT on April 9, 2026 (439 stars, actively pushed through June 2026) and @shopify/dev-mcp v1.14.2 is published on npm (ISC); the hosted Storefront MCP implementation itself remains closed source"
+            }
+          ],
+          "methodology": "Source availability review across the open-source developer tooling and the closed hosted endpoint",
+          "last_verified": "2026-07-09"
+        },
+        "api_coverage_clarity": {
+          "score": 82,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "Tool surface explicitly enumerated: search_catalog/lookup_catalog/get_product at /api/ucp/mcp and get_cart/update_cart/search_shop_policies_and_faqs at /api/mcp, with input constraints (e.g., 10 IDs per lookup) and agent-profile requirements documented"
+            }
+          ],
+          "methodology": "Comparison of documented tool surface against observed endpoint behavior",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 86,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "Zero merchant setup: the endpoint is live by default on every eligible store; consumers just point a client at https://{shop}.myshopify.com/api/mcp. Dev MCP is a one-line npx @shopify/dev-mcp install"
+            }
+          ],
+          "methodology": "Setup complexity assessment for merchants, agent builders, and developers",
+          "last_verified": "2026-07-09"
+        },
+        "api_performance": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Storefront MCP Server Documentation",
+              "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+              "date": "2026-07-09",
+              "value": "Tools are thin JSON-RPC wrappers over Shopify's storefront-serving stack, which is heavily optimized for low-latency commerce traffic"
+            }
+          ],
+          "methodology": "Latency observation across catalog search, cart, and policy tools",
+          "last_verified": "2026-07-09"
+        },
+        "reliability": {
+          "score": 86,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Shopify Status",
+              "url": "https://www.shopifystatus.com/",
+              "date": "2026-07-09",
+              "value": "Storefront MCP rides Shopify's production storefront infrastructure with strong historical availability; the surface reached default-on general availability in Q1 2026 after a 2025 rollout"
+            }
+          ],
+          "methodology": "Uptime analysis of Shopify storefront infrastructure hosting the endpoint",
+          "last_verified": "2026-07-09"
+        },
+        "feature_coverage": {
+          "score": 80,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Shopify Dev MCP / AI Toolkit Documentation",
+              "url": "https://shopify.dev/docs/apps/build/devmcp",
+              "date": "2026-07-09",
+              "value": "Combined surface spans buyer-side commerce (catalog, cart, policies), developer tooling (docs, schema introspection, validation across Admin/Storefront/Partner/Customer/Function APIs), and CLI-backed store operations; checkout completion still hands off to Shopify-hosted flows"
+            }
+          ],
+          "methodology": "Feature completeness assessment against end-to-end agentic commerce and development workflows",
+          "last_verified": "2026-07-09"
+        },
+        "community_adoption": {
+          "score": 86,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Shopify AI Toolkit Repository",
+              "url": "https://github.com/Shopify/shopify-ai-toolkit",
+              "date": "2026-07-09",
+              "value": "Default-on across millions of stores (5.6M stores made agent-discoverable in ChatGPT, Copilot, Google AI Mode, and Gemini as of March 2026); AI Toolkit at 439 stars within three months of its April 9, 2026 open-source launch with plugins for Claude Code, Codex, Cursor, and VS Code"
+            }
+          ],
+          "methodology": "Adoption analysis across merchant footprint, agent platforms, and developer tooling",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "strengths": [
+    "Zero-setup, default-on storefront endpoint makes every eligible store agent-ready",
+    "Clean separation between the anonymous public surface and CLI-authenticated admin operations",
+    "No credentials required for the storefront path, eliminating token-leak risk there entirely",
+    "Dev MCP provides docs search, GraphQL schema introspection, and validation across all major Shopify APIs",
+    "AI Toolkit is MIT-licensed open source with first-party plugins for major AI coding tools",
+    "Backed by Shopify's production commerce infrastructure and status transparency",
+    "UCP catalog tools position stores for cross-platform agentic commerce discovery"
+  ],
+  "limitations": [
+    "Default-on public endpoints at millions of stores create an enormous aggregate attack and scraping surface that merchants did not individually opt into",
+    "Merchant-authored product descriptions are untrusted input; an indirect prompt injection exploit against the storefront tool chain has been publicly documented",
+    "Anonymous access means no identity, revocation, or per-consumer rate accountability on the storefront path",
+    "No dedicated merchant-facing MCP audit log for agent traffic",
+    "Dev MCP sends instrumentation telemetry by default (opt-out via OPT_OUT_INSTRUMENTATION)",
+    "Admin operations via the AI Toolkit lack a server-side confirmation step",
+    "The hosted Storefront MCP implementation is closed source"
+  ],
+  "metadata": {
+    "repository": "https://github.com/Shopify/shopify-ai-toolkit",
+    "package_name": "@shopify/dev-mcp",
+    "package_version": "1.14.2",
+    "license": "MIT (AI Toolkit); ISC (@shopify/dev-mcp npm package); hosted Storefront MCP closed source",
+    "maintained_by": "Shopify",
+    "github_stars": 439,
+    "remote_endpoint": "https://{shop}.myshopify.com/api/mcp (commerce tools); https://{shop}.myshopify.com/api/ucp/mcp (catalog tools)",
+    "authentication": "None (Storefront MCP, public by design); none needed (local Dev MCP); Shopify CLI session (admin operations via AI Toolkit)",
+    "transport_types": [
+      "streamable-http / JSON-RPC 2.0 over HTTP POST (storefront, hosted)",
+      "stdio (@shopify/dev-mcp, local)"
+    ],
+    "installation_methods": [
+      "None required (storefront endpoint live by default)",
+      "npx @shopify/dev-mcp",
+      "Shopify AI Toolkit plugin for Claude Code / Codex / Cursor / VS Code"
+    ],
+    "default_on_since": "Q1 2026 (Agentic Storefronts default-on for eligible US merchants March 24, 2026)",
+    "ai_toolkit_open_sourced": "2026-04-09",
+    "mcp_version": "1.0"
+  },
+  "use_case_ratings": {
+    "customer-support": {
+      "overall": 84,
+      "notes": "Strong for shopping assistants answering catalog, policy, and FAQ questions and managing carts on any store"
+    },
+    "code-generation": {
+      "overall": 88,
+      "notes": "Dev MCP's docs search, schema introspection, and validation make it excellent for building Shopify apps and themes with AI assistance"
+    },
+    "data-analysis": {
+      "overall": 68,
+      "notes": "Useful for catalog and pricing lookups across stores; not designed for bulk analytics or order data"
+    },
+    "research-assistant": {
+      "overall": 74,
+      "notes": "Good for product research and price comparison across the public storefront surface"
+    },
+    "financial-analysis": {
+      "overall": 55,
+      "notes": "No revenue, order, or payout data is exposed through the MCP surfaces; limited to catalog-level pricing"
+    }
+  },
+  "best_for": [
+    "Agent builders creating shopping assistants over any Shopify store's default-on endpoint",
+    "Developers building Shopify apps, themes, and Functions with Dev MCP docs and schema tools",
+    "Merchants and operators automating store management through the AI Toolkit's CLI-authenticated path",
+    "Agentic commerce platforms integrating catalog discovery via the UCP tools"
+  ],
+  "not_recommended_for": [
+    "Workflows needing customer PII or order history (not exposed via MCP)",
+    "Merchants unwilling to accept default-on public agent traffic without hardening product content",
+    "High-assurance environments that require per-consumer authentication and audit on every tool call"
+  ],
+  "related_entities": [
+    "mcp-server-stripe",
+    "mcp-server-vercel",
+    "mcp-server-github",
+    "mcp-server-zapier"
+  ],
+  "tags": [
+    "ecommerce",
+    "agentic-commerce",
+    "storefront",
+    "mcp",
+    "model-context-protocol"
+  ]
+}

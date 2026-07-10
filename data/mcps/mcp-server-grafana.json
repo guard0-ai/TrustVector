@@ -1,0 +1,488 @@
+{
+  "id": "mcp-server-grafana",
+  "type": "mcp",
+  "name": "MCP Grafana Server",
+  "provider": "Grafana Labs",
+  "version": "0.17.1",
+  "last_evaluated": "2026-07-09",
+  "evaluated_by": "TrustVector Team",
+  "description": "Official Grafana Labs MCP server (grafana/mcp-grafana, Apache-2.0, Go) with 40+ tools: query metrics/logs/traces across Prometheus, Loki, and many other datasources, search and update dashboards, manage alert rules, and drive Incident, Sift, and OnCall. Supports stdio, SSE, and streamable HTTP with service-account token auth, category-level tool enablement, and a --disable-write read-only mode; also powers Grafana Assistant, with a hosted Grafana Cloud MCP endpoint in preview.",
+  "website": "https://github.com/grafana/mcp-grafana",
+  "trust_vector": {
+    "performance_reliability": {
+      "overall_score": 87,
+      "criteria": {
+        "metrics_query_reliability": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - Prometheus tools",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Dedicated Prometheus toolset (query_prometheus, list_prometheus_metric_metadata, label names/values) built on Grafana's mature datasource proxy APIs; requires Grafana 9.0+ for full functionality"
+            }
+          ],
+          "methodology": "Review of PromQL query tools and underlying Grafana datasource API maturity",
+          "last_verified": "2026-07-09"
+        },
+        "log_search_accuracy": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - Loki tools",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "LogQL query tools (query_loki_logs, query_loki_stats, label APIs) expose Grafana's Loki log search with stats endpoints to gauge result volume before querying"
+            }
+          ],
+          "methodology": "Log query tool review against Loki API capabilities",
+          "last_verified": "2026-07-09"
+        },
+        "datasource_coverage": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - toolsets",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Tool categories span Prometheus, Loki, InfluxDB, ClickHouse, CloudWatch, Elasticsearch/OpenSearch, Graphite, Athena, Snowflake, Quickwit, and Pyroscope profiling, plus dashboards, alerting, incidents, Sift, and OnCall"
+            }
+          ],
+          "methodology": "Feature inventory of datasource-specific toolsets in the repository",
+          "last_verified": "2026-07-09"
+        },
+        "dashboard_management_reliability": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - dashboard tools",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Dashboard search, get, update, and panel-level tools with JSON-patch style updates; write operations reuse Grafana's versioned dashboard API so failed saves do not corrupt existing dashboards"
+            }
+          ],
+          "methodology": "Review of dashboard read/write tool design and Grafana API versioning behavior",
+          "last_verified": "2026-07-09"
+        },
+        "error_recovery": {
+          "score": 82,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "mcp-grafana repository",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Errors from Grafana APIs are returned as structured tool errors; slow-request diagnostics, Prometheus metrics, and OpenTelemetry tracing help operators diagnose failures, though retry behavior is left to the client"
+            }
+          ],
+          "methodology": "Error-path and observability feature review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "security": {
+      "overall_score": 73,
+      "criteria": {
+        "authentication_security": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - authentication",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Authenticates with a Grafana service-account token (GRAFANA_SERVICE_ACCOUNT_TOKEN); tokens can be read from files for rotation in Kubernetes; TLS client/server certificates and host/origin validation supported for HTTP transports"
+            },
+            {
+              "source": "Grafana Cloud MCP server docs",
+              "url": "https://grafana.com/docs/grafana-cloud/machine-learning/assistant/configure/cloud-mcp/",
+              "date": "2026-07-09",
+              "value": "Hosted Grafana Cloud MCP server (public preview) uses OAuth 2.1 over streamable HTTP, removing long-lived tokens for cloud users"
+            }
+          ],
+          "methodology": "Authentication mechanism review across self-hosted and Grafana Cloud modes",
+          "last_verified": "2026-07-09"
+        },
+        "write_action_control": {
+          "score": 78,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - configuration flags",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Mixed read/write surface (dashboards, alert rules, incidents, annotations, snapshots are writable) but a --disable-write flag provides read-only mode, and --enabled-tools / --disable-<category> flags allow fine-grained allowlisting; admin tools disabled by default"
+            }
+          ],
+          "methodology": "Capability analysis of write-capable tools and available restriction flags",
+          "last_verified": "2026-07-09"
+        },
+        "credential_exposure_risk": {
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - setup",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Default local setup places a long-lived service-account token in client configuration or environment variables; scope depends on the roles granted to the service account rather than per-tool permissions"
+            }
+          ],
+          "methodology": "Credential storage and scoping analysis for the stdio/local deployment model",
+          "last_verified": "2026-07-09"
+        },
+        "infrastructure_visibility_risk": {
+          "score": 65,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "Security analysis of observability MCP access",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "An agent with datasource, dashboard, and alerting access can map infrastructure topology, service names, and alert thresholds; observability data frequently contains internal hostnames, IPs, and occasionally secrets leaked into logs"
+            }
+          ],
+          "methodology": "Visibility risk assessment of aggregated observability access",
+          "last_verified": "2026-07-09"
+        },
+        "audit_logging": {
+          "score": 76,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - observability",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Server exposes Prometheus metrics and OpenTelemetry tracing/logging (OTLP) for MCP operations; actions performed via the Grafana API are attributable to the service account, with full audit logs available in Grafana Enterprise/Cloud"
+            }
+          ],
+          "methodology": "Audit and traceability review of server-side and Grafana-side logging",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "privacy_compliance": {
+      "overall_score": 72,
+      "criteria": {
+        "observability_data_exposure": {
+          "score": 65,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "MCP data flow architecture",
+              "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+              "date": "2026-07-09",
+              "value": "Metric series, log lines, trace spans, and dashboard definitions returned by tools are sent to the LLM provider as tool results"
+            }
+          ],
+          "methodology": "Data flow analysis of query tool outputs",
+          "last_verified": "2026-07-09"
+        },
+        "log_data_privacy": {
+          "score": 62,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Privacy analysis of Loki/Elasticsearch log access",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Application logs queried via Loki or Elasticsearch tools may contain PII, tokens, API keys, and other secrets accidentally logged by applications; the server performs no redaction"
+            }
+          ],
+          "methodology": "Log privacy assessment; no built-in scrubbing identified",
+          "last_verified": "2026-07-09"
+        },
+        "self_hosted_data_control": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - deployment",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Server runs locally or in-cluster (binary, Docker, Helm chart) against self-hosted Grafana; no data passes through Grafana Labs infrastructure unless using Grafana Cloud"
+            }
+          ],
+          "methodology": "Deployment model and data residency review",
+          "last_verified": "2026-07-09"
+        },
+        "third_party_data_sharing": {
+          "score": 72,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "MCP client documentation",
+              "url": "https://modelcontextprotocol.io/docs",
+              "date": "2026-07-09",
+              "value": "Observability data is shared only with the connected LLM provider per that provider's privacy policy; the open-source server itself sends no telemetry to Grafana Labs"
+            }
+          ],
+          "methodology": "Data sharing pathway analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "trust_transparency": {
+      "overall_score": 90,
+      "criteria": {
+        "documentation_quality": {
+          "score": 90,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana README and Grafana docs",
+              "url": "https://grafana.com/docs/grafana/latest/developer-resources/mcp/",
+              "date": "2026-07-09",
+              "value": "Full tool reference, per-category enablement flags, transport configuration, RBAC permission documentation, and client setup guides maintained in both the repo and official Grafana documentation"
+            }
+          ],
+          "methodology": "Documentation completeness review",
+          "last_verified": "2026-07-09"
+        },
+        "open_source_transparency": {
+          "score": 94,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "grafana/mcp-grafana repository",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Fully open source under Apache-2.0 with ~3.2k stars and 397 forks; public issue tracker and release notes; v0.17.1 released 2026-07-07"
+            }
+          ],
+          "methodology": "Source code and license review",
+          "last_verified": "2026-07-09"
+        },
+        "operation_visibility": {
+          "score": 85,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - observability features",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Every action is an explicit named tool call; server ships Prometheus metrics, OpenTelemetry traces/logs, health checks, and slow-request diagnostics for inspecting agent behavior"
+            }
+          ],
+          "methodology": "Logging and traceability assessment",
+          "last_verified": "2026-07-09"
+        },
+        "vendor_credibility": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "Grafana Labs",
+              "url": "https://grafana.com/docs/grafana/latest/developer-resources/mcp/",
+              "date": "2026-07-09",
+              "value": "Officially maintained by Grafana Labs and embedded as the tool layer of Grafana Assistant in Grafana Cloud; frequent releases through July 2026"
+            }
+          ],
+          "methodology": "Maintainer reputation and project health analysis",
+          "last_verified": "2026-07-09"
+        }
+      }
+    },
+    "operational_excellence": {
+      "overall_score": 88,
+      "criteria": {
+        "ease_of_setup": {
+          "score": 84,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - installation",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Install via release binary, Docker image, uvx, Go build, or Kubernetes Helm chart; requires creating a Grafana service account and token, adding some friction versus hosted OAuth servers"
+            }
+          ],
+          "methodology": "Setup complexity assessment across deployment options",
+          "last_verified": "2026-07-09"
+        },
+        "feature_coverage": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana tool reference",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "40+ tools covering dashboards, datasource queries (Prometheus, Loki, InfluxDB, ClickHouse, CloudWatch, Elasticsearch, Graphite, Athena, Snowflake, Quickwit, Pyroscope), alerting, Incident, Sift investigations, OnCall, annotations, snapshots, rendering, and deeplinks"
+            }
+          ],
+          "methodology": "Feature completeness assessment against observability workflow needs",
+          "last_verified": "2026-07-09"
+        },
+        "maintenance_activity": {
+          "score": 92,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana releases",
+              "url": "https://github.com/grafana/mcp-grafana/releases",
+              "date": "2026-07-09",
+              "value": "v0.17.1 released 2026-07-07 with a rapid release cadence; active issue triage by the Grafana Labs team"
+            }
+          ],
+          "methodology": "Release cadence and commit activity analysis",
+          "last_verified": "2026-07-09"
+        },
+        "integration_flexibility": {
+          "score": 88,
+          "confidence": "high",
+          "evidence": [
+            {
+              "source": "mcp-grafana README - transports",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Three transports (stdio, SSE, streamable HTTP), Helm chart for in-cluster deployment, category-selectable tool enablement to control context size, and Grafana Cloud embedding via Grafana Assistant"
+            }
+          ],
+          "methodology": "Deployment and integration option review",
+          "last_verified": "2026-07-09"
+        },
+        "performance": {
+          "score": 84,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "mcp-grafana repository",
+              "url": "https://github.com/grafana/mcp-grafana",
+              "date": "2026-07-09",
+              "value": "Go implementation with low overhead; response times dominated by underlying Grafana/datasource query latency; tool-category selection keeps context windows manageable"
+            }
+          ],
+          "methodology": "Implementation and latency characteristics review",
+          "last_verified": "2026-07-09"
+        }
+      }
+    }
+  },
+  "use_case_ratings": {
+    "code-generation": {
+      "overall": 80,
+      "notes": "Good for generating dashboards-as-code, alert rules, and PromQL/LogQL queries"
+    },
+    "customer-support": {
+      "overall": 75,
+      "notes": "Useful for investigating customer-reported latency or error spikes via metrics and logs"
+    },
+    "content-creation": {
+      "overall": 50,
+      "notes": "Limited applicability beyond dashboard and report generation"
+    },
+    "data-analysis": {
+      "overall": 93,
+      "notes": "Excellent for cross-datasource observability analytics, trend detection, and incident forensics"
+    },
+    "research-assistant": {
+      "overall": 74,
+      "notes": "Useful for researching system behavior and performance patterns"
+    },
+    "legal-compliance": {
+      "overall": 58,
+      "notes": "Risk of exposing infrastructure details and unscrubbed log data to the LLM"
+    },
+    "healthcare": {
+      "overall": 55,
+      "notes": "PHI may leak through application logs and traces; requires strict log hygiene"
+    },
+    "financial-analysis": {
+      "overall": 65,
+      "notes": "Moderate risk when monitoring financial infrastructure; self-hosting helps"
+    },
+    "education": {
+      "overall": 85,
+      "notes": "Excellent for teaching observability, PromQL, LogQL, and alerting practices"
+    },
+    "creative-writing": {
+      "overall": 40,
+      "notes": "Low relevance to creative writing workflows"
+    }
+  },
+  "best_for": [
+    "SREs investigating incidents across metrics, logs, traces, and profiles",
+    "DevOps teams managing dashboards and alert rules with AI assistance",
+    "Organizations wanting a self-hosted, open-source observability MCP with no vendor data path",
+    "Grafana Cloud users leveraging Grafana Assistant and the hosted MCP endpoint"
+  ],
+  "strengths": [
+    "Official Grafana Labs server, Apache-2.0, ~3.2k stars, rapid releases (v0.17.1 on 2026-07-07)",
+    "40+ tools spanning Prometheus, Loki, and 9 more datasource types plus Incident, Sift, and OnCall",
+    "Category-selectable tool enablement and --disable-write read-only mode limit blast radius",
+    "Three transports (stdio, SSE, streamable HTTP) with TLS, Helm chart, and Kubernetes token rotation",
+    "Self-hostable end to end: observability data need never transit vendor infrastructure",
+    "Strong server-side observability: Prometheus metrics, OpenTelemetry traces, health checks",
+    "Also embedded in Grafana Cloud as the tool layer for Grafana Assistant (OAuth 2.1 hosted preview)"
+  ],
+  "limitations": [
+    "Metric, log, and trace data flows into the LLM context and may contain secrets or PII",
+    "Default write access to dashboards, alert rules, and incidents unless --disable-write is set",
+    "Long-lived service-account token in client config for local setups (no OAuth outside Grafana Cloud)",
+    "Agent can map internal infrastructure topology, hostnames, and alert thresholds",
+    "No built-in redaction of sensitive values returned by log and trace queries",
+    "Requires Grafana 9.0+; some datasource tools unavailable on older versions",
+    "40+ tools can crowd the context window unless categories are pruned"
+  ],
+  "metadata": {
+    "license": "Apache-2.0",
+    "supported_platforms": [
+      "macOS, Linux, Windows (binary)",
+      "Docker",
+      "Kubernetes (Helm chart)"
+    ],
+    "programming_languages": [
+      "Go"
+    ],
+    "mcp_version": "1.0",
+    "github_repo": "https://github.com/grafana/mcp-grafana",
+    "github_stars": 3200,
+    "package_version": "0.17.1",
+    "release_date": "2026-07-07",
+    "api_dependency": "Grafana HTTP API (Grafana 9.0+)",
+    "authentication": "Grafana service-account token (env var or file); OAuth 2.1 on hosted Grafana Cloud MCP (public preview)",
+    "remote_endpoint": "https://mcp.grafana.com/mcp (Grafana Cloud, public preview)",
+    "security_controls": [
+      "--disable-write read-only mode",
+      "--enabled-tools allowlist and per-category disable flags",
+      "TLS client/server certificates",
+      "host/origin validation for HTTP transports"
+    ],
+    "first_release": "2025",
+    "maintained_by": "Grafana Labs",
+    "status": "Active",
+    "transport_types": [
+      "stdio",
+      "sse",
+      "streamable-http"
+    ],
+    "installation_methods": [
+      "binary",
+      "docker",
+      "uvx",
+      "go install",
+      "helm"
+    ]
+  },
+  "related_entities": [
+    "mcp-server-datadog",
+    "mcp-server-sentry",
+    "mcp-server-elasticsearch",
+    "mcp-server-kubernetes"
+  ],
+  "tags": [
+    "monitoring",
+    "observability",
+    "grafana",
+    "prometheus",
+    "loki",
+    "mcp",
+    "model-context-protocol",
+    "official"
+  ]
+}
