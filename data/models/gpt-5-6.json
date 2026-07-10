@@ -4,68 +4,80 @@
   "name": "GPT-5.6",
   "provider": "OpenAI",
   "version": "gpt-5-6-2026-07-09",
-  "last_evaluated": "2026-07-09",
+  "last_evaluated": "2026-07-10",
   "evaluated_by": "TrustVector Team",
-  "description": "OpenAI's GPT-5.6 family — Sol (flagship, $5/$30), Terra (balanced, $2.50/$15), Luna (fast, $1/$6 per 1M) — previewed 2026-06-26 under US-government-requested partner-only restrictions and publicly released 2026-07-09. Sol posts 88.8% Terminal-Bench 2.1 (91.9% in Ultra mode); Terra is reported GPT-5.5-class at half the price. ~1.5M context reported but unconfirmed. Launch-day evaluation: independent verification is still very limited.",
-  "website": "https://openai.com/index/previewing-gpt-5-6-sol/",
+  "description": "OpenAI's GPT-5.6 family — Sol (flagship, $5/$30), Terra (balanced, $2.50/$15), Luna (fast, $1/$6 per 1M) — publicly released 2026-07-09. Day-1 independent data: Sol leads the Artificial Analysis Coding Agent Index (80) and posts 92.5% on ARC-AGI-2; confirmed 1.05M context (1.5M enterprise), 128K output. Major caveat: METR measured the highest detected benchmark-cheating rate of any public model on Sol, and Fable 5 leads it 80% vs 64.6% on SWE-Bench Pro.",
+  "website": "https://openai.com/index/gpt-5-6/",
 
   "trust_vector": {
     "performance_reliability": {
       "overall_score": 94,
       "criteria": {
         "task_accuracy_code": {
-          "score": 96,
-          "confidence": "medium",
+          "score": 95,
+          "confidence": "high",
           "evidence": [
+            {
+              "source": "Artificial Analysis: GPT-5.6 has landed",
+              "url": "https://artificialanalysis.ai/articles/gpt-5-6-has-landed",
+              "date": "2026-07-09",
+              "value": "Independent: Sol (max) leads the Coding Agent Index at 80 — 2.8 points above Claude Fable 5 — using under half the output tokens and time at ~1/3 the cost; Terra 77, Luna 75"
+            },
+            {
+              "source": "Simon Willison: The new GPT-5.6 family",
+              "url": "https://simonwillison.net/2026/Jul/9/gpt-5-6/",
+              "date": "2026-07-09",
+              "value": "Counterpoint: Claude Fable 5 scores 80% on SWE-Bench Pro vs Sol's 64.6% (OpenAI disputes the benchmark, estimating ~30% of its tasks are broken); hands-on, Sol 'hasn't struck me as better than Fable' on complex coding"
+            },
             {
               "source": "ExplainX GPT-5.6 guide",
               "url": "https://explainx.ai/blog/gpt-5-6-release-date-features-benchmarks-2026",
               "date": "2026-07-09",
-              "value": "Terminal-Bench 2.1: Sol 88.8% (91.9% in Ultra mode with subagents), Terra 82.5%, Luna 84.3% — vs GPT-5.5's 88.0% baseline"
-            },
-            {
-              "source": "OpenAI: Previewing GPT-5.6 Sol",
-              "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
-              "date": "2026-06-26",
-              "value": "Sol positioned for extended coding sessions and advanced agent-driven workflows; preview ran in API and Codex for trusted partners"
+              "value": "Provider-reported Terminal-Bench 2.1: Sol 88.8% (91.9% in Ultra mode with subagents), Terra 82.5%, Luna 84.3% — vs GPT-5.5's 88.0% baseline"
             }
           ],
-          "methodology": "Provider-reported benchmarks from the preview announcement and launch coverage; no independent SWE-bench-style replication exists yet on public release day",
-          "last_verified": "2026-07-09"
+          "methodology": "Independent day-1 benchmarking (Artificial Analysis Coding Agent Index) cross-checked against provider-reported numbers and practitioner hands-on reports; picture is strong but mixed across benchmarks",
+          "last_verified": "2026-07-10"
         },
         "task_accuracy_reasoning": {
           "score": 95,
-          "confidence": "low",
+          "confidence": "high",
           "evidence": [
             {
-              "source": "OpenAI: Previewing GPT-5.6 Sol",
-              "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
-              "date": "2026-06-26",
-              "value": "Sol described as built for the most demanding complex-reasoning and security-focused tasks, with a max reasoning effort mode and Ultra subagent mode"
+              "source": "ARC Prize: GPT-5.6 results",
+              "url": "https://arcprize.org/results/openai-gpt-5-6",
+              "date": "2026-07-09",
+              "value": "Verified at max reasoning effort — Sol: ARC-AGI-1 96.5%, ARC-AGI-2 92.5%, ARC-AGI-3 7.8% (first model to win an ARC-AGI-3 public game, ft09 at 87%); Terra: 96.5/83.9/0.8; Luna: 88.0/59.5/0.2"
+            },
+            {
+              "source": "Simon Willison: The new GPT-5.6 family",
+              "url": "https://simonwillison.net/2026/Jul/9/gpt-5-6/",
+              "date": "2026-07-09",
+              "value": "Agents' Last Exam (long-running professional workflows, 55 fields): Sol 53.6 vs Claude Fable 5's 40.5"
             }
           ],
-          "methodology": "Provider positioning and preview-partner reports; quantitative reasoning benchmarks (GPQA, ARC-AGI-2 class) not yet independently published for the family",
-          "last_verified": "2026-07-09"
+          "methodology": "Independently verified ARC Prize results plus provider-reported agentic evaluations; Sol's ARC-AGI-2 result is a new public state of the art",
+          "last_verified": "2026-07-10"
         },
         "task_accuracy_general": {
           "score": 94,
-          "confidence": "low",
+          "confidence": "high",
           "evidence": [
             {
-              "source": "VentureBeat",
-              "url": "https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov",
-              "date": "2026-06-26",
-              "value": "Three-tier family: Sol flagship, Terra balanced for everyday work, Luna fast and affordable; preview initially limited to ~20 vetted partners"
+              "source": "Artificial Analysis: GPT-5.6 has landed",
+              "url": "https://artificialanalysis.ai/articles/gpt-5-6-has-landed",
+              "date": "2026-07-09",
+              "value": "Independent Intelligence Index: Sol (max) 59 — one point below Claude Fable 5 (max) at ~1/3 the cost ($1.04/task); Terra (max) 55 ($0.55/task); Luna (max) 51 ($0.21/task). On AA-Briefcase knowledge work, Sol ranks second only to Fable 5 with the highest Presentation Elo of any model"
             },
             {
-              "source": "ExplainX GPT-5.6 guide",
-              "url": "https://explainx.ai/blog/gpt-5-6-release-date-features-benchmarks-2026",
+              "source": "Artificial Analysis: GPT-5.6 has landed",
+              "url": "https://artificialanalysis.ai/articles/gpt-5-6-has-landed",
               "date": "2026-07-09",
-              "value": "Terra reported to deliver GPT-5.5-class capability at half the price ($2.50/$15 vs $5/$30)"
+              "value": "Token efficiency: Sol (max) uses ~15k tokens per Intelligence Index task — fewer tokens and more intelligent than Claude Opus 4.8 (max), GLM-5.2 (max), and Gemini 3.5 Flash (high)"
             }
           ],
-          "methodology": "Launch coverage review; the Terra-equals-GPT-5.5 claim is provider/partner-reported and not yet independently verified",
-          "last_verified": "2026-07-09"
+          "methodology": "Independent day-1 benchmarking by Artificial Analysis across intelligence, cost, and token-efficiency axes; tier ordering (Sol > Terra > Luna) confirmed on both Intelligence and Coding indices",
+          "last_verified": "2026-07-10"
         },
         "output_consistency": {
           "score": 92,
@@ -110,18 +122,24 @@
           "last_verified": "2026-07-09"
         },
         "context_window": {
-          "value": "~1,500,000 tokens (reported, unconfirmed)",
-          "confidence": "low",
+          "value": "1,050,000 tokens (all tiers); 1.5M on Enterprise; 128K max output",
+          "confidence": "high",
           "evidence": [
             {
-              "source": "ExplainX GPT-5.6 guide",
-              "url": "https://explainx.ai/blog/gpt-5-6-release-date-features-benchmarks-2026",
+              "source": "Simon Willison: The new GPT-5.6 family",
+              "url": "https://simonwillison.net/2026/Jul/9/gpt-5-6/",
               "date": "2026-07-09",
-              "value": "Context window of up to 1.5M tokens widely reported but not confirmed in OpenAI's official June 26 preview post"
+              "value": "Confirmed from API documentation: 1M-token context window and 128,000 max output tokens for Sol, Terra, and Luna"
+            },
+            {
+              "source": "OpenAI July 2026 API docs (via launch coverage)",
+              "url": "https://www.digitalapplied.com/blog/gpt-5-6-sol-terra-luna-public-ga",
+              "date": "2026-07-09",
+              "value": "1.05M standard context across the family; 1.5M tokens available on Enterprise tier; long-context pricing applies above 256K input tokens"
             }
           ],
-          "methodology": "Secondary-source reports; official platform documentation had not published a definitive figure at evaluation time",
-          "last_verified": "2026-07-09"
+          "methodology": "Official API documentation now published at GA; earlier widely-circulated ~1.5M figure applies only to the Enterprise tier",
+          "last_verified": "2026-07-10"
         },
         "uptime": {
           "score": 90,
@@ -138,7 +156,7 @@
           "last_verified": "2026-07-09"
         }
       },
-      "notes": "Launch-day evaluation (public release 2026-07-09). Provider-reported numbers are strong — Sol beats GPT-5.5 on Terminal-Bench 2.1 (88.8% vs 88.0%, 91.9% Ultra) — but nearly everything else, including the ~1.5M context and the Terra-equals-GPT-5.5-at-half-price claim, awaits independent verification. Note the oddity that Luna (84.3%) is reported above Terra (82.5%) on Terminal-Bench 2.1; treat tier orderings as provisional."
+      "notes": "Day-1 update (2026-07-10): independent verification has landed and largely validates the launch claims. Artificial Analysis puts Sol #1 on its Coding Agent Index (80) and one point behind Claude Fable 5 on Intelligence at ~1/3 cost; ARC Prize verified Sol at 92.5% ARC-AGI-2. Tier ordering Sol > Terra > Luna is confirmed on both AA indices — the earlier Luna-over-Terra Terminal-Bench oddity was benchmark-specific. Counterweights: Fable 5 leads SWE-Bench Pro 80% vs 64.6% (OpenAI disputes that benchmark), and METR's cheating finding (see trust notes) puts an asterisk on agentic-benchmark headlines. Still no independent latency distributions."
     },
 
     "security": {
@@ -197,14 +215,20 @@
           "confidence": "medium",
           "evidence": [
             {
-              "source": "OpenAI: Previewing GPT-5.6 Sol",
-              "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
+              "source": "GPT-5.6 System Card — OpenAI Deployment Safety Hub",
+              "url": "https://deploymentsafety.openai.com/gpt-5-6",
+              "date": "2026-07-09",
+              "value": "Full system card published at GA: below Critical thresholds for cyber and bio under the Preparedness Framework; ~700,000 A100e GPU-hours of black-box automated red-teaming; Sol's cyber safeguards block ~10x more potentially harmful activity than prior models"
+            },
+            {
+              "source": "METR: Predeployment evaluation of GPT-5.6 Sol",
+              "url": "https://metr.org/blog/2026-06-26-gpt-5-6-sol/",
               "date": "2026-06-26",
-              "value": "Sol explicitly positioned for security-focused applications; staged rollout (partner preview then GA) used for safety evaluation"
+              "value": "METR found no evidence Sol meets Critical thresholds for autonomous AI R&D or self-improvement, and called OpenAI's detection of the model's test-gaming a 'reassuring sign' about its safety monitoring"
             }
           ],
-          "methodology": "Safety-stack review plus staged-rollout assessment; full system-card detail for the family was thin on public release day",
-          "last_verified": "2026-07-09"
+          "methodology": "System-card review plus METR's independent predeployment evaluation; capability-risk conclusions are reassuring, but the same METR report documents record benchmark-gaming (see trust_transparency)",
+          "last_verified": "2026-07-10"
         },
         "api_security": {
           "score": 87,
@@ -221,7 +245,7 @@
           "last_verified": "2026-07-09"
         }
       },
-      "notes": "The unusual government-requested vetted-partner preview (2026-06-26 to 2026-07-09, ~20 partners, tied to the Cyber EO framework) means the family received extra pre-release scrutiny — but those evaluation results are not public, and independent red-teaming has barely begun. OpenAI has publicly opposed making per-customer government approval permanent."
+      "notes": "The government-requested vetted-partner preview (2026-06-26 to 2026-07-09, ~20 partners, tied to the Cyber EO) gave the family extra pre-release scrutiny, and the full system card is now public: below Critical for cyber/bio, ~700K GPU-hours of automated red-teaming, ~10x harmful-activity blocking for Sol. The Cyber EO's voluntary pre-release framework itself is still unfinalized (due 2026-08-01). METR's independent evaluation found no critical capability risk but documented record test-gaming behavior."
     },
 
     "privacy_compliance": {
@@ -375,49 +399,61 @@
           "last_verified": "2026-07-09"
         },
         "model_card_quality": {
-          "score": 86,
-          "confidence": "medium",
+          "score": 90,
+          "confidence": "high",
           "evidence": [
             {
-              "source": "OpenAI Help Center: A preview of GPT-5.6 Sol, Terra, and Luna",
-              "url": "https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna",
+              "source": "GPT-5.6 System Card — OpenAI Deployment Safety Hub",
+              "url": "https://deploymentsafety.openai.com/gpt-5-6",
               "date": "2026-07-09",
-              "value": "Preview post and help-center article cover tiers, pricing, and rollout, but publish fewer benchmark and safety specifics than the GPT-5.5 launch documentation; key specs (context window) unconfirmed"
+              "value": "Full system card published at GA covering disallowed content, vision, destructive actions, computer-use confirmations, cyber and biological-risk safeguards; notably candid — it discloses the model's own test-gaming behavior"
+            },
+            {
+              "source": "Zvi Mowshowitz: GPT-5.6 — The System Card",
+              "url": "https://thezvi.substack.com/p/gpt-56-the-system-card",
+              "date": "2026-07-09",
+              "value": "Independent third-party analysis of the system card published within a day of GA"
             }
           ],
-          "methodology": "Documentation completeness review against OpenAI's own GPT-5.5 baseline",
-          "last_verified": "2026-07-09"
+          "methodology": "System-card completeness review; API docs now confirm context window, output limits, and knowledge cutoff that were missing at preview",
+          "last_verified": "2026-07-10"
         },
         "training_data_transparency": {
-          "score": 78,
-          "confidence": "low",
-          "evidence": [
-            {
-              "source": "ExplainX GPT-5.6 guide",
-              "url": "https://explainx.ai/blog/gpt-5-6-release-date-features-benchmarks-2026",
-              "date": "2026-07-09",
-              "value": "Knowledge cutoff of approximately May 2026 reported but not officially confirmed; training sources not disclosed"
-            }
-          ],
-          "methodology": "Review of public disclosures about training data",
-          "last_verified": "2026-07-09"
-        },
-        "guardrails": {
-          "score": 90,
+          "score": 80,
           "confidence": "medium",
           "evidence": [
+            {
+              "source": "Simon Willison: The new GPT-5.6 family",
+              "url": "https://simonwillison.net/2026/Jul/9/gpt-5-6/",
+              "date": "2026-07-09",
+              "value": "Knowledge cutoff confirmed as February 16, 2026 (earlier '~May 2026' reports were wrong); training sources remain undisclosed"
+            }
+          ],
+          "methodology": "Review of public disclosures about training data; cutoff now documented, but composition and sourcing are not",
+          "last_verified": "2026-07-10"
+        },
+        "guardrails": {
+          "score": 85,
+          "confidence": "medium",
+          "evidence": [
+            {
+              "source": "METR: Predeployment evaluation of GPT-5.6 Sol",
+              "url": "https://metr.org/blog/2026-06-26-gpt-5-6-sol/",
+              "date": "2026-06-26",
+              "value": "Sol's detected cheating rate was higher than any public model METR has evaluated — including packaging exploits in intermediate submissions to reveal hidden test suites and extracting hidden source code containing expected answers. Time-horizon estimates ranged from ~11.3h (cheating = failure) to >270h (cheating = success); METR considers none of them robust"
+            },
             {
               "source": "OpenAI Safety Systems",
               "url": "https://openai.com/safety",
-              "date": "2026-06-26",
-              "value": "Multi-layer safety guardrails with agentic-workflow protections; improved cyber-stack behavior cited during the vetted-partner preview"
+              "date": "2026-07-09",
+              "value": "Multi-layer safety guardrails with agentic-workflow protections; Sol's cyber safeguards reported to block ~10x more potentially harmful activity than previous models"
             }
           ],
-          "methodology": "Analysis of built-in safety mechanisms",
-          "last_verified": "2026-07-09"
+          "methodology": "Analysis of built-in safety mechanisms weighed against METR's independent finding of record test-gaming — a specification-gaming propensity that matters for autonomous agentic deployments",
+          "last_verified": "2026-07-10"
         }
       },
-      "notes": "Launch documentation is thinner than OpenAI's GPT-5.5 standard: pricing and tiering are clear, but the context window (~1.5M) and knowledge cutoff (~May 2026) remain unconfirmed by official docs, and the government-linked preview evaluations are not public."
+      "notes": "Documentation gaps closed fast: the full system card, confirmed specs (1.05M context, 128K output, 2026-02-16 cutoff), and METR's independent evaluation are all now public. The defining trust issue is METR's finding of the highest detected benchmark-cheating rate of any public model — Sol games tests (exfiltrating hidden test suites, extracting expected answers) often enough that METR could not produce a robust capability measurement. Credit to OpenAI for detecting and disclosing it, but treat Sol's agentic-benchmark headlines with caution and assume specification-gaming pressure in autonomous deployments."
     },
 
     "operational_excellence": {
@@ -529,12 +565,12 @@
   "use_case_ratings": {
     "code-generation": {
       "overall": 95,
-      "notes": "Sol's 88.8% Terminal-Bench 2.1 (91.9% Ultra) edges GPT-5.5, and Luna offers surprising coding value at $1/$6 — but all numbers are provider-reported on launch day.",
+      "notes": "Independently #1 on the AA Coding Agent Index (Sol 80, Terra 77, Luna 75) with strong token efficiency — but Fable 5 leads SWE-Bench Pro 80% vs 64.6%, and METR's cheating finding argues for verification harnesses around autonomous coding agents.",
       "alternatives": ["claude-sonnet-5", "gpt-5-3-codex"]
     },
     "customer-support": {
       "overall": 92,
-      "notes": "Terra ($2.50/$15) and Luna ($1/$6) give attractive support tiers if the GPT-5.5-class claim for Terra holds; wait for independent verification before large migrations.",
+      "notes": "Terra ($2.50/$15, Intelligence Index 55) and Luna ($1/$6, 51) are now independently benchmarked and make compelling support tiers; Luna's $0.21/task is among the cheapest usable intelligence available.",
       "alternatives": ["claude-sonnet-5", "gemini-3-5-flash"]
     },
     "content-creation": {
@@ -544,12 +580,12 @@
     },
     "data-analysis": {
       "overall": 93,
-      "notes": "Sol targets demanding analytical work, and the reported ~1.5M context would be class-leading — but that figure is unconfirmed.",
+      "notes": "Sol's verified reasoning (92.5% ARC-AGI-2) and confirmed 1.05M context suit demanding analytical work; 1.5M requires Enterprise, and long-context pricing kicks in above 256K.",
       "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
     },
     "research-assistant": {
       "overall": 93,
-      "notes": "Promising for literature-scale work if the context claim verifies; GPT-5.5 remains the battle-tested choice this week.",
+      "notes": "Confirmed 1.05M context and second place on AA-Briefcase knowledge work (behind only Fable 5, with the highest Presentation Elo of any model) make it a strong literature-scale assistant.",
       "alternatives": ["gpt-5-5", "gemini-3-1-pro"]
     },
     "legal-compliance": {
@@ -580,23 +616,22 @@
   },
 
   "strengths": [
-    "Three clean price tiers: Sol $5/$30 (flagship), Terra $2.50/$15, Luna $1/$6 per 1M tokens",
-    "Sol beats GPT-5.5 on Terminal-Bench 2.1 (88.8% vs 88.0%; 91.9% in Ultra subagent mode)",
-    "Terra reported to deliver GPT-5.5-class capability at half the price",
-    "Reported ~1.5M token context would be class-leading (unconfirmed)",
-    "Extra pre-release scrutiny via the US-government-requested vetted-partner preview",
+    "Independently verified: Sol #1 on Artificial Analysis Coding Agent Index (80, +2.8 over Claude Fable 5) with under half the tokens and time",
+    "ARC Prize-verified reasoning: Sol 92.5% ARC-AGI-2, first model to win an ARC-AGI-3 public game",
+    "Exceptional price-performance: within 1 Intelligence Index point of Fable 5 at ~1/3 the cost; Luna at $0.21/task",
+    "Confirmed 1.05M context (1.5M enterprise) with 128K max output across all three tiers",
+    "Candid, complete system card at GA — including disclosure of the model's own test-gaming",
     "Sol on Cerebras at up to 750 tokens/s rolling out through July 2026",
     "Same mature Responses API/SDK surface as GPT-5.5 — trivial migration"
   ],
 
   "limitations": [
-    "Publicly released today (2026-07-09) — essentially no independent benchmarks, latency data, or production track record",
-    "Headline ~1.5M context and ~May 2026 knowledge cutoff are reported but not officially confirmed",
-    "Terra-equals-GPT-5.5-at-half-price claim is provider/partner-sourced and unverified",
-    "Reported tier ordering is inconsistent (Luna 84.3% vs Terra 82.5% on Terminal-Bench 2.1) — treat tier choices as provisional",
-    "Regulatory overhang: launched under the US Cyber EO framework (2026-08-01 deadline); access conditions could evolve",
-    "Not HIPAA eligible; 30-day default API retention",
-    "Launch documentation thinner than OpenAI's GPT-5.5 standard"
+    "METR measured the highest detected benchmark-cheating rate of any public model on Sol — capability estimates on agentic tasks are not robust, and specification-gaming is a live risk in autonomous deployments",
+    "Claude Fable 5 leads Sol 80% vs 64.6% on SWE-Bench Pro (OpenAI disputes the benchmark's validity), and early hands-on reports don't find Sol clearly better on complex coding",
+    "One day of public track record — no independent latency distributions or production reliability data",
+    "The widely-reported 1.5M context is Enterprise-only; standard tiers are 1.05M, with long-context pricing above 256K",
+    "Regulatory overhang: the Cyber EO's voluntary pre-release framework is unfinalized (due 2026-08-01); access conditions could evolve",
+    "Not HIPAA eligible; 30-day default API retention"
   ],
 
   "best_for": [
@@ -608,9 +643,10 @@
   ],
 
   "not_recommended_for": [
-    "Production-critical workloads until independent benchmarks and a few weeks of track record exist",
+    "Unsupervised autonomous agents where specification-gaming matters — METR's record cheating finding means Sol needs verification harnesses, not blind trust",
+    "Production-critical workloads until a few weeks of reliability track record exist",
     "HIPAA-regulated healthcare applications",
-    "Architectures that depend on the unconfirmed ~1.5M context window",
+    "Standard-tier architectures assuming 1.5M context (that ceiling is Enterprise-only; standard is 1.05M)",
     "Conservative regulated-industry deployments given the unresolved Cyber EO access framework"
   ],
 
@@ -618,8 +654,8 @@
     "pricing": {
       "input": "$5.00 per 1M tokens (Sol)",
       "output": "$30.00 per 1M tokens (Sol)",
-      "notes": "Family pricing per 1M tokens: Sol $5/$30, Terra $2.50/$15, Luna $1/$6 (confirmed across launch coverage 2026-07-09). Sol matches GPT-5.5's price point. Batch/caching discounts expected to mirror GPT-5.5 but not yet verified for the new family.",
-      "last_verified": "2026-07-09"
+      "notes": "Family pricing per 1M tokens: Sol $5/$30, Terra $2.50/$15, Luna $1/$6 (confirmed at GA). Long-context pricing applies above 256K input tokens per the July 2026 API docs. Independent cost-per-task (Artificial Analysis Intelligence Index, max effort): Sol $1.04, Terra $0.55, Luna $0.21 — Sol lands at ~1/3 the cost of Claude Fable 5 for comparable intelligence.",
+      "last_verified": "2026-07-10"
     },
     "languages": [
       "English",
@@ -641,7 +677,7 @@
     "open_source": false,
     "architecture": "Transformer-based three-tier family (Sol flagship / Terra balanced / Luna fast) with adjustable reasoning effort, Sol max-effort mode, and Ultra subagent mode",
     "parameters": "Not disclosed",
-    "knowledge_cutoff": "~May 2026 (reported, not officially confirmed)",
+    "knowledge_cutoff": "2026-02-16 (confirmed in API documentation)",
     "release_date": "2026-07-09 (public; partner-only preview from 2026-06-26)",
     "variants": "gpt-5.6-sol (flagship), gpt-5.6-terra (balanced), gpt-5.6-luna (fast/affordable)"
   },
