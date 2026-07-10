@@ -1,13 +1,12 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { getAllEntities, sortEntities, type SortOption } from '@/lib/data';
+import { getAllSummaries, sortSummaries, type SortOption } from '@/lib/client-data';
 import { EntityCard } from '@/components/entity-card';
-import { calculateOverallScore } from '@/framework/schema/types';
 import { Search } from 'lucide-react';
 
 export default function HomePage() {
-  const allEntities = getAllEntities();
+  const allEntities = getAllSummaries();
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('overall-score-desc');
   const [selectedProvider, setSelectedProvider] = useState<string>('all');
@@ -42,12 +41,12 @@ export default function HomePage() {
       results = results.filter((entity) => entity.type === selectedType);
     }
 
-    return sortEntities(results, sortBy);
+    return sortSummaries(results, sortBy);
   }, [allEntities, searchQuery, selectedProvider, selectedType, sortBy]);
 
   // Calculate stats
   const stats = useMemo(() => {
-    const scores = allEntities.map((e) => calculateOverallScore(e));
+    const scores = allEntities.map((e) => e.overall_score);
     const avgScore = scores.reduce((sum, s) => sum + s, 0) / scores.length;
     const modelCount = allEntities.filter((e) => e.type === 'model').length;
     const agentCount = allEntities.filter((e) => e.type === 'agent').length;
@@ -72,59 +71,44 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="border-b-4 border-double border-foreground">
+      <section className="border-b border-border dot-grid">
         <div className="container mx-auto px-4 py-16 sm:py-20">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-400 border-2 border-foreground text-foreground text-sm font-bold mb-8" style={{ boxShadow: '3px 3px 0 0 black' }}>
-              🏆 {stats.total} AI SYSTEMS EVALUATED
+            {/* Eyebrow */}
+            <div className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-8">
+              {stats.total} AI systems · evidence-linked · independently scored
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black mb-6 tracking-tighter leading-none">
-              THE AI TRUST
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6 tracking-[-0.045em] leading-[1.02]">
+              Trust scores for
               <br />
-              <span className="text-primary">DIRECTORY</span>
+              <span className="text-primary">the entire AI stack</span>
             </h1>
 
             {/* Tagline */}
-            <p className="text-xl sm:text-2xl text-muted-foreground mb-4">
-              Independent, evidence-based trust evaluations
-              <br />
-              <span className="font-bold">for <span className="text-primary font-black">100+</span> AI models, agents, and tools.</span>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+              Independent, evidence-based trust evaluations for{' '}
+              <strong className="text-foreground font-semibold">{stats.total}</strong> AI models,
+              agents, and MCP servers. Every score links to a primary source.
             </p>
 
-            {/* Playful quote */}
-            <p className="quote-playful mb-10">
-              One team&apos;s untested AI is another team&apos;s security incident.
-            </p>
-
-            {/* Tilted Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-8">
-              {/* Arrow annotation pointing to button */}
-              <div className="relative">
-                <span className="absolute -top-6 -left-4 text-xs font-medium italic text-primary" style={{ fontFamily: 'Courier New, monospace' }}>
-                  CLICK HERE →
-                </span>
-                <a href="#browse" className="btn-tilted btn-tilted-orange">
-                  BROWSE SYSTEMS
-                </a>
-              </div>
-
-              <a href="/methodology" className="btn-tilted btn-tilted-blue">
-                METHODOLOGY
-                <span className="ml-1">📋</span>
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
+              <a href="#browse" className="btn-cta btn-cta-primary">
+                Browse Systems
               </a>
-
-              <div className="relative">
-                <a href="/contribute" className="btn-tilted btn-tilted-yellow">
-                  ADD EVALUATION
-                  <span className="ml-1">+</span>
-                </a>
-                <span className="absolute -bottom-5 -right-2 text-xs font-medium italic text-muted-foreground" style={{ fontFamily: 'Courier New, monospace' }}>
-                  ← contribute!
-                </span>
-              </div>
+              <a href="/methodology" className="btn-cta btn-cta-secondary">
+                Methodology
+              </a>
+            </div>
+            <div>
+              <a
+                href="/contribute"
+                className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground hover:text-primary transition-colors"
+              >
+                or contribute an evaluation →
+              </a>
             </div>
           </div>
         </div>
@@ -133,16 +117,16 @@ export default function HomePage() {
       {/* Stats Bar - Fancy double border */}
       <section className="stats-bar-fancy">
         <div className="text-center">
-          <div className="text-4xl sm:text-5xl font-black text-foreground">{stats.total}</div>
+          <div className="text-4xl sm:text-5xl font-extrabold font-display text-foreground">{stats.total}</div>
           <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">AI SYSTEMS</div>
         </div>
         <div className="text-center">
-          <div className="text-4xl sm:text-5xl font-black text-primary">{stats.avgScore}</div>
+          <div className="text-4xl sm:text-5xl font-extrabold font-display text-primary">{stats.avgScore}</div>
           <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">AVG SCORE</div>
         </div>
         <div className="text-center">
-          <div className="text-4xl sm:text-5xl font-black text-foreground">{stats.total}</div>
-          <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">IDEAS TO STEAL</div>
+          <div className="text-4xl sm:text-5xl font-extrabold font-display text-foreground">5</div>
+          <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">TRUST DIMENSIONS</div>
         </div>
       </section>
 
@@ -157,8 +141,7 @@ export default function HomePage() {
               placeholder="SEARCH THE DIRECTORY..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="search-fancy pl-12"
-              style={{ fontFamily: 'inherit' }}
+              className="search-fancy"
             />
           </div>
         </div>
@@ -180,13 +163,13 @@ export default function HomePage() {
 
         {/* Filters Row */}
         <div className="max-w-6xl mx-auto mb-10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 border-2 border-foreground bg-muted/30" style={{ boxShadow: '4px 4px 0 0 black' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 border border-border rounded-lg bg-card shadow-card">
             <div className="flex items-center gap-4">
               <span className="text-xs uppercase tracking-widest text-muted-foreground">⚙️ FILTER BY:</span>
               <select
                 value={selectedProvider}
                 onChange={(e) => setSelectedProvider(e.target.value)}
-                className="px-4 py-2 bg-background border-2 border-foreground text-sm font-medium focus:outline-none cursor-pointer"
+                className="px-4 py-2 bg-background border border-border rounded-md text-sm font-medium focus:outline-none cursor-pointer"
               >
                 {providers.map((provider) => (
                   <option key={provider} value={provider}>
@@ -198,12 +181,12 @@ export default function HomePage() {
 
             <div className="flex items-center gap-4">
               <span className="text-sm">
-                Showing <span className="font-black text-primary">{filteredEntities.length}</span> results
+                Showing <span className="font-bold text-primary">{filteredEntities.length}</span> results
               </span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="px-4 py-2 bg-background border-2 border-foreground text-sm font-medium focus:outline-none cursor-pointer"
+                className="px-4 py-2 bg-background border border-border rounded-md text-sm font-medium focus:outline-none cursor-pointer"
               >
                 <option value="overall-score-desc">HIGHEST SCORE</option>
                 <option value="overall-score-asc">LOWEST SCORE</option>
@@ -218,7 +201,7 @@ export default function HomePage() {
         {/* Results Grid */}
         {filteredEntities.length === 0 ? (
           <div className="text-center py-20">
-            <div className="text-2xl font-black text-foreground mb-2">NO RESULTS FOUND</div>
+            <div className="text-2xl font-bold font-display text-foreground mb-2">NO RESULTS FOUND</div>
             <div className="text-muted-foreground">Try adjusting your search or filters</div>
           </div>
         ) : (
@@ -235,7 +218,7 @@ export default function HomePage() {
             <a href="/contribute" className="cta-box-yellow">
               ✨ ADD AN EVALUATION
             </a>
-            <span className="absolute -bottom-6 right-0 text-xs font-medium italic text-muted-foreground" style={{ fontFamily: 'Courier New, monospace' }}>
+            <span className="absolute -bottom-6 right-0 text-xs font-medium italic text-muted-foreground font-mono">
               (or feature request)
             </span>
           </div>

@@ -45,11 +45,33 @@ const config: Config = {
         // Trust score colors - Vibrant, accessible palette
         // NOTE: Source of truth is SCORE_COLORS in framework/schema/types.ts
         score: {
-          exceptional: '#22c55e', // Green
-          strong: '#0ea5e9',      // Sky blue
+          exceptional: '#10B981', // Guard0 emerald
+          strong: '#34D399',      // Light emerald
           adequate: '#eab308',    // Yellow
           concerning: '#f97316',  // Orange
           poor: '#ef4444',        // Red
+        },
+        // Guard0 brand palette
+        guard0: {
+          50: '#F0FDF4',
+          100: '#DCFCE7',
+          DEFAULT: '#10B981',
+          dark: '#059669',
+          light: '#34D399',
+          900: '#064E3B',
+        },
+        // Guard0 severity ramp
+        severity: {
+          critical: '#EF4444',
+          high: '#F97316',
+          medium: '#F59E0B',
+          low: '#3B82F6',
+          info: '#64748B',
+        },
+        surface: {
+          dark: '#000000',
+          'dark-elevated': '#111111',
+          'dark-subtle': '#1A1A1A',
         },
       },
       borderRadius: {
@@ -58,7 +80,12 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['var(--font-body)', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['var(--font-display)', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+      },
+      transitionTimingFunction: {
+        smooth: 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
       animation: {
         'fade-in': 'fadeIn 0.3s ease-out',
@@ -80,8 +107,8 @@ const config: Config = {
         },
       },
       boxShadow: {
-        'card': '0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)',
-        'card-hover': '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)',
+        'card': '0 1px 2px rgba(0,0,0,0.04), 0 8px 24px -6px rgba(0,0,0,0.10)',
+        'card-hover': '0 2px 4px rgba(0,0,0,0.05), 0 20px 40px -8px rgba(0,0,0,0.14)',
         'elevated': '0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04)',
       },
     },

@@ -38,18 +38,15 @@ export default function ContributePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="border-b-4 border-double border-foreground">
+      <section className="border-b border-border">
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 bg-amber-400 text-black border-2 border-foreground text-sm font-bold mb-6"
-              style={{ boxShadow: '3px 3px 0 0 black' }}
-            >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded text-sm font-semibold uppercase tracking-wide mb-6">
               <Users className="w-4 h-4" />
               COMMUNITY-DRIVEN
             </div>
 
-            <h1 className="text-5xl sm:text-6xl font-black mb-4 tracking-tighter">
+            <h1 className="text-5xl sm:text-6xl font-bold mb-4 tracking-tighter">
               HOW TO
               <br />
               <span className="text-primary">CONTRIBUTE</span>
@@ -67,7 +64,7 @@ export default function ContributePage() {
       <div className="container mx-auto px-4 py-12">
         {/* What You Can Contribute */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">What You Can Contribute</h2>
+          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">What You Can Contribute</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -77,10 +74,10 @@ export default function ContributePage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className={`${item.color} border-l-4 p-6`}
+                className={`${item.color} border-l-2 p-6 rounded-r-lg`}
               >
                 <item.icon className="w-8 h-8 mb-4 text-foreground" />
-                <h3 className="text-xl font-black uppercase mb-2">{item.title}</h3>
+                <h3 className="text-xl font-bold uppercase mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
               </div>
             ))}
@@ -89,7 +86,7 @@ export default function ContributePage() {
 
         {/* Quick Start */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Quick Start Guide</h2>
+          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Quick Start Guide</h2>
 
           <div className="space-y-4">
             {[
@@ -130,28 +127,24 @@ export default function ContributePage() {
             ].map((step) => (
               <div
                 key={step.num}
-                className="bg-white border-2 border-foreground p-6"
-                style={{ boxShadow: '4px 4px 0 0 black' }}
+                className="bg-card border border-border rounded-lg shadow-card p-6"
               >
                 <div className="flex items-start gap-4">
-                  <div
-                    className="w-10 h-10 flex items-center justify-center bg-primary text-white border-2 border-foreground font-black flex-shrink-0"
-                    style={{ boxShadow: '2px 2px 0 0 black' }}
-                  >
+                  <div className="w-10 h-10 flex items-center justify-center bg-primary text-primary-foreground rounded-md font-bold flex-shrink-0">
                     {step.num}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-black uppercase mb-2">{step.title}</h3>
+                    <h3 className="text-xl font-bold uppercase mb-2">{step.title}</h3>
                     <p className="text-muted-foreground mb-3">{step.desc}</p>
                     {step.code && (
-                      <code className="block bg-foreground text-background px-4 py-3 text-sm font-mono border-2 border-foreground">
+                      <code className="block bg-foreground text-background px-4 py-3 text-sm font-mono rounded-md">
                         {step.code}
                       </code>
                     )}
                     {step.paths && (
                       <div className="space-y-2 text-sm font-mono">
                         {step.paths.map((p) => (
-                          <div key={p.path} className="bg-muted/30 px-4 py-2 border-2 border-foreground/20 flex items-center gap-2">
+                          <div key={p.path} className="bg-muted/40 px-4 py-2 border border-border rounded flex items-center gap-2">
                             <p.icon className={`w-4 h-4 ${p.color}`} />
                             <span className="font-bold">{p.path}</span>
                             <span className="text-muted-foreground">— {p.label}</span>
@@ -178,13 +171,10 @@ export default function ContributePage() {
 
         {/* Data Schema */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Data Schema Overview</h2>
+          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Data Schema Overview</h2>
 
-          <div
-            className="bg-white border-2 border-foreground overflow-hidden"
-            style={{ boxShadow: '4px 4px 0 0 black' }}
-          >
-            <div className="bg-foreground text-background px-6 py-4 border-b-2 border-foreground">
+          <div className="bg-card border border-border rounded-lg shadow-card overflow-hidden">
+            <div className="bg-foreground text-background px-6 py-4">
               <div className="flex items-center gap-2">
                 <FileJson className="w-5 h-5 text-primary" />
                 <span className="font-mono text-sm font-bold">example-evaluation.json</span>
@@ -232,13 +222,13 @@ export default function ContributePage() {
 
         {/* Evidence Guidelines */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Evidence Guidelines</h2>
+          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Evidence Guidelines</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-emerald-50 border-l-4 border-emerald-400 p-6">
+            <div className="bg-emerald-50 border-l-2 border-emerald-400 p-6 rounded-r-lg">
               <div className="flex items-center gap-2 mb-4">
                 <CheckCircle className="w-6 h-6 text-emerald-600" />
-                <h3 className="text-xl font-black uppercase">Accepted Sources</h3>
+                <h3 className="text-xl font-bold uppercase">Accepted Sources</h3>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
@@ -256,10 +246,10 @@ export default function ContributePage() {
               </ul>
             </div>
 
-            <div className="bg-amber-50 border-l-4 border-amber-400 p-6">
+            <div className="bg-amber-50 border-l-2 border-amber-400 p-6 rounded-r-lg">
               <div className="flex items-center gap-2 mb-4">
                 <AlertTriangle className="w-6 h-6 text-amber-600" />
-                <h3 className="text-xl font-black uppercase">Use With Caution</h3>
+                <h3 className="text-xl font-bold uppercase">Use With Caution</h3>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
@@ -281,19 +271,16 @@ export default function ContributePage() {
 
         {/* Confidence Levels */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Confidence Levels</h2>
+          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Confidence Levels</h2>
 
-          <div
-            className="bg-white border-2 border-foreground p-8"
-            style={{ boxShadow: '4px 4px 0 0 black' }}
-          >
+          <div className="bg-card border border-border rounded-lg shadow-card p-8">
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <span className="inline-flex items-center px-3 py-1 bg-emerald-100 text-emerald-800 font-bold border border-emerald-300 uppercase text-sm">
+                <span className="inline-flex items-center px-3 py-1 bg-emerald-100 text-emerald-800 font-bold border border-emerald-300 rounded uppercase text-sm">
                   High
                 </span>
                 <div>
-                  <p className="font-black uppercase">Multiple authoritative sources</p>
+                  <p className="font-bold uppercase">Multiple authoritative sources</p>
                   <p className="text-muted-foreground text-sm">
                     Official documentation, peer-reviewed research, recent data (within 3 months)
                   </p>
@@ -301,11 +288,11 @@ export default function ContributePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <span className="inline-flex items-center px-3 py-1 bg-amber-100 text-amber-800 font-bold border border-amber-300 uppercase text-sm">
+                <span className="inline-flex items-center px-3 py-1 bg-amber-100 text-amber-800 font-bold border border-amber-300 rounded uppercase text-sm">
                   Medium
                 </span>
                 <div>
-                  <p className="font-black uppercase">Some authoritative sources</p>
+                  <p className="font-bold uppercase">Some authoritative sources</p>
                   <p className="text-muted-foreground text-sm">
                     Partial documentation, community feedback, data within 6 months
                   </p>
@@ -313,11 +300,11 @@ export default function ContributePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <span className="inline-flex items-center px-3 py-1 bg-red-100 text-red-800 font-bold border border-red-300 uppercase text-sm">
+                <span className="inline-flex items-center px-3 py-1 bg-red-100 text-red-800 font-bold border border-red-300 rounded uppercase text-sm">
                   Low
                 </span>
                 <div>
-                  <p className="font-black uppercase">Limited sources available</p>
+                  <p className="font-bold uppercase">Limited sources available</p>
                   <p className="text-muted-foreground text-sm">
                     Older data, inferred from general practices, or single-source information
                   </p>
@@ -329,14 +316,11 @@ export default function ContributePage() {
 
         {/* Needed Evaluations */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Currently Needed</h2>
+          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Currently Needed</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div
-              className="bg-white border-2 border-foreground p-6"
-              style={{ boxShadow: '4px 4px 0 0 black' }}
-            >
-              <h3 className="text-lg font-black uppercase mb-4 flex items-center gap-2">
+            <div className="bg-card border border-border rounded-lg shadow-card p-6">
+              <h3 className="text-lg font-bold uppercase mb-4 flex items-center gap-2">
                 <Database className="w-5 h-5 text-purple-500" />
                 MCP Servers
               </h3>
@@ -359,11 +343,8 @@ export default function ContributePage() {
               </ul>
             </div>
 
-            <div
-              className="bg-white border-2 border-foreground p-6"
-              style={{ boxShadow: '4px 4px 0 0 black' }}
-            >
-              <h3 className="text-lg font-black uppercase mb-4 flex items-center gap-2">
+            <div className="bg-card border border-border rounded-lg shadow-card p-6">
+              <h3 className="text-lg font-bold uppercase mb-4 flex items-center gap-2">
                 <Bot className="w-5 h-5 text-emerald-500" />
                 AI Agents & Platforms
               </h3>
@@ -390,9 +371,9 @@ export default function ContributePage() {
 
         {/* CTA */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-amber-50 border-l-4 border-amber-400 p-8 flex flex-col items-center text-center">
+          <div className="bg-primary/5 border-l-2 border-primary p-8 rounded-r-lg flex flex-col items-center text-center">
             <GitBranch className="w-16 h-16 text-foreground mb-4" />
-            <h2 className="text-3xl font-black uppercase mb-4">Ready to Contribute?</h2>
+            <h2 className="text-3xl font-bold uppercase mb-4">Ready to Contribute?</h2>
             <p className="text-lg text-muted-foreground mb-6">
               Join our community of contributors helping build transparency in AI systems.
             </p>
@@ -401,14 +382,14 @@ export default function ContributePage() {
                 href="https://github.com/JBAhire/trust-vector"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-tilted btn-tilted-orange"
+                className="btn-cta btn-cta-primary"
               >
                 <Code className="w-5 h-5" />
                 VIEW ON GITHUB →
               </a>
               <Link
                 href="/methodology"
-                className="btn-tilted btn-tilted-white"
+                className="btn-cta btn-cta-secondary"
               >
                 <BookOpen className="w-5 h-5" />
                 READ METHODOLOGY

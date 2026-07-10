@@ -2,27 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Inter font for clean, modern typography */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+/* ═══════════════════════════════════════════════════
+   TRUSTVECTOR — GUARD0 DESIGN SYSTEM
+   Emerald accent, black/white surfaces, thin borders,
+   minimal radii. Fonts via next/font (see app/layout.tsx):
+   --font-body (Inter), --font-display (Plus Jakarta Sans),
+   --font-mono (JetBrains Mono).
+   ═══════════════════════════════════════════════════ */
 
 @layer base {
   :root {
-    /* CLEAN MODERN THEME - Light mode */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 8%;
+    /* Light surfaces (guard0) */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover-foreground: 0 0% 9%;
 
-    /* Orange/Coral - Primary accent (like Loot Drop) */
-    --primary: 16 100% 60%;
+    /* Guard0 emerald — #10B981 */
+    --primary: 160 84% 39%;
     --primary-foreground: 0 0% 100%;
 
-    /* Black - For strong elements */
-    --secondary: 0 0% 8%;
+    /* Near-black — for strong elements */
+    --secondary: 0 0% 9%;
     --secondary-foreground: 0 0% 100%;
 
     /* Muted backgrounds */
@@ -31,29 +36,28 @@
 
     /* Accent - subtle gray */
     --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 8%;
+    --accent-foreground: 0 0% 9%;
 
-    --destructive: 0 85% 55%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    /* Clean borders */
+    /* Thin, quiet borders */
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 16 100% 60%;
+    --ring: 160 84% 39%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
 
-    /* Score colors - Warm, vibrant palette */
-    --score-exceptional: 142 76% 36%;
-    --score-strong: 199 89% 48%;
+    /* Score colors — semantic ramp (exceptional aligned to guard0 emerald) */
+    --score-exceptional: 160 84% 39%;
+    --score-strong: 160 64% 52%;
     --score-adequate: 45 93% 47%;
     --score-concerning: 24 95% 53%;
     --score-poor: 0 84% 60%;
 
     /* Accent colors */
     --yellow: 48 96% 53%;
-    --pink: 330 81% 60%;
-    --green: 142 76% 36%;
+    --green: 160 84% 39%;
     --blue: 199 89% 48%;
   }
 }
@@ -65,16 +69,22 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font-body), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Display font for headings */
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-black;
+    @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold;
   }
 
   h2 {
@@ -84,64 +94,65 @@
   h3 {
     @apply text-2xl sm:text-3xl font-bold;
   }
+
+  code, pre, kbd, samp {
+    font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  }
 }
 
-/* Rainbow gradient border for the page */
-.rainbow-border {
-  position: relative;
-}
-
-.rainbow-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  padding: 3px;
-  background: linear-gradient(
-    135deg,
-    #ff6b6b 0%,
-    #feca57 15%,
-    #48dbfb 30%,
-    #ff9ff3 45%,
-    #54a0ff 60%,
-    #5f27cd 75%,
-    #ff6b6b 100%
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  border-radius: inherit;
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-/* Custom scrollbar - clean style */
+/* Custom scrollbar (guard0) */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--muted));
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--border));
-  border-radius: 4px;
+  background: #d4d4d4;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: #a3a3a3;
+}
+
+/* Text selection (guard0 emerald, 15% alpha) */
+::selection {
+  background: rgba(16, 185, 129, 0.15);
+  color: hsl(var(--foreground));
+}
+
+/* Focus indicators (guard0 emerald) */
+*:focus-visible {
+  outline: 2px solid rgba(16, 185, 129, 0.5);
+  outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════════════
+   PREMIUM BACKGROUNDS (guard0)
+   ═══════════════════════════════════════════════════ */
+
+/* Extremely faint dot grid for light surfaces */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.06) 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+}
+
+/* Subtle emerald top accent (replaces old rainbow border) */
+.accent-top {
+  border-top: 2px solid hsl(var(--primary));
 }
 
 /* Clean card styles */
 .card-clean {
-  @apply bg-card rounded-lg border-2 border-border transition-all duration-200;
+  @apply bg-card rounded-lg border border-border transition-all duration-200;
 }
 
 .card-clean:hover {
-  @apply border-foreground/20 shadow-lg -translate-y-0.5;
+  @apply border-foreground/20 shadow-card-hover -translate-y-0.5;
 }
 
 /* Score badge styles */
@@ -154,7 +165,7 @@
 }
 
 .score-strong {
-  @apply bg-sky-500 text-white;
+  @apply bg-emerald-400 text-black;
 }
 
 .score-adequate {
@@ -169,27 +180,27 @@
   @apply bg-red-500 text-white;
 }
 
-/* Amount burned badge (like Loot Drop) */
+/* Primary score badge (was "burned badge") */
 .burned-badge {
-  @apply inline-flex items-center px-3 py-1.5 rounded font-bold text-sm bg-primary text-white;
+  @apply inline-flex items-center px-3 py-1.5 rounded font-bold text-sm bg-primary text-primary-foreground;
 }
 
 /* Category pill/chip */
 .category-pill {
-  @apply inline-flex items-center px-3 py-1 rounded border-2 border-foreground text-xs font-medium uppercase tracking-wide transition-colors;
+  @apply inline-flex items-center px-3 py-1 rounded border border-border text-xs font-medium uppercase tracking-wide transition-colors;
 }
 
 .category-pill:hover {
-  @apply bg-foreground text-background;
+  @apply border-foreground text-foreground;
 }
 
 .category-pill.active {
-  @apply bg-foreground text-background;
+  @apply bg-foreground text-background border-foreground;
 }
 
 /* Filter checkbox style */
 .filter-checkbox {
-  @apply flex items-center gap-2 px-3 py-1.5 rounded border-2 border-border text-sm font-medium cursor-pointer transition-all;
+  @apply flex items-center gap-2 px-3 py-1.5 rounded border border-border text-sm font-medium cursor-pointer transition-all;
 }
 
 .filter-checkbox:hover {
@@ -206,16 +217,16 @@
 }
 
 .range-slider::-webkit-slider-thumb {
-  @apply appearance-none w-5 h-5 bg-foreground rounded-full cursor-pointer;
+  @apply appearance-none w-5 h-5 bg-primary rounded-full cursor-pointer;
 }
 
 .range-slider::-moz-range-thumb {
-  @apply w-5 h-5 bg-foreground rounded-full cursor-pointer border-0;
+  @apply w-5 h-5 bg-primary rounded-full cursor-pointer border-0;
 }
 
-/* Stats bar (like Loot Drop's "925 DEAD STARTUPS" section) */
+/* Stats bar */
 .stats-bar {
-  @apply flex items-center justify-center gap-8 py-4 border-y-4 border-double border-foreground font-bold;
+  @apply flex items-center justify-center gap-8 py-4 border-y border-border font-bold;
 }
 
 .stat-item {
@@ -223,49 +234,49 @@
 }
 
 .stat-value {
-  @apply text-3xl font-black;
+  @apply text-3xl font-extrabold;
 }
 
 .stat-label {
   @apply text-xs uppercase tracking-wider text-muted-foreground;
 }
 
-/* Detail card sections (like Loot Drop's colored sections) */
-.section-yellow {
-  @apply bg-amber-100 border-l-4 border-amber-400 p-4 rounded-r;
-}
+/* Detail card sections — severity-tinted callouts */
 
-.section-pink {
-  @apply bg-pink-100 border-l-4 border-pink-400 p-4 rounded-r;
-}
 
-.section-green {
-  @apply bg-emerald-100 border-l-4 border-emerald-400 p-4 rounded-r;
-}
 
-.section-blue {
-  @apply bg-sky-100 border-l-4 border-sky-400 p-4 rounded-r;
-}
 
 /* Search input */
 .search-input {
-  @apply w-full px-4 py-3 text-lg border-2 border-foreground rounded-none bg-background placeholder:text-muted-foreground focus:outline-none focus:ring-0;
+  @apply w-full px-4 py-3 text-lg border border-border rounded-md bg-card placeholder:text-muted-foreground focus:outline-none focus:border-primary;
 }
 
-/* Button styles */
+/* Button styles — guard0 voice */
 .btn-primary {
-  @apply inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-bold rounded transition-all hover:bg-primary/90 hover:scale-105;
+  @apply inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground font-semibold rounded transition-all duration-200;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(16, 185, 129, 0.35);
+}
+
+.btn-primary:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(16, 185, 129, 0.4);
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-bold rounded transition-all hover:bg-foreground/90;
+  @apply inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-semibold rounded transition-all duration-200 hover:bg-foreground/90;
 }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-foreground text-foreground font-bold rounded transition-all hover:bg-foreground hover:text-background;
+  @apply inline-flex items-center justify-center px-6 py-3 bg-transparent border border-border text-foreground font-semibold rounded transition-all duration-200;
 }
 
-/* Metric bars (like Loot Drop's rebuild/scale/market bars) */
+.btn-outline:hover {
+  @apply border-primary text-primary bg-primary/5;
+  transform: translateY(-1px);
+}
+
+/* Metric bars */
 .metric-bar {
   @apply flex items-center gap-1;
 }
@@ -278,17 +289,7 @@
   @apply bg-foreground;
 }
 
-/* Focus styles */
-*:focus-visible {
-  @apply outline-none ring-2 ring-primary ring-offset-2;
-}
-
-/* Selection */
-::selection {
-  @apply bg-primary/20 text-foreground;
-}
-
-/* Hand-drawn arrow annotation style */
+/* Code-flavored annotation style */
 .annotation {
   @apply text-sm font-medium text-primary italic;
 }
@@ -299,7 +300,7 @@
 }
 
 .modal-content {
-  @apply bg-background rounded-lg border-2 border-foreground shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto;
+  @apply bg-background rounded-lg border border-border shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto;
 }
 
 /* Tag/Label styles */
@@ -356,87 +357,84 @@
   transition: none !important;
 }
 
-/* ===== FUN LOOT DROP STYLE COMPONENTS ===== */
+/* ===== GUARD0 SURFACE & CTA COMPONENTS ===== */
 
-/* Card with thick border and offset shadow (like Loot Drop) */
+/* Premium card: 1px border, subtle shadow, gentle hover lift */
 .card-shadow {
-  @apply bg-white border-2 border-foreground relative;
-  box-shadow: 4px 4px 0 0 hsl(var(--foreground));
-  transition: all 0.15s ease;
+  @apply bg-card border border-border rounded-lg;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px -6px rgba(0, 0, 0, 0.10);
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  animation: tileIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
 .card-shadow:hover {
-  box-shadow: 6px 6px 0 0 hsl(var(--foreground));
-  transform: translate(-2px, -2px);
+  transform: translateY(-4px);
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 20px 40px -8px rgba(0, 0, 0, 0.14),
+    0 8px 24px -8px rgba(16, 185, 129, 0.12);
 }
 
-/* Tilted button style */
-.btn-tilted {
-  @apply inline-flex items-center justify-center px-5 py-3 font-bold text-sm uppercase tracking-wide;
-  transform: rotate(-2deg);
-  transition: all 0.15s ease;
+/* CTA buttons — guard0 button voice: uppercase, tracked, minimal radius */
+.btn-cta {
+  @apply inline-flex items-center justify-center gap-2 px-7 py-3 text-[13px] min-h-[44px] font-semibold leading-none uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 3px;
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-tilted:hover {
-  transform: rotate(-1deg) scale(1.05);
+.btn-cta-primary {
+  @apply bg-primary text-primary-foreground border border-transparent;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(16, 185, 129, 0.35);
 }
 
-.btn-tilted-orange {
-  @apply bg-primary text-white border-2 border-foreground;
-  box-shadow: 3px 3px 0 0 hsl(var(--foreground));
+.btn-cta-primary:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(16, 185, 129, 0.4);
 }
 
-.btn-tilted-blue {
-  @apply bg-sky-500 text-white border-2 border-foreground;
-  box-shadow: 3px 3px 0 0 hsl(var(--foreground));
+.btn-cta-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(16, 185, 129, 0.25);
 }
 
-.btn-tilted-yellow {
-  @apply bg-amber-400 text-foreground border-2 border-foreground;
-  box-shadow: 3px 3px 0 0 hsl(var(--foreground));
+.btn-cta-secondary {
+  @apply bg-transparent border border-border text-foreground;
 }
 
-/* Hand-drawn arrow annotation */
-.annotation-arrow {
-  @apply relative inline-block;
+.btn-cta-secondary:hover {
+  @apply border-primary text-primary bg-primary/5;
+  transform: translateY(-1px);
 }
 
-.annotation-text {
-  @apply text-xs font-medium italic text-primary absolute whitespace-nowrap;
-  font-family: 'Courier New', monospace;
-}
-
-/* Dotted double border stats bar */
+/* Stats bar — thin borders, quiet surface */
 .stats-bar-fancy {
-  @apply flex items-center justify-center gap-12 py-6;
-  border-top: 3px double hsl(var(--foreground));
-  border-bottom: 3px double hsl(var(--foreground));
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 10px,
-    hsl(var(--foreground) / 0.03) 10px,
-    hsl(var(--foreground) / 0.03) 20px
-  );
+  @apply flex items-center justify-center gap-12 py-6 border-y border-border bg-card;
 }
 
 /* Filter pill with checkbox */
 .filter-pill {
-  @apply inline-flex items-center gap-2 px-4 py-2 border-2 border-foreground text-sm font-medium cursor-pointer transition-all;
-  box-shadow: 2px 2px 0 0 hsl(var(--foreground));
+  @apply inline-flex items-center gap-2 px-4 py-2 border border-border rounded bg-card text-sm font-medium cursor-pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .filter-pill:hover {
-  box-shadow: 3px 3px 0 0 hsl(var(--foreground));
-  transform: translate(-1px, -1px);
+  @apply border-primary/40;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 8px 16px -6px rgba(16, 185, 129, 0.15);
+}
+
+.filter-pill:active {
+  transform: translateY(0);
 }
 
 .filter-pill.active {
-  @apply bg-foreground text-background;
+  @apply bg-foreground text-background border-foreground;
 }
 
 .filter-pill-checkbox {
-  @apply w-4 h-4 border-2 border-current flex items-center justify-center;
+  @apply w-4 h-4 border border-current rounded-sm flex items-center justify-center;
 }
 
 .filter-pill-checkbox.checked::after {
@@ -444,61 +442,21 @@
   @apply text-xs font-bold;
 }
 
-/* Range slider with dotted track (like Loot Drop) */
-.range-fancy {
-  @apply relative w-full py-4;
-}
-
-.range-fancy-track {
-  @apply w-full h-0.5 bg-foreground relative;
-}
-
-.range-fancy-track::before {
-  content: '';
-  @apply absolute inset-y-0 left-0 right-0;
-  background: repeating-linear-gradient(
-    90deg,
-    hsl(var(--foreground)),
-    hsl(var(--foreground)) 2px,
-    transparent 2px,
-    transparent 8px
-  );
-}
-
-.range-fancy-thumb {
-  @apply w-4 h-4 bg-foreground rounded-full absolute top-1/2 -translate-y-1/2 cursor-pointer;
-  box-shadow: 2px 2px 0 0 hsl(var(--foreground) / 0.3);
-}
-
-.range-fancy-labels {
-  @apply flex justify-between text-xs text-muted-foreground mt-2 uppercase tracking-wide;
-}
-
-/* Segmented metric bar (like REBUILD/SCALE/MARKET) */
+/* Segmented metric bar */
 .metric-segments {
   @apply flex items-center gap-0.5;
 }
 
 .metric-segment {
-  @apply w-5 h-3 transition-colors;
-  background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--border)) 100%);
+  @apply w-5 h-3 rounded-sm bg-muted transition-colors;
 }
 
 .metric-segment.filled {
-  background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--foreground) / 0.8) 100%);
+  background: hsl(var(--foreground));
 }
 
-.metric-segment.filled-orange {
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 100%);
-}
 
-.metric-segment.filled-blue {
-  background: linear-gradient(135deg, hsl(199 89% 48%) 0%, hsl(199 89% 38%) 100%);
-}
 
-.metric-segment.filled-green {
-  background: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 26%) 100%);
-}
 
 /* "HOVER FOR DETAILS" text */
 .hover-hint {
@@ -509,43 +467,53 @@
   @apply opacity-100;
 }
 
-/* Burned badge with shadow */
+/* Primary badge */
 .badge-burned {
-  @apply inline-flex items-center px-3 py-1 bg-primary text-white font-bold text-sm border-2 border-foreground;
-  box-shadow: 2px 2px 0 0 hsl(var(--foreground));
+  /* shape only — color comes from the semantic score ramp at the use site */
+  @apply inline-flex items-center px-3 py-1 font-bold text-sm rounded;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 3px 8px -2px rgba(0, 0, 0, 0.12);
 }
 
 /* Category tag with checkbox style */
 .category-tag {
-  @apply inline-flex items-center gap-2 px-3 py-1.5 border-2 border-foreground text-xs font-medium uppercase tracking-wide;
+  @apply inline-flex items-center gap-2 px-3 py-1.5 border border-border rounded text-xs font-medium uppercase tracking-wide;
 }
 
 .category-tag-check {
-  @apply w-3 h-3 border border-current;
+  @apply w-3 h-3 border border-current rounded-sm;
 }
 
-/* Yellow CTA box (like "ADD A CORPSE") */
+/* Primary CTA box */
 .cta-box-yellow {
-  @apply bg-amber-400 border-2 border-foreground px-6 py-3 font-bold inline-flex items-center gap-2;
-  box-shadow: 4px 4px 0 0 hsl(var(--foreground));
-  transform: rotate(1deg);
-  transition: all 0.15s ease;
+  @apply bg-primary text-primary-foreground border border-transparent px-6 py-3 font-semibold uppercase tracking-wide inline-flex items-center gap-2;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(16, 185, 129, 0.35);
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cta-box-yellow:hover {
-  box-shadow: 6px 6px 0 0 hsl(var(--foreground));
-  transform: rotate(0deg) translate(-2px, -2px);
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(16, 185, 129, 0.4);
 }
 
-/* Search input with thick border */
+/* Search input — clean 1px border, emerald focus */
 .search-fancy {
-  @apply w-full px-4 py-4 text-lg border-2 border-foreground bg-background placeholder:text-muted-foreground focus:outline-none;
-  box-shadow: 4px 4px 0 0 hsl(var(--foreground));
+  @apply w-full pl-12 pr-4 py-4 text-lg border border-border rounded-md bg-card placeholder:text-muted-foreground focus:outline-none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 6px 20px -6px rgba(0, 0, 0, 0.08);
+  transition: border-color 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-fancy:hover {
+  border-color: rgba(16, 185, 129, 0.35);
 }
 
 .search-fancy:focus {
-  box-shadow: 6px 6px 0 0 hsl(var(--foreground));
-  transform: translate(-2px, -2px);
+  border-color: hsl(var(--primary));
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.14), 0 2px 4px rgba(0, 0, 0, 0.04),
+    0 12px 28px -8px rgba(0, 0, 0, 0.12);
 }
 
 /* Decorative corner brackets */
@@ -556,30 +524,20 @@
 .corner-brackets::before,
 .corner-brackets::after {
   content: '';
-  @apply absolute w-4 h-4 border-foreground;
+  @apply absolute w-4 h-4 border-border;
 }
 
 .corner-brackets::before {
-  @apply top-0 left-0 border-t-2 border-l-2;
+  @apply top-0 left-0 border-t border-l;
 }
 
 .corner-brackets::after {
-  @apply bottom-0 right-0 border-b-2 border-r-2;
+  @apply bottom-0 right-0 border-b border-r;
 }
 
-/* Playful quote style */
-.quote-playful {
-  @apply text-sm italic text-muted-foreground text-center;
-  font-family: 'Courier New', monospace;
-}
+/* Monospace quote style */
 
-.quote-playful::before {
-  content: '"';
-}
 
-.quote-playful::after {
-  content: '"';
-}
 
 /* Animated underline on hover */
 .underline-grow {
@@ -593,4 +551,22 @@
 
 .underline-grow:hover::after {
   @apply w-full;
+}
+
+
+/* Tile entrance */
+@keyframes tileIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .card-shadow, .filter-pill, .search-fancy, .btn-cta {
+    animation: none !important;
+    transition: none !important;
+  }
+  .card-shadow:hover, .filter-pill:hover, .search-fancy:focus, .btn-cta:hover {
+    transform: none !important;
+  }
 }

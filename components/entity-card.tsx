@@ -1,43 +1,40 @@
 'use client';
 
-import { TrustVectorEntity, calculateOverallScore } from '@/framework/schema/types';
+import { memo } from 'react';
+
+import { getScoreColor, getScoreTheme } from '@/framework/schema/types';
+import type { EntitySummary } from '@/lib/summary-types';
 import { truncate } from '@/lib/utils';
 
 interface EntityCardProps {
-  entity: TrustVectorEntity;
+  entity: EntitySummary;
 }
 
 // Get score label and color class
-function getScoreInfo(score: number): { label: string; bgClass: string; textClass: string } {
-  if (score >= 90) return { label: 'Exceptional', bgClass: 'bg-emerald-500', textClass: 'text-white' };
-  if (score >= 75) return { label: 'Strong', bgClass: 'bg-sky-500', textClass: 'text-white' };
-  if (score >= 60) return { label: 'Adequate', bgClass: 'bg-amber-400', textClass: 'text-black' };
-  if (score >= 40) return { label: 'Concerning', bgClass: 'bg-orange-500', textClass: 'text-white' };
-  return { label: 'Poor', bgClass: 'bg-red-500', textClass: 'text-white' };
-}
-
 // Generate metric segments (like Loot Drop's REBUILD/SCALE/MARKET)
-function MetricSegments({ score, color = 'default' }: { score: number; color?: 'default' | 'orange' | 'blue' | 'green' }) {
+function MetricSegments({ score }: { score: number }) {
   const max = 5;
   const filled = Math.round((score / 100) * max);
-  const colorClass = color === 'orange' ? 'filled-orange' : color === 'blue' ? 'filled-blue' : color === 'green' ? 'filled-green' : 'filled';
+  // Semantic traffic-light color from the shared score ramp
+  const fill = getScoreColor(score);
 
   return (
     <div className="metric-segments">
       {Array.from({ length: max }).map((_, i) => (
         <div
           key={i}
-          className={`metric-segment ${i < filled ? colorClass : ''}`}
+          className={`metric-segment ${i < filled ? 'filled' : ''}`}
+          style={i < filled ? { backgroundColor: fill } : undefined}
         />
       ))}
     </div>
   );
 }
 
-export function EntityCard({ entity }: EntityCardProps) {
-  const overallScore = calculateOverallScore(entity);
-  const scoreInfo = getScoreInfo(overallScore);
-  const { trust_vector } = entity;
+function EntityCardInner({ entity }: EntityCardProps) {
+  const overallScore = entity.overall_score;
+  const scoreInfo = getScoreTheme(overallScore);
+  const { dimensions } = entity;
 
   return (
     <a
@@ -51,11 +48,11 @@ export function EntityCard({ entity }: EntityCardProps) {
         <div className="flex items-start justify-between mb-3">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="text-lg font-black text-foreground truncate group-hover:text-primary transition-colors uppercase tracking-tight">
+              <h3 className="text-lg font-bold text-foreground truncate group-hover:text-primary transition-colors uppercase tracking-tight">
                 {entity.name}
               </h3>
               <span className="text-sm text-muted-foreground shrink-0">
-                {(entity.metadata as any)?.release_date ? new Date((entity.metadata as any).release_date).getFullYear() : ''}
+                {entity.release_year ?? ''}
               </span>
             </div>
           </div>
@@ -69,7 +66,7 @@ export function EntityCard({ entity }: EntityCardProps) {
         {/* Score Badge & Type Tag */}
         <div className="flex items-center gap-2 mb-4">
           {/* Burned-style badge for score */}
-          <span className="badge-burned">
+          <span className={`badge-burned ${scoreInfo.bg} ${scoreInfo.text}`}>
             {overallScore} {scoreInfo.label.toUpperCase()}
           </span>
           <span className="category-tag">
@@ -83,33 +80,36 @@ export function EntityCard({ entity }: EntityCardProps) {
           HOVER FOR DETAILS
         </div>
 
-        {/* Metric bars - like Loot Drop */}
-        <div className="border-t-2 border-foreground/10 pt-4 grid grid-cols-3 gap-4">
+        {/* Metric bars */}
+        <div className="border-t border-border pt-4 grid grid-cols-3 gap-4">
           <div>
             <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1 flex items-center gap-1">
-              <span className="text-primary">⚡</span> PERF
+              <span className="text-muted-foreground">⚡</span> PERF
             </div>
-            <MetricSegments score={trust_vector.performance_reliability.overall_score} color="orange" />
+            <MetricSegments score={dimensions.performance_reliability ?? 0} />
           </div>
           <div>
             <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1 flex items-center gap-1">
-              <span className="text-sky-500">🛡</span> SECURE
+              <span className="text-muted-foreground">🛡</span> SECURE
             </div>
-            <MetricSegments score={trust_vector.security.overall_score} color="blue" />
+            <MetricSegments score={dimensions.security ?? 0} />
           </div>
           <div>
             <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1 flex items-center gap-1">
-              <span className="text-emerald-500">🔒</span> PRIVACY
+              <span className="text-muted-foreground">🔒</span> PRIVACY
             </div>
-            <MetricSegments score={trust_vector.privacy_compliance.overall_score} color="green" />
+            <MetricSegments score={dimensions.privacy_compliance ?? 0} />
           </div>
         </div>
 
         {/* Provider */}
-        <div className="mt-4 pt-3 border-t border-dashed border-foreground/20 text-xs text-muted-foreground uppercase tracking-wide">
+        <div className="mt-4 pt-3 border-t border-border text-xs text-muted-foreground uppercase tracking-wide">
           {entity.provider}
         </div>
       </div>
     </a>
   );
 }
+
+// Summaries are stable module constants, so pointer equality skips re-renders on filter/search
+export const EntityCard = memo(EntityCardInner);

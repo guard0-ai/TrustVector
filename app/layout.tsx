@@ -1,13 +1,37 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import './globals.css';
 import Link from 'next/link';
 import { Github, BarChart3, BookOpen } from 'lucide-react';
 import { Logo } from '@/components/logo';
 
+// Variable fonts vendored locally (app/fonts) so builds work offline and
+// ship one file per family instead of one per weight.
+const inter = localFont({
+  src: './fonts/inter-var.woff2',
+  weight: '100 900',
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const jakarta = localFont({
+  src: './fonts/jakarta-var.woff2',
+  weight: '200 800',
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const jetbrainsMono = localFont({
+  src: './fonts/jetbrains-mono-var.woff2',
+  weight: '100 800',
+  variable: '--font-mono',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: 'TrustVector by Guard0 - AI Agent Security & Trust Directory',
   description:
-    'Guard0 TrustVector: The definitive agentic AI security resource. Evidence-based evaluations of 100+ AI agents, models, and MCPs across security, privacy, and trust dimensions. AI-SPM and agent security posture management.',
+    'Guard0 TrustVector: The definitive agentic AI security resource. Evidence-based evaluations of nearly 200 AI agents, models, and MCP servers across security, privacy, and trust dimensions. AI-SPM and agent security posture management.',
   keywords: [
     // Tier 1: Category-Defining Terms
     'agentic AI security',
@@ -68,7 +92,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'TrustVector by Guard0 - AI Agent Security & Trust Directory',
     description:
-      'Guard0 TrustVector: The definitive agentic AI security resource. Evaluate 100+ AI agents, models, and MCPs for security, privacy, and trust. AI-SPM leader.',
+      'Guard0 TrustVector: The definitive agentic AI security resource. Evaluate nearly 200 AI agents, models, and MCP servers for security, privacy, and trust. AI-SPM leader.',
     type: 'website',
     siteName: 'TrustVector by Guard0',
     url: 'https://trustvector.guard0.ai',
@@ -77,7 +101,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TrustVector by Guard0 - AI Agent Security',
     description:
-      'Guard0 TrustVector: Agentic AI security evaluations for 100+ AI systems. The leading AI-SPM and agent security posture management resource.',
+      'Guard0 TrustVector: Agentic AI security evaluations for nearly 200 AI systems. The leading AI-SPM and agent security posture management resource.',
     creator: '@Guard0Security',
     site: '@Guard0Security',
   },
@@ -105,14 +129,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sans">
-        {/* Rainbow border wrapper */}
-        <div className="min-h-screen flex flex-col rainbow-border rounded-lg m-2 sm:m-4 overflow-hidden bg-background">
-          {/* Header with thick border */}
-          <header className="sticky top-0 z-50 w-full border-b-2 border-foreground bg-background">
+      <body className={`${inter.variable} ${jakarta.variable} ${jetbrainsMono.variable} font-sans`}>
+        {/* Subtle emerald top accent (replaces old rainbow border) */}
+        <div className="min-h-screen flex flex-col accent-top bg-background">
+          {/* Header with thin border */}
+          <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm">
             <div className="container mx-auto px-4">
               <nav className="flex h-16 items-center justify-between">
-                {/* Logo with shadow */}
+                {/* Logo */}
                 <Link href="/" className="group">
                   <Logo size="md" variant="full" />
                 </Link>
@@ -121,14 +145,14 @@ export default function RootLayout({
                 <div className="flex items-center gap-1 sm:gap-2">
                   <Link
                     href="/"
-                    className="flex items-center gap-2 px-3 py-2 text-sm font-bold text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wide"
+                    className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wide"
                   >
                     <BarChart3 className="w-4 h-4" />
                     <span className="hidden sm:inline">Browse</span>
                   </Link>
                   <Link
                     href="/compare"
-                    className="flex items-center gap-2 px-3 py-2 text-sm font-bold text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wide"
+                    className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wide"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -137,19 +161,18 @@ export default function RootLayout({
                   </Link>
                   <Link
                     href="/methodology"
-                    className="flex items-center gap-2 px-3 py-2 text-sm font-bold text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wide"
+                    className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wide"
                   >
                     <BookOpen className="w-4 h-4" />
                     <span className="hidden sm:inline">Docs</span>
                   </Link>
 
-                  {/* GitHub button with shadow */}
+                  {/* GitHub button — emerald primary */}
                   <a
                     href="https://github.com/guard0-ai/TrustVector"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ml-2 flex items-center gap-2 px-4 py-2 text-sm font-bold bg-foreground text-background border-2 border-foreground transition-all hover:translate-x-[-2px] hover:translate-y-[-2px]"
-                    style={{ boxShadow: '3px 3px 0 0 hsl(var(--primary))' }}
+                    className="ml-2 flex items-center gap-2 px-4 py-2 text-sm font-semibold uppercase tracking-wide bg-primary text-primary-foreground rounded transition-all duration-200 ease-smooth hover:bg-guard0-dark hover:-translate-y-[1px] shadow-[0_1px_2px_rgba(0,0,0,0.06),0_4px_16px_rgba(16,185,129,0.35)]"
                   >
                     <Github className="w-4 h-4" />
                     <span className="hidden sm:inline">STAR</span>
@@ -162,7 +185,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
 
           {/* Footer */}
-          <footer className="border-t-2 border-foreground bg-muted/30 mt-auto">
+          <footer className="border-t border-border bg-muted/30 mt-auto">
             <div className="container mx-auto px-4 py-12">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {/* Logo & Description */}
@@ -173,14 +196,14 @@ export default function RootLayout({
                     for AI agents, models, and MCPs. AI-SPM and agent security posture management.
                   </p>
                   {/* Playful annotation */}
-                  <p className="text-xs italic text-muted-foreground" style={{ fontFamily: 'Courier New, monospace' }}>
+                  <p className="text-xs italic text-muted-foreground font-mono">
                     &quot;Trust, but verify.&quot; — especially with AI agents
                   </p>
                 </div>
 
                 {/* Resources */}
                 <div>
-                  <h4 className="font-black uppercase tracking-wide mb-4">Resources</h4>
+                  <h4 className="font-bold uppercase tracking-wide mb-4">Resources</h4>
                   <ul className="space-y-2 text-sm">
                     <li>
                       <Link href="/methodology" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -207,7 +230,7 @@ export default function RootLayout({
 
                 {/* Legal */}
                 <div>
-                  <h4 className="font-black uppercase tracking-wide mb-4">Legal</h4>
+                  <h4 className="font-bold uppercase tracking-wide mb-4">Legal</h4>
                   <ul className="space-y-2 text-sm">
                     <li>
                       <a
@@ -224,7 +247,7 @@ export default function RootLayout({
               </div>
 
               {/* Bottom bar */}
-              <div className="mt-8 pt-8 border-t-2 border-dashed border-foreground/20 flex flex-col sm:flex-row justify-between items-center gap-4">
+              <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
                 <p className="text-sm text-muted-foreground">
                   © 2025 TrustVector by{' '}
                   <a href="https://guard0.ai" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">

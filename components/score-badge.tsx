@@ -1,4 +1,4 @@
-import { interpretScore, getScoreColor } from '@/framework/schema/types';
+import { interpretScore, getScoreTheme } from '@/framework/schema/types';
 import { cn } from '@/lib/utils';
 
 interface ScoreBadgeProps {
@@ -11,7 +11,7 @@ interface ScoreBadgeProps {
 // Get clean color classes for the new design
 function getScoreClasses(score: number): { bg: string; text: string } {
   if (score >= 90) return { bg: 'bg-emerald-500', text: 'text-white' };
-  if (score >= 75) return { bg: 'bg-sky-500', text: 'text-white' };
+  if (score >= 75) return { bg: 'bg-emerald-400', text: 'text-black' };
   if (score >= 60) return { bg: 'bg-amber-400', text: 'text-black' };
   if (score >= 40) return { bg: 'bg-orange-500', text: 'text-white' };
   return { bg: 'bg-red-500', text: 'text-white' };
@@ -19,7 +19,7 @@ function getScoreClasses(score: number): { bg: string; text: string } {
 
 export function ScoreBadge({ score, size = 'md', showLabel = false, className }: ScoreBadgeProps) {
   const interpretation = interpretScore(score);
-  const { bg, text } = getScoreClasses(score);
+  const { bg, text } = getScoreTheme(score);
 
   const sizeClasses = {
     sm: 'text-xs px-2 py-0.5',
@@ -66,7 +66,7 @@ interface ScoreBarProps {
 }
 
 export function ScoreBar({ score, label, showValue = true, className }: ScoreBarProps) {
-  const { bg } = getScoreClasses(score);
+  const { bg } = getScoreTheme(score);
 
   return (
     <div

@@ -11,13 +11,13 @@ import {
 } from 'recharts';
 import type { TrustVectorEntity } from '@/framework/schema/types';
 
-// Clean light theme colors for chart
+// Guard0 chart colors: emerald accent on a neutral grid
 const CHART_COLORS = {
-  grid: '#e5e7eb',           // Light gray grid
-  axis: '#1f2937',           // Dark gray for labels
-  axisSecondary: '#9ca3af',  // Muted gray for radius
-  radar: '#f97316',          // Orange primary color
-  radarFill: '#f97316',      // Orange fill
+  grid: '#E5E5E5',           // Neutral gray grid
+  axis: '#171717',           // Near-black labels
+  axisSecondary: '#A3A3A3',  // Muted gray for radius
+  radar: '#10B981',          // Guard0 emerald
+  radarFill: '#10B981',      // Guard0 emerald fill
 };
 
 interface TrustVectorChartProps {
@@ -82,7 +82,7 @@ export function TrustVectorChart({ entity, height = 400 }: TrustVectorChartProps
             if (active && payload && payload.length) {
               const data = payload[0].payload;
               return (
-                <div className="bg-white border-2 border-foreground rounded-lg shadow-lg p-3">
+                <div className="bg-card border border-border rounded-md shadow-lg p-3">
                   <p className="font-bold mb-1">{data.fullName}</p>
                   <p className="text-sm text-muted-foreground">
                     Score: <span className="font-bold text-primary">{data.score}</span>/100
