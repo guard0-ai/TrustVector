@@ -5,6 +5,7 @@ import { memo } from 'react';
 import { getScoreColor, getScoreTheme } from '@/framework/schema/types';
 import type { EntitySummary } from '@/lib/summary-types';
 import { truncate } from '@/lib/utils';
+import { TrustSpectrum } from '@/components/trust-spectrum';
 
 interface EntityCardProps {
   entity: EntitySummary;
@@ -44,6 +45,8 @@ function EntityCardInner({ entity }: EntityCardProps) {
     >
       {/* Card with offset shadow */}
       <div className="card-shadow p-5 h-full">
+        {/* Trust spectrum — five-dimension fingerprint */}
+        <TrustSpectrum dimensions={entity.dimensions} className="mb-4" />
         {/* Header */}
         <div className="flex items-start justify-between mb-3">
           <div className="flex-1 min-w-0">

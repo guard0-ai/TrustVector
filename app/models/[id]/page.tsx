@@ -130,6 +130,9 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
               <div>
                 <div className="flex items-center gap-3 mb-2">
+                  <div className="dossier-stamp font-mono mb-3">
+                    Evaluation record · {entity.id}
+                  </div>
                   <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-[-0.03em]">{entity.name}</h1>
                   <span className="text-muted-foreground text-lg font-bold">v{entity.version}</span>
                 </div>

@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import { getAllSummaries, sortSummaries, type SortOption } from '@/lib/client-data';
 import { EntityCard } from '@/components/entity-card';
 import { Search } from 'lucide-react';
+import { RegistryField, StatusTicker } from '@/components/registry-field';
 
 export default function HomePage() {
   const allEntities = getAllSummaries();
@@ -71,7 +72,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="border-b border-border dot-grid">
+      <section className="border-b border-border dot-grid hero-bloom">
         <div className="container mx-auto px-4 py-16 sm:py-20">
           <div className="max-w-4xl mx-auto text-center">
             {/* Eyebrow */}
@@ -111,8 +112,16 @@ export default function HomePage() {
               </a>
             </div>
           </div>
+
+          {/* The registry, visualized — one dot per evaluated system */}
+          <div className="mt-14">
+            <RegistryField summaries={allEntities} />
+          </div>
         </div>
       </section>
+
+      {/* Live registry feed — real lifecycle + trust events from the data */}
+      <StatusTicker summaries={allEntities} />
 
       {/* Stats Bar - Fancy double border */}
       <section className="stats-bar-fancy">
