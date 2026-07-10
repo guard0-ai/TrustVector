@@ -206,13 +206,13 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
               <div
                 className="border border-border bg-card rounded-lg shadow-card p-6 mb-8"
               >
-                <h2 className="text-2xl font-bold uppercase tracking-tight mb-6">Trust Vector Analysis</h2>
+                <h2 className="text-2xl font-bold tracking-tight mb-6">Trust Vector Analysis</h2>
                 <TrustVectorChart entity={entity} height={400} />
               </div>
 
               {/* Dimension Breakdown */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold uppercase tracking-tight mb-6">Dimension Breakdown</h2>
+                <h2 className="text-2xl font-bold tracking-tight mb-6">Dimension Breakdown</h2>
                 {dimensions.map((dimension) => (
                   <details
                     key={dimension.key}
@@ -371,12 +371,12 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
             <div
               className="border border-border bg-card rounded-lg shadow-card p-6 mb-8"
             >
-              <h2 className="text-2xl font-bold uppercase tracking-tight mb-6">Use Case Ratings</h2>
+              <h2 className="text-2xl font-bold tracking-tight mb-6">Use Case Ratings</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {Object.entries(entity.use_case_ratings).map(([key, rating]) => (
                   <div key={key} className="p-4 bg-muted/40 border border-border rounded-md hover:bg-muted/50 transition-colors">
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-bold uppercase text-sm">{key.replace(/-/g, ' ')}</h3>
+                      <h3 className="font-bold text-sm">{key.replace(/-/g, ' ')}</h3>
                       <ScoreBadge score={rating.overall} size="sm" />
                     </div>
                     <p className="text-sm text-muted-foreground">{rating.notes}</p>
@@ -391,7 +391,7 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
             <div
               className="border border-border bg-card rounded-lg shadow-card p-6"
             >
-              <h2 className="text-2xl font-bold uppercase tracking-tight mb-6">Similar Models</h2>
+              <h2 className="text-2xl font-bold tracking-tight mb-6">Similar Models</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {relatedEntities.map((related) => (
                   <Link
@@ -400,7 +400,7 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ id
                     className="p-4 border border-border rounded-lg bg-card shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all group"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-bold uppercase group-hover:text-primary transition-colors">{related.name}</h3>
+                      <h3 className="font-bold group-hover:text-primary transition-colors">{related.name}</h3>
                       <ScoreBadge score={calculateOverallScore(related)} size="sm" />
                     </div>
                     <p className="text-sm text-muted-foreground uppercase">{related.provider}</p>

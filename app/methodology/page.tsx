@@ -48,10 +48,10 @@ export default function MethodologyPage() {
               EVIDENCE-BASED EVALUATION
             </div>
 
-            <h1 className="text-5xl sm:text-6xl font-bold mb-4 tracking-tighter">
-              OUR
+            <h1 className="font-display text-5xl sm:text-6xl font-extrabold mb-4 tracking-[-0.045em] leading-[1.02]">
+              Our
               <br />
-              <span className="text-primary">METHODOLOGY</span>
+              <span className="text-primary">methodology</span>
             </h1>
 
             <p className="text-xl text-muted-foreground">
@@ -66,7 +66,7 @@ export default function MethodologyPage() {
       <div className="container mx-auto px-4 py-12">
         {/* Core Principles */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Core Principles</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-8">Core Principles</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
@@ -80,7 +80,7 @@ export default function MethodologyPage() {
                 className={`${item.color} border-l-2 p-6 rounded-r-lg`}
               >
                 <item.icon className="w-8 h-8 mb-4 text-foreground" />
-                <h3 className="text-xl font-bold uppercase mb-2">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground">{item.desc}</p>
               </div>
             ))}
@@ -89,7 +89,7 @@ export default function MethodologyPage() {
 
         {/* Trust Dimensions */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Five Trust Dimensions</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-8">Five Trust Dimensions</h2>
 
           <div className="space-y-4">
             {[
@@ -109,7 +109,7 @@ export default function MethodologyPage() {
                       <span className="text-3xl">{dim.icon}</span>
                       <div>
                         <span className="text-xs text-muted-foreground uppercase tracking-wide">Dimension {dim.num}</span>
-                        <h3 className="text-xl font-bold uppercase">{dim.name}</h3>
+                        <h3 className="text-xl font-bold">{dim.name}</h3>
                       </div>
                     </div>
                     <span className="text-2xl group-open:rotate-45 transition-transform">+</span>
@@ -136,12 +136,12 @@ export default function MethodologyPage() {
 
         {/* Scoring System */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Scoring System</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-8">Scoring System</h2>
 
           <div
             className="bg-card border border-border rounded-lg shadow-card p-8"
           >
-            <h3 className="text-xl font-bold uppercase mb-6">Score Ranges (0-100)</h3>
+            <h3 className="text-xl font-bold mb-6">Score Ranges (0-100)</h3>
 
             <div className="space-y-4">
               {[
@@ -183,7 +183,7 @@ export default function MethodologyPage() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-primary/5 border-l-2 border-primary p-8 rounded-r-lg flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-2xl font-bold uppercase mb-2">Want to Contribute?</h3>
+              <h3 className="text-2xl font-bold mb-2">Want to Contribute?</h3>
               <p className="text-muted-foreground">Help improve AI transparency by contributing evaluations.</p>
             </div>
             <Link

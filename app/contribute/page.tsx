@@ -46,10 +46,10 @@ export default function ContributePage() {
               COMMUNITY-DRIVEN
             </div>
 
-            <h1 className="text-5xl sm:text-6xl font-bold mb-4 tracking-tighter">
-              HOW TO
+            <h1 className="font-display text-5xl sm:text-6xl font-extrabold mb-4 tracking-[-0.045em] leading-[1.02]">
+              How to
               <br />
-              <span className="text-primary">CONTRIBUTE</span>
+              <span className="text-primary">contribute</span>
             </h1>
 
             <p className="text-xl text-muted-foreground">
@@ -64,7 +64,7 @@ export default function ContributePage() {
       <div className="container mx-auto px-4 py-12">
         {/* What You Can Contribute */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">What You Can Contribute</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-8">What You Can Contribute</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -77,7 +77,7 @@ export default function ContributePage() {
                 className={`${item.color} border-l-2 p-6 rounded-r-lg`}
               >
                 <item.icon className="w-8 h-8 mb-4 text-foreground" />
-                <h3 className="text-xl font-bold uppercase mb-2">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
               </div>
             ))}
@@ -86,7 +86,7 @@ export default function ContributePage() {
 
         {/* Quick Start */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Quick Start Guide</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-8">Quick Start Guide</h2>
 
           <div className="space-y-4">
             {[
@@ -134,7 +134,7 @@ export default function ContributePage() {
                     {step.num}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold uppercase mb-2">{step.title}</h3>
+                    <h3 className="text-xl font-bold mb-2">{step.title}</h3>
                     <p className="text-muted-foreground mb-3">{step.desc}</p>
                     {step.code && (
                       <code className="block bg-foreground text-background px-4 py-3 text-sm font-mono rounded-md">
@@ -171,7 +171,7 @@ export default function ContributePage() {
 
         {/* Data Schema */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Data Schema Overview</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-8">Data Schema Overview</h2>
 
           <div className="bg-card border border-border rounded-lg shadow-card overflow-hidden">
             <div className="bg-foreground text-background px-6 py-4">
@@ -222,13 +222,13 @@ export default function ContributePage() {
 
         {/* Evidence Guidelines */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Evidence Guidelines</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-8">Evidence Guidelines</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-emerald-50 border-l-2 border-emerald-400 p-6 rounded-r-lg">
               <div className="flex items-center gap-2 mb-4">
                 <CheckCircle className="w-6 h-6 text-emerald-600" />
-                <h3 className="text-xl font-bold uppercase">Accepted Sources</h3>
+                <h3 className="text-xl font-bold">Accepted Sources</h3>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
@@ -249,7 +249,7 @@ export default function ContributePage() {
             <div className="bg-amber-50 border-l-2 border-amber-400 p-6 rounded-r-lg">
               <div className="flex items-center gap-2 mb-4">
                 <AlertTriangle className="w-6 h-6 text-amber-600" />
-                <h3 className="text-xl font-bold uppercase">Use With Caution</h3>
+                <h3 className="text-xl font-bold">Use With Caution</h3>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
@@ -271,7 +271,7 @@ export default function ContributePage() {
 
         {/* Confidence Levels */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Confidence Levels</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-8">Confidence Levels</h2>
 
           <div className="bg-card border border-border rounded-lg shadow-card p-8">
             <div className="space-y-6">
@@ -316,11 +316,11 @@ export default function ContributePage() {
 
         {/* Needed Evaluations */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">Currently Needed</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-8">Currently Needed</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-card border border-border rounded-lg shadow-card p-6">
-              <h3 className="text-lg font-bold uppercase mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                 <Database className="w-5 h-5 text-purple-500" />
                 MCP Servers
               </h3>
@@ -344,7 +344,7 @@ export default function ContributePage() {
             </div>
 
             <div className="bg-card border border-border rounded-lg shadow-card p-6">
-              <h3 className="text-lg font-bold uppercase mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                 <Bot className="w-5 h-5 text-emerald-500" />
                 AI Agents & Platforms
               </h3>
@@ -373,7 +373,7 @@ export default function ContributePage() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-primary/5 border-l-2 border-primary p-8 rounded-r-lg flex flex-col items-center text-center">
             <GitBranch className="w-16 h-16 text-foreground mb-4" />
-            <h2 className="text-3xl font-bold uppercase mb-4">Ready to Contribute?</h2>
+            <h2 className="text-3xl font-bold mb-4">Ready to Contribute?</h2>
             <p className="text-lg text-muted-foreground mb-6">
               Join our community of contributors helping build transparency in AI systems.
             </p>

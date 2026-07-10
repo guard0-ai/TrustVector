@@ -51,10 +51,10 @@ export default function ComparePage() {
               SIDE-BY-SIDE COMPARISON
             </div>
 
-            <h1 className="text-5xl sm:text-6xl font-bold mb-4 tracking-tighter">
-              COMPARE
+            <h1 className="font-display text-5xl sm:text-6xl font-extrabold mb-4 tracking-[-0.045em] leading-[1.02]">
+              Compare
               <br />
-              <span className="text-primary">AI SYSTEMS</span>
+              <span className="text-primary">AI systems</span>
             </h1>
 
             <p className="text-xl text-muted-foreground">
@@ -71,7 +71,7 @@ export default function ComparePage() {
         {selectedEntities.length < 4 && (
           <div className="max-w-4xl mx-auto mb-12">
             <div className="bg-card border border-border rounded-lg shadow-card p-6">
-              <h2 className="text-xl font-bold uppercase tracking-wide mb-4">
+              <h2 className="text-xl font-bold tracking-wide mb-4">
                 Select Entities to Compare
               </h2>
 
@@ -258,7 +258,7 @@ export default function ComparePage() {
             <div className="inline-flex items-center justify-center w-20 h-20 bg-muted border border-border rounded-lg mb-6">
               <GitCompare className="w-10 h-10 text-muted-foreground" />
             </div>
-            <h3 className="text-2xl font-bold uppercase mb-2">No Entities Selected</h3>
+            <h3 className="text-2xl font-bold mb-2">No Entities Selected</h3>
             <p className="text-muted-foreground">
               Search and select up to 4 AI systems above to start comparing
             </p>
